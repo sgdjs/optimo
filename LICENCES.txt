@@ -1,0 +1,5 @@
+L'ensemble des fichiers est distribué sous la double licence GFDL / CC-SA-BY.
+Les textes de ces deux licences sont disponibles dans les fichiers GFDL.txt et
+CC-SA-BY.txt, ou sur les pages web suivantes :
+* http://www.gnu.org/copyleft/fdl.html
+* http://creativecommons.org/licenses/by-sa/3.0/deed.fr

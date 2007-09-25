@@ -1,0 +1,20 @@
+﻿Ceci est une implémentation du clavier dvorak français bépo version 0.6.3 pour
+Mac OS X.
+
+http://www.clavier-dvorak.org/wiki/DvorakFr/Version063
+
+Pour l'installer, copiez le fichier « fr-dvorak-bepo.keylayout » dans le
+répertoire « ~/Library/Keyboard Layouts », et redémarrez votre session. La
+configuration de clavier "Dvorak Francais (0.6.3)" est maintenant accessible dans la
+section "International" des « Préférences Système » de votre mac.
+
+
+Le fichier « fr-dvorak-bepo-azerty.keylayout » conserve les touches du clavier
+AZERTY quand la touche « Command » ou la touche « Ctrl » est enfoncée, ce
+qui permet de conserver les raccourcits clavier AZERTY. Une fois installée,
+cette configuration apparaît dans la section « International » sous le nom
+« Dvorak Francais (0.6.3) - Azerty ».
+
+Site web: http://www.clavier-dvorak.org
+
+Auteur: Gaëtan Lehmann <gaetan.lehmann@jouy.inra.fr>
