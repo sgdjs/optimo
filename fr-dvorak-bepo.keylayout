@@ -527,6 +527,7 @@
     <action id="b">
       <when state="none" output="b"/>
       <when state="abovedot" output="ḃ"/>
+      <when state="stroke" output="ƀ"/>
     </action>
     <action id="B">
       <when state="none" output="B"/>
@@ -566,12 +567,14 @@
       <when state="abovedot" output="ḋ"/>
       <when state="caron" output="ď"/>
       <when state="cedilla" output="ḑ"/>
+      <when state="stroke" output="đ"/>
     </action>
     <action id="D">
       <when state="none" output="D"/>
       <when state="abovedot" output="Ḋ"/>
       <when state="caron" output="Ď"/>
       <when state="cedilla" output="Ḑ"/>
+      <when state="stroke" output="Đ"/>
     </action>
 
     <action id="e">
@@ -664,6 +667,7 @@
       <when state="cedilla" output="ģ"/>
       <when state="circumflex" output="ĝ"/>
       <when state="macron" output="ḡ"/>
+      <when state="stroke" output="ǥ"/>
     </action>
     <action id="G">
       <when state="none" output="G"/>
@@ -673,6 +677,7 @@
       <when state="caron" output="Ǧ"/>
       <when state="cedilla" output="Ģ"/>
       <when state="macron" output="Ḡ"/>
+      <when state="stroke" output="Ǥ"/>
     </action>
 
     <action id="h">
@@ -682,6 +687,7 @@
       <when state="cedilla" output="ḩ"/>
       <when state="circumflex" output="ĥ"/>
       <when state="diaresis" output="ḧ"/>
+      <when state="stroke" output="ħ"/>
     </action>
     <action id="H">
       <when state="none" output="H"/>
@@ -690,6 +696,7 @@
       <when state="cedilla" output="Ḩ"/>
       <when state="circumflex" output="Ĥ"/>
       <when state="diaresis" output="Ḧ"/>
+      <when state="stroke" output="Ħ"/>
     </action>
 
     <action id="i">
@@ -703,6 +710,7 @@
       <when state="grave" output="ì"/>
       <when state="macron" output="ī"/>
       <when state="ogonek" output="į"/>
+      <when state="stroke" output="ɨ"/>
       <when state="tilde" output="ĩ"/>
       <!-- double touche mortes -->
       <when state="acute_diaresis" output="ḯ"/>
@@ -718,6 +726,7 @@
       <when state="grave" output="Ì"/>
       <when state="macron" output="Ī"/>
       <when state="ogonek" output="Į"/>
+      <when state="stroke" output="Ɨ"/>
       <when state="tilde" output="Ĩ"/>
       <!-- double touche mortes -->
       <when state="acute_diaresis" output="Ḯ"/>
@@ -751,6 +760,7 @@
       <when state="acute" output="ĺ"/>
       <when state="caron" output="ľ"/>
       <when state="cedilla" output="ļ"/>
+      <when state="stroke" output="ł"/>
     </action>
     <action id="L">
       <when state="none" output="L"/>
@@ -758,6 +768,7 @@
       <when state="acute" output="Ĺ"/>
       <when state="caron" output="Ľ"/>
       <when state="cedilla" output="Ļ"/>
+      <when state="stroke" output="Ł"/>
     </action>
 
     <action id="m">
@@ -802,11 +813,13 @@
       <when state="grave" output="ò"/>
       <when state="macron" output="ō"/>
       <when state="ogonek" output="ǫ"/>
+      <when state="stroke" output="ø"/>
       <when state="tilde" output="õ"/>
       <!-- double touche mortes -->
       <when state="abovedot_macron" output="ȱ"/>
       <when state="acute_circumflex" output="ố"/>
       <when state="acute_macron" output="ṓ"/>
+      <when state="acute_stroke" output="ǿ"/>
       <when state="acute_tilde" output="ṍ"/>
       <when state="circumflex_grave" output="ồ"/>
       <when state="circumflex_tilde" output="ỗ"/>
@@ -828,11 +841,13 @@
       <when state="grave" output="Ò"/>
       <when state="macron" output="Ō"/>
       <when state="ogonek" output="Ǫ"/>
+      <when state="stroke" output="Ø"/>
       <when state="tilde" output="Õ"/>
       <!-- double touche mortes -->
       <when state="abovedot_macron" output="Ȱ"/>
       <when state="acute_circumflex" output="Ố"/>
       <when state="acute_macron" output="Ṓ"/>
+      <when state="acute_stroke" output="Ǿ"/>
       <when state="acute_tilde" output="Ṍ"/>
       <when state="circumflex_grave" output="Ồ"/>
       <when state="circumflex_tilde" output="Ỗ"/>
@@ -911,11 +926,13 @@
       <when state="acute" output="t"/>
       <when state="cedilla" output="ţ"/>
       <when state="diaresis" output="ẗ"/>
+      <when state="stroke" output="ŧ"/>
     </action>
     <action id="T">
       <when state="none" output="T"/>
       <when state="caron" output="Ť"/>
       <when state="cedilla" output="Ţ"/>
+      <when state="stroke" output="Ŧ"/>
     </action>
 
     <action id="u">
@@ -1027,6 +1044,7 @@
       <when state="acute" output="ź"/>
       <when state="caron" output="ž"/>
       <when state="circumflex" output="ẑ"/>
+      <when state="stroke" output="ƶ"/>
     </action>
     <action id="Z">
       <when state="none" output="Z"/>
@@ -1034,6 +1052,7 @@
       <when state="acute" output="Ź"/>
       <when state="caron" output="Ž"/>
       <when state="circumflex" output="Ẑ"/>
+      <when state="stroke" output="Ƶ"/>
     </action>
 
     <action id=" ">
@@ -1049,6 +1068,7 @@
       <when state="macron" output="¯"/>
       <when state="ogonek" output="˛"/>
       <when state="ringabove" output="°"/>
+      <when state="stroke" output="-"/>
       <when state="tilde" output="˜"/>
       <!-- les doubles touches mortes -->
       <when state="abovedot_acute" output="˙´"/>
@@ -1060,6 +1080,7 @@
       <when state="acute_diaresis" output="´¨"/>
       <when state="acute_macron" output="´¯"/>
       <when state="acute_ringabove" output="´°"/>
+      <when state="acute_stroke" output="´-"/>
       <when state="acute_tilde" output="´~"/>
       <when state="breve_cedilla" output="̆¸"/>
       <when state="breve_grave" output="̆`"/>
@@ -1094,6 +1115,7 @@
       <when state="diaresis" next="acute_diaresis"/>
       <when state="macron" next="acute_macron"/>
       <when state="ringabove" next="acute_ringabove"/>
+      <when state="stroke" next="acute_stroke"/>
       <when state="tilde" next="acute_tilde"/>
     </action>
     <action id="breve">
@@ -1155,6 +1177,10 @@
       <when state="none" next="ogonek"/>
       <when state="macron" next="macron_ogonek"/>
     </action>
+    <action id="stroke">
+      <when state="none" next="stroke"/>
+      <when state="acute" next="acute_stroke"/>
+    </action>
     <action id="tilde">
       <when state="none" next="tilde"/>
       <when state="acute" next="acute_tilde"/>
@@ -1180,6 +1206,7 @@
     <when state="grave" output="`"/>
     <when state="macron" output="¯"/>
     <when state="ogonek" output="˛"/>
+    <when state="stroke" output="-"/>
     <when state="ringabove" output="°"/>
     <when state="tilde" output="˜"/>
     <!-- les doubles touches mortes -->
@@ -1192,6 +1219,7 @@
     <when state="acute_diaresis" output="´¨"/>
     <when state="acute_macron" output="´¯"/>
     <when state="acute_ringabove" output="´°"/>
+    <when state="acute_stroke" output="´-"/>
     <when state="acute_tilde" output="´~"/>
     <when state="breve_cedilla" output="˘¸"/>
     <when state="breve_grave" output="˘`"/>
