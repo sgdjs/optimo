@@ -464,6 +464,7 @@
       <when state="grave" output="à"/>
       <when state="macron" output="ā"/>
       <when state="ringabove" output="å"/>
+      <when state="ogonek" output="ą"/>
       <when state="tilde" output="ã"/>
       <!-- double touche mortes -->
       <when state="abovedot_macron" output="ǡ"/>
@@ -486,6 +487,7 @@
       <when state="diaresis" output="Ä"/>
       <when state="grave" output="À"/>
       <when state="macron" output="Ā"/>
+      <when state="ogonek" output="Ą"/>
       <when state="ringabove" output="Å"/>
       <when state="tilde" output="Ã"/>
       <!-- double touche mortes -->
@@ -583,6 +585,7 @@
       <when state="diaresis" output="ë"/>
       <when state="grave" output="è"/>
       <when state="macron" output="ē"/>
+      <when state="ogonek" output="ę"/>
       <when state="tilde" output="ẽ"/>
       <!-- double touche mortes -->
       <when state="acute_circumflex" output="ế"/>
@@ -602,6 +605,7 @@
       <when state="diaresis" output="Ë"/>
       <when state="grave" output="È"/>
       <when state="macron" output="Ē"/>
+      <when state="ogonek" output="Ę"/>
       <when state="tilde" output="Ẽ"/>
       <!-- double touche mortes -->
       <when state="acute_circumflex" output="Ế"/>
@@ -698,6 +702,7 @@
       <when state="diaresis" output="ï"/>
       <when state="grave" output="ì"/>
       <when state="macron" output="ī"/>
+      <when state="ogonek" output="į"/>
       <when state="tilde" output="ĩ"/>
       <!-- double touche mortes -->
       <when state="acute_diaresis" output="ḯ"/>
@@ -712,6 +717,7 @@
       <when state="diaresis" output="Ï"/>
       <when state="grave" output="Ì"/>
       <when state="macron" output="Ī"/>
+      <when state="ogonek" output="Į"/>
       <when state="tilde" output="Ĩ"/>
       <!-- double touche mortes -->
       <when state="acute_diaresis" output="Ḯ"/>
@@ -792,8 +798,10 @@
       <when state="caron" output="ǒ"/>
       <when state="circumflex" output="ô"/>
       <when state="diaresis" output="ö"/>
+      <when state="doubleacute" output="ő"/>
       <when state="grave" output="ò"/>
       <when state="macron" output="ō"/>
+      <when state="ogonek" output="ǫ"/>
       <when state="tilde" output="õ"/>
       <!-- double touche mortes -->
       <when state="abovedot_macron" output="ȱ"/>
@@ -806,6 +814,7 @@
       <when state="diaresis_tilde" output="ṏ"/>
       <when state="grave_macron" output="ṑ"/>
       <when state="macron_tilde" output="ȭ"/>
+      <when state="macron_ogonek" output="ǭ"/>
     </action>
     <action id="O">
       <when state="none" output="O"/>
@@ -815,8 +824,10 @@
       <when state="caron" output="Ǒ"/>
       <when state="circumflex" output="Ô"/>
       <when state="diaresis" output="Ö"/>
+      <when state="doubleacute" output="Ő"/>
       <when state="grave" output="Ò"/>
       <when state="macron" output="Ō"/>
+      <when state="ogonek" output="Ǫ"/>
       <when state="tilde" output="Õ"/>
       <!-- double touche mortes -->
       <when state="abovedot_macron" output="Ȱ"/>
@@ -829,6 +840,7 @@
       <when state="diaresis_tilde" output="Ṏ"/>
       <when state="grave_macron" output="Ṑ"/>
       <when state="macron_tilde" output="Ȭ"/>
+      <when state="macron_ogonek" output="Ǭ"/>
     </action>
 
     <action id="ø">
@@ -913,8 +925,10 @@
       <when state="caron" output="ǔ"/>
       <when state="circumflex" output="û"/>
       <when state="diaresis" output="ü"/>
+      <when state="doubleacute" output="ű"/>
       <when state="grave" output="ù"/>
       <when state="macron" output="ū"/>
+      <when state="ogonek" output="ų"/>
       <when state="ringabove" output="ů"/>
       <when state="tilde" output="ũ"/>
       <!-- double touche mortes -->
@@ -931,7 +945,9 @@
       <when state="caron" output="Ǔ"/>
       <when state="circumflex" output="Û"/>
       <when state="diaresis" output="Ü"/>
+      <when state="doubleacute" output="Ű"/>
       <when state="grave" output="Ù"/>
+      <when state="ogonek" output="Ų"/>
       <when state="ringabove" output="Ů"/>
       <when state="macron" output="Ū"/>
       <when state="tilde" output="Ũ"/>
@@ -1031,6 +1047,7 @@
       <when state="diaresis" output="¨"/>
       <when state="grave" output="`"/>
       <when state="macron" output="¯"/>
+      <when state="ogonek" output="˛"/>
       <when state="ringabove" output="°"/>
       <when state="tilde" output="˜"/>
       <!-- les doubles touches mortes -->
@@ -1056,6 +1073,7 @@
       <when state="grave_macron" output="`¯"/>
       <when state="grave_tilde" output="`~"/>
       <when state="macron_tilde" output="¯~"/>
+      <when state="macron_ogonek" output="¯˛"/>
     </action>
     
     
@@ -1109,6 +1127,9 @@
       <when state="macron" next="diaresis_macron"/>
       <when state="tilde" next="diaresis_tilde"/>
     </action>
+    <action id="doubleacute">
+      <when state="none" next="doubleacute"/>
+    </action>
     <action id="grave">
       <when state="none" next="grave"/>
       <when state="breve" next="breve_grave"/>
@@ -1123,11 +1144,16 @@
       <when state="acute" next="acute_macron"/>
       <when state="diaresis" next="diaresis_macron"/>
       <when state="grave" next="grave_macron"/>
+      <when state="ogonek" next="macron_ogonek"/>
       <when state="tilde" next="macron_tilde"/>
     </action>
     <action id="ringabove">
       <when state="none" next="ringabove"/>
       <when state="acute" next="acute_ringabove"/>
+    </action>
+    <action id="ogonek">
+      <when state="none" next="ogonek"/>
+      <when state="macron" next="macron_ogonek"/>
     </action>
     <action id="tilde">
       <when state="none" next="tilde"/>
@@ -1150,8 +1176,10 @@
     <when state="cedilla" output="¸"/>
     <when state="circumflex" output="^"/>
     <when state="diaresis" output="¨"/>
+    <when state="doubleacute" output="˝"/>
     <when state="grave" output="`"/>
     <when state="macron" output="¯"/>
+    <when state="ogonek" output="˛"/>
     <when state="ringabove" output="°"/>
     <when state="tilde" output="˜"/>
     <!-- les doubles touches mortes -->
@@ -1177,6 +1205,7 @@
     <when state="grave_macron" output="`¯"/>
     <when state="grave_tilde" output="`~"/>
     <when state="macron_tilde" output="¯~"/>
+    <when state="macron_ogonek" output="¯˛"/>
   </terminators>
   
 </keyboard>
