@@ -1,0 +1,187 @@
+	Description de l'adaptation des sources au clavier Bépo
+	-------------------------------------------------------
+
+
+* Le paquet-source des configurations xkb des distributions Debian/Ubuntu
+s'appelle xkeyboard-config ; Il est directement issu des sources Xorg.
+
+# nom du paquet :
+paquet=xkeyboard-config
+# version de référence :
+version=0.9
+ou maintenant :
+version=1.0~cvs.20070916
+
+
+* Récupération du paquet source :
+
+  apt-get source $paquet
+  ou
+  dpkg-source -x $paquet_$version*.dsc
+
+  cp -pr $paquet-$version $paquet-$version.REF
+
+
+* Test d'un patch sur l'archive originale (si l'on en dispose) :
+  (cd $paquet-$version; patch -p1 --dry-run < ../${paquet}_$version*.1bepo*.patch)
+
+
+* Pour définir le clavier Bépo et ses variantes, il faut modifier les
+  fichiers suivants :
+ - symbols/fr : c'est le fichier principal où se trouve les définitions des
+                claviers français.
+ - symbols/symbols.dir : index des claviers : il faut ajouter les noms des claviers Bépo.
+ - rules/base.lst et
+ - rules/base.xml.in : Il s'agit de la description (dans toutes les langues) des claviers définis.
+ - debian/changelog pour déclarer le patch debian.
+
+
+* La définition du clavier Bépo (dans le fichier symbols/fr) a été
+  dérivé de la définition du clavier « oss » de Nicolas Mailhot : j'ai
+  récupéré le dessin du clavier (en UTF-8) et des infos diverses sur
+  le codage XKB...
+
+
+* Afin de permettre à ceux qui ont choisi la disposition 'bepo' sans préciser la
+  variante (comme c'est le cas dans les sources Xorg depuis 2006), on
+  garde toujours ce nom de définition, en le faisant correspondre à la
+  dernière version du clavier.
+
+
+* Pour chaque nouvelle version, rajouter son nom et sa variante Latin9
+ -> modifier rules/base.lst
+             rules/base.xml.in
+             symbols/symbols.dir (et surtout debian/symbols.dir)
+             symbols/fr
+
+dans symbols/fr, rajouter un squelette du genre :
+
+// Version 6.2.1.2 :
+
+partial alphanumeric_keys
+xkb_symbols "bepo_6212" {
+
+    // Include previous version :
+    include "fr(bepo_6211)"
+
+    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.1.2";
+
+    // Updates since last version :
+
+};
+
+partial alphanumeric_keys
+xkb_symbols "bepo_6212_latin9" {
+
+    // Restricts the fr(bepo_6212) layout to latin9 symbols
+
+    include "fr(bepo_6212)"
+    include "keypad(oss_latin9)"
+
+    name[Group1]="France - Bepo, ergonomic, Dvorak way, v6.2.1.2, latin-9 only";
+
+};
+
+
+* S'aider du fichier http://www.cl.cam.ac.uk/~mgk25/ucs/keysyms.txt pour
+  trouver comment s'appellent les codes des touches !
+
+  Ne pas oublier de changer le dessin du clavier final (en tête de
+  toutes les définitions Bépo dans symbols/fr)...
+
+
+* Mettre à jour le changelog du paquet Debian : debian/changelog (en UTF-8 !)
+  par exemple avec la commande :
+  env LANG=fr_FR.UTF-8 \
+      DEBEMAIL="Frédéric Boiteux <fboiteux@free.fr>" LOGNAME=fred \
+      dch --preserve --increment
+  -> changera debian/changelog
+
+
+* ATTENTION : dans le paquet Debian, le fichier symbols/symbols.dir
+  (comme tous les fichiers .dir) est écrasé à la fabrication du paquet
+  par le fichier debian/symbols.dir : Il faut donc recopier
+  symbols/symbols.dir dans debian/symbols.dir avant toute tentative
+  de fabrication ! !
+  -> le patch changera debian/symbols.dir
+
+
+* Après une nouvelle version, créer un nouveau patch (permet d'avoir une vue globale des
+  changements effectués) :
+  diff -Naur $paquet-$version.REF $paquet-$version > ${paquet}_$version......1bepo....patch
+
+
+* faire une copie du répertoire source modifié (pour + de précautions)
+  et construire dedans le paquet :
+  cp -pr $paquet-$version $paquet-${version}build
+  (cd $paquet-${version}build && debuild)
+
+Note : dans la version 1.0~cvs.20070916-1, j'ai dû également modifier
+le fichier debian/patches/resync_rules_base.diff dans sa destruction
+( ?) du fichier base.lst ...
+
+
+* installer sur le système cible le paquet xkb-data généré
+  (attention : ceci n'est utilisable que sur les systèmes utilisant
+  *déjà* xkb-data, c'est-à-dire je crois ceux utitisant Xorg)
+
+  // vérifie que l'on a bien déjà un paquet xkb-data installé :
+  $ dpkg -l xkb-data
+Souhait=inconnU/Installé/suppRimé/Purgé/H=à garder
+| État=Non/Installé/fichier-Config/dépaqUeté/échec-conFig/H=semi-installé
+|/ Err?=(aucune)/H=à garder/besoin Réinstallation/X=les deux (État,Err: majuscule=mauvais)
+||/ Nom            Version        Description
++++-==============-==============-============================================
+ii  xkb-data       0.9-4          X Keyboard Extension (XKB) configuration dat
+
+  // Si c'est bien le cas, installe notre version modifiée :
+  # dpkg -i ./xkb-data_0.9-4.1bepo6224_all.deb
+
+* sélectionner un clavier :
+  - sous Gnome, utiliser dans les préférences le choix de l'agencement
+    du clavier
+  - en ligne de commande :
+    setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_6211 -v
+    ou plus simplement :
+    setxkbmap fr bepo_6211
+
+* pour avoir une idée du clavier courant :
+  xkbprint -color -pict all -label symbols -o clavier.ps ${DISPLAY:-:0} && gv clavier.ps
+
+
+* Pour savoir les réglages courants de XKB :
+  setxkbmap -print
+
+Exemple : $ setxkbmap -print
+xkb_keymap {
+        xkb_keycodes  { include "xfree86+aliases(azerty)"       };
+        xkb_types     { include "complete"      };
+        xkb_compat    { include "complete+ledcaps(group_lock)"  };
+        xkb_symbols   { include "pc(pc105)+fr(bepo_63f)+fr(oss):2+us:3+group(shifts_toggle)+ctrl(nocaps)+keypad(oss)"   };
+        xkb_geometry  { include "pc(pc105)"     };
+};
+On voit que j'utilise la définition d'un clavier 105 touches
+(français), avec la disposition bepo_63f, la disposition française en
+2ème groupe et l'U.S. en 3ème, que je peux passer de l'une à la
+suivante par les 2 shifts en même temps, que j'ai inhibé la touche
+CapsLock (devient un Ctrl supplémentaire) et que la disposition de
+pavé numérique « oss » est activée...
+
+
+* si la sélection d'un nouveau clavier ne fonctionne pas (erreur de
+  syntaxe dans un fichier), on peut s'inspirer de la commande suivante
+  pour avoir un message d'erreur exploitable :
+
+  setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_6211 -print | \
+  xkbcomp -xkm -o bepo_6211.xkm -
+
+syntax error: line 556 of fr
+last scanned symbol is: ntilde
+Error:            Error interpreting include file "fr"
+                  Exiting
+                  Abandoning symbols file "(null)"
+
+
+* À lire également :
+  http://wiki.mandriva.com/fr/Personnaliser_le_clavier#Les_fichiers_de_configuration_du_clavier_et_le_syst.C3.A8me_XKb
+  http://wiki.mandriva.com/fr/Quelques_keysyms_repr%C3%A9sentant_des_caract%C3%A8res_affichables

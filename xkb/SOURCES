@@ -1,0 +1,50 @@
+Sources utilisées :
+-------------------
+
+La configuration du clavier dans Xorg se fait par l'outil XKB, qui
+s'appuie sur une base de données des dispositions de claviers :
+xkeyboard-config.
+
+
+* Sources de la base de données des dispositions de claviers dans Xorg :
+ http://www.freedesktop.org/wiki/Software/XKeyboardConfig
+
+
+* Paquet dans Debian :
+  Le source s'appelle xkeyboard-config, le paquet binaire (compilé)
+  xkb-data.
+
+  Pour connaître les différentes versions disponibles pour Debian :
+  http://packages.debian.org/search?keywords=xkeyboard&searchon=sourcenames&suite=all&section=all
+
+  Pour Etch, c'est la version 0.9.4
+  Pour Lenny/Sid, c'est [actuellement] la version 1.0~cvs.20070916-1
+
+  Pour télécharger les sources, on peut :
+  - récupérer l'archive directement si son système est configuré pour
+  les sources de paquets (/etc/apt/sources.list) par la commande :
+  apt-get source xkeyboard-config=<version désirée>
+
+  - récupérer manuellement les fichiers
+    <paquet>-<version>.orig.tar.gz,
+    <paquet>-<version>.diff.gz et
+    <paquet>-<version>.dsc
+    à l'adresse :
+    http://packages.debian.org/source/etch/xkeyboard-config
+ ou http://packages.debian.org/source/lenny/xkeyboard-config
+
+   On prépare le répertoire de travail par :
+       dpkg-source -x <paquet>-<version>.dsc
+
+
+* Paquet dans Ubuntu :
+  les noms sont identiques (je pense),
+
+  Les différentes versions sont visibles ici :
+  http://packages.ubuntu.com/cgi-bin/search_packages.pl?searchon=names&version=all&exact=1&keywords=xkb-data
+
+  Pour Edgy, c'est la version 0.8-7ubuntu2
+  Pour feisty et Gutsy (?), c'est [actuellement] la version 0.9-4ubuntu3
+
+  ...
+

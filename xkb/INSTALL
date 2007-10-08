@@ -1,0 +1,49 @@
+	Installation & utilisation des paquets modifiés
+	-----------------------------------------------
+
+
+* Récupérer le paquet compilé xkb-data_<version>.1bepo<vers.bépo>_all.deb
+  pour notre distribution dans http://www.clavier-dvorak.org/telechargements
+  (voir également le fichier SOURCES), et l'installer par la commande :
+
+#   dpkg -i ./xkb-data_0.9-4.1bepo6224_all.deb
+
+
+* Sélection du clavier bépo :
+  - sous Gnome, KDE ou autre environnement qui le propose, utiliser dans les
+    préférences le choix de l'agencement du clavier (voir dans les choix
+    proposés pour la France).
+
+  - en ligne de commande :
+    setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_63 -v
+    ou plus simplement :
+    setxkbmap fr bepo_63
+
+
+* pour avoir une idée du clavier courant :
+  xkbprint -color -pict all -label symbols -o clavier.ps ${DISPLAY:-:0} && gv clavier.ps
+
+
+* Pour savoir les réglages courants de XKB :
+  setxkbmap -print
+
+Exemple : $ setxkbmap -print
+xkb_keymap {
+        xkb_keycodes  { include "xfree86+aliases(azerty)"       };
+        xkb_types     { include "complete"      };
+        xkb_compat    { include "complete+ledcaps(group_lock)"  };
+        xkb_symbols   { include "pc(pc105)+fr(bepo_63f)+fr(oss):2+us:3+group(shifts_toggle)+ctrl(nocaps)+keypad(oss)"   };
+        xkb_geometry  { include "pc(pc105)"     };
+};
+On voit que j'utilise la définition d'un clavier 105 touches
+(français), avec la disposition bepo_63f, la disposition française en
+2ème groupe et l'U.S. en 3ème, que je peux passer de l'une à la
+suivante par les 2 shifts en même temps, que j'ai inhibé la touche
+CapsLock (devient un Ctrl supplémentaire) et que la disposition de
+pavé numérique « oss » est activée...
+
+
+* Pour installer Bépo en console :
+  - installer le paquet console-setup qui permet d'utiliser les définitions de Xorg pour décrire la configuration clavier de la console (et ré-utiliser dans ce cas les réglages décrits ci-dessus)
+
+  - ou télécharger un fichier *.kmap.gz, l'installer dans ... À COMPLÉTER ! ###
