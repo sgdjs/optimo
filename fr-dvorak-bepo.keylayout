@@ -109,7 +109,7 @@
       <key code="7" action="y"/>
       <key code="8" action="h"/>
       <key code="9" output="."/>
-      <key code="10" output="@"/>
+      <key code="10" output="$"/>
       <key code="11" action="k"/>
       <key code="12" action="b"/>
       <key code="13" output="é"/>
@@ -255,7 +255,6 @@
     <keyMap index="3" baseMapSet="ANSI" baseIndex="2"> <!-- shift  capslock? -->
       <key code="5" output="?"/>
       <key code="9" output=":"/>
-      <key code="10" output="@"/>
       <key code="18" output="&#x0022;"/>
       <key code="19" output="«"/>
       <key code="20" output="»"/>
