@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Auteur: Gaëtan Lehmann <gaetan.lehmann@jouy.inra.fr>-->
-<keyboard group="126" id="-6538" name="Dvorak français (0.6.3)" maxout="3">
+<keyboard group="126" id="-6538" name="Dvorak français (0.6.4)" maxout="3">
   <layouts>
     <layout first="0" last="17" modifiers="Modifiers" mapSet="ANSI"/>
     <layout first="18" last="18" modifiers="Modifiers" mapSet="JIS"/>
@@ -23,7 +23,11 @@
     </keyMapSelect>
     
     <keyMapSelect mapIndex="3">
-      <modifier keys="anyShift caps?"/>
+      <modifier keys="anyShift"/>
+    </keyMapSelect>
+    
+    <keyMapSelect mapIndex="7">
+      <modifier keys="anyShift caps"/>
     </keyMapSelect>
     
     <keyMapSelect mapIndex="4">
@@ -158,13 +162,13 @@
       <key code="6" action="À"/>
       <key code="7" action="Y"/>
       <key code="8" action="H"/>
-      <key code="10" output="#"/>
+<!--       <key code="10" output=""/> -->
       <key code="11" action="K"/>
       <key code="12" action="B"/>
       <key code="13" action="É"/>
       <key code="14" action="P"/>
       <key code="15" action="O"/>
-      <key code="16" action="Ç"/>
+<!--       <key code="16" action="Ç"/> -->
       <key code="17" action="È"/>
       <key code="18" output="1"/>
       <key code="19" output="2"/>
@@ -172,10 +176,10 @@
       <key code="21" output="4"/>
       <key code="22" output="6"/>
       <key code="23" output="5"/>
-      <key code="24" output="µ"/>
+<!--       <key code="24" output=""/> -->
       <key code="25" output="9"/>
       <key code="26" output="7"/>
-      <key code="27" output="@"/>
+<!--       <key code="27" output=""/> -->
       <key code="28" output="8"/>
       <key code="29" output="0"/>
       <key code="30" action="W"/>
@@ -189,6 +193,7 @@
       <key code="39" action="M"/>
       <key code="40" action="S"/>
       <key code="41" action="R"/>
+      <key code="42" action="Ç"/>
       <key code="43" action="G"/>
       <key code="44" action="J"/>
       <key code="46" action="Q"/>
@@ -252,22 +257,46 @@
     </keyMap>
     
     
-    <keyMap index="3" baseMapSet="ANSI" baseIndex="2"> <!-- shift  capslock? -->
+    <keyMap index="3" baseMapSet="ANSI" baseIndex="2"> <!-- shift -->
       <key code="5" output="?"/>
       <key code="9" output=":"/>
+      <key code="10" output="#"/>
+      <key code="16" output="!"/>
+      <key code="18" output="1"/>
+      <key code="19" output="2"/>
+      <key code="20" output="3"/>
+      <key code="21" output="4"/>
+      <key code="22" output="6"/>
+      <key code="23" output="5"/>
+      <key code="24" output="µ"/>
+      <key code="25" output="9"/>
+      <key code="26" output="7"/>
+      <key code="27" output="@"/>
+      <key code="28" output="8"/>
+      <key code="29" output="0"/>
+      <key code="45" output=";"/>
+      <key code="49" action="&#x00a0;"/>  <!-- NBSP -->
+      <key code="65" output="."/> <!-- pavé numérique -->
+    </keyMap>
+    
+    
+    <keyMap index="7" baseMapSet="ANSI" baseIndex="2"> <!-- shift  capslock -->
+      <key code="5" output="?"/>
+      <key code="9" output=":"/>
+      <key code="10" output="#"/>
+      <key code="16" output="!"/>
       <key code="18" output="&#x0022;"/>
       <key code="19" output="«"/>
       <key code="20" output="»"/>
       <key code="21" output="("/>
       <key code="22" output="_"/>
       <key code="23" output=")"/>
-      <key code="24" output="%"/>
+      <key code="24" output="µ"/>
       <key code="25" output="/"/>
       <key code="26" output="+"/>
-      <key code="27" output="="/>
+      <key code="27" output="@"/>
       <key code="28" output="-"/>
       <key code="29" output="*"/>
-      <key code="42" output="!"/>
       <key code="45" output=";"/>
       <key code="49" action="&#x00a0;"/>  <!-- NBSP -->
       <key code="65" output="."/> <!-- pavé numérique -->
@@ -308,7 +337,7 @@
       <key code="30" action="breve"/>
       <key code="31" output="£"/>
       <key code="32" action="caron"/>
-      <key code="33" action="ə"/>
+      <key code="33" output="ə"/>
       <key code="34" output="ð"/>
       <key code="35" action="ogonek"/>
       <key code="37" output="ñ"/>
@@ -425,18 +454,18 @@
 <!--       <key code="30" action=""/> -->
 <!--       <key code="31" action=""/> -->
 <!--       <key code="32" action=""/> -->
-<!--       <key code="33" action=""/> -->
+      <key code="33" output="Ə"/>
       <key code="34" output="Ð"/>
-      <key code="35" action="ª"/>
+      <key code="35" output="ª"/>
       <key code="37" output="Ñ"/>
       <key code="38" output="Þ"/>
-      <key code="39" action="º"/>
+      <key code="39" output="º"/>
 <!--       <key code="40" action=""/> -->
 <!--       <key code="41" action=""/> -->
 <!--       <key code="42" output=""/> -->
 <!--       <key code="43" action=""/> -->
       <key code="44" output="‡"/>
-      <key code="45" action="‘"/>
+      <key code="45" output="‘"/>
       <key code="46" action="Ø"/>
 <!--       <key code="47" action=""/> -->
       <key code="49" output="&#x202f;"/>  <!-- NARROW NO-BREAK SPACE -->
@@ -1082,7 +1111,7 @@
       <when state="ogonek" output="˛"/>
       <when state="ringabove" output="°"/>
       <when state="stroke" output="-"/>
-      <when state="tilde" output="˜"/>
+      <when state="tilde" output="~"/>
       <!-- les doubles touches mortes -->
       <when state="abovedot_acute" output="˙´"/>
       <when state="abovedot_caron" output="˙ˇ"/>
@@ -1264,7 +1293,7 @@
     <when state="ogonek" output="˛"/>
     <when state="stroke" output="-"/>
     <when state="ringabove" output="°"/>
-    <when state="tilde" output="˜"/>
+    <when state="tilde" output="~"/>
     <!-- les doubles touches mortes -->
     <when state="abovedot_acute" output="˙´"/>
     <when state="abovedot_caron" output="˙ˇ"/>
