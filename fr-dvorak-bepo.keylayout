@@ -115,7 +115,7 @@
       <key code="13" output="é"/>
       <key code="14" action="p"/>
       <key code="15" action="o"/>
-      <key code="16" action="ç"/>
+      <key code="16" action="circumflex"/>
       <key code="17" action="è"/>
       <key code="18" output="&#x0022;"/>
       <key code="19" output="«"/>
@@ -140,7 +140,7 @@
       <key code="39" action="m"/>
       <key code="40" action="s"/>
       <key code="41" action="r"/>
-      <key code="42" action="circumflex"/>
+      <key code="42" action="ç"/>
       <key code="43" action="g"/>
       <key code="44" action="j"/>
       <key code="45" output="'"/>
@@ -292,7 +292,7 @@
       <key code="13" output="&#x0026;"/>
       <key code="14" output="§"/>
       <key code="15" output="œ"/>
-      <key code="16" action="cedilla"/>
+      <key code="16" output="¡"/>
       <key code="17" output="`"/>
       <key code="18" output="—"/>
       <key code="19" output="&#x003c;"/>
@@ -317,7 +317,7 @@
       <key code="39" output="º"/>
       <key code="40" output="ß"/>
       <key code="41" output="®"/>
-      <key code="42" output="¡"/>
+      <key code="42" action="cedilla"/>
       <key code="43" action="ringabove"/>
       <key code="44" output="†"/>
 <!--       <key code="45" output=""/> -->
