@@ -143,7 +143,7 @@
       <key code="42" action="ç"/>
       <key code="43" action="g"/>
       <key code="44" action="j"/>
-      <key code="45" output="'"/>
+      <key code="45" output="’"/>
       <key code="46" action="q"/>
       <key code="47" action="x"/>
       <key code="49" action=" "/>
@@ -436,7 +436,7 @@
 <!--       <key code="42" output=""/> -->
 <!--       <key code="43" action=""/> -->
       <key code="44" output="‡"/>
-<!--       <key code="45" action=""/> -->
+      <key code="45" action="‘"/>
       <key code="46" action="Ø"/>
 <!--       <key code="47" action=""/> -->
       <key code="49" output="&#x202f;"/>  <!-- NARROW NO-BREAK SPACE -->
