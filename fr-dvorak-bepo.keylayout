@@ -270,7 +270,7 @@
       <key code="29" output="*"/>
       <key code="42" output="!"/>
       <key code="45" output=";"/>
-      <key code="49" output="&#x00a0;"/>  <!-- NBSP -->
+      <key code="49" action="&#x00a0;"/>  <!-- NBSP -->
       <key code="65" output="."/> <!-- pavé numérique -->
     </keyMap>
     
@@ -1108,6 +1108,49 @@
       <when state="grave_tilde" output="`~"/>
       <when state="macron_tilde" output="¯~"/>
       <when state="macron_ogonek" output="¯˛"/>
+    </action>
+    
+    <!-- les diacritiques combinatoires -->
+    <action id="&#x00a0;">
+      <when state="none" output="&#x00a0;"/>
+      <when state="abovedot" output="̇"/>
+      <when state="acute" output="́"/>
+      <when state="breve" output="̆"/>
+      <when state="caron" output="̌"/>
+      <when state="cedilla" output="̧"/>
+      <when state="circumflex" output="̂"/>
+      <when state="diaresis" output="̈"/>
+      <when state="grave" output="̀"/>
+      <when state="macron" output="̄"/>
+      <when state="ogonek" output="̨"/>
+      <when state="ringabove" output="̊"/>
+      <when state="stroke" output="̵"/>
+      <when state="tilde" output="̃"/>
+      <!-- les doubles touches mortes -->
+      <when state="abovedot_acute" output="̇́"/>
+      <when state="abovedot_caron" output="̇̌"/>
+      <when state="abovedot_macron" output="̇̄"/>
+      <when state="acute_breve" output="́̆"/>
+      <when state="acute_cedilla" output="̧́"/>
+      <when state="acute_circumflex" output="́̂"/>
+      <when state="acute_diaresis" output="́̈"/>
+      <when state="acute_macron" output="́̄"/>
+      <when state="acute_ringabove" output="́̊"/>
+      <when state="acute_stroke" output="̵́"/>
+      <when state="acute_tilde" output="́̃"/>
+      <when state="breve_cedilla" output="̧̆"/>
+      <when state="breve_grave" output="̆̀"/>
+      <when state="breve_tilde" output="̆̃"/>
+      <when state="caron_diaresis" output="̌̈"/>
+      <when state="circumflex_grave" output="̂̀"/>
+      <when state="circumflex_tilde" output="̂̃"/>
+      <when state="diaresis_grave" output="̈̀"/>
+      <when state="diaresis_macron" output="̈̄"/>
+      <when state="diaresis_tilde" output="̈̃"/>
+      <when state="grave_macron" output="̀̄"/>
+      <when state="grave_tilde" output="̀̃"/>
+      <when state="macron_tilde" output="̄̃"/>
+      <when state="macron_ogonek" output="̨̄"/>
     </action>
     
     
