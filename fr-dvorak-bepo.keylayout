@@ -310,7 +310,7 @@
       <key code="32" action="caron"/>
       <key code="33" action="ə"/>
       <key code="34" output="ð"/>
-      <key code="35" output="ª"/>
+      <key code="35" action="ogonek"/>
       <key code="37" output="ñ"/>
       <key code="38" output="þ"/>
       <key code="39" output="º"/>
@@ -427,7 +427,7 @@
 <!--       <key code="32" action=""/> -->
 <!--       <key code="33" action=""/> -->
       <key code="34" output="Ð"/>
-<!--       <key code="35" action=""/> -->
+      <key code="35" action="ª"/>
       <key code="37" output="Ñ"/>
       <key code="38" output="Þ"/>
 <!--       <key code="39" action=""/> -->
