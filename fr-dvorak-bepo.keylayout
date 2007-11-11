@@ -309,7 +309,7 @@
       <key code="30" action="breve"/>
       <key code="31" output="£"/>
       <key code="32" action="caron"/>
-<!--       <key code="33" action=""/> -->
+      <key code="33" action="ə"/>
       <key code="34" output="ð"/>
       <key code="35" output="ª"/>
       <key code="37" output="ñ"/>
@@ -330,6 +330,7 @@
       <key code="0" action="Æ"/>
       <key code="1" action="Ù"/>
       <key code="15" output="Œ"/>
+      <key code="33" output="Ə"/>
       <key code="37" output="Ñ"/>
       <key code="46" action="Ø"/>
       <key code="42" output="¡"/>
