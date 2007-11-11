@@ -88,6 +88,7 @@ xkb_symbols "bepo_6212_latin9" {
 
   Ne pas oublier de changer le dessin du clavier final (en tête de
   toutes les définitions Bépo dans symbols/fr)...
+  et la définition globale (non incrémentale) « bépo » en fin...
 
 
 * Mettre à jour le changelog du paquet Debian : debian/changelog (en UTF-8 !)
@@ -109,6 +110,9 @@ xkb_symbols "bepo_6212_latin9" {
 * Après une nouvelle version, créer un nouveau patch (permet d'avoir une vue globale des
   changements effectués) :
   diff -Naur $paquet-$version.REF $paquet-$version > ${paquet}_$version......1bepo....patch
+
+
+* soumettre les modifs dans svn, et faire un TAG approprié.
 
 
 * faire une copie du répertoire source modifié (pour + de précautions)
