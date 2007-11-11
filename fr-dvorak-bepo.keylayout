@@ -304,7 +304,7 @@
       <key code="25" output="÷"/>
       <key code="26" output="±"/>
       <key code="27" output="¬"/>
-      <key code="28" output="−"/>
+      <key code="28" output="–"/>
       <key code="29" output="×"/>
       <key code="30" action="breve"/>
       <key code="31" output="£"/>
