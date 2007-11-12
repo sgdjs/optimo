@@ -1,0 +1,36 @@
+﻿Disposition de clavier Dvorak français BÉPO
+0.6.4
+http://www.clavier-dvorak.org/
+
+
+Description
+
+Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+
+Il contient six dispositions de clavier:
+
+Dvorak français BÉPO (0.6.4)
+Dvorak français BÉPO (0.6.4) (Roman)
+Dvorak français BÉPO (0.6.4) - Azerty ⌘
+Dvorak français BÉPO (0.6.4) - Azerty ⌘ (Roman)
+Dvorak français BÉPO (0.6.4) - Qwerty ⌘
+Dvorak français BÉPO (0.6.4) - Qwerty ⌘ (Roman)
+
+Celles dont le nom contient « (Roman) » sont définies comme des dispositions de clavier Roman. Utilisez celles-ci si vous rencontrez des problèmes avec d'anciennes applications (la disposition de clavier active bascule vers une autre). Les autres sont définies comme des dispositions de clavier Unicode.
+
+Celles dont le nom contient « ⌘ » sont des variantes avec lesquelles les raccourcis clavier avec la touche Commande ou Contrôle sont effectués avec les touches correspondant à un clavier français ou belge (Azerty) ou américain (Qwerty).
+
+
+Installation
+
+Pour installer la disposition de clavier, copiez le fichier « fr-dvorak-bepo.bundle » dans "/Utilisateurs/votre_nom_d'utilisateur/Bibliothèque/Keyboard Layouts" si vous désirez qu'elle soit disponible uniquement pour votre utilisateur, ou dans "/Bibliothèque/Keyboard Layouts" si vous désirez qu'elle soit disponible pour tous les utilisateurs de l'ordinateur.
+
+Vous devez fermer et rouvrir votre session pour que la nouvelle disposition de clavier soit prise en compte.
+
+Ensuite, allez dans Préférences Système > International > Menu Saisie, et sélectionnez la/les disposition(s) de clavier que vous désirez utiliser en cochant les cases devant le(s) nom(s) correspondants. La case devant « Afficher le menu Saisie dans la barre des menus », dans le bas de la fenêtre, devrait aussi être cochée pour pouvoir sélectionner la disposition de clavier active.
+
+Ceci fait, et la disposition de clavier Dvorak français BÉPO activée dans le menu saisie dans la barre des menus, vous pouvez commencer à taper. Amusez-vous bien !
+
+Merci d'avoir choisi la disposition de clavier Dvorak français BÉPO.
+
+Astuce : dans Préférences Système > International > Menu Saisie, cochez la case devant « Visualiseur de clavier » et activez-le dans le menu saisie dans la barre des menus pour afficher un petit clavier à l'écran affichant la disposition de clavier.
