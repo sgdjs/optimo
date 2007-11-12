@@ -281,6 +281,242 @@ azertyAdditionalKeyMaps = """
 """
 
 
+qwertyAdditionalKeyMaps = """
+    <keyMap index="10">  <!-- command -->
+      <key code="0" output="a" />
+      <key code="1" output="s" />
+      <key code="2" output="d" />
+      <key code="3" output="f" />
+      <key code="4" output="h" />
+      <key code="5" output="g" />
+      <key code="6" output="z" />
+      <key code="7" output="x" />
+      <key code="8" output="c" />
+      <key code="9" output="v" />
+      <key code="10" output="§" />
+      <key code="11" output="b" />
+      <key code="12" output="q" />
+      <key code="13" output="w" />
+      <key code="14" output="e" />
+      <key code="15" output="r" />
+      <key code="16" output="y" />
+      <key code="17" output="t" />
+      <key code="18" output="1" />
+      <key code="19" output="2" />
+      <key code="20" output="3" />
+      <key code="21" output="4" />
+      <key code="22" output="6" />
+      <key code="23" output="5" />
+      <key code="24" output="=" />
+      <key code="25" output="9" />
+      <key code="26" output="7" />
+      <key code="27" output="-" />
+      <key code="28" output="8" />
+      <key code="29" output="0" />
+      <key code="30" output="]" />
+      <key code="31" output="o" />
+      <key code="32" output="u" />
+      <key code="33" output="[" />
+      <key code="34" output="i" />
+      <key code="35" output="p" />
+      <key code="36" output="&#x000d;" /> <!-- Return -->
+      <key code="37" output="l" />
+      <key code="38" output="j" />
+      <key code="39" output="'" />
+      <key code="40" output="k" />
+      <key code="41" output=";" />
+      <key code="42" output="\" />
+      <key code="43" output="," />
+      <key code="44" output="/" />
+      <key code="45" output="n" />
+      <key code="46" output="m" />
+      <key code="47" output="." />
+      <key code="48" output="&#x0009;" /> <!-- Tab -->
+      <key code="49" output=" " /> <!-- Space -->
+      <key code="50" output="`" />
+      <key code="51" output="&#x0008;" /> <!-- Backspace -->
+      <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
+      <key code="53" output="&#x001b;" /> <!-- Escape -->
+      <!-- gap, 54 through 64 -->
+      <key code="65" output="." /> <!-- keypad -->
+      <key code="66" output="&#x001d;" /> <!-- keypad right arrow? -->
+      <key code="67" output="*" /> <!-- keypad -->
+      <!-- gap, 68 -->
+      <key code="69" output="+" /> <!-- keypad -->
+      <key code="70" output="&#x001c;" /> <!-- keypad left arrow? -->
+      <key code="71" output="&#x001b;" /> <!-- Clear -->
+      <key code="72" output="&#x001f;" /> <!-- keypad down arrow? -->
+      <!-- gap, 73 through 74 -->
+      <key code="75" output="/" /> <!-- keypad -->
+      <key code="76" output="&#x0003;" /> <!-- Enter -->
+      <key code="77" output="&#x001e;" /> <!-- keypad up arrow? -->
+      <key code="78" output="-" /> <!-- keypad -->
+      <!-- gap, 79 through 80 -->
+      <key code="81" output="=" /> <!-- keypad -->
+      <key code="82" output="0" /> <!-- keypad -->
+      <key code="83" output="1" /> <!-- keypad -->
+      <key code="84" output="2" /> <!-- keypad -->
+      <key code="85" output="3" /> <!-- keypad -->
+      <key code="86" output="4" /> <!-- keypad -->
+      <key code="87" output="5" /> <!-- keypad -->
+      <key code="88" output="6" /> <!-- keypad -->
+      <key code="89" output="7" /> <!-- keypad -->
+      <!-- gap, 90 -->
+      <key code="91" output="8" /> <!-- keypad -->
+      <key code="92" output="9" /> <!-- keypad -->
+      <!-- gap, 93 through 95 -->
+      <key code="96" output="&#x0010;" /> <!-- F5 -->
+      <key code="97" output="&#x0010;" /> <!-- F6 -->
+      <key code="98" output="&#x0010;" /> <!-- F7 -->
+      <key code="99" output="&#x0010;" /> <!-- F3 -->
+      <key code="100" output="&#x0010;" /> <!-- F8 -->
+      <key code="101" output="&#x0010;" /> <!-- F9 -->
+      <key code="102" output="&#x0010;" /> <!-- ?? -->
+      <key code="103" output="&#x0010;" /> <!-- F11 -->
+      <key code="104" output="&#x0010;" /> <!-- ?? -->
+      <key code="105" output="&#x0010;" /> <!-- F13 -->
+      <key code="106" output="&#x0010;" /> <!-- F16 -->
+      <key code="107" output="&#x0010;" /> <!-- F14 -->
+      <key code="108" output="&#x0010;" /> <!-- ?? -->
+      <key code="109" output="&#x0010;" /> <!-- F10 -->
+      <key code="110" output="&#x0010;" /> <!-- ?? -->
+      <key code="111" output="&#x0010;" /> <!-- F12 -->
+      <key code="112" output="&#x0010;" /> <!-- ?? -->
+      <key code="113" output="&#x0010;" /> <!-- F15 -->
+      <key code="114" output="&#x0005;" /> <!-- Help -->
+      <key code="115" output="&#x0001;" /> <!-- Home -->
+      <key code="116" output="&#x000b;" /> <!-- Page Up -->
+      <key code="117" output="&#x007f;" /> <!-- Delete -->
+      <key code="118" output="&#x0010;" /> <!-- F4 -->
+      <key code="119" output="&#x0004;" /> <!-- End -->
+      <key code="120" output="&#x0010;" /> <!-- F2 -->
+      <key code="121" output="&#x000c;" /> <!-- Page Down -->
+      <key code="122" output="&#x0010;" /> <!-- F1 -->
+      <key code="123" output="&#x001c;" /> <!-- left arrow -->
+      <key code="124" output="&#x001d;" /> <!-- right arrow -->
+      <key code="125" output="&#x001f;" /> <!-- down arrow -->
+      <key code="126" output="&#x001e;" /> <!-- up arrow -->
+      <!-- gap, 127 -->
+    </keyMap>
+    <keyMap index="11">  <!-- shift option command -->
+      <key code="0" output="Å" />
+      <key code="1" output="Í" />
+      <key code="2" output="Î" />
+      <key code="3" output="Ï" />
+      <key code="4" output="Ó" />
+      <key code="5" output="˝" />
+      <key code="6" output="¸" />
+      <key code="7" output="˛" />
+      <key code="8" output="Ç" />
+      <key code="9" output="◊" />
+      <key code="10" output="±" />
+      <key code="11" output="ı" />
+      <key code="12" output="Œ" />
+      <key code="13" output="„" />
+      <key code="14" output="´" />
+      <key code="15" output="‰" />
+      <key code="16" output="Á" />
+      <key code="17" output="ˇ" />
+      <key code="18" output="⁄" />
+      <key code="19" output="€" />
+      <key code="20" output="‹" />
+      <key code="21" output="›" />
+      <key code="22" output="ﬂ" />
+      <key code="23" output="ﬁ" />
+      <key code="24" output="±" />
+      <key code="25" output="·" />
+      <key code="26" output="‡" />
+      <key code="27" output="—" />
+      <key code="28" output="°" />
+      <key code="29" output="‚" />
+      <key code="30" output="’" />
+      <key code="31" output="Ø" />
+      <key code="32" output="¨" />
+      <key code="33" output="”" />
+      <key code="34" output="ˆ" />
+      <key code="35" output="∏" />
+      <key code="36" output="&#x000d;" /> <!-- Return -->
+      <key code="37" output="Ò" />
+      <key code="38" output="Ô" />
+      <key code="39" output="Æ" />
+      <key code="40" output="" />
+      <key code="41" output="Ú" />
+      <key code="42" output="»" />
+      <key code="43" output="¯" />
+      <key code="44" output="¿" />
+      <key code="45" output="˜" />
+      <key code="46" output="Â" />
+      <key code="47" output="˘" />
+      <key code="48" output="&#x0009;" /> <!-- Tab -->
+      <key code="49" output=" " /> <!-- Space -->
+      <key code="50" output="`" />
+      <key code="51" output="&#x0008;" /> <!-- Backspace -->
+      <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
+      <key code="53" output="&#x001b;" /> <!-- Escape -->
+      <!-- gap, 54 through 64 -->
+      <key code="65" output="." /> <!-- keypad -->
+      <key code="66" output="*" /> <!-- keypad right arrow? -->
+      <key code="67" output="*" /> <!-- keypad -->
+      <!-- gap, 68 -->
+      <key code="69" output="+" /> <!-- keypad -->
+      <key code="70" output="+" /> <!-- keypad left arrow? -->
+      <key code="71" output="&#x001b;" /> <!-- Clear -->
+      <key code="72" output="=" /> <!-- keypad down arrow? -->
+      <!-- gap, 73 through 74 -->
+      <key code="75" output="/" /> <!-- keypad -->
+      <key code="76" output="&#x0003;" /> <!-- Enter -->
+      <key code="77" output="/" /> <!-- keypad up arrow? -->
+      <key code="78" output="-" /> <!-- keypad -->
+      <!-- gap, 79 through 80 -->
+      <key code="81" output="=" /> <!-- keypad -->
+      <key code="82" output="0" /> <!-- keypad -->
+      <key code="83" output="1" /> <!-- keypad -->
+      <key code="84" output="2" /> <!-- keypad -->
+      <key code="85" output="3" /> <!-- keypad -->
+      <key code="86" output="4" /> <!-- keypad -->
+      <key code="87" output="5" /> <!-- keypad -->
+      <key code="88" output="6" /> <!-- keypad -->
+      <key code="89" output="7" /> <!-- keypad -->
+      <!-- gap, 90 -->
+      <key code="91" output="8" /> <!-- keypad -->
+      <key code="92" output="9" /> <!-- keypad -->
+      <!-- gap, 93 through 95 -->
+      <key code="96" output="&#x0010;" /> <!-- F5 -->
+      <key code="97" output="&#x0010;" /> <!-- F6 -->
+      <key code="98" output="&#x0010;" /> <!-- F7 -->
+      <key code="99" output="&#x0010;" /> <!-- F3 -->
+      <key code="100" output="&#x0010;" /> <!-- F8 -->
+      <key code="101" output="&#x0010;" /> <!-- F9 -->
+      <key code="102" output="&#x0010;" /> <!-- ?? -->
+      <key code="103" output="&#x0010;" /> <!-- F11 -->
+      <key code="104" output="&#x0010;" /> <!-- ?? -->
+      <key code="105" output="&#x0010;" /> <!-- F13 -->
+      <key code="106" output="&#x0010;" /> <!-- F16 -->
+      <key code="107" output="&#x0010;" /> <!-- F14 -->
+      <key code="108" output="&#x0010;" /> <!-- ?? -->
+      <key code="109" output="&#x0010;" /> <!-- F10 -->
+      <key code="110" output="&#x0010;" /> <!-- ?? -->
+      <key code="111" output="&#x0010;" /> <!-- F12 -->
+      <key code="112" output="&#x0010;" /> <!-- ?? -->
+      <key code="113" output="&#x0010;" /> <!-- F15 -->
+      <key code="114" output="&#x0005;" /> <!-- Help -->
+      <key code="115" output="&#x0001;" /> <!-- Home -->
+      <key code="116" output="&#x000b;" /> <!-- Page Up -->
+      <key code="117" output="&#x007f;" /> <!-- Delete -->
+      <key code="118" output="&#x0010;" /> <!-- F4 -->
+      <key code="119" output="&#x0004;" /> <!-- End -->
+      <key code="120" output="&#x0010;" /> <!-- F2 -->
+      <key code="121" output="&#x000c;" /> <!-- Page Down -->
+      <key code="122" output="&#x0010;" /> <!-- F1 -->
+      <key code="123" output="&#x001c;" /> <!-- left arrow -->
+      <key code="124" output="&#x001d;" /> <!-- right arrow -->
+      <key code="125" output="&#x001f;" /> <!-- down arrow -->
+      <key code="126" output="&#x001e;" /> <!-- up arrow -->
+      <!-- gap, 127 -->
+    </keyMap>
+"""
+
+
 additionalBaseIndex = """
     <keyMap index="10" baseMapSet="ISO" baseIndex="10">  <!-- command -->
     </keyMap>
@@ -296,6 +532,8 @@ toGenerate = [
   (rscDir + 'fr-dvorak-bepo-roman.keylayout', 0, 6538, None, ' (Roman)'),
   (rscDir + 'fr-dvorak-bepo-azerty.keylayout', 126, -6539, azertyAdditionalKeyMaps, ' - Azerty'),
   (rscDir + 'fr-dvorak-bepo-azerty-roman.keylayout', 0, 6539, azertyAdditionalKeyMaps, ' - Azerty (Roman)'),
+  (rscDir + 'fr-dvorak-bepo-qwerty.keylayout', 126, -6540, qwertyAdditionalKeyMaps, ' - Qwerty'),
+  (rscDir + 'fr-dvorak-bepo-qwerty-roman.keylayout', 0, 6540, qwertyAdditionalKeyMaps, ' - Qwerty (Roman)'),  
 ]
 
 for (name, group, id, additionalKeymap, nameExt) in toGenerate:
