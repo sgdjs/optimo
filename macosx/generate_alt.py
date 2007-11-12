@@ -575,3 +575,8 @@ for (name, group, id, additionalKeymap, nameExt) in toGenerate:
     l = input.readline()
     
   output.close()
+  
+  
+# touch the ~/Library/Keyboard\ Layouts/ directory, so the files will be reparsed
+import os
+os.system(r'touch ~/Library/Keyboard\ Layouts/')
