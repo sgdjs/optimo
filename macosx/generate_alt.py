@@ -280,6 +280,14 @@ azertyAdditionalKeyMaps = """
     </keyMap>
 """
 
+
+additionalBaseIndex = """
+    <keyMap index="10" baseMapSet="ISO" baseIndex="10">  <!-- command -->
+    </keyMap>
+    <keyMap index="11" baseMapSet="ISO" baseIndex="11">  <!-- shift option command -->
+    </keyMap>
+"""
+
 rscDir = 'fr-dvorak-bepo.bundle/Contents/Resources/'
 input = file(rscDir + 'fr-dvorak-bepo.keylayout')
 
@@ -293,6 +301,9 @@ toGenerate = [
 for (name, group, id, additionalKeymap, nameExt) in toGenerate:
   input.seek(0)
   output = file(name, 'w')
+  
+  # there are 2 keymap sets
+  additionalKeymapDone = False
   
   l = input.readline()
   while l:
@@ -312,9 +323,14 @@ for (name, group, id, additionalKeymap, nameExt) in toGenerate:
       # and write the custom modifierMap instead of the one in the input file
       output.write(cmdModifierMap)
       
-    if additionalKeymap and '</keyMapSet>' in l:
+    if not additionalKeymapDone and additionalKeymap and '</keyMapSet>' in l:
       # write the additional keymap before closing the keymap set
       output.write(additionalKeymap)
+      additionalKeymapDone = True
+    # must use elif to avoid adding the additional base index just after the additional keymap
+    elif additionalKeymapDone and additionalKeymap and '</keyMapSet>' in l:
+      # write the missing base index before closing the keymap set
+      output.write(additionalBaseIndex)
       
     output.write(l)
     
