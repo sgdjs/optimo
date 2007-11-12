@@ -34,3 +34,7 @@ Once this is done and the French Dvorak BÉPO keyboard layout is made active wit
 Thank you for choosing the French Dvorak BÉPO keyboard layout.
 
 Tip: in System Preferences > International > Input Menu, mark the checkbox in front of "Keyboard Viewer" and activate it in the input menu in the menu bar to display a small keyboard on the screen displaying the keyboard layout.
+
+License
+
+The keyboard layout fr-dvorak-bépo is distributed under the double license CC-SA-BY/GFDL. The full text of those licenses is available in CC-SA-BY.txt and GFDL.txt.

@@ -34,3 +34,7 @@ Ceci fait, et la disposition de clavier Dvorak français BÉPO activée dans le 
 Merci d'avoir choisi la disposition de clavier Dvorak français BÉPO.
 
 Astuce : dans Préférences Système > International > Menu Saisie, cochez la case devant « Visualiseur de clavier » et activez-le dans le menu saisie dans la barre des menus pour afficher un petit clavier à l'écran affichant la disposition de clavier.
+
+Licence
+
+La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
