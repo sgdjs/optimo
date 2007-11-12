@@ -530,10 +530,10 @@ input = file(rscDir + 'fr-dvorak-bepo.keylayout')
 toGenerate = [
 #  (name, group, id, additionalKeymap, nameExt)
   (rscDir + 'fr-dvorak-bepo-roman.keylayout', 0, 6538, None, ' (Roman)'),
-  (rscDir + 'fr-dvorak-bepo-azerty.keylayout', 126, -6539, azertyAdditionalKeyMaps, ' - Azerty'),
-  (rscDir + 'fr-dvorak-bepo-azerty-roman.keylayout', 0, 6539, azertyAdditionalKeyMaps, ' - Azerty (Roman)'),
-  (rscDir + 'fr-dvorak-bepo-qwerty.keylayout', 126, -6540, qwertyAdditionalKeyMaps, ' - Qwerty'),
-  (rscDir + 'fr-dvorak-bepo-qwerty-roman.keylayout', 0, 6540, qwertyAdditionalKeyMaps, ' - Qwerty (Roman)'),  
+  (rscDir + 'fr-dvorak-bepo-azerty.keylayout', 126, -6539, azertyAdditionalKeyMaps, ' - Azerty Cmd'),
+  (rscDir + 'fr-dvorak-bepo-azerty-roman.keylayout', 0, 6539, azertyAdditionalKeyMaps, ' - Azerty Cmd (Roman)'),
+  (rscDir + 'fr-dvorak-bepo-qwerty.keylayout', 126, -6540, qwertyAdditionalKeyMaps, ' - Qwerty Cmd'),
+  (rscDir + 'fr-dvorak-bepo-qwerty-roman.keylayout', 0, 6540, qwertyAdditionalKeyMaps, ' - Qwerty Cmd (Roman)'),  
 ]
 
 for (name, group, id, additionalKeymap, nameExt) in toGenerate:

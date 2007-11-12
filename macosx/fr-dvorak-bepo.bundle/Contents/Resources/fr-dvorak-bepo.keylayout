@@ -3,7 +3,7 @@
 <!-- French Dvorak Layout -->
 <!-- http://www.clavier-dvorak.org/ -->
 <!-- version 0.6.4 -->
-<keyboard group="126" id="-6538" name="Dvorak français BÉPO (0.6.4)" maxout="3">
+<keyboard group="126" id="-6538" name="French Dvorak BÉPO (0.6.4)" maxout="3">
   <!--
     This layout is designed for ISO and ANSI keyboards. The extra
     key on an ISO keyboard (next to the left Shift) is optional,
