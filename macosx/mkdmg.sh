@@ -22,7 +22,7 @@ rm -f generate_alt.py devel.txt mkdmg.sh
 cp ../CC-SA-BY.txt ../GFDL.txt  .
 
 # create the image
-hdiutil create $OUT/fr-dvorak-bepo-$VERSION.dmg \
+hdiutil create $OUT/fr-dvorak-bepo-macosx-$VERSION.dmg \
   -ov \
   -srcdir . \
   -volname "fr-dvorak-bépo ($VERSION)"
