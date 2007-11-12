@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	
+	<key>CFBundleGetInfoString</key>
+	<string>French Dvorak BÉPO keyboard layouts 0.6.4, © 2007 clavier-dvorak.org</string>
+	
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.keyboardlayout.fr-dvorak-bepo</string>
+	
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	
+	<key>CFBundleName</key>
+	<string>French Dvorak BÉPO</string>
+	
+	<key>CFBundleShortVersionString</key>
+	<string>0.6.4</string>
+	
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	
+	<key>KLInfo_French Dvorak BÉPO</key>
+	<dict>
+		<key>ISOCode</key>
+		<string>fr</string>
+	</dict>
+	
+	<key>KLInfo_French Dvorak BÉPO (Roman)</key>
+	<dict>
+		<key>ISOCode</key>
+		<string>fr</string>
+	</dict>
+	
+	<key>KLInfo_French Dvorak BÉPO - Azerty Cmd</key>
+	<dict>
+		<key>ISOCode</key>
+		<string>fr</string>
+	</dict>
+	
+	<key>KLInfo_French Dvorak BÉPO - Azerty Cmd (Roman)</key>
+	<dict>
+		<key>ISOCode</key>
+		<string>fr</string>
+	</dict>
+	
+	<key>KLInfo_French Dvorak BÉPO - Qwerty Cmd</key>
+	<dict>
+		<key>ISOCode</key>
+		<string>fr</string>
+	</dict>
+	
+	<key>KLInfo_French Dvorak BÉPO - Qwerty Cmd (Roman)</key>
+	<dict>
+		<key>ISOCode</key>
+		<string>fr</string>
+	</dict>
+</dict>
+</plist>
