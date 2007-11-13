@@ -1851,7 +1851,7 @@
       <when state="acute_diaeresis" output="Ǘ"/>
       <when state="caron_diaeresis" output="Ǚ"/>
       <when state="diaeresis_grave" output="Ǜ"/>
-      <when state="diaeresis_macron" output="Ṻ"/>
+      <when state="diaeresis_macron" output="Ǖ"/>
       <when state="grave_tilde" output="Ṹ"/>
     </action>
 
