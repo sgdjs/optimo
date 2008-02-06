@@ -103,6 +103,9 @@ for c in range(0,0x10000):
   if 'DOTLESS' in n:
     n = n.replace('DOTLESS ', '')
     modifiers.append('DOT ABOVE')
+  if 'MIDDLE DOT' in modifiers:
+    del modifiers[ modifiers.index('MIDDLE DOT') ]
+    modifiers.append('DOT ABOVE')
   if '' in modifiers:
     modifiers.remove('')
   modifiers = sorted([finalModNames[m] for m in modifiers])
@@ -129,8 +132,8 @@ for c in range(0,0x10000):
 
 previous = None
 for c in sorted(d.keys(), case_order):
-  if len(d[c]) != 1:
-    if tuple([]) in d[c] :
+  if len(d[c]) != 1 or len(c[0]) == 1:
+    if tuple([]) in d[c]:
       if dc[ c, tuple([]) ].lower() != previous:
         print
 #      print ' '.join(c), ' '.join([dc[ c, a ] for a in d[c]])
@@ -145,32 +148,53 @@ for c in sorted(d.keys(), case_order):
         print u'      <when state="%s" output="%s"/>' % (fm, dc[ c, mod ] )
       print '    </action>'
 
-      for mod in sorted([m for m in d[c] if len(m) >= 2 ], mod_order) :
+      subd = {}
+      for mod in [m for m in d[c] if len(m) == 2 ] :
         for m1 in mod:
           if (m1,) in d[c]:
-            print '    <action id="%s">' % dc[ c, (m1,) ]
+       #     print '    <action id="%s">' % dc[ c, (m1,) ]
 #            print u'      <when state="%s" output="%s"/> <!-- %s -->' % ('none', dc[ c, (m1,) ], unicodedata.name(dc[ c, (m1,) ]))
-            print u'      <when state="%s" output="%s"/>' % ('none', dc[ c, (m1,) ])
+        #    print u'      <when state="%s" output="%s"/>' % ('none', dc[ c, (m1,) ])
             for m2 in mod:
               if m1 != m2:
+                l = subd.get(dc[ c, (m1,) ], [])
+                l.append((m2, dc[ c, mod ]))
+                subd[dc[ c, (m1,) ]] = l
 #                print u'      <when state="%s" output="%s"/> <!-- %s -->' % (m2, dc[ c, mod ], unicodedata.name(dc[ c, mod ]))
-                print u'      <when state="%s" output="%s"/>' % (m2, dc[ c, mod ])
-            print '    </action>'
+#                print u'      <when state="%s" output="%s"/>' % (m2, dc[ c, mod ])
+      #      print '    </action>'
+      #print subd
+      for c1 in sorted(subd.keys()):
+        print '    <action id="%s">' % c1
+        print u'      <when state="%s" output="%s"/>' % ('none', c1)
+        for m, c2 in subd[c1]:
+          print u'      <when state="%s" output="%s"/>' % (m, c2)
+        print '    </action>'
+        
       previous = dc[ c, tuple([]) ].lower()
               
         
     else:
       raise ' '.join(c), d[c]
-
+#  else:
+#    print '*********************************************', c
+    
+    
 modStates = {}
 for m in dm:
   modStates[m] = [('none', m)]
 
-for m in dmm: 
+print
+print
+print '  <terminators>'
+for m in sorted(dmm, mod_order):
+  if m != tuple():
+    print '    <when state="%s" output="?"/>' % '_'.join(m)
   if len(m) == 2:
     m1, m2 = m
     modStates[m1].append((m2, '%s_%s' % (m1, m2)))
     modStates[m2].append((m1, '%s_%s' % (m1, m2)))
+print '  <terminators>'
   
 print
 print
