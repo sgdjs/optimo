@@ -159,14 +159,14 @@
       <key code="18" output="&#x0022;" />
       <key code="19" output="«" />
       <key code="20" output="»" />
-      <key code="21" output="(" />
+      <key code="21" action="(" />
       <key code="22" output="_" />
-      <key code="23" output=")" />
+      <key code="23" action=")" />
       <key code="24" output="%" />
       <key code="25" output="/" />
-      <key code="26" output="+" />
-      <key code="27" output="=" />
-      <key code="28" output="-" />
+      <key code="26" action="+" />
+      <key code="27" action="=" />
+      <key code="28" action="-" />
       <key code="29" output="*" />
       <key code="30" action="w" />
       <key code="31" action="l" />
@@ -197,7 +197,7 @@
       <key code="66" output="&#x001d;" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
+      <key code="69" action="+" /> <!-- keypad -->
       <key code="70" output="&#x001c;" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
       <key code="72" output="&#x001f;" /> <!-- keypad down arrow? -->
@@ -205,14 +205,14 @@
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="&#x001e;" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
-      <key code="82" output="0" /> <!-- keypad -->
-      <key code="83" output="1" /> <!-- keypad -->
-      <key code="84" output="2" /> <!-- keypad -->
-      <key code="85" output="3" /> <!-- keypad -->
-      <key code="86" output="4" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
+      <key code="82" action="0" /> <!-- keypad -->
+      <key code="83" action="1" /> <!-- keypad -->
+      <key code="84" action="2" /> <!-- keypad -->
+      <key code="85" action="3" /> <!-- keypad -->
+      <key code="86" action="4" /> <!-- keypad -->
       <key code="87" action="5" /> <!-- keypad -->
       <key code="88" action="6" /> <!-- keypad -->
       <key code="89" action="7" /> <!-- keypad -->
@@ -272,10 +272,10 @@
       <key code="15" action="O" />
       <key code="16" output="!" />
       <key code="17" action="È" />
-      <key code="18" output="1" />
-      <key code="19" output="2" />
-      <key code="20" output="3" />
-      <key code="21" output="4" />
+      <key code="18" action="1" />
+      <key code="19" action="2" />
+      <key code="20" action="3" />
+      <key code="21" action="4" />
       <key code="22" action="6" />
       <key code="23" action="5" />
       <key code="24" output="µ" />
@@ -283,7 +283,7 @@
       <key code="26" action="7" />
       <key code="27" output="@" />
       <key code="28" action="8" />
-      <key code="29" output="0" />
+      <key code="29" action="0" />
       <key code="30" action="W" />
       <key code="31" action="L" />
       <key code="32" action="V" />
@@ -313,22 +313,22 @@
       <key code="66" output="*" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
-      <key code="70" output="+" /> <!-- keypad left arrow? -->
+      <key code="69" action="+" /> <!-- keypad -->
+      <key code="70" action="+" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
-      <key code="72" output="=" /> <!-- keypad down arrow? -->
+      <key code="72" action="=" /> <!-- keypad down arrow? -->
       <!-- gap, 73 through 74 -->
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="/" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
-      <key code="82" output="0" /> <!-- keypad -->
-      <key code="83" output="1" /> <!-- keypad -->
-      <key code="84" output="2" /> <!-- keypad -->
-      <key code="85" output="3" /> <!-- keypad -->
-      <key code="86" output="4" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
+      <key code="82" action="0" /> <!-- keypad -->
+      <key code="83" action="1" /> <!-- keypad -->
+      <key code="84" action="2" /> <!-- keypad -->
+      <key code="85" action="3" /> <!-- keypad -->
+      <key code="86" action="4" /> <!-- keypad -->
       <key code="87" action="5" /> <!-- keypad -->
       <key code="88" action="6" /> <!-- keypad -->
       <key code="89" action="7" /> <!-- keypad -->
@@ -388,16 +388,16 @@
       <key code="15" action="O" />
       <key code="16" action="circumflex" />
       <key code="17" action="È" />
-      <key code="18" output="1" />
-      <key code="19" output="2" />
-      <key code="20" output="3" />
-      <key code="21" output="4" />
+      <key code="18" action="1" />
+      <key code="19" action="2" />
+      <key code="20" action="3" />
+      <key code="21" action="4" />
       <key code="22" action="6" />
       <key code="23" action="5" />
       <key code="24" output="%" />
       <key code="25" action="9" />
       <key code="26" action="7" />
-      <key code="27" output="=" />
+      <key code="27" action="=" />
       <key code="28" action="8" />
       <key code="29" action="0" />
       <key code="30" action="W" />
@@ -429,7 +429,7 @@
       <key code="66" output="&#x001d;" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
+      <key code="69" action="+" /> <!-- keypad -->
       <key code="70" output="&#x001c;" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
       <key code="72" output="&#x001f;" /> <!-- keypad down arrow? -->
@@ -437,9 +437,9 @@
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="&#x001e;" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
       <key code="82" action="0" /> <!-- keypad -->
       <key code="83" action="1" /> <!-- keypad -->
       <key code="84" action="2" /> <!-- keypad -->
@@ -507,14 +507,14 @@
       <key code="18" output="&#x0022;" />
       <key code="19" output="«" />
       <key code="20" output="»" />
-      <key code="21" output="(" />
+      <key code="21" action="(" />
       <key code="22" output="_" />
-      <key code="23" output=")" />
+      <key code="23" action=")" />
       <key code="24" output="µ" />
       <key code="25" output="/" />
-      <key code="26" output="+" />
+      <key code="26" action="+" />
       <key code="27" output="@" />
-      <key code="28" output="-" />
+      <key code="28" action="-" />
       <key code="29" output="*" />
       <key code="30" action="w" />
       <key code="31" action="l" />
@@ -545,17 +545,17 @@
       <key code="66" output="*" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
-      <key code="70" output="+" /> <!-- keypad left arrow? -->
+      <key code="69" action="+" /> <!-- keypad -->
+      <key code="70" action="+" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
-      <key code="72" output="=" /> <!-- keypad down arrow? -->
+      <key code="72" action="=" /> <!-- keypad down arrow? -->
       <!-- gap, 73 through 74 -->
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="/" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
       <key code="82" action="0" /> <!-- keypad -->
       <key code="83" action="1" /> <!-- keypad -->
       <key code="84" action="2" /> <!-- keypad -->
@@ -661,7 +661,7 @@
       <key code="66" output="&#x001d;" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
+      <key code="69" action="+" /> <!-- keypad -->
       <key code="70" output="&#x001c;" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
       <key code="72" output="&#x001f;" /> <!-- keypad down arrow? -->
@@ -669,9 +669,9 @@
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="&#x001e;" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
       <key code="82" action="0" /> <!-- keypad -->
       <key code="83" action="1" /> <!-- keypad -->
       <key code="84" action="2" /> <!-- keypad -->
@@ -777,17 +777,17 @@
       <key code="66" output="*" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
-      <key code="70" output="+" /> <!-- keypad left arrow? -->
+      <key code="69" action="+" /> <!-- keypad -->
+      <key code="70" action="+" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
-      <key code="72" output="=" /> <!-- keypad down arrow? -->
+      <key code="72" action="=" /> <!-- keypad down arrow? -->
       <!-- gap, 73 through 74 -->
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="/" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
       <key code="82" action="0" /> <!-- keypad -->
       <key code="83" action="1" /> <!-- keypad -->
       <key code="84" action="2" /> <!-- keypad -->
@@ -893,17 +893,17 @@
       <key code="66" output="*" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
-      <key code="70" output="+" /> <!-- keypad left arrow? -->
+      <key code="69" action="+" /> <!-- keypad -->
+      <key code="70" action="+" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
-      <key code="72" output="=" /> <!-- keypad down arrow? -->
+      <key code="72" action="=" /> <!-- keypad down arrow? -->
       <!-- gap, 73 through 74 -->
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="/" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
       <key code="82" action="0" /> <!-- keypad -->
       <key code="83" action="1" /> <!-- keypad -->
       <key code="84" action="2" /> <!-- keypad -->
@@ -1009,7 +1009,7 @@
       <key code="66" output="&#x001d;" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
+      <key code="69" action="+" /> <!-- keypad -->
       <key code="70" output="&#x001c;" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
       <key code="72" output="&#x001f;" /> <!-- keypad down arrow? -->
@@ -1017,9 +1017,9 @@
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="&#x001e;" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
       <key code="82" action="0" /> <!-- keypad -->
       <key code="83" action="1" /> <!-- keypad -->
       <key code="84" action="2" /> <!-- keypad -->
@@ -1125,7 +1125,7 @@
       <key code="66" output="&#x001d;" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
+      <key code="69" action="+" /> <!-- keypad -->
       <key code="70" output="&#x001c;" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
       <key code="72" output="&#x001f;" /> <!-- keypad down arrow? -->
@@ -1133,9 +1133,9 @@
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="&#x001e;" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
       <key code="82" action="0" /> <!-- keypad -->
       <key code="83" action="1" /> <!-- keypad -->
       <key code="84" action="2" /> <!-- keypad -->
@@ -1206,7 +1206,7 @@
       <key code="21" action="4" />
       <key code="22" action="6" />
       <key code="23" action="5" />
-      <key code="24" output="=" />
+      <key code="24" action="=" />
       <key code="25" action="9" />
       <key code="26" action="7" />
       <key code="27" output="&#x001f;" />
@@ -1241,7 +1241,7 @@
       <key code="66" output="&#x001d;" /> <!-- keypad right arrow? -->
       <key code="67" output="*" /> <!-- keypad -->
       <!-- gap, 68 -->
-      <key code="69" output="+" /> <!-- keypad -->
+      <key code="69" action="+" /> <!-- keypad -->
       <key code="70" output="&#x001c;" /> <!-- keypad left arrow? -->
       <key code="71" output="&#x001b;" /> <!-- Clear -->
       <key code="72" output="&#x001f;" /> <!-- keypad down arrow? -->
@@ -1249,9 +1249,9 @@
       <key code="75" output="/" /> <!-- keypad -->
       <key code="76" output="&#x0003;" /> <!-- Enter -->
       <key code="77" output="&#x001e;" /> <!-- keypad up arrow? -->
-      <key code="78" output="-" /> <!-- keypad -->
+      <key code="78" action="-" /> <!-- keypad -->
       <!-- gap, 79 through 80 -->
-      <key code="81" output="=" /> <!-- keypad -->
+      <key code="81" action="=" /> <!-- keypad -->
       <key code="82" action="0" /> <!-- keypad -->
       <key code="83" action="1" /> <!-- keypad -->
       <key code="84" action="2" /> <!-- keypad -->
@@ -2833,6 +2833,31 @@
     <action id="9">
       <when state="none" output="9"/>
       <when state="circumflex" output="⁹"/>
+    </action>
+
+    <action id="+">
+      <when state="none" output="+"/>
+      <when state="circumflex" output="⁺"/>
+    </action>
+
+    <action id="(">
+      <when state="none" output="("/>
+      <when state="circumflex" output="⁽"/>
+    </action>
+
+    <action id=")">
+      <when state="none" output=")"/>
+      <when state="circumflex" output="⁾"/>
+    </action>
+
+    <action id="=">
+      <when state="none" output="="/>
+      <when state="circumflex" output="⁼"/>
+    </action>
+
+    <action id="-">
+      <when state="none" output="-"/>
+      <when state="circumflex" output="⁻"/>
     </action>
 
     <action id=" ">
