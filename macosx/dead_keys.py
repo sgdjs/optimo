@@ -191,6 +191,7 @@ for name, C in unicode_dict.iteritems():
     modSet = d.get( key , set([]) )
     if modifiers in modSet:
       print name, "est déjà défini."
+      dc[ (key, modifiers) ] = min( dc[ (key, modifiers) ], C )
     else :
       dc[ (key, modifiers) ] = C
     modSet.add( modifiers )
