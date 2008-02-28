@@ -1368,22 +1368,22 @@
     </action>
     <action id="à">
       <when state="none" output="à"/>
-      <when state="circumflex" output="ầ"/>
       <when state="breve" output="ằ"/>
+      <when state="circumflex" output="ầ"/>
     </action>
     <action id="á">
       <when state="none" output="á"/>
-      <when state="circumflex" output="ấ"/>
       <when state="breve" output="ắ"/>
+      <when state="circumflex" output="ấ"/>
       <when state="ringabove" output="ǻ"/>
     </action>
     <action id="â">
       <when state="none" output="â"/>
-      <when state="grave" output="ầ"/>
       <when state="acute" output="ấ"/>
       <when state="belowdot" output="ậ"/>
-      <when state="tilde" output="ẫ"/>
+      <when state="grave" output="ầ"/>
       <when state="hookabove" output="ẩ"/>
+      <when state="tilde" output="ẫ"/>
     </action>
     <action id="ã">
       <when state="none" output="ã"/>
@@ -1405,11 +1405,11 @@
     </action>
     <action id="ă">
       <when state="none" output="ă"/>
-      <when state="tilde" output="ẵ"/>
+      <when state="acute" output="ắ"/>
       <when state="belowdot" output="ặ"/>
       <when state="grave" output="ằ"/>
       <when state="hookabove" output="ẳ"/>
-      <when state="acute" output="ắ"/>
+      <when state="tilde" output="ẵ"/>
     </action>
     <action id="ȧ">
       <when state="none" output="ȧ"/>
@@ -1417,8 +1417,8 @@
     </action>
     <action id="ạ">
       <when state="none" output="ạ"/>
-      <when state="circumflex" output="ậ"/>
       <when state="breve" output="ặ"/>
+      <when state="circumflex" output="ậ"/>
     </action>
     <action id="ả">
       <when state="none" output="ả"/>
@@ -1461,22 +1461,22 @@
     </action>
     <action id="À">
       <when state="none" output="À"/>
-      <when state="circumflex" output="Ầ"/>
       <when state="breve" output="Ằ"/>
+      <when state="circumflex" output="Ầ"/>
     </action>
     <action id="Á">
       <when state="none" output="Á"/>
-      <when state="circumflex" output="Ấ"/>
       <when state="breve" output="Ắ"/>
+      <when state="circumflex" output="Ấ"/>
       <when state="ringabove" output="Ǻ"/>
     </action>
     <action id="Â">
       <when state="none" output="Â"/>
-      <when state="grave" output="Ầ"/>
       <when state="acute" output="Ấ"/>
       <when state="belowdot" output="Ậ"/>
-      <when state="tilde" output="Ẫ"/>
+      <when state="grave" output="Ầ"/>
       <when state="hookabove" output="Ẩ"/>
+      <when state="tilde" output="Ẫ"/>
     </action>
     <action id="Ã">
       <when state="none" output="Ã"/>
@@ -1498,11 +1498,11 @@
     </action>
     <action id="Ă">
       <when state="none" output="Ă"/>
-      <when state="tilde" output="Ẵ"/>
+      <when state="acute" output="Ắ"/>
       <when state="belowdot" output="Ặ"/>
       <when state="grave" output="Ằ"/>
       <when state="hookabove" output="Ẳ"/>
-      <when state="acute" output="Ắ"/>
+      <when state="tilde" output="Ẵ"/>
     </action>
     <action id="Ȧ">
       <when state="none" output="Ȧ"/>
@@ -1510,8 +1510,8 @@
     </action>
     <action id="Ạ">
       <when state="none" output="Ạ"/>
-      <when state="circumflex" output="Ậ"/>
       <when state="breve" output="Ặ"/>
+      <when state="circumflex" output="Ậ"/>
     </action>
     <action id="Ả">
       <when state="none" output="Ả"/>
@@ -1698,16 +1698,16 @@
     </action>
     <action id="ê">
       <when state="none" output="ê"/>
-      <when state="grave" output="ề"/>
       <when state="acute" output="ế"/>
       <when state="belowdot" output="ệ"/>
-      <when state="tilde" output="ễ"/>
+      <when state="grave" output="ề"/>
       <when state="hookabove" output="ể"/>
+      <when state="tilde" output="ễ"/>
     </action>
     <action id="ē">
       <when state="none" output="ē"/>
-      <when state="grave" output="ḕ"/>
       <when state="acute" output="ḗ"/>
+      <when state="grave" output="ḕ"/>
     </action>
     <action id="ĕ">
       <when state="none" output="ĕ"/>
@@ -1770,16 +1770,16 @@
     </action>
     <action id="Ê">
       <when state="none" output="Ê"/>
-      <when state="grave" output="Ề"/>
       <when state="acute" output="Ế"/>
       <when state="belowdot" output="Ệ"/>
-      <when state="tilde" output="Ễ"/>
+      <when state="grave" output="Ề"/>
       <when state="hookabove" output="Ể"/>
+      <when state="tilde" output="Ễ"/>
     </action>
     <action id="Ē">
       <when state="none" output="Ē"/>
-      <when state="grave" output="Ḕ"/>
       <when state="acute" output="Ḗ"/>
+      <when state="grave" output="Ḕ"/>
     </action>
     <action id="Ĕ">
       <when state="none" output="Ĕ"/>
@@ -1825,6 +1825,7 @@
       <when state="none" output="f"/>
       <when state="abovedot" output="ḟ"/>
       <when state="currency" output="ƒ"/>
+      <when state="hook" output="ƒ"/>
       <when state="middletilde" output="ᵮ"/>
       <when state="palatalhook" output="ᶂ"/>
     </action>
@@ -2131,37 +2132,37 @@
     <action id="ò">
       <when state="none" output="ò"/>
       <when state="circumflex" output="ồ"/>
-      <when state="macron" output="ṑ"/>
       <when state="horn" output="ờ"/>
+      <when state="macron" output="ṑ"/>
     </action>
     <action id="ó">
       <when state="none" output="ó"/>
       <when state="circumflex" output="ố"/>
-      <when state="tilde" output="ṍ"/>
-      <when state="stroke" output="ǿ"/>
-      <when state="macron" output="ṓ"/>
       <when state="horn" output="ớ"/>
+      <when state="macron" output="ṓ"/>
+      <when state="stroke" output="ǿ"/>
+      <when state="tilde" output="ṍ"/>
     </action>
     <action id="ô">
       <when state="none" output="ô"/>
-      <when state="grave" output="ồ"/>
       <when state="acute" output="ố"/>
       <when state="belowdot" output="ộ"/>
-      <when state="tilde" output="ỗ"/>
+      <when state="grave" output="ồ"/>
       <when state="hookabove" output="ổ"/>
+      <when state="tilde" output="ỗ"/>
     </action>
     <action id="õ">
       <when state="none" output="õ"/>
-      <when state="macron" output="ȭ"/>
-      <when state="horn" output="ỡ"/>
       <when state="acute" output="ṍ"/>
-      <when state="diaeresis" output="ṏ"/>
       <when state="circumflex" output="ỗ"/>
+      <when state="diaeresis" output="ṏ"/>
+      <when state="horn" output="ỡ"/>
+      <when state="macron" output="ȭ"/>
     </action>
     <action id="ö">
       <when state="none" output="ö"/>
-      <when state="tilde" output="ṏ"/>
       <when state="macron" output="ȫ"/>
+      <when state="tilde" output="ṏ"/>
     </action>
     <action id="ø">
       <when state="none" output="ø"/>
@@ -2169,20 +2170,20 @@
     </action>
     <action id="ō">
       <when state="none" output="ō"/>
-      <when state="tilde" output="ȭ"/>
-      <when state="grave" output="ṑ"/>
       <when state="abovedot" output="ȱ"/>
-      <when state="ogonek" output="ǭ"/>
-      <when state="diaeresis" output="ȫ"/>
       <when state="acute" output="ṓ"/>
+      <when state="diaeresis" output="ȫ"/>
+      <when state="grave" output="ṑ"/>
+      <when state="ogonek" output="ǭ"/>
+      <when state="tilde" output="ȭ"/>
     </action>
     <action id="ơ">
       <when state="none" output="ơ"/>
-      <when state="grave" output="ờ"/>
-      <when state="tilde" output="ỡ"/>
-      <when state="hookabove" output="ở"/>
-      <when state="belowdot" output="ợ"/>
       <when state="acute" output="ớ"/>
+      <when state="belowdot" output="ợ"/>
+      <when state="grave" output="ờ"/>
+      <when state="hookabove" output="ở"/>
+      <when state="tilde" output="ỡ"/>
     </action>
     <action id="ǫ">
       <when state="none" output="ǫ"/>
@@ -2199,8 +2200,8 @@
     </action>
     <action id="ỏ">
       <when state="none" output="ỏ"/>
-      <when state="horn" output="ở"/>
       <when state="circumflex" output="ổ"/>
+      <when state="horn" output="ở"/>
     </action>
     <action id="O">
       <when state="none" output="O"/>
@@ -2245,37 +2246,37 @@
     <action id="Ò">
       <when state="none" output="Ò"/>
       <when state="circumflex" output="Ồ"/>
-      <when state="macron" output="Ṑ"/>
       <when state="horn" output="Ờ"/>
+      <when state="macron" output="Ṑ"/>
     </action>
     <action id="Ó">
       <when state="none" output="Ó"/>
       <when state="circumflex" output="Ố"/>
-      <when state="tilde" output="Ṍ"/>
-      <when state="stroke" output="Ǿ"/>
-      <when state="macron" output="Ṓ"/>
       <when state="horn" output="Ớ"/>
+      <when state="macron" output="Ṓ"/>
+      <when state="stroke" output="Ǿ"/>
+      <when state="tilde" output="Ṍ"/>
     </action>
     <action id="Ô">
       <when state="none" output="Ô"/>
-      <when state="grave" output="Ồ"/>
       <when state="acute" output="Ố"/>
       <when state="belowdot" output="Ộ"/>
-      <when state="tilde" output="Ỗ"/>
+      <when state="grave" output="Ồ"/>
       <when state="hookabove" output="Ổ"/>
+      <when state="tilde" output="Ỗ"/>
     </action>
     <action id="Õ">
       <when state="none" output="Õ"/>
-      <when state="macron" output="Ȭ"/>
-      <when state="horn" output="Ỡ"/>
       <when state="acute" output="Ṍ"/>
-      <when state="diaeresis" output="Ṏ"/>
       <when state="circumflex" output="Ỗ"/>
+      <when state="diaeresis" output="Ṏ"/>
+      <when state="horn" output="Ỡ"/>
+      <when state="macron" output="Ȭ"/>
     </action>
     <action id="Ö">
       <when state="none" output="Ö"/>
-      <when state="tilde" output="Ṏ"/>
       <when state="macron" output="Ȫ"/>
+      <when state="tilde" output="Ṏ"/>
     </action>
     <action id="Ø">
       <when state="none" output="Ø"/>
@@ -2283,20 +2284,20 @@
     </action>
     <action id="Ō">
       <when state="none" output="Ō"/>
-      <when state="tilde" output="Ȭ"/>
-      <when state="grave" output="Ṑ"/>
       <when state="abovedot" output="Ȱ"/>
-      <when state="ogonek" output="Ǭ"/>
-      <when state="diaeresis" output="Ȫ"/>
       <when state="acute" output="Ṓ"/>
+      <when state="diaeresis" output="Ȫ"/>
+      <when state="grave" output="Ṑ"/>
+      <when state="ogonek" output="Ǭ"/>
+      <when state="tilde" output="Ȭ"/>
     </action>
     <action id="Ơ">
       <when state="none" output="Ơ"/>
-      <when state="grave" output="Ờ"/>
-      <when state="tilde" output="Ỡ"/>
-      <when state="hookabove" output="Ở"/>
-      <when state="belowdot" output="Ợ"/>
       <when state="acute" output="Ớ"/>
+      <when state="belowdot" output="Ợ"/>
+      <when state="grave" output="Ờ"/>
+      <when state="hookabove" output="Ở"/>
+      <when state="tilde" output="Ỡ"/>
     </action>
     <action id="Ǫ">
       <when state="none" output="Ǫ"/>
@@ -2313,8 +2314,8 @@
     </action>
     <action id="Ỏ">
       <when state="none" output="Ỏ"/>
-      <when state="horn" output="Ở"/>
       <when state="circumflex" output="Ổ"/>
+      <when state="horn" output="Ở"/>
     </action>
 
     <action id="ɛ">
@@ -2435,9 +2436,9 @@
     </action>
     <action id="ṡ">
       <when state="none" output="ṡ"/>
-      <when state="caron" output="ṧ"/>
       <when state="acute" output="ṥ"/>
       <when state="belowdot" output="ṩ"/>
+      <when state="caron" output="ṧ"/>
     </action>
     <action id="ṣ">
       <when state="none" output="ṣ"/>
@@ -2467,9 +2468,9 @@
     </action>
     <action id="Ṡ">
       <when state="none" output="Ṡ"/>
-      <when state="caron" output="Ṧ"/>
-      <when state="belowdot" output="Ṩ"/>
       <when state="acute" output="Ṥ"/>
+      <when state="belowdot" output="Ṩ"/>
+      <when state="caron" output="Ṧ"/>
     </action>
     <action id="Ṣ">
       <when state="none" output="Ṣ"/>
@@ -2576,26 +2577,26 @@
     </action>
     <action id="ù">
       <when state="none" output="ù"/>
-      <when state="horn" output="ừ"/>
       <when state="diaeresis" output="ǜ"/>
+      <when state="horn" output="ừ"/>
     </action>
     <action id="ú">
       <when state="none" output="ú"/>
-      <when state="tilde" output="ṹ"/>
-      <when state="horn" output="ứ"/>
       <when state="diaeresis" output="ǘ"/>
+      <when state="horn" output="ứ"/>
+      <when state="tilde" output="ṹ"/>
     </action>
     <action id="ü">
       <when state="none" output="ü"/>
-      <when state="caron" output="ǚ"/>
-      <when state="macron" output="ǖ"/>
       <when state="acute" output="ǘ"/>
+      <when state="caron" output="ǚ"/>
       <when state="grave" output="ǜ"/>
+      <when state="macron" output="ǖ"/>
     </action>
     <action id="ũ">
       <when state="none" output="ũ"/>
-      <when state="horn" output="ữ"/>
       <when state="acute" output="ṹ"/>
+      <when state="horn" output="ữ"/>
     </action>
     <action id="ū">
       <when state="none" output="ū"/>
@@ -2603,11 +2604,11 @@
     </action>
     <action id="ư">
       <when state="none" output="ư"/>
-      <when state="grave" output="ừ"/>
-      <when state="tilde" output="ữ"/>
-      <when state="hookabove" output="ử"/>
-      <when state="belowdot" output="ự"/>
       <when state="acute" output="ứ"/>
+      <when state="belowdot" output="ự"/>
+      <when state="grave" output="ừ"/>
+      <when state="hookabove" output="ử"/>
+      <when state="tilde" output="ữ"/>
     </action>
     <action id="ǔ">
       <when state="none" output="ǔ"/>
@@ -2655,26 +2656,26 @@
     </action>
     <action id="Ù">
       <when state="none" output="Ù"/>
-      <when state="horn" output="Ừ"/>
       <when state="diaeresis" output="Ǜ"/>
+      <when state="horn" output="Ừ"/>
     </action>
     <action id="Ú">
       <when state="none" output="Ú"/>
-      <when state="tilde" output="Ṹ"/>
-      <when state="horn" output="Ứ"/>
       <when state="diaeresis" output="Ǘ"/>
+      <when state="horn" output="Ứ"/>
+      <when state="tilde" output="Ṹ"/>
     </action>
     <action id="Ü">
       <when state="none" output="Ü"/>
-      <when state="caron" output="Ǚ"/>
-      <when state="macron" output="Ǖ"/>
       <when state="acute" output="Ǘ"/>
+      <when state="caron" output="Ǚ"/>
       <when state="grave" output="Ǜ"/>
+      <when state="macron" output="Ǖ"/>
     </action>
     <action id="Ũ">
       <when state="none" output="Ũ"/>
-      <when state="horn" output="Ữ"/>
       <when state="acute" output="Ṹ"/>
+      <when state="horn" output="Ữ"/>
     </action>
     <action id="Ū">
       <when state="none" output="Ū"/>
@@ -2682,11 +2683,11 @@
     </action>
     <action id="Ư">
       <when state="none" output="Ư"/>
-      <when state="grave" output="Ừ"/>
-      <when state="tilde" output="Ữ"/>
-      <when state="hookabove" output="Ử"/>
-      <when state="belowdot" output="Ự"/>
       <when state="acute" output="Ứ"/>
+      <when state="belowdot" output="Ự"/>
+      <when state="grave" output="Ừ"/>
+      <when state="hookabove" output="Ử"/>
+      <when state="tilde" output="Ữ"/>
     </action>
     <action id="Ǔ">
       <when state="none" output="Ǔ"/>
