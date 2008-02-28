@@ -2,8 +2,8 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- French Dvorak Layout -->
 <!-- http://www.clavier-dvorak.org/ -->
-<!-- version 0.6.4 -->
-<keyboard group="126" id="-6538" name="French Dvorak BÉPO (0.6.4)" maxout="3">
+<!-- version 0.6.5 -->
+<keyboard group="126" id="-6538" name="French Dvorak" maxout="3">
   <!--
     This layout is designed for ISO and ANSI keyboards. The extra
     key on an ISO keyboard (next to the left Shift) is optional,
@@ -607,7 +607,7 @@
       <key code="2" action="diaeresis" />
       <key code="3" output="€" />
       <key code="4" output="©" />
-      <key code="5" output="¿" />
+      <key code="5" output="’" />
       <key code="6" output="~" />
       <key code="7" output="\" />
       <key code="8" output="{" />
@@ -618,7 +618,7 @@
       <key code="13" output="&#x0026;" />
       <key code="14" output="§" />
       <key code="15" output="œ" />
-      <key code="16" output="¡" />
+      <key code="16" action="caron" />
       <key code="17" output="`" />
       <key code="18" output="—" />
       <key code="19" output="&#x003c;" />
@@ -633,8 +633,8 @@
       <key code="28" output="–" />
       <key code="29" output="×" />
       <key code="30" action="breve" />
-      <key code="31" output="£" />
-      <key code="32" action="caron" />
+      <key code="31" action="stroke" />
+<!--      <key code="32" action="" /> -->
       <key code="33" output="ə" />
       <key code="34" output="ð" />
       <key code="35" action="ogonek" />
@@ -646,10 +646,10 @@
       <key code="41" output="®" />
       <key code="42" action="cedilla" />
       <key code="43" action="ringabove" />
-      <key code="44" output="†" />
-      <key code="45" output="’" />
+      <key code="44" output="ĳ" />
+<!--      <key code="45" output="" /> -->
       <key code="46" action="ø" />
-      <!-- <key code="47" output="" /> -->
+       <key code="47" output="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <!-- <key code="49" output="" /> --> <!-- Space -->
       <key code="50" output="/" />
@@ -721,9 +721,9 @@
       <key code="0" action="Æ" />
       <key code="1" action="Ù" />
       <key code="2" action="abovedot" />
-      <!-- <key code="3" output="" /> -->
+      <key code="3" action="currency" />
       <key code="4" output="¢" />
-      <!-- <key code="5" output="" /> -->
+      <key code="5" output="¿" />
       <key code="6" action="tilde" />
       <key code="7" output="¥" />
       <!-- <key code="8" output="" /> -->
@@ -734,7 +734,7 @@
       <key code="13" action="acute" />
       <key code="14" output="¶" />
       <key code="15" output="Œ" />
-      <!-- <key code="16" output="" /> -->
+      <key code="16" output="¡" />
       <key code="17" action="grave" />
       <key code="18" output="¹" />
       <key code="19" output="²" />
@@ -762,10 +762,10 @@
       <!-- <key code="41" output="" /> -->
       <!-- <key code="42" output="" /> -->
       <!-- <key code="43" output="" /> -->
-      <key code="44" output="‡" />
+      <key code="44" output="Ĳ" />
       <key code="45" output="‘" />
       <key code="46" action="Ø" />
-      <!-- <key code="47" output="" /> -->
+      <key code="47" output="‡" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" output=" " /> <!-- Space -->
       <!-- <key code="50" output="" /> -->
@@ -837,9 +837,9 @@
       <key code="0" action="æ" />
       <key code="1" action="ù" />
       <key code="2" action="abovedot" />
-      <!-- <key code="3" output="" /> -->
+      <key code="3" action="currency" />
       <key code="4" output="¢" />
-      <!-- <key code="5" output="" /> -->
+      <key code="5" output="¿" />
       <key code="6" action="tilde" />
       <key code="7" output="¥" />
       <!-- <key code="8" output="" /> -->
@@ -850,7 +850,7 @@
       <key code="13" action="acute" />
       <key code="14" output="¶" />
       <key code="15" output="œ" />
-      <!-- <key code="16" output="" /> -->
+      <key code="16" output="¡" />
       <key code="17" action="grave" />
       <key code="18" output="¹" />
       <key code="19" output="²" />
@@ -878,10 +878,10 @@
       <!-- <key code="41" output="" /> -->
       <!-- <key code="42" output="" /> -->
       <!-- <key code="43" output="" /> -->
-      <key code="44" output="‡" />
+      <key code="44" output="ĳ" />
       <key code="45" output="‘" />
       <key code="46" output="ø" />
-      <!-- <key code="47" output="" /> -->
+      <key code="47" output="‡" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" output=" " /> <!-- Space -->
       <!-- <key code="50" output="" /> -->
@@ -955,7 +955,7 @@
       <key code="2" action="diaeresis" />
       <key code="3" output="€" />
       <key code="4" output="©" />
-      <key code="5" output="¿" />
+      <key code="5" output="’" />
       <key code="6" output="~" />
       <key code="7" output="\" />
       <key code="8" output="{" />
@@ -966,7 +966,7 @@
       <key code="13" output="&#x0026;" />
       <key code="14" output="§" />
       <key code="15" output="Œ" />
-      <key code="16" output="¡" />
+      <key code="16" action="caron" />
       <key code="17" output="`" />
       <key code="18" output="—" />
       <key code="19" output="&#x003c;" />
@@ -981,8 +981,8 @@
       <key code="28" output="–" />
       <key code="29" output="×" />
       <key code="30" action="breve" />
-      <key code="31" output="£" />
-      <key code="32" action="caron" />
+      <key code="31" action="stroke" />
+<!--      <key code="32" action="" /> -->
       <key code="33" output="Ə" />
       <key code="34" output="Ð" />
       <key code="35" action="ogonek" />
@@ -994,10 +994,10 @@
       <key code="41" output="®" />
       <key code="42" action="cedilla" />
       <key code="43" action="ringabove" />
-      <key code="44" output="†" />
-      <key code="45" output="’" />
+      <key code="44" output="Ĳ" />
+<!--      <key code="45" output="" /> -->
       <key code="46" action="Ø" />
-      <!-- <key code="47" output="" /> -->
+      <key code="47" output="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <!-- <key code="49" output="" /> --> <!-- Space -->
       <key code="50" output="/" />
@@ -1111,7 +1111,7 @@
       <key code="42" output="¸" />
       <key code="43" output="˚" />
       <key code="44" output="†" />
-      <key code="45" output="’" />
+<!--      <key code="45" output="" /> -->
       <key code="46" action="ø" />
       <!-- <key code="47" output="" /> -->
       <key code="48" output="&#x0009;" /> <!-- Tab -->

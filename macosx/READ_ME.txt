@@ -1,5 +1,4 @@
-French Dvorak BÉPO keyboard layout
-0.6.4
+French Dvorak BÉPO keyboard layout, version 0.6.5
 http://www.clavier-dvorak.org/
 
 
@@ -9,12 +8,12 @@ This package contains the French Dvorak BÉPO keyboard layout, optimized for Fre
 
 It contains six keyboard layouts:
 
-French Dvorak BÉPO (0.6.4)
-French Dvorak BÉPO (0.6.4) (Roman)
-French Dvorak BÉPO (0.6.4) - Qwerty ⌘
-French Dvorak BÉPO (0.6.4) - Qwerty ⌘ (Roman)
-French Dvorak BÉPO (0.6.4) - Azerty ⌘
-French Dvorak BÉPO (0.6.4) - Azerty ⌘ (Roman)
+French Dvorak
+French Dvorak (Roman)
+French Dvorak - Qwerty ⌘
+French Dvorak - Qwerty ⌘ (Roman)
+French Dvorak - Azerty ⌘
+French Dvorak - Azerty ⌘ (Roman)
 
 The ones with "(Roman)" in their name are defined as Roman keyboard layouts. Use these if you experience problems with older applications (the active keyboard layout switches to another one). The other ones are defined as Unicode keyboard layouts.
 

@@ -1,5 +1,4 @@
-﻿Disposition de clavier Dvorak français BÉPO
-0.6.4
+﻿Disposition de clavier Dvorak français BÉPO, version 0.6.5
 http://www.clavier-dvorak.org/
 
 
@@ -9,12 +8,12 @@ Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimis�
 
 Il contient six dispositions de clavier:
 
-Dvorak français BÉPO (0.6.4)
-Dvorak français BÉPO (0.6.4) (Roman)
-Dvorak français BÉPO (0.6.4) - Azerty ⌘
-Dvorak français BÉPO (0.6.4) - Azerty ⌘ (Roman)
-Dvorak français BÉPO (0.6.4) - Qwerty ⌘
-Dvorak français BÉPO (0.6.4) - Qwerty ⌘ (Roman)
+Dvorak français
+Dvorak français (Roman)
+Dvorak français - Azerty ⌘
+Dvorak français - Azerty ⌘ (Roman)
+Dvorak français - Qwerty ⌘
+Dvorak français - Qwerty ⌘ (Roman)
 
 Celles dont le nom contient « (Roman) » sont définies comme des dispositions de clavier Roman. Utilisez celles-ci si vous rencontrez des problèmes avec d'anciennes applications (la disposition de clavier active bascule vers une autre). Les autres sont définies comme des dispositions de clavier Unicode.
 
