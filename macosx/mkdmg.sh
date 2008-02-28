@@ -16,7 +16,7 @@ pushd pilotes/macosx
 python generate_alt.py
 
 # remove the devel files
-rm -f generate_alt.py devel.txt mkdmg.sh 
+rm -f generate_alt.py devel.txt mkdmg.sh dead_keys.py
 
 # copy tho licenses
 cp ../CC-SA-BY.txt ../GFDL.txt  .
