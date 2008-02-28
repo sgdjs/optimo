@@ -241,7 +241,7 @@ for c in sorted(d.keys(), case_order):
       for c1 in sorted(subd.keys()):
         print '    <action id="%s">' % c1
         print u'      <when state="%s" output="%s"/>' % ('none', c1)
-        for m, c2 in subd[c1]:
+        for m, c2 in sorted(subd[c1]):
           print u'      <when state="%s" output="%s"/>' % (m, c2)
         print '    </action>'
         
