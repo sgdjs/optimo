@@ -2,11 +2,8 @@
 
 import unicodedata, re, sys
 
+# the reg exp used to parse the unicode name
 chrRegExp = re.compile(r'LATIN (CAPITAL|SMALL) LETTER (.+)')
-d = {}
-dc = {}
-dm = set()
-dmm = set()
 
 finalModNames = {
 'ACUTE': 'acute',
@@ -57,34 +54,34 @@ finalModNames = {
 }
 
 currency = {
-u'₳': 'LATIN CAPITAL LETTER A WITH CURRENCY',
-u'₱': 'LATIN CAPITAL LETTER B WITH CURRENCY',
-u'₡': 'LATIN CAPITAL LETTER C WITH CURRENCY',
-u'¢': 'LATIN SMALL LETTER C WITH CURRENCY',
-u'₯': 'LATIN CAPITAL LETTER D WITH CURRENCY',
-u'₫': 'LATIN SMALL LETTER D WITH CURRENCY',
-u'₠': 'LATIN CAPITAL LETTER E WITH CURRENCY',
-u'€': 'LATIN SMALL LETTER E WITH CURRENCY',
-u'₣': 'LATIN CAPITAL LETTER F WITH CURRENCY',
-u'ƒ': 'LATIN SMALL LETTER F WITH CURRENCY',
-u'₲': 'LATIN CAPITAL LETTER G WITH CURRENCY',
-u'₴': 'LATIN SMALL LETTER G WITH CURRENCY',
-u'₭': 'LATIN CAPITAL LETTER K WITH CURRENCY',
-u'₤': 'LATIN CAPITAL LETTER L WITH CURRENCY',
-u'£': 'LATIN SMALL LETTER L WITH CURRENCY',
-u'ℳ': 'LATIN CAPITAL LETTER M WITH CURRENCY',
-u'₥': 'LATIN SMALL LETTER M WITH CURRENCY',
-u'₦': 'LATIN CAPITAL LETTER N WITH CURRENCY',
-u'₧': 'LATIN CAPITAL LETTER P WITH CURRENCY',
-u'₰': 'LATIN SMALL LETTER P WITH CURRENCY',
-u'₨': 'LATIN SMALL LETTER R WITH CURRENCY',
-u'₢': 'LATIN SMALL LETTER R WITH CURRENCY',
-u'$': 'LATIN CAPITAL LETTER S WITH CURRENCY',
-u'₪': 'LATIN SMALL LETTER S WITH CURRENCY',
-u'₮': 'LATIN CAPITAL LETTER T WITH CURRENCY',
-u'₩': 'LATIN CAPITAL LETTER W WITH CURRENCY',
-u'₵': 'LATIN CAPITAL LETTER X WITH CURRENCY',
-u'¥': 'LATIN CAPITAL LETTER Y WITH CURRENCY',
+'LATIN CAPITAL LETTER A WITH CURRENCY': u'₳',
+'LATIN CAPITAL LETTER B WITH CURRENCY': u'₱',
+'LATIN CAPITAL LETTER C WITH CURRENCY': u'₡',
+'LATIN SMALL LETTER C WITH CURRENCY': u'¢',
+'LATIN CAPITAL LETTER D WITH CURRENCY': u'₯',
+'LATIN SMALL LETTER D WITH CURRENCY': u'₫',
+'LATIN CAPITAL LETTER E WITH CURRENCY': u'₠',
+'LATIN SMALL LETTER E WITH CURRENCY': u'€',
+'LATIN CAPITAL LETTER F WITH CURRENCY': u'₣',
+'LATIN SMALL LETTER F WITH CURRENCY': u'ƒ',
+'LATIN CAPITAL LETTER G WITH CURRENCY': u'₲',
+'LATIN SMALL LETTER G WITH CURRENCY': u'₴',
+'LATIN CAPITAL LETTER K WITH CURRENCY': u'₭',
+'LATIN CAPITAL LETTER L WITH CURRENCY': u'₤',
+'LATIN SMALL LETTER L WITH CURRENCY': u'£',
+'LATIN CAPITAL LETTER M WITH CURRENCY': u'ℳ',
+'LATIN SMALL LETTER M WITH CURRENCY': u'₥',
+'LATIN CAPITAL LETTER N WITH CURRENCY': u'₦',
+'LATIN CAPITAL LETTER P WITH CURRENCY': u'₧',
+'LATIN SMALL LETTER P WITH CURRENCY': u'₰',
+'LATIN SMALL LETTER R WITH CURRENCY': u'₨',
+'LATIN SMALL LETTER R WITH CURRENCY': u'₢',
+'LATIN CAPITAL LETTER S WITH CURRENCY': u'$',
+'LATIN SMALL LETTER S WITH CURRENCY': u'₪',
+'LATIN CAPITAL LETTER T WITH CURRENCY': u'₮',
+'LATIN CAPITAL LETTER W WITH CURRENCY': u'₩',
+'LATIN CAPITAL LETTER X WITH CURRENCY': u'₵',
+'LATIN CAPITAL LETTER Y WITH CURRENCY': u'¥',
 }
 
 # 'STRIKETHROUGH', 
@@ -109,42 +106,79 @@ def mod_order2(a,b):
   if b[0] == 'none':
     return 1
   return cmp(a, b)
-
+  
+  
+# create the unicode dict, with extended chars for the dead keys
+# key: the unicode name (str)
+# value: the unicode char (unicode)
+unicode_dict = {}
 for c in range(0,0x10000):
   C = unichr(c)
   try:
     name = unicodedata.name(C)
-    name = currency.get( C, name )
   except:
     continue
-    
-  if not name.startswith('LATIN '):
-    continue
-    
-#  if 'STROKE' in name : print name
-  
+  if name.startswith('LATIN '):
+    unicode_dict[name] = C
+# append the currency signs
+unicode_dict.update(currency)
+
+
+# iterate over all the items to build the set of modifiers for the
+# basic latin characters, and the set of modifiers
+#
+# The result is stored in d
+# key: a tuple where the first item is the letter name, and the second
+# is "SMALL" or "CAPITAL". Ex: ('W', 'CAPITAL')
+# value: a set of tuple of modifiers. Ex: set([('acute',), ('circumflex',),
+# ('acute', 'circumflex'), ()]). The modifiers or ordered in the tuple.
+#
+d = {}
+
+# the dictionnary which associate the char, case, and modifiers to an unicode
+# character
+# key: ( ( name, case), (mod1, mod2, ...) )
+# value: an unicode char
+dc = {}
+
+# the set of modifiers used
+dm = set()
+
+# the set of sets of modifiers
+dmm = set()
+
+for name, C in unicode_dict.iteritems():  
+  # split the name and the modifiers
   ns = name.split(' WITH ')
   n = ns[0]
   ms = ' AND '.join(ns[1:])
   modifiers = ms.split(' AND ')
+  # some chars have a WITH to describe something which is not a modifier
   for m in ['SMALL LETTER J', 'SMALL LETTER Z', 'STRIKETHROUGH']:
     if m in modifiers :
       n = n + ' WITH ' + m
       modifiers.remove(m)
-      print name, '*********************', C
+  # translate the dotless modifier to dot above.
   if 'DOTLESS' in n:
     n = n.replace('DOTLESS ', '')
     modifiers.append('DOT ABOVE')
+  # translate the middle dot modifier to dot above
   if 'MIDDLE DOT' in modifiers:
     del modifiers[ modifiers.index('MIDDLE DOT') ]
     modifiers.append('DOT ABOVE')
+  # remove empty string in the modifier, to generate an empty tuple
   if '' in modifiers:
     modifiers.remove('')
-  modifiers = sorted([finalModNames[m] for m in modifiers])
+  # translate the modifier names to there final name, sort the modifiers, and
+  # and convert the list to a tuple
+  modifiers = [finalModNames[m] for m in modifiers]
+  modifiers = sorted(modifiers)
   modifiers = tuple(modifiers)
 
+  # store the modifiers independently
   for m in modifiers:
     dm.add(m)
+  # and store the modifier set
   dmm.add(modifiers)
 
   m = chrRegExp.match( n )
@@ -162,7 +196,12 @@ for c in range(0,0x10000):
     modSet.add( modifiers )
     d[key] = modSet
 
+
+# now generate the xml code!
+#
+# store the previous character to print a blank line bitween the chars
 previous = None
+
 for c in sorted(d.keys(), case_order):
   if len(d[c]) != 1 or len(c[0]) == 1:
     if tuple([]) in d[c]:
@@ -179,7 +218,9 @@ for c in sorted(d.keys(), case_order):
 #        print u'      <when state="%s" output="%s"/> <!-- %s -->' % (fm, dc[ c, mod ], unicodedata.name(dc[ c, mod ]) )
         print u'      <when state="%s" output="%s"/>' % (fm, dc[ c, mod ] )
       print '    </action>'
-
+      
+      # generate the code for 2 modifiers, when a char with on of the 2 diacritic sign
+      # is produced
       subd = {}
       for mod in [m for m in d[c] if len(m) == 2 ] :
         for m1 in mod:
