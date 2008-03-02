@@ -9406,7 +9406,7 @@
     <when state="Multi_key_acute_combining_tilde" output="↯´̃"/>
     <when state="Multi_key_acute_comma" output="↯´,"/>
     <when state="Multi_key_acute_dead_abovering" output="↯´°"/>
-    <when state="Multi_key_acute_dead_breve" output="↯´̆"/>
+    <when state="Multi_key_acute_dead_breve" output="↯´˘"/>
     <when state="Multi_key_acute_dead_cedilla" output="↯´¸"/>
     <when state="Multi_key_acute_dead_circumflex" output="↯´^"/>
     <when state="Multi_key_acute_dead_dasia" output="↯´?"/>
@@ -9430,7 +9430,7 @@
     <when state="Multi_key_apostrophe_b" output="↯'b"/>
     <when state="Multi_key_apostrophe_combining_tilde" output="↯'̃"/>
     <when state="Multi_key_apostrophe_dead_abovering" output="↯'°"/>
-    <when state="Multi_key_apostrophe_dead_breve" output="↯'̆"/>
+    <when state="Multi_key_apostrophe_dead_breve" output="↯'˘"/>
     <when state="Multi_key_apostrophe_dead_cedilla" output="↯'¸"/>
     <when state="Multi_key_apostrophe_dead_circumflex" output="↯'^"/>
     <when state="Multi_key_apostrophe_dead_dasia" output="↯'?"/>
@@ -9457,7 +9457,7 @@
     <when state="Multi_key_asciitilde_U0314" output="↯~̔"/>
     <when state="Multi_key_asciitilde_asciicircum" output="↯~^"/>
     <when state="Multi_key_asciitilde_b" output="↯~b"/>
-    <when state="Multi_key_asciitilde_dead_breve" output="↯~̆"/>
+    <when state="Multi_key_asciitilde_dead_breve" output="↯~˘"/>
     <when state="Multi_key_asciitilde_dead_circumflex" output="↯~^"/>
     <when state="Multi_key_asciitilde_dead_dasia" output="↯~?"/>
     <when state="Multi_key_asciitilde_dead_diaeresis" output="↯~¨"/>
@@ -9492,7 +9492,7 @@
     <when state="Multi_key_grave_U0314" output="↯`̔"/>
     <when state="Multi_key_grave_asciicircum" output="↯`^"/>
     <when state="Multi_key_grave_b" output="↯`b"/>
-    <when state="Multi_key_grave_dead_breve" output="↯`̆"/>
+    <when state="Multi_key_grave_dead_breve" output="↯`˘"/>
     <when state="Multi_key_grave_dead_circumflex" output="↯`^"/>
     <when state="Multi_key_grave_dead_dasia" output="↯`?"/>
     <when state="Multi_key_grave_dead_diaeresis" output="↯`¨"/>
@@ -9523,7 +9523,7 @@
     <when state="Multi_key_macron_dead_abovedot" output="↯¯˙"/>
     <when state="Multi_key_macron_dead_belowdot" output="↯¯."/>
     <when state="Multi_key_macron_dead_diaeresis" output="↯¯¨"/>
-    <when state="Multi_key_macron_dead_ogonek" output="↯¯ˇ"/>
+    <when state="Multi_key_macron_dead_ogonek" output="↯¯˛"/>
     <when state="Multi_key_macron_dead_tilde" output="↯¯~"/>
     <when state="Multi_key_macron_exclam" output="↯¯!"/>
     <when state="Multi_key_macron_period" output="↯¯."/>
@@ -9779,7 +9779,7 @@
     <when state="Multi_key_question" output="↯?"/>
     <when state="Multi_key_question_asciicircum" output="↯?^"/>
     <when state="Multi_key_question_b" output="↯?b"/>
-    <when state="Multi_key_question_dead_breve" output="↯?̆"/>
+    <when state="Multi_key_question_dead_breve" output="↯?˘"/>
     <when state="Multi_key_question_dead_circumflex" output="↯?^"/>
     <when state="Multi_key_question_dead_horn" output="↯?̛"/>
     <when state="Multi_key_question_plus" output="↯?+"/>
@@ -9804,7 +9804,7 @@
     <when state="Multi_key_underscore_dead_abovedot" output="↯_˙"/>
     <when state="Multi_key_underscore_dead_belowdot" output="↯_."/>
     <when state="Multi_key_underscore_dead_diaeresis" output="↯_¨"/>
-    <when state="Multi_key_underscore_dead_ogonek" output="↯_ˇ"/>
+    <when state="Multi_key_underscore_dead_ogonek" output="↯_˛"/>
     <when state="Multi_key_underscore_dead_tilde" output="↯_~"/>
     <when state="Multi_key_underscore_exclam" output="↯_!"/>
     <when state="Multi_key_underscore_period" output="↯_."/>

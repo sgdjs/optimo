@@ -62,24 +62,7 @@ composeChars = {}
 for name, C in composeNames.iteritems():
   composeChars[C] = name
 
-terminators = {}
-terminators["abovedot"] = u"˙"
-terminators["ringabove"] = u"°"
-terminators["acute"] = u"´"
-terminators["belowdot"] = u"."
-terminators["breve"] = u"̆"
-terminators["caron"] = u"ˇ"
-terminators["cedilla"] = u"¸"
-terminators["circumflex"] = u"^"
-terminators["dasia"] = u"?"
-terminators["diaeresis"] = u"¨"
-terminators["grave"] = u"`"
-terminators["horn"] = u"̛"
-terminators["macron"] = u"¯"
-terminators["ogonek"] = u"ˇ"
-terminators["psili"] = u"?"
-terminators["tilde"] = u"~"
-terminators["Multi_key"] = u"↯"
+from terminators import terminators
 
 
 def char(k):
