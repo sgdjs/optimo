@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import unicodedata, re, sys
+import unicodedata, re, sys, maCompose, xkb
 
 # the reg exp used to parse the unicode name
 chrRegExp = re.compile(r'LATIN (CAPITAL|SMALL) LETTER (.+)')
@@ -84,6 +84,133 @@ currency = {
 'LATIN CAPITAL LETTER Y WITH CURRENCY': u'¥',
 }
 
+circumflex = {
+'LATIN CAPITAL LETTER 0': u'0',
+'LATIN CAPITAL LETTER 0 WITH CIRCUMFLEX': u'⁰',
+'LATIN CAPITAL LETTER 1': u'1',
+'LATIN CAPITAL LETTER 1 WITH CIRCUMFLEX': u'¹',
+'LATIN CAPITAL LETTER 2': u'2',
+'LATIN CAPITAL LETTER 2 WITH CIRCUMFLEX': u'²',
+'LATIN CAPITAL LETTER 3': u'3',
+'LATIN CAPITAL LETTER 3 WITH CIRCUMFLEX': u'³',
+'LATIN CAPITAL LETTER 4': u'4',
+'LATIN CAPITAL LETTER 4 WITH CIRCUMFLEX': u'⁴',
+'LATIN CAPITAL LETTER 5': u'5',
+'LATIN CAPITAL LETTER 5 WITH CIRCUMFLEX': u'⁵',
+'LATIN CAPITAL LETTER 6': u'6',
+'LATIN CAPITAL LETTER 6 WITH CIRCUMFLEX': u'⁶',
+'LATIN CAPITAL LETTER 7': u'7',
+'LATIN CAPITAL LETTER 7 WITH CIRCUMFLEX': u'⁷',
+'LATIN CAPITAL LETTER 8': u'8',
+'LATIN CAPITAL LETTER 8 WITH CIRCUMFLEX': u'⁸',
+'LATIN CAPITAL LETTER 9': u'9',
+'LATIN CAPITAL LETTER 9 WITH CIRCUMFLEX': u'⁹',
+'LATIN CAPITAL LETTER +': u'+',
+'LATIN CAPITAL LETTER + WITH CIRCUMFLEX': u'⁺',
+'LATIN CAPITAL LETTER (': u'(',
+'LATIN CAPITAL LETTER ( WITH CIRCUMFLEX': u'⁽',
+'LATIN CAPITAL LETTER )': u')',
+'LATIN CAPITAL LETTER ) WITH CIRCUMFLEX': u'⁾',
+'LATIN CAPITAL LETTER =': u'=',
+'LATIN CAPITAL LETTER = WITH CIRCUMFLEX': u'⁼',
+'LATIN CAPITAL LETTER -': u'-',
+'LATIN CAPITAL LETTER - WITH CIRCUMFLEX': u'⁻',
+}
+
+terminators = {
+"abovedot": u"˙",
+"acute": u"´",
+"bar": u"-",
+"belowdot": u".",
+"belt": u"?",
+"breve": u"˘",
+"brevebelow": u"?",
+"caron": u"ˇ",
+"cedilla": u"¸",
+"circumflex": u"^",
+"circumflexbelow": u"̭",
+"commabelow": u",",
+"crossedtail": u"?",
+"curl": u"?",
+"currency": u"¤",
+"diaeresis": u"¨",
+"diaresisbelow": u"̤",
+"diagonalstroke": u"?",
+"doubleacute": u"˝",
+"doublegrave": u"?",
+"fishhook": u"?",
+"grave": u"`",
+"hook": u"?",
+"hookabove": u"̉",
+"horn": u"̛",
+"invertedbreve": u"̑",
+"lefthook": u"?",
+"linebelow": u"_",
+"longleg": u"?",
+"longrightleg": u"?",
+"macron": u"¯",
+"middletilde": u"?",
+"ogonek": u"˛",
+"palatalhook": u"?",
+"retroflexhook": u"̢",
+"righthalfring": u"ʾ",
+"ringabove": u"°",
+"ringbelow": u"̥",
+"stroke": u"/",
+"swashtail": u"?",
+"tail": u"?",
+"tilde": u"~",
+"tildebelow": u"̰",
+"topbar": u"⁻",
+}
+
+combiningTerminators = {
+"abovedot": u"̇",
+"acute": u"́",
+"bar": u"-",
+"belowdot": u".",
+"belt": u"?",
+"breve": u"̆",
+"brevebelow": u"?",
+"caron": u"̌",
+"cedilla": u"̧",
+"circumflex": u"̂",
+"circumflexbelow": u"̭",
+"commabelow": u"̦",
+"crossedtail": u"?",
+"curl": u"?",
+"currency": u"¤",
+"diaeresis": u"̈",
+"diaresisbelow": u"̤",
+"diagonalstroke": u"?",
+"doubleacute": u"̋",
+"doublegrave": u"̏",
+"fishhook": u"?",
+"grave": u"`",
+"hook": u"?",
+"hookabove": u"̉",
+"horn": u"̛",
+"invertedbreve": u"̑",
+"lefthook": u"?",
+"linebelow": u"_",
+"longleg": u"?",
+"longrightleg": u"?",
+"macron": u"̄",
+"middletilde": u"?",
+"ogonek": u"̨",
+"palatalhook": u"?",
+"retroflexhook": u"̢",
+"righthalfring": u"ʾ",
+"ringabove": u"̊",
+"ringbelow": u"̥",
+"stroke": u"/",
+"swashtail": u"?",
+"tail": u"?",
+"tilde": u"~",
+"tildebelow": u"̰",
+"topbar": u"⁻",
+}
+
 # 'STRIKETHROUGH', 
 # 'SMALL LETTER J':, 
 # 'SMALL LETTER Z', 
@@ -122,6 +249,7 @@ for c in range(0,0x10000):
     unicode_dict[name] = C
 # append the currency signs
 unicode_dict.update(currency)
+unicode_dict.update(circumflex)
 
 
 # iterate over all the items to build the set of modifiers for the
@@ -190,7 +318,7 @@ for name, C in unicode_dict.iteritems():
     key = (letter, case)
     modSet = d.get( key , set([]) )
     if modifiers in modSet:
-      print name, "est déjà défini."
+      print >> sys.stderr, name, "est déjà défini."
       dc[ (key, modifiers) ] = min( dc[ (key, modifiers) ], C )
     else :
       dc[ (key, modifiers) ] = C
@@ -200,25 +328,44 @@ for name, C in unicode_dict.iteritems():
 
 # now generate the xml code!
 #
-# store the previous character to print a blank line bitween the chars
+
+deadXMLCode = ""
+
+deadXMLCode += '\n'+ "  <actions>"
+
+# store the previous character to deadXMLCode += '\n'+ a blank line bitween the chars
 previous = None
+
+# store the actions already deadXMLCode += '\n'+ed. Space and nbsp are aleady there because they are
+# special case treated at the end.
+actions = set([u' ', u' '])
 
 for c in sorted(d.keys(), case_order):
   if len(d[c]) != 1 or len(c[0]) == 1:
     if tuple([]) in d[c]:
       if dc[ c, tuple([]) ].lower() != previous:
-        print
-#      print ' '.join(c), ' '.join([dc[ c, a ] for a in d[c]])
-      print '    <action id="%s">' % dc[ c, tuple([]) ]
+        deadXMLCode += '\n'
+      deadXMLCode += '\n'+ '    <action id="%s">' % dc[ c, tuple([]) ]
       for mod in sorted(d[c], mod_order) :
-        # print '    ', '_'.join([finalModNames[m] for m in mod]), dc[ c, mod ]
+        # deadXMLCode += '\n'+ '    ', '_'.join([finalModNames[m] for m in mod]), dc[ c, mod ]
         if len(mod) == 0:
           fm = 'none'
         else:
           fm = '_'.join(mod)
-#        print u'      <when state="%s" output="%s"/> <!-- %s -->' % (fm, dc[ c, mod ], unicodedata.name(dc[ c, mod ]) )
-        print u'      <when state="%s" output="%s"/>' % (fm, dc[ c, mod ] )
-      print '    </action>'
+        deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % (fm, dc[ c, mod ] )
+        
+      C = dc[ c, tuple([]) ]
+      if maCompose.charActions.has_key(C):
+        a = maCompose.charActions[C]
+        if maCompose.statesByAction.has_key(a):
+          for s in sorted(maCompose.statesByAction[a]):
+            deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+        if maCompose.outputsByAction.has_key(a):
+          for s, c1 in sorted(maCompose.outputsByAction[a]):
+            deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)        
+        
+      deadXMLCode += '\n'+ '    </action>'
+      actions.add(C)
       
       # generate the code for 2 modifiers, when a char with on of the 2 diacritic sign
       # is produced
@@ -226,24 +373,28 @@ for c in sorted(d.keys(), case_order):
       for mod in [m for m in d[c] if len(m) == 2 ] :
         for m1 in mod:
           if (m1,) in d[c]:
-       #     print '    <action id="%s">' % dc[ c, (m1,) ]
-#            print u'      <when state="%s" output="%s"/> <!-- %s -->' % ('none', dc[ c, (m1,) ], unicodedata.name(dc[ c, (m1,) ]))
-        #    print u'      <when state="%s" output="%s"/>' % ('none', dc[ c, (m1,) ])
             for m2 in mod:
               if m1 != m2:
                 l = subd.get(dc[ c, (m1,) ], [])
                 l.append((m2, dc[ c, mod ]))
                 subd[dc[ c, (m1,) ]] = l
-#                print u'      <when state="%s" output="%s"/> <!-- %s -->' % (m2, dc[ c, mod ], unicodedata.name(dc[ c, mod ]))
-#                print u'      <when state="%s" output="%s"/>' % (m2, dc[ c, mod ])
-      #      print '    </action>'
-      #print subd
       for c1 in sorted(subd.keys()):
-        print '    <action id="%s">' % c1
-        print u'      <when state="%s" output="%s"/>' % ('none', c1)
+        deadXMLCode += '\n'+ '    <action id="%s">' % c1
+        deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('none', c1)
         for m, c2 in sorted(subd[c1]):
-          print u'      <when state="%s" output="%s"/>' % (m, c2)
-        print '    </action>'
+          deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % (m, c2)
+          
+        if maCompose.charActions.has_key(c1):
+          a = maCompose.charActions[c1]
+          if maCompose.statesByAction.has_key(a):
+            for s in sorted(maCompose.statesByAction[a]):
+              deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+          if maCompose.outputsByAction.has_key(a):
+            for s, C in sorted(maCompose.outputsByAction[a]):
+              deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
+        
+        deadXMLCode += '\n'+ '    </action>'
+        actions.add(c1)
         
       previous = dc[ c, tuple([]) ].lower()
               
@@ -251,33 +402,114 @@ for c in sorted(d.keys(), case_order):
     else:
       raise ' '.join(c), d[c]
 #  else:
-#    print '*********************************************', c
+#    deadXMLCode += '\n'+ '*********************************************', c
     
     
+# actions with multi keys and without dead keys
+for C in sorted( set(maCompose.charActions.keys() + list(xkb.chars) ) - actions - set(["Multi_key"])):
+  a = maCompose.composeChars.get(C, C)
+  if not a.startswith("dead_"):
+    deadXMLCode += '\n'
+    deadXMLCode += '\n'+ u'    <action id="%s">' % C
+    deadXMLCode += '\n'+ u'      <when state="none" output="%s"/>' % C
+    if maCompose.statesByAction.has_key(a):
+      for s in sorted(maCompose.statesByAction[a]):
+        deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+    if maCompose.outputsByAction.has_key(a):
+      for s, c1 in sorted(maCompose.outputsByAction[a]):
+        deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)        
+    deadXMLCode += '\n'+ u'    </action>'
+
+
+# the space char produces the terminator char when a dead_ states is activated
+deadXMLCode += '\n'
+deadXMLCode += '\n'+ u'    <action id=" ">'
+deadXMLCode += '\n'+ u'      <when state="none" output=" "/>'
+for m in sorted(dmm, mod_order):
+  if m != tuple():
+    deadXMLCode += '\n'+ '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
+if maCompose.charActions.has_key(u' '):
+  a = maCompose.charActions[u' ']
+  if maCompose.statesByAction.has_key(a):
+    for s in sorted(maCompose.statesByAction[a]):
+      deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+  if maCompose.outputsByAction.has_key(a):
+    for s, C in sorted(maCompose.outputsByAction[a]):
+      deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
+deadXMLCode += '\n'+ u'    </action>'
+
+
+# the space char produces the terminator char when a dead_ states is activated
+deadXMLCode += '\n'
+deadXMLCode += '\n'+ u'    <action id=" "> <!-- nbsp -->'
+deadXMLCode += '\n'+ u'      <when state="none" output=" "/>'
+for m in sorted(dmm, mod_order):
+  if m != tuple():
+    deadXMLCode += '\n'+ '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([combiningTerminators[n] for n in m]))
+if maCompose.charActions.has_key(u' '):
+  a = maCompose.charActions[u' ']
+  if maCompose.statesByAction.has_key(a):
+    for s in sorted(maCompose.statesByAction[a]):
+      deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+  if maCompose.outputsByAction.has_key(a):
+    for s, C in sorted(maCompose.outputsByAction[a]):
+      deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
+deadXMLCode += '\n'+ u'    </action>'
+
+
+
 modStates = {}
 for m in dm:
   modStates[m] = [('none', m)]
 
-print
-print
-print '  <terminators>'
 for m in sorted(dmm, mod_order):
-  if m != tuple():
-    print '    <when state="%s" output="?"/>' % '_'.join(m)
   if len(m) == 2:
     m1, m2 = m
     modStates[m1].append((m2, '%s_%s' % (m1, m2)))
     modStates[m2].append((m1, '%s_%s' % (m1, m2)))
-print '  <terminators>'
   
-print
-print
+deadXMLCode += '\n'
+deadXMLCode += '\n'
 for m in sorted(modStates.keys()):
   l = modStates[m]
-  print '    <action id="%s">' % m
+  deadXMLCode += '\n'+ '    <action id="%s">' % m
   for s, n in sorted(l, mod_order2):
-    print '      <when state="%s" next="%s"/>' % (s, n)
-  print '    </action>'
+    deadXMLCode += '\n'+ '      <when state="%s" next="%s"/>' % (s, n)
+    
+  if maCompose.charActions.has_key(m):
+    a = maCompose.charActions[m]
+    if maCompose.statesByAction.has_key(a):
+      for s in sorted(maCompose.statesByAction[a]):
+        deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+    if maCompose.outputsByAction.has_key(a):
+      for s, c1 in sorted(maCompose.outputsByAction[a]):
+        deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)   
+            
+  deadXMLCode += '\n'+ '    </action>'
   
+deadXMLCode += '\n'+ '    <action id="Multi_key">'
+deadXMLCode += '\n'+ '      <when state="none" next="Multi_key"/>'
+deadXMLCode += '\n'+ '    </action>'
+deadXMLCode += '\n'
+deadXMLCode += '\n'+ '    <action id="">'
+deadXMLCode += '\n'+ '      <when state="none" output=""/>'
+deadXMLCode += '\n'+ '    </action>'
+
+deadXMLCode += '\n'+ "  </actions>"
+  
+deadXMLCode += '\n'
+deadXMLCode += '\n'
+deadXMLCode += '\n'+ '  <terminators>'
+for m in sorted(dmm, mod_order):
+  if m != tuple():
+    deadXMLCode += '\n'+ '    <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
+for ss in sorted(maCompose.states):
+  C = ''.join([maCompose.terminators.get(maCompose.char(s), maCompose.char(s)) for s in ss])
+  s = '_'.join(list(ss))
+  deadXMLCode += '\n'+ '    <when state="%s" output="%s"/>' % (s, C)
+deadXMLCode += '\n'+ '  </terminators>'
+
+if __name__ == "__main__":
+  print deadXMLCode
   
   
