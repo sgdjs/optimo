@@ -29,6 +29,9 @@ python generate_alt.py
 ditto -rsrcFork fr-dvorak-bepo.icns "/Volumes/fr-dvorak-bépo ($VERSION)/.VolumeIcon.icns"
 /Developer/Tools/SetFile -a C "/Volumes/fr-dvorak-bépo ($VERSION)"
 
+# set the icon for the bundle
+SetCustomIcon fr-dvorak-bepo.bundle fr-dvorak-bepo.icns
+
 # copy tho licenses
 cp ../CC-SA-BY.txt ../GFDL.txt  "/Volumes/fr-dvorak-bépo ($VERSION)"
 

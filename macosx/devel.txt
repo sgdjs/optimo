@@ -15,6 +15,7 @@ Ce répertoire contient plusieurs choses:
     
  *  mkdmg.sh
     Génère un fichier dmg à partir de la dernière version dans le dépôt subversion. Ce script prend en paramètre le numéro de version (il est utilisé dans le nom de fichier et le nom de volume).
+    SetCustomIcon doit être dans le PATH. Il est téléchargeable gratuitement sur http://www.vcn.bc.ca/~philip/ .
     Ex : ./mkdmg.sh 0.6.4
     
  *  dead_keys.py
