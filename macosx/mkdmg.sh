@@ -1,4 +1,15 @@
 #!/bin/sh -x
+#
+# Génération du dmg contenant le pilote de clavier bépo
+#
+# Copyright (C) 2008 Gaëtan Lehmann <gaetan.lehmann@jouy.inra.fr>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+
 
 # store the current dir. The image will be stored here.
 OUT=$PWD
