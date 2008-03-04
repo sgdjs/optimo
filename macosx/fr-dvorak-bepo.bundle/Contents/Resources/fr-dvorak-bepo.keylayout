@@ -168,12 +168,12 @@
       <key code="27" action="=" />
       <key code="28" action="-" />
       <key code="29" action="*" />
-      <key code="30" action="z" />
+      <key code="30" action="w" />
       <key code="31" action="l" />
       <key code="32" action="v" />
-      <key code="33" action="f" />
+      <key code="33" action="z" />
       <key code="34" action="d" />
-      <key code="35" action="j" />
+      <key code="35" action="f" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="n" />
       <key code="38" action="t" />
@@ -182,7 +182,7 @@
       <key code="41" action="r" />
       <key code="42" action="ç" />
       <key code="43" action="g" />
-      <key code="44" action="f" />
+      <key code="44" action="j" />
       <key code="45" action="'" />
       <key code="46" action="q" />
       <key code="47" action="x" />
@@ -284,12 +284,12 @@
       <key code="27" action="@" />
       <key code="28" action="8" />
       <key code="29" action="0" />
-      <key code="30" action="Z" />
+      <key code="30" action="W" />
       <key code="31" action="L" />
       <key code="32" action="V" />
-      <key code="33" action="F" />
+      <key code="33" action="Z" />
       <key code="34" action="D" />
-      <key code="35" action="J" />
+      <key code="35" action="F" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="N" />
       <key code="38" action="T" />
@@ -298,7 +298,7 @@
       <key code="41" action="R" />
       <key code="42" action="Ç" />
       <key code="43" action="G" />
-      <key code="44" action="F" />
+      <key code="44" action="J" />
       <key code="45" action=";" />
       <key code="46" action="Q" />
       <key code="47" action="X" />
@@ -399,12 +399,12 @@
       <key code="27" action="=" />
       <key code="28" action="8" />
       <key code="29" action="0" />
-      <key code="30" action="Z" />
+      <key code="30" action="W" />
       <key code="31" action="L" />
       <key code="32" action="V" />
-      <key code="33" action="F" />
+      <key code="33" action="Z" />
       <key code="34" action="D" />
-      <key code="35" action="J" />
+      <key code="35" action="F" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="N" />
       <key code="38" action="T" />
@@ -413,7 +413,7 @@
       <key code="41" action="R" />
       <key code="42" action="Ç" />
       <key code="43" action="G" />
-      <key code="44" action="F" />
+      <key code="44" action="J" />
       <key code="45" action="'" />
       <key code="46" action="Q" />
       <key code="47" action="X" />
@@ -514,12 +514,12 @@
       <key code="27" action="@" />
       <key code="28" action="-" />
       <key code="29" action="*" />
-      <key code="30" action="z" />
+      <key code="30" action="w" />
       <key code="31" action="l" />
       <key code="32" action="v" />
-      <key code="33" action="f" />
+      <key code="33" action="z" />
       <key code="34" action="d" />
-      <key code="35" action="j" />
+      <key code="35" action="f" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="n" />
       <key code="38" action="t" />
@@ -528,7 +528,7 @@
       <key code="41" action="r" />
       <key code="42" action="ç" />
       <key code="43" action="g" />
-      <key code="44" action="f" />
+      <key code="44" action="j" />
       <key code="45" action=";" />
       <key code="46" action="q" />
       <key code="47" action="x" />
@@ -629,12 +629,12 @@
       <key code="27" action="¬" />
       <key code="28" action="–" />
       <key code="29" action="×" />
-      <key code="30" action="ə" />
+      <key code="30" action="breve" />
       <key code="31" action="stroke" />
       <key code="32" action="" />
-      <key code="33" action="ogonek" />
+      <key code="33" action="ə" />
       <key code="34" action="ð" />
-      <key code="35" action="ĳ" />
+      <key code="35" action="ogonek" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="ñ" />
       <key code="38" action="þ" />
@@ -643,7 +643,7 @@
       <key code="41" action="®" />
       <key code="42" action="cedilla" />
       <key code="43" action="ringabove" />
-      <key code="44" action="ogonek" />
+      <key code="44" action="ĳ" />
       <key code="45" action="" />
       <key code="46" action="ø" />
       <key code="47" action="†" />
@@ -744,12 +744,12 @@
       <key code="27" action="" />
       <key code="28" action="′" />
       <key code="29" action="" />
-      <key code="30" action="Ə" />
+      <key code="30" action="" />
       <key code="31" action="" />
       <key code="32" action="" />
-      <key code="33" action="ª" />
+      <key code="33" action="Ə" />
       <key code="34" action="Ð" />
-      <key code="35" action="Ĳ" />
+      <key code="35" action="ª" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="Ñ" />
       <key code="38" action="Þ" />
@@ -758,7 +758,7 @@
       <key code="41" action="" />
       <key code="42" action="" />
       <key code="43" action="" />
-      <key code="44" action="ª" />
+      <key code="44" action="Ĳ" />
       <key code="45" action="‘" />
       <key code="46" action="Ø" />
       <key code="47" action="‡" />
@@ -859,12 +859,12 @@
       <key code="27" action="" />
       <key code="28" action="–" />
       <key code="29" action="×" />
-      <key code="30" action="ə" />
+      <key code="30" action="" />
       <key code="31" action="" />
       <key code="32" action="" />
-      <key code="33" action="ª" />
+      <key code="33" action="ə" />
       <key code="34" action="ð" />
-      <key code="35" action="ĳ" />
+      <key code="35" action="ª" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="ñ" />
       <key code="38" action="þ" />
@@ -873,7 +873,7 @@
       <key code="41" action="" />
       <key code="42" action="" />
       <key code="43" action="" />
-      <key code="44" action="ª" />
+      <key code="44" action="ĳ" />
       <key code="45" action="‘" />
       <key code="46" action="ø" />
       <key code="47" action="‡" />
@@ -974,12 +974,12 @@
       <key code="27" action="¬" />
       <key code="28" action="′" />
       <key code="29" action="" />
-      <key code="30" action="Ə" />
+      <key code="30" action="breve" />
       <key code="31" action="stroke" />
       <key code="32" action="" />
-      <key code="33" action="ogonek" />
+      <key code="33" action="Ə" />
       <key code="34" action="Ð" />
-      <key code="35" action="Ĳ" />
+      <key code="35" action="ogonek" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="Ñ" />
       <key code="38" action="Þ" />
@@ -988,7 +988,7 @@
       <key code="41" action="®" />
       <key code="42" action="cedilla" />
       <key code="43" action="ringabove" />
-      <key code="44" action="ogonek" />
+      <key code="44" action="Ĳ" />
       <key code="45" action="" />
       <key code="46" action="Ø" />
       <key code="47" action="†" />
@@ -1089,12 +1089,12 @@
       <key code="27" action="¬" />
       <key code="28" action="–" />
       <key code="29" action="×" />
-      <key code="30" action="ə" />
+      <key code="30" action="˘" />
       <key code="31" action="/" />
       <key code="32" action="" />
-      <key code="33" action="˛" />
+      <key code="33" action="ə" />
       <key code="34" action="ð" />
-      <key code="35" action="ĳ" />
+      <key code="35" action="˛" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="ñ" />
       <key code="38" action="þ" />
@@ -1103,7 +1103,7 @@
       <key code="41" action="®" />
       <key code="42" action="¸" />
       <key code="43" action="°" />
-      <key code="44" action="˛" />
+      <key code="44" action="ĳ" />
       <key code="45" action="" />
       <key code="46" action="ø" />
       <key code="47" action="†" />
