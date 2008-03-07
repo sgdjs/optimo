@@ -12,7 +12,7 @@
 #
 
 
-import re, sys, maCompose, codecs
+import re, sys, compose, codecs
 
 terminators = {
 "abovedot": u"˙",
@@ -79,7 +79,7 @@ for l in f:
     charsGroup = res.group(3)
     chars = re.split(r', *', charsGroup)
     chars = [c.strip() for c in chars]
-    chars = [maCompose.char(c) for c in chars]
+    chars = [compose.char(c) for c in chars]
     chars = chars + ['']*(4-len(chars))
     
     normal[key], shift[key], altgr[key], altgrshift[key] = chars
@@ -148,7 +148,7 @@ for k, v in altgrshift.iteritems():
   chars.add(V)
  
 chars.remove('')
-actions = set( [maCompose.composeChars[c] for c in chars if c] )
+actions = set( [compose.composeChars[c] for c in chars if c] )
 
 tmpl = codecs.open("fr-dvorak-bepo.keylayout.tmpl", encoding='utf8').read()
 

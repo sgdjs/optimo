@@ -12,11 +12,11 @@
 #
 
 
-import sys, maCompose
+import sys, compose
 
 out = file("symbols.conf", "w")
-for C in sorted(maCompose.composeChars.keys()):
-  code = maCompose.composeChars[C]
+for C in sorted(compose.composeChars.keys()):
+  code = compose.composeChars[C]
   ucode = repr(C)[2:-1]
   if ucode.startswith(r'\u'):
     ucode = ucode[2:].rjust(4, '0')

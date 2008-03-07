@@ -12,7 +12,7 @@
 #
 
 
-import unicodedata, re, sys, maCompose, xkb
+import unicodedata, re, sys, compose, xkb
 
 # the reg exp used to parse the unicode name
 chrRegExp = re.compile(r'LATIN (CAPITAL|SMALL) LETTER (.+)')
@@ -276,13 +276,13 @@ for c in sorted(d.keys(), case_order):
         deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % (fm, dc[ c, mod ] )
         
       C = dc[ c, tuple([]) ]
-      if maCompose.charActions.has_key(C):
-        a = maCompose.charActions[C]
-        if maCompose.statesByAction.has_key(a):
-          for s in sorted(maCompose.statesByAction[a]):
+      if compose.charActions.has_key(C):
+        a = compose.charActions[C]
+        if compose.statesByAction.has_key(a):
+          for s in sorted(compose.statesByAction[a]):
             deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
-        if maCompose.outputsByAction.has_key(a):
-          for s, c1 in sorted(maCompose.outputsByAction[a]):
+        if compose.outputsByAction.has_key(a):
+          for s, c1 in sorted(compose.outputsByAction[a]):
             deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)        
         
       deadXMLCode += '\n'+ '    </action>'
@@ -305,13 +305,13 @@ for c in sorted(d.keys(), case_order):
         for m, c2 in sorted(subd[c1]):
           deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % (m, c2)
           
-        if maCompose.charActions.has_key(c1):
-          a = maCompose.charActions[c1]
-          if maCompose.statesByAction.has_key(a):
-            for s in sorted(maCompose.statesByAction[a]):
+        if compose.charActions.has_key(c1):
+          a = compose.charActions[c1]
+          if compose.statesByAction.has_key(a):
+            for s in sorted(compose.statesByAction[a]):
               deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
-          if maCompose.outputsByAction.has_key(a):
-            for s, C in sorted(maCompose.outputsByAction[a]):
+          if compose.outputsByAction.has_key(a):
+            for s, C in sorted(compose.outputsByAction[a]):
               deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
         
         deadXMLCode += '\n'+ '    </action>'
@@ -327,17 +327,17 @@ for c in sorted(d.keys(), case_order):
     
     
 # actions with multi keys and without dead keys
-for C in sorted( set(maCompose.charActions.keys() + list(xkb.chars) ) - actions - set(["Multi_key"])):
-  a = maCompose.composeChars.get(C, C)
+for C in sorted( set(compose.charActions.keys() + list(xkb.chars) ) - actions - set(["Multi_key"])):
+  a = compose.composeChars.get(C, C)
   if not a.startswith("dead_"):
     deadXMLCode += '\n'
     deadXMLCode += '\n'+ u'    <action id="%s">' % C
     deadXMLCode += '\n'+ u'      <when state="none" output="%s"/>' % C
-    if maCompose.statesByAction.has_key(a):
-      for s in sorted(maCompose.statesByAction[a]):
+    if compose.statesByAction.has_key(a):
+      for s in sorted(compose.statesByAction[a]):
         deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
-    if maCompose.outputsByAction.has_key(a):
-      for s, c1 in sorted(maCompose.outputsByAction[a]):
+    if compose.outputsByAction.has_key(a):
+      for s, c1 in sorted(compose.outputsByAction[a]):
         deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)        
     deadXMLCode += '\n'+ u'    </action>'
 
@@ -349,13 +349,13 @@ deadXMLCode += '\n'+ u'      <when state="none" output=" "/>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
     deadXMLCode += '\n'+ '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
-if maCompose.charActions.has_key(u' '):
-  a = maCompose.charActions[u' ']
-  if maCompose.statesByAction.has_key(a):
-    for s in sorted(maCompose.statesByAction[a]):
+if compose.charActions.has_key(u' '):
+  a = compose.charActions[u' ']
+  if compose.statesByAction.has_key(a):
+    for s in sorted(compose.statesByAction[a]):
       deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
-  if maCompose.outputsByAction.has_key(a):
-    for s, C in sorted(maCompose.outputsByAction[a]):
+  if compose.outputsByAction.has_key(a):
+    for s, C in sorted(compose.outputsByAction[a]):
       deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
 deadXMLCode += '\n'+ u'    </action>'
 
@@ -367,13 +367,13 @@ deadXMLCode += '\n'+ u'      <when state="none" output=" "/>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
     deadXMLCode += '\n'+ '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([combiningTerminators[n] for n in m]))
-if maCompose.charActions.has_key(u' '):
-  a = maCompose.charActions[u' ']
-  if maCompose.statesByAction.has_key(a):
-    for s in sorted(maCompose.statesByAction[a]):
+if compose.charActions.has_key(u' '):
+  a = compose.charActions[u' ']
+  if compose.statesByAction.has_key(a):
+    for s in sorted(compose.statesByAction[a]):
       deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
-  if maCompose.outputsByAction.has_key(a):
-    for s, C in sorted(maCompose.outputsByAction[a]):
+  if compose.outputsByAction.has_key(a):
+    for s, C in sorted(compose.outputsByAction[a]):
       deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
 deadXMLCode += '\n'+ u'    </action>'
 
@@ -397,13 +397,13 @@ for m in sorted(modStates.keys()):
   for s, n in sorted(l, mod_order2):
     deadXMLCode += '\n'+ '      <when state="%s" next="%s"/>' % (s, n)
     
-  if maCompose.charActions.has_key(m):
-    a = maCompose.charActions[m]
-    if maCompose.statesByAction.has_key(a):
-      for s in sorted(maCompose.statesByAction[a]):
+  if compose.charActions.has_key(m):
+    a = compose.charActions[m]
+    if compose.statesByAction.has_key(a):
+      for s in sorted(compose.statesByAction[a]):
         deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
-    if maCompose.outputsByAction.has_key(a):
-      for s, c1 in sorted(maCompose.outputsByAction[a]):
+    if compose.outputsByAction.has_key(a):
+      for s, c1 in sorted(compose.outputsByAction[a]):
         deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)   
             
   deadXMLCode += '\n'+ '    </action>'
@@ -424,8 +424,8 @@ deadXMLCode += '\n'+ '  <terminators>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
     deadXMLCode += '\n'+ '    <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
-for ss in sorted(maCompose.states):
-  C = ''.join([maCompose.terminators.get(maCompose.char(s), maCompose.char(s)) for s in ss])
+for ss in sorted(compose.states):
+  C = ''.join([compose.terminators.get(compose.char(s), compose.char(s)) for s in ss])
   s = '_'.join(list(ss))
   deadXMLCode += '\n'+ '    <when state="%s" output="%s"/>' % (s, C)
 deadXMLCode += '\n'+ '  </terminators>'
