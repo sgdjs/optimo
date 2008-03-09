@@ -112,6 +112,18 @@ sub loadSymbols($)
         chomp;
 	s/#.*$//g;
         my @array = split(/ +|\t/);
+
+        if (defined($unicodes{$array[0]}))
+        {
+            print STDERR "Duplicate unicode: ".$array[0]."\n";
+            next LINE;
+        }
+        if (defined($symbols{$array[0]}))
+        {
+            print STDERR "Duplicate symbol: ".$array[0]."\n";
+            next LINE;
+        }
+
         $unicodes{$array[0]} = $array[1];
         $symbols{$array[0]} = $array[$column];
     }
