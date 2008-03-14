@@ -87,7 +87,7 @@ sub loadKeys($)
         next LINE if /^\s*$/;
 
         chomp;
-	s/#.*$//g;
+        s/#.*$//g;
         my @array = split(/ +|\t/);
         $scanCodes{$array[0]} = $array[1];
         $keys{$array[0]} = $array[$column];
@@ -110,7 +110,7 @@ sub loadSymbols($)
         next LINE if /^\s*$/;
 
         chomp;
-	s/#.*$//g;
+        s/#.*$//g;
         my @array = split(/ +|\t/);
 
         if (defined($unicodes{$array[0]}))
@@ -148,7 +148,7 @@ sub loadLayout()
         }
 
         chomp;
-	s/#.*$//g;
+        s/#.*$//g;
         my @array = split(/ +|\t/);
         my $key = $array[0];
         my %symbols = ();
@@ -182,7 +182,7 @@ sub loadDeadKeys()
         }
 
         chomp;
-	s/#.*$//g;
+        s/#.*$//g;
         my @array = split(/ +|\t/);
         my $symbol = pop(@array);
 
@@ -528,7 +528,7 @@ sub gen_win_msklc_bodyDeadKeys()
         my $result = $deadKeysH{$key};
         my $comboSize = $#keyCombo + 1;
 
-	next if ($comboSize > 2); # Not supported by MSKLC
+        next if ($comboSize > 2); # Not supported by MSKLC
 
         my $deadKey = $keyCombo[0];
         my $key     = $keyCombo[1];
@@ -618,7 +618,112 @@ sub gen_x_xmodmap_footer()
 
 sub gen_win_msklc_footer()
 {
-    my $footer = "";
+    my $footer = "KEYNAME\r\n".
+                 "\r\n".
+                 "01\tEsc\r\n".
+                 "0e\tBackspace\r\n".
+                 "0f\tTab\r\n".
+                 "1c\tEnter\r\n".
+                 "1d\tCtrl\r\n".
+                 "2a\tShift\r\n".
+                 "36\t\"Right Shift\"\r\n".
+                 "37\t\"Num *\"\r\n".
+                 "38\tAlt\r\n".
+                 "39\tSpace\r\n".
+                 "3a\t\"Caps Lock\"\r\n".
+                 "3b\tF1\r\n".
+                 "3c\tF2\r\n".
+                 "3d\tF3\r\n".
+                 "3e\tF4\r\n".
+                 "3f\tF5\r\n".
+                 "40\tF6\r\n".
+                 "41\tF7\r\n".
+                 "42\tF8\r\n".
+                 "43\tF9\r\n".
+                 "44\tF10\r\n".
+                 "45\tPause\r\n".
+                 "46\t\"Scroll Lock\"\r\n".
+                 "47\t\"Num 7\"\r\n".
+                 "48\t\"Num 8\"\r\n".
+                 "49\t\"Num 9\"\r\n".
+                 "4a\t\"Num -\"\r\n".
+                 "4b\t\"Num 4\"\r\n".
+                 "4c\t\"Num 5\"\r\n".
+                 "4d\t\"Num 6\"\r\n".
+                 "4e\t\"Num +\"\r\n".
+                 "4f\t\"Num 1\"\r\n".
+                 "50\t\"Num 2\"\r\n".
+                 "51\t\"Num 3\"\r\n".
+                 "52\t\"Num 0\"\r\n".
+                 "53\t\"Num Del\"\r\n".
+                 "54\t\"Sys Req\"\r\n".
+                 "57\tF11\r\n".
+                 "58\tF12\r\n".
+                 "7c\tF13\r\n".
+                 "7d\tF14\r\n".
+                 "7e\tF15\r\n".
+                 "7f\tF16\r\n".
+                 "80\tF17\r\n".
+                 "81\tF18\r\n".
+                 "82\tF19\r\n".
+                 "83\tF20\r\n".
+                 "84\tF21\r\n".
+                 "85\tF22\r\n".
+                 "86\tF23\r\n".
+                 "87\tF24\r\n".
+                 "\r\n".
+                 "KEYNAME_EXT\r\n".
+                 "\r\n".
+                 "1c\t\"Num Enter\"\r\n".
+                 "1d\t\"Right Ctrl\"\r\n".
+                 "35\t\"Num /\"\r\n".
+                 "37\t\"Prnt Scrn\"\r\n".
+                 "38\t\"Right Alt\"\r\n".
+                 "45\t\"Num Lock\"\r\n".
+                 "46\tBreak\r\n".
+                 "47\tHome\r\n".
+                 "48\tUp\r\n".
+                 "49\t\"Page Up\"\r\n".
+                 "4b\tLeft\r\n".
+                 "4d\tRight\r\n".
+                 "4f\tEnd\r\n".
+                 "50\tDown\r\n".
+                 "51\t\"Page Down\"\r\n".
+                 "52\tInsert\r\n".
+                 "53\tDelete\r\n".
+                 "54\t<00>\r\n".
+                 "56\tHelp\r\n".
+                 "5b\t\"Left Windows\"\r\n".
+                 "5c\t\"Right Windows\"\r\n".
+                 "5d\tApplication\r\n".
+                 "\r\n".
+                 "KEYNAME_DEAD\r\n".
+                 "\r\n".
+                 "00b4\t\"ACUTE ACCENT\"\r\n".
+                 "0060\t\"GRAVE ACCENT\"\r\n".
+                 "005e\t\"CIRCUMFLEX ACCENT\"\r\n".
+                 "02c7\t\"CARON (Mandarin Chinese third tone)\"\r\n".
+                 "002f\t\"SOLIDUS\"\r\n".
+                 "02db\t\"OGONEK\"\r\n".
+                 "02d8\t\"BREVE\"\r\n".
+                 "00a8\t\"DIAERESIS\"\r\n".
+                 "02d9\t\"DOT ABOVE (Mandarin Chinese light tone)\"\r\n".
+                 "00a4\t\"CURRENCY SIGN\"\r\n".
+                 "00af\t\"MACRON\"\r\n".
+                 "00b8\t\"CEDILLA\"\r\n".
+                 "007e\t\"TILDE\"\r\n".
+                 "02da\t\"RING ABOVE\"\r\n".
+                 "\r\n".
+                 "\r\n".
+                 "DESCRIPTIONS\r\n".
+                 "\r\n".
+                 "0409\tFrançais (fr-dvorak-bépo v0.6.5.1)\r\n".
+                 "\r\n".
+                 "LANGUAGENAMES\r\n".
+                 "\r\n".
+                 "0409\tFrench (France)\r\n".
+                 "\r\n".
+                 "ENDKBD\r\n";
 
     return $footer;
 }
