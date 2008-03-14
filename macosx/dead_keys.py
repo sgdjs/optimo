@@ -180,7 +180,7 @@ unicode_dict.update(circumflex)
 # key: a tuple where the first item is the letter name, and the second
 # is "SMALL" or "CAPITAL". Ex: ('W', 'CAPITAL')
 # value: a set of tuple of modifiers. Ex: set([('acute',), ('circumflex',),
-# ('acute', 'circumflex'), ()]). The modifiers are ordered in the tuple.
+# ('acute', 'circumflex'), ()]). The modifiers or ordered in the tuple.
 #
 d = {}
 
@@ -237,19 +237,14 @@ for name, C in unicode_dict.iteritems():
     letter = m.group(2)
 
     key = (letter, case)
-    try :
-      baseC = unicodedata.lookup('LATIN %s LETTER %s' % (case, letter) )
-      print 'LATIN %s LETTER %s' % key
-      modSet = d.get( key , set([]) )
-      if modifiers in modSet:
-        print >> sys.stderr, name, "est déjà défini."
-        dc[ (key, modifiers) ] = min( dc[ (key, modifiers) ], C )
-      else :
-        dc[ (key, modifiers) ] = C
-      modSet.add( modifiers )
-      d[key] = modSet
-    except:
-      pass
+    modSet = d.get( key , set([]) )
+    if modifiers in modSet:
+      print >> sys.stderr, name, "est déjà défini."
+      dc[ (key, modifiers) ] = min( dc[ (key, modifiers) ], C )
+    else :
+      dc[ (key, modifiers) ] = C
+    modSet.add( modifiers )
+    d[key] = modSet
 
 
 # now generate the xml code!
