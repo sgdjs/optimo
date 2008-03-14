@@ -13,53 +13,7 @@
 
 
 import re, sys, compose, codecs
-
-terminators = {
-"abovedot": u"˙",
-"acute": u"´",
-"bar": u"-",
-"belowdot": u".",
-"belt": u"?",
-"breve": u"˘",
-"brevebelow": u"?",
-"caron": u"ˇ",
-"cedilla": u"¸",
-"circumflex": u"^",
-"circumflexbelow": u"̭",
-"commabelow": u",",
-"crossedtail": u"?",
-"curl": u"?",
-"currency": u"¤",
-"diaeresis": u"¨",
-"diaresisbelow": u"̤",
-"diagonalstroke": u"?",
-"doubleacute": u"˝",
-"doublegrave": u"?",
-"fishhook": u"?",
-"grave": u"`",
-"hook": u"?",
-"hookabove": u"̉",
-"horn": u"̛",
-"invertedbreve": u"̑",
-"lefthook": u"?",
-"linebelow": u"_",
-"longleg": u"?",
-"longrightleg": u"?",
-"macron": u"¯",
-"middletilde": u"?",
-"ogonek": u"˛",
-"palatalhook": u"?",
-"retroflexhook": u"̢",
-"righthalfring": u"ʾ",
-"ringabove": u"°",
-"ringbelow": u"̥",
-"stroke": u"/",
-"swashtail": u"?",
-"tail": u"?",
-"tilde": u"~",
-"tildebelow": u"̰",
-"topbar": u"⁻",
-}
+from terminators import terminators
 
 str_catchKey = r"^\s*key\s*<([A-Z0-9]{4})>\s*{(.*)\[(.*)\]\s*}\s*;\s*(:?//.*|$)"
 re_catchKey = re.compile(str_catchKey)
