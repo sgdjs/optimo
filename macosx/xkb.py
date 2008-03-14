@@ -102,7 +102,7 @@ for k, v in altgrshift.iteritems():
   chars.add(V)
  
 chars.remove('')
-actions = set( [compose.composeChars[c] for c in chars if c] )
+actions = set( [compose.name(c) for c in chars if c] )
 
 tmpl = codecs.open("fr-dvorak-bepo.keylayout.tmpl", encoding='utf8').read()
 

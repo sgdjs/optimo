@@ -88,6 +88,14 @@ def char(k):
     composeChars[C] = k
   return composeNames[k]
 
+def name(c):
+  if composeChars.has_key(c):
+    return composeChars[c]
+  k = u"U"+repr(c)[4:-1].rjust(4, '0')
+  composeNames[k] = c
+  composeChars[c] = k
+  return k
+
 def isSupportedChar(k):
   if k[0] == 'U' and len(k) == 5 and ishex(k[1:]):
     return True
