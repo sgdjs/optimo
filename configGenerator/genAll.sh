@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #VERSION=0.1.1
-VERSION=0.6.4
+VERSION=0.6.5.1
 LAYOUT=layout-${VERSION}.conf
 DEADS=deads-${VERSION}.conf
 

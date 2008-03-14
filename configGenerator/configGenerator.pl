@@ -220,7 +220,7 @@ sub gen_x_xmodmap_header()
 
 sub gen_win_msklc_header()
 {
-    my $header = "KBD\tbepo064\t\"fr-dvorak-bépo v0.6.4\"\r\n".
+    my $header = "KBD\tbepo0651\t\"fr-dvorak-bépo v0.6.5.1\"\r\n".
                  "\r\n".
                  "COPYRIGHT\t\"Public Domain\"\r\n".
                  "\r\n".
