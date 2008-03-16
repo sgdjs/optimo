@@ -223,6 +223,13 @@ sub loadDeadKeys()
 #print Dumper(\%deadKeysH);
 }
 
+sub unicode2utf8($)
+{
+    my $unicode = shift;
+
+    return chr(hex(lc($unicode)));
+}
+
 sub gen_x_xkb_header()
 {
     my $header = "partial alphanumeric_keys\nxkb_symbols \"dvorak\" {\n\n".
@@ -438,7 +445,7 @@ sub gen_x_compose_body()
         next
             if ($failed == 1);
 
-        $body .= $line.": \"".$unicodes{$result}."\" $symbols{$result}\n";
+        $body .= $line.": \"".&unicode2utf8($unicodes{$result})."\" $symbols{$result}\n";
     }
 
     return $body;
