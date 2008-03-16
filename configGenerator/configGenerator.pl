@@ -252,6 +252,14 @@ sub gen_x_xmodmap_header()
     return $header;
 }
 
+sub gen_x_compose_header()
+{
+    my $header = "#include \"/usr/share/X11/locale/iso8859-15/Compose\"\n".
+                 "include \"/usr/share/X11/locale/en_US.UTF-8/Compose\"\n";
+
+    return $header;
+}
+
 sub gen_win_msklc_header()
 {
     my $header = "KBD\tbepo$SHORT_VERSION\t\"fr-dvorak-bépo v$VERSION\"\r\n".
@@ -898,7 +906,10 @@ sub gen_x_compose()
     &loadSymbols($x_xkb_column);
     &loadDeadKeys();
 
-    print &gen_x_compose_body();
+    my $header = &gen_x_compose_header();
+    my $body   = &gen_x_compose_body();
+
+    print $header.$body;
 }
 
 sub gen_win_msklc()
