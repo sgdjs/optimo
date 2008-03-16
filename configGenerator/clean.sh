@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rm -f *~ *.xkb *.xmodmap *.Xcompose *.klc
+rm -f *~ *.xkb *.xmodmap *.XCompose *.klc
