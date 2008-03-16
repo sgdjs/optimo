@@ -703,12 +703,12 @@ sub gen_win_msklc_bodyDeadKeys()
 
         if ($deadKey ne $previousDeadKey)
         {
-            $body .= "DEADKEY\t".$unicodes{$deadKey}."\r\n".
+            $body .= "DEADKEY\t".lc($unicodes{$deadKey})."\r\n".
                      "\r\n";
             $previousDeadKey = $deadKey;
         }
 
-        $body .= $unicodes{$key}."\t".$unicodes{$result}."\r\n";
+        $body .= lc($unicodes{$key})."\t".lc($unicodes{$result})."\r\n";
     }
 
     return $body;
