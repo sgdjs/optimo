@@ -83,6 +83,7 @@ def char(k):
     return u''
   if k[0] == 'U' and len(k) == 5 and ishex(k[1:]):
     C = unichr(int(k[1:], 16))
+    k = k.upper()
     if composeChars.has_key(C):
       return C
     composeNames[k] = C
@@ -92,7 +93,7 @@ def char(k):
 def name(c):
   if composeChars.has_key(c):
     return composeChars[c]
-  k = u"U"+repr(c)[4:-1].rjust(4, '0')
+  k = u"U"+repr(c)[4:-1].rjust(4, '0').upper()
   composeNames[k] = c
   composeChars[c] = k
   return k
@@ -108,6 +109,11 @@ def areSupportedChars(ks):
       return False
   return True
 
+def upperUnicode(k):
+  if k[0] == 'U' and 5 <= len(k) <= 6 and ishex(k[1:]):
+    return k.upper()
+  return k
+  
 fCompose = file("Compose")
 
 states = set()
@@ -116,6 +122,7 @@ outputs = {}
 for l in fCompose:
   if l.startswith("<Multi_key>") and "<KP_" not in l and "<underbar>" not in l and "<rightcaret>" not in l and "<leftshoe>" not in l and "<leftcaret>" not in l and "<rightshoe>" not in l and "<U223C>" not in l:
     seq = re.findall('<([^ ]+)>', l.split(":")[0])
+    seq = [upperUnicode(s) for s in seq]
     if areSupportedChars(seq):
       for i in range(1, len(seq)):
         s = tuple(seq[:i])

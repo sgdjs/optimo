@@ -214,7 +214,9 @@ dm = set()
 # the set of sets of modifiers
 dmm = set()
 
-for name, C in unicode_dict.iteritems():  
+for name, C in unicode_dict.iteritems():
+  # to register the name in compose
+  compose.name(C)
   # split the name and the modifiers
   ns = name.split(' WITH ')
   n = ns[0]

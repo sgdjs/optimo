@@ -2,7 +2,7 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- French Dvorak Layout -->
 <!-- http://www.clavier-dvorak.org/ -->
-<!-- version 0.6.5.1 -->
+<!-- version 0.6.5 -->
 <keyboard group="126" id="-6538" name="French Dvorak" maxout="5">
   <!--
     This layout is designed for ISO and ANSI keyboards. The extra
@@ -6795,6 +6795,9 @@
 
     <action id="ᄊ">
       <when state="none" output="ᄊ"/>
+      <when state="Multi_key" next="Multi_key_U110A"/>
+      <when state="Multi_key_U1107" output="ᄥ"/>
+      <when state="Multi_key_U1109" output="ᄴ"/>
     </action>
 
     <action id="ᄋ">
@@ -6867,6 +6870,7 @@
 
     <action id="ᄞ">
       <when state="none" output="ᄞ"/>
+      <when state="Multi_key_U1109" output="ᄳ"/>
     </action>
 
     <action id="ᄡ">
@@ -6876,14 +6880,17 @@
 
     <action id="ᄫ">
       <when state="none" output="ᄫ"/>
+      <when state="Multi_key_U1107" output="ᄬ"/>
     </action>
 
     <action id="ᄭ">
       <when state="none" output="ᄭ"/>
+      <when state="Multi_key_U1107" output="ᄢ"/>
     </action>
 
     <action id="ᄯ">
       <when state="none" output="ᄯ"/>
+      <when state="Multi_key_U1107" output="ᄣ"/>
     </action>
 
     <action id="ᄲ">
@@ -7011,6 +7018,7 @@
 
     <action id="ᅪ">
       <when state="none" output="ᅪ"/>
+      <when state="Multi_key" next="Multi_key_U116A"/>
     </action>
 
     <action id="ᅭ">
@@ -7036,6 +7044,7 @@
 
     <action id="ᅯ">
       <when state="none" output="ᅯ"/>
+      <when state="Multi_key" next="Multi_key_U116F"/>
     </action>
 
     <action id="ᅲ">
@@ -7076,6 +7085,7 @@
 
     <action id="ᅼ">
       <when state="none" output="ᅼ"/>
+      <when state="Multi_key_U116E" output="ᆋ"/>
     </action>
 
     <action id="ᆞ">
@@ -7102,10 +7112,13 @@
 
     <action id="ᆩ">
       <when state="none" output="ᆩ"/>
+      <when state="Multi_key_U11BC" output="ᇭ"/>
     </action>
 
     <action id="ᆪ">
       <when state="none" output="ᆪ"/>
+      <when state="Multi_key" next="Multi_key_U11AA"/>
+      <when state="Multi_key_U11AF" output="ᇌ"/>
     </action>
 
     <action id="ᆫ">
@@ -7137,18 +7150,22 @@
 
     <action id="ᆰ">
       <when state="none" output="ᆰ"/>
+      <when state="Multi_key" next="Multi_key_U11B0"/>
     </action>
 
     <action id="ᆱ">
       <when state="none" output="ᆱ"/>
+      <when state="Multi_key" next="Multi_key_U11B1"/>
     </action>
 
     <action id="ᆲ">
       <when state="none" output="ᆲ"/>
+      <when state="Multi_key" next="Multi_key_U11B2"/>
     </action>
 
     <action id="ᆳ">
       <when state="none" output="ᆳ"/>
+      <when state="Multi_key" next="Multi_key_U11B3"/>
     </action>
 
     <action id="ᆷ">
@@ -7170,6 +7187,7 @@
 
     <action id="ᆹ">
       <when state="none" output="ᆹ"/>
+      <when state="Multi_key_U11AF" output="ᇓ"/>
     </action>
 
     <action id="ᆺ">
@@ -7191,6 +7209,8 @@
 
     <action id="ᆻ">
       <when state="none" output="ᆻ"/>
+      <when state="Multi_key_U11AF" output="ᇖ"/>
+      <when state="Multi_key_U11B7" output="ᇞ"/>
     </action>
 
     <action id="ᆼ">
@@ -7245,26 +7265,33 @@
 
     <action id="ᇎ">
       <when state="none" output="ᇎ"/>
+      <when state="Multi_key" next="Multi_key_U11CE"/>
     </action>
 
     <action id="ᇚ">
       <when state="none" output="ᇚ"/>
+      <when state="Multi_key_U11AF" output="ᇑ"/>
     </action>
 
     <action id="ᇝ">
       <when state="none" output="ᇝ"/>
+      <when state="Multi_key" next="Multi_key_U11DD"/>
+      <when state="Multi_key_U11AF" output="ᇒ"/>
     </action>
 
     <action id="ᇥ">
       <when state="none" output="ᇥ"/>
+      <when state="Multi_key_U11AF" output="ᇔ"/>
     </action>
 
     <action id="ᇦ">
       <when state="none" output="ᇦ"/>
+      <when state="Multi_key_U11AF" output="ᇕ"/>
     </action>
 
     <action id="ᇧ">
       <when state="none" output="ᇧ"/>
+      <when state="Multi_key_U11A8" output="ᇄ"/>
     </action>
 
     <action id="ᇫ">
@@ -7277,6 +7304,7 @@
 
     <action id="ᇬ">
       <when state="none" output="ᇬ"/>
+      <when state="Multi_key" next="Multi_key_U11EC"/>
     </action>
 
     <action id="ᇰ">

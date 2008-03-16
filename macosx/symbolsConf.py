@@ -12,7 +12,9 @@
 #
 
 
-import sys, compose
+# import xkb to load the symbols from the current layout
+# import dead_keys to load the dead_keys symbols in compose
+import sys, compose, xkb, dead_keys
 
 out = file("symbols.conf", "w")
 for C in sorted(compose.composeChars.keys()):
@@ -20,6 +22,7 @@ for C in sorted(compose.composeChars.keys()):
   ucode = repr(C)[2:-1]
   if ucode.startswith(r'\u'):
     ucode = ucode[2:].rjust(4, '0')
-    v  = (code, ucode, code, code, ucode)
+    Ucode = ucode.upper()
+    v  = (code, Ucode, code, code, ucode)
     s = "\t".join(v) + "\n"
     out.write(s)
