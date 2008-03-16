@@ -634,7 +634,7 @@ sub gen_win_msklc_bodyKeys()
         $body .= $line."\r\n";
     }
 
-    return join("\r\n", sort split("\r\n", $body))."\r\n\r\n";
+    return $body;
 }
 
 sub gen_win_msklc_bodyDeadKeys()
