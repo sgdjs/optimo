@@ -2,9 +2,8 @@
 
 #VERSION=0.1.1
 VERSION=0.6.5.1
-LAYOUT=layout-${VERSION}.conf
-DEADS=deads-${VERSION}.conf
 
-./configGenerator.pl "$LAYOUT" "$DEADS" x_xkb > ${LAYOUT/conf/xkb}
-./configGenerator.pl "$LAYOUT" "$DEADS" x_xmodmap > ${LAYOUT/conf/xmodmap}
-./configGenerator.pl "$LAYOUT" "$DEADS" win_msklc | iconv -f utf-8 -t utf-16 > "${LAYOUT/conf/klc}"
+./configGenerator.pl $VERSION x_xkb                                > "layout-${VERSION}.xkb"
+./configGenerator.pl $VERSION x_xmodmap                            > "layout-${VERSION}.xmodmap"
+./configGenerator.pl $VERSION x_compose                            > "layout-${VERSION}.Xcompose"
+./configGenerator.pl $VERSION win_msklc | iconv -f utf-8 -t utf-16 > "layout-${VERSION}.klc"

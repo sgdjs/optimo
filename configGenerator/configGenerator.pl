@@ -47,15 +47,20 @@
 use strict;
 use Data::Dumper;
 
-die("Usage: $0 <layout description file> <deadkey behaviour file> <output format>\n")
-    if (!defined($ARGV[2]));
+die("Usage: $0 <version> <output format>\n")
+    if (!defined($ARGV[1]));
 
-my $LAYOUT_DESCRIPTION = $ARGV[0];
-my $DEAKEY_BEHAVIOUR   = $ARGV[1];
-my $OUTPUT_FORMAT      = $ARGV[2];
+my $VERSION            = $ARGV[0];
+my $OUTPUT_FORMAT      = $ARGV[1];
+
+my $LAYOUT_DESCRIPTION = "layout-$VERSION.conf";
+my $DEAKEY_BEHAVIOUR   = "deads-$VERSION.conf";
 
 my $KEYS_FILE    = "keys.conf";
 my $SYMBOLS_FILE = "symbols.conf";
+
+my $SHORT_VERSION = $VERSION;
+$SHORT_VERSION =~ tr/\.//d;
 
 # Column 0: key/symbole code
 # Column 1: scancode/unicode
@@ -75,6 +80,8 @@ my %layoutSyms = ();
 my @deadKeysA = ();
 my %deadKeysH = ();
 
+my @levels = ('ONE', 'TWO', 'THREE', 'FOUR');
+
 sub loadKeys($)
 {
     my $column = shift;
@@ -83,8 +90,8 @@ sub loadKeys($)
 
     LINE: while (<FILE>)
     {
-        next LINE if /^#/;
-        next LINE if /^\s*$/;
+        next LINE if (/^#/);
+        next LINE if (/^\s*$/);
 
         chomp;
         s/#.*$//g;
@@ -106,8 +113,8 @@ sub loadSymbols($)
 
     LINE: while (<FILE>)
     {
-        next LINE if /^#/;
-        next LINE if /^\s*$/;
+        next LINE if (/^#/);
+        next LINE if (/^\s*$/);
 
         chomp;
         s/#.*$//g;
@@ -139,7 +146,7 @@ sub loadLayout()
 
     LINE: while (<FILE>)
     {
-        next LINE if /^#/;
+        next LINE if (/^#/);
 
         if (/^\s*$/)
         {
@@ -157,6 +164,17 @@ sub loadLayout()
         $symbols{'altgr'}       = $array[3];
         $symbols{'altgr+shift'} = $array[4];
 
+        if ($key =~ /(.+)!(.+)/)
+        {
+            my $special = $1;
+            $key = $2;
+
+            $symbols{'windowsOnly'} = ($special =~ /w/);
+            $symbols{'caps0'}       = ($special =~ /0/);
+            $symbols{'caps1'}       = ($special =~ /1/);
+            $symbols{'caps2'}       = ($special =~ /2/);
+        }
+
         push(@layoutKeys, $key);
         $layoutSyms{$key} = \%symbols;
     }
@@ -173,7 +191,7 @@ sub loadDeadKeys()
 
     LINE: while (<FILE>)
     {
-        next LINE if /^#/;
+        next LINE if (/^#/);
 
         if (/^\s*$/)
         {
@@ -184,10 +202,19 @@ sub loadDeadKeys()
         chomp;
         s/#.*$//g;
         my @array = split(/ +|\t/);
-        my $symbol = pop(@array);
+        my %infos = ();
+        $infos{'symbol'} = pop(@array);
+
+        if ($array[0] =~ /(.+)!(.+)/)
+        {
+            my $special = $1;
+            $array[0] = $2;
+
+            $infos{'notLinux'} = ($special =~ /L/);
+        }
 
         push(@deadKeysA, \@array);
-        $deadKeysH{\@array} = $symbol;
+        $deadKeysH{\@array} = \%infos;
     }
 
     close(FILE);
@@ -199,7 +226,7 @@ sub loadDeadKeys()
 sub gen_x_xkb_header()
 {
     my $header = "partial alphanumeric_keys\nxkb_symbols \"dvorak\" {\n\n".
-                 "\tname[Group1]= \"France - Bepo, ergonomic, Dvorak way\";\n";
+                 "\tname[Group1]= \"France - Bepo, ergonomic, Dvorak way (v$VERSION)\";\n";
 
     return $header;
 }
@@ -220,7 +247,7 @@ sub gen_x_xmodmap_header()
 
 sub gen_win_msklc_header()
 {
-    my $header = "KBD\tbepo0651\t\"fr-dvorak-bépo v0.6.5.1\"\r\n".
+    my $header = "KBD\tbepo$SHORT_VERSION\t\"fr-dvorak-bépo v$VERSION\"\r\n".
                  "\r\n".
                  "COPYRIGHT\t\"Public Domain\"\r\n".
                  "\r\n".
@@ -270,6 +297,11 @@ sub gen_x_xkb_body()
         my $nextSymbolExists = 0;
         my $voidSymbol = "VoidSymbol";
 
+        my $symbolNumber = 0;
+
+        next
+            if (defined($keySymbols{'windowsOnly'}) && $keySymbols{'windowsOnly'} == 1);
+
         # AltGr + Shift
         if (defined($keySymbols{'altgr+shift'}) && $keySymbols{'altgr+shift'} ne "")
         {
@@ -280,6 +312,9 @@ sub gen_x_xkb_body()
             }
             $lineEnd = ", ".$symbols{$keySymbols{'altgr+shift'}}.$lineEnd;
             $nextSymbolExists = 1;
+
+            $symbolNumber = 4
+                if ($symbolNumber == 0);
         }
 
         # AltGr
@@ -292,6 +327,9 @@ sub gen_x_xkb_body()
             }
             $lineEnd = ", ".$symbols{$keySymbols{'altgr'}}.$lineEnd;
             $nextSymbolExists = 1;
+
+            $symbolNumber = 3
+                if ($symbolNumber == 0);
         }
         else
         {
@@ -309,6 +347,9 @@ sub gen_x_xkb_body()
             }
             $lineEnd = ", ".$symbols{$keySymbols{'shift'}}.$lineEnd;
             $nextSymbolExists = 1;
+
+            $symbolNumber = 2
+                if ($symbolNumber == 0);
         }
         else
         {
@@ -328,7 +369,76 @@ sub gen_x_xkb_body()
             next;
         }
 
-        $body .= "\tkey <".$keys{$key}."> { [ ".$symbols{$keySymbols{'direct'}}.$lineEnd;
+        $symbolNumber = 1
+            if ($symbolNumber == 0);
+
+        # Caps level
+        my $level = "";
+
+        $level = "type[group1] = \"".$levels[$symbolNumber-1]."_LEVEL\", "
+            if (defined($keySymbols{'caps0'}) && $keySymbols{'caps0'} == 1);
+
+        $level = "type[group1] = \"FOUR_LEVEL_SEMIALPHABETIC\", "
+            if (defined($keySymbols{'caps1'}) && $keySymbols{'caps1'} == 1);
+
+        $level = "type[group1] = \"FOUR_LEVEL_ALPHABETIC\", "
+            if (defined($keySymbols{'caps2'}) && $keySymbols{'caps2'} == 1);
+
+        $body .= "\tkey <".$keys{$key}."> { ".$level."[ ".$symbols{$keySymbols{'direct'}}.$lineEnd;
+    }
+
+    return $body;
+}
+
+sub gen_x_compose_body()
+{
+    my $body = "";
+    my $previousDeadKey = "";
+
+    for my $combo (@deadKeysA)
+    {
+        next
+            if ($combo eq "");
+
+        my @keyCombo = @{$combo};
+        my %infos = %{$deadKeysH{$combo}};
+
+        next
+            if (defined($infos{'notLinux'}) && $infos{'notLinux'} == 1);
+
+        my $result = $infos{'symbol'};
+
+        my $failed = 0;
+        my $line = "";
+        for my $key (@keyCombo)
+        {
+            if (!defined($symbols{$key}))
+            {
+                print STDERR "Unknown symbol: ".$key."\n";
+                $failed = 1;
+            }
+            else
+            {
+                $line .= "<".$symbols{$key}."> ";
+            }
+        }
+
+        if (!defined($symbols{$result}))
+        {
+            print STDERR "Unknown symbol: ".$result."\n";
+            $failed = 1;
+        }
+
+        if (!defined($unicodes{$result}))
+        {
+            print STDERR "No unicode for symbol: ".$result."\n";
+            $failed = 1;
+        }
+
+        next
+            if ($failed == 1);
+
+        $body .= $line.": \"".$unicodes{$result}."\" $symbols{$result}\n";
     }
 
     return $body;
@@ -356,6 +466,9 @@ sub gen_x_xmodmap_body()
         my $lineEnd = "\n";
         my $nextSymbolExists = 0;
         my $voidSymbol = "VoidSymbol";
+
+        next
+            if (defined($keySymbols{'windowsOnly'}) && $keySymbols{'windowsOnly'} == 1);
 
         # AltGr + Shift
         if (defined($keySymbols{'altgr+shift'}) && $keySymbols{'altgr+shift'} ne "")
@@ -440,7 +553,20 @@ sub gen_win_msklc_bodyKeys()
         }
 
         my %keySymbols = %{$layoutSyms{$key}};
-        my $line = $scanCodes{$key}."\t".$keys{$key}."\t\t"."1"."\t";
+
+        # Caps level
+        my $level = "";
+
+        $level = "0"
+            if (defined($keySymbols{'caps0'}) && $keySymbols{'caps0'} == 1);
+
+        $level = "1"
+            if (defined($keySymbols{'caps1'}) && $keySymbols{'caps1'} == 1);
+
+        $level = "5"
+            if (defined($keySymbols{'caps2'}) && $keySymbols{'caps2'} == 1);
+        
+        my $line = $scanCodes{$key}."\t".$keys{$key}."\t\t".$level."\t";
         my $voidSymbol = "-1";
 
         # Direct
@@ -502,13 +628,13 @@ sub gen_win_msklc_bodyKeys()
         }
         else
         {
-            $line .= $voidSymbol."\t";
+            $line .= $voidSymbol;
         }
 
         $body .= $line."\r\n";
     }
 
-    return $body;
+    return join("\r\n", sort split("\r\n", $body))."\r\n\r\n";
 }
 
 sub gen_win_msklc_bodyDeadKeys()
@@ -516,19 +642,25 @@ sub gen_win_msklc_bodyDeadKeys()
     my $body = "";
     my $previousDeadKey = "";
 
-    for my $key (@deadKeysA)
+    for my $combo (@deadKeysA)
     {
-        if ($key eq "")
+        if ($combo eq "")
         {
             $body .= "\r\n";
             next;
         }
 
-        my @keyCombo = @{$key};
-        my $result = $deadKeysH{$key};
-        my $comboSize = $#keyCombo + 1;
+        my @keyCombo = @{$combo};
+        my %infos = %{$deadKeysH{$combo}};
 
-        next if ($comboSize > 2); # Not supported by MSKLC
+        next
+            if (defined($infos{'notWindows'}) && $infos{'notWindows'} == 1);
+
+        my $result = $infos{'symbol'};
+
+        my $comboSize = $#keyCombo + 1;
+        next
+            if ($comboSize > 2); # Not supported by MSKLC
 
         my $deadKey = $keyCombo[0];
         my $key     = $keyCombo[1];
@@ -717,7 +849,7 @@ sub gen_win_msklc_footer()
                  "\r\n".
                  "DESCRIPTIONS\r\n".
                  "\r\n".
-                 "0409\tFrançais (fr-dvorak-bépo v0.6.5.1)\r\n".
+                 "0409\tFrançais (fr-dvorak-bépo v$VERSION)\r\n".
                  "\r\n".
                  "LANGUAGENAMES\r\n".
                  "\r\n".
@@ -730,52 +862,59 @@ sub gen_win_msklc_footer()
 
 sub gen_x_xkb()
 {
-    loadKeys   ($x_xkb_column);
-    loadSymbols($x_xkb_column);
-    loadLayout();
-    loadDeadKeys();
+    &loadKeys   ($x_xkb_column);
+    &loadSymbols($x_xkb_column);
+    &loadLayout();
 
-    my $header = gen_x_xkb_header();
-    my $body   = gen_x_xkb_body();
-    my $footer = gen_x_xkb_footer();
+    my $header = &gen_x_xkb_header();
+    my $body   = &gen_x_xkb_body();
+    my $footer = &gen_x_xkb_footer();
 
     print $header.$body.$footer;
 }
 
 sub gen_x_xmodmap()
 {
-    loadKeys   ($x_xmodmap_column);
-    loadSymbols($x_xmodmap_column);
-    loadLayout();
-    loadDeadKeys();
+    &loadKeys   ($x_xmodmap_column);
+    &loadSymbols($x_xmodmap_column);
+    &loadLayout();
 
-    my $header = gen_x_xmodmap_header();
-    my $body   = gen_x_xmodmap_body();
-    my $footer = gen_x_xmodmap_footer();
+    my $header = &gen_x_xmodmap_header();
+    my $body   = &gen_x_xmodmap_body();
+    my $footer = &gen_x_xmodmap_footer();
 
     print $header.$body.$footer;
 }
 
+sub gen_x_compose()
+{
+    &loadSymbols($x_xkb_column);
+    &loadDeadKeys();
+
+    print &gen_x_compose_body();
+}
+
 sub gen_win_msklc()
 {
-    loadKeys   ($win_msklc_column);
-    loadSymbols($win_msklc_column);
-    loadLayout();
-    loadDeadKeys();
+    &loadKeys   ($win_msklc_column);
+    &loadSymbols($win_msklc_column);
+    &loadLayout();
+    &loadDeadKeys();
 
-    my $header       = gen_win_msklc_header();
-    my $bodyKeys     = gen_win_msklc_bodyKeys();
-    my $bodyDeadKeys = gen_win_msklc_bodyDeadKeys();
-    my $footer       = gen_win_msklc_footer();
+    my $header       = &gen_win_msklc_header();
+    my $bodyKeys     = &gen_win_msklc_bodyKeys();
+    my $bodyDeadKeys = &gen_win_msklc_bodyDeadKeys();
+    my $footer       = &gen_win_msklc_footer();
 
     print $header.$bodyKeys.$bodyDeadKeys.$footer;
 }
 
 SWITCH: for ($OUTPUT_FORMAT)
 {
-    /x_xkb/i     && do { gen_x_xkb();     last; };
-    /x_xmodmap/i && do { gen_x_xmodmap(); last; };
-    /win_msklc/i && do { gen_win_msklc(); last; };
-    die("output format must be one of the following: x_xkb, x_xmodmap, win_msklc\n");
+    /x_xkb/i     && do { &gen_x_xkb();     last; };
+    /x_xmodmap/i && do { &gen_x_xmodmap(); last; };
+    /x_compose/i && do { &gen_x_compose(); last; };
+    /win_msklc/i && do { &gen_win_msklc(); last; };
+    die("output format must be one of the following: x_xkb, x_xmodmap, x_compose, win_msklc\n");
 }
 
