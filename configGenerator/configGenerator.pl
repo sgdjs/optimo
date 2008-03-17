@@ -737,7 +737,7 @@ sub gen_win_msklc_bodyDeadKeys()
             $previousDeadKey = $deadKey;
         }
 
-        $body .= lc($unicodes{$key})."\t".lc($unicodes{$result})."\r\n";
+        $body .= lc($unicodes{$key})."\t".lc($unicodes{$result})."\t// ".&unicode2utf8($unicodes{$key})." -> ".&unicode2utf8($unicodes{$result})."\r\n";
     }
 
     return $body;
