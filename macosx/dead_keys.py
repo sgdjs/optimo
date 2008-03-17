@@ -147,6 +147,16 @@ circumflex = {
 'LATIN CAPITAL LETTER - WITH CIRCUMFLEX': u'⁻',
 }
 
+stroke = {
+'LATIN CAPITAL LETTER 2 WITH STROKE': u'ƻ',
+'LATIN CAPITAL LETTER LESS': u'&#x0022;',
+'LATIN CAPITAL LETTER LESS WITH STROKE': u'≮',
+'LATIN CAPITAL LETTER GREATER': u'>',
+'LATIN CAPITAL LETTER GREATER WITH STROKE': u'≯',
+'LATIN CAPITAL LETTER = WITH STROKE': u'≠',
+}
+
+
 from terminators import terminators, combiningTerminators
 
 
@@ -189,6 +199,7 @@ for c in range(0,0x10000):
 # append the currency signs
 unicode_dict.update(currency)
 unicode_dict.update(circumflex)
+unicode_dict.update(stroke)
 
 
 # iterate over all the items to build the set of modifiers for the
