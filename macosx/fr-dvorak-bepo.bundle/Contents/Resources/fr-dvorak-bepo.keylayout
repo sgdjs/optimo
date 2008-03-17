@@ -2367,6 +2367,7 @@
       <when state="macron" output="ē"/>
       <when state="ogonek" output="ę"/>
       <when state="retroflexhook" output="ᶒ"/>
+      <when state="stroke" output="ɇ"/>
       <when state="tilde" output="ẽ"/>
       <when state="tildebelow" output="ḛ"/>
       <when state="acute_circumflex" output="ế"/>
@@ -2498,6 +2499,7 @@
       <when state="invertedbreve" output="Ȇ"/>
       <when state="macron" output="Ē"/>
       <when state="ogonek" output="Ę"/>
+      <when state="stroke" output="Ɇ"/>
       <when state="tilde" output="Ẽ"/>
       <when state="tildebelow" output="Ḛ"/>
       <when state="acute_circumflex" output="Ế"/>
@@ -3960,6 +3962,7 @@
       <when state="ogonek" output="ų"/>
       <when state="retroflexhook" output="ᶙ"/>
       <when state="ringabove" output="ů"/>
+      <when state="stroke" output="ʉ"/>
       <when state="tilde" output="ũ"/>
       <when state="tildebelow" output="ṵ"/>
       <when state="acute_diaeresis" output="ǘ"/>
@@ -4109,6 +4112,7 @@
       <when state="macron" output="Ū"/>
       <when state="ogonek" output="Ų"/>
       <when state="ringabove" output="Ů"/>
+      <when state="stroke" output="Ʉ"/>
       <when state="tilde" output="Ũ"/>
       <when state="tildebelow" output="Ṵ"/>
       <when state="acute_diaeresis" output="Ǘ"/>
