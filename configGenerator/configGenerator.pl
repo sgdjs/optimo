@@ -308,7 +308,8 @@ sub gen_x_xkb_body()
         }
 
         my %keySymbols = %{$layoutSyms{$key}};
-        my $lineEnd = " ] };\n";
+        my $lineEnd = " ] };";
+        my $comment = "\n";
         my $nextSymbolExists = 0;
         my $voidSymbol = "VoidSymbol";
 
@@ -326,6 +327,7 @@ sub gen_x_xkb_body()
                 next;
             }
             $lineEnd = ", ".$symbols{$keySymbols{'altgr+shift'}}.$lineEnd;
+            $comment = " ".&unicode2utf8($unicodes{$keySymbols{'altgr+shift'}}).$comment;
             $nextSymbolExists = 1;
 
             $symbolNumber = 4
@@ -341,15 +343,16 @@ sub gen_x_xkb_body()
                 next;
             }
             $lineEnd = ", ".$symbols{$keySymbols{'altgr'}}.$lineEnd;
+            $comment = " ".&unicode2utf8($unicodes{$keySymbols{'altgr'}}).$comment;
             $nextSymbolExists = 1;
 
             $symbolNumber = 3
                 if ($symbolNumber == 0);
         }
-        else
+        elsif ($nextSymbolExists == 1)
         {
-            $lineEnd = ", ".$voidSymbol.$lineEnd
-                if ($nextSymbolExists == 1);
+            $lineEnd = ", ".$voidSymbol.$lineEnd;
+            $comment = "  ".$comment;
         }
 
         # Shift
@@ -361,15 +364,16 @@ sub gen_x_xkb_body()
                 next;
             }
             $lineEnd = ", ".$symbols{$keySymbols{'shift'}}.$lineEnd;
+            $comment = " ".&unicode2utf8($unicodes{$keySymbols{'shift'}}).$comment;
             $nextSymbolExists = 1;
 
             $symbolNumber = 2
                 if ($symbolNumber == 0);
         }
-        else
+        elsif ($nextSymbolExists == 1)
         {
-            $lineEnd = ", ".$voidSymbol.$lineEnd
-                if ($nextSymbolExists == 1);
+            $lineEnd = ", ".$voidSymbol.$lineEnd;
+            $comment = "  ".$comment;
         }
 
         # Direct
@@ -399,7 +403,10 @@ sub gen_x_xkb_body()
         $level = "type[group1] = \"FOUR_LEVEL_ALPHABETIC\", "
             if (defined($keySymbols{'caps2'}) && $keySymbols{'caps2'} == 1);
 
-        $body .= "\tkey <".$keys{$key}."> { ".$level."[ ".$symbols{$keySymbols{'direct'}}.$lineEnd;
+        $lineEnd = "[ ".$symbols{$keySymbols{'direct'}}.$lineEnd;
+        $comment = " ".&unicode2utf8($unicodes{$keySymbols{'direct'}}).$comment;
+
+        $body .= "\tkey <".$keys{$key}."> { ".$level.$lineEnd." //".$comment;
     }
 
     return $body;
