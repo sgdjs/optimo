@@ -118,7 +118,17 @@ sub loadSymbols($)
 
         chomp;
         s/#.*$//g;
-        my @array = split(/ +|\t/);
+        my @array = ();
+
+        if (/^U([0-9A-Z]{4})$/)
+        {
+            my $unicode = $1;
+            @array = ("U".$unicode, $unicode, "U".$unicode, "U".$unicode, lc($unicode));
+        }
+        else
+        {
+            @array = split(/ +|\t/);
+        }
 
         if (defined($unicodes{$array[0]}))
         {
