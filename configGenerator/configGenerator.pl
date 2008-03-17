@@ -22,27 +22,27 @@
 
 # TODO
 
-# xkbÂ :
+# xkb :
 # - gestion des level four alphabetic
-# composeÂ :
+# compose :
 # - gestion de la surcharge
-# msklcÂ :
+# msklc :
 # - gestion du capslock pour msklc
-# xmodmapÂ :
-# - gÃ©nÃ©rer via layout.conf les touches qui sont mises en dur dans le footer
-# loadkeysÂ :
+# xmodmap :
+# - générer via layout.conf les touches qui sont mises en dur dans le footer
+# loadkeys :
 # - tout
 
-# source CÂ :
+# source C :
 # - tout
 
-# auto hotkeysÂ :
+# auto hotkeys :
 # - tout
-# allcharsÂ :
+# allchars :
 # - tout
 
 # Notes
-# le format Mac OS X est gÃ©nÃ©rÃ© Ã  partir des fichiers xkb par le script de gaetan
+# le format Mac OS X est généré à partir des fichiers xkb par le script de gaetan
 
 use strict;
 use Data::Dumper;
@@ -262,7 +262,7 @@ sub gen_x_compose_header()
 
 sub gen_win_msklc_header()
 {
-    my $header = "KBD\tbepo$SHORT_VERSION\t\"fr-dvorak-bÃ©po v$VERSION\"\r\n".
+    my $header = "KBD\tbepo$SHORT_VERSION\t\"fr-dvorak-bépo v$VERSION\"\r\n".
                  "\r\n".
                  "COPYRIGHT\t\"Public Domain\"\r\n".
                  "\r\n".
@@ -589,6 +589,7 @@ sub gen_win_msklc_bodyKeys()
             if (defined($keySymbols{'caps2'}) && $keySymbols{'caps2'} == 1);
         
         my $line = $scanCodes{$key}."\t".$keys{$key}."\t\t".$level."\t";
+        my $comment = "\t//";
         my $voidSymbol = "-1";
 
         # Direct
@@ -604,6 +605,7 @@ sub gen_win_msklc_bodyKeys()
         }
 
         $line .= $symbols{$keySymbols{'direct'}}."\t";
+        $comment .= " ".&unicode2utf8($unicodes{$keySymbols{'direct'}});
 
         # Shift
         if (defined($keySymbols{'shift'}) && $keySymbols{'shift'} ne "")
@@ -614,10 +616,12 @@ sub gen_win_msklc_bodyKeys()
                 next;
             }
             $line .= $symbols{$keySymbols{'shift'}}."\t";
+            $comment .= " ".&unicode2utf8($unicodes{$keySymbols{'shift'}});
         }
         else
         {
             $line .= $voidSymbol."\t";
+            $comment .= "  ";
         }
 
         # Ctrl
@@ -632,10 +636,12 @@ sub gen_win_msklc_bodyKeys()
                 next;
             }
             $line .= $symbols{$keySymbols{'altgr'}}."\t";
+            $comment .= " ".&unicode2utf8($unicodes{$keySymbols{'altgr'}});
         }
         else
         {
             $line .= $voidSymbol."\t";
+            $comment .= "  ";
         }
 
         # AltGr + Shift
@@ -647,13 +653,14 @@ sub gen_win_msklc_bodyKeys()
                 next;
             }
             $line .= $symbols{$keySymbols{'altgr+shift'}};
+            $comment .= " ".&unicode2utf8($unicodes{$keySymbols{'altgr+shift'}});
         }
         else
         {
             $line .= $voidSymbol;
         }
 
-        $body .= $line."\r\n";
+        $body .= $line.$comment."\r\n";
     }
 
     return $body;
@@ -871,7 +878,7 @@ sub gen_win_msklc_footer()
                  "\r\n".
                  "DESCRIPTIONS\r\n".
                  "\r\n".
-                 "0409\tFranÃ§ais (fr-dvorak-bÃ©po v$VERSION)\r\n".
+                 "0409\tFrançais (fr-dvorak-bépo v$VERSION)\r\n".
                  "\r\n".
                  "LANGUAGENAMES\r\n".
                  "\r\n".
