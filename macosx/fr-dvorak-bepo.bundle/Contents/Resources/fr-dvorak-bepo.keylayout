@@ -3019,20 +3019,15 @@
       <when state="Multi_key_underscore" output="Ḹ"/>
     </action>
 
-    <action id="&#x0022;">
-      <when state="none" output="&#x0022;"/>
+    <action id="&#x003c;">
+      <when state="none" output="&#x003c;"/>
       <when state="stroke" output="≮"/>
-      <when state="Multi_key" next="Multi_key_quotedbl"/>
-      <when state="Multi_key_acute" next="Multi_key_acute_quotedbl"/>
-      <when state="Multi_key_apostrophe" next="Multi_key_apostrophe_quotedbl"/>
-      <when state="Multi_key_asciitilde" next="Multi_key_asciitilde_quotedbl"/>
-      <when state="Multi_key_c" next="Multi_key_c_quotedbl"/>
-      <when state="Multi_key_grave" next="Multi_key_grave_quotedbl"/>
-      <when state="Multi_key_macron" next="Multi_key_macron_quotedbl"/>
-      <when state="Multi_key_underscore" next="Multi_key_underscore_quotedbl"/>
-      <when state="Multi_key_comma" output="„"/>
-      <when state="Multi_key_greater" output="”"/>
-      <when state="Multi_key_less" output="“"/>
+      <when state="Multi_key" next="Multi_key_less"/>
+      <when state="Multi_key_apostrophe" output="‘"/>
+      <when state="Multi_key_less" output="«"/>
+      <when state="Multi_key_period" output="‹"/>
+      <when state="Multi_key_quotedbl" output="“"/>
+      <when state="Multi_key_slash" output="\"/>
     </action>
 
     <action id="ſ">
@@ -4466,18 +4461,23 @@
       <when state="Multi_key" next="Multi_key_percent"/>
     </action>
 
-    <action id="&#x0026;">
-      <when state="none" output="&#x0026;"/>
+    <action id="&#x0022;">
+      <when state="none" output="&#x0022;"/>
+      <when state="Multi_key" next="Multi_key_quotedbl"/>
+      <when state="Multi_key_acute" next="Multi_key_acute_quotedbl"/>
+      <when state="Multi_key_apostrophe" next="Multi_key_apostrophe_quotedbl"/>
+      <when state="Multi_key_asciitilde" next="Multi_key_asciitilde_quotedbl"/>
+      <when state="Multi_key_c" next="Multi_key_c_quotedbl"/>
+      <when state="Multi_key_grave" next="Multi_key_grave_quotedbl"/>
+      <when state="Multi_key_macron" next="Multi_key_macron_quotedbl"/>
+      <when state="Multi_key_underscore" next="Multi_key_underscore_quotedbl"/>
+      <when state="Multi_key_comma" output="„"/>
+      <when state="Multi_key_greater" output="”"/>
+      <when state="Multi_key_less" output="“"/>
     </action>
 
-    <action id="&#x003c;">
-      <when state="none" output="&#x003c;"/>
-      <when state="Multi_key" next="Multi_key_less"/>
-      <when state="Multi_key_apostrophe" output="‘"/>
-      <when state="Multi_key_less" output="«"/>
-      <when state="Multi_key_period" output="‹"/>
-      <when state="Multi_key_quotedbl" output="“"/>
-      <when state="Multi_key_slash" output="\"/>
+    <action id="&#x0026;">
+      <when state="none" output="&#x0026;"/>
     </action>
 
     <action id="'">
