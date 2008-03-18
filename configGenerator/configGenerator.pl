@@ -871,11 +871,11 @@ sub gen_win_msklc_footer()
                  "KEYNAME_DEAD\r\n".
                  "\r\n".
                  "00b4\t\"ACUTE ACCENT\"\r\n".
+                 "02dd\t\"DOUBLE ACUTE ACCENT\"\r\n".
                  "0060\t\"GRAVE ACCENT\"\r\n".
                  "005e\t\"CIRCUMFLEX ACCENT\"\r\n".
                  "02c7\t\"CARON (Mandarin Chinese third tone)\"\r\n".
                  "002f\t\"SOLIDUS\"\r\n".
-                 "02db\t\"OGONEK\"\r\n".
                  "02d8\t\"BREVE\"\r\n".
                  "00a8\t\"DIAERESIS\"\r\n".
                  "02d9\t\"DOT ABOVE (Mandarin Chinese light tone)\"\r\n".
@@ -884,6 +884,7 @@ sub gen_win_msklc_footer()
                  "00b8\t\"CEDILLA\"\r\n".
                  "007e\t\"TILDE\"\r\n".
                  "02da\t\"RING ABOVE\"\r\n".
+                 "02db\t\"OGONEK\"\r\n".
                  "\r\n".
                  "\r\n".
                  "DESCRIPTIONS\r\n".
