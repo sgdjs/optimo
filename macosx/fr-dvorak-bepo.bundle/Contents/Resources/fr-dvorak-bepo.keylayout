@@ -847,18 +847,18 @@
       <key code="15" action="œ" />
       <key code="16" action="¡" />
       <key code="17" action="grave" />
-      <key code="18" action="—" />
-      <key code="19" action="&#x003c;" />
-      <key code="20" action=">" />
-      <key code="21" action="[" />
-      <key code="22" action="Multi_key" />
-      <key code="23" action="]" />
+      <key code="18" action="" />
+      <key code="19" action="≤" />
+      <key code="20" action="≥" />
+      <key code="21" action="“" />
+      <key code="22" action="" />
+      <key code="23" action="”" />
       <key code="24" action="" />
-      <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="25" action="″" />
+      <key code="26" action="°" />
       <key code="27" action="" />
-      <key code="28" action="–" />
-      <key code="29" action="×" />
+      <key code="28" action="′" />
+      <key code="29" action="" />
       <key code="30" action="" />
       <key code="31" action="" />
       <key code="32" action="" />
@@ -962,18 +962,18 @@
       <key code="15" action="Œ" />
       <key code="16" action="caron" />
       <key code="17" action="`" />
-      <key code="18" action="" />
-      <key code="19" action="≤" />
-      <key code="20" action="≥" />
-      <key code="21" action="“" />
-      <key code="22" action="" />
-      <key code="23" action="”" />
+      <key code="18" action="—" />
+      <key code="19" action="&#x003c;" />
+      <key code="20" action=">" />
+      <key code="21" action="[" />
+      <key code="22" action="Multi_key" />
+      <key code="23" action="]" />
       <key code="24" action="‰" />
-      <key code="25" action="″" />
-      <key code="26" action="°" />
+      <key code="25" action="÷" />
+      <key code="26" action="±" />
       <key code="27" action="¬" />
-      <key code="28" action="′" />
-      <key code="29" action="" />
+      <key code="28" action="–" />
+      <key code="29" action="×" />
       <key code="30" action="breve" />
       <key code="31" action="stroke" />
       <key code="32" action="" />

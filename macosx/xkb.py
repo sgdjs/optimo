@@ -75,11 +75,8 @@ for k, v in altgr.iteritems():
   chars.add(v)
 
   V = v
-  if "FOUR_LEVEL_SEMIALPHABETIC" not in options[k]:
-    if len(v) == 1:
-      V = v.upper()
-  else:
-    V = altgrshift[k]
+  if len(v) == 1:
+    V = v.upper()
   tmplValues[k+'_option_capslock'] = V
   chars.add(V)
 
@@ -93,11 +90,8 @@ for k, v in altgrshift.iteritems():
   chars.add(v)
 
   V = v
-  if "FOUR_LEVEL_SEMIALPHABETIC" not in options[k]:
-    if len(v) == 1:
-      V = v.lower()
-  else:
-    V = altgr[k]
+  if len(v) == 1:
+    V = v.lower()
   tmplValues[k+'_shift_option_capslock'] = V
   chars.add(V)
  
