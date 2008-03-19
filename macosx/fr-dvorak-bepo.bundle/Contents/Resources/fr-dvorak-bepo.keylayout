@@ -1802,6 +1802,7 @@
       <when state="righthalfring" output="ẚ"/>
       <when state="ringabove" output="å"/>
       <when state="ringbelow" output="ḁ"/>
+      <when state="stroke" output="ⱥ"/>
       <when state="tilde" output="ã"/>
       <when state="abovedot_macron" output="ǡ"/>
       <when state="acute_breve" output="ắ"/>
@@ -2179,6 +2180,7 @@
       <when state="currency" output="₱"/>
       <when state="hook" output="Ɓ"/>
       <when state="linebelow" output="Ḇ"/>
+      <when state="stroke" output="Ƀ"/>
       <when state="topbar" output="Ƃ"/>
       <when state="Multi_key_parenleft" next="Multi_key_parenleft_B"/>
       <when state="Multi_key_exclam" output="Ḅ"/>
@@ -3623,6 +3625,7 @@
       <when state="acute" output="Ṕ"/>
       <when state="currency" output="₧"/>
       <when state="hook" output="Ƥ"/>
+      <when state="stroke" output="Ᵽ"/>
       <when state="Multi_key" next="Multi_key_P"/>
       <when state="Multi_key_parenleft" next="Multi_key_parenleft_P"/>
       <when state="Multi_key_P" output="¶"/>
