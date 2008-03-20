@@ -50,6 +50,8 @@ include "%L"
 <UFE63> <2> : "ƻ" U01BB
 <UFE63> <equal> : "≠" notequal
 <UFE63> <A> : "Ⱥ" U023A
+<UFE63> <a> : "ⱥ" U2C65
+<UFE63> <B> : "Ƀ" U0243
 <UFE63> <b> : "ƀ" U0180
 <UFE63> <C> : "Ȼ" U023B
 <UFE63> <c> : "ȼ" U023C
@@ -73,6 +75,7 @@ include "%L"
 <UFE63> <O> : "Ø" Oslash
 <UFE63> <oacute> : "ǿ" U01FF
 <UFE63> <o> : "ø" oslash
+<UFE63> <P> : "Ᵽ" U2C63
 <UFE63> <p> : "ᵽ" U1D7D
 <UFE63> <U1D11> : "ᴓ" U1D13
 <UFE63> <T> : "Ŧ" Tslash
