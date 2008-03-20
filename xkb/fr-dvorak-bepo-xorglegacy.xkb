@@ -35,7 +35,7 @@ xkb_symbols "dvorak" {
 	key <AD06> { type[group1] = "FOUR_LEVEL", [ dead_circumflex, exclam, dead_caron, exclamdown ] }; // ^ ! ˇ ¡
 	key <AD07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ v, V ] }; // v V
 	key <AD08> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ d, D, eth, ETH ] }; // d D ð Ð
-	key <AD09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ l, L, UEF63 ] }; // l L /
+	key <AD09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ l, L, UFE63 ] }; // l L /
 	key <AD10> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ j, J, U0133, U0132 ] }; // j J ĳ Ĳ
 	key <AD11> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ z, Z, schwa, SCHWA ] }; // z Z ə Ə
 	key <AD12> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ w, W, dead_breve ] }; // w W ˘
@@ -43,7 +43,7 @@ xkb_symbols "dvorak" {
 	key <AC01> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ a, A, ae, AE ] }; // a A æ Æ
 	key <AC02> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ u, U, ugrave, Ugrave ] }; // u U ù Ù
 	key <AC03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ i, I, dead_diaeresis, dead_abovedot ] }; // i I ¨ ˙
-	key <AC04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ e, E, EuroSign, UEF67 ] }; // e E € ¤
+	key <AC04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ e, E, EuroSign, UFE67 ] }; // e E € ¤
 	key <AC05> { type[group1] = "FOUR_LEVEL", [ comma, question, rightsinglequotemark, questiondown ] }; // , ? ’ ¿
 	key <AC06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ c, C, copyright ] }; // c C ©
 	key <AC07> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ t, T, thorn, THORN ] }; // t T þ Þ
