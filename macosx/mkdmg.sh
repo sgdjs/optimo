@@ -10,6 +10,7 @@
 # of the License, or (at your option) any later version.
 #
 
+set -ev
 
 # store the current dir. The image will be stored here.
 OUT=$PWD
