@@ -248,6 +248,20 @@ sub gen_x_xkb_header()
     return $header;
 }
 
+sub gen_x_xkb_user_header()
+{
+    my $header = "xkb_keymap        {\n".
+                 "\n".
+                 "xkb_keycodes      { include \"xfree86+aliases(azerty)\" };\n".
+                 "\n".
+                 "xkb_types         { include \"complete\" };\n".
+                 "\n".
+                 "xkb_compatibility { include \"complete\" };\n".
+                 "\n";
+
+    return $header;
+}
+
 sub gen_x_xmodmap_header()
 {
     my $header = "clear    shift\n".
@@ -418,6 +432,14 @@ sub gen_x_xkb_body()
 
         $body .= "\tkey <".$keys{$key}."> { ".$level.$lineEnd." //".$comment;
     }
+
+    return $body;
+}
+
+sub gen_x_xkb_user_body()
+{
+    my $body = "\n".
+               "\tinclude \"pc(pc105)\"\n";
 
     return $body;
 }
@@ -761,6 +783,16 @@ sub gen_x_xkb_footer()
     return $footer;
 }
 
+sub gen_x_xkb_user_footer()
+{
+    my $footer = "\n".
+                 "xkb_geometry { include \"pc(pc105)\" };\n".
+                 "\n".
+                 "};\n";
+
+    return $footer;
+}
+
 sub gen_x_xmodmap_footer()
 {
     my $footer = "keycode 0x32 = Shift_L\n".
@@ -900,7 +932,7 @@ sub gen_win_msklc_footer()
     return $footer;
 }
 
-sub gen_x_xkb()
+sub gen_x_xkb_root()
 {
     &loadKeys   ($x_xkb_column);
     &loadSymbols($x_xkb_column);
@@ -911,6 +943,23 @@ sub gen_x_xkb()
     my $footer = &gen_x_xkb_footer();
 
     print $header.$body.$footer;
+}
+
+sub gen_x_xkb_user()
+{
+    &loadKeys   ($x_xkb_column);
+    &loadSymbols($x_xkb_column);
+    &loadLayout();
+
+    my $header = &gen_x_xkb_header();
+    my $body   = &gen_x_xkb_body();
+    my $footer = &gen_x_xkb_footer();
+
+    my $headerUser = &gen_x_xkb_user_header();
+    my $bodyUser   = &gen_x_xkb_user_body();
+    my $footerUser = &gen_x_xkb_user_footer();
+
+    print $headerUser.$header.$bodyUser.$body.$footer.$footerUser;
 }
 
 sub gen_x_xmodmap()
@@ -954,10 +1003,11 @@ sub gen_win_msklc()
 
 SWITCH: for ($OUTPUT_FORMAT)
 {
-    /x_xkb/i     && do { &gen_x_xkb();     last; };
-    /x_xmodmap/i && do { &gen_x_xmodmap(); last; };
-    /x_compose/i && do { &gen_x_compose(); last; };
-    /win_msklc/i && do { &gen_win_msklc(); last; };
+    /x_xkb_root/i && do { &gen_x_xkb_root(); last; };
+    /x_xkb_user/i && do { &gen_x_xkb_user(); last; };
+    /x_xmodmap/i  && do { &gen_x_xmodmap();  last; };
+    /x_compose/i  && do { &gen_x_compose();  last; };
+    /win_msklc/i  && do { &gen_win_msklc();  last; };
     die("output format must be one of the following: x_xkb, x_xmodmap, x_compose, win_msklc\n");
 }
 
