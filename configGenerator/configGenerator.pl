@@ -278,8 +278,7 @@ sub gen_x_xmodmap_header()
 
 sub gen_x_compose_header()
 {
-    my $header = "#include \"/usr/share/X11/locale/iso8859-15/Compose\"\n".
-                 "include \"/usr/share/X11/locale/en_US.UTF-8/Compose\"\n";
+    my $header = "#include \"%L\"\n";
 
     return $header;
 }
