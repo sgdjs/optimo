@@ -278,7 +278,7 @@ sub gen_x_xmodmap_header()
 
 sub gen_x_compose_header()
 {
-    my $header = "#include \"%L\"\n";
+    my $header = "include \"%L\"\n";
 
     return $header;
 }
