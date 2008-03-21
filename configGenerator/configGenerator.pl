@@ -491,7 +491,7 @@ sub gen_x_compose_body()
         next
             if ($failed == 1);
 
-        $body .= $line.": \"".&unicode2utf8($unicodes{$result})."\" $symbols{$result}\n";
+        $body .= $line.": $symbols{$result}\n";
     }
 
     return $body;
