@@ -53,3 +53,22 @@ for k, v in xkb.tmplValues.iteritems():
 out = codecs.open(sys.argv[2], "w", "utf8")
 out.write( fullMapTmpl % fullMapValues )
 
+print >> out 
+print >> out 
+print >> out, "* Capslock"
+fullMapValues = {}
+for k, v in xkb.tmplValues.iteritems():
+   v = terminators.get( v, v )
+   if v == "":
+     v = " "
+   if v == u"&#x0022;":
+     v = u'"'
+   if v == u"&#x003c;":
+     v = u'<'
+   if v == u'&#x0026;':
+     v = u'&'
+   k = k.replace("_capslock", "")
+   fullMapValues[k] = v
+
+out.write( fullMapTmpl % fullMapValues )
+
