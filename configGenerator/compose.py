@@ -68,7 +68,9 @@ composeNames["dead_ogonek"] = u"ogonek"
 composeNames["dead_psili"] = u"psili"
 composeNames["dead_tilde"] = u"tilde"
 composeNames["dead_stroke"] = u"stroke"
+composeNames["UFE63"] = u"stroke"
 composeNames["dead_currency"] = u"currency"
+composeNames["UFE67"] = u"currency"
 composeNames["Multi_key"] = u"Multi_key"
 
 composeChars = {}
@@ -81,7 +83,7 @@ from terminators import terminators
 def char(k):
   if k == '':
     return u''
-  if k[0] == 'U' and len(k) == 5 and ishex(k[1:]):
+  if not composeNames.has_key(k) and k[0] == 'U' and len(k) == 5 and ishex(k[1:]):
     C = unichr(int(k[1:], 16))
     k = k.upper()
     if composeChars.has_key(C):

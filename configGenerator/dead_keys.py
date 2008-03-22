@@ -369,7 +369,7 @@ for c in sorted(d.keys(), case_order):
 # actions with multi keys and without dead keys
 for C in sorted( set(compose.charActions.keys() + list(xkb.chars) ) - actions - set(["Multi_key"])):
   a = compose.composeChars.get(C, C)
-  if not a.startswith("dead_"):
+  if not terminators.has_key(C):
     deadXMLCode += '\n'
     deadXMLCode += '\n'+ u'    <action id="%s">' % C
     deadXMLCode += '\n'+ u'      <when state="none" output="%s"/>' % C
