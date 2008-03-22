@@ -11,9 +11,11 @@
 # of the License, or (at your option) any later version.
 #
 
+import defaults, sys
+defaults.xkbFile = sys.argv[1]
 
 import xkb, dead_keys, codecs
 
 xkb.tmplValues[u"actionsAndTerminators"] = dead_keys.deadXMLCode
-out = codecs.open("fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout", "w", "utf8")
+out = codecs.open(sys.argv[2], "w", "utf8")
 out.write( xkb.tmpl % xkb.tmplValues )

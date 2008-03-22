@@ -12,7 +12,7 @@
 #
 
 
-import unicodedata, re, sys
+import unicodedata, re, sys, defaults
 
 def ishex(s):
   for c in s:
@@ -20,7 +20,7 @@ def ishex(s):
       return False
   return True
   
-fKeysymdef = file("keysymdef.h")
+fKeysymdef = file(defaults.keysymdefFile)
 
 regexp = re.compile(r'#define XK_([^ ]+).*U\+([0-9A-Fa-f]+)')
 
@@ -114,7 +114,7 @@ def upperUnicode(k):
     return k.upper()
   return k
   
-fCompose = file("Compose")
+fCompose = file(defaults.composeFile)
 
 states = set()
 outputs = {}

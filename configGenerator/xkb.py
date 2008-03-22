@@ -12,13 +12,13 @@
 #
 
 
-import re, sys, compose, codecs
+import re, sys, compose, codecs, defaults
 from terminators import terminators
 
 str_catchKey = r"^\s*key\s*<([A-Z0-9]{4})>\s*{(.*)\[(.*)\]\s*}\s*;\s*(:?//.*|$)"
 re_catchKey = re.compile(str_catchKey)
 
-f = file("xkb")
+f = file(defaults.xkbFile)
 
 normal = {}
 shift = {}
