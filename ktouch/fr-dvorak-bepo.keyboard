@@ -1,0 +1,173 @@
+# -*- coding: utf-8; -*-
+####################################################
+#    KTouch
+#    Fichier de définition de clavier
+####################################################
+#
+# Matthieu MOY, December 7th 2004
+# modified by Boris Vodungbo, january 13th 2006
+# modifié par Le Mouton Vert, le 4 février 2008
+#
+############################################
+# Disposition Dvorak-fr-bepo version 0.6.4
+############################################
+#
+#
+#  Touches de repos: Cette catégorie recouvre les touches
+#  sur lesquelles vos doigts reposent quand vous ne tapez pas.
+#
+#          Unicode      KeyText  x     y
+# 3ème ligne de touches: Touches de repos
+FingerKey  97           A        18    20
+FingerKey  117          U        28    20
+FingerKey  105          I        38    20
+FingerKey  101          E        48    20
+FingerKey  116          T        78    20
+FingerKey  115          S        88    20
+FingerKey  110          N        98    20
+FingerKey  114          R       108    20
+#
+#
+#
+#  Touches modificatrices: Cette catégorie de touches
+#  recouvre les touches dites "de contrôle". Ces touches 
+#  seront utilisées plus bas notament pour les majuscules
+#  
+#               Unicode KeyText         x       y       Width  Height
+#
+ControlKey      260     Tab             0       10      15      10
+ControlKey      13      Enter           138     10      12      20
+ControlKey      258     Shift           123     30      27      10
+ControlKey      264     AltGr           120     40      15      10
+ControlKey      265     Ctrl            135     40      15      10
+ControlKey      263     Alt             15      40      15      10
+ControlKey      262     Ctrl            0       40      15      10
+ControlKey      32      Space           30      40      90      10
+ControlKey      257     Shift           0       30      13      10
+ControlKey      259     CapsLock        0       20      18      10
+ControlKey      8       BackSpace       130     0       20      10
+#
+#
+#  Touches normales: Cette catégories recouvre toutes 
+#  les touches por lesquelles vous n'avez pas besoin 
+#  de taper autre chose qu'une touche pour écrire. 
+#  A priori, ça correspond à toutes les minuscules et 
+#  les chiffres (sur un qwerty). Pour cette catégorie, 
+#  il faut indiquer avec quel doigt vous allez utiliser 
+#  (en indiquant sa touche de repos).
+#
+#       Unicode KeyText         x       y       FingerKey
+# 1ère ligne de touches
+NormalKey 36    $               0       0       97
+NormalKey 34    "               10      0       97
+NormalKey 171   «               20      0       97
+NormalKey 187   »               30      0       117
+NormalKey 40    (               40      0       105
+NormalKey 41    )               50      0       101
+NormalKey 95    _               60      0       101
+NormalKey 43    +               70      0       116
+NormalKey 45    -               80      0       116
+NormalKey 47    /               90      0       115
+NormalKey 42    *               100     0       110
+NormalKey 61    =               110     0       114
+NormalKey 36    %               120     0       114
+# 2ème ligne de touches
+NormalKey 98    B               15      10      97
+NormalKey 233   É               25      10      117
+NormalKey 112   P               35      10      105
+NormalKey 111   O               45      10      101
+NormalKey 232   È               55      10      101
+NormalKey 94    ^               65      10      116
+NormalKey 118   V               75      10      116
+NormalKey 100   D               85      10      115
+NormalKey 108   L               95      10      110
+NormalKey 102   F               105     10      114
+NormalKey 122   Z               115     10      114
+NormalKey 119   W               125     10      114
+# 3ème ligne de touches: sauf touches de repos
+NormalKey 44    ,               58      20      101
+NormalKey 99    C               68      20      116
+NormalKey 109   M               118     20      114
+NormalKey 231   Ç               128     20      114
+# 4ème ligne de touches
+NormalKey 234   Ê               13      30      97
+NormalKey 224   À               23      30      97
+NormalKey 121   Y               33      30      117
+NormalKey 104   H               43      30      105
+NormalKey 46    .               53      30      101
+NormalKey 107   K               63      30      101
+NormalKey 39    '               73      30      116
+NormalKey 113   Q               83      30      116
+NormalKey 103   G               93      30      115
+NormalKey 120   X               103     30      110
+NormalKey 106   J               113     30      114
+#
+#
+#
+#
+#  Touches cachées: Ce sont les caractères inaccessibles
+#  directement. Cela signifie que vous devez utiliser une
+#  touche modificatrice pour les taper. A priori, ça 
+#  concerne au moins les majuscules.
+#
+#      Unicode Target  Finger  Control
+#Maj: 1ère ligne de touches
+HiddenKey 35	36	97	258  	##
+HiddenKey 49	34	97	258	#1
+HiddenKey 50	171	97	258	#2
+HiddenKey 51	187	117	258	#3
+HiddenKey 52	40	105	258	#4
+HiddenKey 53	41	101	258	#5
+HiddenKey 54	95	101	258	#6
+HiddenKey 55	43	116	257	#7
+HiddenKey 56	45	116	257	#8
+HiddenKey 57	47	115	257	#9
+HiddenKey 48	42	110	257	#0
+HiddenKey 64	61	114	257	#@
+HiddenKey 181	36	114	257	#µ
+#
+#      Unicode Target  Finger  Control
+#Maj: 2ème ligne de touches
+HiddenKey 66	98      97	258	#B
+HiddenKey 201	233    	117	258	#É
+HiddenKey 80	112   	105	258	#P
+HiddenKey 79	111   	101	258	#O
+HiddenKey 200	232  	101	258	#È
+HiddenKey 33	94     	116	257	#!
+HiddenKey 86	118  	116	257	#V
+HiddenKey 68	100   	115	257	#D
+HiddenKey 76	108 	110	257	#L
+HiddenKey 70	102  	114	257	#F
+HiddenKey 90	122 	114	257	#Z
+HiddenKey 87	119  	114	257	#W
+#
+#       Unicode   Target  Finger  Control
+#Maj: 3ème ligne de touches
+HiddenKey 65  	97	97	258	#A
+HiddenKey 85 	117	117	258	#U
+HiddenKey 73	105	105	258	#I
+HiddenKey 69 	101	101	258	#E
+HiddenKey 63	44	101	258	#?
+HiddenKey 67	99	116	257	#C
+HiddenKey 84 	116	116	257	#T
+HiddenKey 83	115	115	257	#S
+HiddenKey 78	110	110	257	#N
+HiddenKey 82 	114	114	257	#R
+HiddenKey 77	109	114	257	#M
+HiddenKey 67	231	114	257	#C
+#
+#       Unicode   Target  Finger  Control
+#Maj: 4ème ligne de touches
+HiddenKey 202 	234	97	258	#Ê
+HiddenKey 192	224	97	258	#À
+HiddenKey 89	121	117	258	#Y
+HiddenKey 72	104	105	258	#H
+HiddenKey 58	46	101	258	#:
+HiddenKey 75	107	101	258	#K
+HiddenKey 59	39	116	257	#;
+HiddenKey 81	113	116	257	#Q
+HiddenKey 71	103	115	257	#G
+HiddenKey 88	120	110	257	#X
+HiddenKey 74	106	114	257	#J
+#
+# Les caractères obtenus par Ctrl et AltGr n'ont pas été inclus.
