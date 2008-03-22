@@ -290,14 +290,16 @@ for name, C in unicode_dict.iteritems():
 # now generate the xml code!
 #
 
-deadXMLCode = ""
+from StringIO import StringIO
+deadXMLBuf = StringIO()
 
-deadXMLCode += '\n'+ "  <actions>"
+print >> deadXMLBuf
+print >> deadXMLBuf, "  <actions>"
 
-# store the previous character to deadXMLCode += '\n'+ a blank line bitween the chars
+# store the previous character to print >> deadXMLBuf, a blank line bitween the chars
 previous = None
 
-# store the actions already deadXMLCode += '\n'+ed. Space and nbsp are aleady there because they are
+# store the actions already print >> deadXMLBuf,ed. Space and nbsp are aleady there because they are
 # special case treated at the end.
 actions = set([u' ', u' '])
 
@@ -305,27 +307,27 @@ for c in sorted(d.keys(), case_order):
   if len(d[c]) != 1 or len(c[0]) == 1:
     if tuple([]) in d[c]:
       if dc[ c, tuple([]) ].lower() != previous:
-        deadXMLCode += '\n'
-      deadXMLCode += '\n'+ '    <action id="%s">' % dc[ c, tuple([]) ]
+        print >> deadXMLBuf
+      print >> deadXMLBuf, '    <action id="%s">' % dc[ c, tuple([]) ]
       for mod in sorted(d[c], mod_order) :
-        # deadXMLCode += '\n'+ '    ', '_'.join([finalModNames[m] for m in mod]), dc[ c, mod ]
+        # print >> deadXMLBuf, '    ', '_'.join([finalModNames[m] for m in mod]), dc[ c, mod ]
         if len(mod) == 0:
           fm = 'none'
         else:
           fm = '_'.join(mod)
-        deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % (fm, dc[ c, mod ] )
+        print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % (fm, dc[ c, mod ] )
         
       C = dc[ c, tuple([]) ]
       if compose.charActions.has_key(C):
         a = compose.charActions[C]
         if compose.statesByAction.has_key(a):
           for s in sorted(compose.statesByAction[a]):
-            deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+            print >> deadXMLBuf, u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
         if compose.outputsByAction.has_key(a):
           for s, c1 in sorted(compose.outputsByAction[a]):
-            deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)        
+            print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)        
         
-      deadXMLCode += '\n'+ '    </action>'
+      print >> deadXMLBuf, '    </action>'
       actions.add(C)
       
       # generate the code for 2 modifiers, when a char with on of the 2 diacritic sign
@@ -340,21 +342,21 @@ for c in sorted(d.keys(), case_order):
                 l.append((m2, dc[ c, mod ]))
                 subd[dc[ c, (m1,) ]] = l
       for c1 in sorted(subd.keys()):
-        deadXMLCode += '\n'+ '    <action id="%s">' % c1
-        deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('none', c1)
+        print >> deadXMLBuf, '    <action id="%s">' % c1
+        print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % ('none', c1)
         for m, c2 in sorted(subd[c1]):
-          deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % (m, c2)
+          print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % (m, c2)
           
         if compose.charActions.has_key(c1):
           a = compose.charActions[c1]
           if compose.statesByAction.has_key(a):
             for s in sorted(compose.statesByAction[a]):
-              deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+              print >> deadXMLBuf, u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
           if compose.outputsByAction.has_key(a):
             for s, C in sorted(compose.outputsByAction[a]):
-              deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
+              print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
         
-        deadXMLCode += '\n'+ '    </action>'
+        print >> deadXMLBuf, '    </action>'
         actions.add(c1)
         
       previous = dc[ c, tuple([]) ].lower()
@@ -363,59 +365,59 @@ for c in sorted(d.keys(), case_order):
     else:
       raise ' '.join(c), d[c]
 #  else:
-#    deadXMLCode += '\n'+ '*********************************************', c
+#    print >> deadXMLBuf, '*********************************************', c
     
     
 # actions with multi keys and without dead keys
 for C in sorted( set(compose.charActions.keys() + list(xkb.chars) ) - actions - set(["Multi_key"])):
   a = compose.composeChars.get(C, C)
   if not terminators.has_key(C):
-    deadXMLCode += '\n'
-    deadXMLCode += '\n'+ u'    <action id="%s">' % C
-    deadXMLCode += '\n'+ u'      <when state="none" output="%s"/>' % C
+    print >> deadXMLBuf
+    print >> deadXMLBuf, u'    <action id="%s">' % C
+    print >> deadXMLBuf, u'      <when state="none" output="%s"/>' % C
     if compose.statesByAction.has_key(a):
       for s in sorted(compose.statesByAction[a]):
-        deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+        print >> deadXMLBuf, u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
     if compose.outputsByAction.has_key(a):
       for s, c1 in sorted(compose.outputsByAction[a]):
-        deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)        
-    deadXMLCode += '\n'+ u'    </action>'
+        print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)        
+    print >> deadXMLBuf, u'    </action>'
 
 
 # the space char produces the terminator char when a dead_ states is activated
-deadXMLCode += '\n'
-deadXMLCode += '\n'+ u'    <action id=" ">'
-deadXMLCode += '\n'+ u'      <when state="none" output=" "/>'
+print >> deadXMLBuf
+print >> deadXMLBuf, u'    <action id=" ">'
+print >> deadXMLBuf, u'      <when state="none" output=" "/>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
-    deadXMLCode += '\n'+ '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
+    print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
 if compose.charActions.has_key(u' '):
   a = compose.charActions[u' ']
   if compose.statesByAction.has_key(a):
     for s in sorted(compose.statesByAction[a]):
-      deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+      print >> deadXMLBuf, u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
   if compose.outputsByAction.has_key(a):
     for s, C in sorted(compose.outputsByAction[a]):
-      deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
-deadXMLCode += '\n'+ u'    </action>'
+      print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
+print >> deadXMLBuf, u'    </action>'
 
 
 # the space char produces the terminator char when a dead_ states is activated
-deadXMLCode += '\n'
-deadXMLCode += '\n'+ u'    <action id=" "> <!-- nbsp -->'
-deadXMLCode += '\n'+ u'      <when state="none" output=" "/>'
+print >> deadXMLBuf
+print >> deadXMLBuf, u'    <action id=" "> <!-- nbsp -->'
+print >> deadXMLBuf, u'      <when state="none" output=" "/>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
-    deadXMLCode += '\n'+ '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([combiningTerminators[n] for n in m]))
+    print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([combiningTerminators[n] for n in m]))
 if compose.charActions.has_key(u' '):
   a = compose.charActions[u' ']
   if compose.statesByAction.has_key(a):
     for s in sorted(compose.statesByAction[a]):
-      deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+      print >> deadXMLBuf, u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
   if compose.outputsByAction.has_key(a):
     for s, C in sorted(compose.outputsByAction[a]):
-      deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
-deadXMLCode += '\n'+ u'    </action>'
+      print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % ('_'.join(s), C)
+print >> deadXMLBuf, u'    </action>'
 
 
 
@@ -429,46 +431,49 @@ for m in sorted(dmm, mod_order):
     modStates[m1].append((m2, '%s_%s' % (m1, m2)))
     modStates[m2].append((m1, '%s_%s' % (m1, m2)))
   
-deadXMLCode += '\n'
-deadXMLCode += '\n'
+print >> deadXMLBuf
+print >> deadXMLBuf
 for m in sorted(modStates.keys()):
   l = modStates[m]
-  deadXMLCode += '\n'+ '    <action id="%s">' % m
+  print >> deadXMLBuf, '    <action id="%s">' % m
   for s, n in sorted(l, mod_order2):
-    deadXMLCode += '\n'+ '      <when state="%s" next="%s"/>' % (s, n)
+    print >> deadXMLBuf, '      <when state="%s" next="%s"/>' % (s, n)
     
   if compose.charActions.has_key(m):
     a = compose.charActions[m]
     if compose.statesByAction.has_key(a):
       for s in sorted(compose.statesByAction[a]):
-        deadXMLCode += '\n'+ u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
+        print >> deadXMLBuf, u'      <when state="%s" next="%s"/>' % ('_'.join(s), '_'.join(s+(a,)))
     if compose.outputsByAction.has_key(a):
       for s, c1 in sorted(compose.outputsByAction[a]):
-        deadXMLCode += '\n'+ u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)   
+        print >> deadXMLBuf, u'      <when state="%s" output="%s"/>' % ('_'.join(s), c1)   
             
-  deadXMLCode += '\n'+ '    </action>'
+  print >> deadXMLBuf, '    </action>'
   
-deadXMLCode += '\n'+ '    <action id="Multi_key">'
-deadXMLCode += '\n'+ '      <when state="none" next="Multi_key"/>'
-deadXMLCode += '\n'+ '    </action>'
-deadXMLCode += '\n'
-deadXMLCode += '\n'+ '    <action id="">'
-deadXMLCode += '\n'+ '      <when state="none" output=""/>'
-deadXMLCode += '\n'+ '    </action>'
+print >> deadXMLBuf, '    <action id="Multi_key">'
+print >> deadXMLBuf, '      <when state="none" next="Multi_key"/>'
+print >> deadXMLBuf, '    </action>'
+print >> deadXMLBuf
+print >> deadXMLBuf, '    <action id="">'
+print >> deadXMLBuf, '      <when state="none" output=""/>'
+print >> deadXMLBuf, '    </action>'
 
-deadXMLCode += '\n'+ "  </actions>"
+print >> deadXMLBuf, "  </actions>"
   
-deadXMLCode += '\n'
-deadXMLCode += '\n'
-deadXMLCode += '\n'+ '  <terminators>'
+print >> deadXMLBuf
+print >> deadXMLBuf
+print >> deadXMLBuf, '  <terminators>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
-    deadXMLCode += '\n'+ '    <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
+    print >> deadXMLBuf, '    <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
 for ss in sorted(compose.states):
   C = ''.join([compose.terminators.get(compose.char(s), compose.char(s)) for s in ss])
   s = '_'.join(list(ss))
-  deadXMLCode += '\n'+ '    <when state="%s" output="%s"/>' % (s, C)
-deadXMLCode += '\n'+ '  </terminators>'
+  print >> deadXMLBuf, '    <when state="%s" output="%s"/>' % (s, C)
+print >> deadXMLBuf, '  </terminators>'
+
+deadXMLCode = deadXMLBuf.getvalue()
+deadXMLBuf.close()
 
 if __name__ == "__main__":
   print deadXMLCode
