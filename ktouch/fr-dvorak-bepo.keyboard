@@ -9,7 +9,7 @@
 # modifié par Le Mouton Vert, le 4 février 2008
 #
 ############################################
-# Disposition Dvorak-fr-bepo version 0.6.4
+# Disposition Dvorak-fr-bepo version 0.6.5.1
 ############################################
 #
 #
@@ -24,8 +24,8 @@ FingerKey  105          I        38    20
 FingerKey  101          E        48    20
 FingerKey  116          T        78    20
 FingerKey  115          S        88    20
-FingerKey  110          N        98    20
-FingerKey  114          R       108    20
+FingerKey  110          R        98    20
+FingerKey  114          N       108    20
 #
 #
 #
@@ -81,7 +81,7 @@ NormalKey 94    ^               65      10      116
 NormalKey 118   V               75      10      116
 NormalKey 100   D               85      10      115
 NormalKey 108   L               95      10      110
-NormalKey 102   F               105     10      114
+NormalKey 102   J               105     10      114
 NormalKey 122   Z               115     10      114
 NormalKey 119   W               125     10      114
 # 3ème ligne de touches: sauf touches de repos
@@ -100,7 +100,7 @@ NormalKey 39    '               73      30      116
 NormalKey 113   Q               83      30      116
 NormalKey 103   G               93      30      115
 NormalKey 120   X               103     30      110
-NormalKey 106   J               113     30      114
+NormalKey 106   F               113     30      114
 #
 #
 #
