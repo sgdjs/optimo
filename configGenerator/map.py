@@ -49,7 +49,6 @@ for k, v in xkb.tmplValues.iteritems():
    if v == u'&#x0026;':
      v = u'&'
    fullMapValues[k] = v
-
 out = codecs.open(sys.argv[2], "w", "utf8")
 out.write( fullMapTmpl % fullMapValues )
 
@@ -69,6 +68,11 @@ for k, v in xkb.tmplValues.iteritems():
      v = u'&'
    k = k.replace("_capslock", "")
    fullMapValues[k] = v
-
 out.write( fullMapTmpl % fullMapValues )
 
+# find the dead keys used here
+dks = set()
+for v in xkb.tmplValues.itervalues():
+  if terminators.has_key(v):
+    dks.add(v)
+print dks
