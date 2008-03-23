@@ -49,7 +49,7 @@ terminators = {
 "palatalhook": u"?",
 "retroflexhook": u"̢",
 "righthalfring": u"ʾ",
-"ringabove": u"°",
+"ringabove": u"˚",
 "ringbelow": u"̥",
 "stroke": u"/",
 "swashtail": u"?",
