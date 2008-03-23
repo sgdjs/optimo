@@ -95,7 +95,8 @@ for k, v in altgrshift.iteritems():
   tmplValues[k+'_shift_option_capslock'] = V
   chars.add(V)
  
-chars.remove('')
+if '' in chars:
+  chars.remove('')
 actions = set( [compose.name(c) for c in chars if c] )
 
 tmpl = codecs.open("fr-dvorak-bepo.keylayout.tmpl", encoding='utf8').read()
