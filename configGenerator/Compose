@@ -24,16 +24,16 @@ XCOMM Spacing versions of dead accents
 <dead_abovedot> <dead_abovedot>  	: "˙"   abovedot # DOT ABOVE
 <dead_diaeresis> <dead_diaeresis> 	: "¨"   diaeresis # DIAERESIS
 <dead_diaeresis> <space>         	: "\""   quotedbl # REVERSE SOLIDUS
-<dead_doubleacute> <space>       	: "˝"   U2dd # DOUBLE ACUTE ACCENT
-<dead_doubleacute> <dead_doubleacute> 	: "˝"   U2dd # DOUBLE ACUTE ACCENT
+<dead_doubleacute> <space>       	: "˝"   U02dd # DOUBLE ACUTE ACCENT
+<dead_doubleacute> <dead_doubleacute> 	: "˝"   U02dd # DOUBLE ACUTE ACCENT
 <dead_caron> <space>             	: "ˇ"   caron # CARON
 <dead_caron> <dead_caron>        	: "ˇ"   caron # CARON
 <dead_cedilla> <space>           	: "¸"   cedilla # CEDILLA
 <dead_cedilla> <dead_cedilla>    	: "¸"   cedilla # CEDILLA
 <dead_ogonek> <space>            	: "˛"   ogonek # OGONEK
 <dead_ogonek> <dead_ogonek>      	: "˛"   ogonek # OGONEK
-<dead_iota> <space>              	: "ͺ"   U37a # GREEK YPOGEGRAMMENI
-<dead_iota> <dead_iota>          	: "ͺ"   U37a # GREEK YPOGEGRAMMENI
+<dead_iota> <space>              	: "ͺ"   U037a # GREEK YPOGEGRAMMENI
+<dead_iota> <dead_iota>          	: "ͺ"   U037a # GREEK YPOGEGRAMMENI
 
 XCOMM ASCII characters that may be difficult to access
 XCOMM on some keyboards.
