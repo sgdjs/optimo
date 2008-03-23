@@ -76,6 +76,8 @@ composeNames["Multi_key"] = u"Multi_key"
 composeChars = {}
 for name, C in composeNames.iteritems():
   composeChars[C] = name
+# force oslash name
+composeChars[u"ø"] = "oslash"
 
 from terminators import terminators
 
