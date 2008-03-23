@@ -14,8 +14,8 @@
 import defaults, sys
 defaults.xkbFile = sys.argv[1]
 
-import xkb, dead_keys, codecs
-from terminators import terminators
+import xkb, dead_keys, codecs, unicodedata
+from terminators import terminators, combiningTerminators
 
 
 fullMapTmpl = keyboardTemplate = u"""
@@ -37,6 +37,8 @@ fullMapTmpl = keyboardTemplate = u"""
 ╚═══════╩══════╩═════╩═══════════════════════════╩═════╩══════╩═════╩══════╝
 """
 
+available = set()
+
 fullMapValues = {}
 for k, v in xkb.tmplValues.iteritems():
    v = terminators.get( v, v )
@@ -49,6 +51,7 @@ for k, v in xkb.tmplValues.iteritems():
    if v == u'&#x0026;':
      v = u'&'
    fullMapValues[k] = v
+   available.add(v)
 out = codecs.open(sys.argv[2], "w", "utf8")
 out.write( fullMapTmpl % fullMapValues )
 
@@ -69,6 +72,7 @@ for k, v in xkb.tmplValues.iteritems():
    if "_capslock" in k:
      k = k.replace("_capslock", "")
      fullMapValues[k] = v
+     available.add(v)
 out.write( fullMapTmpl % fullMapValues )
 
 # find the dead keys used here
@@ -76,6 +80,8 @@ dks = set()
 for v in xkb.tmplValues.itervalues():
   if terminators.has_key(v):
     dks.add(v)
+    available.add(terminators[v])
+    available.add(combiningTerminators[v])
 
 for m in sorted(dks):
   deadName = "dead_" + m.replace("ringabove", "abovering")
@@ -92,6 +98,7 @@ for m in sorted(dks):
       for k3, v3 in xkb.tmplValues.iteritems():
         if v3 == k2:
           fullMapValues[k3] = v2      
+          available.add(v2)
     elif m in mods:
       K = (k, tuple(a for a in mods if a != m))
       if dead_keys.dc.has_key(K):
@@ -100,4 +107,14 @@ for m in sorted(dks):
         for k3, v3 in xkb.tmplValues.iteritems():
           if v3 == k2:
             fullMapValues[k3] = v2      
+            available.add(v2)
   out.write( fullMapTmpl % fullMapValues )
+
+print >> out
+print >> out
+print >> out, u" * Caractères disponibles"
+print >> out
+print >> out, len(available), u"caractères."
+print >> out
+for c in sorted(available):
+  print >> out, u"%s\t%s" % ( c, unicodedata.name(unicode(c), "pas dans unicode 4.1") )
