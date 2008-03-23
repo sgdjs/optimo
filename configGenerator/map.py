@@ -66,8 +66,9 @@ for k, v in xkb.tmplValues.iteritems():
      v = u'<'
    if v == u'&#x0026;':
      v = u'&'
-   k = k.replace("_capslock", "")
-   fullMapValues[k] = v
+   if "_capslock" in k:
+     k = k.replace("_capslock", "")
+     fullMapValues[k] = v
 out.write( fullMapTmpl % fullMapValues )
 
 # find the dead keys used here
@@ -75,4 +76,28 @@ dks = set()
 for v in xkb.tmplValues.itervalues():
   if terminators.has_key(v):
     dks.add(v)
-print dks
+
+for m in sorted(dks):
+  deadName = "dead_" + m.replace("ringabove", "abovering")
+  fullMapValues = {}
+  for k in xkb.tmplValues.iterkeys():
+    fullMapValues[k] = u' '
+  print >> out
+  print >> out
+  print >> out, "* %s" % deadName
+  for k, mods in sorted(dead_keys.dc):
+    if mods == (m,) and dead_keys.dc.has_key((k, ())):
+      k2 = dead_keys.dc[k, ()]
+      v2 = dead_keys.dc[k, mods]
+      for k3, v3 in xkb.tmplValues.iteritems():
+        if v3 == k2:
+          fullMapValues[k3] = v2      
+    elif m in mods:
+      K = (k, tuple(a for a in mods if a != m))
+      if dead_keys.dc.has_key(K):
+        k2 = dead_keys.dc[K]
+        v2 = dead_keys.dc[k, mods]
+        for k3, v3 in xkb.tmplValues.iteritems():
+          if v3 == k2:
+            fullMapValues[k3] = v2      
+  out.write( fullMapTmpl % fullMapValues )
