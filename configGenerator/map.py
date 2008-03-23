@@ -110,6 +110,27 @@ for m in sorted(dks):
             available.add(v2)
   out.write( fullMapTmpl % fullMapValues )
 
+for i, m1 in enumerate(sorted(dks)):
+  for m2 in sorted(dks)[i+1:]:
+    fullMapValues = {}
+    for k in xkb.tmplValues.iterkeys():
+      fullMapValues[k] = u' '
+    display = False
+    for k, mods in sorted(dead_keys.dc):
+      if mods == (m1, m2) and dead_keys.dc.has_key((k, ())):
+        k2 = dead_keys.dc[k, ()]
+        v2 = dead_keys.dc[k, mods]
+        for k3, v3 in xkb.tmplValues.iteritems():
+          if v3 == k2:
+            fullMapValues[k3] = v2      
+            available.add(v2)
+            display = True
+    if display:
+      print >> out
+      print >> out
+      print >> out, "* %s" % " & ".join("dead_" + m.replace("ringabove", "abovering") for m in (m1, m2))
+      out.write( fullMapTmpl % fullMapValues )
+
 print >> out
 print >> out
 print >> out, u" * Caractères disponibles"
@@ -117,4 +138,4 @@ print >> out
 print >> out, len(available), u"caractères."
 print >> out
 for c in sorted(available):
-  print >> out, u"%s\t%s" % ( c, unicodedata.name(unicode(c), "pas dans unicode 4.1") )
+  print >> out, u"%s\t%s" % ( c, unicodedata.name(unicode(c), "pas dans unicode "+unicodedata.unidata_version) )
