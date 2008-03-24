@@ -18,8 +18,7 @@ import xkb, dead_keys, codecs
 from terminators import terminators
 
 
-fullMapTmpl = keyboardTemplate = u"""
-%(TLDE)s%(AE01)s%(AE02)s%(AE03)s%(AE04)s%(AE05)s%(AE06)s%(AE07)s%(AE08)s%(AE09)s%(AE10)s%(AE11)s%(AE12)s
+fullMapTmpl = keyboardTemplate = u"""%(TLDE)s%(AE01)s%(AE02)s%(AE03)s%(AE04)s%(AE05)s%(AE06)s%(AE07)s%(AE08)s%(AE09)s%(AE10)s%(AE11)s%(AE12)s
 %(AD01)s%(AD02)s%(AD03)s%(AD04)s%(AD05)s%(AD06)s%(AD07)s%(AD08)s%(AD09)s%(AD10)s%(AD11)s%(AD12)s
 %(AC01)s%(AC02)s%(AC03)s%(AC04)s%(AC05)s%(AC06)s%(AC07)s%(AC08)s%(AC09)s%(AC10)s%(AC11)s%(BKSL)s
 %(LSGT)s%(AB01)s%(AB02)s%(AB03)s%(AB04)s%(AB05)s%(AB06)s%(AB07)s%(AB08)s%(AB09)s%(AB10)s
