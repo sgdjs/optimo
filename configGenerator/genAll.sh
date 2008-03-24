@@ -13,4 +13,4 @@ VERSION=0.6.5.1
 ./klavaro.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbd"
 ./macosx.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keylayout"
 
-perl -p -e 's#\tinclude "pc\(pc105\)"#\tinclude "pc/pc(105)"#g' "results/layout-${VERSION}-user.xkb" > "results/layout-${VERSION}-user-legacy.xkb"
+perl -p -e 's#\tinclude "pc\(pc105\)"#\tinclude "pc/pc(pc105)"#g' "results/layout-${VERSION}-user.xkb" > "results/layout-${VERSION}-user-legacy.xkb"
