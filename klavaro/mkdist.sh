@@ -38,7 +38,7 @@ cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-klavaro-$VERSION
 cp pilotes/klavaro/fr-dvorak-bepo* pilotes/xkb/LISEZ_MOI.txt fr-dvorak-bepo-klavaro-$VERSION
 
 # build the archive
-tar cvzf ../fr-dvorak-bepo-klavaro-$VERSION.tgz fr-dvorak-bepo-klavaro-$VERSION
+zip -r ../fr-dvorak-bepo-klavaro-$VERSION.zip fr-dvorak-bepo-klavaro-$VERSION
 
 popd
 
