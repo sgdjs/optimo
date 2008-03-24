@@ -71,14 +71,6 @@ for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
         print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, compose.name(dead_keys.dc[K]), compose.name(dead_keys.dc[k, mods]))
   
   # terminators
-  if composeDeadKeys.has_key((m[0], u" ")):
-    tag = "L!"
-    if composeDeadKeys[(m[0], u" ")] != terminators[m[0]]:
-      print m[0], "space"
-  else:
-    tag = ""
-  print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, "space", compose.name(terminators[m[0]]))
-  
   if composeDeadKeys.has_key((m[0], m[0])):
     tag = "L!"
     if composeDeadKeys[(m[0], m[0])] != terminators[m[0]]:
@@ -94,5 +86,13 @@ for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
   else:
     tag = ""
   print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, "nobreakspace", compose.name(combiningTerminators[m[0]]))
+  
+  if composeDeadKeys.has_key((m[0], u" ")):
+    tag = "L!"
+    if composeDeadKeys[(m[0], u" ")] != terminators[m[0]]:
+      print m[0], "space"
+  else:
+    tag = ""
+  print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, "space", compose.name(terminators[m[0]]))
   
   print >> f
