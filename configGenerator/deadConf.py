@@ -96,3 +96,38 @@ for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
   print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, "space", compose.name(terminators[m[0]]))
   
   print >> f
+
+# double dead_keys
+for m in sorted([m for m in dead_keys.dmm if len(m) == 2]):
+  if m[0] in dks and m[1] in dks:
+    comm = u""
+  else:
+    comm = u"#"
+  deadNames = tuple("dead_" + m1.replace("ringabove", "abovering") for m1 in m)
+  print >> f, "# %s" % " & ".join(deadNames)
+  print >> f
+  for k, mods in sorted(dead_keys.dc):
+    if mods == m and dead_keys.dc.has_key((k, ())):
+      # first couple
+      ck = (m[0], m[1], dead_keys.dc[k, ()])
+      inCompose = composeDeadKeys.has_key(ck)
+      if inCompose:
+        tag = "L!"
+        if composeDeadKeys[ck] != dead_keys.dc[k, mods]:
+          print ck
+      else:
+        tag = ""
+      print >> f, "%s%s%s\t%s\t%s\t%s" % (comm, tag, deadNames[0], deadNames[1], compose.name(dead_keys.dc[k, ()]), compose.name(dead_keys.dc[k, mods]))
+
+      # second couple
+      ck = (m[1], m[0], dead_keys.dc[k, ()])
+      inCompose = composeDeadKeys.has_key(ck)
+      if inCompose:
+        tag = "L!"
+        if composeDeadKeys[ck] != dead_keys.dc[k, mods]:
+          print ck
+      else:
+        tag = ""
+      print >> f, "%s%s%s\t%s\t%s\t%s" % (comm, tag, deadNames[1], deadNames[0], compose.name(dead_keys.dc[k, ()]), compose.name(dead_keys.dc[k, mods]))
+  
+  print >> f
