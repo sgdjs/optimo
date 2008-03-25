@@ -18,215 +18,19 @@ import xkb, dead_keys, codecs
 from terminators import terminators
 
 
-fullMapTmpl = keyboardTemplate = u"""# fr-dvorak-bepo  http://www.clavier-dvorak.org
+header = u"""# fr-dvorak-bepo  http://www.clavier-dvorak.org
 charset "iso-8859-15"
-keymaps 0-3,4-6,8,12
+keymaps 0-15
 include "linux-with-alt-and-altgr"
 strings as usual
 compose as usual for "iso-8859-1"
 
 
-keycode 41 = %(TLDE)s
-  Shift keycode 41 = %(TLDE_shift)s
-  Altgr keycode 41 = %(TLDE_option)s
-  Shift Altgr keycode 41 = %(TLDE_shift_option)s
-keycode 2 = %(AE01)s
-  Shift keycode 2 = %(AE01_shift)s
-  Altgr keycode 2 = %(AE01_option)s
-  Shift Altgr keycode 2 = %(AE01_shift_option)s
-keycode 3 = %(AE02)s
-  Shift keycode 3 = %(AE02_shift)s
-  Altgr keycode 3 = %(AE02_option)s
-  Shift Altgr keycode 3 = %(AE02_shift_option)s
-keycode 4 = %(AE03)s
-  Shift keycode 4 = %(AE03_shift)s
-  Altgr keycode 4 = %(AE03_option)s
-  Shift Altgr keycode 4 = %(AE03_shift_option)s
-keycode 5 = %(AE04)s
-  Shift keycode 5 = %(AE04_shift)s
-  Altgr keycode 5 = %(AE04_option)s
-  Shift Altgr keycode 5 = %(AE04_shift_option)s
-keycode 6 = %(AE05)s
-  Shift keycode 6 = %(AE05_shift)s
-  Altgr keycode 6 = %(AE05_option)s
-  Shift Altgr keycode 6 = %(AE05_shift_option)s
-keycode 7 = %(AE06)s
-  Shift keycode 7 = %(AE06_shift)s
-  Altgr keycode 7 = %(AE06_option)s
-  Shift Altgr keycode 7 = %(AE06_shift_option)s
-keycode 8 = %(AE07)s
-  Shift keycode 8 = %(AE07_shift)s
-  Altgr keycode 8 = %(AE07_option)s
-  Shift Altgr keycode 8 = %(AE07_shift_option)s
-keycode 9 = %(AE08)s
-  Shift keycode 9 = %(AE08_shift)s
-  Altgr keycode 9 = %(AE08_option)s
-  Shift Altgr keycode 9 = %(AE08_shift_option)s
-keycode 10 = %(AE09)s
-  Shift keycode 10 = %(AE09_shift)s
-  Altgr keycode 10 = %(AE09_option)s
-  Shift Altgr keycode 10 = %(AE09_shift_option)s
-keycode 11 = %(AE10)s
-  Shift keycode 11 = %(AE10_shift)s
-  Altgr keycode 11 = %(AE10_option)s
-  Shift Altgr keycode 11 = %(AE10_shift_option)s
-keycode 12 = %(AE11)s
-  Shift keycode 12 = %(AE11_shift)s
-  Altgr keycode 12 = %(AE11_option)s
-  Shift Altgr keycode 12 = %(AE11_shift_option)s
-keycode 13 = %(AE12)s
-  Shift keycode 13 = %(AE12_shift)s
-  Altgr keycode 13 = %(AE12_option)s
-  Shift Altgr keycode 13 = %(AE12_shift_option)s
-# 
-keycode 16 = %(AD01)s
-  Shift keycode 16 = %(AD01_shift)s
-  Altgr keycode 16 = %(AD01_option)s
-  Shift Altgr keycode 16 = %(AD01_shift_option)s
-keycode 17 = %(AD02)s
-  Shift keycode 17 = %(AD02_shift)s
-  Altgr keycode 17 = %(AD02_option)s
-  Shift Altgr keycode 17 = %(AD02_shift_option)s
-keycode 18 = %(AD03)s
-  Shift keycode 18 = %(AD03_shift)s
-  Altgr keycode 18 = %(AD03_option)s
-  Shift Altgr keycode 18 = %(AD03_shift_option)s
-keycode 19 = %(AD04)s
-  Shift keycode 19 = %(AD04_shift)s
-  Altgr keycode 19 = %(AD04_option)s
-  Shift Altgr keycode 19 = %(AD04_shift_option)s
-keycode 20 = %(AD05)s
-  Shift keycode 20 = %(AD05_shift)s
-  Altgr keycode 20 = %(AD05_option)s
-  Shift Altgr keycode 20 = %(AD05_shift_option)s
-keycode 21 = %(AD06)s
-  Shift keycode 21 = %(AD06_shift)s
-  Altgr keycode 21 = %(AD06_option)s
-  Shift Altgr keycode 21 = %(AD06_shift_option)s
-keycode 22 = %(AD07)s
-  Shift keycode 22 = %(AD07_shift)s
-  Altgr keycode 22 = %(AD07_option)s
-  Shift Altgr keycode 22 = %(AD07_shift_option)s
-keycode 23 = %(AD08)s
-  Shift keycode 23 = %(AD08_shift)s
-  Altgr keycode 23 = %(AD08_option)s
-  Shift Altgr keycode 23 = %(AD08_shift_option)s
-keycode 24 = %(AD09)s
-  Shift keycode 24 = %(AD09_shift)s
-  Altgr keycode 24 = %(AD09_option)s
-  Shift Altgr keycode 24 = %(AD09_shift_option)s
-keycode 25 = %(AD10)s
-  Shift keycode 25 = %(AD10_shift)s
-  Altgr keycode 25 = %(AD10_option)s
-  Shift Altgr keycode 25 = %(AD10_shift_option)s
-keycode 26 = %(AD11)s
-  Shift keycode 26 = %(AD11_shift)s
-  Altgr keycode 26 = %(AD11_option)s
-  Shift Altgr keycode 26 = %(AD11_shift_option)s
-keycode 27 = %(AD12)s
-  Shift keycode 27 = %(AD12_shift)s
-  Altgr keycode 27 = %(AD12_option)s
-  Shift Altgr keycode 27 = %(AD12_shift_option)s
-#
-keycode 30 = %(AC01)s
-  Shift keycode 30 = %(AC01_shift)s
-  Altgr keycode 30 = %(AC01_option)s
-  Shift Altgr keycode 30 = %(AC01_shift_option)s
-keycode 31 = %(AC02)s
-  Shift keycode 31 = %(AC02_shift)s
-  Altgr keycode 31 = %(AC02_option)s
-  Shift Altgr keycode 31 = %(AC02_shift_option)s
-keycode 32 = %(AC03)s
-  Shift keycode 32 = %(AC03_shift)s
-  Altgr keycode 32 = %(AC03_option)s
-  Shift Altgr keycode 32 = %(AC03_shift_option)s
-keycode 33 = %(AC04)s
-  Shift keycode 33 = %(AC04_shift)s
-  Altgr keycode 33 = %(AC04_option)s
-  Shift Altgr keycode 33 = %(AC04_shift_option)s
-keycode 34 = %(AC05)s
-  Shift keycode 34 = %(AC05_shift)s
-  Altgr keycode 34 = %(AC05_option)s
-  Shift Altgr keycode 34 = %(AC05_shift_option)s
-keycode 35 = %(AC06)s
-  Shift keycode 35 = %(AC06_shift)s
-  Altgr keycode 35 = %(AC06_option)s
-  Shift Altgr keycode 35 = %(AC06_shift_option)s
-keycode 36 = %(AC07)s
-  Shift keycode 36 = %(AC07_shift)s
-  Altgr keycode 36 = %(AC07_option)s
-  Shift Altgr keycode 36 = %(AC07_shift_option)s
-keycode 37 = %(AC08)s
-  Shift keycode 37 = %(AC08_shift)s
-  Altgr keycode 37 = %(AC08_option)s
-  Shift Altgr keycode 37 = %(AC08_shift_option)s
-keycode 38 = %(AC09)s
-  Shift keycode 38 = %(AC09_shift)s
-  Altgr keycode 38 = %(AC09_option)s
-  Shift Altgr keycode 38 = %(AC09_shift_option)s
-keycode 39 = %(AC10)s
-  Shift keycode 39 = %(AC10_shift)s
-  Altgr keycode 39 = %(AC10_option)s
-  Shift Altgr keycode 39 = %(AC10_shift_option)s
-keycode 40 = %(AC11)s
-  Shift keycode 40 = %(AC11_shift)s
-  Altgr keycode 40 = %(AC11_option)s
-  Shift Altgr keycode 40 = %(AC11_shift_option)s
-keycode 43 = %(BKSL)s
-  Shift keycode 43 = %(BKSL_shift)s
-  Altgr keycode 43 = %(BKSL_option)s
-  Shift Altgr keycode 43 = %(BKSL_shift_option)s
-#
-keycode 86 = %(LSGT)s
-  Shift keycode 86 = %(LSGT_shift)s
-  Altgr keycode 86 = %(LSGT_option)s
-  Shift Altgr keycode 86 = %(LSGT_shift_option)s
-keycode 44 = %(AB01)s
-  Shift keycode 44 = %(AB01_shift)s
-  Altgr keycode 44 = %(AB01_option)s
-  Shift Altgr keycode 44 = %(AB01_shift_option)s
-keycode 45 = %(AB02)s
-  Shift keycode 45 = %(AB02_shift)s
-  Altgr keycode 45 = %(AB02_option)s
-  Shift Altgr keycode 45 = %(AB02_shift_option)s
-keycode 46 = %(AB03)s
-  Shift keycode 46 = %(AB03_shift)s
-  Altgr keycode 46 = %(AB03_option)s
-  Shift Altgr keycode 46 = %(AB03_shift_option)s
-keycode 47 = %(AB04)s
-  Shift keycode 47 = %(AB04_shift)s
-  Altgr keycode 47 = %(AB04_option)s
-  Shift Altgr keycode 47 = %(AB04_shift_option)s
-keycode 48 = %(AB05)s
-  Shift keycode 48 = %(AB05_shift)s
-  Altgr keycode 48 = %(AB05_option)s
-  Shift Altgr keycode 48 = %(AB05_shift_option)s
-keycode 49 = %(AB06)s
-  Shift keycode 49 = %(AB06_shift)s
-  Altgr keycode 49 = %(AB06_option)s
-  Shift Altgr keycode 49 = %(AB06_shift_option)s
-keycode 50 = %(AB07)s
-  Shift keycode 50 = %(AB07_shift)s
-  Altgr keycode 50 = %(AB07_option)s
-  Shift Altgr keycode 50 = %(AB07_shift_option)s
-keycode 51 = %(AB08)s
-  Shift keycode 51 = %(AB08_shift)s
-  Altgr keycode 51 = %(AB08_option)s
-  Shift Altgr keycode 51 = %(AB08_shift_option)s
-keycode 52 = %(AB09)s
-  Shift keycode 52 = %(AB09_shift)s
-  Altgr keycode 52 = %(AB09_option)s
-  Shift Altgr keycode 52 = %(AB09_shift_option)s
-keycode 53 = %(AB10)s
-  Shift keycode 53 = %(AB10_shift)s
-  Altgr keycode 53 = %(AB10_option)s
-  Shift Altgr keycode 53 = %(AB10_shift_option)s
-#
-keycode  57 = space space
+"""
 
-#
-#include "euro"
-#include "windowkeys"
+footer = """
+
+include "windowkeys"
 #include "compose"
 	
 keycode  1 = Escape Escape
@@ -461,7 +265,185 @@ namesData = {
 }
 
 defaultDeads = ["grave", "acute", "circumflex", "tilde", "diaeresis", "cedilla", "ogonek", "caron", "breve", "doubleacute"]
-
+controls = ["Control_a",
+"Control_b",
+"Control_c",
+"Control_d",
+"Control_e",
+"Control_f",
+"Control_g",
+"Control_k",
+"Control_l",
+"Control_m",
+"Control_n",
+"Control_o",
+"Control_p",
+"Control_q",
+"Control_r",
+"Control_s",
+"Control_t",
+"Control_u",
+"Control_v",
+"Control_w",
+"Control_x",
+"Control_y",
+"Control_z",
+"Meta_Control_a",
+"Meta_Control_b",
+"Meta_Control_c",
+"Meta_Control_d",
+"Meta_Control_e",
+"Meta_Control_f",
+"Meta_Control_g",
+"Meta_Control_k",
+"Meta_Control_l",
+"Meta_Control_m",
+"Meta_Control_n",
+"Meta_Control_o",
+"Meta_Control_p",
+"Meta_Control_q",
+"Meta_Control_r",
+"Meta_Control_s",
+"Meta_Control_t",
+"Meta_Control_u",
+"Meta_Control_v",
+"Meta_Control_w",
+"Meta_Control_x",
+"Meta_Control_y",
+"Meta_Control_z",
+"Meta_Control_backslash",
+"Meta_Control_bracketright",
+"Meta_Control_asciicircum",
+"Meta_Control_underscore",
+"Meta_nul",
+"Meta_Control_a",
+"Meta_Control_b",
+"Meta_Control_c",
+"Meta_Control_d",
+"Meta_Control_e",
+"Meta_Control_f",
+"Meta_Control_g",
+"Meta_BackSpace",
+"Meta_Tab",
+"Meta_Linefeed",
+"Meta_Control_k",
+"Meta_Control_l",
+"Meta_Control_m",
+"Meta_Control_n",
+"Meta_Control_o",
+"Meta_Control_p",
+"Meta_Control_q",
+"Meta_Control_r",
+"Meta_Control_s",
+"Meta_Control_t",
+"Meta_Control_u",
+"Meta_Control_v",
+"Meta_Control_w",
+"Meta_Control_x",
+"Meta_Control_y",
+"Meta_Control_z",
+"Meta_Escape",
+"Meta_Control_backslash",
+"Meta_Control_bracketright",
+"Meta_Control_asciicircum",
+"Meta_Control_underscore",
+"Meta_space",
+"Meta_exclam",
+"Meta_quotedbl",
+"Meta_numbersign",
+"Meta_dollar",
+"Meta_percent",
+"Meta_ampersand",
+"Meta_apostrophe",
+"Meta_parenleft",
+"Meta_parenright",
+"Meta_asterisk",
+"Meta_plus",
+"Meta_comma",
+"Meta_minus",
+"Meta_period",
+"Meta_slash",
+"Meta_zero",
+"Meta_one",
+"Meta_two",
+"Meta_three",
+"Meta_four",
+"Meta_five",
+"Meta_six",
+"Meta_seven",
+"Meta_eight",
+"Meta_nine",
+"Meta_colon",
+"Meta_semicolon",
+"Meta_less",
+"Meta_equal",
+"Meta_greater",
+"Meta_question",
+"Meta_at",
+"Meta_A",
+"Meta_B",
+"Meta_C",
+"Meta_D",
+"Meta_E",
+"Meta_F",
+"Meta_G",
+"Meta_H",
+"Meta_I",
+"Meta_J",
+"Meta_K",
+"Meta_L",
+"Meta_M",
+"Meta_N",
+"Meta_O",
+"Meta_P",
+"Meta_Q",
+"Meta_R",
+"Meta_S",
+"Meta_T",
+"Meta_U",
+"Meta_V",
+"Meta_W",
+"Meta_X",
+"Meta_Y",
+"Meta_Z",
+"Meta_bracketleft",
+"Meta_backslash",
+"Meta_bracketright",
+"Meta_asciicircum",
+"Meta_underscore",
+"Meta_grave",
+"Meta_a",
+"Meta_b",
+"Meta_c",
+"Meta_d",
+"Meta_e",
+"Meta_f",
+"Meta_g",
+"Meta_h",
+"Meta_i",
+"Meta_j",
+"Meta_k",
+"Meta_l",
+"Meta_m",
+"Meta_n",
+"Meta_o",
+"Meta_p",
+"Meta_q",
+"Meta_r",
+"Meta_s",
+"Meta_t",
+"Meta_u",
+"Meta_v",
+"Meta_w",
+"Meta_x",
+"Meta_y",
+"Meta_z",
+"Meta_braceleft",
+"Meta_bar",
+"Meta_braceright",
+"Meta_asciitilde",
+"Meta_Delete",
+]
 
 for i in range(256):
   if not namesData.has_key(i):
@@ -473,25 +455,47 @@ for c, n in namesData.iteritems():
   names[chr(c)] = n
 #print names
 
-fullMapValues = {}
-for k, v in xkb.tmplValues.iteritems():
-#  v = terminators.get( v, v )
-  if v == u"&#x0022;":
-   v = u'"'
-  if v == u"&#x003c;":
-   v = u'<'
-  if v == u'&#x0026;':
-   v = u'&'
-  try:
-   l = codecs.encode(v, "iso-8859-15")
-   fullMapValues[k] = names[l]
-  except:
-#    if terminators.has_key(v):
-    if v in defaultDeads:
-      fullMapValues[k] = "dead_" + v
-    else:
-      print k, v
-      fullMapValues[k] = "VoidSymbol"
-#out = codecs.open(sys.argv[2], "w", "utf8")
 out = file(sys.argv[2], "w")
-out.write( fullMapTmpl % fullMapValues )
+
+print >> out, header
+
+f = file("keys.conf")
+for l in f:
+  if l.startswith("#") or len(l.strip()) == 0:
+    continue
+  k, scanCode  = l.split("\t")[:2]
+  if not xkb.tmplValues.has_key(k):
+    continue
+
+  for m1, m2 in [("", ""), ("_shift", "  Shift "), ("_option", "  Altgr "), ("_shift_option", "  Shift Altgr ")]:
+    for M1, M2 in [(None, ""), ("Control_", "  Control "), ("Meta_", "  Alt "), ("Meta_Control_", "  Control Alt "), ]:
+      v = xkb.tmplValues[k+m1]
+    #  v = terminators.get( v, v )
+      if v == u"&#x0022;":
+       v = u'"'
+      if v == u"&#x003c;":
+       v = u'<'
+      if v == u'&#x0026;':
+       v = u'&'
+      try:
+       l = codecs.encode(v, "iso-8859-15")
+       name = names[l]
+      except:
+    #    if terminators.has_key(v):
+        if v in defaultDeads:
+          name = "dead_" + v
+        else:
+          # print k, v
+          name = "VoidSymbol"
+          
+      if M1:
+        if M1+name in controls:
+          name = M1+name
+        else:
+          name = "VoidSymbol"
+    
+      print >> out, "%s%skeycode %s = %s" % ( m2, M2, str(int(scanCode, 16)), name)
+
+    
+#out = codecs.open(sys.argv[2], "w", "utf8")
+out.write( footer )
