@@ -503,6 +503,9 @@ for l in f:
           name = M1+term
         else:
           name = "VoidSymbol"
+        
+      if "FOUR_LEVEL_SEMIALPHABETIC" in xkb.options[k] and M1 == None and m1 in ("", "_shift"):
+        name = "+"+name
     
       print >> out, "%s%skeycode %s = %s" % ( m2, M2, str(int(scanCode, 16)), name)
 
