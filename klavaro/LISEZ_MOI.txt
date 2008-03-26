@@ -16,7 +16,7 @@ Klavaro ne contient pas la disposition de clavier Dvorak français BÉPO. Il fau
 
   cp fr-dvorak-bepo.kbd ~/.klavaro
   
-peut-être installer la disposition pour un utilisateur.
+peut-être utilisée sous linux pour installer la disposition pour un utilisateur.
 
 
 Licence

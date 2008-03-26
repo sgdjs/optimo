@@ -35,7 +35,7 @@ mkdir fr-dvorak-bepo-klavaro-$VERSION
 cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-klavaro-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/klavaro/fr-dvorak-bepo* pilotes/xkb/LISEZ_MOI.txt fr-dvorak-bepo-klavaro-$VERSION
+cp pilotes/klavaro/fr-dvorak-bepo* pilotes/klavaro/LISEZ_MOI.txt fr-dvorak-bepo-klavaro-$VERSION
 
 # build the archive
 zip -r ../fr-dvorak-bepo-klavaro-$VERSION.zip fr-dvorak-bepo-klavaro-$VERSION
