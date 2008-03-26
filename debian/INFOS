@@ -56,29 +56,29 @@ version=1.0~cvs.20070916
 
 dans symbols/fr, rajouter un squelette du genre :
 
-// Version 6.2.1.2 :
+// Version 0.6.5.1 :
 
 partial alphanumeric_keys
-xkb_symbols "bepo_6212" {
+xkb_symbols "bepo_651" {
 
     // Include previous version :
-    include "fr(bepo_6211)"
+    include "fr(bepo_64)"
 
-    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.1.2";
+    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v0.6.5.1";
 
-    // Updates since last version :
-
+    // Modifications depuis la version précédente :
+    // * 
 };
 
 partial alphanumeric_keys
-xkb_symbols "bepo_6212_latin9" {
+xkb_symbols "bepo_651_latin9" {
 
-    // Restricts the fr(bepo_6212) layout to latin9 symbols
+    // Restricts the fr(bepo_651) layout to latin9 symbols
 
-    include "fr(bepo_6212)"
+    include "fr(bepo_651)"
     include "keypad(oss_latin9)"
 
-    name[Group1]="France - Bepo, ergonomic, Dvorak way, v6.2.1.2, latin-9 only";
+    name[Group1]="France - Bepo, ergonomic, Dvorak way, v0.6.5.1, latin-9 only";
 
 };
 
