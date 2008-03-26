@@ -478,19 +478,29 @@ for l in f:
       if v == u'&#x0026;':
        v = u'&'
       try:
-       l = codecs.encode(v, "iso-8859-15")
-       name = names[l]
+       cl = codecs.encode(v, "iso-8859-15")
+       name = names[cl]
+       term = "VoidSymbol"
       except:
     #    if terminators.has_key(v):
         if v in defaultDeads:
           name = "dead_" + v
+          try:
+            term = terminators[v]
+            cl = codecs.encode(term, "iso-8859-15")
+            term = names[cl]
+          except:
+            term = "VoidSymbol"
         else:
           # print k, v
           name = "VoidSymbol"
+          term = "VoidSymbol"
           
       if M1:
         if M1+name in controls:
           name = M1+name
+        elif M1+term in controls:
+          name = M1+term
         else:
           name = "VoidSymbol"
     
