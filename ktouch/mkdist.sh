@@ -35,7 +35,7 @@ mkdir fr-dvorak-bepo-ktouch-$VERSION
 cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-ktouch-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/ktouch/fr-dvorak-bepo* pilotes/xkb/LISEZ_MOI.txt fr-dvorak-bepo-ktouch-$VERSION
+cp pilotes/ktouch/fr-dvorak-bepo* pilotes/ktouch/LISEZ_MOI.txt fr-dvorak-bepo-ktouch-$VERSION
 
 # build the archive
 tar cvzf ../fr-dvorak-bepo-ktouch-$VERSION.tgz fr-dvorak-bepo-ktouch-$VERSION
