@@ -12,11 +12,12 @@ Les fichiers de ce paquetage sont destinés à être utilisé avec ktouch (http:
 Utilisation
 -----------
 
-Ktouch ne contient pas la disposition de clavier Dvorak français BÉPO. Il faut donc la rajouter manuellement. La commande 
+Ktouch ne contient pas la disposition de clavier Dvorak français BÉPO. Il faut donc la rajouter manuellement. Les commandes 
 
+  mkdir -p ~/.kde/share/apps/ktouch/
   cp fr-dvorak-bepo.keyboard ~/.kde/share/apps/ktouch/
   
-peut-être utilisée la disposition pour un utilisateur, ou
+peuvent-être utilisées pour installer la disposition pour un utilisateur, ou
 
   cp fr-dvorak-bepo.keyboard /usr/share/apps/ktouch/
   
