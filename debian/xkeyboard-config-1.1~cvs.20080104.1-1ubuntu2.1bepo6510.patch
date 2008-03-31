@@ -243,7 +243,7 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1-1ubuntu2/rules/base.xml.in xkeybo
            </configItem>
 diff -Naur xkeyboard-config-1.1~cvs.20080104.1-1ubuntu2/symbols/fr xkeyboard-config-1.1~cvs.20080104.1-1ubuntu2.6510/symbols/fr
 --- xkeyboard-config-1.1~cvs.20080104.1-1ubuntu2/symbols/fr	2008-01-02 22:21:43.000000000 +0100
-+++ xkeyboard-config-1.1~cvs.20080104.1-1ubuntu2.6510/symbols/fr	2008-03-25 21:08:42.000000000 +0100
++++ xkeyboard-config-1.1~cvs.20080104.1-1ubuntu2.6510/symbols/fr	2008-03-31 16:15:02.000000000 +0200
 @@ -432,37 +432,43 @@
  
  // Bépo : Improved ergonomic french keymap using Dvorak method.
@@ -827,7 +827,7 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1-1ubuntu2/symbols/fr xkeyboard-con
 +    // * définition du comportement de la touche morte « symbole monétaire » ;
 +    // * comportement du rond en chef mort homogène sur chaque pilote : le presser deux fois donne le symbole degré ° ;
 +    // * ajout des caractères « ǘ », « ǜ », « ǚ » et « ǖ » du pinyin utilisant « ü » (pilote windows uniquement).
-+    {
++
 +    key <TLDE> { [          dollar,   numbersign,        section,      paragraph ] }; // $ # § ¶
 +
 +    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash                 ] }; // " 1 —

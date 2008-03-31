@@ -233,7 +233,7 @@ diff -Naur xkeyboard-config-0.9-4ubuntu3/rules/base.xml.in xkeyboard-config-0.9-
          <variant>
 diff -Naur xkeyboard-config-0.9-4ubuntu3/symbols/fr xkeyboard-config-0.9-4ubuntu3.6510/symbols/fr
 --- xkeyboard-config-0.9-4ubuntu3/symbols/fr	2006-10-04 21:29:26.000000000 +0200
-+++ xkeyboard-config-0.9-4ubuntu3.6510/symbols/fr	2008-03-25 20:48:12.000000000 +0100
++++ xkeyboard-config-0.9-4ubuntu3.6510/symbols/fr	2008-03-31 16:14:39.000000000 +0200
 @@ -1,4 +1,4 @@
 -// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $
 +// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $ -*- c -*-
@@ -854,7 +854,7 @@ diff -Naur xkeyboard-config-0.9-4ubuntu3/symbols/fr xkeyboard-config-0.9-4ubuntu
 +    // * définition du comportement de la touche morte « symbole monétaire » ;
 +    // * comportement du rond en chef mort homogène sur chaque pilote : le presser deux fois donne le symbole degré ° ;
 +    // * ajout des caractères « ǘ », « ǜ », « ǚ » et « ǖ » du pinyin utilisant « ü » (pilote windows uniquement).
-+    {
++
 +    key <TLDE> { [          dollar,   numbersign,        section,      paragraph ] }; // $ # § ¶
 +
 +    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash                 ] }; // " 1 —
