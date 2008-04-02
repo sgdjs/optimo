@@ -2,7 +2,7 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- French Dvorak Layout -->
 <!-- http://www.clavier-dvorak.org/ -->
-<!-- version 0.6.5.1 -->
+<!-- version 0.6.5 -->
 <keyboard group="126" id="-6538" name="French Dvorak" maxout="5">
   <!--
     This layout is designed for ISO and ANSI keyboards. The extra
@@ -621,7 +621,7 @@
       <key code="19" action="&#x003c;" />
       <key code="20" action=">" />
       <key code="21" action="[" />
-      <key code="22" action="Multi_key" />
+      <key code="22" action="" />
       <key code="23" action="]" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
@@ -966,7 +966,7 @@
       <key code="19" action="&#x003c;" />
       <key code="20" action=">" />
       <key code="21" action="[" />
-      <key code="22" action="Multi_key" />
+      <key code="22" action="" />
       <key code="23" action="]" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
@@ -1081,7 +1081,7 @@
       <key code="19" action="&#x003c;" />
       <key code="20" action=">" />
       <key code="21" action="[" />
-      <key code="22" action="↯" />
+      <key code="22" action="" />
       <key code="23" action="]" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
@@ -1102,7 +1102,7 @@
       <key code="40" action="ß" />
       <key code="41" action="ñ" />
       <key code="42" action="¸" />
-      <key code="43" action="°" />
+      <key code="43" action="˚" />
       <key code="44" action="˛" />
       <key code="45" action="‘" />
       <key code="46" action="" />
@@ -2724,6 +2724,12 @@
       <when state="Multi_key_space" output="^"/>
     </action>
 
+    <action id="≥">
+      <when state="none" output="≥"/>
+      <when state="stroke" output="≱"/>
+      <when state="Multi_key" next="Multi_key_greaterthanequal"/>
+    </action>
+
     <action id="h">
       <when state="none" output="h"/>
       <when state="abovedot" output="ḣ"/>
@@ -3032,6 +3038,12 @@
       <when state="Multi_key_period" output="‹"/>
       <when state="Multi_key_quotedbl" output="“"/>
       <when state="Multi_key_slash" output="\"/>
+    </action>
+
+    <action id="≤">
+      <when state="none" output="≤"/>
+      <when state="stroke" output="≰"/>
+      <when state="Multi_key" next="Multi_key_lessthanequal"/>
     </action>
 
     <action id="ſ">
@@ -4812,6 +4824,10 @@
 
     <action id="˘">
       <when state="none" output="˘"/>
+    </action>
+
+    <action id="˚">
+      <when state="none" output="˚"/>
     </action>
 
     <action id="˛">
@@ -7959,10 +7975,6 @@
       <when state="Multi_key_slash" output="↮"/>
     </action>
 
-    <action id="↯">
-      <when state="none" output="↯"/>
-    </action>
-
     <action id="∃">
       <when state="none" output="∃"/>
       <when state="Multi_key" next="Multi_key_U2203"/>
@@ -8014,16 +8026,6 @@
     <action id="≡">
       <when state="none" output="≡"/>
       <when state="Multi_key" next="Multi_key_identical"/>
-    </action>
-
-    <action id="≤">
-      <when state="none" output="≤"/>
-      <when state="Multi_key" next="Multi_key_lessthanequal"/>
-    </action>
-
-    <action id="≥">
-      <when state="none" output="≥"/>
-      <when state="Multi_key" next="Multi_key_greaterthanequal"/>
     </action>
 
     <action id="≲">
@@ -8705,7 +8707,7 @@
       <when state="palatalhook" output="?"/>
       <when state="retroflexhook" output="̢"/>
       <when state="righthalfring" output="ʾ"/>
-      <when state="ringabove" output="°"/>
+      <when state="ringabove" output="˚"/>
       <when state="ringbelow" output="̥"/>
       <when state="stroke" output="/"/>
       <when state="swashtail" output="?"/>
@@ -8724,7 +8726,7 @@
       <when state="acute_diaeresis" output="´¨"/>
       <when state="acute_horn" output="´̛"/>
       <when state="acute_macron" output="´¯"/>
-      <when state="acute_ringabove" output="´°"/>
+      <when state="acute_ringabove" output="´˚"/>
       <when state="acute_stroke" output="´/"/>
       <when state="acute_tilde" output="´~"/>
       <when state="belowdot_breve" output=".˘"/>
@@ -8787,7 +8789,7 @@
       <when state="doubleacute" output="̋"/>
       <when state="doublegrave" output="̏"/>
       <when state="fishhook" output="?"/>
-      <when state="grave" output="`"/>
+      <when state="grave" output="̀"/>
       <when state="hook" output="?"/>
       <when state="hookabove" output="̉"/>
       <when state="horn" output="̛"/>
@@ -8804,17 +8806,17 @@
       <when state="righthalfring" output="ʾ"/>
       <when state="ringabove" output="̊"/>
       <when state="ringbelow" output="̥"/>
-      <when state="stroke" output="/"/>
+      <when state="stroke" output="̸"/>
       <when state="swashtail" output="?"/>
       <when state="tail" output="?"/>
-      <when state="tilde" output="~"/>
+      <when state="tilde" output="̃"/>
       <when state="tildebelow" output="̰"/>
       <when state="topbar" output="⁻"/>
       <when state="abovedot_acute" output="̇́"/>
       <when state="abovedot_belowdot" output="̇."/>
       <when state="abovedot_caron" output="̇̌"/>
       <when state="abovedot_macron" output="̇̄"/>
-      <when state="abovedot_stroke" output="̇/"/>
+      <when state="abovedot_stroke" output="̸̇"/>
       <when state="acute_breve" output="́̆"/>
       <when state="acute_cedilla" output="̧́"/>
       <when state="acute_circumflex" output="́̂"/>
@@ -8822,34 +8824,34 @@
       <when state="acute_horn" output="̛́"/>
       <when state="acute_macron" output="́̄"/>
       <when state="acute_ringabove" output="́̊"/>
-      <when state="acute_stroke" output="́/"/>
-      <when state="acute_tilde" output="́~"/>
+      <when state="acute_stroke" output="̸́"/>
+      <when state="acute_tilde" output="́̃"/>
       <when state="belowdot_breve" output=".̆"/>
       <when state="belowdot_circumflex" output=".̂"/>
       <when state="belowdot_horn" output=".̛"/>
       <when state="belowdot_macron" output=".̄"/>
       <when state="breve_cedilla" output="̧̆"/>
-      <when state="breve_grave" output="̆`"/>
+      <when state="breve_grave" output="̆̀"/>
       <when state="breve_hookabove" output="̆̉"/>
-      <when state="breve_tilde" output="̆~"/>
+      <when state="breve_tilde" output="̆̃"/>
       <when state="caron_diaeresis" output="̌̈"/>
       <when state="cedilla_currency" output="̧¤"/>
-      <when state="circumflex_grave" output="̂`"/>
+      <when state="circumflex_grave" output="̂̀"/>
       <when state="circumflex_hookabove" output="̂̉"/>
-      <when state="circumflex_tilde" output="̂~"/>
-      <when state="diaeresis_grave" output="̈`"/>
+      <when state="circumflex_tilde" output="̂̃"/>
+      <when state="diaeresis_grave" output="̈̀"/>
       <when state="diaeresis_macron" output="̈̄"/>
-      <when state="diaeresis_tilde" output="̈~"/>
+      <when state="diaeresis_tilde" output="̈̃"/>
       <when state="fishhook_middletilde" output="??"/>
       <when state="fishhook_tail" output="??"/>
-      <when state="grave_horn" output="`̛"/>
-      <when state="grave_macron" output="`̄"/>
+      <when state="grave_horn" output="̛̀"/>
+      <when state="grave_macron" output="̀̄"/>
       <when state="hook_tail" output="??"/>
       <when state="hookabove_horn" output="̛̉"/>
-      <when state="horn_tilde" output="̛~"/>
+      <when state="horn_tilde" output="̛̃"/>
       <when state="macron_ogonek" output="̨̄"/>
-      <when state="macron_tilde" output="̄~"/>
-      <when state="abovedot_hook_stroke" output="̇?/"/>
+      <when state="macron_tilde" output="̄̃"/>
+      <when state="abovedot_hook_stroke" output="̇?̸"/>
     </action>
 
 
@@ -9173,7 +9175,7 @@
     <when state="palatalhook" output="?"/>
     <when state="retroflexhook" output="̢"/>
     <when state="righthalfring" output="ʾ"/>
-    <when state="ringabove" output="°"/>
+    <when state="ringabove" output="˚"/>
     <when state="ringbelow" output="̥"/>
     <when state="stroke" output="/"/>
     <when state="swashtail" output="?"/>
@@ -9192,7 +9194,7 @@
     <when state="acute_diaeresis" output="´¨"/>
     <when state="acute_horn" output="´̛"/>
     <when state="acute_macron" output="´¯"/>
-    <when state="acute_ringabove" output="´°"/>
+    <when state="acute_ringabove" output="´˚"/>
     <when state="acute_stroke" output="´/"/>
     <when state="acute_tilde" output="´~"/>
     <when state="belowdot_breve" output=".˘"/>
@@ -9460,7 +9462,7 @@
     <when state="Multi_key_acute_b" output="↯´b"/>
     <when state="Multi_key_acute_combining_tilde" output="↯´̃"/>
     <when state="Multi_key_acute_comma" output="↯´,"/>
-    <when state="Multi_key_acute_dead_abovering" output="↯´°"/>
+    <when state="Multi_key_acute_dead_abovering" output="↯´˚"/>
     <when state="Multi_key_acute_dead_breve" output="↯´˘"/>
     <when state="Multi_key_acute_dead_cedilla" output="↯´¸"/>
     <when state="Multi_key_acute_dead_circumflex" output="↯´^"/>
@@ -9484,7 +9486,7 @@
     <when state="Multi_key_apostrophe_asciitilde" output="↯'~"/>
     <when state="Multi_key_apostrophe_b" output="↯'b"/>
     <when state="Multi_key_apostrophe_combining_tilde" output="↯'̃"/>
-    <when state="Multi_key_apostrophe_dead_abovering" output="↯'°"/>
+    <when state="Multi_key_apostrophe_dead_abovering" output="↯'˚"/>
     <when state="Multi_key_apostrophe_dead_breve" output="↯'˘"/>
     <when state="Multi_key_apostrophe_dead_cedilla" output="↯'¸"/>
     <when state="Multi_key_apostrophe_dead_circumflex" output="↯'^"/>
@@ -9868,5 +9870,6 @@
     <when state="Multi_key_v" output="↯v"/>
     <when state="Multi_key_x" output="↯x"/>
   </terminators>
+
 
 </keyboard>
