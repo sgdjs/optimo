@@ -149,6 +149,15 @@ deadNames = {
   #"duml",
 }
 
+def chrRepr(s):
+  if len(s) == 1:
+    if ord(s) < 127:
+      return "'%s'" % s
+    else:
+      return str(ord(s))
+  return s
+
+
 out = file(sys.argv[2], "w")
 
 print >> out, header
@@ -206,12 +215,7 @@ for l in f:
         else:
           cl = "nop"
         
-      if len(cl) == 1:
-        if ord(cl) < 127:
-          cl = "'%s'" % cl
-        else:
-          cl = str(ord(cl))
-      s += cl.ljust(7)
+      s += chrRepr(cl).ljust(7)
     
   s += " "
   if "FOUR_LEVEL_SEMIALPHABETIC" in xkb.options[k]:
@@ -245,8 +249,8 @@ for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
   for k, mods in sorted(dead_keys.dc):
     if mods == m and dead_keys.dc.has_key((k, ())):
       try:
-        i = str(ord(codecs.encode(dead_keys.dc[k, ()], "iso-8859-15"))).rjust(3)
-        o = str(ord(codecs.encode(dead_keys.dc[k, mods], "iso-8859-15"))).rjust(3)
+        i = chrRepr(codecs.encode(dead_keys.dc[k, ()], "iso-8859-15"))
+        o = chrRepr(codecs.encode(dead_keys.dc[k, mods], "iso-8859-15"))
         if count != 0 and count % 4 == 0:
           s += "\n           "
         s += "( %s %s ) " % (i, o)
@@ -257,8 +261,8 @@ for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
       K = (k, tuple(a for a in mods if a != m[0]))
       if dead_keys.dc.has_key(K):
         try:
-          i = str(ord(codecs.encode(dead_keys.dc[K], "iso-8859-15"))).rjust(3)
-          o = str(ord(codecs.encode(dead_keys.dc[k, mods], "iso-8859-15"))).rjust(3)
+          i = chrRepr(codecs.encode(dead_keys.dc[K], "iso-8859-15"))
+          o = chrRepr(codecs.encode(dead_keys.dc[k, mods], "iso-8859-15"))
           if count != 0 and count % 4 == 0:
             s += "\n           "
           s += "( %s %s ) " % (i, o)
