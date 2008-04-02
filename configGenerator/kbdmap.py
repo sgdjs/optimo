@@ -245,7 +245,7 @@ for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
     continue
   
   count = 0
-  s = "  %s %s " % (deadNames[m[0]], str(ord(codecs.encode(terminators[m[0]], "iso-8859-15", 'replace'))).rjust(3))
+  s = "  %s %s " % (deadNames[m[0]], chrRepr(codecs.encode(terminators[m[0]], "iso-8859-15", 'replace')))
   for k, mods in sorted(dead_keys.dc):
     if mods == m and dead_keys.dc.has_key((k, ())):
       try:
