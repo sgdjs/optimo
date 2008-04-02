@@ -14,7 +14,7 @@
 import defaults, sys
 defaults.xkbFile = sys.argv[1]
 
-import xkb, dead_keys, codecs
+import xkb, dead_keys, codecs, compose
 from terminators import terminators
 
 
@@ -221,6 +221,50 @@ for l in f:
 
   print >> out, s
 
-    
-#out = codecs.open(sys.argv[2], "w", "utf8")
-# out.write( footer )
+
+print >> out, """# finally, the dead keys
+# ex:
+#  041   dgra   172	 nop	nop    '|'    '|'    nop    nop     O
+#  dgra  '`'  ( 'a' 224 ) ( 'A' 192 ) ( 'e' 232 ) ( 'E' 200 )
+#             ( 'i' 236 ) ( 'I' 204 ) ( 'o' 242 ) ( 'O' 210 )
+#             ( 'u' 249 ) ( 'U' 217 )"""
+			
+# find the dead keys used here
+dks = set()
+for v in xkb.tmplValues.itervalues():
+  if terminators.has_key(v):
+    dks.add(v)
+
+for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
+  if m[0] not in dks or not deadNames.has_key(m[0]) :
+    continue
+  
+  count = 0
+  s = "  %s %s " % (deadNames[m[0]], str(ord(codecs.encode(terminators[m[0]], "iso-8859-15", 'replace'))).rjust(3))
+  for k, mods in sorted(dead_keys.dc):
+    if mods == m and dead_keys.dc.has_key((k, ())):
+      try:
+        i = str(ord(codecs.encode(dead_keys.dc[k, ()], "iso-8859-15"))).rjust(3)
+        o = str(ord(codecs.encode(dead_keys.dc[k, mods], "iso-8859-15"))).rjust(3)
+        if count != 0 and count % 4 == 0:
+          s += "\n           "
+        s += "( %s %s ) " % (i, o)
+        count += 1
+      except:
+        pass
+    elif m[0] in mods:
+      K = (k, tuple(a for a in mods if a != m[0]))
+      if dead_keys.dc.has_key(K):
+        try:
+          i = str(ord(codecs.encode(dead_keys.dc[K], "iso-8859-15"))).rjust(3)
+          o = str(ord(codecs.encode(dead_keys.dc[k, mods], "iso-8859-15"))).rjust(3)
+          if count != 0 and count % 4 == 0:
+            s += "\n           "
+          s += "( %s %s ) " % (i, o)
+          count += 1
+        except:
+          pass
+
+  print >> out, s
+#  if count > 0:
+#    print >> out, s
