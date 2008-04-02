@@ -143,9 +143,9 @@ deadNames = {
   "cedilla": "dced",
   "doubleacute": "ddac",
   "ogonek": "dogo",
-  "caron": "dcar"
-  #"dapo",
-  #"dsla",
+  "caron": "dcar",
+  "currency": "dapo",
+  "stroke": "dsla",
   #"duml",
 }
 
@@ -222,7 +222,8 @@ for l in f:
   print >> out, s
 
 
-print >> out, """# finally, the dead keys
+print >> out, """#
+# finally, the dead keys
 # ex:
 #  041   dgra   172	 nop	nop    '|'    '|'    nop    nop     O
 #  dgra  '`'  ( 'a' 224 ) ( 'A' 192 ) ( 'e' 232 ) ( 'E' 200 )
