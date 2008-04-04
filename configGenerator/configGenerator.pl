@@ -55,6 +55,7 @@ my $OUTPUT_FORMAT      = $ARGV[1];
 
 my $LAYOUT_DESCRIPTION = "layout-$VERSION.conf";
 my $DEAKEY_BEHAVIOUR   = "deads-$VERSION.conf";
+my $VIRTUAL_KEYS       = "virtualKeys-$VERSION.conf";
 
 my $KEYS_FILE    = "keys.conf";
 my $SYMBOLS_FILE = "symbols.conf";
@@ -68,8 +69,12 @@ my $x_xkb_column     = 2;
 my $x_xmodmap_column = 3;
 my $win_msklc_column = 4;
 
-my %keys      = ();
-my %scanCodes = ();
+my $vk_azerty_column = 1;
+my $vk_bepo_column   = 2;
+
+my %keys        = ();
+my %virtualKeys = ();
+my %scanCodes   = ();
 
 my %symbols  = ();
 my %unicodes = ();
@@ -103,6 +108,28 @@ sub loadKeys($)
     close(FILE);
 
 #print Dumper(\%keys);
+}
+
+sub loadVirtualKeys($)
+{
+    my $column = shift;
+
+    open(FILE, "< $VIRTUAL_KEYS") or die("open: $!");
+
+    LINE: while (<FILE>)
+    {
+        next LINE if (/^#/);
+        next LINE if (/^\s*$/);
+
+        chomp;
+        s/#.*$//g;
+        my @array = split(/ +|\t/);
+        $virtualKeys{$array[0]} = $array[$column];
+    }
+
+    close(FILE);
+
+#print Dumper(\%virtualKeys);
 }
 
 sub loadSymbols($)
@@ -173,6 +200,7 @@ sub loadLayout()
         $symbols{'shift'}       = $array[2];
         $symbols{'altgr'}       = $array[3];
         $symbols{'altgr+shift'} = $array[4];
+        $symbols{'translation'} = $array[5];
 
         if ($key =~ /(.+)!(.+)/)
         {
@@ -605,6 +633,12 @@ sub gen_win_msklc_bodyKeys()
             next;
         }
 
+        if (!defined($virtualKeys{$key}))
+        {
+            print STDERR "Unknown virtual key: ".$key."\n";
+            next;
+        }
+
         my %keySymbols = %{$layoutSyms{$key}};
 
         # Caps level
@@ -619,7 +653,7 @@ sub gen_win_msklc_bodyKeys()
         $level = "5"
             if (defined($keySymbols{'caps2'}) && $keySymbols{'caps2'} == 1);
         
-        my $line = $scanCodes{$key}."\t".$keys{$key}."\t\t".$level."\t";
+        my $line = $scanCodes{$key}."\t".$virtualKeys{$key}."\t\t".$level."\t";
         my $comment = "\t//";
         my $voidSymbol = "-1";
 
@@ -985,10 +1019,13 @@ sub gen_x_compose()
     print $header.$body;
 }
 
-sub gen_win_msklc()
+sub gen_win_msklc($)
 {
-    &loadKeys   ($win_msklc_column);
-    &loadSymbols($win_msklc_column);
+    my $vkType = shift;
+
+    &loadKeys       ($win_msklc_column);
+    &loadVirtualKeys($vkType);
+    &loadSymbols    ($win_msklc_column);
     &loadLayout();
     &loadDeadKeys();
 
@@ -1000,13 +1037,25 @@ sub gen_win_msklc()
     print $header.$bodyKeys.$bodyDeadKeys.$footer;
 }
 
+sub gen_win_msklc_azerty()
+{
+    gen_win_msklc($vk_azerty_column);
+}
+
+sub gen_win_msklc_bepo()
+{
+    gen_win_msklc($vk_bepo_column);
+}
+
 SWITCH: for ($OUTPUT_FORMAT)
 {
-    /x_xkb_root/i && do { &gen_x_xkb_root(); last; };
-    /x_xkb_user/i && do { &gen_x_xkb_user(); last; };
-    /x_xmodmap/i  && do { &gen_x_xmodmap();  last; };
-    /x_compose/i  && do { &gen_x_compose();  last; };
-    /win_msklc/i  && do { &gen_win_msklc();  last; };
-    die("output format must be one of the following: x_xkb, x_xmodmap, x_compose, win_msklc\n");
+    /x_xkb_root/i       && do { &gen_x_xkb_root();       last; };
+    /x_xkb_user/i       && do { &gen_x_xkb_user();       last; };
+    /x_xmodmap/i        && do { &gen_x_xmodmap();        last; };
+    /x_compose/i        && do { &gen_x_compose();        last; };
+    /win_msklc_azerty/i && do { &gen_win_msklc_azerty(); last; };
+    /win_msklc_bepo/i   && do { &gen_win_msklc_bepo();   last; };
+
+    die("output format must be one of the following: x_xkb_root, x_xkb_user, x_xmodmap, x_compose, win_msklc_azerty, win_msklc_bepo\n");
 }
 
