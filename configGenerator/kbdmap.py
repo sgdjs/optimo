@@ -210,6 +210,8 @@ for l in f:
       if ctrl:
         if charToCtrl.has_key(cl):
           cl = charToCtrl[cl]
+        elif charToCtrl.has_key(cl.lower()):
+          cl = charToCtrl[cl.lower()]
         elif charToCtrl.has_key(term):
           cl = charToCtrl[term]
         else:
