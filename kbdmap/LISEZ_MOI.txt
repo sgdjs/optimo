@@ -23,9 +23,10 @@ bascule le clavier en clavier Dvorak français BÉPO. Vous pouvez copier le fich
   
 La commande
 
-  loadkeys fr.iso
+  loadkeys fr.iso.acc
   
 permet de revenir à un clavier AZERTY.
+Pour avoir le clavier Dvorak français BÉPO dés le démarrage du système, il faut modifier la ligne « keymap=fr » dans le fichier /etc/rc.conf en « keymap=fr-dvorak-bepo ».
 
 
 Licence
