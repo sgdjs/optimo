@@ -218,7 +218,7 @@ for l in f:
       s += chrRepr(cl).ljust(7)
     
   s += " "
-  if "FOUR_LEVEL_SEMIALPHABETIC" in xkb.options[k]:
+  if "ALPHABETIC" in xkb.options[k]:
     s += "C"
   else:
     s += "O"
