@@ -92,24 +92,21 @@ for l in f:
   if l.startswith("#") or len(l.strip()) == 0:
     continue
   ls = l.strip().split("\t")
-  c, freq  = ls[1], float(ls[3])
-  if charFinger.has_key(c):
-    for v in charFinger[c]:
-      if v == ("1", "2"):
-        print c, freq
-      fingerLoad[v] += freq
+  cc, freq  = ls[1], int(ls[2])
+  c1 = cc[0]
+  c2 = cc[1]
+  if charFinger.has_key(c1) and charFinger.has_key(c2) and charFinger[c1] == charFinger[c2] and c1 != c2:
+      for v in charFinger[c1]:
+        fingerLoad[v] += freq
 f.close()
 
-h1 = 0
-h2 = 0
+total = 0
 for h, f in sorted(fingerLoad.keys()):
   if h == "0":
     fingerLoad["1", f] += fingerLoad[h, f] / 2
     fingerLoad["2", f] += fingerLoad[h, f] / 2
     continue
-  if h == "1":
-    h1 +=fingerLoad[h, f]
-  if h == "2":
-    h2 +=fingerLoad[h, f]
+  total += fingerLoad[h, f]
   print h, f, fingerLoad[h, f]
-print h1, h2
+
+print total

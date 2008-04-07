@@ -49,6 +49,7 @@ composeNames["combining_acute"] = u"́"
 composeNames["combining_belowdot"] = u"̣"
 composeNames["combining_grave"] = u"̀"
 composeNames["combining_tilde"] = u"̃"
+composeNames["NoSymbol"] = u""
 # dead keys
 composeNames["dead_abovedot"] = u"abovedot"
 composeNames["dead_abovering"] = u"ringabove"
