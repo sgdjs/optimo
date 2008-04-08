@@ -10,6 +10,7 @@ VERSION=0.6.5.1
 
 ./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16 > "results/layout-${VERSION}-vkAzerty.klc"
 ./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16 > "results/layout-${VERSION}-vkBepo.klc"
+./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/layout-${VERSION}-vkQwertz.klc"
 
 ./map.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.map"
 ./klavaro.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbd"

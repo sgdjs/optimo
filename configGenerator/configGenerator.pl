@@ -57,8 +57,9 @@ my $LAYOUT_DESCRIPTION = "layout-$VERSION.conf";
 my $DEAKEY_BEHAVIOUR   = "deads-$VERSION.conf";
 my $VIRTUAL_KEYS       = "virtualKeys-$VERSION.conf";
 
-my $KEYS_FILE    = "keys.conf";
-my $SYMBOLS_FILE = "symbols.conf";
+my $KEYS_FILE         = "keys.conf";
+my $SPECIAL_KEYS_FILE = "specialKeys.conf";
+my $SYMBOLS_FILE      = "symbols.conf";
 
 my $SHORT_VERSION = $VERSION;
 $SHORT_VERSION =~ tr/\.//d;
@@ -71,8 +72,10 @@ my $win_msklc_column = 4;
 
 my $vk_azerty_column = 1;
 my $vk_bepo_column   = 2;
+my $vk_qwertz_column = 3;
 
 my %keys        = ();
+my %specialKeys = ();
 my %virtualKeys = ();
 my %scanCodes   = ();
 
@@ -108,6 +111,26 @@ sub loadKeys($)
     close(FILE);
 
 #print Dumper(\%keys);
+}
+
+sub loadSpecialKeys()
+{
+    open(FILE, "< $SPECIAL_KEYS_FILE") or die("open: $!");
+
+    LINE: while (<FILE>)
+    {
+        next LINE if (/^#/);
+        next LINE if (/^\s*$/);
+
+        chomp;
+        s/#.*$//g;
+        my @array = split(/\t/);
+        $specialKeys{$array[0]} = \@array;
+    }
+
+    close(FILE);
+
+#print Dumper(\%specialKeys);
 }
 
 sub loadVirtualKeys($)
@@ -311,17 +334,19 @@ sub gen_x_compose_header()
     return $header;
 }
 
-sub gen_win_msklc_header()
+sub gen_win_msklc_header($$)
 {
-    my $header = "KBD\tbepo$SHORT_VERSION\t\"fr-dvorak-bépo v$VERSION\"\r\n".
+    my ($localeName, $localeId) = @_;
+
+    my $header = "KBD\tbepo".$SHORT_VERSION."\t\"fr-dvorak-bépo v".$VERSION."\"\r\n".
                  "\r\n".
                  "COPYRIGHT\t\"Public Domain\"\r\n".
                  "\r\n".
                  "COMPANY\t\"wiki pour la conception d un dvorak francais\"\r\n".
                  "\r\n".
-                 "LOCALENAME\t\"fr-FR\"\r\n".
+                 "LOCALENAME\t\"".$localeName."\"\r\n".
                  "\r\n".
-                 "LOCALEID\t\"0000040c\"\r\n".
+                 "LOCALEID\t\"".$localeId."\"\r\n".
                  "\r\n".
                  "VERSION\t1.0\r\n".
                  "\r\n".
@@ -854,84 +879,26 @@ sub gen_x_xmodmap_footer()
 
 sub gen_win_msklc_footer()
 {
-    my $footer = "KEYNAME\r\n".
+    my $keyNames = "KEYNAME\r\n".
+                   "\r\n";
+
+    my $keyNamesExt = "KEYNAME_EXT\r\n".
+                      "\r\n";
+
+    for my $scanCode (sort keys %specialKeys)
+    {
+        my @array = @{$specialKeys{$scanCode}};
+
+        $keyNames .= $scanCode."\t".$array[1]."\r\n"
+            if ($#array >= 1 && $array[1] ne "");
+
+        $keyNamesExt .= $scanCode."\t".$array[2]."\r\n"
+            if ($#array == 2);
+    }
+
+    my $footer = $keyNames.
                  "\r\n".
-                 "01\tEsc\r\n".
-                 "0e\tBackspace\r\n".
-                 "0f\tTab\r\n".
-                 "1c\tEnter\r\n".
-                 "1d\tCtrl\r\n".
-                 "2a\tShift\r\n".
-                 "36\t\"Right Shift\"\r\n".
-                 "37\t\"Num *\"\r\n".
-                 "38\tAlt\r\n".
-                 "39\tSpace\r\n".
-                 "3a\t\"Caps Lock\"\r\n".
-                 "3b\tF1\r\n".
-                 "3c\tF2\r\n".
-                 "3d\tF3\r\n".
-                 "3e\tF4\r\n".
-                 "3f\tF5\r\n".
-                 "40\tF6\r\n".
-                 "41\tF7\r\n".
-                 "42\tF8\r\n".
-                 "43\tF9\r\n".
-                 "44\tF10\r\n".
-                 "45\tPause\r\n".
-                 "46\t\"Scroll Lock\"\r\n".
-                 "47\t\"Num 7\"\r\n".
-                 "48\t\"Num 8\"\r\n".
-                 "49\t\"Num 9\"\r\n".
-                 "4a\t\"Num -\"\r\n".
-                 "4b\t\"Num 4\"\r\n".
-                 "4c\t\"Num 5\"\r\n".
-                 "4d\t\"Num 6\"\r\n".
-                 "4e\t\"Num +\"\r\n".
-                 "4f\t\"Num 1\"\r\n".
-                 "50\t\"Num 2\"\r\n".
-                 "51\t\"Num 3\"\r\n".
-                 "52\t\"Num 0\"\r\n".
-                 "53\t\"Num Del\"\r\n".
-                 "54\t\"Sys Req\"\r\n".
-                 "57\tF11\r\n".
-                 "58\tF12\r\n".
-                 "7c\tF13\r\n".
-                 "7d\tF14\r\n".
-                 "7e\tF15\r\n".
-                 "7f\tF16\r\n".
-                 "80\tF17\r\n".
-                 "81\tF18\r\n".
-                 "82\tF19\r\n".
-                 "83\tF20\r\n".
-                 "84\tF21\r\n".
-                 "85\tF22\r\n".
-                 "86\tF23\r\n".
-                 "87\tF24\r\n".
-                 "\r\n".
-                 "KEYNAME_EXT\r\n".
-                 "\r\n".
-                 "1c\t\"Num Enter\"\r\n".
-                 "1d\t\"Right Ctrl\"\r\n".
-                 "35\t\"Num /\"\r\n".
-                 "37\t\"Prnt Scrn\"\r\n".
-                 "38\t\"Right Alt\"\r\n".
-                 "45\t\"Num Lock\"\r\n".
-                 "46\tBreak\r\n".
-                 "47\tHome\r\n".
-                 "48\tUp\r\n".
-                 "49\t\"Page Up\"\r\n".
-                 "4b\tLeft\r\n".
-                 "4d\tRight\r\n".
-                 "4f\tEnd\r\n".
-                 "50\tDown\r\n".
-                 "51\t\"Page Down\"\r\n".
-                 "52\tInsert\r\n".
-                 "53\tDelete\r\n".
-                 "54\t<00>\r\n".
-                 "56\tHelp\r\n".
-                 "5b\t\"Left Windows\"\r\n".
-                 "5c\t\"Right Windows\"\r\n".
-                 "5d\tApplication\r\n".
+                 $keyNamesExt.
                  "\r\n".
                  "KEYNAME_DEAD\r\n".
                  "\r\n".
@@ -1019,17 +986,18 @@ sub gen_x_compose()
     print $header.$body;
 }
 
-sub gen_win_msklc($)
+sub gen_win_msklc($$$)
 {
-    my $vkType = shift;
+    my ($vkType, $localeName, $localeId) = @_;
 
     &loadKeys       ($win_msklc_column);
     &loadVirtualKeys($vkType);
     &loadSymbols    ($win_msklc_column);
     &loadLayout();
     &loadDeadKeys();
+    &loadSpecialKeys();
 
-    my $header       = &gen_win_msklc_header();
+    my $header       = &gen_win_msklc_header($localeName, $localeId);
     my $bodyKeys     = &gen_win_msklc_bodyKeys();
     my $bodyDeadKeys = &gen_win_msklc_bodyDeadKeys();
     my $footer       = &gen_win_msklc_footer();
@@ -1039,12 +1007,17 @@ sub gen_win_msklc($)
 
 sub gen_win_msklc_azerty()
 {
-    gen_win_msklc($vk_azerty_column);
+    gen_win_msklc($vk_azerty_column, "fr-FR", "0000040c");
 }
 
 sub gen_win_msklc_bepo()
 {
-    gen_win_msklc($vk_bepo_column);
+    gen_win_msklc($vk_bepo_column, "fr-FR", "0000040c");
+}
+
+sub gen_win_msklc_qwertz()
+{
+    gen_win_msklc($vk_qwertz_column, "fr-CH", "0000100c");
 }
 
 SWITCH: for ($OUTPUT_FORMAT)
@@ -1055,7 +1028,8 @@ SWITCH: for ($OUTPUT_FORMAT)
     /x_compose/i        && do { &gen_x_compose();        last; };
     /win_msklc_azerty/i && do { &gen_win_msklc_azerty(); last; };
     /win_msklc_bepo/i   && do { &gen_win_msklc_bepo();   last; };
+    /win_msklc_qwertz/i && do { &gen_win_msklc_qwertz(); last; };
 
-    die("output format must be one of the following: x_xkb_root, x_xkb_user, x_xmodmap, x_compose, win_msklc_azerty, win_msklc_bepo\n");
+    die("output format must be one of the following: x_xkb_root, x_xkb_user, x_xmodmap, x_compose, win_msklc_azerty, win_msklc_bepo, win_msklc_qwertz\n");
 }
 
