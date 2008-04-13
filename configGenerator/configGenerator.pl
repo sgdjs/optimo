@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/env perl
 
 ###########################################################################
 #   Copyright (C) 2008 by Nicolas Chartier                                #
@@ -45,6 +45,7 @@
 # le format Mac OS X est généré à partir des fichiers xkb par le script de gaetan
 
 use strict;
+use warnings;
 use Data::Dumper;
 
 die("Usage: $0 <version> <output format>\n")
