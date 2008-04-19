@@ -37,6 +37,8 @@ fullMapTmpl = keyboardTemplate = u"""
 ╚═══════╩══════╩═════╩═══════════════════════════╩═════╩══════╩═════╩══════╝
 """
 
+mainChars = u"$\"«»()_+-/*=%^,.'#1234567890@µBÉPOÈ!VDLJZWAUIE?CTSRNMÇÊÀYH:K;QGXF—<>[]|&`¨€~\{}…ÆŒÙ"
+
 available = set()
 
 fullMapValues = {}
@@ -53,6 +55,26 @@ for k, v in xkb.tmplValues.iteritems():
    fullMapValues[k] = v
    available.add(v)
 out = codecs.open(sys.argv[2], "w", "utf8")
+out.write( fullMapTmpl % fullMapValues )
+
+print >> out 
+print >> out 
+print >> out, u"* Simplifiée"
+fullMapValues = {}
+for k, v in xkb.tmplValues.iteritems():
+   v = terminators.get( v, v )
+   if v == "":
+     v = " "
+   if v == u"&#x0022;":
+     v = u'"'
+   if v == u"&#x003c;":
+     v = u'<'
+   if v == u'&#x0026;':
+     v = u'&'
+   if v in mainChars:
+     fullMapValues[k] = v
+   else:
+     fullMapValues[k] = u" "
 out.write( fullMapTmpl % fullMapValues )
 
 print >> out 
