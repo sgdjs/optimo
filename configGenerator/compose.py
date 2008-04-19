@@ -73,6 +73,7 @@ composeNames["UFE63"] = u"stroke"
 composeNames["dead_currency"] = u"currency"
 composeNames["UFE67"] = u"currency"
 composeNames["Multi_key"] = u"Multi_key"
+composeNames["dead_greek"] = u"greek"
 
 composeChars = {}
 for name, C in composeNames.iteritems():

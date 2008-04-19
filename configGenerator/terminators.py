@@ -60,6 +60,7 @@ terminators = {
 "dasia": u"?",
 "psili": u"?",
 "Multi_key": u"↯",
+"greek": u"µ",
 }
 
 combiningTerminators = {
@@ -107,4 +108,5 @@ combiningTerminators = {
 "tilde": u"̃",
 "tildebelow": u"̰",
 "topbar": u"⁻",
+"greek": u"µ",
 }
