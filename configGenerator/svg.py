@@ -94,6 +94,19 @@ header = u"""<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <rect ry="7.7852464" style="fill: none; fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-width: 2.25; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0pt; stroke-opacity: 1;" id="rect4037" width="101.10686" height="52.671261" x="893.8642" y="129.41629" rx="7.7852464"/>
     <path style="fill: none; fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-width: 2.25; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dashoffset: 0pt; stroke-opacity: 1;" d="M 988.47656,196.75412 C 992.0745,196.75412 994.97105,200.22634 994.97105,204.53937 L 994.97105,309.01172 C 994.97105,313.32475 992.0745,316.79697 988.47656,316.79697 L 940.53987,316.79697 C 940.53987,316.79697 935.63003,314.89201 935.73833,309.01172 C 936.00156,302.56257 935.95117,268.09593 935.83497,254.99658 C 935.71877,249.49531 932.05064,250.16518 932.05064,250.16518 L 920.06233,250.16518 C 917.84389,249.78528 915.94237,246.48507 915.94237,245.7409 C 915.94237,235.49914 915.94237,195.89387 915.94237,205.36586 C 915.61802,197.02595 919.26637,196.75412 921.33585,196.75412 C 938.04154,196.75412 988.47656,196.75412 988.47656,196.75412 z " id="rect4039" sodipodi:nodetypes="ccccccccccccc"/>
     <rect style="opacity: 1; fill: none; fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-width: 2.25; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0pt; stroke-opacity: 1;" id="rect4048" width="157.70181" height="52.671261" x="837.26917" y="331.62384" rx="7.7852459" inkscape:tile-w="54.921261" inkscape:tile-h="54.921261" inkscape:tile-cx="47.065393" inkscape:tile-cy="155.75194" ry="7.7852464"/>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="55.245689" y="230.91899">Tab</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="42"        y="298.24963">Verr. Maj</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#ff0000" x="47.83379"  y="364.66342">Maj</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="56.095467" y="431.76309">Ctrl</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="129.02135" y="431.76309">Super</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="220.45229" y="431.76309">Alt</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#003eff" x="672"       y="431.76309">Alt Gr</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="748"       y="431.76309">Super</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="823"       y="431.76309">Menu</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="926.60248" y="431.76309">Ctrl</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#ff0000" x="891.62524" y="364.66342">Maj</text>
+    <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="925"       y="230.91899">Entrée</text>
+    <text font-size="13" font-family="DejaVu Sans" style="fill:#000000" x="900.2666"  y="149.31816">Retour Arrière</text>
 
 """
 
