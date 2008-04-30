@@ -106,8 +106,8 @@ charTmpl = u"""    <text x="%s" y="%s" font-family="DejaVu Sans Mono" font-size=
 
 mainColor = "#000000"
 shiftColor = "#ff0000"
-altgrColor = "#ca00ff"
-altgrShiftColor = "#003eff"
+altgrColor = "#003eff"
+altgrShiftColor = "#ca00ff"
 deadColor = "#008000"
 
 mainOffset = (45-36.852917, 175-129.41629)
