@@ -190,6 +190,8 @@ for k, v in xkb.tmplValues.iteritems():
   x, y, color = offsetAndColor(k)
   if color == shiftColor and xkb.tmplValues[k.split("_")[0]] == v.lower():
     color = mainColor
+  elif color == altgrShiftColor and xkb.tmplValues[k.split("_")[0]+"_option"] == v.lower():
+    color = altgrColor
   if terminators.has_key(v):
     color = deadColor
   if xmlChar(v2) in mainChars:
