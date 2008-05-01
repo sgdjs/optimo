@@ -12,11 +12,11 @@ VERSION=0.6.5.1
 ./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16 > "results/layout-${VERSION}-vkBepo.klc"
 ./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/layout-${VERSION}-vkQwertz.klc"
 
-./map.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.map"
+./map.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.txt"
 ./svg.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}"
 ./klavaro.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbd"
 ./ktouch.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keyboard"
-./keymaps.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kmap"
+./keymaps.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.map"
 ./kbdmap.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbdmap"
 ./macosx.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keylayout"
 
