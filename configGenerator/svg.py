@@ -256,7 +256,7 @@ for m in sorted(dks):
             x, y, color = offsetAndColor(k3)
             print >> out, charTmpl % (x, y, color, v2)
   for k, v in xkb.tmplValues.iteritems():
-    if "_capslock" not in k or "_command" in k:
+    if "_capslock" in k or "_command" in k:
       continue
     x, y, color = offsetAndColor(k)
     if v == u" " or v == m:
@@ -280,6 +280,14 @@ for i, m1 in enumerate(sorted(dks)):
             x, y, color = offsetAndColor(k3)
             s += charTmpl % (x, y, color, v2)
     if s != u"":
+      for k, v in xkb.tmplValues.iteritems():
+        if "_capslock" in k or "_command" in k:
+          continue
+        x, y, color = offsetAndColor(k)
+        if v == u" " or v == m:
+          s += charTmpl % (x, y, color, terminators[m1]+terminators[m2])
+        elif v == u" ":
+          s += charTmpl % (x, y, color, combiningTerminators[m1]+combiningTerminators[m2]) 
       deadName = "+".join("dead_" + m.replace("ringabove", "abovering") for m in (m1, m2))
       out = codecs.open(sys.argv[2]+"-"+deadName+".svg", "w", "utf8")
       print >> out, header
