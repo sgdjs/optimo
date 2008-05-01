@@ -96,8 +96,8 @@ fullMapTmpl = keyboardTemplate = u"""<?xml version="1.0"?>
     <key shape="square" type="normal" homekey="false" size="1" homeindex="38">
       <value when="leftshift" draw="true">%(AE12_shift)s</value>
       <value when="rightshift;altgr" draw="true">%(AE12_shift_option)s</value>
-      <value when="normal" draw="true" newline="true">%(AE12)s</value>‰
-      <value when="altgr" draw="true">%(AE12_shift_option)s</value>
+      <value when="normal" draw="true" newline="true">%(AE12)s</value>
+      <value when="altgr" draw="true">%(AE12_option)s</value>
     </key>
     <key shape="rect" type="backspace" homekey="false" size="2.0238;1">
     </key>
@@ -109,7 +109,7 @@ fullMapTmpl = keyboardTemplate = u"""<?xml version="1.0"?>
       <value when="rightshift" draw="true">%(AD01_shift)s</value>
       <value when="rightshift;altgr" draw="true">%(AD01_shift_option)s</value>
       <value when="normal" draw="true" newline="true">%(AD01)s</value>
-      <value when="altgr" draw="true">%(AD01_shift_option)s</value>
+      <value when="altgr" draw="true">%(AD01_option)s</value>
     </key>
     <key shape="square" type="normal" homekey="false" size="1" homeindex="31">
       <value when="rightshift" draw="true">%(AD02_shift)s</value>
@@ -121,13 +121,13 @@ fullMapTmpl = keyboardTemplate = u"""<?xml version="1.0"?>
       <value when="rightshift" draw="true">%(AD03_shift)s</value>
       <value when="rightshift;altgr" draw="true">%(AD03_shift_option)s</value>
       <value when="normal" draw="true" newline="true">%(AD03)s</value>
-      <value when="altgr" draw="true">%(AD03)s</value>
+      <value when="altgr" draw="true">%(AD03_option)s</value>
     </key>
     <key shape="square" type="normal" homekey="false" size="1" homeindex="37">
-      <value when="rightshift" draw="true">%(AD03_shift)s</value>
-      <value when="rightshift;altgr" draw="true">%(AD03_shift_option)s</value>
+      <value when="rightshift" draw="true">%(AD04_shift)s</value>
+      <value when="rightshift;altgr" draw="true">%(AD04_shift_option)s</value>
       <value when="normal" draw="true" newline="true">%(AD04)s</value>
-      <value when="altgr" draw="true">%(AD03_option)s</value>
+      <value when="altgr" draw="true">%(AD04_option)s</value>
     </key>
     <key shape="square" type="normal" homekey="false" size="1" homeindex="31">
       <value when="rightshift" draw="true">%(AD05_shift)s</value>
@@ -154,10 +154,10 @@ fullMapTmpl = keyboardTemplate = u"""<?xml version="1.0"?>
       <value when="altgr" draw="true">%(AD08_option)s</value>
     </key>
     <key shape="square" type="normal" homekey="false" size="1"> <!--37-->
-      <value when="leftshift" draw="true">%(AD09_shift_option)s</value>
+      <value when="leftshift" draw="true">%(AD09_shift)s</value>
       <value when="leftshift;altgr" draw="true">%(AD09_shift_option)s</value>
       <value when="normal" draw="true" newline="true">%(AD09)s</value>
-      <value when="altgr" draw="true">%(AD09_shift_option)s</value>
+      <value when="altgr" draw="true">%(AD09_option)s</value>
     </key>
     <key shape="square" type="normal" homekey="false" size="1"> <!--32-->
       <value when="leftshift" draw="true">%(AD10_shift)s</value>
@@ -175,7 +175,7 @@ fullMapTmpl = keyboardTemplate = u"""<?xml version="1.0"?>
       <value when="leftshift" draw="true">%(AD12_shift)s</value>
       <value when="leftshift;altgr" draw="true">%(AD12_shift_option)s</value>
       <value when="normal" draw="true" newline="true">%(AD12)s</value>
-      <value when="altgr" draw="true">%(AD12_shift_option)s</value>
+      <value when="altgr" draw="true">%(AD12_option)s</value>
     </key>
     <key shape="irregular" type="enter" homekey="false" size="1.5E;2.0714S;1.0952W;1.0714N;0.4048W;1N">
     </key>
@@ -229,19 +229,19 @@ fullMapTmpl = keyboardTemplate = u"""<?xml version="1.0"?>
       <value when="leftshift" draw="true">%(AC08_shift)s</value>
       <value when="leftshift;altgr" draw="true">%(AC08_shift_option)s</value>
       <value when="normal" draw="true" newline="true">%(AC08)s</value>
-      <value when="altgr" draw="true">%(AC08_shift_option)s</value>
+      <value when="altgr" draw="true">%(AC08_option)s</value>
     </key>
     <key shape="square" type="normal" homekey="true" size="1" homeindex="35">
       <value when="leftshift" draw="true">%(AC09_shift)s</value>
       <value when="leftshift;altgr" draw="true">%(AC09_shift_option)s</value>
       <value when="normal" draw="true" newline="true">%(AC09)s</value>
-      <value when="altgr" draw="true">%(AC09_shift_option)s</value>
+      <value when="altgr" draw="true">%(AC09_option)s</value>
     </key>
     <key shape="square" type="normal" homekey="true" size="1" homeindex="32">
       <value when="leftshift" draw="true">%(AC10_shift)s</value>
       <value when="leftshift;altgr" draw="true">%(AC10_shift_option)s</value>
       <value when="normal" draw="true" newline="true">%(AC10)s</value>
-      <value when="altgr" draw="true">%(AC10_shift_option)s</value>
+      <value when="altgr" draw="true">%(AC10_option)s</value>
     </key>
     <key shape="square" type="normal" homekey="false" size="1"> <!--38-->
       <value when="leftshift" draw="true">%(AC11_shift)s</value>
@@ -322,7 +322,7 @@ fullMapTmpl = keyboardTemplate = u"""<?xml version="1.0"?>
     <key shape="square" type="normal" homekey="false" size="1" homeindex="29">
       <value when="leftshift" draw="true">%(AB10_shift)s</value>
       <value when="leftshift;altgr" draw="true">%(AB10_shift_option)s</value>
-      <value when="normal" draw="true" newline="true">%(AB10_shift_option)s</value>
+      <value when="normal" draw="true" newline="true">%(AB10)s</value>
       <value when="altgr" draw="true">%(AB10_option)s</value>
     </key>
     <key shape="rect" type="rightshift" homekey="false" size="2.7143;1">
