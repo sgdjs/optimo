@@ -66,15 +66,14 @@ from terminators import terminators
 # keycode 53 = exclam section 
 # keycode 57 = space  
 
-header = u"""# fr-dvorak-bepo  http://www.clavier-dvorak.org
-keycode 1 = Cmd_Debugger Escape 
+header = u"""keycode 1 = Cmd_Debugger Escape 
 keycode 14 = Cmd_ResetEmul Delete 
 keycode 15 = Tab  
 keycode 28 = Return  
 keycode 29 = Cmd1 Control_L 
 keycode 42 = Shift_L  
 keycode 54 = Shift_R  
-keycode 55 = Multiply  
+keycode 55 = KP_Multiply  
 keycode 56 = Cmd2 Alt_L 
 keycode 58 = Caps_Lock  
 keycode 59 = Cmd_Screen0 f1 
@@ -106,20 +105,20 @@ keycode 86 = less greater
 keycode 87 = f11  
 keycode 88 = f12  
 keycode 127 = Pause
-keycode 156 = Enter  
+keycode 156 = KP_Enter  
 keycode 157 = Control_R  
 keycode 170 = Print_Screen  
-keycode 181 = Divide  
+keycode 181 = KP_Divide  
 keycode 183 = Print_Screen  
 keycode 184 = Mode_switch Multi_key 
 keycode 199 = Home  
 keycode 200 = Up  
-keycode 201 = Cmd_ScrollFastUp Prior 
+keycode 201 = Prior 
 keycode 203 = Left  
 keycode 205 = Right  
 keycode 207 = End  
 keycode 208 = Down  
-keycode 209 = Cmd_ScrollFastDown Next 
+keycode 209 = Next 
 keycode 210 = Insert  
 keycode 211 = Delete  
 keycode 219 = Meta_L  
@@ -176,16 +175,16 @@ namesData = {
   0x002d: "minus",
   0x002e: "period",
   0x002f: "slash",
-  0x0030: "zero",
-  0x0031: "one",
-  0x0032: "two",
-  0x0033: "three",
-  0x0034: "four",
-  0x0035: "five",
-  0x0036: "six",
-  0x0037: "seven",
-  0x0038: "eight",
-  0x0039: "nine",
+  0x0030: "0",
+  0x0031: "1",
+  0x0032: "2",
+  0x0033: "3",
+  0x0034: "4",
+  0x0035: "5",
+  0x0036: "6",
+  0x0037: "7",
+  0x0038: "8",
+  0x0039: "9",
   0x003a: "colon",
   0x003b: "semicolon",
   0x003c: "less",
@@ -344,6 +343,9 @@ namesData = {
   0x00fd: "yacute",
   0x00fe: "thorn",
   0x00ff: "ydiaeresis",
+  0x00a4: "currency",
+  0x00bd: "onehalf",
+  0x00bc: "onequarter",
 }
 
 defaultDeads = ["grave", "acute", "circumflex", "tilde", "diaeresis", "ringabove", "cedilla"]

@@ -18,6 +18,7 @@ VERSION=0.6.5.1
 ./ktouch.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keyboard"
 ./keymaps.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.map"
 ./kbdmap.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbdmap"
+./wscons.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.wscons"
 ./macosx.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keylayout"
 
 perl -p -e 's#\tinclude "pc\(pc105\)"#\tinclude "pc/pc(pc105)"#g' "results/layout-${VERSION}-user.xkb" > "results/layout-${VERSION}-user-legacy.xkb"
