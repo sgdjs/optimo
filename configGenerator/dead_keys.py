@@ -148,6 +148,24 @@ circumflex = {
 'LATIN CAPITAL LETTER - WITH CIRCUMFLEX': u'⁻',
 }
 
+caron = {
+'LATIN CAPITAL LETTER 0 WITH CARON': u'₀',
+'LATIN CAPITAL LETTER 1 WITH CARON': u'₁',
+'LATIN CAPITAL LETTER 2 WITH CARON': u'₂',
+'LATIN CAPITAL LETTER 3 WITH CARON': u'₃',
+'LATIN CAPITAL LETTER 4 WITH CARON': u'₄',
+'LATIN CAPITAL LETTER 5 WITH CARON': u'₅',
+'LATIN CAPITAL LETTER 6 WITH CARON': u'₆',
+'LATIN CAPITAL LETTER 7 WITH CARON': u'₇',
+'LATIN CAPITAL LETTER 8 WITH CARON': u'₈',
+'LATIN CAPITAL LETTER 9 WITH CARON': u'₉',
+'LATIN CAPITAL LETTER + WITH CARON': u'₊',
+'LATIN CAPITAL LETTER ( WITH CARON': u'₍',
+'LATIN CAPITAL LETTER ) WITH CARON': u'₎',
+'LATIN CAPITAL LETTER = WITH CARON': u'₌',
+'LATIN CAPITAL LETTER - WITH CARON': u'₋',
+}
+
 stroke = {
 'LATIN CAPITAL LETTER 2 WITH STROKE': u'ƻ',
 'LATIN CAPITAL LETTER LESS': u'&#x003c;',
@@ -263,6 +281,7 @@ for c in range(0,0x10000):
 # append the currency signs
 unicode_dict.update(currency)
 unicode_dict.update(circumflex)
+unicode_dict.update(caron)
 unicode_dict.update(stroke)
 unicode_dict.update(greek)
 
