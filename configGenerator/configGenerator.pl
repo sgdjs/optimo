@@ -341,15 +341,15 @@ sub gen_win_msklc_header($$)
 
     my $header = "KBD\tbepo".$SHORT_VERSION."\t\"fr-dvorak-bépo v".$VERSION."\"\r\n".
                  "\r\n".
-                 "COPYRIGHT\t\"Public Domain\"\r\n".
+                 "COPYRIGHT\t\"CC-SA-BY\"\r\n".
                  "\r\n".
-                 "COMPANY\t\"wiki pour la conception d un dvorak francais\"\r\n".
+                 "COMPANY\t\"Collectif pour la conception d un dvorak francais\"\r\n".
                  "\r\n".
                  "LOCALENAME\t\"".$localeName."\"\r\n".
                  "\r\n".
                  "LOCALEID\t\"".$localeId."\"\r\n".
                  "\r\n".
-                 "VERSION\t1.0\r\n".
+                 "VERSION\t\"".$VERSION."\"\r\n".
                  "\r\n".
                  "SHIFTSTATE\r\n".
                  "\r\n".

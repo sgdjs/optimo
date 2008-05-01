@@ -8,9 +8,11 @@ VERSION=0.6.5.1
 ./configGenerator.pl $VERSION x_xmodmap  > "results/layout-${VERSION}.xmodmap"
 ./configGenerator.pl $VERSION x_compose  > "results/layout-${VERSION}.XCompose"
 
-./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16 > "results/layout-${VERSION}-vkAzerty.klc"
-./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16 > "results/layout-${VERSION}-vkBepo.klc"
-./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/layout-${VERSION}-vkQwertz.klc"
+./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}A.klc"
+./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}B.klc"
+./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}C.klc"
+perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}B.klc
+perl ini2html.pl results/layout.ini
 
 ./map.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.txt"
 ./svg.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}"
