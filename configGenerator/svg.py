@@ -139,7 +139,7 @@ keys = [
   ["SPCE"]
 ]
 
-firstOffset = [(36.852917, 129.41629), (128.68188, 196.81883), (145.41165, 264.22134), (111.16536, 331.62384), (276.44827, 399.8042)]
+firstOffset = [(36.852917, 129.41629), (128.68188, 196.81883), (145.41165, 264.22134), (111.16536, 331.62384), (445, 399.8042)]
 xKeyOffset = 102.75843-36.852917
 
 
@@ -255,6 +255,14 @@ for m in sorted(dks):
           if v3 == k2 and "_capslock" not in k3 and "_command" not in k:
             x, y, color = offsetAndColor(k3)
             print >> out, charTmpl % (x, y, color, v2)
+  for k, v in xkb.tmplValues.iteritems():
+    if "_capslock" not in k or "_command" in k:
+      continue
+    x, y, color = offsetAndColor(k)
+    if v == u" " or v == m:
+      print >> out, charTmpl % (x, y, color, terminators[m])
+    elif v == u" ":
+      print >> out, charTmpl % (x, y, color, combiningTerminators[m]) 
   print >> out, footer
   out.close()
 
