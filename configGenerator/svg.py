@@ -284,7 +284,7 @@ for i, m1 in enumerate(sorted(dks)):
         if "_capslock" in k or "_command" in k:
           continue
         x, y, color = offsetAndColor(k)
-        if v == u" " or v == m:
+        if v == u" ":
           s += charTmpl % (x, y, color, terminators[m1]+terminators[m2])
         elif v == u" ":
           s += charTmpl % (x, y, color, combiningTerminators[m1]+combiningTerminators[m2]) 
