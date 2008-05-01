@@ -15,7 +15,7 @@ Utilisation
 
 La commande
   
-  loadkeys fr-dvorak-bepo.kmap
+  loadkeys fr-dvorak-bepo.map
   
 bascule le clavier en clavier Dvorak français BÉPO. Vous pouvez copier le fichier fr-dvorak-bepo.kmap dans le répertoire /usr/lib/kbd/keymaps/i386/dvorak/ pour le rendre accessible de n'importe quel répertoire avec la commande
 
