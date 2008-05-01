@@ -16,6 +16,7 @@ VERSION=0.6.5.1
 ./svg.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}"
 ./klavaro.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbd"
 ./ktouch.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keyboard"
+./typefaster.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.xml"
 ./keymaps.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.map"
 ./kbdmap.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbdmap"
 ./wscons.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.wscons"
