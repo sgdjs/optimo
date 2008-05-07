@@ -908,11 +908,11 @@ sub gen_win_msklc_footer()
                  "0060\t\"GRAVE ACCENT\"\r\n".
                  "005e\t\"CIRCUMFLEX ACCENT\"\r\n".
                  "02c7\t\"CARON (Mandarin Chinese third tone)\"\r\n".
-                 "fe63\t\"SOLIDUS\"\r\n".
+                 "fdd0\t\"SOLIDUS\"\r\n".
                  "02d8\t\"BREVE\"\r\n".
                  "00a8\t\"DIAERESIS\"\r\n".
                  "02d9\t\"DOT ABOVE (Mandarin Chinese light tone)\"\r\n".
-                 "fe67\t\"CURRENCY SIGN\"\r\n".
+                 "fdd1\t\"CURRENCY SIGN\"\r\n".
                  "00af\t\"MACRON\"\r\n".
                  "00b8\t\"CEDILLA\"\r\n".
                  "007e\t\"TILDE\"\r\n".
