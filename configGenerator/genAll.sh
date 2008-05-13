@@ -14,14 +14,14 @@ VERSION=0.6.6
 perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}B.klc
 perl ini2html.pl results/layout.ini
 
-./map.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.txt"
-./svg.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}"
-./klavaro.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbd"
-./ktouch.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keyboard"
+./map.py         "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.txt"
+./svg.py         "results/layout-${VERSION}.xkb" "results/layout-${VERSION}"
+./klavaro.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbd"
+./ktouch.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keyboard"
 ./typefaster.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.xml"
-./keymaps.py "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.map"
-./kbdmap.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbdmap"
-./wscons.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.wscons"
-./macosx.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keylayout"
+./keymaps.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.map"
+./kbdmap.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbdmap"
+./wscons.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.wscons"
+./macosx.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keylayout"
 
 perl -p -e 's#\tinclude "pc\(pc105\)"#\tinclude "pc/pc(pc105)"#g' "results/layout-${VERSION}-user.xkb" > "results/layout-${VERSION}-user-legacy.xkb"
