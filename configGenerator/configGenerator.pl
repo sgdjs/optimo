@@ -912,7 +912,7 @@ sub gen_win_msklc_footer()
                  "00b8\t\"CEDILLA\"\r\n".
                  "007e\t\"TILDE\"\r\n".
                  "02da\t\"RING ABOVE\"\r\n".
-                 "03bc\t\"GREEK\"\r\n".
+                 "00b5\t\"GREEK\"\r\n".
                  "02db\t\"OGONEK\"\r\n".
                  "\r\n".
                  "\r\n".
