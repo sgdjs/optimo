@@ -50,6 +50,7 @@ composeNames["combining_belowdot"] = u"̣"
 composeNames["combining_grave"] = u"̀"
 composeNames["combining_tilde"] = u"̃"
 composeNames["NoSymbol"] = u""
+composeNames["VoidSymbol"] = u""
 # dead keys
 composeNames["dead_abovedot"] = u"abovedot"
 composeNames["dead_abovering"] = u"ringabove"
@@ -74,6 +75,7 @@ composeNames["dead_currency"] = u"currency"
 composeNames["UFDD1"] = u"currency"
 composeNames["Multi_key"] = u"Multi_key"
 composeNames["dead_greek"] = u"greek"
+composeNames["UFDD2"] = u"greek"
 
 composeChars = {}
 for name, C in composeNames.iteritems():
