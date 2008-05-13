@@ -36,11 +36,6 @@
 # source C :
 # - tout
 
-# auto hotkeys :
-# - tout
-# allchars :
-# - tout
-
 # Notes
 # le format Mac OS X est généré à partir des fichiers xkb par le script de gaetan
 
@@ -917,6 +912,7 @@ sub gen_win_msklc_footer()
                  "00b8\t\"CEDILLA\"\r\n".
                  "007e\t\"TILDE\"\r\n".
                  "02da\t\"RING ABOVE\"\r\n".
+                 "03bc\t\"MU (GREC)\"\r\n".
                  "02db\t\"OGONEK\"\r\n".
                  "\r\n".
                  "\r\n".
