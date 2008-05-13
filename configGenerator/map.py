@@ -15,7 +15,7 @@ import defaults, sys
 defaults.xkbFile = sys.argv[1]
 
 import xkb, dead_keys, codecs, unicodedata
-from terminators import terminators, combiningTerminators
+from terminators import terminators, combiningTerminators, spaceTerminators
 
 
 fullMapTmpl = keyboardTemplate = u"""
@@ -133,7 +133,9 @@ for m in sorted(dks):
             available.add(v2)
   for k, v in xkb.tmplValues.iteritems():
     if "_capslock" not in k and "_command" not in k:
-      if v == u" " or v == m:
+      if v == u" ":
+        fullMapValues[k] = spaceTerminators[m]
+      elif v == m:
         fullMapValues[k] = terminators[m]
       elif v == u" ":
         fullMapValues[k] = combiningTerminators[m]

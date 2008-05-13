@@ -239,7 +239,7 @@ greek = {
 'LATIN SMALL LETTER Z WITH GREEK': u'ζ',
 }
 
-from terminators import terminators, combiningTerminators
+from terminators import terminators, combiningTerminators, spaceTerminators
 
 
 # 'STRIKETHROUGH', 
@@ -465,7 +465,7 @@ print >> deadXMLBuf, u'    <action id=" ">'
 print >> deadXMLBuf, u'      <when state="none" output=" "/>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
-    print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([terminators[n] for n in m]))
+    print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([spaceTerminators[n] for n in m]))
 if compose.charActions.has_key(u' '):
   a = compose.charActions[u' ']
   if compose.statesByAction.has_key(a):

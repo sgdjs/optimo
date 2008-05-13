@@ -17,7 +17,7 @@ import dead_keys, compose, sys, defaults, re
 defaults.xkbFile = sys.argv[1]
 
 import xkb
-from terminators import terminators, combiningTerminators
+from terminators import terminators, combiningTerminators, spaceTerminators
 
 # find the dead keys used here
 dks = set()
@@ -93,11 +93,11 @@ for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
   
   if composeDeadKeys.has_key((m[0], u" ")):
     tag = "L!"
-    if composeDeadKeys[(m[0], u" ")] != terminators[m[0]]:
-      print m[0], "space"
+    if composeDeadKeys[(m[0], u" ")] != spaceTerminators[m[0]].replace("\"", "&#x0022;"):
+      print "Warning:", m[0], "space is different in Compose:", composeDeadKeys[(m[0], u" ")], spaceTerminators[m[0]]
   else:
     tag = ""
-  print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, "space", compose.name(terminators[m[0]]))
+  print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, "space", compose.name(spaceTerminators[m[0]].replace("\"", "&#x0022;")))
   
   print >> f
 

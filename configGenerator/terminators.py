@@ -63,6 +63,10 @@ terminators = {
 "greek": u"µ",
 }
 
+spaceTerminators = dict(terminators)
+spaceTerminators["diaeresis"] = u"\""
+spaceTerminators["acute"] = u"'"
+
 combiningTerminators = {
 "abovedot": u"̇",
 "acute": u"́",

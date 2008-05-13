@@ -15,7 +15,7 @@ import defaults, sys
 defaults.xkbFile = sys.argv[1]
 
 import xkb, dead_keys, codecs, unicodedata
-from terminators import terminators, combiningTerminators
+from terminators import terminators, combiningTerminators, spaceTerminators
 
 
 header = u"""<?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -259,7 +259,9 @@ for m in sorted(dks):
     if "_capslock" in k or "_command" in k:
       continue
     x, y, color = offsetAndColor(k)
-    if v == u" " or v == m:
+    if v == u" ":
+      print >> out, charTmpl % (x, y, color, spaceTerminators[m])
+    elif v == m:
       print >> out, charTmpl % (x, y, color, terminators[m])
     elif v == u" ":
       print >> out, charTmpl % (x, y, color, combiningTerminators[m]) 
@@ -285,7 +287,7 @@ for i, m1 in enumerate(sorted(dks)):
           continue
         x, y, color = offsetAndColor(k)
         if v == u" ":
-          s += charTmpl % (x, y, color, terminators[m1]+terminators[m2])
+          s += charTmpl % (x, y, color, spaceTerminators[m1]+spaceTerminators[m2])
         elif v == u" ":
           s += charTmpl % (x, y, color, combiningTerminators[m1]+combiningTerminators[m2]) 
       deadName = "+".join("dead_" + m.replace("ringabove", "abovering") for m in (m1, m2))
