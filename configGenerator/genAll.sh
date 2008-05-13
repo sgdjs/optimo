@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #VERSION=0.1.1
-VERSION=0.6.5.1
+VERSION=0.6.6
 
 ./configGenerator.pl $VERSION x_xkb_root > "results/layout-${VERSION}.xkb"
 ./configGenerator.pl $VERSION x_xkb_user > "results/layout-${VERSION}-user.xkb"
