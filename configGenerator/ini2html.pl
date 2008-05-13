@@ -26,6 +26,8 @@ my $TEMPLATE = '';
 		'rwin' => ' ',
 		'ralt' => 'RAlt',
 		'space' => 'Espace',
+		' ' => 'Espace insécable',
+		' ' => 'Espace insécable fine',
 		'rshift' => '<span class="special">'.chr(0x21e7).'</span>',
 		'tab' => '<span class="special">'.chr(0x21b9).'</span>',
 		
