@@ -12,7 +12,11 @@
 #
 
 
-import dead_keys, compose, sys, defaults, re, xkb
+import dead_keys, compose, sys, defaults, re
+
+defaults.xkbFile = sys.argv[1]
+
+import xkb
 from terminators import terminators, combiningTerminators
 
 # find the dead keys used here
@@ -36,7 +40,7 @@ for l in fCompose:
       composeDeadKeys[k] = compose.char(c)
 # print composeDeadKeys
 
-f = file("dead.conf", "w")
+f = file(sys.argv[2], "w")
 
 for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
   if m[0] in dks:
