@@ -207,7 +207,7 @@ for k, v in xkb.tmplValues.iteritems():
     color = altgrColor
   if terminators.has_key(v):
     color = deadColor
-  if xmlChar(v2) in mainChars:
+  if xmlChar(v2) in mainChars or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != xmlChar(v2).upper()):
     print >> out, charTmpl % (x, y, color, v2)
 print >> out, footer
 out.close()

@@ -72,7 +72,7 @@ for k, v in xkb.tmplValues.iteritems():
      v = u'<'
    if v == u'&#x0026;':
      v = u'&'
-   if v in mainChars:
+   if v in mainChars or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != v.upper()):
      fullMapValues[k] = v
    else:
      fullMapValues[k] = u" "
