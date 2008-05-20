@@ -12,7 +12,7 @@ my %INFORMATIONS = ();
 
 ####### Read informations #######
 
-open KLC, '<:encoding(utf-16)', $KLCFILE  or die "Can't open $KLCFILE: $!";;
+open KLC, '<:encoding(utf-8)', $KLCFILE  or die "Can't open $KLCFILE: $!";
 my $ll = ''; # Last Line
 
 while (<KLC>) {
