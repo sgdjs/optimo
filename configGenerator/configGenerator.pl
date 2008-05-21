@@ -267,7 +267,8 @@ sub loadDeadKeys()
             my $special = $1;
             $array[0] = $2;
 
-            $infos{'notLinux'} = ($special =~ /L/);
+            $infos{'notLinux'}    = ($special =~ /L/);
+            $infos{'windowsOnly'} = ($special =~ /w/);
         }
 
         push(@deadKeysA, \@array);
@@ -506,7 +507,8 @@ sub gen_x_compose_body()
         my %infos = %{$deadKeysH{$combo}};
 
         next
-            if (defined($infos{'notLinux'}) && $infos{'notLinux'} == 1);
+            if ((defined($infos{'notLinux'})    && $infos{'notLinux'}    == 1) ||
+                (defined($infos{'windowsOnly'}) && $infos{'windowsOnly'} == 1));
 
         my $result = $infos{'symbol'};
 
