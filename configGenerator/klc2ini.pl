@@ -162,8 +162,7 @@ print INI "\n\n";
 print INI <<'EOF';
 [fingers]
 enter_mode = 2
-methode = aucune
-EOF
+eof
 print INI "\n\n";
 print INI $GLOBAL;
 print INI "\n\n";
