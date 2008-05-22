@@ -5,8 +5,8 @@
 #SingleInstance force
 #MaxHotkeysPerInterval 300
 
-pkl_version = 0.2
-pkl_compiled = 23 fév. 2008
+pkl_version = 0.2bépo
+pkl_compiled = 25 mai 2008
 
 SendMode Event
 SetBatchLines, -1
@@ -18,9 +18,9 @@ hasAltGr    = 0 ; Did work Right alt as altGr in the layout?
 extendKey = "" ; With this you can use ijkl as arrows, etc.
 CurrentDeadKeys = 0 ; How many dead key were pressed
 CurrentBaseKey  = 0 ; Current base key :)
+
 pkl_init() ; I would like use local variables
 return
-
 
 
 ; ##################################### functions #####################################
@@ -201,9 +201,15 @@ pkl_set_tray_menu()
 	exit := pkl_locale_string(11)
 	deadk := pkl_locale_string(12)
 	helpimage := pkl_locale_string(15)
- 
+	
+	Menu, DactyMenu, Add, aucune, itemDactyMenuN
+	Menu, DactyMenu, Add, standard, itemDactyMenuS
+	Menu, DactyMenu, Add, t6, itemDactyMenuT
+  Menu, DactyMenu, Add, o0, itemDactyMenuO
+	Menu, DactyMenu, Add, vA, itemDactyMenuV
+	
 	if ( A_IsCompiled )
-	Menu, tray, NoStandard
+		Menu, tray, NoStandard
 	else
 	Menu, tray, add, 
 	Menu, tray, Icon, on.ico
@@ -211,6 +217,7 @@ pkl_set_tray_menu()
 	Menu, tray, add, %about%, ShowAbout
 	Menu, tray, add, %susp%, toggleSuspend
 	Menu, tray, add, %deadk%, detectDeadKeysInCurrentLayout
+	Menu, tray, add, Méthode dactylographique, :DactyMenu
 	Menu, tray, add, %helpimage%, displayHelpImageToggle
 	Menu, tray, add, %exit%, exitApp
 	Menu, tray, Default, %susp%
@@ -283,6 +290,7 @@ keyPressed( HK )
 		Send {Blind}%t%
 		return
 	}
+
 	extendKeyStroke = 0
 	if ( getGlobal("hasAltGr") ) {
 		if ( getKeyState("RAlt") ) {  ; AltGr
@@ -345,12 +353,15 @@ keyPressed( HK )
 	} else if ( ch == "%" ) {
 		SendU_utf8_string( getGlobal( HK . state . "s" ) )
 	} else if ( ch < 0 ) {
+
 		DeadKey( -1 * ch )
 	}
+
 }
 
 extendKeyPressed( HK )
 {
+
 	static shiftPressed := ""
 	static ctrlPressed := ""
 	static altPressed := ""
@@ -438,12 +449,15 @@ toggleCapsLock()
 	{
 		SetCapsLockState, off
 	} else {
-		SetCapsLockState, on
+		SetCapsLockState, on 
 	}
 }
 
 DeadKeyValue( dk, base )
 {
+	MTexte = 1.00 %DK% . %CurrentDeadKeyNum% . %CurrentDeadKeys% . %nk% . %PVDK%
+	ToolTip % MTexte
+
 	static file := ""
 	if ( file == "" )
 		file := getGlobal( "layoutDir" ) . "\layout.ini"
@@ -469,10 +483,12 @@ DeadKey(DK)
 	global CurrentDeadKeyNum
 	static PVDK := "" ; Pressed dead keys
 	DeadKeyChar := DeadKeyValue( DK, 0)
-
+	
 	CurrentDeadKeyNum := DK
 	CurrentDeadKeys++
+	
 	Input, nk, L1, {F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{F9}{F10}{F11}{F12}{Left}{Right}{Up}{Down}{Home}{End}{PgUp}{PgDn}{Del}{Ins}{BS}
+
 	IfInString, ErrorLevel, EndKey
 	{
 		endk := "{" . Substr(ErrorLevel,8) . "}" 
@@ -482,7 +498,6 @@ DeadKey(DK)
 		Send %endk%
 		return
 	}
-
 	if ( CurrentDeadKeys == 0 ) {
 		pkl_Send( DeadKeyChar )
 		return
@@ -523,10 +538,12 @@ DeadKey(DK)
 		}
 		pkl_Send( hx )
 	}
+
 }
 
 pkl_Send( ch, modif = "" )
 {
+
 	if ( getGlobal( "CurrentDeadKeys" ) > 0 ) {
 		setGlobal( "CurrentBaseKey", ch )
 		Send {Space}
@@ -683,10 +700,10 @@ pkl_MsgBox( msg, s = "", p = "", q = "", r = "" )
 	msgbox %message%
 }
 
-
 pkl_displayHelpImage( activate = 0 )
 {
 	static guiActive := 0
+	static meshDactylo := 0
 	static prevFile
 	static HelperImage
 	static displayOnTop := 1
@@ -696,10 +713,9 @@ pkl_displayHelpImage( activate = 0 )
 	static extendKey
 	static imgWidth
 	static imgHeight
-	static method
 	global CurrentDeadKeys 
 	global CurrentDeadKeyNum
-
+;	global layoutDir
 	
 	if ( activate == 2 )
 		activate := 1 - 2 * guiActive
@@ -709,7 +725,6 @@ pkl_displayHelpImage( activate = 0 )
 			hasAltGr := getGlobal("hasAltGr")
 			extendKey  := getGlobal("extendKey")
 			yPosition := A_ScreenHeight - 160
-		  IniRead, method, %LayoutDir%\layout.ini, fingers, methode  
 			IniRead, imgWidth, %LayoutDir%\layout.ini, global, img_width, 296
 			IniRead, imgHeight, %LayoutDir%\layout.ini, global, img_height, 102
 		}
@@ -717,7 +732,7 @@ pkl_displayHelpImage( activate = 0 )
 		Gui, 2:+AlwaysOnTop -Border +ToolWindow
 		Gui, 2:margin, 0, 0
 		Gui, 2:Add, Pic, xm vHelperImage
-		GuiControl,2:, HelperImage, *w%imgWidth% *h%imgHeight% %layoutDir%\%method%\state0.png
+		GuiControl,2:, HelperImage, *w%imgWidth% *h%imgHeight% %layoutDir%\state0.png
 		Gui, 2:Show, xCenter y%yPosition% AutoSize NA, pklHelperImage
 		setTimer, displayHelpImage, 200
 	} else if ( activate == -1 ) {
@@ -728,6 +743,7 @@ pkl_displayHelpImage( activate = 0 )
 	}
 	if ( guiActive == 0 )
 		return
+	layoutDir := getGlobal("layoutDir")
 
 	MouseGetPos, , , id
 	WinGetTitle, title, ahk_id %id%
@@ -739,27 +755,57 @@ pkl_displayHelpImage( activate = 0 )
 			yPosition := A_ScreenHeight - imgHeight - 60
 		Gui, 2:Show, xCenter y%yPosition% AutoSize NA, pklHelperImage
 	}
-
+	
   fileName = state0
   state = 0
   state += 1 * getKeyState( "Shift" )
   state += 6 * ( hasAltGr * getKeyState( "RAlt" ) )
   if ( CurrentDeadKeys ) {
-      fileName = deadkey%CurrentDeadKeyNum%_%state%
+      fileName = deadkey%CurrentDeadKeyNum%
+      ;_%state%
   } else if ( extendKey && getKeyState( extendKey, "P" ) ) {
       fileName = extend
   } else {
       fileName = state%state%
   }
-
-	if ( prevFile == fileName )
+	
+	if ( prevFile == LayoutDir . fileName )
 		return
-	prevFile := fileName 
-	GuiControl,2:, HelperImage, *w%imgWidth% *h%imgHeight% %layoutDir%\%method%\%fileName%.png
+	prevFile := LayoutDir . fileName 
+		
+	GuiControl,2:, HelperImage, *w%imgWidth% *h%imgHeight% %layoutDir%\%fileName%.png
 }
 
+itemDactyMenu(methode = "aucune")
+{
+	LayoutFile := methode . "\layout.ini"
+	setGlobal( "layoutDir", methode )
+	
+	;pkl_init()
+}
 
 ; ##################################### labels #####################################
+
+itemDactyMenuN:
+	itemDactyMenu(".")
+return
+
+itemDactyMenuS:
+	itemDactyMenu("standard")
+return
+
+itemDactyMenuV:
+	itemDactyMenu("vA")
+return
+
+itemDactyMenuO:
+	itemDactyMenu("o0")
+return
+
+itemDactyMenuT:
+	itemDactyMenu("t6")
+return
+
 
 ShowAbout:
 	pkl_about()
@@ -819,7 +865,6 @@ displayHelpImageToggle:
 	pkl_displayHelpImage(2)
 return
 
-
 ; ##################################### END #####################################
 
 LAlt & RAlt::
@@ -829,7 +874,7 @@ ToggleSuspend:
 	if ( A_IsCompiled ) {
 		if ( A_IsSuspended )
 			Menu, tray, Icon, off.ico
-  	else
+		else
 			Menu, tray, Icon, on.ico
 	}
 return
