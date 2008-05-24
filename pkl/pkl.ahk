@@ -1,34 +1,38 @@
 #NoEnv
 #Persistent
-;#NoTrayIcon
+#NoTrayIcon
 #InstallKeybdHook
 #SingleInstance force
+#MaxThreadsBuffer
+#MaxThreadsPerHotkey  3
 #MaxHotkeysPerInterval 300
+#MaxThreads 20
 
-pkl_version = 0.2bépo
-pkl_compiled = 25 mai 2008
+pkl_version = 0.3.a4.bepo
+pkl_compiled = Not published
 
 SendMode Event
 SetBatchLines, -1
 Process, Priority, , R
 SetWorkingDir, %A_ScriptDir%
 
-layoutDir   = ; The directory of the layout
+layout       = ; The active layout
+layoutDir   = ; The directory of the active layout
 hasAltGr    = 0 ; Did work Right alt as altGr in the layout?
-extendKey = "" ; With this you can use ijkl as arrows, etc.
+extendKey = ; With this you can use ijkl as arrows, etc.
 CurrentDeadKeys = 0 ; How many dead key were pressed
 CurrentBaseKey  = 0 ; Current base key :)
 
-pkl_init() ; I would like use local variables
+previousLayoutFromCommandLine = %1%
+pkl_init( previousLayoutFromCommandLine ) ; I would like use local variables
 return
 
 
 ; ##################################### functions #####################################
 
-pkl_init()
+pkl_init( layoutFromCommandLine = "" )
 {
-
-	if ( !FileExist("pkl.ini") ) {
+	if ( not FileExist("pkl.ini") ) {
 		msgBox, pkl.ini file NOT FOUND`nSorry. The program will exit.
 		ExitApp
 	}
@@ -47,6 +51,10 @@ pkl_init()
 	IniRead, t, pkl.ini, pkl, exitApp, %A_Space%
 	if ( t <> "" )
 		Hotkey, %t%, ExitApp
+
+	IniRead, t, pkl.ini, pkl, changeLayout, %A_Space%
+	if ( t <> "" )
+		Hotkey, %t%, changeTheActiveLayout
 	
 	IniRead, t, pkl.ini, pkl, systemsdeadkeys, %A_Space%
 	setGlobal("DeadKeysInCurrentLayout", t)
@@ -59,10 +67,26 @@ pkl_init()
 		SendU_Clipboard_Restore_Mode( t )
 
 	IniRead, Layout, pkl.ini, pkl, layout, %A_Space%
+	StringSplit, layouts, Layout, `,
+	if ( layoutFromCommandLine ) {
+		Layout := ""
+		Loop, % layouts0 {
+			A_Layout := layouts%A_Index%
+			if ( layoutFromCommandLine == A_Layout ) {
+				index := A_Index + 1
+				Layout := layouts%index%
+			}
+		}
+		if ( Layout == "" )
+			Layout := layouts1
+	} else {
+		Layout := layouts1
+	}
 	if ( Layout == "" ) {
 		pkl_MsgBox( 1 )
 		ExitApp
-	} 
+	}
+	setGlobal( "Layout", Layout )
 	if ( compact_mode ) {
 		LayoutFile = layout.ini
 		setGlobal( "layoutDir", "." )
@@ -101,13 +125,13 @@ pkl_init()
 		setGlobal( key . "v", virtualKeyCodeFromName(parts1) ) ; virtual key
 		setGlobal( key . "c", parts2 ) ; caps state
 		if ( parts2 == -2 ) {
-			Hotkeys_Add( "*" . key, "modifierDown" )
-			Hotkeys_Add( "*" . key " Up", "modifierUp" )
+			Hotkey, *%key%, modifierDown
+			Hotkey, *%key% Up, modifierUp
 			setGlobal( key . "v", parts1 )
 		} else if ( key == extendKey ) {
-			Hotkeys_Add( "*" . key " Up", "upToDownKeyPress" )
+			Hotkey, *%key% Up, upToDownKeyPress
 		} else {
-			Hotkeys_Add( "*" . key, "keyPressed" )
+			Hotkey, *%key%, keyPressed
 		}
 		Loop, % parts0 - 3 {
 			k = ShiftStates%A_Index%
@@ -178,13 +202,34 @@ pkl_init()
 			setGlobal( key . "e", parts )
 		}
 	}
-	Hotkeys_Set_All()
 	if ( getGlobal( "LAltc" ) <> "" || getGlobal( "SC038c" ) <> "" ) {
 		Hotkey, LAlt & RCtrl, Off
 		setGlobal("pkl_SuspendHotkey", pkl_locale_string(17) )
 	} else {
 		setGlobal("pkl_SuspendHotkey", pkl_locale_string(16) )
 	}
+	
+	if ( FileExist( getGlobal("layoutDir") . "\on.ico") ) {
+		setGlobal("trayIconFileOn", getGlobal("layoutDir") . "\on.ico")
+		setGlobal("trayIconNumOn", 1)
+	} else if ( A_IsCompiled ) {
+		setGlobal("trayIconFileOn", A_ScriptName)
+		setGlobal("trayIconNumOn", 6)
+	} else {
+		setGlobal("trayIconFileOn", "on.ico")
+		setGlobal("trayIconNumOn", 1)
+	}
+	if ( FileExist( getGlobal("layoutDir") . "\off.ico") ) {
+		setGlobal("trayIconFileOff", getGlobal("layoutDir") . "\off.ico")
+		setGlobal("trayIconNumOff", 1)
+	} else if ( A_IsCompiled ) {
+		setGlobal("trayIconFileOff", A_ScriptName)
+		setGlobal("trayIconNumOff", 3)
+	} else {
+		setGlobal("trayIconFileOff", "off.ico")
+		setGlobal("trayIconNumOff", 1)
+	}
+
 
 
 	pkl_set_tray_menu()
@@ -196,6 +241,9 @@ pkl_init()
 
 pkl_set_tray_menu()
 {
+	global trayIconFileOn
+	global trayIconNumOn
+	
 	about := pkl_locale_string(9)
 	susp := pkl_locale_string(10) . " (" . getGlobal("pkl_SuspendHotkey") . ")"
 	exit := pkl_locale_string(11)
@@ -212,16 +260,17 @@ pkl_set_tray_menu()
 		Menu, tray, NoStandard
 	else
 	Menu, tray, add, 
-	Menu, tray, Icon, on.ico
-	Menu, Tray, Icon,,, 1 ; Freeze the icon
 	Menu, tray, add, %about%, ShowAbout
 	Menu, tray, add, %susp%, toggleSuspend
 	Menu, tray, add, %deadk%, detectDeadKeysInCurrentLayout
 	Menu, tray, add, Méthode dactylographique, :DactyMenu
 	Menu, tray, add, %helpimage%, displayHelpImageToggle
 	Menu, tray, add, %exit%, exitApp
-	Menu, tray, Default, %susp%
-	Menu, Tray, Click, 1
+	Menu, tray, Default , %susp%
+	Menu, Tray, Click, 1 
+	
+	Menu, tray, Icon, %trayIconFileOn%, %trayIconNumOn%
+	Menu, Tray, Icon,,, 1 ; Freeze the icon
 }
 
 pkl_about()
@@ -248,26 +297,23 @@ pkl_about()
 	IniRead, lwebsite, %lfile%, informations, homepage, %A_Space%
 	llang := getLanguageStringFromDigits( llocale )
 
-	Gui, Add, Text, , Portable Keyboard Layout v%pklVersion% (%compiledAt%)
-	Gui, Add, Text, , (c) FARKAS, Mate, 2007-2008
+	Gui, Add, Text, , Portable Keyboard Layout v%pklVersion% ;(%compiledAt%)
 	Gui, Add, Edit, , http://pkl.sourceforge.net/
+	Gui, Add, Text, , (c) FARKAS Máté, 2007-2008
 	Gui, Add, Text, , %license%
 	Gui, Add, Text, , %infos%
 	Gui, Add, Edit, , http://www.gnu.org/licenses/gpl-3.0.txt
 	Gui, Add, Text, , ......................................................................
-	Gui, Add, Text, , %ACTIVE_LAYOUT% : %lname%
-	Gui, Add, Text, , %version% : %lver%
-;	Gui, Add, Text, , %language% : %llang%
+	Gui, Add, Text, , %ACTIVE_LAYOUT% : %lname% %version%%lver%
 	Gui, Add, Text, , %language% : français
 	Gui, Add, Text, , %copyright% : %lcopy%
-	Gui, Add, Text, , %company%%lcomp%
+	Gui, Add, Text, , %lcomp%
 	Gui, Add, Edit, , %lwebsite%
 	Gui, Show
 }
 
 keyPressed( HK )
 {
-	Critical, Off
 	static extendKeyStroke := 0
 	static extendKey := "--"
 	modif = ; modifiers to send
@@ -455,8 +501,6 @@ toggleCapsLock()
 
 DeadKeyValue( dk, base )
 {
-	MTexte = 1.00 %DK% . %CurrentDeadKeyNum% . %CurrentDeadKeys% . %nk% . %PVDK%
-	ToolTip % MTexte
 
 	static file := ""
 	if ( file == "" )
@@ -484,6 +528,13 @@ DeadKey(DK)
 	static PVDK := "" ; Pressed dead keys
 	DeadKeyChar := DeadKeyValue( DK, 0)
 	
+	; Pressed a deadkey twice
+	if ( CurrentDeadKeys > 0 && DK == CurrentDeadKeyNum )
+	{
+		pkl_Send( DeadKeyChar )
+		return
+	}
+
 	CurrentDeadKeyNum := DK
 	CurrentDeadKeys++
 	
@@ -521,8 +572,7 @@ DeadKey(DK)
 		SendInput %newkey%
 	} else if ( newkey && PVDK == "" ) {
 		pkl_Send( newkey )
-		} 
-	else {
+	} else {
 		if ( CurrentDeadKeys == 0 ) {
 			pkl_Send( DeadKeyChar )
 			if ( PVDK ) {
@@ -618,22 +668,22 @@ pkl_ShiftState( capState )
 
 pkl_locale_default()
 {
-	m1 = Vous devez définir le fichier de la disposition dans pkl.ini !
-	m2 = Le fichier #s# n'a pas été trouvé. Le programme va quitter.
+	m1 = You must set the layout file in pkl.ini!
+	m2 = #s# file NOT FOUND`nSorry. The program will exit.
 	m3 = unknown
-	m4 = Disposition active
+	m4 = ACTIVE LAYOUT
 	m5 = Version
-	m6 = Langue
+	m6 = Language
 	m7 = Copyright
-	m8 = 
-	m9 = À propos…
-	m10 = Suspendre
-	m11 = Quitter
-	m12 = Détection des touches mortes
-	m13 = Licence : GPL v3
+	m8 = Company
+	m9 = About...
+	m10 = Suspend
+	m11 = Exit
+	m12 = Detect deadkeys
+	m13 = License: GPL v3
 	m14 = This program comes with`nABSOLUTELY NO WARRANTY`nThis is free software, and you`nare welcome to redistribute it`nunder certain conditions.
-	m15 = Afficher la disposition
-	m16 = Alt+AltGr
+	m15 = Display help image
+	m16 = Left Alt + Right Ctrl
 	m17 = Scroll Lock + F12
 	Loop, 17
 	{
@@ -702,33 +752,53 @@ pkl_MsgBox( msg, s = "", p = "", q = "", r = "" )
 
 pkl_displayHelpImage( activate = 0 )
 {
+	; Parameter:
+	; 0 = display, if activated
+	;-1 = deactivate
+	; 1 = activate
+	; 2 = toggle
+	; 3 = suspend on
+	; 4 = suspend off
+
+	static guiActiveBeforeSuspend := 0
 	static guiActive := 0
 	static meshDactylo := 0
 	static prevFile
 	static HelperImage
 	static displayOnTop := 1
 	static yPosition := -1
-	static layoutDir := "#"
-	static hasAltGr
-	static extendKey
 	static imgWidth
 	static imgHeight
+	
+	global layoutDir
+	global hasAltGr
+	global extendKey
 	global CurrentDeadKeys 
 	global CurrentDeadKeyNum
-;	global layoutDir
 	
 	if ( activate == 2 )
 		activate := 1 - 2 * guiActive
 	if ( activate == 1 ) {
-		if ( layoutDir == "#" ) {
-			layoutDir := getGlobal("layoutDir")
-			hasAltGr := getGlobal("hasAltGr")
-			extendKey  := getGlobal("extendKey")
+		guiActive = 1
+	} else if ( activate == -1 ) {
+		guiActive = 0
+	} else if ( activate == 3 ) {
+		guiActiveBeforeSuspend := guiActive
+		activate = -1
+		guiActive = 0
+	} else if ( activate == 4 ) {
+		if ( guiActiveBeforeSuspend == 1 && guiActive != 1) {
+			activate = 1
+			guiActive = 1
+		}
+	}
+		
+	if ( activate == 1 ) {
+		if ( yPosition == -1 ) {
 			yPosition := A_ScreenHeight - 160
 			IniRead, imgWidth, %LayoutDir%\layout.ini, global, img_width, 296
 			IniRead, imgHeight, %LayoutDir%\layout.ini, global, img_height, 102
 		}
-		guiActive = 1
 		Gui, 2:+AlwaysOnTop -Border +ToolWindow
 		Gui, 2:margin, 0, 0
 		Gui, 2:Add, Pic, xm vHelperImage
@@ -737,13 +807,11 @@ pkl_displayHelpImage( activate = 0 )
 		setTimer, displayHelpImage, 200
 	} else if ( activate == -1 ) {
 		setTimer, displayHelpImage, off
-		guiActive = 0
 		Gui, 2:Destroy
 		return
 	}
 	if ( guiActive == 0 )
 		return
-	layoutDir := getGlobal("layoutDir")
 
 	MouseGetPos, , , id
 	WinGetTitle, title, ahk_id %id%
@@ -784,6 +852,14 @@ itemDactyMenu(methode = "aucune")
 	;pkl_init()
 }
 
+processKeyPress()
+{
+	static timerCount = 0
+	++timerCount
+	if ( timerCount >= 30 )
+		timerCount = 0
+	setTimer, processKeyPress%timerCount%, -1
+}
 ; ##################################### labels #####################################
 
 itemDactyMenuN:
@@ -819,16 +895,63 @@ detectDeadKeysInCurrentLayout:
 	detectDeadKeysInCurrentLayout()
 return
 
+processKeyPress0:
+processKeyPress1:
+processKeyPress2:
+processKeyPress3:
+processKeyPress4:
+processKeyPress5:
+processKeyPress6:
+processKeyPress7:
+processKeyPress8:
+processKeyPress9:
+processKeyPress10:
+processKeyPress11:
+processKeyPress12:
+processKeyPress13:
+processKeyPress14:
+processKeyPress15:
+processKeyPress16:
+processKeyPress17:
+processKeyPress18:
+processKeyPress19:
+processKeyPress20:
+processKeyPress21:
+processKeyPress22:
+processKeyPress23:
+processKeyPress24:
+processKeyPress25:
+processKeyPress26:
+processKeyPress27:
+processKeyPress28:
+processKeyPress29:
+	Critical
+	if (ThisHotKey == "" )
+		return
+	H := ThisHotkey
+	ThisHotkey := ""
+	Critical, Off
+	keyPressed( H )
+return
+
 keyPressedwoStar: ; SC025
 	Critical
 	ThisHotkey := A_ThisHotkey
-	keyPressed( ThisHotkey )
+	processKeyPress()
 return
 
 keyPressed: ; *SC025
 	Critical
 	ThisHotkey := substr( A_ThisHotkey, 2 )
-	keyPressed( ThisHotkey )
+	processKeyPress()
+return
+
+upToDownKeyPress: ; *SC025 UP
+	Critical
+	ThisHotkey := A_ThisHotkey
+	ThisHotkey := substr( ThisHotkey, 2 )
+	ThisHotkey := substr( ThisHotkey, 1, -3 )
+	processKeyPress()
 return
 
 modifierDown:  ; *SC025
@@ -849,14 +972,6 @@ modifierUp: ; *SC025 UP
 	Send {%t% Up}
 return
 
-upToDownKeyPress: ; *SC025 UP
-	Critical
-	ThisHotkey := A_ThisHotkey
-	ThisHotkey := substr( ThisHotkey, 2 )
-	ThisHotkey := substr( ThisHotkey, 1, -3 )
-	keyPressed( ThisHotkey )
-return
-
 displayHelpImage:
 	pkl_displayHelpImage()
 return
@@ -865,25 +980,33 @@ displayHelpImageToggle:
 	pkl_displayHelpImage(2)
 return
 
+changeTheActiveLayout:
+	if ( A_IsCompiled )
+		Run %A_ScriptName% %Layout%
+	else
+		Run %A_AhkPath% %A_ScriptName% %Layout%
+return
+
+
 ; ##################################### END #####################################
 
-LAlt & RAlt::
+RAlt & LAlt::
 ScrollLock & F12::
 ToggleSuspend:
 	Suspend
-	if ( A_IsCompiled ) {
-		if ( A_IsSuspended )
-			Menu, tray, Icon, off.ico
-		else
-			Menu, tray, Icon, on.ico
+	if ( A_IsSuspended ) {
+		pkl_displayHelpImage(3)
+		Menu, tray, Icon, %trayIconFileOff%, %trayIconNumOff%
+	} else {
+		pkl_displayHelpImage(4)
+		Menu, tray, Icon, %trayIconFileOn%, %trayIconNumOn%
 	}
 return
 
-#Include %A_ScriptDir%\includes
+#Include %A_ScriptDir%\_includes
 #Include HexUC.ahk ; Written by Laszlo hars
 #Include Ini.ahk ; http://www.autohotkey.net/~majkinetor/Ini/Ini.ahk
 #Include SendU.ahk ; http://autohotkey.try.hu/SendU/SendU.ahk
-#Include Hotkeys.ahk ; http://autohotkey.try.hu/Hotkeys/Hotkeys.ahk
 #Include getGlobal.ahk ; http://autohotkey.try.hu/getGlobal/getGlobal.ahk
 #Include detectDeadKeysInCurrentLayout.ahk ; http://autohotkey.try.hu/detectDeadKeysInCurrentLayout/detectDeadKeysInCurrentLayout.ahk
 #Include virtualKeyCodeFromName.ahk ; http://autohotkey.try.hu/virtualKeyCodeFromName/virtualKeyCodeFromName.ahk
