@@ -304,7 +304,7 @@ pkl_about()
 	Gui, Add, Text, , %infos%
 	Gui, Add, Edit, , http://www.gnu.org/licenses/gpl-3.0.txt
 	Gui, Add, Text, , ......................................................................
-	Gui, Add, Text, , %ACTIVE_LAYOUT% : %lname% %version%%lver%
+	Gui, Add, Text, , %ACTIVE_LAYOUT% : %lname% %lver%
 	Gui, Add, Text, , %language% : français
 	Gui, Add, Text, , %copyright% : %lcopy%
 	Gui, Add, Text, , %lcomp%
