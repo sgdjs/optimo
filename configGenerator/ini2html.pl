@@ -6,6 +6,7 @@ use strict;
 use Config::IniHash;
 use Button;
 use ButtonPosition;
+use locale;
 
 my $INIFILE = 'results/layout.ini';
 my $HTMLFILE = 'results/layout.html';
@@ -68,6 +69,17 @@ $BUTTONS->[4]->[4] = Button->new('modifier', 'RAlt');
 $BUTTONS->[4]->[5] = Button->new('modifier', 'RWin');
 $BUTTONS->[4]->[6] = Button->new('normal', 'Menu');
 $BUTTONS->[4]->[7] = Button->new('modifier', 'RCtrl');
+
+
+sub isLowercase($)
+{
+    my $symbol = shift;
+
+    my $lc_symbol = lc($symbol);
+
+    return $lc_symbol eq $symbol;
+}
+
 
 my $enterMode = $layout->{fingers}->{enter_mode} || 1;
 if ( !defined $enterMode or $enterMode== 1 ) {
@@ -190,11 +202,19 @@ if ( $layout->{global}->{extend_key} ) { # Extend mode
 	my $deadkey = 1;
 	while ( $layout->{'deadkey'.$deadkey} ) {
 		push @SHIFTSTATES, 100+$deadkey;
+		push @SHIFTSTATES, 200+$deadkey;
 		while ( my ($base, $new) = each(%{$layout->{'deadkey'.$deadkey}} ) ) {
-			next unless defined $LETTERS{chr($base)};
+			next unless defined $LETTERS{lc(chr($base))};
 			$new =~ s/\t; [^\t]+$//;
-			my ($r, $c) = @{$LETTERS{chr($base)}};
-			$BUTTONS->[$r]->[$c]->newMode( 100+$deadkey, chr($new) );
+			my ($r, $c) = @{$LETTERS{lc(chr($base))}};
+			if (&isLowercase(chr($base)))
+			{
+				$BUTTONS->[$r]->[$c]->newMode( 100+$deadkey, chr($new) );
+			}
+			else
+			{
+				$BUTTONS->[$r]->[$c]->newMode( 200+$deadkey, chr($new) );
+			}
 		}
 		{ # Space and button of the current deadkey
 			my $new = $layout->{'deadkey'.$deadkey}->{0};
@@ -202,7 +222,9 @@ if ( $layout->{global}->{extend_key} ) { # Extend mode
 			$BUTTONS->[4]->[3]->newMode( 100+$deadkey, chr($new) );
 			$BUTTONS->[4]->[3]->mode( 100+$deadkey )->type('deadkey');
 			$BUTTONS->[4]->[6]->newMode( 100+$deadkey, $deadkey );
+			$BUTTONS->[4]->[6]->newMode( 200+$deadkey, $deadkey );
 			$BUTTONS->[4]->[6]->mode( 100+$deadkey )->type('special');
+			$BUTTONS->[4]->[6]->mode( 200+$deadkey )->type('special');
 		}
 		++$deadkey;
 	}
