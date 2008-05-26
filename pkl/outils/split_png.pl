@@ -29,8 +29,8 @@ foreach (@states) {
 push @filenames, 'extend' if $isExtendMode;
 foreach (1..$deadkeys)
 {
-	my $deadNb = int($_ / 2);
-	my $shift  = $_ % 2;
+	my $deadNb = int(($_+1) / 2);
+	my $shift  = ($_+1) % 2;
 	push @filenames, 'deadkey'.$deadNb.'_'.$shift ;
 }
 
