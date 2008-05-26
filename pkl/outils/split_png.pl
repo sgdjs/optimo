@@ -27,7 +27,12 @@ foreach (@states) {
 	push @filenames, 'state'.$_ if $_ != 2;
 }
 push @filenames, 'extend' if $isExtendMode;
-push @filenames, 'deadkey'.$_ foreach (1..$deadkeys);
+foreach (1..$deadkeys)
+{
+	my $deadNb = int($_ / 2);
+	my $shift  = $_ % 2;
+	push @filenames, 'deadkey'.$deadNb.'_'.$shift ;
+}
 
 unless ( $origPng ) {
 	foreach ( <*.png> ) {
