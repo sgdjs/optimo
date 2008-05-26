@@ -221,6 +221,8 @@ if ( $layout->{global}->{extend_key} ) { # Extend mode
 			$new =~ s/\t; [^\t]+$//;
 			$BUTTONS->[4]->[3]->newMode( 100+$deadkey, chr($new) );
 			$BUTTONS->[4]->[3]->mode( 100+$deadkey )->type('deadkey');
+			$BUTTONS->[4]->[3]->newMode( 200+$deadkey, chr($new) );
+			$BUTTONS->[4]->[3]->mode( 200+$deadkey )->type('deadkey');
 			$BUTTONS->[4]->[6]->newMode( 100+$deadkey, $deadkey );
 			$BUTTONS->[4]->[6]->newMode( 200+$deadkey, $deadkey );
 			$BUTTONS->[4]->[6]->mode( 100+$deadkey )->type('special');
