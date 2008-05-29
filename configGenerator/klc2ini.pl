@@ -55,7 +55,7 @@ my @SHIFTSTATES; # position => state
 
 ####### Read keymapper #######
 
-$GLOBAL .= 'shiftstates = '. $INFORMATIONS{shiftstates} . "\n";
+$GLOBAL .= 'shiftstates = '. $INFORMATIONS{shiftstates} ."\n";
 $LAYOUT .= ";scan = VK\tCapStat";
 foreach ( split /:/, $INFORMATIONS{shiftstates}) {
 	$LAYOUT .= "\t" . $_ . shiftStateName($_);
@@ -158,18 +158,22 @@ foreach
 		print INI sprintf('%-20s',$_).' = '.$INFORMATIONS{$_}."\n";
 	}
 }
-print INI "\n\n";
 print INI <<'EOF';
+img_width = 296
+img_height= 102
+
+
 [fingers]
 enter_mode = 2
+methode = aucune
 EOF
-print INI "\n\n";
+print INI "\n";
 print INI $GLOBAL;
-print INI "\n\n";
+print INI "\n";
 print INI $LAYOUT, "\n";
-print INI "\n\n";
+print INI "\n";
 print INI $LIGATURE;
-print INI "\n\n";
+print INI "\n";
 print INI $DEADKEYS, "\n";
 close INI;
 
