@@ -58,5 +58,17 @@
 		<key>ISOCode</key>
 		<string>fr</string>
 	</dict>
+	
+	<key>KLInfo_French Dvorak BÉPO - Qwertz Cmd</key>
+	<dict>
+		<key>ISOCode</key>
+		<string>fr</string>
+	</dict>
+	
+	<key>KLInfo_French Dvorak BÉPO - Qwertz Cmd (Roman)</key>
+	<dict>
+		<key>ISOCode</key>
+		<string>fr</string>
+	</dict>
 </dict>
 </plist>

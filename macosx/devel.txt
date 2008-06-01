@@ -20,7 +20,11 @@ Ce répertoire contient plusieurs choses:
     
  *  dead_keys.py
     Un script pour générer les touches mortes du clavier en se basant sur les définitions d'unicode.
-    
+
+Vous puvez vous assurer que le fichier compile avec la commande
+
+  klcompiler fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout
+  
 Avant de créer la nouvelle version il faut s'assurer que le nouveau numéro de version aparaît dans les fichiers suivants :
 
  *  LISEZ_MOI.txt
