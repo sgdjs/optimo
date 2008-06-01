@@ -1,4 +1,4 @@
-French Dvorak BÉPO keyboard layout, version 0.6.5.1
+French Dvorak BÉPO keyboard layout, version 0.6.6
 http://www.clavier-dvorak.org/
 
 

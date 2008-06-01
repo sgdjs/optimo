@@ -6,7 +6,7 @@
 	<string>English</string>
 	
 	<key>CFBundleGetInfoString</key>
-	<string>French Dvorak BÉPO keyboard layouts 0.6.5.1, © 2008 clavier-dvorak.org</string>
+	<string>French Dvorak BÉPO keyboard layouts 0.6.6, © 2008 clavier-dvorak.org</string>
 	
 	<key>CFBundleIdentifier</key>
 	<string>com.apple.keyboardlayout.fr-dvorak-bepo</string>
@@ -18,7 +18,7 @@
 	<string>French Dvorak BÉPO</string>
 	
 	<key>CFBundleShortVersionString</key>
-	<string>0.6.5.1</string>
+	<string>0.6.6</string>
 	
 	<key>CFBundleVersion</key>
 	<string>1.0</string>

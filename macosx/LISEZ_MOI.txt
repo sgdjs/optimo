@@ -1,4 +1,4 @@
-﻿Disposition de clavier Dvorak français BÉPO, version 0.6.5.1
+﻿Disposition de clavier Dvorak français BÉPO, version 0.6.6
 http://www.clavier-dvorak.org/
 
 
