@@ -345,7 +345,7 @@ sub gen_win_msklc_header($$)
                  "\r\n".
                  "LOCALEID\t\"".$localeId."\"\r\n".
                  "\r\n".
-                 "VERSION\t\"".$VERSION."\"\r\n".
+                 "VERSION\t".$VERSION."\r\n".
                  "\r\n".
                  "SHIFTSTATE\r\n".
                  "\r\n".

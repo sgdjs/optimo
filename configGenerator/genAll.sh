@@ -9,9 +9,12 @@ VERSION=0.6.6
 ./configGenerator.pl $VERSION x_compose  > "results/layout-${VERSION}.XCompose"
 
 #Fichiers pour Windows
-./configGenerator.pl $VERSION win_msklc_azerty > "results/fr-dvorak-bepo-${VERSION}A.klc"
-./configGenerator.pl $VERSION win_msklc_bepo   > "results/fr-dvorak-bepo-${VERSION}B.klc"
-./configGenerator.pl $VERSION win_msklc_qwertz > "results/fr-dvorak-bepo-${VERSION}C.klc"
+./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}A-kbd.klc"
+./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}B-kbd.klc"
+./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}C-kbd.klc"
+./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}A.klc"
+./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}B.klc"
+./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}C.klc"
 perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}B.klc
 perl ini2html.pl results/layout.ini
 mv results/layout.ini results/layoutB.ini
