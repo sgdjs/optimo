@@ -77,49 +77,49 @@
   004   187    '3'    nop    nop    '>'    nop    nop    nop     C
   005   '('    '4'    nop    nop    '['    nop    nop    nop     C
   006   ')'    '5'    nop    nop    ']'    nop    gs     nop     C
-  007   '_'    '6'    us     nop    nop    nop    nop    nop     C
+  007   '@'    '6'    nop    nop    nop    nop    nop    nop     C
   008   '+'    '7'    nop    nop    177    176    nop    nop     C
   009   '-'    '8'    nop    nop    nop    nop    nop    nop     C
   010   '/'    '9'    nop    nop    247    nop    nop    nop     C
   011   '*'    '0'    nop    nop    215    nop    nop    nop     C
-  012   '='    '@'    nop    nop    172    nop    nop    nop     O
-  013   '%'    181    nop    nop    nop    nop    nop    nop     O
-  016   'b'    'B'    stx    nop    '|'    nop    nop    nop     C
+  012   '='    '^'    nop    rs     172    nop    nop    nop     O
+  013   '%'    '`'    nop    nop    nop    nop    nop    nop     O
+  016   'b'    'B'    stx    stx    '|'    nop    nop    nop     C
   017   233    201    nop    nop    dacu   ddac   nop    nop     C
-  018   'p'    'P'    dle    nop    '&'    nop    nop    nop     C
-  019   'o'    'O'    si     nop    189    188    nop    nop     C
-  020   232    200    nop    nop    '`'    dgra   nop    nop     C
+  018   'p'    'P'    dle    dle    '&'    nop    nop    nop     C
+  019   'o'    'O'    si     si     189    188    nop    nop     C
+  020   232    200    nop    nop    dgra   '`'    nop    nop     C
   021   dcir   '!'    nop    nop    dcar   161    nop    nop     O
-  022   'v'    'V'    syn    nop    nop    nop    nop    nop     C
-  023   'd'    'D'    eot    nop    240    208    nop    nop     C
-  024   'l'    'L'    np     nop    dsla   nop    nop    nop     C
-  025   'j'    'J'    nl     nop    nop    nop    nop    nop     C
-  026   'z'    'Z'    sub    nop    nop    nop    nop    nop     C
-  027   'w'    'W'    etb    nop    dbre   nop    nop    nop     C
-  030   'a'    'A'    soh    nop    230    198    nop    nop     C
-  031   'u'    'U'    nak    nop    249    217    nop    nop     C
-  032   'i'    'I'    ht     nop    ddia   ddot   nop    nop     C
-  033   'e'    'E'    enq    nop    164    dapo   nop    nop     C
+  022   'v'    'V'    syn    syn    nop    nop    nop    nop     C
+  023   'd'    'D'    eot    eot    240    208    nop    nop     C
+  024   'l'    'L'    np     np     dsla   nop    nop    nop     C
+  025   'j'    'J'    nl     nl     nop    nop    nop    nop     C
+  026   'z'    'Z'    sub    sub    nop    nop    nop    nop     C
+  027   'w'    'W'    etb    etb    dbre   nop    nop    nop     C
+  030   'a'    'A'    soh    soh    230    198    nop    nop     C
+  031   'u'    'U'    nak    nak    249    217    nop    nop     C
+  032   'i'    'I'    ht     ht     ddia   ddot   nop    nop     C
+  033   'e'    'E'    enq    enq    164    dapo   nop    nop     C
   034   ','    '?'    nop    nop    nop    191    nop    nop     O
-  035   'c'    'C'    etx    nop    169    nop    nop    nop     C
-  036   't'    'T'    dc4    nop    254    222    nop    nop     C
-  037   's'    'S'    dc3    nop    223    nop    nop    nop     C
-  038   'r'    'R'    dc2    nop    174    nop    nop    nop     C
-  039   'n'    'N'    so     nop    241    209    nop    nop     C
-  040   'm'    'M'    cr     nop    dmac   186    nop    nop     C
+  035   'c'    'C'    etx    etx    169    nop    nop    nop     C
+  036   't'    'T'    dc4    dc4    254    222    nop    nop     C
+  037   's'    'S'    dc3    dc3    223    nop    nop    nop     C
+  038   'r'    'R'    dc2    dc2    174    nop    nop    nop     C
+  039   'n'    'N'    so     so     241    209    nop    nop     C
+  040   'm'    'M'    cr     cr     dmac   186    nop    nop     C
   043   231    199    nop    nop    dced   nop    nop    nop     C
   086   234    202    nop    nop    '/'    nop    nop    nop     C
-  044   224    192    nop    nop    '~'    dtil   nop    nop     C
-  045   'y'    'Y'    em     nop    '\'    nop    fs     nop     C
-  046   'h'    'H'    bs     nop    '{'    nop    nop    nop     C
-  047   '.'    ':'    nop    nop    '}'    183    nop    nop     O
-  048   'k'    'K'    vt     nop    nop    nop    nop    nop     C
+  044   'x'    'X'    can    can    '\'    nop    fs     nop     C
+  045   'y'    'Y'    em     em     '{'    nop    nop    nop     C
+  046   224    192    nop    nop    '}'    nop    nop    nop     C
+  047   '.'    ':'    nop    nop    nop    183    nop    nop     O
+  048   'k'    'K'    vt     vt     '~'    dtil   nop    nop     C
   049   '''    ';'    nop    nop    nop    nop    nop    nop     O
-  050   'q'    'Q'    dc1    nop    nop    nop    nop    nop     C
-  051   'g'    'G'    bel    nop    drin   nop    nop    nop     C
-  052   'x'    'X'    can    nop    nop    nop    nop    nop     C
-  053   'f'    'F'    ack    nop    dogo   170    nop    nop     C
-  057   ' '    160    nop    nop    ' '    nop    nop    nop     O
+  050   'q'    'Q'    dc1    dc1    drin   nop    nop    nop     C
+  051   'g'    'G'    bel    bel    nop    nop    nop    nop     C
+  052   'h'    'H'    bs     bs     nop    nop    nop    nop     C
+  053   'f'    'F'    ack    ack    dogo   170    nop    nop     C
+  057   ' '    160    nop    nop    '_'    nop    us     nop     O
 #
 # finally, the dead keys
 # ex:
@@ -149,7 +149,7 @@
            ( 'U' 217 ) ( 'u' 249 ) 
   dmac 175 
   dogo '?' 
-  drin '?' ( 'A' 197 ) ( 'a' 229 ) 
+  drin 176 ( 'A' 197 ) ( 'a' 229 ) 
   dsla '/' ( 'O' 216 ) ( 'o' 248 ) 
   dtil '~' ( 'A' 195 ) ( 'a' 227 ) ( 'N' 209 ) ( 'n' 241 ) 
            ( 'O' 213 ) ( 'o' 245 ) 

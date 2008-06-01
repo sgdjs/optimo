@@ -14,18 +14,18 @@ xkb_symbols "dvorak" {
 	include "pc(pc105)"
 
 	key <TLDE> { type[group1] = "FOUR_LEVEL", [ dollar, numbersign, section, paragraph ] }; // $ # § ¶
-	key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ quotedbl, 1, emdash ] }; // " 1 —
+	key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ quotedbl, 1, emdash, endash ] }; // " 1 — –
 	key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ guillemotleft, 2, less, lessthanequal ] }; // « 2 < ≤
 	key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ guillemotright, 3, greater, greaterthanequal ] }; // » 3 > ≥
 	key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ parenleft, 4, bracketleft, leftdoublequotemark ] }; // ( 4 [ “
 	key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ parenright, 5, bracketright, rightdoublequotemark ] }; // ) 5 ] ”
-	key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ underscore, 6 ] }; // _ 6
+	key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ at, 6 ] }; // @ 6
 	key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ plus, 7, plusminus, degree ] }; // + 7 ± °
-	key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ minus, 8, endash, minutes ] }; // - 8 – ′
+	key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ minus, 8, U2212, minutes ] }; // - 8 − ′
 	key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ slash, 9, division, seconds ] }; // / 9 ÷ ″
 	key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ asterisk, 0, multiply ] }; // * 0 ×
-	key <AE11> { type[group1] = "THREE_LEVEL", [ equal, at, notsign ] }; // = @ ¬
-	key <AE12> { type[group1] = "THREE_LEVEL", [ percent, VoidSymbol, U2030 ] }; // %   ‰
+	key <AE11> { type[group1] = "THREE_LEVEL", [ equal, asciicircum, notsign ] }; // = ^ ¬
+	key <AE12> { type[group1] = "THREE_LEVEL", [ percent, grave, U2030 ] }; // % ` ‰
 
 	key <AD01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ b, B, bar, brokenbar ] }; // b B | ¦
 	key <AD02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ eacute, Eacute, dead_acute, dead_doubleacute ] }; // é É ´ ˝
