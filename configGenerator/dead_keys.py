@@ -511,7 +511,7 @@ print >> deadXMLBuf
 for m in sorted(modStates.keys()):
   l = modStates[m]
   print >> deadXMLBuf, '    <action id="%s">' % m
-  print >> deadXMLBuf, '      <when state="%s" next="%s"/>' % (m, terminators[m])
+  print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % (m, terminators[m])
   for s, n in sorted(l, mod_order2):
     print >> deadXMLBuf, '      <when state="%s" next="%s"/>' % (s, n)
     
