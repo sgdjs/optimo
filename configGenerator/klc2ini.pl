@@ -159,16 +159,17 @@ foreach
 	}
 }
 print INI <<'EOF';
-img_width = 296
-img_height= 102
-
-
 [fingers]
 enter_mode = 2
 methode = aucune
 EOF
 print INI "\n";
 print INI $GLOBAL;
+print INI <<'EOF';
+img_width = 296
+img_height= 102
+;extend_key = CapsLock
+EOF
 print INI "\n";
 print INI $LAYOUT, "\n";
 print INI "\n";
