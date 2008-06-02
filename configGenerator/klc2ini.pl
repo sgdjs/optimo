@@ -158,6 +158,7 @@ foreach
 		print INI sprintf('%-20s',$_).' = '.$INFORMATIONS{$_}."\n";
 	}
 }
+print INI "\n";
 print INI <<'EOF';
 [fingers]
 enter_mode = 2
