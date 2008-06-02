@@ -263,6 +263,8 @@ foreach ( @SHIFTSTATES ) {
 			}
 			if ( $state < 100 and ( $button->label() =~ /Shift/i && $state&1 or $button->label() =~ /RAlt/i && $state>=6 ) ) {
 				$classes .= ' pressed';
+			} elsif ( $state >= 200 and $button->label() =~ /Shift/i) {
+				$classes .= ' pressed';
 			} elsif ( $button->label() eq '' and defined $button->mode($state) and $button->mode($state)->type() eq 'deadkey' ) {
 				$classes .= ' deadkey';
 			} else {
