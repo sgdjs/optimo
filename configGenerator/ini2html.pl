@@ -207,12 +207,9 @@ if ( $layout->{global}->{extend_key} ) { # Extend mode
 			next unless defined $LETTERS{lc(chr($base))};
 			$new =~ s/\t; [^\t]+$//;
 			my ($r, $c) = @{$LETTERS{lc(chr($base))}};
-			if (&isLowercase(chr($base)))
-			{
+			if (&isLowercase(chr($base))) {
 				$BUTTONS->[$r]->[$c]->newMode( 100+$deadkey, chr($new) );
-			}
-			else
-			{
+			} else {
 				$BUTTONS->[$r]->[$c]->newMode( 200+$deadkey, chr($new) );
 			}
 		}
