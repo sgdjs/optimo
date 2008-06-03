@@ -19,7 +19,7 @@ my $dist = 14;
 # And these, too
 my @states = split /:/, $layout->{global}->{shiftstates};
 my $isExtendMode = (( $layout->{global}->{extend_key} ) ? 1 : 0 );
-my $deadkeys = 30; # it is too much, but easier to delete, than count every time...
+my $deadkeys = 32; # it is too much, but easier to delete, than count every time...
 
 
 my @filenames;
