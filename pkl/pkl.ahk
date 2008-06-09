@@ -8,7 +8,7 @@
 #MaxHotkeysPerInterval 300
 #MaxThreads 20
 
-setPklInfo( "version", "0.3.a13" )
+setPklInfo( "version", "0.3.a16" )
 setPklInfo( "compiled", "Not published" )
 
 SendMode Event
@@ -23,9 +23,7 @@ CurrentBaseKey  = 0 ; Current base key :)
 
 t = %1% ; Layout from command line parameter
 pkl_init( t ) ; I would like use local variables
-
-Sleep, 100 ; I don't want kill myself...
-OnMessage(0x398, "MessageFromNewInstance")
+pkl_activate()
 
 return
 
@@ -85,6 +83,11 @@ pkl_init( layoutFromCommandLine = "" )
 
 	IniRead, t, pkl.ini, pkl, systemsdeadkeys, %A_Space%
 	setDeadKeysInCurrentLayout( t )
+	IniRead, t, pkl.ini, pkl, altGrEqualsAltCtrl, %A_Space%
+	if ( t == 1 )
+		setPklInfo( "altGrEqualsAltCtrl", 1 )
+	else 
+		setPklInfo( "altGrEqualsAltCtrl", 0 )
 
 	IniRead, t, pkl.ini, pkl, changeDynamicMode, 0
 	if ( t <> "" ) {
@@ -171,7 +174,10 @@ pkl_init( layoutFromCommandLine = "" )
 		if ( parts2 == -2 ) {
 			Hotkey, *%key%, modifierDown
 			Hotkey, *%key% Up, modifierUp
-			setLayoutItem( key . "v", parts1 )
+			if ( getLayoutInfo( "hasAltGr" ) && parts1 == "RAlt" )
+				setLayoutItem( key . "v", "AltGr" )
+			else 
+				setLayoutItem( key . "v", parts1 )
 		} else if ( key == extendKey ) {
 			Hotkey, *%key% Up, upToDownKeyPress
 		} else {
@@ -267,9 +273,12 @@ pkl_init( layoutFromCommandLine = "" )
 		setTrayIconInfo( "FileOff", "off.ico" )
 		setTrayIconInfo( "NumOff", 1 )
 	}
+	pkl_set_tray_menu()
+}
 
 
-
+pkl_activate()
+{
 	SetTitleMatchMode 2
 	DetectHiddenWindows on
 	WinGet, id, list, %A_ScriptName%
@@ -279,18 +288,27 @@ pkl_init( layoutFromCommandLine = "" )
 		id := id%A_Index%
 		PostMessage, 0x398, 422,,, ahk_id %id%
 	}
-	Sleep, 20
+	Sleep, 10
+	pkl_show_tray_menu()
 
-	pkl_set_tray_menu()
 	IniRead, t, pkl.ini, pkl, displayHelpImage, 1
 	if ( t )
 		pkl_displayHelpImage( 1 )
+	
+	Sleep, 200 ; I don't want kill myself...
+	OnMessage(0x398, "MessageFromNewInstance")
+}
+
+pkl_show_tray_menu()
+{
+	Menu, tray, Icon, % getTrayIconInfo( "FileOn" ), % getTrayIconInfo( "NumOn" )
+	Menu, Tray, Icon,,, 1 ; Freeze the icon
 }
 
 pkl_set_tray_menu()
 {
-	ChangeLayoutHotkey := getPklInfo( "ChangeLayoutHotkey" )
-	SuspendHotkey := getPklInfo( "SuspendHotkey" )
+	ChangeLayoutHotkey := getHotkeyStringInLocale( getPklInfo( "ChangeLayoutHotkey" ) )
+	SuspendHotkey := getHotkeyStringInLocale( getPklInfo( "SuspendHotkey" ) )
 	
 	Layout := getLayoutInfo( "active" )
 	
@@ -345,7 +363,7 @@ pkl_set_tray_menu()
 	Menu, tray, add, %helpimage%, displayHelpImageToggle
 	MI_SetMenuItemIcon(tr, ++iconNum, "SHELL32.dll", 116, 16)
 	Menu, tray, add, %deadk%, detectDeadKeysInCurrentLayout
-	MI_SetMenuItemIcon(tr, ++iconNum, "SHELL32.dll", 78, 16)
+	MI_SetMenuItemIcon(tr, ++iconNum, "SHELL32.dll", 25, 16)
 	if ( getLayoutInfo( "countOfLayouts" ) > 1 ) {
 		Menu, tray, add, 
 		++iconNum
@@ -363,12 +381,20 @@ pkl_set_tray_menu()
 
 	if ( getLayoutInfo( "countOfLayouts" ) > 1 ) {
 		Menu, tray, Default , %changeLayout%
+		Menu, Tray, Click, 2
 	} else {
 		Menu, tray, Default , %susp%
+		Menu, Tray, Click, 1 
 	}
 	
-	Menu, tray, Icon, % getTrayIconInfo( "FileOn" ), % getTrayIconInfo( "NumOn" )
-	Menu, Tray, Icon,,, 1 ; Freeze the icon
+	if (A_OSVersion == "WIN_XP")
+	{
+		; It is necessary to hook the tray icon for owner-drawing to work.
+		; (Owner-drawing is not used on Windows Vista.)
+		MI_SetMenuStyle( tr, 0x4000000 ) ; MNS_CHECKORBMP (optional)
+		setPklInfo( "trayMenuHandler", tr )
+	}
+	OnMessage( 0x404, "AHK_NOTIFYICON" )
 }
 
 pkl_about()
@@ -440,12 +466,12 @@ keyPressed( HK )
 	}
 	extendKeyStroke = 0
 	if ( getLayoutInfo("hasAltGr") ) {
-		if ( getKeyState("RAlt") ) {  ; AltGr
+		if ( AltGrIsPressed() ) {
 			sh := getKeyState("Shift")
 			if ( (cap & 4) && getKeyState("CapsLock", "T") )
 				sh := 1 - sh
 			state := 6 + sh
-		} else { ; Not AltGr
+		} else {
 			if ( getKeyState("LAlt")) {
 				modif .= "!"
 				if ( getKeyState("RCtrl"))
@@ -470,7 +496,9 @@ keyPressed( HK )
 
 
 	ch := getLayoutItem( HK . state )
-	if ( ch == 32 && HK == "SC039" ) {
+	if ( ch == "" ) {
+		return
+	} else if ( ch == 32 && HK == "SC039" ) {
 		Send, {Blind}{Space}
 	} else if ( ( ch + 0 ) > 0 ) {
 		pkl_Send( ch, modif )
@@ -493,9 +521,7 @@ keyPressed( HK )
 				if ( ch != "" )
 					ToSend = %modif%%ch%
 			}
-			if ( getGlobal("ModifierRAltIsDown") )
-				toSend = {RAlt Up}%toSend%{RAlt Down}
-			Send, %toSend%
+			pkl_SendThis( toSend )
 		}
 	} else if ( ch == "%" ) {
 		SendU_utf8_string( getLayoutItem( HK . state . "s" ) )
@@ -558,7 +584,7 @@ extendKeyPressed( HK )
 		Send {LWin Up}
 		WinPressed := ""
 	}
-	if ( !altPressed && getKeyState( "RAlt", "P" ) ) {
+	if ( !AltPressed && getKeyState( "RAlt", "P" ) ) {
 		Send {LAlt Down}
 		altPressed = RAlt
 	}
@@ -591,7 +617,7 @@ toggleCapsLock()
 {
 	if ( getKeyState("CapsLock", "T") )
 	{
-		SetCapsLockState, off
+		SetCapsLockState, Off
 	} else {
 		SetCapsLockState, on
 	}
@@ -718,10 +744,18 @@ pkl_Send( ch, modif = "" )
 		sendU(ch)
 		return
 	}
-	toSend = %modif%%char%
-	if ( getGlobal("ModifierRAltIsDown") )
-		toSend = {RAlt Up}%toSend%{RAlt Down}
-	Send %toSend%
+	pkl_SendThis( modif . char )
+}
+
+pkl_SendThis( toSend )
+{
+	if ( getAltGrState() ) {
+		setAltGrState( 0 )
+		Send, %toSend%
+		setAltGrState( 1 )
+	} else {
+		Send, %toSend%
+	}
 }
 
 pkl_CtrlState( HK, capState, ByRef state, ByRef modif )
@@ -830,6 +864,15 @@ pkl_locale_load( lang, compact = 0 )
 		StringReplace, val, val, \\, \,
 			detectDeadKeysInCurrentLayout_SetLocale( key, val )
 	}
+	
+	line := Ini_LoadSection( file, "keyNames" )
+	Loop, parse, line, `r`n
+	{
+		pos := InStr( A_LoopField, "=" )
+		key := subStr( A_LoopField, 1, pos-1 )
+		val := subStr(A_LoopField, pos+1 )
+		setHotkeyLocale( key, val )
+	}
 }
 
 pkl_locale_string( msg, s = "", p = "", q = "", r = "" )
@@ -869,7 +912,7 @@ pkl_displayHelpImage( activate = 0 )
 	static guiActive := 0
 	static prevFile
 	static HelperImage
-	static displayOnTop := 1
+	static displayOnTop := 0
 	static yPosition := -1
 	static imgWidth
 	static imgHeight
@@ -917,7 +960,7 @@ pkl_displayHelpImage( activate = 0 )
 		setTimer, displayHelpImage, 200
 	} else if ( activate == -1 ) {
 		Menu, tray, UnCheck, % pkl_locale_string(15)
-		setTimer, displayHelpImage, off
+		setTimer, displayHelpImage, Off
 		Gui, 2:Destroy
 		return
 	}
@@ -935,17 +978,17 @@ pkl_displayHelpImage( activate = 0 )
 		Gui, 2:Show, xCenter y%yPosition% AutoSize NA, pklHelperImage
 	}
 	
-	fileName = state0
-	if ( CurrentDeadKeys ) {
-		fileName = deadkey%CurrentDeadKeyNum%
-	} else if ( extendKey && getKeyState( extendKey, "P" ) ) {
-		fileName = extend
-	} else {
-		state = 0
-		state += 1 * getKeyState( "Shift" )
-		state += 6 * ( hasAltGr * getKeyState( "RAlt" ) )
-		fileName = state%state%
-	}
+  fileName = state0
+  state = 0
+  state += 1 * getKeyState( "Shift" )
+  state += 6 * ( hasAltGr * AltGrIsPressed() )
+  if ( CurrentDeadKeys ) {
+      fileName = deadkey%CurrentDeadKeyNum%_%state%
+  } else if ( extendKey && getKeyState( extendKey, "P" ) ) {
+      fileName = extend
+  } else {
+      fileName = state%state%
+  }
 	
 	if ( prevFile == fileName )
 		return
@@ -1099,12 +1142,130 @@ getDeadKeysInCurrentLayout( newDeadkeys = "", set = 0 )
 		return deadkeys
 }
 
+setHotkeyLocale( hk, localehk )
+{
+	getHotkeyLocale( hk, localehk, 1 )
+}
+
+getHotkeyLocale( hk, localehk = "", set = 0 )
+{
+	static localizedHotkeys := ""
+	static pdic := 0
+	if ( pdic == 0 )
+	{
+		pdic := HashTable_New()
+	}
+	if ( set == 1 ) { 
+		HashTable_Set( pdic, hk, localehk )
+		localizedHotkeys .= " " . hk
+	} else {
+		if ( hk == "all" )
+			return localizedHotkeys
+		return HashTable_Get( pdic, hk )
+	}
+}
+
+getHotkeyStringInLocale( str )
+{
+	StringReplace, str, str, Return, Enter, 1
+	StringReplace, str, str, Escape, Esc, 1
+	StringReplace, str, str, BackSpace, BS, 1
+	StringReplace, str, str, Delete, Del, 1
+	StringReplace, str, str, Insert, Ins, 1
+	StringReplace, str, str, Control, Ctrl, 1
+	
+	str := RegExReplace( str, "(\w+)", "#[$1]" )
+	hotkeys := getHotkeyLocale( "all" ) 
+	Loop, Parse, hotkeys, %A_Space%
+	{
+		lhk := getHotkeyLocale( A_LoopField ) 
+		StringReplace, str, str, #[%A_LoopField%], %lhk%, 1
+	}
+	str := RegExReplace( str, "#\[(\w+)\]", "$1" )
+	return str
+}
+
+setAltGrState( isdown )
+{
+	getAltGrState( isdown, 1 )
+}
+
+getAltGrState( isdown = 0, set = 0 )
+{
+	static AltGr := 0
+	if ( set == 1 ) {
+		if ( isdown == 1 ) {
+			AltGr = 1
+			Send {LCtrl Down}{RAlt Down}
+		} else {
+			AltGr = 0
+			Send {RAlt Up}{LCtrl Up}
+		}
+	} else {
+		return AltGr
+	}
+}
+
+setModifierState( modifier, isdown )
+{
+	getModifierState( modifier, isdown, 1 )
+}
+
+getModifierState( modifier, isdown = 0, set = 0 )
+{
+	static pdic := 0
+	
+	if ( modifier == "AltGr" )
+		return getAltGrState( isdown, set )
+	
+	if ( pdic == 0 )
+	{
+		pdic := HashTable_New()
+	}
+	if ( set == 1 ) {
+		if ( isdown == 1 ) {
+			HashTable_Set( pdic, modifier, 1 )
+			Send {%modifier% Down}
+		} else {
+			HashTable_Set( pdic, modifier, 0 )
+			Send {%modifier% Up}
+		}
+	} else {
+		return HashTable_Get( pdic, modifier )
+	}
+}
+
 changeLayout( nextLayout )
 {
+	Suspend, On
 	if ( A_IsCompiled )
 		Run %A_ScriptName% /f %nextLayout%
 	else 
 		Run %A_AhkPath% /f %A_ScriptName% %nextLayout%
+}
+
+AHK_NOTIFYICON(wParam, lParam)
+{
+	if ( lParam == 0x205 ) { ; WM_RBUTTONUP
+		if ( A_OSVersion != "WIN_XP" ) ; HOOK for Windows XP
+			return
+		; Show menu to allow owner-drawing.
+		MI_ShowMenu( getPklInfo( "trayMenuHandler" ) )
+		return 0 ; Withouth this double right click is without icons
+	} else if ( lParam ==0x201 ) { ; WM_LBUTTONDOWN
+		gosub ToggleSuspend
+	}
+}
+
+AltGrIsPressed()
+{
+	static altGrEqualsAltCtrl := -1
+	if ( altGrEqualsAltCtrl == -1 )
+		altGrEqualsAltCtrl := getPklInfo( "AltGrEqualsAltCtrl" )
+	if ( altGrEqualsAltCtrl )
+		return getKeyState( "Ctrl" ) * getKeyState( "Alt" )
+	else
+		return getKeyState( "RAlt" )
 }
 
 ; ##################################### labels #####################################
@@ -1177,9 +1338,7 @@ return
 modifierDown:  ; *SC025
 	Critical
 	ThisHotkey := substr( A_ThisHotkey, 2 )
-	t := getLayoutItem( ThisHotkey . "v" )
-	modifier%t%IsDown = 1
-	Send {%t% Down}
+	setModifierState( getLayoutItem( ThisHotkey . "v" ), 1 )
 return
 
 modifierUp: ; *SC025 UP
@@ -1187,9 +1346,7 @@ modifierUp: ; *SC025 UP
 	ThisHotkey := A_ThisHotkey
 	ThisHotkey := substr( ThisHotkey, 2 )
 	ThisHotkey := substr( ThisHotkey, 1, -3 )
-	t := getLayoutItem( ThisHotkey . "v" )
-	modifier%t%IsDown = 0
-	Send {%t% Up}
+	setModifierState( getLayoutItem( ThisHotkey . "v" ), 0 )
 return
 
 displayHelpImage:
