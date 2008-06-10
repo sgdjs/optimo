@@ -1,7 +1,11 @@
 use encoding "utf8", STDOUT => "utf8";
+use diagnostics;
+use utf8;
+use warnings;
+use strict;
 
 my $KLCFILE = $ARGV[0];
-my $EXTEND_MODE = ( $ARGV[1] eq 'vk' );
+my $EXTEND_MODE = ( $ARGV[1] and $ARGV[1] eq 'vk' );
 my $INIFILE = 'results/layout.ini';
 
 my $LAYOUT  = '[layout]'."\n";
@@ -12,7 +16,17 @@ my %INFORMATIONS = ();
 
 ####### Read informations #######
 
-open KLC, '<:encoding(utf-16)', $KLCFILE  or die "Can't open $KLCFILE: $!";
+unless ( $KLCFILE ) {
+	foreach ( <*.klc> ) {
+		if ( $KLCFILE ) {
+			die 'Two .klc files!';
+		} else {
+			$KLCFILE = $_;
+		}
+	}
+}
+
+open KLC, '<:encoding(utf-16)', $KLCFILE  or die "Can't open $KLCFILE: $!";;
 my $ll = ''; # Last Line
 
 while (<KLC>) {
@@ -55,7 +69,11 @@ my @SHIFTSTATES; # position => state
 
 ####### Read keymapper #######
 
-$GLOBAL .= 'shiftstates = '. $INFORMATIONS{shiftstates} ."\n";
+$GLOBAL .= ';extend_key = CapsLock' . "\n";
+$GLOBAL .= 'shiftstates = '. $INFORMATIONS{shiftstates} . "\n";
+$GLOBAL .= 'img_width = 296' . "\n";
+$GLOBAL .= 'img_height = 102' . "\n";
+
 $LAYOUT .= ";scan = VK\tCapStat";
 foreach ( split /:/, $INFORMATIONS{shiftstates}) {
 	$LAYOUT .= "\t" . $_ . shiftStateName($_);
@@ -111,14 +129,14 @@ while (<KLC>) {
 		$DEADKEYS .= "\n\n";
 		$DEADKEYS .= '[deadkey'.$dkChr.']'."\n";
 		$DEADKEYS .= sprintf('%-4s','0').' = '.sprintf('%4u',(hex $dk));
-		$DEADKEYS .= "\t" . '; ' . (chr hex $dk)."\n";
+		$DEADKEYS .= "\t" . '; ' . myChr(hex $dk) ."\n";
 	}
 	s!\s*//.*$!!;
 	my @parts = split /\s+/;
 	next unless (@parts);
 	$DEADKEYS .= sprintf('%-4s',(hex $parts[0])).' = ';
 	$DEADKEYS .= sprintf('%4u',(hex $parts[1]));
-	$DEADKEYS .= "\t" . '; '.(chr hex $parts[0]).' -> '.(chr hex $parts[1])."\n";
+	$DEADKEYS .= "\t" . '; '.myChr(hex $parts[0]).' -> '.myChr(hex $parts[1])."\n";
 }
 close KLC;
 
@@ -166,9 +184,6 @@ EOF
 print INI "\n";
 print INI $GLOBAL;
 print INI <<'EOF';
-img_width = 296
-img_height= 102
-;extend_key = CapsLock
 EOF
 print INI "\n";
 print INI $LAYOUT, "\n";
@@ -177,7 +192,6 @@ print INI $LIGATURE;
 print INI "\n";
 print INI $DEADKEYS, "\n";
 close INI;
-
 
 
 ########################### Functions ###########################
@@ -194,11 +208,11 @@ sub mapkey
 	} else {
 		$un = hex substr($data,0,4);
 	}
-	#return $un;
-	return '*{tab}' if $un == 9;
-	return '={space}' if $un == 32;
+	return '*{Enter}' if $un == 13;
+	return '*{Tab}' if $un == 9;
+	return '={Space}' if $un == 32;
 	return 'dk'. DeadKeyNumber($un) if 5 == length($data);
-	return chr($un);
+	return myChr($un);
 }
 
 
@@ -262,4 +276,9 @@ sub shiftStateName
 	$res .= 'Sh' if $num & 1;
 	$res = 'Norm' unless $res;
 	return $res;
+}
+
+sub myChr
+{
+	return Encode::encode("utf8", chr shift);
 }

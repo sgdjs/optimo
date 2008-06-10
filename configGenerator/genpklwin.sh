@@ -3,18 +3,19 @@
 #VERSION=0.1.1
 VERSION=0.6.6
 rm -f -r results/*
-./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}A-kbd.klc"
-./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}B-kbd.klc"
-./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}C-kbd.klc"
-./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}A.klc"
+#./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}A-kbd.klc"
+#./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}B-kbd.klc"
+#./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}C-kbd.klc"
+#./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}A.klc"
 ./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}B.klc"
-./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}C.klc"
+#./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}C.klc"
 
 perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}B.klc
 awk '{print} /\[fingers\]/ {print "methode = aucune"}' < results/layout.ini > results/layout0.ini
 mv results/layout0.ini results/layout.ini
 perl ini2html.pl results/layout.ini
 firefox -savepng "results/layout.html"
+#firefox -p screengrab -no-remote -savepng results/layout.html
 mv "$HOMEDRIVE$HOMEPATH\Bureau\Image de la page.png" "results/layout.png"
 perl split_png.pl
 mkdir -p results/pkl/fr-dvorak-bepo-${VERSION}/
