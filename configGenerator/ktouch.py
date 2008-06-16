@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # Produit une carte de touches à partir d'un fichier xkb
@@ -23,7 +23,7 @@ fullMapTmpl = keyboardTemplate = u"""# -*- coding: utf-8; -*-
 #    KTouch
 #    Fichier de définition de clavier
 ####################################################
-# Disposition Dvorak-fr-bepo
+# Disposition fr-dvorak-bépo
 ####################################################
 #
 #
