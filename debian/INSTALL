@@ -6,7 +6,7 @@
   pour notre distribution dans http://www.clavier-dvorak.org/telechargements
   (voir également le fichier SOURCES), et l'installer par la commande :
 
-#   dpkg -i ./xkb-data_0.9-4.1bepo6224_all.deb
+#   dpkg -i ./xkb-data_0.9-4.1bepo6600_all.deb
 
 
 * Sélection du clavier bépo :
@@ -15,9 +15,9 @@
     proposés pour la France).
 
   - en ligne de commande :
-    setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_63 -v
+    setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_66 -v
     ou plus simplement :
-    setxkbmap fr bepo_63
+    setxkbmap fr bepo_66
 
 
 * pour avoir une idée du clavier courant :

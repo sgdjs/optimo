@@ -152,15 +152,15 @@ Souhait=inconnU/Installé/suppRimé/Purgé/H=à garder
 ii  xkb-data       0.9-4          X Keyboard Extension (XKB) configuration dat
 
   // Si c'est bien le cas, installe notre version modifiée :
-  # dpkg -i ./xkb-data_0.9-4.1bepo6224_all.deb
+  # dpkg -i ./xkb-data_0.9-4.1bepo6600_all.deb
 
 * sélectionner un clavier :
   - sous Gnome, utiliser dans les préférences le choix de l'agencement
     du clavier
   - en ligne de commande :
-    setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_6211 -v
+    setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_66 -v
     ou plus simplement :
-    setxkbmap fr bepo_6211
+    setxkbmap fr bepo_66
 
 * pour avoir une idée du clavier courant :
   xkbprint -color -pict all -label symbols -o clavier.ps ${DISPLAY:-:0} && gv clavier.ps
