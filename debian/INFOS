@@ -83,12 +83,25 @@ xkb_symbols "bepo_651_latin9" {
 };
 
 
+* Les modifications pour une version de clavier sont sur le wiki
+  http://www.clavier-dvorak.org/wiki/Accueil, par exemple :
+  http://www.clavier-dvorak.org/wiki/Version_0.6.6.
+
+
 * S'aider du fichier http://www.cl.cam.ac.uk/~mgk25/ucs/keysyms.txt pour
   trouver comment s'appellent les codes des touches !
 
-  Ne pas oublier de changer le dessin du clavier final (en tête de
-  toutes les définitions Bépo dans symbols/fr)...
-  et la définition globale (non incrémentale) « bépo » en fin...
+
+* Pour chaque changement :
+  - l'afficher dans les commentaires de la version en cours
+  - appliquer la modif en décrivant les changements des touches
+    impactées (attention, déplacement = ajout ET suppression d'un
+    symbole)
+  - reporter la modification dans la définition _latin9 au besoin
+  - modifier le dessin du clavier final (en tête de toutes les
+    définitions Bépo dans symbols/fr)
+  - modifier la définition globale (non incrémentale) « bépo » en fin
+    du fichier symbols/fr
 
 
 * Mettre à jour le changelog du paquet Debian : debian/changelog (en UTF-8 !)
