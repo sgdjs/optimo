@@ -4,6 +4,9 @@ Sources utilisées :
 La configuration du clavier dans Xorg se fait par l'outil XKB, qui
 s'appuie sur une base de données des dispositions de claviers :
 xkeyboard-config.
+Les compositions de touches (touches mortes…) sont gérées par un
+fichier Compose de la locale, contenu dans le paquet libx11-data, du
+source libx11.
 
 
 * Sources de la base de données des dispositions de claviers dans Xorg :
@@ -36,12 +39,17 @@ xkeyboard-config.
    On prépare le répertoire de travail par :
        dpkg-source -x <paquet>-<version>.dsc
 
+  · Pour le paquet libx11-data, on peut voir les versions là :
+    http://packages.debian.org/search?keywords=libx11-data&searchon=names&suite=all&section=all
+
 
 * Paquet dans Ubuntu :
   les noms sont identiques (je pense),
 
   Les différentes versions sont visibles ici :
   http://packages.ubuntu.com/search?suite=default&section=all&arch=any&searchon=names&keywords=xkb-data
+  et
+  http://packages.ubuntu.com/search?suite=default&section=all&arch=any&searchon=names&keywords=libx11-data
 
   Pour Gutsy, c'est la version 0.9-4ubuntu3
   Pour Hardy, c'est la version 1.1~cvs.20080104.1-1ubuntu6

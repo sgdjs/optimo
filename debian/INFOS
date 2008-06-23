@@ -125,6 +125,54 @@ xkb_symbols "bepo_651_latin9" {
   diff -Naur $paquet-$version.REF $paquet-$version > ${paquet}_$version......1bepo....patch
 
 
+
+* Pour l'intégration des compositions de touches spéciales au bépo
+  (notamment l'utilisation des touches mortes barre, monnaie,
+  grecque...), il faut les intégrer dans le fichier Compose de la
+  locale : actuellement, pour les locales françaises (et européennes
+  de manière générale), on utilise les mêmes codes que pour la locale
+  en_US : /usr/share/X11/locale/en_US.UTF-8/Compose
+
+  Ce fichier est contenu dans le paquet libx11-data, du paquet source libx11.
+
+  J'ai un moment essayé de créer un fichier Compose spécial pour les
+  locales francophones (et bépo) sous la dénomination fr_FR.UTF-8,
+  mais cela complique pas mal les choses, et c'est pour l'instant
+  inutile car on ne fait que *rajouter* des compositions.
+  Pour info, il fallait modifier les fichiers suivant :
+  · nls/fr_FR.UTF-8 (copie du répertoire nls/en_US.UTF-8 et ajout
+                        des compositions Bépo)
+  · configure
+  · configure.ac
+  · debian/changelog
+  · debian/libx11-data.install
+  · debian/patches/005_Compose_fix_latin1_UTF8.diff
+  · nls/Makefile.am
+  · nls/Makefile.in
+  · nls/compose.dir.pre
+  · nls/locale.dir.pre
+
+  J'ai donc finalement rajouté les définitions Bépo à celles de la
+  locale en_US. Voici ce qu'il faut modifier :
+  · debian/changelog
+  · debian/patches/series
+  · debian/patches/099_Compositions_Bepo.diff
+
+  Pour rajouter en fin les compositions Bépo, partir du répertoire
+  d'origine et appliquer déjà les patches actuels :
+    cp -pr libx11-1.0.3orig libx11-1.0.3old
+    (cd libx11-1.0.3old && ./debian/rules patch)
+    ...
+    Applying patches...successful.
+
+    copier ce répertoire et y ajouter les définitions Bépo :
+    cp -pr libx11-1.0.3old libx11-1.0.3mod6600
+      [ajouts des déf. Bépo en fin de
+       libx11-1.0.3mod6600/nls/en_US.UTF-8/Compose.pre ]
+    Créer le patch :
+    diff -Naur libx11-1.0.3old/nls/en_US.UTF-8/Compose.pre libx11-1.0.3mod6600/nls/en_US.UTF-8/Compose.pre> libx11-1.0.3.6600/debian/patches/099_Compositions_Bepo.diff
+    Et ajout de 099_Compositions_Bepo.diff dans debian/patches/series
+
 * soumettre les modifs dans svn, et faire un TAG approprié.
 
 
