@@ -53,7 +53,7 @@ my $LAYOUT_DESCRIPTION = "layout-$VERSION.conf";
 my $DEAKEY_BEHAVIOUR   = "deads-$VERSION.conf";
 my $VIRTUAL_KEYS       = "virtualKeys-$VERSION.conf";
 
-my $KEYS_FILE         = "keys.conf";
+my $KEYS_FILE         = "plum_keys.conf";
 my $SPECIAL_KEYS_FILE = "specialKeys.conf";
 my $SYMBOLS_FILE      = "symbols.conf";
 
