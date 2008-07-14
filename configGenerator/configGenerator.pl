@@ -905,6 +905,7 @@ sub gen_win_msklc_footer()
                  "0060\t\"GRAVE ACCENT\"\r\n".
                  "005e\t\"CIRCUMFLEX ACCENT\"\r\n".
                  "02c7\t\"CARON\"\r\n".
+                 "002c\t\"COMMA BELOW\"\r\n".
                  "002f\t\"SOLIDUS\"\r\n".
                  "02d8\t\"BREVE\"\r\n".
                  "00a8\t\"DIAERESIS\"\r\n".
