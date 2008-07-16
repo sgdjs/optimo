@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #VERSION=0.1.1
-VERSION=0.6.6
+VERSION=0.6.7
 rm -f -r results/*
 #./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}A-kbd.klc"
 #./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16le > "results/fr-dvorak-bepo-${VERSION}B-kbd.klc"
