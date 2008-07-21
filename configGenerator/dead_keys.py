@@ -244,6 +244,12 @@ greek = {
 'LATIN SMALL LETTER Z WITH GREEK': u'ζ',
 }
 
+tilde = {
+'LATIN CAPITAL LETTER - WITH TILDE': u'≃',
+'LATIN CAPITAL LETTER LESS WITH TILDE': u'≲',
+'LATIN CAPITAL LETTER GREATER WITH TILDE': u'≳',
+}
+
 from terminators import terminators, combiningTerminators, spaceTerminators
 
 
@@ -289,6 +295,7 @@ unicode_dict.update(circumflex)
 unicode_dict.update(caron)
 unicode_dict.update(stroke)
 unicode_dict.update(greek)
+unicode_dict.update(tilde)
 
 
 # iterate over all the items to build the set of modifiers for the
