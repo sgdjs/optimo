@@ -9,6 +9,8 @@ include "%L"
 <dead_abovedot> <nobreakspace> : U0307
 <dead_acute> <Sabovedot> : U1E64
 <dead_acute> <sabovedot> : U1E65
+<dead_acute> <V> : U01D7
+<dead_acute> <v> : U01D8
 <dead_acute> <nobreakspace> : combining_acute
 <dead_breve> <Aacute> : Abreveacute
 <dead_breve> <Agrave> : Abrevegrave
@@ -39,6 +41,8 @@ include "%L"
 <dead_caron> <U01F3> : U01C6
 <dead_caron> <Sabovedot> : U1E66
 <dead_caron> <sabovedot> : U1E67
+<dead_caron> <V> : U01D9
+<dead_caron> <v> : U01DA
 <dead_caron> <nobreakspace> : U030C
 <dead_cedilla> <Cacute> : U1E08
 <dead_cedilla> <ColonSign> : U20B5
@@ -73,6 +77,13 @@ include "%L"
 <dead_circumflex> <ohook> : ocircumflexhook
 <dead_circumflex> <otilde> : ocircumflextilde
 <dead_circumflex> <nobreakspace> : U0302
+<UFDD3> <S> : U0218
+<UFDD3> <s> : U0219
+<UFDD3> <T> : U021A
+<UFDD3> <t> : U021B
+<UFDD3> <UFDD3> : comma
+<UFDD3> <nobreakspace> : U0326
+<UFDD3> <space> : comma
 <UFDD1> <A> : U20B3
 <UFDD1> <a> : U060B
 <UFDD1> <B> : U20B1
@@ -135,6 +146,8 @@ include "%L"
 <dead_diaeresis> <ugrave> : U01DC
 <dead_diaeresis> <nobreakspace> : U0308
 <dead_doubleacute> <nobreakspace> : U030B
+<dead_grave> <V> : U01DB
+<dead_grave> <v> : U01DC
 <dead_grave> <nobreakspace> : combining_grave
 <UFDD2> <A> : Greek_ALPHA
 <UFDD2> <a> : Greek_alpha
@@ -195,6 +208,8 @@ include "%L"
 <dead_macron> <Ograve> : U1E50
 <dead_macron> <oacute> : U1E53
 <dead_macron> <ograve> : U1E51
+<dead_macron> <V> : U01D5
+<dead_macron> <v> : U01D6
 <dead_macron> <nobreakspace> : U0304
 <dead_ogonek> <Omacron> : U01EC
 <dead_ogonek> <omacron> : U01ED
@@ -222,6 +237,8 @@ include "%L"
 <UFDD0> <h> : hstroke
 <UFDD0> <I> : U0197
 <UFDD0> <i> : U0268
+<UFDD0> <J> : U0248
+<UFDD0> <j> : U0249
 <UFDD0> <U0269> : U1D7C
 <UFDD0> <U0237> : U025F
 <UFDD0> <L> : Lstroke
@@ -235,11 +252,15 @@ include "%L"
 <UFDD0> <P> : U2C63
 <UFDD0> <p> : U1D7D
 <UFDD0> <U1D11> : U1D13
+<UFDD0> <R> : U024C
+<UFDD0> <r> : U024D
 <UFDD0> <T> : Tslash
 <UFDD0> <t> : tslash
 <UFDD0> <U> : U0244
 <UFDD0> <u> : U0289
 <UFDD0> <U028A> : U1D7F
+<UFDD0> <Y> : U024E
+<UFDD0> <y> : U024F
 <UFDD0> <Z> : Zstroke
 <UFDD0> <z> : zstroke
 <UFDD0> <UFDD0> : slash
@@ -253,6 +274,9 @@ include "%L"
 <dead_tilde> <omacron> : U022D
 <dead_tilde> <Uacute> : U1E78
 <dead_tilde> <uacute> : U1E79
+<dead_tilde> <equal> : similarequal
+<dead_tilde> <less> : U2272
+<dead_tilde> <greater> : U2273
 <dead_tilde> <nobreakspace> : combining_tilde
 <dead_acute> <dead_abovedot> <S> : U1E64
 <dead_acute> <dead_abovedot> <s> : U1E65
