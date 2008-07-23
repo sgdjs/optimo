@@ -1,19 +1,19 @@
-	Description de l'adaptation des sources au clavier Bépo
+	Description de l'adaptation des sources au clavier BÃ©po
 	-------------------------------------------------------
 
 
 * Le paquet-source des configurations xkb des distributions Debian/Ubuntu
-s'appelle xkeyboard-config ; Il est directement issu des sources Xorg.
+s'appelle xkeyboard-configÂ ; Il est directement issu des sources Xorg.
 
-# nom du paquet :
+# nom du paquetÂ :
 paquet=xkeyboard-config
-# version de référence :
+# version de rÃ©fÃ©renceÂ :
 version=0.9
 ou maintenant :
 version=1.0~cvs.20070916
 
 
-* Récupération du paquet source :
+* RÃ©cupÃ©ration du paquet sourceÂ :
 
   apt-get source $paquet
   ou
@@ -22,30 +22,30 @@ version=1.0~cvs.20070916
   cp -pr $paquet-$version $paquet-$version.REF
 
 
-* Test d'un patch sur l'archive originale (si l'on en dispose) :
+* Test d'un patch sur l'archive originaleÂ (si l'on en dispose) :
   (cd $paquet-$version; patch -p1 --dry-run < ../${paquet}_$version*.1bepo*.patch)
 
 
-* Pour définir le clavier Bépo et ses variantes, il faut modifier les
-  fichiers suivants :
- - symbols/fr : c'est le fichier principal où se trouve les définitions des
-                claviers français.
- - symbols/symbols.dir : index des claviers : il faut ajouter les noms des claviers Bépo.
+* Pour dÃ©finir le clavier BÃ©po et ses variantes, il faut modifier les
+  fichiers suivantsÂ :
+ - symbols/fr : c'est le fichier principal oÃ¹ se trouve les dÃ©finitions des
+                claviers franÃ§ais.
+ - symbols/symbols.dir : index des claviersÂ : il faut ajouter les noms des claviers BÃ©po.
  - rules/base.lst et
- - rules/base.xml.in : Il s'agit de la description (dans toutes les langues) des claviers définis.
- - debian/changelog pour déclarer le patch debian.
+ - rules/base.xml.in : Il s'agit de la description (dans toutes les langues) des claviers dÃ©finis.
+ - debian/changelog pour dÃ©clarer le patch debian.
 
 
-* La définition du clavier Bépo (dans le fichier symbols/fr) a été
-  dérivé de la définition du clavier « oss » de Nicolas Mailhot : j'ai
-  récupéré le dessin du clavier (en UTF-8) et des infos diverses sur
+* La dÃ©finition du clavier BÃ©po (dans le fichier symbols/fr) a Ã©tÃ©
+  dÃ©rivÃ© de la dÃ©finition du clavier Â« oss Â» de Nicolas MailhotÂ : j'ai
+  rÃ©cupÃ©rÃ© le dessin du clavier (en UTF-8) et des infos diverses sur
   le codage XKB...
 
 
-* Afin de permettre à ceux qui ont choisi la disposition 'bepo' sans préciser la
+* Afin de permettre Ã  ceux qui ont choisi la disposition 'bepo' sans prÃ©ciser la
   variante (comme c'est le cas dans les sources Xorg depuis 2006), on
-  garde toujours ce nom de définition, en le faisant correspondre à la
-  dernière version du clavier.
+  garde toujours ce nom de dÃ©finition, en le faisant correspondre Ã  la
+  derniÃ¨re version du clavier.
 
 
 * Pour chaque nouvelle version, rajouter son nom et sa variante Latin9
@@ -54,19 +54,19 @@ version=1.0~cvs.20070916
              symbols/symbols.dir (et surtout debian/symbols.dir)
              symbols/fr
 
-dans symbols/fr, rajouter un squelette du genre :
+dans symbols/fr, rajouter un squelette du genreÂ :
 
-// Version 0.6.5.1 :
+// Version 0.6.5.1Â :
 
 partial alphanumeric_keys
 xkb_symbols "bepo_651" {
 
-    // Include previous version :
+    // Include previous versionÂ :
     include "fr(bepo_64)"
 
     name[Group1]= "France - Bepo, ergonomic, Dvorak way, v0.6.5.1";
 
-    // Modifications depuis la version précédente :
+    // Modifications depuis la version prÃ©cÃ©denteÂ :
     // * 
 };
 
@@ -84,140 +84,143 @@ xkb_symbols "bepo_651_latin9" {
 
 
 * Les modifications pour une version de clavier sont sur le wiki
-  http://www.clavier-dvorak.org/wiki/Accueil, par exemple :
+  http://www.clavier-dvorak.org/wiki/Accueil, par exempleÂ :
   http://www.clavier-dvorak.org/wiki/Version_0.6.6.
 
 
 * S'aider du fichier http://www.cl.cam.ac.uk/~mgk25/ucs/keysyms.txt pour
-  trouver comment s'appellent les codes des touches !
+  trouver comment s'appellent les codes des touchesÂ !
 
 
-* Pour chaque changement :
+* Pour chaque changementÂ :
   - l'afficher dans les commentaires de la version en cours
-  - appliquer la modif en décrivant les changements des touches
-    impactées (attention, déplacement = ajout ET suppression d'un
+  - appliquer la modif en dÃ©crivant les changements des touches
+    impactÃ©es (attention, dÃ©placement = ajout ET suppression d'un
     symbole)
-  - reporter la modification dans la définition _latin9 au besoin
-  - modifier le dessin du clavier final (en tête de toutes les
-    définitions Bépo dans symbols/fr)
-  - modifier la définition globale (non incrémentale) « bépo » en fin
+  - reporter la modification dans la dÃ©finition _latin9 au besoin
+  - modifier le dessin du clavier final (en tÃªte de toutes les
+    dÃ©finitions BÃ©po dans symbols/fr)
+  - modifier la dÃ©finition globale (non incrÃ©mentale) Â« bÃ©po Â» en fin
     du fichier symbols/fr
 
 
-* Mettre à jour le changelog du paquet Debian : debian/changelog (en UTF-8 !)
-  par exemple avec la commande :
+* Mettre Ã  jour le changelog du paquet DebianÂ : debian/changelog (en UTF-8Â !)
+  par exemple avec la commandeÂ :
   env LANG=fr_FR.UTF-8 \
-      DEBEMAIL="Frédéric Boiteux <fboiteux@free.fr>" LOGNAME=fred \
+      DEBEMAIL="FrÃ©dÃ©ric Boiteux <fboiteux@free.fr>" LOGNAME=fred \
       dch --preserve --increment
   -> changera debian/changelog
 
 
-* ATTENTION : dans le paquet Debian, le fichier symbols/symbols.dir
-  (comme tous les fichiers .dir) est écrasé à la fabrication du paquet
-  par le fichier debian/symbols.dir : Il faut donc recopier
-  symbols/symbols.dir dans debian/symbols.dir avant toute tentative
-  de fabrication ! !
+* ATTENTIONÂ : dans le paquet Debian, le fichier symbols/symbols.dir
+  (comme tous les fichiers .dir) est Ã©crasÃ© Ã  la fabrication du paquet
+  par le fichier debian/symbols.dirÂ : Il faut donc recopier
+  symbols/symbols.dir dans debian/symbols.dirÂ avant toute tentative
+  de fabrication !Â !
   -> le patch changera debian/symbols.dir
 
 
-* Après une nouvelle version, créer un nouveau patch (permet d'avoir une vue globale des
-  changements effectués) :
+* AprÃ¨s une nouvelle version, crÃ©er un nouveau patch (permet d'avoir une vue globale des
+  changements effectuÃ©s)Â :
   diff -Naur $paquet-$version.REF $paquet-$version > ${paquet}_$version......1bepo....patch
 
 
 
-* Pour l'intégration des compositions de touches spéciales au bépo
+* Pour l'intÃ©gration des compositions de touches spÃ©ciales au bÃ©po
   (notamment l'utilisation des touches mortes barre, monnaie,
-  grecque...), il faut les intégrer dans le fichier Compose de la
-  locale : actuellement, pour les locales françaises (et européennes
-  de manière générale), on utilise les mêmes codes que pour la locale
-  en_US : /usr/share/X11/locale/en_US.UTF-8/Compose
+  grecque...), il faut les intÃ©grer dans le fichier Compose de la
+  localeÂ : actuellement, pour les locales franÃ§aises (et europÃ©ennes
+  de maniÃ¨re gÃ©nÃ©rale), on utilise les mÃªmes codes que pour la locale
+  en_USÂ : /usr/share/X11/locale/en_US.UTF-8/Compose
 
   Ce fichier est contenu dans le paquet libx11-data, du paquet source libx11.
 
-  J'ai un moment essayé de créer un fichier Compose spécial pour les
-  locales francophones (et bépo) sous la dénomination fr_FR.UTF-8,
+  J'ai un moment essayÃ© de crÃ©er un fichier Compose spÃ©cial pour les
+  locales francophones (et bÃ©po) sous la dÃ©nomination fr_FR.UTF-8,
   mais cela complique pas mal les choses, et c'est pour l'instant
   inutile car on ne fait que *rajouter* des compositions.
-  Pour info, il fallait modifier les fichiers suivant :
-  · nls/fr_FR.UTF-8 (copie du répertoire nls/en_US.UTF-8 et ajout
-                        des compositions Bépo)
-  · configure
-  · configure.ac
-  · debian/changelog
-  · debian/libx11-data.install
-  · debian/patches/005_Compose_fix_latin1_UTF8.diff
-  · nls/Makefile.am
-  · nls/Makefile.in
-  · nls/compose.dir.pre
-  · nls/locale.dir.pre
+  Pour info, il fallait modifier les fichiers suivantÂ :
+  Â· nls/fr_FR.UTF-8 (copie du rÃ©pertoire nls/en_US.UTF-8 et ajout
+                        des compositions BÃ©po)
+  Â· configure
+  Â· configure.ac
+  Â· debian/changelog
+  Â· debian/libx11-data.install
+  Â· debian/patches/005_Compose_fix_latin1_UTF8.diff
+  Â· nls/Makefile.am
+  Â· nls/Makefile.in
+  Â· nls/compose.dir.pre
+  Â· nls/locale.dir.pre
 
-  J'ai donc finalement rajouté les définitions Bépo à celles de la
-  locale en_US. Voici ce qu'il faut modifier :
-  · debian/changelog
-  · debian/patches/series
-  · debian/patches/099_Compositions_Bepo.diff
+  J'ai donc finalement rajoutÃ© les dÃ©finitions BÃ©po Ã  celles de la
+  locale en_US. Voici ce qu'il faut modifierÂ :
+  Â· debian/changelog
+  Â· debian/patches/series
+  Â· debian/patches/099_Compositions_Bepo.diff
 
-  Pour rajouter en fin les compositions Bépo, partir du répertoire
-  d'origine et appliquer déjà les patches actuels :
+  Pour rajouter en fin les compositions BÃ©po, partir du rÃ©pertoire
+  d'origine et appliquer dÃ©jÃ  les patches actuelsÂ :
     cp -pr libx11-1.0.3orig libx11-1.0.3old
     (cd libx11-1.0.3old && ./debian/rules patch)
     ...
     Applying patches...successful.
 
-    copier ce répertoire et y ajouter les définitions Bépo :
+    copier ce rÃ©pertoire et y ajouter les dÃ©finitions BÃ©poÂ :
     cp -pr libx11-1.0.3old libx11-1.0.3mod6600
-      [ajouts des déf. Bépo en fin de
+      [ajouts des dÃ©f. BÃ©po en fin de
        libx11-1.0.3mod6600/nls/en_US.UTF-8/Compose.pre ]
-    Créer le patch :
+    CrÃ©er le patchÂ :
     diff -Naur libx11-1.0.3old/nls/en_US.UTF-8/Compose.pre libx11-1.0.3mod6600/nls/en_US.UTF-8/Compose.pre> libx11-1.0.3.6600/debian/patches/099_Compositions_Bepo.diff
     Et ajout de 099_Compositions_Bepo.diff dans debian/patches/series
 
-* soumettre les modifs dans svn, et faire un TAG approprié.
+(on peut rÃ©cupÃ©rer la derniÃ¨re version des compositions BÃ©po parÂ :
+  wget "http://svn.tuxfamily.org/dvorak/svn/pilotes/trunk/xkb/XCompose?revision=HEAD&root=dvorak_svn" -O XCompose.bÃ©po )
+
+* soumettre les modifs dans svn, et faire un TAG appropriÃ©.
 
 
-* faire une copie du répertoire source modifié (pour + de précautions)
-  et construire dedans le paquet :
+* faire une copie du rÃ©pertoire source modifiÃ© (pour + de prÃ©cautions)
+  et construire dedans le paquetÂ :
   cp -pr $paquet-$version $paquet-${version}build
   (cd $paquet-${version}build && debuild)
 
-Note : dans la version 1.0~cvs.20070916-1, j'ai dû également modifier
+NoteÂ : dans la version 1.0~cvs.20070916-1, j'ai dÃ» Ã©galement modifier
 le fichier debian/patches/resync_rules_base.diff dans sa destruction
-( ?) du fichier base.lst ...
+(Â ?) du fichier base.lst ...
 
 
-* installer sur le système cible le paquet xkb-data généré
-  (attention : ceci n'est utilisable que sur les systèmes utilisant
-  *déjà* xkb-data, c'est-à-dire je crois ceux utitisant Xorg)
+* installer sur le systÃ¨me cible le paquet xkb-data gÃ©nÃ©rÃ©
+  (attentionÂ : ceci n'est utilisable que sur les systÃ¨mes utilisant
+  *dÃ©jÃ * xkb-data, c'est-Ã -dire je crois ceux utitisant Xorg)
 
-  // vérifie que l'on a bien déjà un paquet xkb-data installé :
+  // vÃ©rifie que l'on a bien dÃ©jÃ  un paquet xkb-data installÃ©Â :
   $ dpkg -l xkb-data
-Souhait=inconnU/Installé/suppRimé/Purgé/H=à garder
-| État=Non/Installé/fichier-Config/dépaqUeté/échec-conFig/H=semi-installé
-|/ Err?=(aucune)/H=à garder/besoin Réinstallation/X=les deux (État,Err: majuscule=mauvais)
+Souhait=inconnU/InstallÃ©/suppRimÃ©/PurgÃ©/H=Ã  garder
+| Ã‰tat=Non/InstallÃ©/fichier-Config/dÃ©paqUetÃ©/Ã©chec-conFig/H=semi-installÃ©
+|/ Err?=(aucune)/H=Ã  garder/besoin RÃ©installation/X=les deux (Ã‰tat,Err: majuscule=mauvais)
 ||/ Nom            Version        Description
 +++-==============-==============-============================================
 ii  xkb-data       0.9-4          X Keyboard Extension (XKB) configuration dat
 
-  // Si c'est bien le cas, installe notre version modifiée :
+  // Si c'est bien le cas, installe notre version modifiÃ©eÂ :
   # dpkg -i ./xkb-data_0.9-4.1bepo6600_all.deb
 
-* sélectionner un clavier :
-  - sous Gnome, utiliser dans les préférences le choix de l'agencement
+* sÃ©lectionner un clavierÂ :
+  - sous Gnome, utiliser dans les prÃ©fÃ©rences le choix de l'agencement
     du clavier
-  - en ligne de commande :
+  - en ligne de commandeÂ :
     setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_66 -v
-    ou plus simplement :
+    ou plus simplementÂ :
     setxkbmap fr bepo_66
 
-* pour avoir une idée du clavier courant :
+* pour avoir une idÃ©e du clavier courantÂ :
   xkbprint -color -pict all -label symbols -o clavier.ps ${DISPLAY:-:0} && gv clavier.ps
 
 
-* Pour savoir les réglages courants de XKB :
+* Pour savoir les rÃ©glages courants de XKBÂ :
   setxkbmap -print
 
-Exemple : $ setxkbmap -print
+ExempleÂ : $ setxkbmap -print
 xkb_keymap {
         xkb_keycodes  { include "xfree86+aliases(azerty)"       };
         xkb_types     { include "complete"      };
@@ -225,17 +228,17 @@ xkb_keymap {
         xkb_symbols   { include "pc(pc105)+fr(bepo_63f)+fr(oss):2+us:3+group(shifts_toggle)+ctrl(nocaps)+keypad(oss)"   };
         xkb_geometry  { include "pc(pc105)"     };
 };
-On voit que j'utilise la définition d'un clavier 105 touches
-(français), avec la disposition bepo_63f, la disposition française en
-2ème groupe et l'U.S. en 3ème, que je peux passer de l'une à la
-suivante par les 2 shifts en même temps, que j'ai inhibé la touche
-CapsLock (devient un Ctrl supplémentaire) et que la disposition de
-pavé numérique « oss » est activée...
+On voit que j'utilise la dÃ©finition d'un clavier 105 touches
+(franÃ§ais), avec la disposition bepo_63f, la disposition franÃ§aise en
+2Ã¨me groupe et l'U.S. en 3Ã¨me, que je peux passer de l'une Ã  la
+suivante par les 2 shifts en mÃªme temps, que j'ai inhibÃ© la touche
+CapsLock (devient un Ctrl supplÃ©mentaire) et que la disposition de
+pavÃ© numÃ©rique Â« oss Â» est activÃ©e...
 
 
-* si la sélection d'un nouveau clavier ne fonctionne pas (erreur de
+* si la sÃ©lection d'un nouveau clavier ne fonctionne pas (erreur de
   syntaxe dans un fichier), on peut s'inspirer de la commande suivante
-  pour avoir un message d'erreur exploitable :
+  pour avoir un message d'erreur exploitableÂ :
 
   setxkbmap -rules xfree86 -model pc105 -layout fr -variant bepo_6211 -print | \
   xkbcomp -xkm -o bepo_6211.xkm -
@@ -247,6 +250,6 @@ Error:            Error interpreting include file "fr"
                   Abandoning symbols file "(null)"
 
 
-* À lire également :
+* Ã€ lire Ã©galementÂ :
   http://wiki.mandriva.com/fr/Personnaliser_le_clavier#Les_fichiers_de_configuration_du_clavier_et_le_syst.C3.A8me_XKb
   http://wiki.mandriva.com/fr/Quelques_keysyms_repr%C3%A9sentant_des_caract%C3%A8res_affichables

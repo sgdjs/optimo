@@ -1,0 +1,1365 @@
+diff -Naur xkeyboard-config-0.9.orig/debian/changelog xkeyboard-config-0.9.6700/debian/changelog
+--- xkeyboard-config-0.9.orig/debian/changelog	2008-07-20 22:01:33.000000000 +0200
++++ xkeyboard-config-0.9.6700/debian/changelog	2008-07-22 17:39:06.000000000 +0200
+@@ -1,3 +1,57 @@
++xkeyboard-config (0.9-4.1bepo6700) unstable; urgency=low
++
++  * Non-maintainer upload (Ĳsselmeer release :-).
++  * add new « Bépo » french Dvorak layout up to 0.6.7 version.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 22 Jul 2008 17:37:25 +0200
++
++xkeyboard-config (0.9-4.1bepo6600) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * add new « Bépo » french Dvorak layout up to 0.6.6 version.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 17 Jun 2008 18:59:30 +0200
++
++xkeyboard-config (0.9-4.1bepo6510) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * add new « Bépo » french Dvorak layout up to 0.6.5.1 version.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Sat, 22 Mar 2008 08:35:21 +0100
++
++xkeyboard-config (0.9-4.1bepo6400) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * Add new « Bépo » french Dvorak layout (until 0.6.4 version).
++  * revert ¶ and § inversion from 6.2.2.4.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Sun, 11 Nov 2007 10:28:52 +0100
++
++xkeyboard-config (0.9-4.1bepo6300f2) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * Add a « bepo » variant which point to latest version
++    (i.e. 0.6.3) ; it's mainly designed for people having selected
++    bepo from Xorg's CVS snapshot...
++  * use « nbsp » include file when possible to factorize definitions.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Fri, 28 Sep 2007 21:22:01 +0200
++
++xkeyboard-config (0.9-4.1bepo6300f) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * Add new « Bépo » french Dvorak layout (until 0.6.3 version,
++    with my variant).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue,  1 Aug 2007 21:02:27 +0200
++
++xkeyboard-config (0.9-4.1bepo6224) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * Add new « Bépo » french Dvorak layout (until 6224 version).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue,  1 May 2007 20:34:12 +0200
++
+ xkeyboard-config (0.9-4) unstable; urgency=low
+ 
+   [ Denis Barbier ]
+diff -Naur xkeyboard-config-0.9.orig/debian/symbols.dir xkeyboard-config-0.9.6700/debian/symbols.dir
+--- xkeyboard-config-0.9.orig/debian/symbols.dir	2008-07-20 22:01:33.000000000 +0200
++++ xkeyboard-config-0.9.6700/debian/symbols.dir	2008-07-20 22:12:18.000000000 +0200
+@@ -157,6 +157,32 @@
+ --p----- a------- fo(nodeadkeys)
+ --p----- a------- fr(Sundeadkeys)
+ -dp----- a------- fr(basic)
++--p----- a------- fr(bepo_6211)
++--p----- a------- fr(bepo_6211_latin9)
++--p----- a------- fr(bepo_6212)
++--p----- a------- fr(bepo_6212_latin9)
++--p----- a------- fr(bepo_6220)
++--p----- a------- fr(bepo_6220_latin9)
++--p----- a------- fr(bepo_6221)
++--p----- a------- fr(bepo_6221_latin9)
++--p----- a------- fr(bepo_6222)
++--p----- a------- fr(bepo_6222_latin9)
++--p----- a------- fr(bepo_6224)
++--p----- a------- fr(bepo_6224_latin9)
++--p----- a------- fr(bepo_63)
++--p----- a------- fr(bepo_63_latin9)
++--p----- a------- fr(bepo_63f)
++--p----- a------- fr(bepo_63f_latin9)
++--p----- a------- fr(bepo_64)
++--p----- a------- fr(bepo_64_latin9)
++--p----- a------- fr(bepo_651)
++--p----- a------- fr(bepo_651_latin9)
++--p----- a------- fr(bepo_66)
++--p----- a------- fr(bepo_66_latin9)
++--p----- a------- fr(bepo_67)
++--p----- a------- fr(bepo_67_latin9)
++--p----- a------- fr(bepo)
++--p----- a------- fr(bepo_latin9)
+ --p----- a------- fr(dvorak)
+ --p----- a------- fr(latin9)
+ --p----- a------- fr(latin9_Sundeadkeys)
+diff -Naur xkeyboard-config-0.9.orig/rules/base.lst xkeyboard-config-0.9.6700/rules/base.lst
+--- xkeyboard-config-0.9.orig/rules/base.lst	2006-10-07 23:22:17.000000000 +0200
++++ xkeyboard-config-0.9.6700/rules/base.lst	2008-07-20 22:10:27.000000000 +0200
+@@ -301,7 +301,33 @@
+   latin9          fr: (Legacy) Alternative
+   latin9_nodeadkeys fr: (Legacy) Alternative, eliminate dead keys
+   latin9_sundeadkeys fr: (Legacy) Alternative, Sun dead keys
+-  dvorak          fr: Dvorak
++  bepo_6211        fr: Bepo, ergonomic, Dvorak way, v6.2.1.1
++  bepo_6211_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.1.1, latin-9 only
++  bepo_6212        fr: Bepo, ergonomic, Dvorak way, v6.2.1.2
++  bepo_6212_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.1.2, latin-9 only
++  bepo_6220        fr: Bepo, ergonomic, Dvorak way, v6.2.2.0
++  bepo_6220_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.2.0, latin-9 only
++  bepo_6221        fr: Bepo, ergonomic, Dvorak way, v6.2.2.1
++  bepo_6221_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.2.1, latin-9 only
++  bepo_6222        fr: Bepo, ergonomic, Dvorak way, v6.2.2.2
++  bepo_6222_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.2.2, latin-9 only
++  bepo_6224        fr: Bepo, ergonomic, Dvorak way, v6.2.2.4
++  bepo_6224_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.2.4, latin-9 only
++  bepo_63          fr: Bepo, ergonomic, Dvorak way, v0.6.3
++  bepo_63_latin9   fr: Bepo, ergonomic, Dvorak way, v0.6.3, latin-9 only
++  bepo_63f         fr: Bepo, ergonomic, Dvorak way, v0.6.3(fred)
++  bepo_63f_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.3(fred), latin-9 only
++  bepo_64          fr: Bepo, ergonomic, Dvorak way, v0.6.4
++  bepo_64_latin9   fr: Bepo, ergonomic, Dvorak way, v0.6.4, latin-9 only
++  bepo_651        fr: Bepo, ergonomic, Dvorak way, v0.6.5.1
++  bepo_651_latin9 fr: Bepo, ergonomic, Dvorak way, v0.6.5.1, latin-9 only
++  bepo_66         fr: Bepo, ergonomic, Dvorak way, v0.6.6
++  bepo_66_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.6, latin-9 only
++  bepo_67         fr: Bepo, ergonomic, Dvorak way, v0.6.7
++  bepo_67_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.7, latin-9 only
++  bepo            fr: Bepo, ergonomic, Dvorak way
++  bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
++  dvorak          fr: (Legacy) Dvorak
+   mac             fr: Macintosh
+   generic         gh: Multilingual
+   akan            gh: Akan
+diff -Naur xkeyboard-config-0.9.orig/rules/base.xml.in xkeyboard-config-0.9.6700/rules/base.xml.in
+--- xkeyboard-config-0.9.orig/rules/base.xml.in	2006-10-02 20:42:40.000000000 +0200
++++ xkeyboard-config-0.9.6700/rules/base.xml.in	2008-07-20 22:11:23.000000000 +0200
+@@ -1576,8 +1576,164 @@
+         </variant>
+         <variant>
+           <configItem>
++            <name>bepo_6211</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.1.1</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6211_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.1.1, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6212</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.1.2</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6212_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.1.2, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6220</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.2.0</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6220_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.2.0, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6221</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.2.1</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6221_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.2.1, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6222</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.2.2</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6222_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.2.2, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6224</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.2.4</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_6224_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v6.2.2.4, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_63</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.3</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_63_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.3, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_63f</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.3(fred)</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_63f_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.3(fred), latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_64</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.4</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_64_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.4, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_651</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.5.1</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_651_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.5.1, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_66</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.6</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_66_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.6, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_67</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.7</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_67_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v0.6.7, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo</name>
++            <_description>Bepo, ergonomic, Dvorak way</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
+             <name>dvorak</name>
+-            <_description>Dvorak</_description>
++            <_description>(Legacy) Dvorak</_description>
+           </configItem>
+         </variant>
+         <variant>
+diff -Naur xkeyboard-config-0.9.orig/symbols/fr xkeyboard-config-0.9.6700/symbols/fr
+--- xkeyboard-config-0.9.orig/symbols/fr	2006-10-04 21:29:26.000000000 +0200
++++ xkeyboard-config-0.9.6700/symbols/fr	2008-07-22 17:35:24.000000000 +0200
+@@ -1,4 +1,4 @@
+-// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $
++// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $ -*- c -*-
+ 
+ // based on a keyboard map from an 'xkb/symbols/fr' file
+ //
+@@ -429,13 +429,1014 @@
+     key <AD11>	{ [	asciicircum,  	   diaeresis,          asciitilde,           quoteright ] };
+ };
+ 
++// Bépo : Improved ergonomic french keymap using Dvorak method.
++// Built by community on 'Dvorak Fr' mailing list :
++// dvorak-fr@gpl.insa-lyon.fr and on its wiki : http://gpl.insa-lyon.fr/Dvorak-Fr/
++// and now http://www.clavier-dvorak.org/wiki/
++// XOrg integration (6.2.1.1 version) in 2006 by Frédéric Boiteux <fboiteux @ free.fr>
++//
++// Bépo layout (0.6.7 version) for a pc105 keyboard (french) :
++// ┌────┐
++// │ S A│   S = Shift,  A = AltGr + Shift
++// │ s a│   s = normal, a = AltGr
++// └────┘
++//
++// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
++// │ # § │ 1 „ │ 2 “ │ 3 ” │ 4   │ 5   │ 6   │ 7 ° │ 8 ′ │ 9 ″ │ 0   │ ^   │ `   ┃ ⌫ Retour┃
++// │ $ – │ " — │ « < │ » > │ ( [ │ ) ] │ @ ¬ │ + ± │ - − │ / ÷ │ * × │ = ≠ │ % ‰ ┃  arrière┃
++// ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
++// ┃       ┃ B ¦ │ É ˝ │ P ¶ │ O Œ │ È ` │ ! ¡ │ V   │ D Ð │ L   │ J Ĳ │ Z Ə │ W   ┃Entrée ┃
++// ┃Tab ↹  ┃ b | │ é ˊ │ p & │ o œ │ è ` │ ˆ ˇ │ v   │ d ð │ l / │ j ĳ │ z ə │ w ̆ ┃   ⏎   ┃
++// ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
++// ┃        ┃ A Æ │ U Ù │ I ˙ │ E ¤ │ ;   │ C ſ │ T Þ │ S ẞ │ R ™ │ N Ñ │ M º │ Ç , ┃      ┃
++// ┃Maj ⇬   ┃ a æ │ u ù │ i ̈ │ e € │ , ’ │ c © │ t þ │ s ß │ r ® │ n ñ │ m ¯ │ ç ¸ ┃      ┃
++// ┣━━━━━━━┳┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
++// ┃       ┃ Ê   │ À   │ Y ‘ │ X ’ │ : · │ K ˜ │ ?   │ Q   │ G   │ H ‡ │ F ª ┃             ┃
++// ┃Shift ⇧┃ ê / │ à \ │ y { │ x } │ . … │ k ~ │ ' ¿ │ q ˚ │ g µ │ h † │ f ˛ ┃Shift ⇧      ┃
++// ┣━━━━━━━╋━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
++// ┃       ┃       ┃       ┃ Espace inséc.   Espace inséc. fin ┃       ┃       ┃       ┃
++// ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣ (Espace)      _               ␣ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
++// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
++
++
++// Version 6.2.1.1 :
++partial alphanumeric_keys
++xkb_symbols "bepo_6211" {
++
++    include "level3(ralt_switch)"
++    include "nbsp(level2)"
++    include "keypad(oss)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.1.1";
++
++    // First row
++    key <TLDE> { [              at,       dollar,     numbersign                 ] }; // @ $ #
++    key <AE01> { [      underscore,            1,      braceleft,    onesuperior ] }; // _ 1 { ¹
++    key <AE02> { [        quotedbl,            2,     braceright,    twosuperior ] }; // " 2 } ²
++    key <AE03> { [   guillemotleft,            3,           less,  threesuperior ] }; // « 3 < ³
++    key <AE04> { [  guillemotright,            4,        greater,         degree ] }; // » 4 > °
++    key <AE05> { [       parenleft,            5,    bracketleft, dead_abovering ] }; // ( 5 [ ˚
++    key <AE06> { [      parenright,            6,   bracketright                 ] }; // ) 6 ]
++    key <AE07> { [            plus,            7,      plusminus                 ] }; // + 7 ±
++    key <AE08> { [           minus,            8,        notsign                 ] }; // - 8 ¬
++    key <AE09> { [        asterisk,            9,       multiply                 ] }; // * 9 ×
++    key <AE10> { [           slash,            0,       division                 ] }; // / 0 ÷
++    key <AE11> { [           equal,  asciicircum,         macron                 ] }; // = ^ ¯
++    key <AE12> { [         percent,           mu                                 ] }; // % µ
++
++    // Second row
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD02> { [          eacute,       Eacute,      ampersand,     dead_acute ] }; // é É & ˊ
++    key <AD03> { [               p,            P,        section,      paragraph ] }; // p P § ¶
++    key <AD04> { [               o,            O,             oe,             OE ] }; // o O œ Œ
++    key <AD05> { [          egrave,       Egrave,          grave,     dead_grave ] }; // è È ` `
++    key <AD06> { [        ccedilla,     Ccedilla                                 ] }; // ç Ç
++    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD08> { [               d,            D,            eth,            ETH ] }; // d D ð Ð
++    key <AD09> { [               l,            L,       sterling                 ] }; // l L £
++    key <AD10> { [               f,            F,    ordfeminine                 ] }; // f F ª
++    key <AD11> { [               j,            J                                 ] }; // j J
++    key <AD12> { [               z,            Z                                 ] }; // z Z
++
++    // Third row
++    key <AC01> { [               a,            A,             ae,             AE ] }; // a A æ Æ
++    key <AC02> { [               u,            U,         ugrave,         Ugrave ] }; // u U ù Ù
++    key <AC03> { [               i,            I, dead_diaeresis,     dead_caron ] }; // i I ̈ ˇ
++    key <AC04> { [               e,            E,       EuroSign                 ] }; // e E €
++    key <AC05> { [           comma,     question,   questiondown                 ] }; // , ? ¿
++    key <AC06> { [               c,            C,      copyright,           cent ] }; // c C © ¢
++    key <AC07> { [               t,            T,          thorn,          Thorn ] }; // t T þ Þ
++    key <AC08> { [               s,            S,         ssharp                 ] }; // s S ß
++    key <AC09> { [               n,            N                                 ] }; // n N
++    key <AC10> { [               r,            R,     registered                 ] }; // r R ®
++    key <AC11> { [               m,            M,      masculine                 ] }; // m M º
++    key <BKSL> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
++
++    // Fourth row
++    key <LSGT> { [     ecircumflex,       ugrave,          slash                 ] }; // ê ù /
++    key <AB01> { [          agrave,       Agrave,     asciitilde,     dead_tilde ] }; // à À ~ ~
++    key <AB02> { [               h,            H,         exclam                 ] }; // h H !
++    key <AB03> { [               y,            Y,            yen                 ] }; // y Y ¥
++    key <AB04> { [          period,        colon,      backslash, periodcentered ] }; // . : \ ·
++    key <AB05> { [               k,            K                                 ] }; // k K
++    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
++    key <AB07> { [               q,            Q                                 ] }; // q Q
++    key <AB08> { [               g,            G                                 ] }; // g G
++    key <AB09> { [               x,            X                                 ] }; // x X
++    key <AB10> { [               w,            W                                 ] }; // w W
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6211_latin9" {
++
++    // Restricts the fr(bepo6211) layout to latin9 symbols
++
++    include "fr(bepo_6211)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v6.2.1.1, latin-9 only";
++
++    // at now, no difference (oss keypad excepted)
++};
++
++
++// Version 6.2.1.2 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6212" {
++
++    // Include previous version :
++    include "fr(bepo_6211)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.1.2";
++
++    // Modifications depuis la version précédente :
++    // ajout de ø et Ø sur la touche Q
++    // ajout de ñ et Ñ sur la touche N
++    key <AC09> { [               n,            N,         ntilde,         Ntilde ] }; // n N ñ Ñ
++    key <AB07> { [               q,            Q,         oslash,       Ooblique ] }; // q Q ø Ø
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6212_latin9" {
++
++    // Restricts the fr(bepo_6212) layout to latin9 symbols
++
++    include "fr(bepo_6212)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v6.2.1.2, latin-9 only";
++
++    // at now, no difference (oss keypad excepted)
++};
++
++
++// Version 6.2.2.0 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6220" {
++
++    // Include previous version :
++    include "fr(bepo_6212)"
++    include "nbsp(level3)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.2.0";
++
++    // Modifications depuis la version précédente :
++    // $ déplacé sur Alt-Gr k, # déplacé sur Shift @
++    // ¥ déplacé sur Alt-Gr Shift y
++    // ¿ déplacé sur Alt-Gr-Shift ,
++    // ! déplacé sur Alt-Gr ,
++    // \ déplacé sur Alt-Gr h
++    // { et } déplacés sur Alt-Gr y et Alt-Gr .
++    // ", « <, » >, ( [ et ) ] décalés d'un rang vers la gauche, _ sur 6
++    // échange Z <-> W
++    // L'espace insécable est déplacé sur AltGr Espace
++
++    key <TLDE> { [              at,   numbersign                                 ] }; // @ #
++    key <AE01> { [        quotedbl,            1,       quotedbl,    onesuperior ] }; // " 1   ¹
++    key <AE02> { [   guillemotleft,            2,           less,    twosuperior ] }; // « 2 < ²
++    key <AE03> { [  guillemotright,            3,        greater,  threesuperior ] }; // » 3 > ³
++    key <AE04> { [       parenleft,            4,    bracketleft,         degree ] }; // ( 4 [ °
++    key <AE05> { [      parenright,            5,   bracketright, dead_abovering ] }; // ) 5 ] ˚
++    key <AE06> { [      underscore,            6                                 ] }; // _ 6
++
++    key <AD12> { [               w,            W                                 ] }; // w W
++
++    key <AC05> { [           comma,     question,         exclam,   questiondown ] }; // , ? ! ¿
++
++    key <AB02> { [               h,            H,      backslash                 ] }; // h H \
++    key <AB03> { [               y,            Y,      braceleft,            yen ] }; // y Y { ¥
++    key <AB04> { [          period,        colon,     braceright, periodcentered ] }; // . : } ·
++    key <AB05> { [               k,            K,         dollar                 ] }; // k K $
++    key <AB07> { [               q,            Q,         oslash,       Ooblique ] }; // q Q ø Ø
++    key <AB10> { [               z,            Z                                 ] }; // z Z
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6220_latin9" {
++
++    // Restricts the fr(bepo_6220) layout to latin9 symbols
++
++    include "fr(bepo_6220)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v6.2.2.0, latin-9 only";
++
++    // at now, no difference (oss keypad excepted)
++};
++
++
++// Version 6.2.2.1 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6221" {
++
++    // Include previous version :
++    include "fr(bepo_6220)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.2.1";
++
++    // Modifications depuis la version précédente :
++    // échange Z <-> J
++    key <AD11> { [               z,            Z                                 ] }; // z Z
++
++    key <AB10> { [               j,            J                                 ] }; // j J
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6221_latin9" {
++
++    // Restricts the fr(bepo_6221) layout to latin9 symbols
++
++    include "fr(bepo_6221)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v6.2.2.1, latin-9 only";
++
++    // at now, no difference (oss keypad excepted)
++};
++
++
++// Version 6.2.2.2 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6222" {
++
++    // Include previous version :
++    include "fr(bepo_6221)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.2.2";
++
++    // Modifications depuis la version précédente :
++    // ù supprimé sur [ ê ], Ê mis à la place
++    // ° (degree) déplacé sur AltGr-Shift 7
++    // ˚ (dead_abovering) déplacé sur AltGr G
++    // guillemets (U201c) et (U201d) ajoutés sur [ AltGr-Shift 4 ] et [ AltGr-Shift 5 ]
++    // emdash (U2014) ajouté sur [ 1 ]
++    // minutes (U2032) et secondes (U0233) ajoutés sur AltGr-Shift 8 et AltGr-Shift 9
++    // (broken-bar = U00a6) ajouté sur [ AltGr-Shift b ]
++    // ellipsis (U2026) ajouté sur [ AltGr 6 ]
++    key <AE01> { [        quotedbl,            1,         emdash,    onesuperior ] }; // " 1 — ¹
++    key <AE04> { [       parenleft,            4,    bracketleft, leftdoublequotemark ] }; // ( 4 [ “
++    key <AE05> { [      parenright,            5,   bracketright, rightdoublequotemark ] }; // ) 5 ] ”
++    key <AE06> { [      underscore,            6,       ellipsis                 ] }; // _ 6 …
++    key <AE07> { [            plus,            7,      plusminus,         degree ] }; // + 7 ± °
++    key <AE08> { [           minus,            8,        notsign,        minutes ] }; // - 8 ¬ ′
++    key <AE09> { [        asterisk,            9,       multiply,        seconds ] }; // * 9 × ″
++
++    key <AD01> { [               b,            B,            bar,      brokenbar ] }; // b B | ¦
++
++    key <LSGT> { [     ecircumflex,  Ecircumflex,          slash                 ] }; // ê Ê /
++    key <AB08> { [               g,            G, dead_abovering                 ] }; // g G ˚
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6222_latin9" {
++
++    // Restricts the fr(bepo_6222) layout to latin9 symbols
++
++    include "fr(bepo_6222)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v6.2.2.2, latin-9 only";
++
++    key <AE01> { [        quotedbl,            1,       quotedbl,    onesuperior ] }; // " 1   ¹
++    key <AE04> { [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE06> { [      underscore,            6                                 ] }; // _ 6
++    key <AE08> { [           minus,            8,        notsign                 ] }; // - 8 ¬
++    key <AE09> { [        asterisk,            9,       multiply                 ] }; // * 9 ×
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++};
++
++
++// Version 6.2.2.4 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6224" {
++
++    // Include previous version :
++    include "fr(bepo_6222)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.2.4";
++
++    // Modifications depuis la version précédente :
++    // NO-BREAK SPACE U+00A0 est déplacé sur Shift+SPACE,
++    //     NARROW NO-BREAK SPACE U+202F est placé sur Shift+AltGr+SPACE.
++    // inversion H <-> Y (le symbole Yen suit le Y)
++    // MINUS U+2212 ( − ) 1/2 cadratin et EM-DASH U+2014 ( — ) plein cadratin ont été retenus
++    //     pour les tirets moyens et longs.
++    // Le signe typographique MINUS est placé sur la touche du HYPHEN-MINUS, ce qui réorganise
++    //     légèrement la disposition : ( ¬ ) passe sur la touche du ( = ) et le ( ¯ ) se décale
++    //     d'un vers la droite sur le ( % )
++    // Transformation du macron en dead_macron (U0304) (le macron reste accessible par :
++    //     dead_macron + espace)
++    // Ajout de la dead_breve (U0306) au dessus du dead_macron
++    // Le ( ! ) sur la touche ( , ) est supprimé au profit de celui sur la touche ( ^ )
++    // Le ( ¿ ) est déplacé sur la touche ( ^ ) pour aller rejoindre son copain ( ¡ )
++    // RIGHT SINGLE QUOTATION MARK U+2019 est intégré en temps qu'apostrophe typographique.
++    //     A titre expérimental, elle remplace l'APOSTROPHE U+0027 qui est déplacé sur en
++    //     altgr+( , ) afin de former un "groupement" de touches pour la prog, disponible avec
++    //     altgr et la main gauche.
++    // Naturellement le LEFT SINGLE QUOTATION MARK est ajouté à côté
++    // Inversion ( * ) <-> ( / ) pour faciliter l'accès au /
++    // Ajout de la dead_cedilla U+00B8 ( ¸ ) en AltGr sur le ( ç )
++    key <AE08> { [           minus,            8,          U2212,        minutes ] }; // - 8 − ′
++    key <AE09> { [           slash,            9,       division,        seconds ] }; // / 9 ÷ ″
++    key <AE10> { [        asterisk,            0,       multiply                 ] }; // * 0 ×
++    key <AE11> { [           equal,  asciicircum,        notsign                 ] }; // = ^ ¬
++    key <AE12> { [         percent,           mu,    dead_macron,     dead_breve ] }; // % µ ̄ ̆
++
++    key <AD06> { [        ccedilla,     Ccedilla,   dead_cedilla                 ] }; // ç Ç ¸
++
++    key <AC05> { [           comma,     question,     apostrophe                 ] }; // , ? '
++    key <BKSL> { [ dead_circumflex,       exclam,   questiondown,     exclamdown ] }; // ^ ! ¿ ¡
++
++    key <AB02> { [               y,            Y,      backslash,            yen ] }; // y Y \ ¥
++    key <AB03> { [               h,            H,      braceleft                 ] }; // h H {
++    key <AB06> { [ rightsinglequotemark, semicolon, leftsinglequotemark          ] }; // ’ ; ‘
++
++    // Note : pas de définition dans le fichier nbsp...
++    key <SPCE> { [           space, nobreakspace,          space,          U202F ] }; // ␣ (espace insécable) ␣ (espace insécable fin)
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_6224_latin9" {
++
++    // Restricts the fr(bepo_6224) layout to latin9 symbols
++
++    include "fr(bepo_6224)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v6.2.2.4, latin-9 only";
++
++    key <AE01> { [        quotedbl,            1,       quotedbl,    onesuperior ] }; // " 1   ¹
++    key <AE04> { [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE06> { [      underscore,            6                                 ] }; // _ 6
++    key <AE08> { [           minus,            8                                 ] }; // - 8
++    key <AE09> { [        asterisk,            9,       multiply                 ] }; // * 9 ×
++    key <AE12> { [         percent,           mu,         macron                 ] }; // % µ ¯
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++
++    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
++
++    // Note : on a besoin de redéfinir les niveaux 3 et 4,
++    // donc nbsp(level2) ne suffit pas !
++    key <SPCE> { [           space,  nobreakspace,         space,          space ] }; // ␣ (espace insécable) ␣ ␣
++};
++
++
++// Version 6.3 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_63" {
++
++    // Include previous version :
++    include "fr(bepo_6224)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v0.6.3";
++
++    // Modifications depuis la version précédente :
++    // Suppression du guillement-apostrophe « ’ » U+2019 en accès direct
++    // ainsi que le caractère associé « ‘ » U+2018
++    // le point d'interrogation inversé revient en AltGr+[ , ]
++    // le point d'exclamation inversé « ¡ » est descendu en AltGr+[ ^ ]
++    // dead_caron « ˇ » U+02C7 déplacé sur [ v ]
++    // dead_breve « ˘ » U+02D8 déplacé sur [ w ]
++    // dead_macron « ¯ » U+02C9 placé sur Shift+AltGr+[ w ]
++    // (car c'est l'opposé de la brève)
++    // dead dot above (point en chef) « ˙ » U+02D9 placé sur AltGr+[ i ]
++    // dagger (obèle) « † » U+2020 et double dagger (double obèle) « ‡ » U+2021 rajoutés sur [ j ]
++    // Ajout du symbole pour-mille « ‰ » U+2030 en AltGr-[ % ]
++
++    key <AE12> { [         percent,           mu,          U2030                 ] }; // % µ ‰
++
++    key <AD07> { [               v,            V,     dead_caron                 ] }; // v V ˇ
++    key <AD12> { [               w,            W,     dead_breve,    dead_macron ] }; // w W ̆ ̄
++
++    key <AC03> { [               i,            I, dead_diaeresis,  dead_abovedot ] }; // i I ̈ ˙
++    key <AC05> { [           comma,     question,   questiondown                 ] }; // , ? ¿
++
++    key <BKSL> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
++
++    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
++    key <AB10> { [               j,            J,         dagger,   doubledagger ] }; // j J † ‡
++
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_63_latin9" {
++
++    // Restricts the fr(bepo_63) layout to latin9 symbols
++
++    include "fr(bepo_63)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v0.6.3, latin-9 only";
++
++    key <AE01> { [        quotedbl,            1,       quotedbl,    onesuperior ] }; // " 1   ¹
++    key <AE04> { [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE06> { [      underscore,            6                                 ] }; // _ 6
++    key <AE08> { [           minus,            8                                 ] }; // - 8
++    key <AE09> { [           slash,            9,       division                 ] }; // / 9 ×
++    key <AE12> { [         percent,           mu                                 ] }; // % µ
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD12> { [               w,            W,           w,            macron ] }; // w W   ̄
++
++    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
++
++    key <AB10> { [               j,            J                                 ] }; // j J
++
++    // Note : on a besoin de redéfinir les niveaux 3 et 4,
++    // donc nbsp(level2) ne suffit pas !
++    key <SPCE> { [           space,  nobreakspace,         space,          space ] }; // ␣ (espace insécable) ␣ ␣
++};
++
++
++// Version 6.3 (variante Fred) :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_63f" {
++
++    // Include previous version :
++    include "fr(bepo_63)"
++    include "nbsp(level4)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v0.6.3(fred)";
++
++    // Modifications depuis la version précédente :
++    // Ajout de « $ » sur [ @ ]
++    // L'espace insécable est déplacé sur AltGr-Shift Espace, pas de fin.
++
++    key <TLDE> { [              at,   numbersign,         dollar                 ] }; // @ # $
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_63f_latin9" {
++
++    // Restricts the fr(bepo_63f) layout to latin9 symbols
++
++    include "fr(bepo_63f)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v0.6.3(fred), latin-9 only";
++
++    key <AE01> { [        quotedbl,            1,       quotedbl,    onesuperior ] }; // " 1   ¹
++    key <AE04> { [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE06> { [      underscore,            6                                 ] }; // _ 6
++    key <AE08> { [           minus,            8                                 ] }; // - 8
++    key <AE09> { [           slash,            9,       division                 ] }; // / 9 ×
++    key <AE12> { [         percent,           mu                                 ] }; // % µ
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD12> { [               w,            W,           w,            macron ] }; // w W   ̄
++
++    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
++
++    key <AB10> { [               j,            J                                 ] }; // j J
++};
++
++
++// Version 0.6.4 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_64" {
++
++    // Include previous version :
++    include "fr(bepo_63)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v0.6.4";
++
++    // Modifications depuis la version précédente :
++    // * comportement du verrou des majuscules (Caps Lock) pour les
++    //   chiffres : avec le verrou activé, on a un accès direct aux
++    //   chiffres, grâce à l'ajout de l'indication :
++    //   type[group1] = "FOUR_LEVEL_SEMIALPHABETIC"
++    // * remplacement du signe moins mathématique « − » U+2212 qui se
++    //   trouve actellement en AltGr+{ - } par un tiret demi-quadratin
++    //   « – » (en dash U+2013) qui est le tiret d'incise
++    // * ajout du schwa « ə » (U+0259) et « Ə » (U+018F)
++    //   respectivement en AltGr+{ z } et AltGr+Shift+{ z }
++    // * inversion des touches { ^ } et { ç }
++    // * suppression du « ^ » en shift+{ = } remplacé par l'arrobe « @ »
++    // * déplacement du « $ » à la place de l'arrobe en accès direct
++    // * ajout du guillemet-apostrophe « ’ » (right simple quotation
++    //   mark U+2019) en AltGr+{ ' } et du guillemet-apostrophe
++    //   culbuté « ‘ » (left simple quotation mark U+2018) en
++    //   AltGr+Shift+{ ' }
++    // * déplacement de « ª » en AltGr+Shift+{ f } pour ajouter
++    //   l'ogonek mort « ˛ » (U+02DB) en AltGr+{ f }
++    // * déplacement de « º » en AltGr+Shift+{ m } afin de déplacer le
++    // * macron mort « ˉ » en AltGr+{ m }
++
++    key <TLDE> { [          dollar,   numbersign                                 ] }; // $ #
++
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash,    onesuperior ] }; // " 1 — ¹
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,    twosuperior ] }; // « 2 < ²
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater,  threesuperior ] }; // » 3 > ³
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft, leftdoublequotemark ] }; // ( 4 [ “
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright, rightdoublequotemark ] }; // ) 5 ] ”
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      underscore,            6,       ellipsis                 ] }; // _ 6 …
++    key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [            plus,            7,      plusminus,         degree ] }; // + 7 ± °
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,         endash,        minutes ] }; // - 8 – ′
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division,        seconds ] }; // / 9 ÷ ″
++    key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        asterisk,            0,       multiply                 ] }; // * 0 ×
++    key <AE11> { [           equal,           at,        notsign                 ] }; // = @ ¬
++
++    key <AD06> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
++    key <AD10> { [               f,            F,    dead_ogonek,    ordfeminine ] }; // f F ̨ ª
++    key <AD11> { [               z,            Z,          schwa,          SCHWA ] }; // z Z ə Ə
++    key <AD12> { [               w,            W,     dead_breve                 ] }; // w W ̆
++
++    key <AC11> { [               m,            M,    dead_macron,      masculine ] }; // m M ̄ º
++    key <BKSL> { [        ccedilla,     Ccedilla,   dead_cedilla                 ] }; // ç Ç ¸
++
++    key <AB05> { [               k,            K                                 ] }; // k K
++    key <AB06> { [      apostrophe,    semicolon, rightsinglequotemark, leftsinglequotemark ] }; // ' ; ’ ‘
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_64_latin9" {
++
++    // Restricts the fr(bepo_64) layout to latin9 symbols
++
++    include "fr(bepo_64)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v0.6.4, latin-9 only";
++
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,       quotedbl,    onesuperior ] }; // " 1   ¹
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      underscore,            6                                 ] }; // _ 6
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8                                 ] }; // - 8
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division                 ] }; // / 9 ×
++    key <AE12> { [         percent,           mu                                 ] }; // % µ
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD10> { [               f,            F,              f,    ordfeminine ] }; // f F   ª
++    key <AD11> { [               z,            Z                                 ] }; // z Z
++    key <AD12> { [               w,            W                                 ] }; // w W
++
++    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
++    key <AC11> { [               m,            M,         macron,      masculine ] }; // m M ̄ º
++
++    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
++    key <AB10> { [               j,            J                                 ] }; // j J
++
++    // Note : on a besoin de redéfinir les niveaux 3 et 4,
++    // donc nbsp(level2) ne suffit pas !
++    key <SPCE> { [           space,  nobreakspace,         space,          space ] }; // ␣ (espace insécable) ␣ ␣
++};
++
++
++// Version 0.6.5.1 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_651" {
++
++    // Include previous version :
++    include "fr(bepo_64)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v0.6.5.1";
++
++    // Modifications depuis la version précédente :
++    // * déplacement de « ¡ » et de « ¿ » en majuscule ;
++    // * déplacement du caron mort « ˇ » en AltGr +{^} ;
++    // * déplacement du guillemet-apostrophe « ’ » en AltGr+{,} ;
++    // * déplacement de « † » et « ‡ » de {j} vers {x} ;
++    // * ajout de « ĳ » (U+0133 ) et « Ĳ » (U+0132 ) en AltGr+{j} et Maj+AltGr+{j} ;
++    // * ajout d'une touche morte « lettre barrée » associée au caractère « / » en AltGr+{l}
++    //   (Ufe63, ou dead_stroke, connu avec Xorg >= 7.0.7) ;
++    // * ajout d'une touche morte « symbole monétaire » associée au caractère « ¤ »
++    //   en Maj.+AltGr+{e} (UFE67) ;
++    // * inversions des touches r/n et f/j ;
++    // * déplacement de « § » et « ¶ » sur AltGr+{$} et Maj+AltGr+{$} ;
++    // * déplacement de l'esperluette « & » en AltGr+{P} ;
++    // * déplacement de l'accent aigu mort « ´ » en AltGr+{é} ;
++    // * ajout du double accent aigu mort « ˝ » (U+02DD) en Maj+AltGr+{é} ;
++    // * déplacement de « … » sur {k} ;
++    // * suppression de « ø » et « Ø » ;
++    // * suppression de « £ » ;
++    // * suppression de « ¢ » ;
++    // * suppression de « ¥ » ;
++    // * déplacement du guillemet-apostrophe culbuté « ‘ » en AltGr+{'} ;
++    // * suppression des exposants « ¹ », « ² » et « ³ » ;
++    // * ajout de « ≤ » (U+2264 ) et « ≥ » (U+2265 ) en Maj+AltGr+{<} et Maj+AltGr+{>} ;
++    // Changements du 0.6.5.1 non réalisés ici :
++    // * ajout des caractères en exposants en accès circonflexe mort + chiffres ;
++    // * définition du comportement de la touche morte « lettre barrée » ;
++    // * définition du comportement de la touche morte « symbole monétaire » ;
++    // * comportement du rond en chef mort homogène sur chaque pilote : le presser deux fois donne le symbole degré ° ;
++    // * ajout des caractères « ǘ », « ǜ », « ǚ » et « ǖ » du pinyin utilisant « ü » (pilote windows uniquement).
++
++    key <TLDE> { [          dollar,   numbersign,        section,      paragraph ] }; // $ # § ¶
++
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash                 ] }; // " 1 —
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,  lessthanequal ] }; // « 2 < ≤
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater, greaterthanequal ] }; // » 3 > ≥
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      underscore,            6                                 ] }; // _ 6
++
++    key <AD02> { [          eacute,       Eacute,     dead_acute, dead_doubleacute ] }; // é É ˊ ˝
++    key <AD03> { [               p,            P,      ampersand                 ] }; // p P &
++    key <AD06> { [ dead_circumflex,       exclam,     dead_caron,     exclamdown ] }; // ^ ! ˇ ¡
++    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD09> { [               l,            L,          UFE63                 ] }; // l L ﹣
++    key <AD10> { [               j,            J,          U0133,          U0132 ] }; // j J ĳ Ĳ
++
++    key <AC04> { [               e,            E,       EuroSign,          UFE67 ] }; // e E € ﹧
++    key <AC05> { [           comma,     question, rightsinglequotemark, questiondown ] }; // , ? ’ ¿
++    key <AC06> { [               c,            C,      copyright                 ] }; // c C ©
++    key <AC09> { [               r,            R,     registered                 ] }; // r R ®
++    key <AC10> { [               n,            N,         ntilde,         Ntilde ] }; // n N ñ Ñ
++
++    key <AB02> { [               y,            Y,      backslash                 ] }; // y Y \
++    key <AB05> { [               k,            K,       ellipsis                 ] }; // k K …
++    key <AB06> { [      apostrophe,    semicolon, leftsinglequotemark            ] }; // ' ; ‘
++    key <AB07> { [               q,            Q                                 ] }; // q Q
++    key <AB09> { [               x,            X,         dagger,   doubledagger ] }; // x X † ‡
++    key <AB10> { [               f,            F,    dead_ogonek,    ordfeminine ] }; // f F ̨ ª
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_651_latin9" {
++
++    // Restricts the fr(bepo_651) layout to latin9 symbols
++
++    include "fr(bepo_651)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v0.6.5.1, latin-9 only";
++
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1                                 ] }; // " 1
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less                 ] }; // « 2 <
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater                 ] }; // » 3 >
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      underscore,            6                                 ] }; // _ 6
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8                                 ] }; // - 8
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division                 ] }; // / 9 ×
++    key <AE12> { [         percent,           mu                                 ] }; // % µ
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD02> { [          eacute,       Eacute,     dead_acute                 ] }; // é É ˊ
++    key <AD06> { [ dead_circumflex,       exclam, dead_circumflex,    exclamdown ] }; // ^ ! ^ ¡
++    key <AD10> { [               j,            J                                 ] }; // j J
++    key <AD11> { [               z,            Z                                 ] }; // z Z
++    key <AD12> { [               w,            W                                 ] }; // w W
++
++    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
++    key <AC05> { [           comma,     question,          comma,   questiondown ] }; // , ? , ¿
++    key <AC11> { [               m,            M,         macron,      masculine ] }; // m M ̄ º
++
++    key <AB05> { [               k,            K                                 ] }; // k K
++    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
++    key <AB09> { [               x,            X                                 ] }; // x X
++    key <AB10> { [               f,            F,              f,    ordfeminine ] }; // f F   ª
++
++    // Note : on a besoin de redéfinir les niveaux 3 et 4,
++    // donc nbsp(level2) ne suffit pas !
++    key <SPCE> { [           space,  nobreakspace,         space,          space ] }; // ␣ (espace insécable) ␣ ␣
++};
++
++
++// Version 0.6.6 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_66" {
++
++    // Include previous version :
++    include "fr(bepo_651)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v0.6.6";
++
++    // Modifications depuis la version précédente :
++    // * permutation des touches H → X → À → H ;
++    // * permutation des signes … ← ~(+ ~ mort) ← \ ← { ← } ← … ;
++    // * création d’une lettre grecque morte « µ » sur AltGr+G,
++    //   avec déplacement du rond en chef mort « ° » sur AltGr+Q ;
++    // * déplacement « _ » sur AltGr+Espace ;
++    // * déplacement de l’arrobe « @ » sur 6 ;
++    // * réinsertion du caractère ascii accent circonflexe « ^ » (U005E)
++    //   en Maj.+= ;
++    // * interversion de la touche morte accent grave et de l'accent grave
++    //   en AltGr+è ;
++    // * déplacement du tiret demi-cadratin « – » (en dash U+2013 ) en
++    // AltGr+Maj.+1 ;
++    // * réinsertion du signe moins mathématique « − » (U+2212 ) en AltGr+- ;
++    // * duplication de l’accent grave ascii « ` » en Maj.+%.
++    // * la barre morte est codée UFDD0, la monnaie morte UFDD1
++    //
++    // Changements du 0.6.6 non réalisés ici :
++    // *  ajout de caractères en indice avec le hatchek mort « ˇ » :
++    // ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ₊ ₋ ₌ ₍ ₎ ;
++    // * uniformisation du comportement des touches mortes de façon à
++    // ce que Macintosh™ et Windows™ se comportent comme Linux (X11) :
++    // ¨+Espace donne « " » et ´+Espace donne « ' » ;
++
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash,         endash ] }; // " 1 — –
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6                                 ] }; // @ 6
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          U2212,        minutes ] }; // - 8 − ′
++    key <AE11> { [           equal,  asciicircum,        notsign                 ] }; // = ^ ¬
++    key <AE12> { [         percent,        grave,          U2030                 ] }; // % ` ‰
++
++    key <AD05> { [          egrave,       Egrave,     dead_grave,          grave ] }; // è È ` `
++    key <AD09> { [               l,            L,          UFDD0                 ] }; // l L /
++
++    key <AC04> { [               e,            E,       EuroSign,          UFDD1 ] }; // e E € ¤
++
++    key <AB01> { [               x,            X,      backslash                 ] }; // x X \
++    key <AB02> { [               y,            Y,      braceleft                 ] }; // y Y {
++    key <AB03> { [          agrave,       Agrave,     braceright                 ] }; // à À }
++    key <AB04> { [          period,        colon,       ellipsis, periodcentered ] }; // . : … ·
++    key <AB05> { [               k,            K,     asciitilde,     dead_tilde ] }; // k, K, ~ ~
++    key <AB07> { [               q,            Q, dead_abovering                 ] }; // q Q ˚
++    key <AB08> { [               g,            G,          UFDD2                 ] }; // g G µ
++    key <AB09> { [               h,            H,         dagger,   doubledagger ] }; // h H † ‡
++
++    key <SPCE> { [           space, nobreakspace,     underscore,          U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_66_latin9" {
++
++    // Restricts the fr(bepo_66) layout to latin9 symbols
++
++    include "fr(bepo_66)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v0.6.6, latin-9 only";
++
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1                                 ] }; // " 1
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less                 ] }; // « 2 <
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater                 ] }; // » 3 >
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8                                 ] }; // - 8
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division                 ] }; // / 9 ×
++    key <AE12> { [         percent,        grave                                 ] }; // % `
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD02> { [          eacute,       Eacute,     dead_acute                 ] }; // é É ˊ
++    key <AD06> { [ dead_circumflex,       exclam, dead_circumflex,    exclamdown ] }; // ^ ! ^ ¡
++    key <AD10> { [               j,            J                                 ] }; // j J
++    key <AD11> { [               z,            Z                                 ] }; // z Z
++    key <AD12> { [               w,            W                                 ] }; // w W
++
++    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
++    key <AC05> { [           comma,     question,          comma,   questiondown ] }; // , ? , ¿
++    key <AC11> { [               m,            M,         macron,      masculine ] }; // m M ̄ º
++
++    key <AB04> { [          period,        colon                                 ] }; // . :
++    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
++    key <AB09> { [               h,            H                                 ] }; // h H
++    key <AB10> { [               f,            F,              f,    ordfeminine ] }; // f F   ª
++
++    // Note : on a besoin de redéfinir les niveaux 3 et 4,
++    // donc nbsp(level2) ne suffit pas !
++    key <SPCE> { [           space,  nobreakspace,    underscore,   nobreakspace ] }; // ␣ (espace insécable) _ (espace insécable)
++};
++
++
++// Version 0.6.7 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_67" {
++
++    // Include previous version :
++    include "fr(bepo_66)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v0.6.7";
++
++    // Modifications depuis la version précédente :
++    // * inversion X/À
++    // * inversion ;/? (et ¿)
++    // * ajout de la virgule souscrite morte en AltGr+Maj.+Ç (implémentée avec U+FDD3)
++    // * ajout de la lettre minuscule latine s long « ſ » U+017F  en AltGr+Maj.+C ;
++    // * ajout du ß capitale « ẞ » U+1E9E  en AltGr+Maj.+S ;
++    // * ajout du symbole anglais marque de commerce « ™ » U+2122 en AltGr+Maj.+R ;
++    // * déplacement du « ¬ » en AltGr+6 ;
++    // * ajout du « ≠ » (U2260) en AltGr+= ;
++    // * guillemets « „“” » en AltGr+Maj.+123 :
++    //      o déplacement de « ¶ » en AltGr+Maj.+{P} ;
++    //      o déplacement de « § » en AltGr+Maj.+{$} ;
++    //      o déplacement du demi-cadratin en AltGr+{$} ;
++    //      o ajout du guillemet-virgule double inférieur « „ » U+201E  en AltGr+Maj.+{1} ;
++    //      o suppression de « ≤≥ » ;
++    //      o déplacement des guillemets anglais « “” » en AltGr+Maj.+{23} ;
++    // * ajout des guillemets de second niveau anglais « ‘’ » sur AltGr+Maj.+[XC] ;
++    // * suppression de « ‘ » en AltGr+{'}.
++    //
++    // Changements du 0.6.7 non réalisés ici :
++    // * ajout de caractères sur le tilde mort :
++    //      o asymptotiquement égal à « ≃ » U+2243  en ~+- ;
++    //      o plus petit ou équivalent à « ≲ » U+2272  en ~+< ;
++    //      o plus grand ou équivalent à « ≳ » U+2273  en ~+> ;
++
++    key <TLDE> { [          dollar,   numbersign,        endash,         section ] }; // $ # – §
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash, doublelowquotemark ] }; // " 1 — „
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,  leftdoublequotemark ] }; // « 2 < “
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater, rightdoublequotemark ] }; // » 3 > ”
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft ] }; // ( 4 [
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright ] }; // ) 5 ]
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6,   notsign                      ] }; // @ 6 ¬
++    key <AE11> { [           equal,  asciicircum,       notequal                 ] }; // = ^ ≠
++
++    key <AD03> { [               p,            P,      ampersand,      paragraph ] }; // p P & ¶
++
++    key <AC05> { [           comma,    semicolon, rightsinglequotemark           ] }; // , ; ’
++    key <AC06> { [               c,            C,      copyright,          U017f ] }; // c C © ſ
++    key <AC08> { [               s,            S,         ssharp,          U1E9E ] }; // s S ß ẞ
++    key <AC09> { [               r,            R,     registered,      trademark ] }; // r R ® ™
++    key <BKSL> { [        ccedilla,     Ccedilla,   dead_cedilla,          UFDD3 ] }; // ç Ç ¸ ,
++
++    key <AB01> { [          agrave,       Agrave,      backslash                 ] }; // à À \
++    key <AB02> { [               y,            Y,      braceleft, leftsinglequotemark  ] }; // y Y { ‘
++    key <AB03> { [               x,            X,     braceright, rightsinglequotemark ] }; // x X } ’
++    key <AB06> { [      apostrophe,     question,   questiondown                 ] }; // ' ? ¿
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_67_latin9" {
++
++    // Restricts the fr(bepo_67) layout to latin9 symbols
++
++    include "fr(bepo_67)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v0.6.7, latin-9 only";
++
++    key <TLDE> { [          dollar,   numbersign,        dollar,         section ] }; // $ # $ §
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1                                 ] }; // " 1
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less                 ] }; // « 2 <
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater                 ] }; // » 3 >
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8                                 ] }; // - 8
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division                 ] }; // / 9 ×
++    key <AE11> { [           equal,  asciicircum                                 ] }; // = ^
++    key <AE12> { [         percent,        grave                                 ] }; // % `
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD02> { [          eacute,       Eacute,     dead_acute                 ] }; // é É ˊ
++    key <AD06> { [ dead_circumflex,       exclam, dead_circumflex,    exclamdown ] }; // ^ ! ^ ¡
++    key <AD10> { [               j,            J                                 ] }; // j J
++    key <AD11> { [               z,            Z                                 ] }; // z Z
++    key <AD12> { [               w,            W                                 ] }; // w W
++
++    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
++    key <AC05> { [           comma,    semicolon                                 ] }; // , ;
++    key <AC06> { [               c,            C,      copyright                 ] }; // c C ©
++    key <AC08> { [               s,            S,         ssharp                 ] }; // s S ß
++    key <AC09> { [               r,            R,     registered                 ] }; // r R ®
++    key <AC11> { [               m,            M,         macron,      masculine ] }; // m M ̄ º
++
++    key <AB02> { [               y,            Y,      braceleft                 ] }; // y Y {
++    key <AB03> { [               x,            X,     braceright                 ] }; // x X }
++    key <AB04> { [          period,        colon                                 ] }; // . :
++    key <AB09> { [               h,            H                                 ] }; // h H
++    key <AB10> { [               f,            F,              f,    ordfeminine ] }; // f F   ª
++
++    // Note : on a besoin de redéfinir les niveaux 3 et 4,
++    // donc nbsp(level2) ne suffit pas !
++    key <SPCE> { [           space,  nobreakspace,    underscore,   nobreakspace ] }; // ␣ (espace insécable) _ (espace insécable)
++};
++
++
++// Dernière version :
++
++partial alphanumeric_keys
++xkb_symbols "bepo" {
++
++    include "level3(ralt_switch)"
++    include "keypad(oss)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way";
++
++    // First row
++    key <TLDE> { [          dollar,   numbersign,        endash,         section ] }; // $ # – §
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash, doublelowquotemark ] }; // " 1 — „
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,  leftdoublequotemark ] }; // « 2 < “
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater, rightdoublequotemark ] }; // » 3 > ”
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft ] }; // ( 4 [
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright ] }; // ) 5 ]
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6,   notsign                      ] }; // @ 6 ¬
++    key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [            plus,            7,      plusminus,         degree ] }; // + 7 ± °
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          U2212,        minutes ] }; // - 8 − ′
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division,        seconds ] }; // / 9 ÷ ″
++    key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        asterisk,            0,       multiply                 ] }; // * 0 ×
++    key <AE11> { [           equal,  asciicircum,       notequal                 ] }; // = ^ ≠
++    key <AE12> { [         percent,        grave,          U2030                 ] }; // % ` ‰
++
++    // Second row
++    key <AD01> { [               b,            B,            bar,      brokenbar ] }; // b B | ¦
++    key <AD02> { [          eacute,       Eacute,     dead_acute, dead_doubleacute ] }; // é É ˊ ˝
++    key <AD03> { [               p,            P,      ampersand,      paragraph ] }; // p P & ¶
++    key <AD04> { [               o,            O,             oe,             OE ] }; // o O œ Œ
++    key <AD05> { [          egrave,       Egrave,     dead_grave,          grave ] }; // è È ` `
++    key <AD06> { [ dead_circumflex,       exclam,     dead_caron,     exclamdown ] }; // ^ ! ˇ ¡
++    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD08> { [               d,            D,            eth,            ETH ] }; // d D ð Ð
++    key <AD09> { [               l,            L,          UFDD0                 ] }; // l L /
++    key <AD10> { [               j,            J,          U0133,          U0132 ] }; // j J ĳ Ĳ
++    key <AD11> { [               z,            Z,          schwa,          SCHWA ] }; // z Z ə Ə
++    key <AD12> { [               w,            W,     dead_breve                 ] }; // w W ̆
++
++    // Third row
++    key <AC01> { [               a,            A,             ae,             AE ] }; // a A æ Æ
++    key <AC02> { [               u,            U,         ugrave,         Ugrave ] }; // u U ù Ù
++    key <AC03> { [               i,            I, dead_diaeresis,  dead_abovedot ] }; // i I ̈ ˙
++    key <AC04> { [               e,            E,       EuroSign,          UFDD1 ] }; // e E € ¤
++    key <AC05> { [           comma,    semicolon, rightsinglequotemark           ] }; // , ; ’
++    key <AC06> { [               c,            C,      copyright,          U017f ] }; // c C © ſ
++    key <AC07> { [               t,            T,          thorn,          Thorn ] }; // t T þ Þ
++    key <AC08> { [               s,            S,         ssharp,          U1E9E ] }; // s S ß ẞ
++    key <AC09> { [               r,            R,     registered,      trademark ] }; // r R ® ™
++    key <AC10> { [               n,            N,         ntilde,         Ntilde ] }; // n N ñ Ñ
++    key <AC11> { [               m,            M,    dead_macron,      masculine ] }; // m M ̄ º
++    key <BKSL> { [        ccedilla,     Ccedilla,   dead_cedilla,          UFDD3 ] }; // ç Ç ¸ ,
++
++    // Fourth row
++    key <LSGT> { [     ecircumflex,  Ecircumflex,          slash                 ] }; // ê Ê /
++    key <AB01> { [          agrave,       Agrave,      backslash                 ] }; // à À \
++    key <AB02> { [               y,            Y,      braceleft, leftsinglequotemark  ] }; // y Y { ‘
++    key <AB03> { [               x,            X,     braceright, rightsinglequotemark ] }; // x X } ’
++    key <AB04> { [          period,        colon,       ellipsis, periodcentered ] }; // . : … ·
++    key <AB05> { [               k,            K,     asciitilde,     dead_tilde ] }; // k, K, ~ ~
++    key <AB06> { [      apostrophe,     question,   questiondown                 ] }; // ' ? ¿
++    key <AB07> { [               q,            Q, dead_abovering                 ] }; // q Q ˚
++    key <AB08> { [               g,            G,          UFDD2                 ] }; // g G µ
++    key <AB09> { [               h,            H,         dagger,   doubledagger ] }; // h H † ‡
++    key <AB10> { [               f,            F,    dead_ogonek,    ordfeminine ] }; // f F ̨ ª
++
++    key <SPCE> { [           space, nobreakspace,     underscore,          U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_latin9" {
++
++    // Restricts the fr(bepo) layout to latin9 symbols
++
++    include "fr(bepo)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, latin-9 only";
++
++    key <TLDE> { [          dollar,   numbersign,        dollar,         section ] }; // $ # $ §
++
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1                                 ] }; // " 1
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less                 ] }; // « 2 <
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater                 ] }; // » 3 >
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8                                 ] }; // - 8
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division                 ] }; // / 9 ×
++    key <AE11> { [           equal,  asciicircum                                 ] }; // = ^
++    key <AE12> { [         percent,        grave                                 ] }; // % `
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD02> { [          eacute,       Eacute,     dead_acute                 ] }; // é É ˊ
++    key <AD06> { [ dead_circumflex,       exclam, dead_circumflex,    exclamdown ] }; // ^ ! ^ ¡
++    key <AD10> { [               j,            J                                 ] }; // j J
++    key <AD11> { [               z,            Z                                 ] }; // z Z
++    key <AD12> { [               w,            W                                 ] }; // w W
++
++    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
++    key <AC05> { [           comma,    semicolon                                 ] }; // , ;
++    key <AC06> { [               c,            C,      copyright                 ] }; // c C ©
++    key <AC08> { [               s,            S,         ssharp                 ] }; // s S ß
++    key <AC09> { [               r,            R,     registered                 ] }; // r R ®
++    key <AC11> { [               m,            M,         macron,      masculine ] }; // m M ̄ º
++
++    key <AB02> { [               y,            Y,      braceleft                 ] }; // y Y {
++    key <AB03> { [               x,            X,     braceright                 ] }; // x X }
++    key <AB04> { [          period,        colon                                 ] }; // . :
++    key <AB09> { [               h,            H                                 ] }; // h H
++    key <AB10> { [               f,            F,              f,    ordfeminine ] }; // f F   ª
++
++    // Note : on a besoin de redéfinir les niveaux 3 et 4,
++    // donc nbsp(level2) ne suffit pas !
++    key <SPCE> { [           space,  nobreakspace,    underscore,   nobreakspace ] }; // ␣ (espace insécable) _ (espace insécable)
++};
++
++
+ // Keymap Dvorak pour le Français
+ // par Josselin Mouette <josselin.mouette@ens-lyon.org>.
+ 
+ partial alphanumeric_keys
+ xkb_symbols "dvorak" {
+ 
+-    name[Group1]= "France - Dvorak";
++    name[Group1]= "France - (Legacy) Dvorak";
+ 
+     key <TLDE>  { [         oe,       OE,              ae,             AE ] };
+ 
+diff -Naur xkeyboard-config-0.9.orig/symbols/symbols.dir xkeyboard-config-0.9.6700/symbols/symbols.dir
+--- xkeyboard-config-0.9.orig/symbols/symbols.dir	2008-07-20 22:01:33.000000000 +0200
++++ xkeyboard-config-0.9.6700/symbols/symbols.dir	2008-07-20 22:12:02.000000000 +0200
+@@ -157,6 +157,32 @@
+ --p----- a------- fo(nodeadkeys)
+ --p----- a------- fr(Sundeadkeys)
+ -dp----- a------- fr(basic)
++--p----- a------- fr(bepo_6211)
++--p----- a------- fr(bepo_6211_latin9)
++--p----- a------- fr(bepo_6212)
++--p----- a------- fr(bepo_6212_latin9)
++--p----- a------- fr(bepo_6220)
++--p----- a------- fr(bepo_6220_latin9)
++--p----- a------- fr(bepo_6221)
++--p----- a------- fr(bepo_6221_latin9)
++--p----- a------- fr(bepo_6222)
++--p----- a------- fr(bepo_6222_latin9)
++--p----- a------- fr(bepo_6224)
++--p----- a------- fr(bepo_6224_latin9)
++--p----- a------- fr(bepo_63)
++--p----- a------- fr(bepo_63_latin9)
++--p----- a------- fr(bepo_63f)
++--p----- a------- fr(bepo_63f_latin9)
++--p----- a------- fr(bepo_64)
++--p----- a------- fr(bepo_64_latin9)
++--p----- a------- fr(bepo_651)
++--p----- a------- fr(bepo_651_latin9)
++--p----- a------- fr(bepo_66)
++--p----- a------- fr(bepo_66_latin9)
++--p----- a------- fr(bepo_67)
++--p----- a------- fr(bepo_67_latin9)
++--p----- a------- fr(bepo)
++--p----- a------- fr(bepo_latin9)
+ --p----- a------- fr(dvorak)
+ --p----- a------- fr(latin9)
+ --p----- a------- fr(latin9_Sundeadkeys)
