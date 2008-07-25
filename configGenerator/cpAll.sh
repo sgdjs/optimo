@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #VERSION=0.1.1
-VERSION=0.6.7
+VERSION=1.0rc1
 
 
 cp "results/layout-${VERSION}-user.xkb" ../xkb/fr-dvorak-bepo.xkb
