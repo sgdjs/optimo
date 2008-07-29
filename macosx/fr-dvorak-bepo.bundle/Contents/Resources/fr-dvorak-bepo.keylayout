@@ -735,9 +735,9 @@
       <key code="18" action="„" />
       <key code="19" action="“" />
       <key code="20" action="”" />
-      <key code="21" action="" />
+      <key code="21" action="≤" />
       <key code="22" action="" />
-      <key code="23" action="" />
+      <key code="23" action="≥" />
       <key code="24" action="" />
       <key code="25" action="″" />
       <key code="26" action="°" />
@@ -850,9 +850,9 @@
       <key code="18" action="„" />
       <key code="19" action="“" />
       <key code="20" action="”" />
-      <key code="21" action="" />
+      <key code="21" action="≤" />
       <key code="22" action="" />
-      <key code="23" action="" />
+      <key code="23" action="≥" />
       <key code="24" action="" />
       <key code="25" action="″" />
       <key code="26" action="°" />
