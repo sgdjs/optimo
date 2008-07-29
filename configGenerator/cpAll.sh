@@ -11,9 +11,6 @@ cp "results/layout-${VERSION}.XCompose" ../xkb/XCompose
 cp "results/fr-dvorak-bepo-${VERSION}A.klc" ../windows/fr-dvorak-bepo-azerty.klc
 cp "results/fr-dvorak-bepo-${VERSION}B.klc" ../windows/fr-dvorak-bepo.klc
 cp "results/fr-dvorak-bepo-${VERSION}C.klc" ../windows/fr-dvorak-bepo-qwertz.klc
-cp "results/layoutA.ini" ../pkl/layouts/layout-azerty.ini
-cp "results/layoutB.ini" ../pkl/layouts/layout.ini
-cp "results/layoutC.ini" ../pkl/layouts/layout-qwertz.ini
 cp "results/layout-${VERSION}.kbd" ../klavaro/fr-dvorak-bepo.kbd
 cp "results/layout-${VERSION}.keyboard" ../ktouch/fr-dvorak-bepo.keyboard
 cp "results/layout-${VERSION}.xml" ../typefaster/fr-dvorak-bepo.xml
