@@ -8,9 +8,9 @@ cp "results/layout-${VERSION}-user.xkb" ../xkb/fr-dvorak-bepo.xkb
 cp "results/layout-${VERSION}-user-legacy.xkb" ../xkb/fr-dvorak-bepo-xorglegacy.xkb
 cp "results/layout-${VERSION}.XCompose" ../xkb/XCompose
 
-cp "results/fr-dvorak-bepo-${VERSION}A.klc" ../windows/source/fr-dvorak-bepo-azerty.klc
-cp "results/fr-dvorak-bepo-${VERSION}B.klc" ../windows/source/fr-dvorak-bepo.klc
-cp "results/fr-dvorak-bepo-${VERSION}C.klc" ../windows/source/fr-dvorak-bepo-qwertz.klc
+cp "results/fr-dvorak-bepo-${VERSION}A.klc" ../windows/fr-dvorak-bepo-azerty.klc
+cp "results/fr-dvorak-bepo-${VERSION}B.klc" ../windows/fr-dvorak-bepo.klc
+cp "results/fr-dvorak-bepo-${VERSION}C.klc" ../windows/fr-dvorak-bepo-qwertz.klc
 cp "results/layoutA.ini" ../pkl/layouts/layout-azerty.ini
 cp "results/layoutB.ini" ../pkl/layouts/layout.ini
 cp "results/layoutC.ini" ../pkl/layouts/layout-qwertz.ini
