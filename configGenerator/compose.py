@@ -33,12 +33,6 @@ for l in fKeysymdef:
     c = res.group(2)
     try:
       C = unichr( int(c, 16) )
-      if C == u'"':
-        C = u"&#x0022;"
-      if C == u'<':
-        C = u"&#x003c;"
-      if C == u'&':
-        C = u'&#x0026;'
       composeNames[name] = C
     except:
       print l

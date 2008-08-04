@@ -256,12 +256,6 @@ for k, v in xkb.tmplValues.iteritems():
    v = terminators.get( v, v )
    if v == "":
      v = " "
-   if v == u"&#x0022;":
-     v = u'"'
-   if v == u"&#x003c;":
-     v = u'<'
-   if v == u'&#x0026;':
-     v = u'&'
    fullMapValues[k] = v
    fullMapValues[k+"_code"] = str(ord(v))
 out = codecs.open(sys.argv[2], "w", "utf8")

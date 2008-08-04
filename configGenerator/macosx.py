@@ -17,5 +17,7 @@ defaults.xkbFile = sys.argv[1]
 import xkb, dead_keys, codecs
 
 xkb.tmplValues[u"actionsAndTerminators"] = dead_keys.deadXMLCode
+for k,v in xkb.tmplValues.iteritems():
+  xkb.tmplValues[k] = dead_keys.xmlChar(v)
 out = codecs.open(sys.argv[2], "w", "utf8")
 out.write( xkb.tmpl % xkb.tmplValues )

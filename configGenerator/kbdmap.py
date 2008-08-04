@@ -177,12 +177,6 @@ for l in f:
   for m, ctrl in [("", False), ("_shift", False), ("", True), ("_shift", True), ("_option", False), ("_shift_option", False), ("_option", True), ("_shift_option", True)]:
       v = xkb.tmplValues[k+m]
     #  v = terminators.get( v, v )
-      if v == u"&#x0022;":
-       v = u'"'
-      if v == u"&#x003c;":
-       v = u'<'
-      if v == u'&#x0026;':
-       v = u'&'
       if v == "":
         v = "nop"
       try:

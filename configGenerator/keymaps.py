@@ -656,12 +656,6 @@ for l in f:
     for M1, M2 in [(None, ""), ("Control_", "  Control "), ("Meta_", "  Alt "), ("Meta_Control_", "  Control Alt "), ]:
       v = xkb.tmplValues[k+m1]
     #  v = terminators.get( v, v )
-      if v == u"&#x0022;":
-       v = u'"'
-      if v == u"&#x003c;":
-       v = u'<'
-      if v == u'&#x0026;':
-       v = u'&'
       try:
        cl = codecs.encode(v, "iso-8859-15")
        name = names[cl]

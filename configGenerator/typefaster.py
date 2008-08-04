@@ -347,6 +347,12 @@ fullMapTmpl = keyboardTemplate = u"""<?xml version="1.0"?>
 fullMapValues = {}
 for k, v in xkb.tmplValues.iteritems():
    v = terminators.get( v, v )
+   if v == u'"':
+     v = u"&#x0022;"
+   elif v == u'<':
+     v = u"&#x003c;"
+   elif v == u'&':
+     v = u'&#x0026;'
    fullMapValues[k] = v
 out = codecs.open(sys.argv[2], "w", "utf-16-le")
 out.write(u"\uFEFF")

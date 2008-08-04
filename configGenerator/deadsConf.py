@@ -93,11 +93,11 @@ for m in sorted([m for m in dead_keys.dmm if len(m) == 1]):
   
   if composeDeadKeys.has_key((m[0], u" ")):
     tag = "L!"
-    if composeDeadKeys[(m[0], u" ")] != spaceTerminators[m[0]].replace("\"", "&#x0022;"):
+    if composeDeadKeys[(m[0], u" ")] != spaceTerminators[m[0]]:
       print "Warning:", m[0], "space is different in Compose:", composeDeadKeys[(m[0], u" ")], spaceTerminators[m[0]]
   else:
     tag = ""
-  print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, "space", compose.name(spaceTerminators[m[0]].replace("\"", "&#x0022;")))
+  print >> f, "%s%s%s\t%s\t%s" % (comm, tag, deadName, "space", compose.name(spaceTerminators[m[0]]))
   
   print >> f
 

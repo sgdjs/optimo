@@ -48,12 +48,6 @@ for k, v in xkb.tmplValues.iteritems():
    v = terminators.get( v, v )
    if v == "":
      v = " "
-   if v == u"&#x0022;":
-     v = u'"'
-   if v == u"&#x003c;":
-     v = u'<'
-   if v == u'&#x0026;':
-     v = u'&'
    fullMapValues[k] = v
    available.add(v)
 out.write( fullMapTmpl % fullMapValues )
@@ -66,12 +60,6 @@ for k, v in xkb.tmplValues.iteritems():
    v = terminators.get( v, v )
    if v == "":
      v = " "
-   if v == u"&#x0022;":
-     v = u'"'
-   if v == u"&#x003c;":
-     v = u'<'
-   if v == u'&#x0026;':
-     v = u'&'
    if v in mainChars or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != v.upper()):
      fullMapValues[k] = v
    else:
@@ -86,12 +74,6 @@ for k, v in xkb.tmplValues.iteritems():
    v = terminators.get( v, v )
    if v == "":
      v = " "
-   if v == u"&#x0022;":
-     v = u'"'
-   if v == u"&#x003c;":
-     v = u'<'
-   if v == u'&#x0026;':
-     v = u'&'
    if "_capslock" in k:
      k = k.replace("_capslock", "")
      fullMapValues[k] = v

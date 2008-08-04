@@ -171,12 +171,12 @@ def offsetAndColor(k):
 
 
 def xmlChar(v):
-  if v == u"&#x0022;":
-   v = u'"'
-  elif v == u"&#x003c;":
-   v = u'<'
-  elif v == u'&#x0026;':
-   v = u'&'
+  if v == u'"':
+    v = u"&#x0022;"
+  elif v == u'<':
+    v = u"&#x003c;"
+  elif v == u'&':
+    v = u'&#x0026;'
   return v
   
   
@@ -189,7 +189,7 @@ for k, v in xkb.tmplValues.iteritems():
   x, y, color = offsetAndColor(k)
   if terminators.has_key(v):
    color = deadColor
-  print >> out, charTmpl % (x, y, color, v2)
+  print >> out, charTmpl % (x, y, color, xmlChar(v2))
 print >> out, footer
 out.close()
 
@@ -207,8 +207,8 @@ for k, v in xkb.tmplValues.iteritems():
     color = altgrColor
   if terminators.has_key(v):
     color = deadColor
-  if xmlChar(v2) in mainChars or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != xmlChar(v2).upper()):
-    print >> out, charTmpl % (x, y, color, v2)
+  if v2 in mainChars or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != v2.upper()):
+    print >> out, charTmpl % (x, y, color, xmlChar(v2))
 print >> out, footer
 out.close()
 
@@ -222,7 +222,7 @@ for k, v in xkb.tmplValues.iteritems():
   x, y, color = offsetAndColor(k)
   if terminators.has_key(v):
     color = deadColor
-  print >> out, charTmpl % (x, y, color, v2)
+  print >> out, charTmpl % (x, y, color, xmlChar(v2))
 print >> out, footer
 out.close()
 
@@ -245,7 +245,7 @@ for m in sorted(dks):
       for k3, v3 in xkb.tmplValues.iteritems():
         if v3 == k2 and "_capslock" not in k3 and "_command" not in k:
           x, y, color = offsetAndColor(k3)
-          print >> out, charTmpl % (x, y, color, v2)
+          print >> out, charTmpl % (x, y, color, xmlChar(v2))
     elif m in mods:
       K = (k, tuple(a for a in mods if a != m))
       if dead_keys.dc.has_key(K):
@@ -254,17 +254,17 @@ for m in sorted(dks):
         for k3, v3 in xkb.tmplValues.iteritems():
           if v3 == k2 and "_capslock" not in k3 and "_command" not in k:
             x, y, color = offsetAndColor(k3)
-            print >> out, charTmpl % (x, y, color, v2)
+            print >> out, charTmpl % (x, y, color, xmlChar(v2))
   for k, v in xkb.tmplValues.iteritems():
     if "_capslock" in k or "_command" in k:
       continue
     x, y, color = offsetAndColor(k)
     if v == u" ":
-      print >> out, charTmpl % (x, y, color, spaceTerminators[m])
+      print >> out, charTmpl % (x, y, color, xmlChar(spaceTerminators[m]))
     elif v == m:
-      print >> out, charTmpl % (x, y, color, terminators[m])
+      print >> out, charTmpl % (x, y, color, xmlChar(terminators[m]))
     elif v == u" ":
-      print >> out, charTmpl % (x, y, color, combiningTerminators[m]) 
+      print >> out, charTmpl % (x, y, color, xmlChar(combiningTerminators[m])) 
   print >> out, footer
   out.close()
 
@@ -280,16 +280,16 @@ for i, m1 in enumerate(sorted(dks)):
         for k3, v3 in xkb.tmplValues.iteritems():
           if v3 == k2 and "_capslock" not in k3 and "_command" not in k:
             x, y, color = offsetAndColor(k3)
-            s += charTmpl % (x, y, color, v2)
+            s += charTmpl % (x, y, color, xmlChar(v2))
     if s != u"":
       for k, v in xkb.tmplValues.iteritems():
         if "_capslock" in k or "_command" in k:
           continue
         x, y, color = offsetAndColor(k)
         if v == u" ":
-          s += charTmpl % (x, y, color, spaceTerminators[m1]+spaceTerminators[m2])
+          s += charTmpl % (x, y, color, xmlChar(spaceTerminators[m1])+xmlChar(spaceTerminators[m2]))
         elif v == u" ":
-          s += charTmpl % (x, y, color, combiningTerminators[m1]+combiningTerminators[m2]) 
+          s += charTmpl % (x, y, color, xmlChar(combiningTerminators[m1])+xmlChar(combiningTerminators[m2])) 
       deadName = "+".join("dead_" + m.replace("ringabove", "abovering") for m in (m1, m2))
       out = codecs.open(sys.argv[2]+"-"+deadName+".svg", "w", "utf8")
       print >> out, header
