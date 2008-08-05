@@ -1,7 +1,13 @@
-diff -Naur xkeyboard-config-0.9.orig/debian/changelog xkeyboard-config-0.9.6700/debian/changelog
+diff -Naur xkeyboard-config-0.9.orig/debian/changelog xkeyboard-config-0.9.1rc1/debian/changelog
 --- xkeyboard-config-0.9.orig/debian/changelog	2008-07-20 22:01:33.000000000 +0200
-+++ xkeyboard-config-0.9.6700/debian/changelog	2008-07-22 17:39:06.000000000 +0200
-@@ -1,3 +1,57 @@
++++ xkeyboard-config-0.9.1rc1/debian/changelog	2008-08-04 20:54:14.000000000 +0200
+@@ -1,3 +1,63 @@
++xkeyboard-config (0.9-4.1bepo+1.0rc1) unstable; urgency=low
++
++  * renomme la version 0.6.7 en 1.0rc1 (sans changement dans la disposition).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Mon,  4 Aug 2008 20:52:38 +0200
++
 +xkeyboard-config (0.9-4.1bepo6700) unstable; urgency=low
 +
 +  * Non-maintainer upload (Ĳsselmeer release :-).
@@ -59,10 +65,10 @@ diff -Naur xkeyboard-config-0.9.orig/debian/changelog xkeyboard-config-0.9.6700/
  xkeyboard-config (0.9-4) unstable; urgency=low
  
    [ Denis Barbier ]
-diff -Naur xkeyboard-config-0.9.orig/debian/symbols.dir xkeyboard-config-0.9.6700/debian/symbols.dir
+diff -Naur xkeyboard-config-0.9.orig/debian/symbols.dir xkeyboard-config-0.9.1rc1/debian/symbols.dir
 --- xkeyboard-config-0.9.orig/debian/symbols.dir	2008-07-20 22:01:33.000000000 +0200
-+++ xkeyboard-config-0.9.6700/debian/symbols.dir	2008-07-20 22:12:18.000000000 +0200
-@@ -157,6 +157,32 @@
++++ xkeyboard-config-0.9.1rc1/debian/symbols.dir	2008-08-04 20:51:32.000000000 +0200
+@@ -157,6 +157,34 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
  -dp----- a------- fr(basic)
@@ -90,15 +96,17 @@ diff -Naur xkeyboard-config-0.9.orig/debian/symbols.dir xkeyboard-config-0.9.670
 +--p----- a------- fr(bepo_66_latin9)
 +--p----- a------- fr(bepo_67)
 +--p----- a------- fr(bepo_67_latin9)
++--p----- a------- fr(bepo_1_0rc1)
++--p----- a------- fr(bepo_1_0rc1_latin9)
 +--p----- a------- fr(bepo)
 +--p----- a------- fr(bepo_latin9)
  --p----- a------- fr(dvorak)
  --p----- a------- fr(latin9)
  --p----- a------- fr(latin9_Sundeadkeys)
-diff -Naur xkeyboard-config-0.9.orig/rules/base.lst xkeyboard-config-0.9.6700/rules/base.lst
+diff -Naur xkeyboard-config-0.9.orig/rules/base.lst xkeyboard-config-0.9.1rc1/rules/base.lst
 --- xkeyboard-config-0.9.orig/rules/base.lst	2006-10-07 23:22:17.000000000 +0200
-+++ xkeyboard-config-0.9.6700/rules/base.lst	2008-07-20 22:10:27.000000000 +0200
-@@ -301,7 +301,33 @@
++++ xkeyboard-config-0.9.1rc1/rules/base.lst	2008-08-04 20:51:32.000000000 +0200
+@@ -301,7 +301,35 @@
    latin9          fr: (Legacy) Alternative
    latin9_nodeadkeys fr: (Legacy) Alternative, eliminate dead keys
    latin9_sundeadkeys fr: (Legacy) Alternative, Sun dead keys
@@ -127,16 +135,18 @@ diff -Naur xkeyboard-config-0.9.orig/rules/base.lst xkeyboard-config-0.9.6700/ru
 +  bepo_66_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.6, latin-9 only
 +  bepo_67         fr: Bepo, ergonomic, Dvorak way, v0.6.7
 +  bepo_67_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.7, latin-9 only
++  bepo_1_0rc1        fr: Bepo, ergonomic, Dvorak way, v1.0rc1
++  bepo_1_0rc1_latin9 fr: Bepo, ergonomic, Dvorak way, v1.0rc1, latin-9 only
 +  bepo            fr: Bepo, ergonomic, Dvorak way
 +  bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
 +  dvorak          fr: (Legacy) Dvorak
    mac             fr: Macintosh
    generic         gh: Multilingual
    akan            gh: Akan
-diff -Naur xkeyboard-config-0.9.orig/rules/base.xml.in xkeyboard-config-0.9.6700/rules/base.xml.in
+diff -Naur xkeyboard-config-0.9.orig/rules/base.xml.in xkeyboard-config-0.9.1rc1/rules/base.xml.in
 --- xkeyboard-config-0.9.orig/rules/base.xml.in	2006-10-02 20:42:40.000000000 +0200
-+++ xkeyboard-config-0.9.6700/rules/base.xml.in	2008-07-20 22:11:23.000000000 +0200
-@@ -1576,8 +1576,164 @@
++++ xkeyboard-config-0.9.1rc1/rules/base.xml.in	2008-08-04 20:51:32.000000000 +0200
+@@ -1576,8 +1576,176 @@
          </variant>
          <variant>
            <configItem>
@@ -284,6 +294,18 @@ diff -Naur xkeyboard-config-0.9.orig/rules/base.xml.in xkeyboard-config-0.9.6700
 +        </variant>
 +        <variant>
 +          <configItem>
++            <name>bepo_1_0rc1</name>
++            <_description>Bepo, ergonomic, Dvorak way, v1.0rc1</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_1_0rc1_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v1.0rc1, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
 +            <name>bepo</name>
 +            <_description>Bepo, ergonomic, Dvorak way</_description>
 +          </configItem>
@@ -302,16 +324,16 @@ diff -Naur xkeyboard-config-0.9.orig/rules/base.xml.in xkeyboard-config-0.9.6700
            </configItem>
          </variant>
          <variant>
-diff -Naur xkeyboard-config-0.9.orig/symbols/fr xkeyboard-config-0.9.6700/symbols/fr
+diff -Naur xkeyboard-config-0.9.orig/symbols/fr xkeyboard-config-0.9.1rc1/symbols/fr
 --- xkeyboard-config-0.9.orig/symbols/fr	2006-10-04 21:29:26.000000000 +0200
-+++ xkeyboard-config-0.9.6700/symbols/fr	2008-07-22 17:35:24.000000000 +0200
++++ xkeyboard-config-0.9.1rc1/symbols/fr	2008-08-04 20:51:32.000000000 +0200
 @@ -1,4 +1,4 @@
 -// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $
 +// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $ -*- c -*-
  
  // based on a keyboard map from an 'xkb/symbols/fr' file
  //
-@@ -429,13 +429,1014 @@
+@@ -429,13 +429,1038 @@
      key <AD11>	{ [	asciicircum,  	   diaeresis,          asciitilde,           quoteright ] };
  };
  
@@ -1199,6 +1221,30 @@ diff -Naur xkeyboard-config-0.9.orig/symbols/fr xkeyboard-config-0.9.6700/symbol
 +};
 +
 +
++// Version 1.0rc1 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_1_0rc1" {
++
++    // Include previous version :
++    include "fr(bepo_67)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v1.0rc1";
++
++    // Modifications depuis la version précédente : aucune !
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_1_0rc1_latin9" {
++
++    // Restricts the fr(bepo_1_0rc1) layout to latin9 symbols
++
++    include "fr(bepo_67_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v1.0rc1, latin-9 only";
++};
++
++
 +// Dernière version :
 +
 +partial alphanumeric_keys
@@ -1327,10 +1373,10 @@ diff -Naur xkeyboard-config-0.9.orig/symbols/fr xkeyboard-config-0.9.6700/symbol
  
      key <TLDE>  { [         oe,       OE,              ae,             AE ] };
  
-diff -Naur xkeyboard-config-0.9.orig/symbols/symbols.dir xkeyboard-config-0.9.6700/symbols/symbols.dir
+diff -Naur xkeyboard-config-0.9.orig/symbols/symbols.dir xkeyboard-config-0.9.1rc1/symbols/symbols.dir
 --- xkeyboard-config-0.9.orig/symbols/symbols.dir	2008-07-20 22:01:33.000000000 +0200
-+++ xkeyboard-config-0.9.6700/symbols/symbols.dir	2008-07-20 22:12:02.000000000 +0200
-@@ -157,6 +157,32 @@
++++ xkeyboard-config-0.9.1rc1/symbols/symbols.dir	2008-08-04 20:51:32.000000000 +0200
+@@ -157,6 +157,34 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
  -dp----- a------- fr(basic)
@@ -1358,6 +1404,8 @@ diff -Naur xkeyboard-config-0.9.orig/symbols/symbols.dir xkeyboard-config-0.9.67
 +--p----- a------- fr(bepo_66_latin9)
 +--p----- a------- fr(bepo_67)
 +--p----- a------- fr(bepo_67_latin9)
++--p----- a------- fr(bepo_1_0rc1)
++--p----- a------- fr(bepo_1_0rc1_latin9)
 +--p----- a------- fr(bepo)
 +--p----- a------- fr(bepo_latin9)
  --p----- a------- fr(dvorak)

@@ -250,6 +250,13 @@ Error:            Error interpreting include file "fr"
                   Abandoning symbols file "(null)"
 
 
+* génération des cartes pour la console :
+  une fois le paquet installé / reboot ou relance de console-setup, faire :
+
+  ckbcomp  -model pc105 -layout fr -variant bepo -option ctrl:nocaps |gzip -v9 - > bepo.kmap.gz
+  ckbcomp -charmap ISO-8859-15 -model pc105 -layout fr -variant bepo -option ctrl:nocaps  |gzip -v9 - > bepo_latin9.kmap.gz
+
+
 * À lire également :
   http://wiki.mandriva.com/fr/Personnaliser_le_clavier#Les_fichiers_de_configuration_du_clavier_et_le_syst.C3.A8me_XKb
   http://wiki.mandriva.com/fr/Quelques_keysyms_repr%C3%A9sentant_des_caract%C3%A8res_affichables

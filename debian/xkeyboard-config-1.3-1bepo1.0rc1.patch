@@ -1,71 +1,35 @@
-diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/debian/changelog xkeyboard-config-1.1~cvs.20080104.1.6700/debian/changelog
---- xkeyboard-config-1.1~cvs.20080104.1orig/debian/changelog	2008-07-22 18:53:42.000000000 +0200
-+++ xkeyboard-config-1.1~cvs.20080104.1.6700/debian/changelog	2008-07-23 16:54:53.000000000 +0200
-@@ -1,3 +1,17 @@
-+xkeyboard-config (1.1~cvs.20080104.1-1ubuntu6.1bepo6700) hardy; urgency=low
+diff -Naur xkeyboard-config-1.3.orig/debian/changelog xkeyboard-config-1.3.1rc1/debian/changelog
+--- xkeyboard-config-1.3.orig/debian/changelog	2008-07-22 18:06:02.000000000 +0200
++++ xkeyboard-config-1.3.1rc1/debian/changelog	2008-07-31 17:56:33.000000000 +0200
+@@ -1,3 +1,24 @@
++xkeyboard-config (1.3-1.1bepo+1.0rc1) unstable; urgency=low
++
++  * renomme la version 0.6.7 en 1.0rc1 (sans changement dans la disposition).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Thu, 31 Jul 2008 17:48:27 +0200
++
++xkeyboard-config (1.3-1.1bepo6700) unstable; urgency=low
 +
 +  * Non-maintainer upload (Ĳsselmeer release :-).
 +  * add new « Bépo » french Dvorak layout up to 0.6.7 version.
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 23 Jul 2008 16:54:23 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 22 Jul 2008 18:15:01 +0200
 +
-+xkeyboard-config (1.1~cvs.20080104.1-1ubuntu6.1bepo6600) hardy; urgency=low
++
++xkeyboard-config (1.3-1.1bepo6600) unstable; urgency=low
 +
 +  * Non-maintainer upload.
 +  * add new « Bépo » french Dvorak layout up to 0.6.6 version.
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 17 Jun 2008 21:42:00 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 17 Jun 2008 18:59:30 +0200
 +
- xkeyboard-config (1.1~cvs.20080104.1-1ubuntu6) hardy; urgency=low
+ xkeyboard-config (1.3-1) unstable; urgency=low
  
-   * Actually apply ca-shs-add and lekp-add patches. Fix up lekp-add to avoid
-diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/debian/patches/resync_rules_base.diff xkeyboard-config-1.1~cvs.20080104.1.6700/debian/patches/resync_rules_base.diff
---- xkeyboard-config-1.1~cvs.20080104.1orig/debian/patches/resync_rules_base.diff	2008-07-22 18:53:42.000000000 +0200
-+++ xkeyboard-config-1.1~cvs.20080104.1.6700/debian/patches/resync_rules_base.diff	2008-07-23 16:57:19.000000000 +0200
-@@ -391,7 +391,7 @@
- ===================================================================
- --- xkb-data.orig/rules/base.lst	2008-01-05 00:37:24.000000000 +0100
- +++ /dev/null	1970-01-01 00:00:00.000000000 +0000
--@@ -1,643 +0,0 @@
-+@@ -1,667 +0,0 @@
- -! model
- -  pc101           Generic 101-key PC
- -  pc102           Generic 102-key (Intl) PC
-@@ -741,6 +741,30 @@
- -  latin9          fr: (Legacy) Alternative
- -  latin9_nodeadkeys fr: (Legacy) Alternative, eliminate dead keys
- -  latin9_sundeadkeys fr: (Legacy) Alternative, Sun dead keys
-+-  bepo_6211        fr: Bepo, ergonomic, Dvorak way, v6.2.1.1
-+-  bepo_6211_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.1.1, latin-9 only
-+-  bepo_6212        fr: Bepo, ergonomic, Dvorak way, v6.2.1.2
-+-  bepo_6212_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.1.2, latin-9 only
-+-  bepo_6220        fr: Bepo, ergonomic, Dvorak way, v6.2.2.0
-+-  bepo_6220_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.2.0, latin-9 only
-+-  bepo_6221        fr: Bepo, ergonomic, Dvorak way, v6.2.2.1
-+-  bepo_6221_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.2.1, latin-9 only
-+-  bepo_6222        fr: Bepo, ergonomic, Dvorak way, v6.2.2.2
-+-  bepo_6222_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.2.2, latin-9 only
-+-  bepo_6224        fr: Bepo, ergonomic, Dvorak way, v6.2.2.4
-+-  bepo_6224_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.2.4, latin-9 only
-+-  bepo_63          fr: Bepo, ergonomic, Dvorak way, v0.6.3
-+-  bepo_63_latin9   fr: Bepo, ergonomic, Dvorak way, v0.6.3, latin-9 only
-+-  bepo_63f         fr: Bepo, ergonomic, Dvorak way, v0.6.3(fred)
-+-  bepo_63f_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.3(fred), latin-9 only
-+-  bepo_64          fr: Bepo, ergonomic, Dvorak way, v0.6.4
-+-  bepo_64_latin9   fr: Bepo, ergonomic, Dvorak way, v0.6.4, latin-9 only
-+-  bepo_651        fr: Bepo, ergonomic, Dvorak way, v0.6.5.1
-+-  bepo_651_latin9 fr: Bepo, ergonomic, Dvorak way, v0.6.5.1, latin-9 only
-+-  bepo_66         fr: Bepo, ergonomic, Dvorak way, v0.6.6
-+-  bepo_66_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.6, latin-9 only
-+-  bepo_67         fr: Bepo, ergonomic, Dvorak way, v0.6.7
-+-  bepo_67_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.7, latin-9 only
- -  bepo            fr: Bepo, ergonomic, Dvorak way
- -  bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
- -  dvorak          fr: (Legacy) Dvorak
-diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/debian/symbols.dir xkeyboard-config-1.1~cvs.20080104.1.6700/debian/symbols.dir
---- xkeyboard-config-1.1~cvs.20080104.1orig/debian/symbols.dir	2008-07-22 18:53:42.000000000 +0200
-+++ xkeyboard-config-1.1~cvs.20080104.1.6700/debian/symbols.dir	2008-07-23 16:55:33.000000000 +0200
-@@ -165,6 +165,30 @@
+   * New upstream release:
+diff -Naur xkeyboard-config-1.3.orig/debian/symbols.dir xkeyboard-config-1.3.1rc1/debian/symbols.dir
+--- xkeyboard-config-1.3.orig/debian/symbols.dir	2008-07-22 18:06:02.000000000 +0200
++++ xkeyboard-config-1.3.1rc1/debian/symbols.dir	2008-07-31 17:58:42.000000000 +0200
+@@ -165,6 +165,32 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
  -dp----- a------- fr(basic)
@@ -93,13 +57,15 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/debian/symbols.dir xkeyboard-
 +--p----- a------- fr(bepo_66_latin9)
 +--p----- a------- fr(bepo_67)
 +--p----- a------- fr(bepo_67_latin9)
++--p----- a------- fr(bepo_1_0rc1)
++--p----- a------- fr(bepo_1_0rc1_latin9)
  --p----- a------- fr(bepo)
  --p----- a------- fr(bepo_latin9)
  --p----- a------- fr(dvorak)
-diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/rules/base.lst xkeyboard-config-1.1~cvs.20080104.1.6700/rules/base.lst
---- xkeyboard-config-1.1~cvs.20080104.1orig/rules/base.lst	2008-01-04 22:59:34.000000000 +0100
-+++ xkeyboard-config-1.1~cvs.20080104.1.6700/rules/base.lst	2008-07-23 16:55:33.000000000 +0200
-@@ -347,6 +347,30 @@
+diff -Naur xkeyboard-config-1.3.orig/rules/base.lst xkeyboard-config-1.3.1rc1/rules/base.lst
+--- xkeyboard-config-1.3.orig/rules/base.lst	2008-05-12 22:33:05.000000000 +0200
++++ xkeyboard-config-1.3.1rc1/rules/base.lst	2008-07-31 18:00:10.000000000 +0200
+@@ -366,6 +366,32 @@
    latin9          fr: (Legacy) Alternative
    latin9_nodeadkeys fr: (Legacy) Alternative, eliminate dead keys
    latin9_sundeadkeys fr: (Legacy) Alternative, Sun dead keys
@@ -127,13 +93,15 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/rules/base.lst xkeyboard-conf
 +  bepo_66_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.6, latin-9 only
 +  bepo_67         fr: Bepo, ergonomic, Dvorak way, v0.6.7
 +  bepo_67_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.7, latin-9 only
++  bepo_1_0rc1        fr: Bepo, ergonomic, Dvorak way, v1.0rc1
++  bepo_1_0rc1_latin9 fr: Bepo, ergonomic, Dvorak way, v1.0rc1, latin-9 only
    bepo            fr: Bepo, ergonomic, Dvorak way
    bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
    dvorak          fr: (Legacy) Dvorak
-diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/rules/base.xml.in xkeyboard-config-1.1~cvs.20080104.1.6700/rules/base.xml.in
---- xkeyboard-config-1.1~cvs.20080104.1orig/rules/base.xml.in	2008-01-04 22:07:53.000000000 +0100
-+++ xkeyboard-config-1.1~cvs.20080104.1.6700/rules/base.xml.in	2008-07-23 16:55:33.000000000 +0200
-@@ -1972,6 +1972,150 @@
+diff -Naur xkeyboard-config-1.3.orig/rules/base.xml.in xkeyboard-config-1.3.1rc1/rules/base.xml.in
+--- xkeyboard-config-1.3.orig/rules/base.xml.in	2008-05-12 22:33:00.000000000 +0200
++++ xkeyboard-config-1.3.1rc1/rules/base.xml.in	2008-07-31 18:01:15.000000000 +0200
+@@ -2197,6 +2197,162 @@
          </variant>
          <variant>
            <configItem>
@@ -281,13 +249,25 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/rules/base.xml.in xkeyboard-c
 +        </variant>
 +        <variant>
 +          <configItem>
++            <name>bepo_1_0rc1</name>
++            <_description>Bepo, ergonomic, Dvorak way, v1.0rc1</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_1_0rc1_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v1.0rc1, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
              <name>bepo</name>
              <_description>Bepo, ergonomic, Dvorak way</_description>
            </configItem>
-diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/fr xkeyboard-config-1.1~cvs.20080104.1.6700/symbols/fr
---- xkeyboard-config-1.1~cvs.20080104.1orig/symbols/fr	2008-01-02 22:21:43.000000000 +0100
-+++ xkeyboard-config-1.1~cvs.20080104.1.6700/symbols/fr	2008-07-23 16:55:33.000000000 +0200
-@@ -432,37 +432,43 @@
+diff -Naur xkeyboard-config-1.3.orig/symbols/fr xkeyboard-config-1.3.1rc1/symbols/fr
+--- xkeyboard-config-1.3.orig/symbols/fr	2008-04-22 21:54:11.000000000 +0200
++++ xkeyboard-config-1.3.1rc1/symbols/fr	2008-07-31 18:04:53.000000000 +0200
+@@ -431,37 +431,43 @@
  
  // Bépo : Improved ergonomic french keymap using Dvorak method.
  // Built by community on 'Dvorak Fr' mailing list :
@@ -346,7 +326,7 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/fr xkeyboard-config-1
  
      // First row
      key <TLDE> { [              at,       dollar,     numbersign                 ] }; // @ $ #
-@@ -515,14 +521,866 @@
+@@ -514,14 +520,890 @@
      key <AB04> { [          period,        colon,      backslash, periodcentered ] }; // . : \ ·
      key <AB05> { [               k,            K                                 ] }; // k K
      key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
@@ -824,7 +804,8 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/fr xkeyboard-config-1
 +
 +    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
 +    key <AB10> { [               j,            J                                 ] }; // j J
-+
+ 
+-    key <SPCE> { [           space, nobreakspace,          space,          space ] }; // ␣ ⍽ (espace insécable) ␣ ␣
 +    // Note : on a besoin de redéfinir les niveaux 3 et 4,
 +    // donc nbsp(level2) ne suffit pas !
 +    key <SPCE> { [           space,  nobreakspace,         space,          space ] }; // ␣ (espace insécable) ␣ ␣
@@ -1104,8 +1085,7 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/fr xkeyboard-config-1
 +
 +    include "fr(bepo_67)"
 +    include "keypad(oss_latin9)"
- 
--    key <SPCE> { [           space, nobreakspace,          space,          space ] }; // ␣ ⍽ (espace insécable) ␣ ␣
++
 +    name[Group1]="France - Bepo, ergonomic, Dvorak way, v0.6.7, latin-9 only";
 +
 +    key <TLDE> { [          dollar,   numbersign,        dollar,         section ] }; // $ # $ §
@@ -1142,6 +1122,30 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/fr xkeyboard-config-1
 +    // Note : on a besoin de redéfinir les niveaux 3 et 4,
 +    // donc nbsp(level2) ne suffit pas !
 +    key <SPCE> { [           space,  nobreakspace,    underscore,   nobreakspace ] }; // ␣ (espace insécable) _ (espace insécable)
++};
++
++
++// Version 1.0rc1 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_1_0rc1" {
++
++    // Include previous version :
++    include "fr(bepo_67)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v1.0rc1";
++
++    // Modifications depuis la version précédente : aucune !
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_1_0rc1_latin9" {
++
++    // Restricts the fr(bepo_1_0rc1) layout to latin9 symbols
++
++    include "fr(bepo_67_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v1.0rc1, latin-9 only";
 +};
 +
 +
@@ -1215,7 +1219,7 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/fr xkeyboard-config-1
  };
  
  partial alphanumeric_keys
-@@ -530,12 +1388,46 @@
+@@ -529,12 +1411,46 @@
  
      // Restricts the fr(bepo) layout to latin9 symbols
  
@@ -1264,10 +1268,10 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/fr xkeyboard-config-1
  };
  
  
-diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/symbols.dir xkeyboard-config-1.1~cvs.20080104.1.6700/symbols/symbols.dir
---- xkeyboard-config-1.1~cvs.20080104.1orig/symbols/symbols.dir	2008-01-04 23:02:48.000000000 +0100
-+++ xkeyboard-config-1.1~cvs.20080104.1.6700/symbols/symbols.dir	2008-07-23 16:55:33.000000000 +0200
-@@ -123,6 +123,30 @@
+diff -Naur xkeyboard-config-1.3.orig/symbols/symbols.dir xkeyboard-config-1.3.1rc1/symbols/symbols.dir
+--- xkeyboard-config-1.3.orig/symbols/symbols.dir	2007-06-26 09:54:26.000000000 +0200
++++ xkeyboard-config-1.3.1rc1/symbols/symbols.dir	2008-07-31 17:59:18.000000000 +0200
+@@ -17,6 +17,32 @@
  --p----- a------- fr(latin9_Sundeadkeys)
  --p----- a------- fr(latin9_sundeadkeys)
  --p----- a------- fr(latin9_nodeadkeys)
@@ -1295,6 +1299,8 @@ diff -Naur xkeyboard-config-1.1~cvs.20080104.1orig/symbols/symbols.dir xkeyboard
 +--p----- a------- fr(bepo_66_latin9)
 +--p----- a------- fr(bepo_67)
 +--p----- a------- fr(bepo_67_latin9)
++--p----- a------- fr(bepo_1_0rc1)
++--p----- a------- fr(bepo_1_0rc1_latin9)
  --p----- a------- fr(bepo)
  --p----- a------- fr(bepo_latin9)
  --p----- a------- fr(dvorak)
