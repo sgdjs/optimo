@@ -1,0 +1,20 @@
+#!/bin/sh -x
+#
+# passage en clavier fr-dvorak-bépo
+#
+# Copyright (C) 2008 Gaëtan Lehmann <gaetan.lehmann@jouy.inra.fr>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+
+set -ev
+
+# dump la config actuelle
+xkbcomp $DISPLAY -xkb dump.xkb
+# et utilise la notre à la place
+xkbcomp -w0 fr-dvorak-bepo.xkb $DISPLAY
+
+# c'est tout ! ^^

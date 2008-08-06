@@ -1,0 +1,20 @@
+#!/bin/sh -x
+#
+# restauration du clavier
+#
+# Copyright (C) 2008 Gaëtan Lehmann <gaetan.lehmann@jouy.inra.fr>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+
+set -ev
+
+if [ -e dump.xkb ]; then
+  xkbcomp -w0 dump.xkb $DISPLAY
+else
+  # pas de fichier - on repasse en azerty
+  setxkbmap fr
+fi
