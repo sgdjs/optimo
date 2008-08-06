@@ -35,7 +35,7 @@ mkdir fr-dvorak-bepo-xkb-$VERSION
 cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-xkb-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/xkb/fr-dvorak-bepo* pilotes/xkb/LISEZ_MOI.txt pilotes/xkb/XCompose fr-dvorak-bepo-xkb-$VERSION
+cp pilotes/xkb/fr-dvorak-bepo* pilotes/xkb/LISEZ_MOI.txt pilotes/xkb/XCompose pilotes/xkb/clavier_* fr-dvorak-bepo-xkb-$VERSION
 
 # build the archive
 tar cvzf ../fr-dvorak-bepo-xkb-$VERSION.tgz fr-dvorak-bepo-xkb-$VERSION
