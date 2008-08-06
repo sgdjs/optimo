@@ -15,6 +15,6 @@ set -ev
 # dump la config actuelle
 xkbcomp $DISPLAY -xkb dump.xkb
 # et utilise la notre à la place
-xkbcomp -w0 fr-dvorak-bepo.xkb $DISPLAY
+xkbcomp -w0 fr-dvorak-bepo.xkb $DISPLAY || xkbcomp -w0 fr-dvorak-bepo-xorglegacy.xkb $DISPLAY
 
 # c'est tout ! ^^
