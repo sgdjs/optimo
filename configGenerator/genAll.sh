@@ -24,7 +24,7 @@ perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}C.klc
 mv results/layout.ini results/layoutC.ini
 
 ./map.py         "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.txt"
-./svg.py         "results/layout-${VERSION}.xkb" "results/layout-${VERSION}"
+./svg.py         "results/layout-${VERSION}.xkb" "results/fr-dvorak-bepo-${VERSION}"
 ./klavaro.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbd"
 ./ktouch.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keyboard"
 ./typefaster.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.xml"
