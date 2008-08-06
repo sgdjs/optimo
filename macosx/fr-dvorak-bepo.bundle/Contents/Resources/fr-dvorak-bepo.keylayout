@@ -3772,6 +3772,7 @@
       <when state="belowdot" output="Ṛ"/>
       <when state="caron" output="Ř"/>
       <when state="cedilla" output="Ŗ"/>
+      <when state="currency" output="₨"/>
       <when state="doublegrave" output="Ȑ"/>
       <when state="greek" output="Ρ"/>
       <when state="invertedbreve" output="Ȓ"/>
@@ -4541,21 +4542,6 @@
       <when state="Multi_key_p" output="¶"/>
     </action>
 
-    <action id="#">
-      <when state="none" output="#"/>
-      <when state="Multi_key" next="Multi_key_numbersign"/>
-      <when state="Multi_key_numbersign" output="♯"/>
-    </action>
-
-    <action id="$">
-      <when state="none" output="$"/>
-    </action>
-
-    <action id="%">
-      <when state="none" output="%"/>
-      <when state="Multi_key" next="Multi_key_percent"/>
-    </action>
-
     <action id="&#x0022;">
       <when state="none" output="&#x0022;"/>
       <when state="Multi_key" next="Multi_key_quotedbl"/>
@@ -4569,6 +4555,21 @@
       <when state="Multi_key_comma" output="„"/>
       <when state="Multi_key_greater" output="”"/>
       <when state="Multi_key_less" output="“"/>
+    </action>
+
+    <action id="#">
+      <when state="none" output="#"/>
+      <when state="Multi_key" next="Multi_key_numbersign"/>
+      <when state="Multi_key_numbersign" output="♯"/>
+    </action>
+
+    <action id="$">
+      <when state="none" output="$"/>
+    </action>
+
+    <action id="%">
+      <when state="none" output="%"/>
+      <when state="Multi_key" next="Multi_key_percent"/>
     </action>
 
     <action id="&#x0026;">

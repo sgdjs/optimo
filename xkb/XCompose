@@ -117,6 +117,7 @@ include "%L"
 <UFDD1> <P> : PesetaSign
 <UFDD1> <p> : U20B0
 <UFDD1> <r> : CruzeiroSign
+<UFDD1> <R> : RupeeSign
 <UFDD1> <S> : dollar
 <UFDD1> <s> : NewSheqelSign
 <UFDD1> <T> : U20AE
