@@ -68,7 +68,7 @@ include "%L"
 <dead_circumflex> <egrave> : ecircumflexgrave
 <dead_circumflex> <ehook> : ecircumflexhook
 <dead_circumflex> <etilde> : ecircumflextilde
-<dead_circumflex> <0acute> : Ocircumflexacute
+<dead_circumflex> <Oacute> : Ocircumflexacute
 <dead_circumflex> <Ograve> : Ocircumflexgrave
 <dead_circumflex> <Ohook> : Ocircumflexhook
 <dead_circumflex> <Otilde> : Ocircumflextilde
@@ -204,7 +204,7 @@ include "%L"
 <dead_macron> <Egrave> : U1E14
 <dead_macron> <eacute> : U1E17
 <dead_macron> <egrave> : U1E15
-<dead_macron> <0acute> : U1E52
+<dead_macron> <Oacute> : U1E52
 <dead_macron> <Ograve> : U1E50
 <dead_macron> <oacute> : U1E53
 <dead_macron> <ograve> : U1E51
@@ -245,7 +245,7 @@ include "%L"
 <UFDD0> <l> : lstroke
 <UFDD0> <less> : U226E
 <UFDD0> <lessthanequal> : U2270
-<UFDD0> <0acute> : U01FE
+<UFDD0> <Oacute> : U01FE
 <UFDD0> <O> : Oslash
 <UFDD0> <oacute> : U01FF
 <UFDD0> <o> : oslash
@@ -266,7 +266,7 @@ include "%L"
 <UFDD0> <UFDD0> : slash
 <UFDD0> <nobreakspace> : U0338
 <UFDD0> <space> : slash
-<dead_tilde> <0acute> : U1E4C
+<dead_tilde> <Oacute> : U1E4C
 <dead_tilde> <Odiaeresis> : U1E4E
 <dead_tilde> <Omacron> : U022C
 <dead_tilde> <oacute> : U1E4D
