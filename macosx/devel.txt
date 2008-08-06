@@ -23,7 +23,7 @@ Ce répertoire contient plusieurs choses:
 
 Vous puvez vous assurer que le fichier compile avec la commande
 
-  klcompiler fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout
+  klcompiler fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout > /dev/null
   
 Avant de créer la nouvelle version il faut s'assurer que le nouveau numéro de version aparaît dans les fichiers suivants :
 
