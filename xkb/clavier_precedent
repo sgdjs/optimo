@@ -12,8 +12,18 @@
 
 set -ev
 
-if [ -e dump.xkb ]; then
-  xkbcomp -w0 dump.xkb $DISPLAY
+# quel répertoire temporaire utiliser ?
+if [ -n "$TMP" ]; then
+  tmp="$TMP"
+elif [ -n "$TMPDIR" ]; then
+  tmp="$TMPDIR"
+else
+  tmp=/tmp
+fi
+dump="$tmp/$USER-dump.xkb"
+
+if [ -e "$dump" ]; then
+  xkbcomp -w0 "$dump" $DISPLAY
 else
   # pas de fichier - on repasse en azerty
   setxkbmap fr

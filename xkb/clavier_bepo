@@ -12,8 +12,18 @@
 
 set -ev
 
+# quel répertoire temporaire utiliser ?
+if [ -n "$TMP" ]; then
+  tmp="$TMP"
+elif [ -n "$TMPDIR" ]; then
+  tmp="$TMPDIR"
+else
+  tmp=/tmp
+fi
+dump="$tmp/$USER-dump.xkb"
+
 # dump la config actuelle
-xkbcomp $DISPLAY -xkb dump.xkb
+xkbcomp $DISPLAY -xkb "$dump"
 # et utilise la notre à la place
 xkbcomp -w0 fr-dvorak-bepo.xkb $DISPLAY || xkbcomp -w0 fr-dvorak-bepo-xorglegacy.xkb $DISPLAY
 
