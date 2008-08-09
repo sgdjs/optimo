@@ -29,8 +29,12 @@ which xmessage && dialog="xmessage -button OK:0,Retour:1"
 which kdialog && dialog="kdialog --title fr-dvorak-bépo --warningcontinuecancel"
 which zenity && dialog="zenity --question --title fr-dvorak-bépo --text"
 
-# dump la config actuelle
-xkbcomp $DISPLAY -xkb "$dump"
+# dump la config actuelle si elle n'existe pas, pour être sur de ne pas faire
+# une sauvegarde de notre config si l'utilisateur a relancé ce script alors
+# qu'il était déjà en bépo.
+if [ ! -e "$dump" ]; then
+  xkbcomp $DISPLAY -xkb "$dump"
+fi
 # et utilise la notre à la place
 xkbcomp -w0 "$dir/fr-dvorak-bepo.xkb" $DISPLAY || xkbcomp -w0 "$dir/fr-dvorak-bepo-xorglegacy.xkb" $DISPLAY
 
