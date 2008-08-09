@@ -22,9 +22,22 @@ else
 fi
 dump="$tmp/$USER-dump.xkb"
 
+# quel logiciel de dialogue ?
+dialog=echo
+which xmessage && dialog="xmessage -button OK:0,Retour:1"
+which kdialog && dialog="kdialog --title fr-dvorak-bépo --warningcontinuecancel"
+which zenity && dialog="zenity --question --title fr-dvorak-bépo --text"
+
 # dump la config actuelle
 xkbcomp $DISPLAY -xkb "$dump"
 # et utilise la notre à la place
 xkbcomp -w0 fr-dvorak-bepo.xkb $DISPLAY || xkbcomp -w0 fr-dvorak-bepo-xorglegacy.xkb $DISPLAY
 
-# c'est tout ! ^^
+
+if `$dialog "Vous utilisez maintenant la disposition de clavier fr-dvorak-bépo."` ; then
+  echo "Utilisez 'clavier_precedent' pour restaurer la configuration de clavier."
+else
+  # restaurons le clavier...
+  dir=`dirname $0`
+  $dir/clavier_precedent
+fi
