@@ -906,11 +906,11 @@ sub gen_win_msklc_footer()
                  "005e\t\"CIRCUMFLEX ACCENT\"\r\n".
                  "02c7\t\"CARON\"\r\n".
                  "002c\t\"COMMA BELOW\"\r\n".
-                 "002f\t\"SOLIDUS\"\r\n".
+                 "002f\t\"STROKE\"\r\n".
                  "02d8\t\"BREVE\"\r\n".
                  "00a8\t\"DIAERESIS\"\r\n".
                  "02d9\t\"DOT ABOVE\"\r\n".
-                 "00a4\t\"CURRENCY SIGN\"\r\n".
+                 "00a4\t\"CURRENCY\"\r\n".
                  "00af\t\"MACRON\"\r\n".
                  "00b8\t\"CEDILLA\"\r\n".
                  "007e\t\"TILDE\"\r\n".
