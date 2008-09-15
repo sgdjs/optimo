@@ -72,6 +72,9 @@ composeNames["dead_greek"] = u"greek"
 composeNames["UFDD2"] = u"greek"
 composeNames["dead_commabelow"] = u"commabelow"
 composeNames["UFDD3"] = u"commabelow"
+composeNames["dead_hook"] = u"hook"
+composeNames["dead_horn"] = u"horn"
+composeNames["dead_belowdot"] = u"belowdot"
 
 composeChars = {}
 for name, C in composeNames.iteritems():
