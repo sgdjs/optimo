@@ -917,6 +917,9 @@ sub gen_win_msklc_footer()
                  "02da\t\"RING ABOVE\"\r\n".
                  "00b5\t\"GREEK\"\r\n".
                  "02db\t\"OGONEK\"\r\n".
+                 "0309\t\"HOOK ABOVE\"\r\n".
+                 "031b\t\"HORN\"\r\n".
+                 "0323\t\"DOT BELOW\"\r\n".
                  "\r\n".
                  "\r\n".
                  "DESCRIPTIONS\r\n".
