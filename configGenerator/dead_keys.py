@@ -342,6 +342,10 @@ for name, C in unicode_dict.iteritems():
   if 'MIDDLE DOT' in modifiers:
     del modifiers[ modifiers.index('MIDDLE DOT') ]
     modifiers.append('DOT ABOVE')
+  # translate the middle dot modifier to dot above
+  if 'HOOK ABOVE' in modifiers:
+    del modifiers[ modifiers.index('HOOK ABOVE') ]
+    modifiers.append('HOOK')
   # remove empty string in the modifier, to generate an empty tuple
   if '' in modifiers:
     modifiers.remove('')
@@ -366,8 +370,11 @@ for name, C in unicode_dict.iteritems():
     key = (letter, case)
     modSet = d.get( key , set([]) )
     if modifiers in modSet:
-      print >> sys.stderr, name, "est déjà défini."
-      dc[ (key, modifiers) ] = min( dc[ (key, modifiers) ], C )
+      print >> sys.stderr, name, "est déjà défini." #, dc[ (key, modifiers) ], C, max( dc[ (key, modifiers) ], C )
+      if C in u"ỷƴỶƳ":
+        dc[ (key, modifiers) ] = max( dc[ (key, modifiers) ], C )
+      else:
+        dc[ (key, modifiers) ] = min( dc[ (key, modifiers) ], C )
     else :
       dc[ (key, modifiers) ] = C
     modSet.add( modifiers )
