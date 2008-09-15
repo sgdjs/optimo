@@ -281,7 +281,7 @@
       <key code="24" action="`" />
       <key code="25" action="9" />
       <key code="26" action="7" />
-      <key code="27" action="^" />
+      <key code="27" action="°" />
       <key code="28" action="8" />
       <key code="29" action="0" />
       <key code="30" action="W" />
@@ -511,7 +511,7 @@
       <key code="24" action="`" />
       <key code="25" action="/" />
       <key code="26" action="+" />
-      <key code="27" action="^" />
+      <key code="27" action="°" />
       <key code="28" action="-" />
       <key code="29" action="*" />
       <key code="30" action="w" />
@@ -621,7 +621,7 @@
       <key code="19" action="&#x003c;" />
       <key code="20" action=">" />
       <key code="21" action="[" />
-      <key code="22" action="¬" />
+      <key code="22" action="^" />
       <key code="23" action="]" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
@@ -640,7 +640,7 @@
       <key code="38" action="þ" />
       <key code="39" action="macron" />
       <key code="40" action="ß" />
-      <key code="41" action="ñ" />
+      <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
       <key code="43" action="greek" />
       <key code="44" action="ogonek" />
@@ -719,16 +719,16 @@
       <key code="2" action="abovedot" />
       <key code="3" action="currency" />
       <key code="4" action="ſ" />
-      <key code="5" action="" />
+      <key code="5" action="horn" />
       <key code="6" action="" />
       <key code="7" action="‘" />
       <key code="8" action="’" />
       <key code="9" action="·" />
-      <key code="10" action="§" />
-      <key code="11" action="tilde" />
+      <key code="10" action="¶" />
+      <key code="11" action="" />
       <key code="12" action="¦" />
       <key code="13" action="doubleacute" />
-      <key code="14" action="¶" />
+      <key code="14" action="§" />
       <key code="15" action="Œ" />
       <key code="16" action="" />
       <key code="17" action="`" />
@@ -738,12 +738,12 @@
       <key code="21" action="≤" />
       <key code="22" action="" />
       <key code="23" action="≥" />
-      <key code="24" action="" />
-      <key code="25" action="″" />
-      <key code="26" action="°" />
-      <key code="27" action="" />
-      <key code="28" action="′" />
-      <key code="29" action="" />
+      <key code="24" action="″" />
+      <key code="25" action="½" />
+      <key code="26" action="¬" />
+      <key code="27" action="′" />
+      <key code="28" action="¼" />
+      <key code="29" action="¾" />
       <key code="30" action="" />
       <key code="31" action="" />
       <key code="32" action="" />
@@ -755,12 +755,12 @@
       <key code="38" action="Þ" />
       <key code="39" action="º" />
       <key code="40" action="ẞ" />
-      <key code="41" action="Ñ" />
+      <key code="41" action="" />
       <key code="42" action="commabelow" />
       <key code="43" action="" />
       <key code="44" action="ª" />
-      <key code="45" action="" />
-      <key code="46" action="" />
+      <key code="45" action="hook" />
+      <key code="46" action="belowdot" />
       <key code="47" action="‡" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
@@ -834,16 +834,16 @@
       <key code="2" action="abovedot" />
       <key code="3" action="currency" />
       <key code="4" action="ſ" />
-      <key code="5" action="" />
+      <key code="5" action="horn" />
       <key code="6" action="" />
       <key code="7" action="‘" />
       <key code="8" action="’" />
       <key code="9" action="·" />
-      <key code="10" action="§" />
-      <key code="11" action="tilde" />
+      <key code="10" action="¶" />
+      <key code="11" action="" />
       <key code="12" action="¦" />
       <key code="13" action="doubleacute" />
-      <key code="14" action="¶" />
+      <key code="14" action="§" />
       <key code="15" action="œ" />
       <key code="16" action="" />
       <key code="17" action="`" />
@@ -853,12 +853,12 @@
       <key code="21" action="≤" />
       <key code="22" action="" />
       <key code="23" action="≥" />
-      <key code="24" action="" />
-      <key code="25" action="″" />
-      <key code="26" action="°" />
-      <key code="27" action="" />
-      <key code="28" action="′" />
-      <key code="29" action="" />
+      <key code="24" action="″" />
+      <key code="25" action="½" />
+      <key code="26" action="¬" />
+      <key code="27" action="′" />
+      <key code="28" action="¼" />
+      <key code="29" action="¾" />
       <key code="30" action="" />
       <key code="31" action="" />
       <key code="32" action="" />
@@ -870,12 +870,12 @@
       <key code="38" action="þ" />
       <key code="39" action="º" />
       <key code="40" action="ẞ" />
-      <key code="41" action="ñ" />
+      <key code="41" action="" />
       <key code="42" action="commabelow" />
       <key code="43" action="" />
       <key code="44" action="ª" />
-      <key code="45" action="" />
-      <key code="46" action="" />
+      <key code="45" action="hook" />
+      <key code="46" action="belowdot" />
       <key code="47" action="‡" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
@@ -966,7 +966,7 @@
       <key code="19" action="&#x003c;" />
       <key code="20" action=">" />
       <key code="21" action="[" />
-      <key code="22" action="¬" />
+      <key code="22" action="^" />
       <key code="23" action="]" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
@@ -985,7 +985,7 @@
       <key code="38" action="Þ" />
       <key code="39" action="macron" />
       <key code="40" action="ß" />
-      <key code="41" action="Ñ" />
+      <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
       <key code="43" action="greek" />
       <key code="44" action="ogonek" />
@@ -1081,7 +1081,7 @@
       <key code="19" action="&#x003c;" />
       <key code="20" action=">" />
       <key code="21" action="[" />
-      <key code="22" action="¬" />
+      <key code="22" action="^" />
       <key code="23" action="]" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
@@ -1100,7 +1100,7 @@
       <key code="38" action="þ" />
       <key code="39" action="¯" />
       <key code="40" action="ß" />
-      <key code="41" action="ñ" />
+      <key code="41" action="~" />
       <key code="42" action="¸" />
       <key code="43" action="µ" />
       <key code="44" action="˛" />
@@ -1811,7 +1811,7 @@
       <when state="doublegrave" output="ȁ"/>
       <when state="grave" output="à"/>
       <when state="greek" output="α"/>
-      <when state="hookabove" output="ả"/>
+      <when state="hook" output="ả"/>
       <when state="invertedbreve" output="ȃ"/>
       <when state="macron" output="ā"/>
       <when state="ogonek" output="ą"/>
@@ -1828,10 +1828,10 @@
       <when state="belowdot_breve" output="ặ"/>
       <when state="belowdot_circumflex" output="ậ"/>
       <when state="breve_grave" output="ằ"/>
-      <when state="breve_hookabove" output="ẳ"/>
+      <when state="breve_hook" output="ẳ"/>
       <when state="breve_tilde" output="ẵ"/>
       <when state="circumflex_grave" output="ầ"/>
-      <when state="circumflex_hookabove" output="ẩ"/>
+      <when state="circumflex_hook" output="ẩ"/>
       <when state="circumflex_tilde" output="ẫ"/>
       <when state="diaeresis_macron" output="ǟ"/>
       <when state="Multi_key" next="Multi_key_a"/>
@@ -1910,7 +1910,7 @@
       <when state="acute" output="ấ"/>
       <when state="belowdot" output="ậ"/>
       <when state="grave" output="ầ"/>
-      <when state="hookabove" output="ẩ"/>
+      <when state="hook" output="ẩ"/>
       <when state="tilde" output="ẫ"/>
       <when state="Multi_key_acute" output="ấ"/>
       <when state="Multi_key_apostrophe" output="ấ"/>
@@ -1945,7 +1945,7 @@
       <when state="acute" output="ắ"/>
       <when state="belowdot" output="ặ"/>
       <when state="grave" output="ằ"/>
-      <when state="hookabove" output="ẳ"/>
+      <when state="hook" output="ẳ"/>
       <when state="tilde" output="ẵ"/>
       <when state="Multi_key_acute" output="ắ"/>
       <when state="Multi_key_apostrophe" output="ắ"/>
@@ -1985,7 +1985,7 @@
       <when state="doublegrave" output="Ȁ"/>
       <when state="grave" output="À"/>
       <when state="greek" output="Α"/>
-      <when state="hookabove" output="Ả"/>
+      <when state="hook" output="Ả"/>
       <when state="invertedbreve" output="Ȃ"/>
       <when state="macron" output="Ā"/>
       <when state="ogonek" output="Ą"/>
@@ -2000,10 +2000,10 @@
       <when state="belowdot_breve" output="Ặ"/>
       <when state="belowdot_circumflex" output="Ậ"/>
       <when state="breve_grave" output="Ằ"/>
-      <when state="breve_hookabove" output="Ẳ"/>
+      <when state="breve_hook" output="Ẳ"/>
       <when state="breve_tilde" output="Ẵ"/>
       <when state="circumflex_grave" output="Ầ"/>
-      <when state="circumflex_hookabove" output="Ẩ"/>
+      <when state="circumflex_hook" output="Ẩ"/>
       <when state="circumflex_tilde" output="Ẫ"/>
       <when state="diaeresis_macron" output="Ǟ"/>
       <when state="Multi_key" next="Multi_key_A"/>
@@ -2081,7 +2081,7 @@
       <when state="acute" output="Ấ"/>
       <when state="belowdot" output="Ậ"/>
       <when state="grave" output="Ầ"/>
-      <when state="hookabove" output="Ẩ"/>
+      <when state="hook" output="Ẩ"/>
       <when state="tilde" output="Ẫ"/>
       <when state="Multi_key_acute" output="Ấ"/>
       <when state="Multi_key_apostrophe" output="Ấ"/>
@@ -2116,7 +2116,7 @@
       <when state="acute" output="Ắ"/>
       <when state="belowdot" output="Ặ"/>
       <when state="grave" output="Ằ"/>
-      <when state="hookabove" output="Ẳ"/>
+      <when state="hook" output="Ẳ"/>
       <when state="tilde" output="Ẵ"/>
       <when state="Multi_key_acute" output="Ắ"/>
       <when state="Multi_key_apostrophe" output="Ắ"/>
@@ -2387,7 +2387,7 @@
       <when state="doublegrave" output="ȅ"/>
       <when state="grave" output="è"/>
       <when state="greek" output="ε"/>
-      <when state="hookabove" output="ẻ"/>
+      <when state="hook" output="ẻ"/>
       <when state="invertedbreve" output="ȇ"/>
       <when state="macron" output="ē"/>
       <when state="ogonek" output="ę"/>
@@ -2400,7 +2400,7 @@
       <when state="belowdot_circumflex" output="ệ"/>
       <when state="breve_cedilla" output="ḝ"/>
       <when state="circumflex_grave" output="ề"/>
-      <when state="circumflex_hookabove" output="ể"/>
+      <when state="circumflex_hook" output="ể"/>
       <when state="circumflex_tilde" output="ễ"/>
       <when state="grave_macron" output="ḕ"/>
       <when state="Multi_key" next="Multi_key_e"/>
@@ -2467,7 +2467,7 @@
       <when state="acute" output="ế"/>
       <when state="belowdot" output="ệ"/>
       <when state="grave" output="ề"/>
-      <when state="hookabove" output="ể"/>
+      <when state="hook" output="ể"/>
       <when state="tilde" output="ễ"/>
       <when state="Multi_key_acute" output="ế"/>
       <when state="Multi_key_apostrophe" output="ế"/>
@@ -2521,7 +2521,7 @@
       <when state="doublegrave" output="Ȅ"/>
       <when state="grave" output="È"/>
       <when state="greek" output="Ε"/>
-      <when state="hookabove" output="Ẻ"/>
+      <when state="hook" output="Ẻ"/>
       <when state="invertedbreve" output="Ȇ"/>
       <when state="macron" output="Ē"/>
       <when state="ogonek" output="Ę"/>
@@ -2533,7 +2533,7 @@
       <when state="belowdot_circumflex" output="Ệ"/>
       <when state="breve_cedilla" output="Ḝ"/>
       <when state="circumflex_grave" output="Ề"/>
-      <when state="circumflex_hookabove" output="Ể"/>
+      <when state="circumflex_hook" output="Ể"/>
       <when state="circumflex_tilde" output="Ễ"/>
       <when state="grave_macron" output="Ḕ"/>
       <when state="Multi_key" next="Multi_key_E"/>
@@ -2600,7 +2600,7 @@
       <when state="acute" output="Ế"/>
       <when state="belowdot" output="Ệ"/>
       <when state="grave" output="Ề"/>
-      <when state="hookabove" output="Ể"/>
+      <when state="hook" output="Ể"/>
       <when state="tilde" output="Ễ"/>
       <when state="Multi_key_acute" output="Ế"/>
       <when state="Multi_key_apostrophe" output="Ế"/>
@@ -2822,7 +2822,7 @@
       <when state="doublegrave" output="ȉ"/>
       <when state="grave" output="ì"/>
       <when state="greek" output="ι"/>
-      <when state="hookabove" output="ỉ"/>
+      <when state="hook" output="ỉ"/>
       <when state="invertedbreve" output="ȋ"/>
       <when state="macron" output="ī"/>
       <when state="ogonek" output="į"/>
@@ -2877,7 +2877,7 @@
       <when state="doublegrave" output="Ȉ"/>
       <when state="grave" output="Ì"/>
       <when state="greek" output="Ι"/>
-      <when state="hookabove" output="Ỉ"/>
+      <when state="hook" output="Ỉ"/>
       <when state="invertedbreve" output="Ȋ"/>
       <when state="macron" output="Ī"/>
       <when state="ogonek" output="Į"/>
@@ -3127,6 +3127,7 @@
       <when state="belowdot" output="Ṃ"/>
       <when state="currency" output="ℳ"/>
       <when state="greek" output="Μ"/>
+      <when state="hook" output="Ɱ"/>
       <when state="Multi_key_parenleft" next="Multi_key_parenleft_M"/>
       <when state="Multi_key_S" output="℠"/>
       <when state="Multi_key_T" output="™"/>
@@ -3211,7 +3212,7 @@
       <when state="doublegrave" output="ȍ"/>
       <when state="grave" output="ò"/>
       <when state="greek" output="ο"/>
-      <when state="hookabove" output="ỏ"/>
+      <when state="hook" output="ỏ"/>
       <when state="horn" output="ơ"/>
       <when state="invertedbreve" output="ȏ"/>
       <when state="macron" output="ō"/>
@@ -3227,13 +3228,13 @@
       <when state="belowdot_circumflex" output="ộ"/>
       <when state="belowdot_horn" output="ợ"/>
       <when state="circumflex_grave" output="ồ"/>
-      <when state="circumflex_hookabove" output="ổ"/>
+      <when state="circumflex_hook" output="ổ"/>
       <when state="circumflex_tilde" output="ỗ"/>
       <when state="diaeresis_macron" output="ȫ"/>
       <when state="diaeresis_tilde" output="ṏ"/>
       <when state="grave_horn" output="ờ"/>
       <when state="grave_macron" output="ṑ"/>
-      <when state="hookabove_horn" output="ở"/>
+      <when state="hook_horn" output="ở"/>
       <when state="horn_tilde" output="ỡ"/>
       <when state="macron_ogonek" output="ǭ"/>
       <when state="macron_tilde" output="ȭ"/>
@@ -3346,7 +3347,7 @@
       <when state="acute" output="ố"/>
       <when state="belowdot" output="ộ"/>
       <when state="grave" output="ồ"/>
-      <when state="hookabove" output="ổ"/>
+      <when state="hook" output="ổ"/>
       <when state="tilde" output="ỗ"/>
       <when state="Multi_key_acute" output="ố"/>
       <when state="Multi_key_apostrophe" output="ố"/>
@@ -3397,7 +3398,7 @@
       <when state="acute" output="ớ"/>
       <when state="belowdot" output="ợ"/>
       <when state="grave" output="ờ"/>
-      <when state="hookabove" output="ở"/>
+      <when state="hook" output="ở"/>
       <when state="tilde" output="ỡ"/>
       <when state="Multi_key_acute" output="ớ"/>
       <when state="Multi_key_apostrophe" output="ớ"/>
@@ -3443,7 +3444,7 @@
       <when state="doublegrave" output="Ȍ"/>
       <when state="grave" output="Ò"/>
       <when state="greek" output="Ο"/>
-      <when state="hookabove" output="Ỏ"/>
+      <when state="hook" output="Ỏ"/>
       <when state="horn" output="Ơ"/>
       <when state="invertedbreve" output="Ȏ"/>
       <when state="macron" output="Ō"/>
@@ -3460,13 +3461,13 @@
       <when state="belowdot_circumflex" output="Ộ"/>
       <when state="belowdot_horn" output="Ợ"/>
       <when state="circumflex_grave" output="Ồ"/>
-      <when state="circumflex_hookabove" output="Ổ"/>
+      <when state="circumflex_hook" output="Ổ"/>
       <when state="circumflex_tilde" output="Ỗ"/>
       <when state="diaeresis_macron" output="Ȫ"/>
       <when state="diaeresis_tilde" output="Ṏ"/>
       <when state="grave_horn" output="Ờ"/>
       <when state="grave_macron" output="Ṑ"/>
-      <when state="hookabove_horn" output="Ở"/>
+      <when state="hook_horn" output="Ở"/>
       <when state="horn_tilde" output="Ỡ"/>
       <when state="macron_ogonek" output="Ǭ"/>
       <when state="macron_tilde" output="Ȭ"/>
@@ -3574,7 +3575,7 @@
       <when state="acute" output="Ố"/>
       <when state="belowdot" output="Ộ"/>
       <when state="grave" output="Ồ"/>
-      <when state="hookabove" output="Ổ"/>
+      <when state="hook" output="Ổ"/>
       <when state="tilde" output="Ỗ"/>
       <when state="Multi_key_acute" output="Ố"/>
       <when state="Multi_key_apostrophe" output="Ố"/>
@@ -3625,7 +3626,7 @@
       <when state="acute" output="Ớ"/>
       <when state="belowdot" output="Ợ"/>
       <when state="grave" output="Ờ"/>
-      <when state="hookabove" output="Ở"/>
+      <when state="hook" output="Ở"/>
       <when state="tilde" output="Ỡ"/>
       <when state="Multi_key_acute" output="Ớ"/>
       <when state="Multi_key_apostrophe" output="Ớ"/>
@@ -4036,7 +4037,7 @@
       <when state="doublegrave" output="ȕ"/>
       <when state="grave" output="ù"/>
       <when state="greek" output="υ"/>
-      <when state="hookabove" output="ủ"/>
+      <when state="hook" output="ủ"/>
       <when state="horn" output="ư"/>
       <when state="invertedbreve" output="ȗ"/>
       <when state="macron" output="ū"/>
@@ -4054,7 +4055,7 @@
       <when state="diaeresis_grave" output="ǜ"/>
       <when state="diaeresis_macron" output="ǖ"/>
       <when state="grave_horn" output="ừ"/>
-      <when state="hookabove_horn" output="ử"/>
+      <when state="hook_horn" output="ử"/>
       <when state="horn_tilde" output="ữ"/>
       <when state="Multi_key" next="Multi_key_u"/>
       <when state="Multi_key_parenleft" next="Multi_key_parenleft_u"/>
@@ -4152,7 +4153,7 @@
       <when state="acute" output="ứ"/>
       <when state="belowdot" output="ự"/>
       <when state="grave" output="ừ"/>
-      <when state="hookabove" output="ử"/>
+      <when state="hook" output="ử"/>
       <when state="tilde" output="ữ"/>
       <when state="Multi_key_acute" output="ứ"/>
       <when state="Multi_key_apostrophe" output="ứ"/>
@@ -4188,7 +4189,7 @@
       <when state="doublegrave" output="Ȕ"/>
       <when state="grave" output="Ù"/>
       <when state="greek" output="Υ"/>
-      <when state="hookabove" output="Ủ"/>
+      <when state="hook" output="Ủ"/>
       <when state="horn" output="Ư"/>
       <when state="invertedbreve" output="Ȗ"/>
       <when state="macron" output="Ū"/>
@@ -4205,7 +4206,7 @@
       <when state="diaeresis_grave" output="Ǜ"/>
       <when state="diaeresis_macron" output="Ǖ"/>
       <when state="grave_horn" output="Ừ"/>
-      <when state="hookabove_horn" output="Ử"/>
+      <when state="hook_horn" output="Ử"/>
       <when state="horn_tilde" output="Ữ"/>
       <when state="Multi_key" next="Multi_key_U"/>
       <when state="Multi_key_parenleft" next="Multi_key_parenleft_U"/>
@@ -4301,7 +4302,7 @@
       <when state="acute" output="Ứ"/>
       <when state="belowdot" output="Ự"/>
       <when state="grave" output="Ừ"/>
-      <when state="hookabove" output="Ử"/>
+      <when state="hook" output="Ử"/>
       <when state="tilde" output="Ữ"/>
       <when state="Multi_key_acute" output="Ứ"/>
       <when state="Multi_key_apostrophe" output="Ứ"/>
@@ -4362,6 +4363,7 @@
       <when state="diaeresis" output="ẅ"/>
       <when state="grave" output="ẁ"/>
       <when state="greek" output="ω"/>
+      <when state="hook" output="ⱳ"/>
       <when state="ringabove" output="ẘ"/>
       <when state="Multi_key_parenleft" next="Multi_key_parenleft_w"/>
       <when state="Multi_key_acute" output="ẃ"/>
@@ -4384,6 +4386,7 @@
       <when state="diaeresis" output="Ẅ"/>
       <when state="grave" output="Ẁ"/>
       <when state="greek" output="Ω"/>
+      <when state="hook" output="Ⱳ"/>
       <when state="Multi_key" next="Multi_key_W"/>
       <when state="Multi_key_parenleft" next="Multi_key_parenleft_W"/>
       <when state="Multi_key_acute" output="Ẃ"/>
@@ -4430,8 +4433,7 @@
       <when state="diaeresis" output="ÿ"/>
       <when state="grave" output="ỳ"/>
       <when state="greek" output="ψ"/>
-      <when state="hook" output="ƴ"/>
-      <when state="hookabove" output="ỷ"/>
+      <when state="hook" output="ỷ"/>
       <when state="macron" output="ȳ"/>
       <when state="ringabove" output="ẙ"/>
       <when state="stroke" output="ɏ"/>
@@ -4461,8 +4463,7 @@
       <when state="diaeresis" output="Ÿ"/>
       <when state="grave" output="Ỳ"/>
       <when state="greek" output="Ψ"/>
-      <when state="hook" output="Ƴ"/>
-      <when state="hookabove" output="Ỷ"/>
+      <when state="hook" output="Ỷ"/>
       <when state="macron" output="Ȳ"/>
       <when state="stroke" output="Ɏ"/>
       <when state="tilde" output="Ỹ"/>
@@ -4813,16 +4814,24 @@
       <when state="none" output="»"/>
     </action>
 
+    <action id="¼">
+      <when state="none" output="¼"/>
+    </action>
+
+    <action id="½">
+      <when state="none" output="½"/>
+    </action>
+
+    <action id="¾">
+      <when state="none" output="¾"/>
+    </action>
+
     <action id="¿">
       <when state="none" output="¿"/>
     </action>
 
     <action id="Ð">
       <when state="none" output="Ð"/>
-    </action>
-
-    <action id="Ñ">
-      <when state="none" output="Ñ"/>
     </action>
 
     <action id="×">
@@ -4835,10 +4844,6 @@
 
     <action id="ð">
       <when state="none" output="ð"/>
-    </action>
-
-    <action id="ñ">
-      <when state="none" output="ñ"/>
     </action>
 
     <action id="÷">
@@ -8784,7 +8789,6 @@
       <when state="grave" output="`"/>
       <when state="greek" output="µ"/>
       <when state="hook" output="?"/>
-      <when state="hookabove" output="̉"/>
       <when state="horn" output="̛"/>
       <when state="invertedbreve" output="̑"/>
       <when state="lefthook" output="?"/>
@@ -8825,12 +8829,12 @@
       <when state="belowdot_macron" output=".¯"/>
       <when state="breve_cedilla" output="˘¸"/>
       <when state="breve_grave" output="˘`"/>
-      <when state="breve_hookabove" output="˘̉"/>
+      <when state="breve_hook" output="˘?"/>
       <when state="breve_tilde" output="˘~"/>
       <when state="caron_diaeresis" output="ˇ&#x0022;"/>
       <when state="cedilla_currency" output="¸¤"/>
       <when state="circumflex_grave" output="^`"/>
-      <when state="circumflex_hookabove" output="^̉"/>
+      <when state="circumflex_hook" output="^?"/>
       <when state="circumflex_tilde" output="^~"/>
       <when state="diaeresis_grave" output="&#x0022;`"/>
       <when state="diaeresis_macron" output="&#x0022;¯"/>
@@ -8839,8 +8843,8 @@
       <when state="fishhook_tail" output="??"/>
       <when state="grave_horn" output="`̛"/>
       <when state="grave_macron" output="`¯"/>
+      <when state="hook_horn" output="?̛"/>
       <when state="hook_tail" output="??"/>
-      <when state="hookabove_horn" output="̛̉"/>
       <when state="horn_tilde" output="̛~"/>
       <when state="macron_ogonek" output="¯˛"/>
       <when state="macron_tilde" output="¯~"/>
@@ -8882,7 +8886,6 @@
       <when state="grave" output="̀"/>
       <when state="greek" output="µ"/>
       <when state="hook" output="?"/>
-      <when state="hookabove" output="̉"/>
       <when state="horn" output="̛"/>
       <when state="invertedbreve" output="̑"/>
       <when state="lefthook" output="?"/>
@@ -8923,12 +8926,12 @@
       <when state="belowdot_macron" output=".̄"/>
       <when state="breve_cedilla" output="̧̆"/>
       <when state="breve_grave" output="̆̀"/>
-      <when state="breve_hookabove" output="̆̉"/>
+      <when state="breve_hook" output="̆?"/>
       <when state="breve_tilde" output="̆̃"/>
       <when state="caron_diaeresis" output="̌̈"/>
       <when state="cedilla_currency" output="̧¤"/>
       <when state="circumflex_grave" output="̂̀"/>
-      <when state="circumflex_hookabove" output="̂̉"/>
+      <when state="circumflex_hook" output="̂?"/>
       <when state="circumflex_tilde" output="̂̃"/>
       <when state="diaeresis_grave" output="̈̀"/>
       <when state="diaeresis_macron" output="̈̄"/>
@@ -8937,8 +8940,8 @@
       <when state="fishhook_tail" output="??"/>
       <when state="grave_horn" output="̛̀"/>
       <when state="grave_macron" output="̀̄"/>
+      <when state="hook_horn" output="?̛"/>
       <when state="hook_tail" output="??"/>
-      <when state="hookabove_horn" output="̛̉"/>
       <when state="horn_tilde" output="̛̃"/>
       <when state="macron_ogonek" output="̨̄"/>
       <when state="macron_tilde" output="̄̃"/>
@@ -9007,7 +9010,7 @@
       <when state="belowdot" next="belowdot_breve"/>
       <when state="cedilla" next="breve_cedilla"/>
       <when state="grave" next="breve_grave"/>
-      <when state="hookabove" next="breve_hookabove"/>
+      <when state="hook" next="breve_hook"/>
       <when state="tilde" next="breve_tilde"/>
       <when state="Multi_key_acute" next="Multi_key_acute_dead_breve"/>
       <when state="Multi_key_apostrophe" next="Multi_key_apostrophe_dead_breve"/>
@@ -9043,7 +9046,7 @@
       <when state="acute" next="acute_circumflex"/>
       <when state="belowdot" next="belowdot_circumflex"/>
       <when state="grave" next="circumflex_grave"/>
-      <when state="hookabove" next="circumflex_hookabove"/>
+      <when state="hook" next="circumflex_hook"/>
       <when state="tilde" next="circumflex_tilde"/>
       <when state="Multi_key_acute" next="Multi_key_acute_dead_circumflex"/>
       <when state="Multi_key_apostrophe" next="Multi_key_apostrophe_dead_circumflex"/>
@@ -9130,14 +9133,10 @@
     <action id="hook">
       <when state="hook" output="?"/>
       <when state="none" next="hook"/>
+      <when state="breve" next="breve_hook"/>
+      <when state="circumflex" next="circumflex_hook"/>
+      <when state="horn" next="hook_horn"/>
       <when state="tail" next="hook_tail"/>
-    </action>
-    <action id="hookabove">
-      <when state="hookabove" output="̉"/>
-      <when state="none" next="hookabove"/>
-      <when state="breve" next="breve_hookabove"/>
-      <when state="circumflex" next="circumflex_hookabove"/>
-      <when state="horn" next="hookabove_horn"/>
     </action>
     <action id="horn">
       <when state="horn" output="̛"/>
@@ -9145,7 +9144,7 @@
       <when state="acute" next="acute_horn"/>
       <when state="belowdot" next="belowdot_horn"/>
       <when state="grave" next="grave_horn"/>
-      <when state="hookabove" next="hookabove_horn"/>
+      <when state="hook" next="hook_horn"/>
       <when state="tilde" next="horn_tilde"/>
       <when state="Multi_key_acute" next="Multi_key_acute_dead_horn"/>
       <when state="Multi_key_apostrophe" next="Multi_key_apostrophe_dead_horn"/>
@@ -9302,7 +9301,6 @@
     <when state="grave" output="`"/>
     <when state="greek" output="µ"/>
     <when state="hook" output="?"/>
-    <when state="hookabove" output="̉"/>
     <when state="horn" output="̛"/>
     <when state="invertedbreve" output="̑"/>
     <when state="lefthook" output="?"/>
@@ -9343,12 +9341,12 @@
     <when state="belowdot_macron" output=".¯"/>
     <when state="breve_cedilla" output="˘¸"/>
     <when state="breve_grave" output="˘`"/>
-    <when state="breve_hookabove" output="˘̉"/>
+    <when state="breve_hook" output="˘?"/>
     <when state="breve_tilde" output="˘~"/>
     <when state="caron_diaeresis" output="ˇ¨"/>
     <when state="cedilla_currency" output="¸¤"/>
     <when state="circumflex_grave" output="^`"/>
-    <when state="circumflex_hookabove" output="^̉"/>
+    <when state="circumflex_hook" output="^?"/>
     <when state="circumflex_tilde" output="^~"/>
     <when state="diaeresis_grave" output="¨`"/>
     <when state="diaeresis_macron" output="¨¯"/>
@@ -9357,8 +9355,8 @@
     <when state="fishhook_tail" output="??"/>
     <when state="grave_horn" output="`̛"/>
     <when state="grave_macron" output="`¯"/>
+    <when state="hook_horn" output="?̛"/>
     <when state="hook_tail" output="??"/>
-    <when state="hookabove_horn" output="̛̉"/>
     <when state="horn_tilde" output="̛~"/>
     <when state="macron_ogonek" output="¯˛"/>
     <when state="macron_tilde" output="¯~"/>

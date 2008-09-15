@@ -120,7 +120,7 @@ HiddenKey	43	55	116	257	#7
 HiddenKey	45	56	116	257	#8
 HiddenKey	47	57	115	257	#9
 HiddenKey	42	48	114	257	#0
-HiddenKey	61	94	110	257	#^
+HiddenKey	61	176	110	257	#°
 HiddenKey	37	96	110	257	#`
 #
 #      Unicode Target  Finger  Control
@@ -178,7 +178,7 @@ HiddenKey	171	60	97	264	#<
 HiddenKey	187	62	117	264	#>
 HiddenKey	40	91	105	264	#[
 HiddenKey	41	93	101	264	#]
-HiddenKey	64	172	101	264	#¬
+HiddenKey	64	94	101	264	#^
 HiddenKey	43	177	116	264	#±
 HiddenKey	45	8722	116	264	#−
 HiddenKey	47	247	115	264	#÷
@@ -212,7 +212,7 @@ HiddenKey	99	169	116	264	#©
 HiddenKey	116	254	116	264	#þ
 HiddenKey	115	223	115	264	#ß
 HiddenKey	114	174	114	264	#®
-HiddenKey	110	241	110	264	#ñ
+HiddenKey	110	126	110	264	#~
 HiddenKey	109	175	110	264	#¯
 HiddenKey	231	184	110	264	#¸
 #

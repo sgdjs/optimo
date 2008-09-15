@@ -71,22 +71,22 @@
 # scan                       cntrl          alt    alt   cntrl lock
 # code  base   shift  cntrl  shift  alt    shift  cntrl  shift state
 # ------------------------------------------------------------------
-  041   '$'    '#'    nop    nop    nop    167    nop    nop     O
+  041   '$'    '#'    nop    nop    nop    182    nop    nop     O
   002   '"'    '1'    nop    nop    nop    nop    nop    nop     C
   003   171    '2'    nop    nop    '<'    nop    nop    nop     C
   004   187    '3'    nop    nop    '>'    nop    nop    nop     C
   005   '('    '4'    nop    nop    '['    nop    nop    nop     C
   006   ')'    '5'    nop    nop    ']'    nop    gs     nop     C
-  007   '@'    '6'    nop    nop    172    nop    nop    nop     C
-  008   '+'    '7'    nop    nop    177    176    nop    nop     C
+  007   '@'    '6'    nop    nop    '^'    nop    rs     nop     C
+  008   '+'    '7'    nop    nop    177    172    nop    nop     C
   009   '-'    '8'    nop    nop    nop    nop    nop    nop     C
   010   '/'    '9'    nop    nop    247    nop    nop    nop     C
   011   '*'    '0'    nop    nop    215    nop    nop    nop     C
-  012   '='    '^'    nop    rs     nop    nop    nop    nop     O
+  012   '='    176    nop    nop    nop    nop    nop    nop     O
   013   '%'    '`'    nop    nop    nop    nop    nop    nop     O
   016   'b'    'B'    stx    stx    '|'    nop    nop    nop     C
   017   233    201    nop    nop    dacu   ddac   nop    nop     C
-  018   'p'    'P'    dle    dle    '&'    182    nop    nop     C
+  018   'p'    'P'    dle    dle    '&'    167    nop    nop     C
   019   'o'    'O'    si     si     189    188    nop    nop     C
   020   232    200    nop    nop    dgra   '`'    nop    nop     C
   021   dcir   '!'    nop    nop    161    nop    nop    nop     O
@@ -105,7 +105,7 @@
   036   't'    'T'    dc4    dc4    254    222    nop    nop     C
   037   's'    'S'    dc3    dc3    223    nop    nop    nop     C
   038   'r'    'R'    dc2    dc2    174    nop    nop    nop     C
-  039   'n'    'N'    so     so     241    209    nop    nop     C
+  039   'n'    'N'    so     so     dtil   nop    nop    nop     C
   040   'm'    'M'    cr     cr     dmac   186    nop    nop     C
   043   231    199    nop    nop    dced   nop    nop    nop     C
   086   234    202    nop    nop    '/'    nop    nop    nop     C
@@ -113,7 +113,7 @@
   045   'y'    'Y'    em     em     '{'    nop    nop    nop     C
   046   'x'    'X'    can    can    '}'    nop    nop    nop     C
   047   '.'    ':'    nop    nop    nop    183    nop    nop     O
-  048   'k'    'K'    vt     vt     '~'    dtil   nop    nop     C
+  048   'k'    'K'    vt     vt     '~'    nop    nop    nop     C
   049   '''    '?'    nop    nop    191    nop    nop    nop     O
   050   'q'    'Q'    dc1    dc1    drin   nop    nop    nop     C
   051   'g'    'G'    bel    bel    nop    nop    nop    nop     C
