@@ -250,6 +250,12 @@ tilde = {
 'LATIN CAPITAL LETTER GREATER WITH TILDE': u'≳',
 }
 
+hook = {
+'LATIN CAPITAL LETTER M WITH HOOK': u'Ɱ',
+'LATIN SMALL LETTER W WITH HOOK': u'ⱳ',
+'LATIN CAPITAL LETTER W WITH HOOK': u'Ⱳ',
+}
+
 from terminators import terminators, combiningTerminators, spaceTerminators
 
 
@@ -296,6 +302,7 @@ unicode_dict.update(caron)
 unicode_dict.update(stroke)
 unicode_dict.update(greek)
 unicode_dict.update(tilde)
+unicode_dict.update(hook)
 
 
 # iterate over all the items to build the set of modifiers for the
