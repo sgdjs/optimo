@@ -206,7 +206,7 @@ for k, v in xkb.tmplValues.iteritems():
     color = altgrColor
   if terminators.has_key(v):
     color = deadColor
-  if v in mainChars or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != v.upper()):
+  if ("_option" not in k and v in mainChars) or ("_option" in k and v in mainChars.lower()) or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != v.upper()):
     print >> out, charTmpl % (x, y, color, xmlChar(terminators.get( v, v )))
 print >> out, footer
 out.close()
