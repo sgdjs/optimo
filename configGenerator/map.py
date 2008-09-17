@@ -57,11 +57,10 @@ print >> out
 print >> out, u"* Simplifiée"
 fullMapValues = {}
 for k, v in xkb.tmplValues.iteritems():
-   v = terminators.get( v, v )
    if v == "":
      v = " "
    if v in mainChars or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != v.upper()):
-     fullMapValues[k] = v
+     fullMapValues[k] = terminators.get( v, v )
    else:
      fullMapValues[k] = u" "
 out.write( fullMapTmpl % fullMapValues )
