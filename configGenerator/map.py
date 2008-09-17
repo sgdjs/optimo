@@ -37,7 +37,7 @@ fullMapTmpl = keyboardTemplate = u"""
   ╚═══════╩══════╩═════╩═══════════════════════════╩═════╩══════╩═════╩══════╝
 """
 
-mainChars = u"$\"«»()_+-/*=%^,.'#1234567890@µBÉPOÈ!VDLJZWAUIE?CTSRNMÇÊÀYH:K;QGXF—<>[]|&`¨€~\{}…ÆŒÙ"
+mainChars = u"$\"«»()_+-/*=%^,.'#1234567890@BÉPOÈ!VDLJZWAUIE?CTSRNMÇÊÀYH:K;QGXF—<>[]|&`¨€~\{}…ÆŒÙ°"
 
 available = set()
 

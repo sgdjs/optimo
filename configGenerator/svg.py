@@ -129,7 +129,7 @@ altgrOffset = (70-36.852917, 175-129.41629)
 altgrShiftOffset = (70-36.852917, 150-129.41629)
 
 
-mainChars = u"$\"«»()_+-/*=%^,.'#1234567890@µBÉPOÈ!VDLJZWAUIE?CTSRNMÇÊÀYH:K;QGXF—<>[]|&`¨€~\{}…ÆŒÙ"
+mainChars = u"$\"«»()_+-/*=%^,.'#1234567890@BÉPOÈ!VDLJZWAUIE?CTSRNMÇÊÀYH:K;QGXF—<>[]|&`¨€~\{}…ÆŒÙ°"
 
 keys = [
   ["TLDE", "AE01", "AE02", "AE03", "AE04", "AE05", "AE06", "AE07", "AE08", "AE09", "AE10", "AE11", "AE12"],
