@@ -238,9 +238,6 @@ include "%L"
 <dead_hook> <w> : U2C73
 <dead_hook> <Z> : U0224
 <dead_hook> <z> : U0225
-<dead_hook> <dead_hook> : question
-<dead_hook> <nobreakspace> : question
-<dead_hook> <space> : question
 <dead_horn> <Oacute> : Ohornacute
 <dead_horn> <Obelowdot> : Ohornbelowdot
 <dead_horn> <Ograve> : Ohorngrave

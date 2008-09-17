@@ -8788,7 +8788,7 @@
       <when state="fishhook" output="?"/>
       <when state="grave" output="`"/>
       <when state="greek" output="µ"/>
-      <when state="hook" output="?"/>
+      <when state="hook" output="̉"/>
       <when state="horn" output="̛"/>
       <when state="invertedbreve" output="̑"/>
       <when state="linebelow" output="_"/>
@@ -8828,12 +8828,12 @@
       <when state="belowdot_macron" output=".¯"/>
       <when state="breve_cedilla" output="˘¸"/>
       <when state="breve_grave" output="˘`"/>
-      <when state="breve_hook" output="˘?"/>
+      <when state="breve_hook" output="˘̉"/>
       <when state="breve_tilde" output="˘~"/>
       <when state="caron_diaeresis" output="ˇ&#x0022;"/>
       <when state="cedilla_currency" output="¸¤"/>
       <when state="circumflex_grave" output="^`"/>
-      <when state="circumflex_hook" output="^?"/>
+      <when state="circumflex_hook" output="^̉"/>
       <when state="circumflex_tilde" output="^~"/>
       <when state="diaeresis_grave" output="&#x0022;`"/>
       <when state="diaeresis_macron" output="&#x0022;¯"/>
@@ -8842,12 +8842,12 @@
       <when state="fishhook_tail" output="??"/>
       <when state="grave_horn" output="`̛"/>
       <when state="grave_macron" output="`¯"/>
-      <when state="hook_horn" output="?̛"/>
-      <when state="hook_tail" output="??"/>
+      <when state="hook_horn" output="̛̉"/>
+      <when state="hook_tail" output="̉?"/>
       <when state="horn_tilde" output="̛~"/>
       <when state="macron_ogonek" output="¯˛"/>
       <when state="macron_tilde" output="¯~"/>
-      <when state="abovedot_hook_stroke" output="˙?/"/>
+      <when state="abovedot_hook_stroke" output="˙̉/"/>
       <when state="Multi_key" next="Multi_key_space"/>
       <when state="Multi_key_apostrophe" output="'"/>
       <when state="Multi_key_asciicircum" output="^"/>
@@ -8884,7 +8884,7 @@
       <when state="fishhook" output="?"/>
       <when state="grave" output="̀"/>
       <when state="greek" output="µ"/>
-      <when state="hook" output="?"/>
+      <when state="hook" output="̉"/>
       <when state="horn" output="̛"/>
       <when state="invertedbreve" output="̑"/>
       <when state="linebelow" output="_"/>
@@ -8924,12 +8924,12 @@
       <when state="belowdot_macron" output=".̄"/>
       <when state="breve_cedilla" output="̧̆"/>
       <when state="breve_grave" output="̆̀"/>
-      <when state="breve_hook" output="̆?"/>
+      <when state="breve_hook" output="̆̉"/>
       <when state="breve_tilde" output="̆̃"/>
       <when state="caron_diaeresis" output="̌̈"/>
       <when state="cedilla_currency" output="̧¤"/>
       <when state="circumflex_grave" output="̂̀"/>
-      <when state="circumflex_hook" output="̂?"/>
+      <when state="circumflex_hook" output="̂̉"/>
       <when state="circumflex_tilde" output="̂̃"/>
       <when state="diaeresis_grave" output="̈̀"/>
       <when state="diaeresis_macron" output="̈̄"/>
@@ -8938,12 +8938,12 @@
       <when state="fishhook_tail" output="??"/>
       <when state="grave_horn" output="̛̀"/>
       <when state="grave_macron" output="̀̄"/>
-      <when state="hook_horn" output="?̛"/>
-      <when state="hook_tail" output="??"/>
+      <when state="hook_horn" output="̛̉"/>
+      <when state="hook_tail" output="̉?"/>
       <when state="horn_tilde" output="̛̃"/>
       <when state="macron_ogonek" output="̨̄"/>
       <when state="macron_tilde" output="̄̃"/>
-      <when state="abovedot_hook_stroke" output="̇?̸"/>
+      <when state="abovedot_hook_stroke" output="̸̇̉"/>
     </action>
 
 
@@ -9129,7 +9129,7 @@
       <when state="none" next="greek"/>
     </action>
     <action id="hook">
-      <when state="hook" output="?"/>
+      <when state="hook" output="̉"/>
       <when state="none" next="hook"/>
       <when state="breve" next="breve_hook"/>
       <when state="circumflex" next="circumflex_hook"/>
@@ -9294,7 +9294,7 @@
     <when state="fishhook" output="?"/>
     <when state="grave" output="`"/>
     <when state="greek" output="µ"/>
-    <when state="hook" output="?"/>
+    <when state="hook" output="̉"/>
     <when state="horn" output="̛"/>
     <when state="invertedbreve" output="̑"/>
     <when state="linebelow" output="_"/>
@@ -9334,12 +9334,12 @@
     <when state="belowdot_macron" output=".¯"/>
     <when state="breve_cedilla" output="˘¸"/>
     <when state="breve_grave" output="˘`"/>
-    <when state="breve_hook" output="˘?"/>
+    <when state="breve_hook" output="˘̉"/>
     <when state="breve_tilde" output="˘~"/>
     <when state="caron_diaeresis" output="ˇ¨"/>
     <when state="cedilla_currency" output="¸¤"/>
     <when state="circumflex_grave" output="^`"/>
-    <when state="circumflex_hook" output="^?"/>
+    <when state="circumflex_hook" output="^̉"/>
     <when state="circumflex_tilde" output="^~"/>
     <when state="diaeresis_grave" output="¨`"/>
     <when state="diaeresis_macron" output="¨¯"/>
@@ -9348,12 +9348,12 @@
     <when state="fishhook_tail" output="??"/>
     <when state="grave_horn" output="`̛"/>
     <when state="grave_macron" output="`¯"/>
-    <when state="hook_horn" output="?̛"/>
-    <when state="hook_tail" output="??"/>
+    <when state="hook_horn" output="̛̉"/>
+    <when state="hook_tail" output="̉?"/>
     <when state="horn_tilde" output="̛~"/>
     <when state="macron_ogonek" output="¯˛"/>
     <when state="macron_tilde" output="¯~"/>
-    <when state="abovedot_hook_stroke" output="˙?/"/>
+    <when state="abovedot_hook_stroke" output="˙̉/"/>
     <when state="Multi_key" output="↯"/>
     <when state="Multi_key_1" output="↯1"/>
     <when state="Multi_key_3" output="↯3"/>
