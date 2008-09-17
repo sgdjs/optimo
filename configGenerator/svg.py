@@ -197,6 +197,7 @@ out.close()
 out = codecs.open(sys.argv[2]+"-simplifiee.svg", "w", "utf8")
 print >> out, header
 for k, v in xkb.tmplValues.iteritems():
+  v2 = terminators.get( v, v )
   if "_capslock" in k or "_command" in k:
     continue
   x, y, color = offsetAndColor(k)
@@ -206,8 +207,8 @@ for k, v in xkb.tmplValues.iteritems():
     color = altgrColor
   if terminators.has_key(v):
     color = deadColor
-  if ("_option" not in k and v in mainChars) or ("_option" in k and v in mainChars.lower()) or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != v.upper()):
-    print >> out, charTmpl % (x, y, color, xmlChar(terminators.get( v, v )))
+  if ("_option" not in k and v2 in mainChars) or ("_option" in k and v2 in mainChars.lower()) or ("_shift" in k and k.count("_") == 1) or (k.count("_") == 0 and xkb.tmplValues[k+"_shift"] != v2.upper()):
+    print >> out, charTmpl % (x, y, color, xmlChar(v2))
 print >> out, footer
 out.close()
 
