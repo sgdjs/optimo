@@ -349,9 +349,13 @@ for name, C in unicode_dict.iteritems():
   if 'MIDDLE DOT' in modifiers:
     del modifiers[ modifiers.index('MIDDLE DOT') ]
     modifiers.append('DOT ABOVE')
-  # translate the middle dot modifier to dot above
+  # translate hook above to hook
   if 'HOOK ABOVE' in modifiers:
     del modifiers[ modifiers.index('HOOK ABOVE') ]
+    modifiers.append('HOOK')
+  # translate left hook to hook
+  if 'LEFT HOOK' in modifiers:
+    del modifiers[ modifiers.index('LEFT HOOK') ]
     modifiers.append('HOOK')
   # remove empty string in the modifier, to generate an empty tuple
   if '' in modifiers:
