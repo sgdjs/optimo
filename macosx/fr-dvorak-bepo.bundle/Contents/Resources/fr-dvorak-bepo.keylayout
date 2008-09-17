@@ -8768,7 +8768,7 @@
       <when state="abovedot" output="˙"/>
       <when state="acute" output="'"/>
       <when state="bar" output="-"/>
-      <when state="belowdot" output="."/>
+      <when state="belowdot" output="̣"/>
       <when state="belt" output="?"/>
       <when state="breve" output="˘"/>
       <when state="brevebelow" output="?"/>
@@ -8809,7 +8809,7 @@
       <when state="tildebelow" output="̰"/>
       <when state="topbar" output="⁻"/>
       <when state="abovedot_acute" output="˙'"/>
-      <when state="abovedot_belowdot" output="˙."/>
+      <when state="abovedot_belowdot" output="˙̣"/>
       <when state="abovedot_caron" output="˙ˇ"/>
       <when state="abovedot_macron" output="˙¯"/>
       <when state="abovedot_stroke" output="˙/"/>
@@ -8822,10 +8822,10 @@
       <when state="acute_ringabove" output="'°"/>
       <when state="acute_stroke" output="'/"/>
       <when state="acute_tilde" output="'~"/>
-      <when state="belowdot_breve" output=".˘"/>
-      <when state="belowdot_circumflex" output=".^"/>
-      <when state="belowdot_horn" output=".̛"/>
-      <when state="belowdot_macron" output=".¯"/>
+      <when state="belowdot_breve" output="̣˘"/>
+      <when state="belowdot_circumflex" output="̣^"/>
+      <when state="belowdot_horn" output="̛̣"/>
+      <when state="belowdot_macron" output="̣¯"/>
       <when state="breve_cedilla" output="˘¸"/>
       <when state="breve_grave" output="˘`"/>
       <when state="breve_hook" output="˘̉"/>
@@ -8864,7 +8864,7 @@
       <when state="abovedot" output="̇"/>
       <when state="acute" output="́"/>
       <when state="bar" output="-"/>
-      <when state="belowdot" output="."/>
+      <when state="belowdot" output="̣"/>
       <when state="belt" output="?"/>
       <when state="breve" output="̆"/>
       <when state="brevebelow" output="?"/>
@@ -8905,7 +8905,7 @@
       <when state="tildebelow" output="̰"/>
       <when state="topbar" output="⁻"/>
       <when state="abovedot_acute" output="̇́"/>
-      <when state="abovedot_belowdot" output="̇."/>
+      <when state="abovedot_belowdot" output="̣̇"/>
       <when state="abovedot_caron" output="̇̌"/>
       <when state="abovedot_macron" output="̇̄"/>
       <when state="abovedot_stroke" output="̸̇"/>
@@ -8918,10 +8918,10 @@
       <when state="acute_ringabove" output="́̊"/>
       <when state="acute_stroke" output="̸́"/>
       <when state="acute_tilde" output="́̃"/>
-      <when state="belowdot_breve" output=".̆"/>
-      <when state="belowdot_circumflex" output=".̂"/>
-      <when state="belowdot_horn" output=".̛"/>
-      <when state="belowdot_macron" output=".̄"/>
+      <when state="belowdot_breve" output="̣̆"/>
+      <when state="belowdot_circumflex" output="̣̂"/>
+      <when state="belowdot_horn" output="̛̣"/>
+      <when state="belowdot_macron" output="̣̄"/>
       <when state="breve_cedilla" output="̧̆"/>
       <when state="breve_grave" output="̆̀"/>
       <when state="breve_hook" output="̆̉"/>
@@ -8983,7 +8983,7 @@
       <when state="none" next="bar"/>
     </action>
     <action id="belowdot">
-      <when state="belowdot" output="."/>
+      <when state="belowdot" output="̣"/>
       <when state="none" next="belowdot"/>
       <when state="abovedot" next="abovedot_belowdot"/>
       <when state="breve" next="belowdot_breve"/>
@@ -9274,7 +9274,7 @@
     <when state="abovedot" output="˙"/>
     <when state="acute" output="´"/>
     <when state="bar" output="-"/>
-    <when state="belowdot" output="."/>
+    <when state="belowdot" output="̣"/>
     <when state="belt" output="?"/>
     <when state="breve" output="˘"/>
     <when state="brevebelow" output="?"/>
@@ -9315,7 +9315,7 @@
     <when state="tildebelow" output="̰"/>
     <when state="topbar" output="⁻"/>
     <when state="abovedot_acute" output="˙´"/>
-    <when state="abovedot_belowdot" output="˙."/>
+    <when state="abovedot_belowdot" output="˙̣"/>
     <when state="abovedot_caron" output="˙ˇ"/>
     <when state="abovedot_macron" output="˙¯"/>
     <when state="abovedot_stroke" output="˙/"/>
@@ -9328,10 +9328,10 @@
     <when state="acute_ringabove" output="´°"/>
     <when state="acute_stroke" output="´/"/>
     <when state="acute_tilde" output="´~"/>
-    <when state="belowdot_breve" output=".˘"/>
-    <when state="belowdot_circumflex" output=".^"/>
-    <when state="belowdot_horn" output=".̛"/>
-    <when state="belowdot_macron" output=".¯"/>
+    <when state="belowdot_breve" output="̣˘"/>
+    <when state="belowdot_circumflex" output="̣^"/>
+    <when state="belowdot_horn" output="̛̣"/>
+    <when state="belowdot_macron" output="̣¯"/>
     <when state="breve_cedilla" output="˘¸"/>
     <when state="breve_grave" output="˘`"/>
     <when state="breve_hook" output="˘̉"/>
@@ -9453,7 +9453,7 @@
     <when state="Multi_key_U" output="↯U"/>
     <when state="Multi_key_U_combining_belowdot" output="↯Ụ"/>
     <when state="Multi_key_U_comma" output="↯U,"/>
-    <when state="Multi_key_U_dead_belowdot" output="↯U."/>
+    <when state="Multi_key_U_dead_belowdot" output="↯Ụ"/>
     <when state="Multi_key_U_dead_cedilla" output="↯U¸"/>
     <when state="Multi_key_U_exclam" output="↯U!"/>
     <when state="Multi_key_U05B4" output="↯ִ"/>
@@ -9637,7 +9637,7 @@
     <when state="Multi_key_approximate" output="↯∼"/>
     <when state="Multi_key_asciicircum" output="↯^"/>
     <when state="Multi_key_asciicircum_combining_belowdot" output="↯^̣"/>
-    <when state="Multi_key_asciicircum_dead_belowdot" output="↯^."/>
+    <when state="Multi_key_asciicircum_dead_belowdot" output="↯^̣"/>
     <when state="Multi_key_asciicircum_exclam" output="↯^!"/>
     <when state="Multi_key_asciicircum_underscore" output="↯^_"/>
     <when state="Multi_key_asciitilde" output="↯~"/>
@@ -9658,7 +9658,7 @@
     <when state="Multi_key_b" output="↯b"/>
     <when state="Multi_key_b_combining_belowdot" output="↯ḅ"/>
     <when state="Multi_key_b_comma" output="↯b,"/>
-    <when state="Multi_key_b_dead_belowdot" output="↯b."/>
+    <when state="Multi_key_b_dead_belowdot" output="↯ḅ"/>
     <when state="Multi_key_b_dead_cedilla" output="↯b¸"/>
     <when state="Multi_key_b_exclam" output="↯b!"/>
     <when state="Multi_key_bar" output="↯|"/>
@@ -9709,7 +9709,7 @@
     <when state="Multi_key_macron_combining_belowdot" output="↯¯̣"/>
     <when state="Multi_key_macron_combining_tilde" output="↯¯̃"/>
     <when state="Multi_key_macron_dead_abovedot" output="↯¯˙"/>
-    <when state="Multi_key_macron_dead_belowdot" output="↯¯."/>
+    <when state="Multi_key_macron_dead_belowdot" output="↯¯̣"/>
     <when state="Multi_key_macron_dead_diaeresis" output="↯¯¨"/>
     <when state="Multi_key_macron_dead_ogonek" output="↯¯˛"/>
     <when state="Multi_key_macron_dead_tilde" output="↯¯~"/>
@@ -9960,7 +9960,7 @@
     <when state="Multi_key_period_combining_acute" output="↯.́"/>
     <when state="Multi_key_period_combining_belowdot" output="↯.̣"/>
     <when state="Multi_key_period_dead_acute" output="↯.´"/>
-    <when state="Multi_key_period_dead_belowdot" output="↯.."/>
+    <when state="Multi_key_period_dead_belowdot" output="↯.̣"/>
     <when state="Multi_key_period_dead_caron" output="↯.ˇ"/>
     <when state="Multi_key_period_exclam" output="↯.!"/>
     <when state="Multi_key_plus" output="↯+"/>
@@ -9990,7 +9990,7 @@
     <when state="Multi_key_underscore_combining_belowdot" output="↯_̣"/>
     <when state="Multi_key_underscore_combining_tilde" output="↯_̃"/>
     <when state="Multi_key_underscore_dead_abovedot" output="↯_˙"/>
-    <when state="Multi_key_underscore_dead_belowdot" output="↯_."/>
+    <when state="Multi_key_underscore_dead_belowdot" output="↯_̣"/>
     <when state="Multi_key_underscore_dead_diaeresis" output="↯_¨"/>
     <when state="Multi_key_underscore_dead_ogonek" output="↯_˛"/>
     <when state="Multi_key_underscore_dead_tilde" output="↯_~"/>

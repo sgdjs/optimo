@@ -14,9 +14,9 @@ include "%L"
 <dead_acute> <nobreakspace> : combining_acute
 <dead_belowdot> <Sabovedot> : U1E68
 <dead_belowdot> <sabovedot> : U1E69
-<dead_belowdot> <dead_belowdot> : period
-<dead_belowdot> <nobreakspace> : period
-<dead_belowdot> <space> : period
+<dead_belowdot> <dead_belowdot> : combining_belowdot
+<dead_belowdot> <nobreakspace> : combining_belowdot
+<dead_belowdot> <space> : combining_belowdot
 <dead_breve> <Aacute> : Abreveacute
 <dead_breve> <Agrave> : Abrevegrave
 <dead_breve> <Ahook> : Abrevehook
@@ -238,6 +238,9 @@ include "%L"
 <dead_hook> <w> : U2C73
 <dead_hook> <Z> : U0224
 <dead_hook> <z> : U0225
+<dead_hook> <dead_hook> : U0309
+<dead_hook> <nobreakspace> : U0309
+<dead_hook> <space> : U0309
 <dead_horn> <Oacute> : Ohornacute
 <dead_horn> <Obelowdot> : Ohornbelowdot
 <dead_horn> <Ograve> : Ohorngrave
