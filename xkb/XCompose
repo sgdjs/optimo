@@ -42,8 +42,6 @@ include "%L"
 <dead_caron> <9> : ninesubscript
 <dead_caron> <equal> : U208C
 <dead_caron> <U01F2> : U01C5
-<dead_caron> <U01F1> : U01C4
-<dead_caron> <U01F3> : U01C6
 <dead_caron> <Sabovedot> : U1E66
 <dead_caron> <sabovedot> : U1E67
 <dead_caron> <V> : U01D9
@@ -223,6 +221,8 @@ include "%L"
 <dead_hook> <k> : U0199
 <dead_hook> <M> : U2C6E
 <dead_hook> <m> : U0271
+<dead_hook> <N> : U019D
+<dead_hook> <n> : U0272
 <dead_hook> <P> : U01A4
 <dead_hook> <p> : U01A5
 <dead_hook> <q> : U02A0
@@ -315,14 +315,12 @@ include "%L"
 <UFDD0> <o> : oslash
 <UFDD0> <P> : U2C63
 <UFDD0> <p> : U1D7D
-<UFDD0> <U1D11> : U1D13
 <UFDD0> <R> : U024C
 <UFDD0> <r> : U024D
 <UFDD0> <T> : Tslash
 <UFDD0> <t> : tslash
 <UFDD0> <U> : U0244
 <UFDD0> <u> : U0289
-<UFDD0> <U028A> : U1D7F
 <UFDD0> <Y> : U024E
 <UFDD0> <y> : U024F
 <UFDD0> <Z> : Zstroke

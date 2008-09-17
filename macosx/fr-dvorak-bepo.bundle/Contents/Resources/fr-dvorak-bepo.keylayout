@@ -3151,7 +3151,7 @@
       <when state="currency" output="₦"/>
       <when state="grave" output="ǹ"/>
       <when state="greek" output="ν"/>
-      <when state="lefthook" output="ɲ"/>
+      <when state="hook" output="ɲ"/>
       <when state="linebelow" output="ṉ"/>
       <when state="longrightleg" output="ƞ"/>
       <when state="middletilde" output="ᵰ"/>
@@ -3181,7 +3181,7 @@
       <when state="currency" output="₦"/>
       <when state="grave" output="Ǹ"/>
       <when state="greek" output="Ν"/>
-      <when state="lefthook" output="Ɲ"/>
+      <when state="hook" output="Ɲ"/>
       <when state="linebelow" output="Ṉ"/>
       <when state="longrightleg" output="Ƞ"/>
       <when state="tilde" output="Ñ"/>
@@ -8791,7 +8791,6 @@
       <when state="hook" output="?"/>
       <when state="horn" output="̛"/>
       <when state="invertedbreve" output="̑"/>
-      <when state="lefthook" output="?"/>
       <when state="linebelow" output="_"/>
       <when state="longleg" output="?"/>
       <when state="longrightleg" output="?"/>
@@ -8888,7 +8887,6 @@
       <when state="hook" output="?"/>
       <when state="horn" output="̛"/>
       <when state="invertedbreve" output="̑"/>
-      <when state="lefthook" output="?"/>
       <when state="linebelow" output="_"/>
       <when state="longleg" output="?"/>
       <when state="longrightleg" output="?"/>
@@ -9157,10 +9155,6 @@
       <when state="invertedbreve" output="̑"/>
       <when state="none" next="invertedbreve"/>
     </action>
-    <action id="lefthook">
-      <when state="lefthook" output="?"/>
-      <when state="none" next="lefthook"/>
-    </action>
     <action id="linebelow">
       <when state="linebelow" output="_"/>
       <when state="none" next="linebelow"/>
@@ -9303,7 +9297,6 @@
     <when state="hook" output="?"/>
     <when state="horn" output="̛"/>
     <when state="invertedbreve" output="̑"/>
-    <when state="lefthook" output="?"/>
     <when state="linebelow" output="_"/>
     <when state="longleg" output="?"/>
     <when state="longrightleg" output="?"/>
