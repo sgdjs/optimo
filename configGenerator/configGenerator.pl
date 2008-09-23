@@ -69,6 +69,7 @@ my $win_msklc_column = 4;
 my $vk_azerty_column = 1;
 my $vk_bepo_column   = 2;
 my $vk_qwertz_column = 3;
+my $vk_dvoraj_column = 4;
 
 my %keys        = ();
 my %specialKeys = ();
@@ -1023,6 +1024,11 @@ sub gen_win_msklc_qwertz()
     gen_win_msklc($vk_qwertz_column, "fr-CH", "0000100c");
 }
 
+sub gen_win_msklc_dvoraj()
+{
+    gen_win_msklc($vk_dvoraj_column, "fr-FR", "0000040c");
+}
+
 SWITCH: for ($OUTPUT_FORMAT)
 {
     /x_xkb_root/i       && do { &gen_x_xkb_root();       last; };
@@ -1032,7 +1038,8 @@ SWITCH: for ($OUTPUT_FORMAT)
     /win_msklc_azerty/i && do { &gen_win_msklc_azerty(); last; };
     /win_msklc_bepo/i   && do { &gen_win_msklc_bepo();   last; };
     /win_msklc_qwertz/i && do { &gen_win_msklc_qwertz(); last; };
+    /win_msklc_dvoraj/i && do { &gen_win_msklc_dvoraj(); last; };
 
-    die("output format must be one of the following: x_xkb_root, x_xkb_user, x_xmodmap, x_compose, win_msklc_azerty, win_msklc_bepo, win_msklc_qwertz\n");
+    die("output format must be one of the following: x_xkb_root, x_xkb_user, x_xmodmap, x_compose, win_msklc_azerty, win_msklc_bepo, win_msklc_qwertz, win_msklc_dvoraj\n");
 }
 
