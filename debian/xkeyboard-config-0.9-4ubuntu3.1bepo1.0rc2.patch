@@ -1,23 +1,41 @@
-diff -Naur xkeyboard-config-1.3-2.orig/debian/changelog xkeyboard-config-1.3-2+1rc1/debian/changelog
---- xkeyboard-config-1.3-2.orig/debian/changelog	2008-08-27 13:32:42.000000000 +0200
-+++ xkeyboard-config-1.3-2+1rc1/debian/changelog	2008-08-28 21:01:04.000000000 +0200
-@@ -1,3 +1,12 @@
-+xkeyboard-config (1.3-2.1bepo+1.0rc1) unstable; urgency=low
+diff -Naur xkeyboard-config-0.9orig/debian/changelog xkeyboard-config-0.9bepo1_0rc2/debian/changelog
+--- xkeyboard-config-0.9orig/debian/changelog	2008-09-19 21:14:31.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2/debian/changelog	2008-09-19 21:17:30.000000000 +0200
+@@ -1,3 +1,30 @@
++xkeyboard-config (0.9-4ubuntu3.1bepo+1.0rc2) gutsy; urgency=low
 +
 +  * ajoute la disposition Dvorak française « Bépo » jusqu'à la version
-+    1.0rc1.
-+  * Corrige un bug de la définition « oss_nodeadkeys » de symbols/fr.
-+  * Corrige un bug de définition inconnue dans symbols/inet.
++    1.0rc2.
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Thu, 28 Aug 2008 21:00:28 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Fri, 19 Sep 2008 21:17:30 +0200
 +
- xkeyboard-config (1.3-2) unstable; urgency=high
++xkeyboard-config (0.9-4ubuntu3.1bepo+1.0rc1) gutsy; urgency=low
++
++  * renomme la version 0.6.7 en 1.0rc1 (sans changement dans la disposition).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Mon,  4 Aug 2008 21:22:08 +0200
++
++xkeyboard-config (0.9-4ubuntu3.1bepo6700) gutsy; urgency=low
++
++  * Non-maintainer upload (Ĳsselmeer release :-).
++  * add new « Bépo » french Dvorak layout up to 0.6.7 version.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 22 Jul 2008 19:03:35 +0200
++
++xkeyboard-config (0.9-4ubuntu3.1bepo6600) gutsy; urgency=low
++
++  * Non-maintainer upload.
++  * add new « Bépo » french Dvorak layout up to 0.6.6 version.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 17 Jun 2008 21:36:46 +0200
++
+ xkeyboard-config (0.9-4ubuntu3) gutsy; urgency=low
  
-   * Fix compat rules for Romanian layout (closes: #485702).
-diff -Naur xkeyboard-config-1.3-2.orig/debian/symbols.dir xkeyboard-config-1.3-2+1rc1/debian/symbols.dir
---- xkeyboard-config-1.3-2.orig/debian/symbols.dir	2008-08-27 13:32:42.000000000 +0200
-+++ xkeyboard-config-1.3-2+1rc1/debian/symbols.dir	2008-08-28 20:56:52.000000000 +0200
-@@ -165,6 +165,32 @@
+   * debian/patches/romanian_comma.diff : Patch from upstream exposing
+diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1_0rc2/debian/symbols.dir
+--- xkeyboard-config-0.9orig/debian/symbols.dir	2008-09-19 21:14:31.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2/debian/symbols.dir	2008-09-19 21:16:55.000000000 +0200
+@@ -157,6 +157,36 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
  -dp----- a------- fr(basic)
@@ -47,16 +65,21 @@ diff -Naur xkeyboard-config-1.3-2.orig/debian/symbols.dir xkeyboard-config-1.3-2
 +--p----- a------- fr(bepo_67_latin9)
 +--p----- a------- fr(bepo_1_0rc1)
 +--p----- a------- fr(bepo_1_0rc1_latin9)
- --p----- a------- fr(bepo)
- --p----- a------- fr(bepo_latin9)
++--p----- a------- fr(bepo_1_0rc2)
++--p----- a------- fr(bepo_1_0rc2_latin9)
++--p----- a------- fr(bepo)
++--p----- a------- fr(bepo_latin9)
  --p----- a------- fr(dvorak)
-diff -Naur xkeyboard-config-1.3-2.orig/rules/base.lst xkeyboard-config-1.3-2+1rc1/rules/base.lst
---- xkeyboard-config-1.3-2.orig/rules/base.lst	2008-05-12 22:33:05.000000000 +0200
-+++ xkeyboard-config-1.3-2+1rc1/rules/base.lst	2008-08-28 20:56:52.000000000 +0200
-@@ -366,6 +366,32 @@
+ --p----- a------- fr(latin9)
+ --p----- a------- fr(latin9_Sundeadkeys)
+diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1_0rc2/rules/base.lst
+--- xkeyboard-config-0.9orig/rules/base.lst	2006-10-07 23:22:17.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2/rules/base.lst	2008-09-19 21:16:55.000000000 +0200
+@@ -301,7 +301,37 @@
    latin9          fr: (Legacy) Alternative
    latin9_nodeadkeys fr: (Legacy) Alternative, eliminate dead keys
    latin9_sundeadkeys fr: (Legacy) Alternative, Sun dead keys
+-  dvorak          fr: Dvorak
 +  bepo_6211        fr: Bepo, ergonomic, Dvorak way, v6.2.1.1
 +  bepo_6211_latin9 fr: Bepo, ergonomic, Dvorak way, v6.2.1.1, latin-9 only
 +  bepo_6212        fr: Bepo, ergonomic, Dvorak way, v6.2.1.2
@@ -83,13 +106,18 @@ diff -Naur xkeyboard-config-1.3-2.orig/rules/base.lst xkeyboard-config-1.3-2+1rc
 +  bepo_67_latin9  fr: Bepo, ergonomic, Dvorak way, v0.6.7, latin-9 only
 +  bepo_1_0rc1        fr: Bepo, ergonomic, Dvorak way, v1.0rc1
 +  bepo_1_0rc1_latin9 fr: Bepo, ergonomic, Dvorak way, v1.0rc1, latin-9 only
-   bepo            fr: Bepo, ergonomic, Dvorak way
-   bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
-   dvorak          fr: (Legacy) Dvorak
-diff -Naur xkeyboard-config-1.3-2.orig/rules/base.xml.in xkeyboard-config-1.3-2+1rc1/rules/base.xml.in
---- xkeyboard-config-1.3-2.orig/rules/base.xml.in	2008-05-12 22:33:00.000000000 +0200
-+++ xkeyboard-config-1.3-2+1rc1/rules/base.xml.in	2008-08-28 20:56:52.000000000 +0200
-@@ -2197,6 +2197,162 @@
++  bepo_1_0rc2        fr: Bepo, ergonomic, Dvorak way, v1.0rc2
++  bepo_1_0rc2_latin9 fr: Bepo, ergonomic, Dvorak way, v1.0rc2, latin-9 only
++  bepo            fr: Bepo, ergonomic, Dvorak way
++  bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
++  dvorak          fr: (Legacy) Dvorak
+   mac             fr: Macintosh
+   generic         gh: Multilingual
+   akan            gh: Akan
+diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1_0rc2/rules/base.xml.in
+--- xkeyboard-config-0.9orig/rules/base.xml.in	2006-10-02 20:42:40.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2/rules/base.xml.in	2008-09-19 21:16:55.000000000 +0200
+@@ -1576,8 +1576,188 @@
          </variant>
          <variant>
            <configItem>
@@ -249,89 +277,144 @@ diff -Naur xkeyboard-config-1.3-2.orig/rules/base.xml.in xkeyboard-config-1.3-2+
 +        </variant>
 +        <variant>
 +          <configItem>
-             <name>bepo</name>
-             <_description>Bepo, ergonomic, Dvorak way</_description>
++            <name>bepo_1_0rc2</name>
++            <_description>Bepo, ergonomic, Dvorak way, v1.0rc2</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_1_0rc2_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v1.0rc2, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo</name>
++            <_description>Bepo, ergonomic, Dvorak way</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
+             <name>dvorak</name>
+-            <_description>Dvorak</_description>
++            <_description>(Legacy) Dvorak</_description>
            </configItem>
-diff -Naur xkeyboard-config-1.3-2.orig/symbols/fr xkeyboard-config-1.3-2+1rc1/symbols/fr
---- xkeyboard-config-1.3-2.orig/symbols/fr	2008-04-22 21:54:11.000000000 +0200
-+++ xkeyboard-config-1.3-2+1rc1/symbols/fr	2008-08-28 21:21:03.000000000 +0200
-@@ -254,7 +254,7 @@
-     key <AE03>	{ [         quotedbl,                3,           numbersign,                 breve ] }; // " 3 # ˘
+         </variant>
+         <variant>
+diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/symbols/fr
+--- xkeyboard-config-0.9orig/symbols/fr	2006-10-04 21:29:26.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2/symbols/fr	2008-09-19 21:16:55.000000000 +0200
+@@ -1,4 +1,4 @@
+-// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $
++// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $ -*- c -*-
  
-     // Second row
--    key <AD11>	{ [  circumflex,   diaeresis,           asciitilde,                 Aring ] }; // ^ ̈ ̃ Å
-+    key <AD11>	{ [  asciicircum,   diaeresis,           asciitilde,                 Aring ] }; // ^ ̈ ̃ Å
-     key <AC11>	{ [           ugrave,          percent,                acute,                Ugrave ] }; // ù % ' Ù
-     key <BKSL>	{ [         asterisk,               mu,                grave,                macron ] }; // * µ ` ̄
+ // based on a keyboard map from an 'xkb/symbols/fr' file
+ //
+@@ -429,13 +429,1097 @@
+     key <AD11>	{ [	asciicircum,  	   diaeresis,          asciitilde,           quoteright ] };
  };
-@@ -431,37 +431,43 @@
  
- // Bépo : Improved ergonomic french keymap using Dvorak method.
- // Built by community on 'Dvorak Fr' mailing list :
--// dvorak-fr@gpl.insa-lyon.fr and on its wiki : http://gpl.insa-lyon.fr/Dvorak-Fr/ .
--// XOrg integration in 2006 by Frédéric Boiteux <fboiteux @ free.fr>
++// Bépo : Improved ergonomic french keymap using Dvorak method.
++// Built by community on 'Dvorak Fr' mailing list :
 +// dvorak-fr@gpl.insa-lyon.fr and on its wiki : http://gpl.insa-lyon.fr/Dvorak-Fr/
 +// and now http://www.clavier-dvorak.org/wiki/
 +// XOrg integration (6.2.1.1 version) in 2006 by Frédéric Boiteux <fboiteux @ free.fr>
- //
--// Bépo layout (6.2.1.1 version) for a pc105 keyboard (french) :
-+// Bépo layout (0.6.7 version) for a pc105 keyboard (french) :
- // ┌────┐
- // │ S A│   S = Shift,  A = AltGr + Shift
- // │ s a│   s = normal, a = AltGr
- // └────┘
- //
- // ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
--// │ $   │ 1 ¹ │ 2 ² │ 3 ³ │ 4 ° │ 5 ˚ │ 6   │ 7   │ 8   │ 9   │ 0   │ ^   │ µ   ┃ ⌫ Retour┃
--// │ @ # │ _ { │ " } │ « < │ » > │ ( [ │ ) ] │ + ± │ - ¬ │ * × │ / ÷ │ = ¯ │ %   ┃  arrière┃
-+// │ # § │ 1 „ │ 2 “ │ 3 ” │ 4   │ 5   │ 6   │ 7 ° │ 8 ′ │ 9 ″ │ 0   │ ^   │ `   ┃ ⌫ Retour┃
-+// │ $ – │ " — │ « < │ » > │ ( [ │ ) ] │ @ ¬ │ + ± │ - − │ / ÷ │ * × │ = ≠ │ % ‰ ┃  arrière┃
- // ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
--// ┃       ┃ B   │ É ˊ │ P ¶ │ O Œ │ È ` │ Ç   │ V   │ D Ð │ L   │ F   │ J   │ Z   ┃Entrée ┃
--// ┃Tab ↹  ┃ b | │ é & │ p § │ o œ │ è ` │ ç   │ v   │ d ð │ l £ │ f ª │ j   │ z   ┃   ⏎   ┃
-+// ┃       ┃ B ¦ │ É ˝ │ P ¶ │ O Œ │ È ` │ ! ¡ │ V   │ D Ð │ L   │ J Ĳ │ Z Ə │ W   ┃Entrée ┃
++//
++// Bépo layout (1.0rc2 version) for a pc105 keyboard (french) :
++// ┌────┐
++// │ S A│   S = Shift,  A = AltGr + Shift
++// │ s a│   s = normal, a = AltGr
++// └────┘
++//
++// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
++// │ # ¶ │ 1 „ │ 2 “ │ 3 ” │ 4   │ 5   │ 6   │ 7 ¬ │ 8 ¼ │ 9 ½ │ 0 ¾ │ ° ′ │ ` ″ ┃ ⌫ Retour┃
++// │ $ – │ " — │ « < │ » > │ ( [ │ ) ] │ @ ^ │ + ± │ - − │ / ÷ │ * × │ = ≠ │ % ‰ ┃  arrière┃
++// ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
++// ┃       ┃ B ¦ │ É ˝ │ P § │ O Œ │ È ` │ ! ¡ │ V   │ D Ð │ L   │ J Ĳ │ Z Ə │ W   ┃Entrée ┃
 +// ┃Tab ↹  ┃ b | │ é ˊ │ p & │ o œ │ è ` │ ˆ ˇ │ v   │ d ð │ l / │ j ĳ │ z ə │ w ̆ ┃   ⏎   ┃
- // ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
--// ┃        ┃ A Æ │ U Ù │ I ˇ │ E   │ ?   │ C ¢ │ T Þ │ S   │ N   │ R   │ M   │ !   ┃      ┃
--// ┃Maj ⇬   ┃ a æ │ u ù │ i ̈ │ e € │ , ¿ │ c © │ t þ │ s ß │ n   │ r ® │ m º │ ˆ ¡ ┃      ┃
-+// ┃        ┃ A Æ │ U Ù │ I ˙ │ E ¤ │ ;   │ C ſ │ T Þ │ S ẞ │ R ™ │ N Ñ │ M º │ Ç , ┃      ┃
-+// ┃Maj ⇬   ┃ a æ │ u ù │ i ̈ │ e € │ , ’ │ c © │ t þ │ s ß │ r ® │ n ñ │ m ¯ │ ç ¸ ┃      ┃
- // ┣━━━━━━━┳┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
--// ┃       ┃ ù   │ À ˜ │ H   │ Y   │ : · │ K   │ ;   │ Q   │ G   │ X   │ W   ┃             ┃
--// ┃Shift ⇧┃ ê / │ à ~ │ h ! │ y ¥ │ . \ │ k   │ '   │ q   │ g   │ x   │ w   ┃Shift ⇧      ┃
-+// ┃       ┃ Ê   │ À   │ Y ‘ │ X ’ │ : · │ K ˜ │ ?   │ Q   │ G   │ H ‡ │ F ª ┃             ┃
++// ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
++// ┃        ┃ A Æ │ U Ù │ I ˙ │ E ¤ │ ; ̛ │ C ſ │ T Þ │ S ẞ │ R ™ │ N   │ M º │ Ç , ┃      ┃
++// ┃Maj ⇬   ┃ a æ │ u ù │ i ̈ │ e € │ , ’ │ c © │ t þ │ s ß │ r ® │ n ˜ │ m ¯ │ ç ¸ ┃      ┃
++// ┣━━━━━━━┳┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
++// ┃       ┃ Ê   │ À   │ Y ‘ │ X ’ │ : · │ K   │ ? ̉ │ Q ̣ │ G   │ H ‡ │ F ª ┃             ┃
 +// ┃Shift ⇧┃ ê / │ à \ │ y { │ x } │ . … │ k ~ │ ' ¿ │ q ˚ │ g µ │ h † │ f ˛ ┃Shift ⇧      ┃
- // ┣━━━━━━━╋━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
--// ┃       ┃       ┃       ┃ ⍽ Espace insécable              ␣ ┃       ┃       ┃       ┃
--// ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣ Espace                        ␣ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
++// ┣━━━━━━━╋━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
 +// ┃       ┃       ┃       ┃ Espace inséc.   Espace inséc. fin ┃       ┃       ┃       ┃
 +// ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣ (Espace)      _               ␣ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
- // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
++// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
 +
 +
 +// Version 6.2.1.1 :
- partial alphanumeric_keys
--xkb_symbols "bepo" {
++partial alphanumeric_keys
 +xkb_symbols "bepo_6211" {
- 
++
 +    include "level3(ralt_switch)"
 +    include "nbsp(level2)"
-     include "keypad(oss)"
- 
--    name[Group1]= "France - Bepo, ergonomic, Dvorak way";
++    include "keypad(oss)"
++
 +    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.1.1";
- 
-     // First row
-     key <TLDE> { [              at,       dollar,     numbersign                 ] }; // @ $ #
-@@ -514,14 +520,890 @@
-     key <AB04> { [          period,        colon,      backslash, periodcentered ] }; // . : \ ·
-     key <AB05> { [               k,            K                                 ] }; // k K
-     key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
--    key <AB07> { [               q,            Q,         oslash,       Ooblique ] }; // q Q ø Ø
++
++    // First row
++    key <TLDE> { [              at,       dollar,     numbersign                 ] }; // @ $ #
++    key <AE01> { [      underscore,            1,      braceleft,    onesuperior ] }; // _ 1 { ¹
++    key <AE02> { [        quotedbl,            2,     braceright,    twosuperior ] }; // " 2 } ²
++    key <AE03> { [   guillemotleft,            3,           less,  threesuperior ] }; // « 3 < ³
++    key <AE04> { [  guillemotright,            4,        greater,         degree ] }; // » 4 > °
++    key <AE05> { [       parenleft,            5,    bracketleft, dead_abovering ] }; // ( 5 [ ˚
++    key <AE06> { [      parenright,            6,   bracketright                 ] }; // ) 6 ]
++    key <AE07> { [            plus,            7,      plusminus                 ] }; // + 7 ±
++    key <AE08> { [           minus,            8,        notsign                 ] }; // - 8 ¬
++    key <AE09> { [        asterisk,            9,       multiply                 ] }; // * 9 ×
++    key <AE10> { [           slash,            0,       division                 ] }; // / 0 ÷
++    key <AE11> { [           equal,  asciicircum,         macron                 ] }; // = ^ ¯
++    key <AE12> { [         percent,           mu                                 ] }; // % µ
++
++    // Second row
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD02> { [          eacute,       Eacute,      ampersand,     dead_acute ] }; // é É & ˊ
++    key <AD03> { [               p,            P,        section,      paragraph ] }; // p P § ¶
++    key <AD04> { [               o,            O,             oe,             OE ] }; // o O œ Œ
++    key <AD05> { [          egrave,       Egrave,          grave,     dead_grave ] }; // è È ` `
++    key <AD06> { [        ccedilla,     Ccedilla                                 ] }; // ç Ç
++    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD08> { [               d,            D,            eth,            ETH ] }; // d D ð Ð
++    key <AD09> { [               l,            L,       sterling                 ] }; // l L £
++    key <AD10> { [               f,            F,    ordfeminine                 ] }; // f F ª
++    key <AD11> { [               j,            J                                 ] }; // j J
++    key <AD12> { [               z,            Z                                 ] }; // z Z
++
++    // Third row
++    key <AC01> { [               a,            A,             ae,             AE ] }; // a A æ Æ
++    key <AC02> { [               u,            U,         ugrave,         Ugrave ] }; // u U ù Ù
++    key <AC03> { [               i,            I, dead_diaeresis,     dead_caron ] }; // i I ̈ ˇ
++    key <AC04> { [               e,            E,       EuroSign                 ] }; // e E €
++    key <AC05> { [           comma,     question,   questiondown                 ] }; // , ? ¿
++    key <AC06> { [               c,            C,      copyright,           cent ] }; // c C © ¢
++    key <AC07> { [               t,            T,          thorn,          Thorn ] }; // t T þ Þ
++    key <AC08> { [               s,            S,         ssharp                 ] }; // s S ß
++    key <AC09> { [               n,            N                                 ] }; // n N
++    key <AC10> { [               r,            R,     registered                 ] }; // r R ®
++    key <AC11> { [               m,            M,      masculine                 ] }; // m M º
++    key <BKSL> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
++
++    // Fourth row
++    key <LSGT> { [     ecircumflex,       ugrave,          slash                 ] }; // ê ù /
++    key <AB01> { [          agrave,       Agrave,     asciitilde,     dead_tilde ] }; // à À ~ ~
++    key <AB02> { [               h,            H,         exclam                 ] }; // h H !
++    key <AB03> { [               y,            Y,            yen                 ] }; // y Y ¥
++    key <AB04> { [          period,        colon,      backslash, periodcentered ] }; // . : \ ·
++    key <AB05> { [               k,            K                                 ] }; // k K
++    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
 +    key <AB07> { [               q,            Q                                 ] }; // q Q
-     key <AB08> { [               g,            G                                 ] }; // g G
-     key <AB09> { [               x,            X                                 ] }; // x X
-     key <AB10> { [               w,            W                                 ] }; // w W
++    key <AB08> { [               g,            G                                 ] }; // g G
++    key <AB09> { [               x,            X                                 ] }; // x X
++    key <AB10> { [               w,            W                                 ] }; // w W
 +};
 +
 +partial alphanumeric_keys
@@ -355,8 +438,7 @@ diff -Naur xkeyboard-config-1.3-2.orig/symbols/fr xkeyboard-config-1.3-2+1rc1/sy
 +
 +    // Include previous version :
 +    include "fr(bepo_6211)"
- 
--    key <SPCE> { [           space, nobreakspace,          space,          space ] }; // ␣ ⍽ (espace insécable) ␣ ␣
++
 +    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v6.2.1.2";
 +
 +    // Modifications depuis la version précédente :
@@ -1145,36 +1227,96 @@ diff -Naur xkeyboard-config-1.3-2.orig/symbols/fr xkeyboard-config-1.3-2+1rc1/sy
 +    name[Group1]="France - Bepo, ergonomic, Dvorak way, v1.0rc1, latin-9 only";
 +};
 +
++// Version 1.0rc2 :
++
++partial alphanumeric_keys
++xkb_symbols "bepo_1_0rc2" {
++
++    // Include previous version :
++    include "fr(bepo_1_0rc1)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v1.0rc2";
++
++    // Modifications depuis la version précédente :
++    // * Suppression de « ñ » et « Ñ », et
++    //   déplacement du tilde mort « ~ » en AltGr+n
++    // * inversion de « ¶ » et « § »
++    // * « ° » en Maj+=, « ^ » en AltGr+6, « ¬ » en AltGr+Maj+7,
++    //   « ′ » en AltGr+Maj+=, « ″ » en AltGr+Maj+%,
++    //   ajout des fractions « ¼ », « ½ » et « ¾ »
++    //   en AltGr+Maj+8, 9 et 0 respectivement.
++    // * ajout du cornu mort « ̛ » U+031b  en AltGr+Maj.+,
++    // * ajout du crochet en chef mort « ̉ » U+0309  en AltGr+Maj.+'
++    // * ajout du point souscrit mort « ̣ » U+0323  en AltGr+Maj.+q.
++
++    key <TLDE> { [          dollar,   numbersign,        endash,       paragraph ] }; // $ # – ¶
++
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6,    asciicircum                 ] }; // @ 6 ^
++    key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [            plus,            7,      plusminus,        notsign ] }; // + 7 ± ¬
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          U2212,     onequarter ] }; // - 8 − ¼
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division,        onehalf ] }; // / 9 ÷ ½
++    key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        asterisk,            0,       multiply,  threequarters ] }; // * 0 × ¾
++    key <AE11> { [           equal,       degree,       notequal,        minutes ] }; // = ° ≠ ′
++    key <AE12> { [         percent,        grave,          U2030,        seconds ] }; // % ` ‰ ″
++
++    key <AD03> { [               p,            P,      ampersand,        section ] }; // p P & §
++
++    key <AC05> { [           comma,    semicolon, rightsinglequotemark, dead_horn ] }; // , ; ’ ̛
++    key <AC10> { [               n,            N,     dead_tilde                 ] }; // n N ~
++
++    key <AB05> { [               k,            K,     asciitilde                 ] }; // k, K, ~
++    key <AB06> { [      apostrophe,     question,   questiondown,      dead_hook ] }; // ' ? ¿ ̉
++    key <AB07> { [               q,            Q, dead_abovering,  dead_belowdot ] }; // q Q ˚ ̣
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_1_0rc2_latin9" {
++
++    // Restricts the fr(bepo_1_0rc2) layout to latin9 symbols
++
++    include "fr(bepo_1_0rc1_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v1.0rc2, latin-9 only";
++
++    key <TLDE> { [          dollar,   numbersign,        dollar,       paragraph ] }; // $ # $ ¶
++
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          minus,     onequarter ] }; // - 8 - ¼
++    key <AE11> { [           equal,       degree                                 ] }; // = °
++    key <AE12> { [         percent,        grave                                 ] }; // % `
++
++    key <AC05> { [           comma,    semicolon,          comma,      dead_horn ] }; // , ; , ̛
++};
++
 +
 +// Dernière version :
 +
 +partial alphanumeric_keys
 +xkb_symbols "bepo" {
- 
-     include "level3(ralt_switch)"
++
++    include "level3(ralt_switch)"
 +    include "keypad(oss)"
 +
 +    name[Group1]= "France - Bepo, ergonomic, Dvorak way";
 +
 +    // First row
-+    key <TLDE> { [          dollar,   numbersign,        endash,         section ] }; // $ # – §
++    key <TLDE> { [          dollar,   numbersign,        endash,       paragraph ] }; // $ # – ¶
 +    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash, doublelowquotemark ] }; // " 1 — „
 +    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,  leftdoublequotemark ] }; // « 2 < “
 +    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater, rightdoublequotemark ] }; // » 3 > ”
 +    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft ] }; // ( 4 [
 +    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright ] }; // ) 5 ]
-+    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6,   notsign                      ] }; // @ 6 ¬
-+    key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [            plus,            7,      plusminus,         degree ] }; // + 7 ± °
-+    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          U2212,        minutes ] }; // - 8 − ′
-+    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division,        seconds ] }; // / 9 ÷ ″
-+    key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        asterisk,            0,       multiply                 ] }; // * 0 ×
-+    key <AE11> { [           equal,  asciicircum,       notequal                 ] }; // = ^ ≠
-+    key <AE12> { [         percent,        grave,          U2030                 ] }; // % ` ‰
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6,    asciicircum                 ] }; // @ 6 ^
++    key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [            plus,            7,      plusminus,        notsign ] }; // + 7 ± ¬
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          U2212,     onequarter ] }; // - 8 − ¼
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division,        onehalf ] }; // / 9 ÷ ½
++    key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        asterisk,            0,       multiply,  threequarters ] }; // * 0 × ¾
++    key <AE11> { [           equal,       degree,       notequal,        minutes ] }; // = ° ≠ ′
++    key <AE12> { [         percent,        grave,          U2030,        seconds ] }; // % ` ‰ ″
 +
 +    // Second row
 +    key <AD01> { [               b,            B,            bar,      brokenbar ] }; // b B | ¦
 +    key <AD02> { [          eacute,       Eacute,     dead_acute, dead_doubleacute ] }; // é É ˊ ˝
-+    key <AD03> { [               p,            P,      ampersand,      paragraph ] }; // p P & ¶
++    key <AD03> { [               p,            P,      ampersand,        section ] }; // p P & §
 +    key <AD04> { [               o,            O,             oe,             OE ] }; // o O œ Œ
 +    key <AD05> { [          egrave,       Egrave,     dead_grave,          grave ] }; // è È ` `
 +    key <AD06> { [ dead_circumflex,       exclam,     dead_caron,     exclamdown ] }; // ^ ! ˇ ¡
@@ -1190,12 +1332,12 @@ diff -Naur xkeyboard-config-1.3-2.orig/symbols/fr xkeyboard-config-1.3-2+1rc1/sy
 +    key <AC02> { [               u,            U,         ugrave,         Ugrave ] }; // u U ù Ù
 +    key <AC03> { [               i,            I, dead_diaeresis,  dead_abovedot ] }; // i I ̈ ˙
 +    key <AC04> { [               e,            E,       EuroSign,          UFDD1 ] }; // e E € ¤
-+    key <AC05> { [           comma,    semicolon, rightsinglequotemark           ] }; // , ; ’
++    key <AC05> { [           comma,    semicolon, rightsinglequotemark, dead_horn ] }; // , ; ’ ̛
 +    key <AC06> { [               c,            C,      copyright,          U017f ] }; // c C © ſ
 +    key <AC07> { [               t,            T,          thorn,          Thorn ] }; // t T þ Þ
 +    key <AC08> { [               s,            S,         ssharp,          U1E9E ] }; // s S ß ẞ
 +    key <AC09> { [               r,            R,     registered,      trademark ] }; // r R ® ™
-+    key <AC10> { [               n,            N,         ntilde,         Ntilde ] }; // n N ñ Ñ
++    key <AC10> { [               n,            N,     dead_tilde                 ] }; // n N ~
 +    key <AC11> { [               m,            M,    dead_macron,      masculine ] }; // m M ̄ º
 +    key <BKSL> { [        ccedilla,     Ccedilla,   dead_cedilla,          UFDD3 ] }; // ç Ç ¸ ,
 +
@@ -1205,38 +1347,35 @@ diff -Naur xkeyboard-config-1.3-2.orig/symbols/fr xkeyboard-config-1.3-2+1rc1/sy
 +    key <AB02> { [               y,            Y,      braceleft, leftsinglequotemark  ] }; // y Y { ‘
 +    key <AB03> { [               x,            X,     braceright, rightsinglequotemark ] }; // x X } ’
 +    key <AB04> { [          period,        colon,       ellipsis, periodcentered ] }; // . : … ·
-+    key <AB05> { [               k,            K,     asciitilde,     dead_tilde ] }; // k, K, ~ ~
-+    key <AB06> { [      apostrophe,     question,   questiondown                 ] }; // ' ? ¿
-+    key <AB07> { [               q,            Q, dead_abovering                 ] }; // q Q ˚
++    key <AB05> { [               k,            K,     asciitilde                 ] }; // k, K, ~
++    key <AB06> { [      apostrophe,     question,   questiondown,      dead_hook ] }; // ' ? ¿ ̉
++    key <AB07> { [               q,            Q, dead_abovering,  dead_belowdot ] }; // q Q ˚ ̣
 +    key <AB08> { [               g,            G,          UFDD2                 ] }; // g G µ
 +    key <AB09> { [               h,            H,         dagger,   doubledagger ] }; // h H † ‡
 +    key <AB10> { [               f,            F,    dead_ogonek,    ordfeminine ] }; // f F ̨ ª
 +
 +    key <SPCE> { [           space, nobreakspace,     underscore,          U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
- };
- 
- partial alphanumeric_keys
-@@ -529,12 +1411,46 @@
- 
-     // Restricts the fr(bepo) layout to latin9 symbols
- 
--    include "keypad(oss_latin9)"
-     include "fr(bepo)"
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_latin9" {
++
++    // Restricts the fr(bepo) layout to latin9 symbols
++
++    include "fr(bepo)"
 +    include "keypad(oss_latin9)"
- 
-     name[Group1]="France - Bepo, ergonomic, Dvorak way, latin-9 only";
- 
--    // at now, no difference (oss keypad excepted), but will change !
-+    key <TLDE> { [          dollar,   numbersign,        dollar,         section ] }; // $ # $ §
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, latin-9 only";
++
++    key <TLDE> { [          dollar,   numbersign,        dollar,       paragraph ] }; // $ # $ ¶
 +
 +    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1                                 ] }; // " 1
 +    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less                 ] }; // « 2 <
 +    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater                 ] }; // » 3 >
 +    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
 +    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright                 ] }; // ) 5 ]
-+    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8                                 ] }; // - 8
-+    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division                 ] }; // / 9 ×
-+    key <AE11> { [           equal,  asciicircum                                 ] }; // = ^
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          minus,     onequarter ] }; // - 8 - ¼
++    key <AE11> { [           equal,       degree                                 ] }; // = °
 +    key <AE12> { [         percent,        grave                                 ] }; // % `
 +
 +    key <AD01> { [               b,            B,            bar                 ] }; // b B |
@@ -1247,7 +1386,7 @@ diff -Naur xkeyboard-config-1.3-2.orig/symbols/fr xkeyboard-config-1.3-2+1rc1/sy
 +    key <AD12> { [               w,            W                                 ] }; // w W
 +
 +    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
-+    key <AC05> { [           comma,    semicolon                                 ] }; // , ;
++    key <AC05> { [           comma,    semicolon,          comma,      dead_horn ] }; // , ; , ̛
 +    key <AC06> { [               c,            C,      copyright                 ] }; // c C ©
 +    key <AC08> { [               s,            S,         ssharp                 ] }; // s S ß
 +    key <AC09> { [               r,            R,     registered                 ] }; // r R ®
@@ -1262,28 +1401,27 @@ diff -Naur xkeyboard-config-1.3-2.orig/symbols/fr xkeyboard-config-1.3-2+1rc1/sy
 +    // Note : on a besoin de redéfinir les niveaux 3 et 4,
 +    // donc nbsp(level2) ne suffit pas !
 +    key <SPCE> { [           space,  nobreakspace,    underscore,   nobreakspace ] }; // ␣ (espace insécable) _ (espace insécable)
- };
++};
++
++
+ // Keymap Dvorak pour le Français
+ // par Josselin Mouette <josselin.mouette@ens-lyon.org>.
  
- 
-diff -Naur xkeyboard-config-1.3-2.orig/symbols/inet xkeyboard-config-1.3-2+1rc1/symbols/inet
---- xkeyboard-config-1.3-2.orig/symbols/inet	2008-05-27 23:46:41.000000000 +0200
-+++ xkeyboard-config-1.3-2+1rc1/symbols/inet	2008-08-28 21:21:53.000000000 +0200
-@@ -911,7 +911,7 @@
  partial alphanumeric_keys
- xkb_symbols "fscaa1667g" {
-    include "inet(media_common)"
--   key <I32>   {       [ XF86Info              ]       };
-+   key <I32>   {       [ XF86MyComputer        ]       };
-    key <I6C>   {       [ XF86Mail              ]       };
- };
+ xkb_symbols "dvorak" {
  
-diff -Naur xkeyboard-config-1.3-2.orig/symbols/symbols.dir xkeyboard-config-1.3-2+1rc1/symbols/symbols.dir
---- xkeyboard-config-1.3-2.orig/symbols/symbols.dir	2007-06-26 09:54:26.000000000 +0200
-+++ xkeyboard-config-1.3-2+1rc1/symbols/symbols.dir	2008-08-28 20:56:52.000000000 +0200
-@@ -17,6 +17,32 @@
- --p----- a------- fr(latin9_Sundeadkeys)
- --p----- a------- fr(latin9_sundeadkeys)
- --p----- a------- fr(latin9_nodeadkeys)
+-    name[Group1]= "France - Dvorak";
++    name[Group1]= "France - (Legacy) Dvorak";
+ 
+     key <TLDE>  { [         oe,       OE,              ae,             AE ] };
+ 
+diff -Naur xkeyboard-config-0.9orig/symbols/symbols.dir xkeyboard-config-0.9bepo1_0rc2/symbols/symbols.dir
+--- xkeyboard-config-0.9orig/symbols/symbols.dir	2008-09-19 21:14:31.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2/symbols/symbols.dir	2008-09-19 21:16:55.000000000 +0200
+@@ -157,6 +157,36 @@
+ --p----- a------- fo(nodeadkeys)
+ --p----- a------- fr(Sundeadkeys)
+ -dp----- a------- fr(basic)
 +--p----- a------- fr(bepo_6211)
 +--p----- a------- fr(bepo_6211_latin9)
 +--p----- a------- fr(bepo_6212)
@@ -1310,6 +1448,10 @@ diff -Naur xkeyboard-config-1.3-2.orig/symbols/symbols.dir xkeyboard-config-1.3-
 +--p----- a------- fr(bepo_67_latin9)
 +--p----- a------- fr(bepo_1_0rc1)
 +--p----- a------- fr(bepo_1_0rc1_latin9)
- --p----- a------- fr(bepo)
- --p----- a------- fr(bepo_latin9)
++--p----- a------- fr(bepo_1_0rc2)
++--p----- a------- fr(bepo_1_0rc2_latin9)
++--p----- a------- fr(bepo)
++--p----- a------- fr(bepo_latin9)
  --p----- a------- fr(dvorak)
+ --p----- a------- fr(latin9)
+ --p----- a------- fr(latin9_Sundeadkeys)

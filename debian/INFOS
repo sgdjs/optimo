@@ -113,6 +113,8 @@ xkb_symbols "bepo_651_latin9" {
 
   curver=$(dpkg-parsechangelog |egrep '^Version'|cut -d' ' -f2);echo $curver
   dch -v ${curver}.1bepo+1.0rc1 "ajoute la disposition Dvorak française « Bépo » jusqu'à la version 1.0rc1."
+  ou :
+  dch -v ${curver}.1bepo+1.0rc1 "ajoute les codes de composition Dvorak français « Bépo » de la version 1.0rc2."
 
 * ATTENTION : dans le paquet Debian, le fichier symbols/symbols.dir
   (comme tous les fichiers .dir) est écrasé à la fabrication du paquet
