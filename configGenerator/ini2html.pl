@@ -29,6 +29,7 @@ my $TEMPLATE = '';
 		'space' => 'Espace',
 		' ' => 'Espace insécable',
 		' ' => 'Espace insécable fine',
+		'menu' => '<span class="special">'.chr(0x0020).'</span>',
 		'rshift' => '<span class="special">'.chr(0x21e7).'</span>',
 		'tab' => '<span class="special">'.chr(0x21b9).'</span>',
 		
@@ -242,23 +243,27 @@ foreach ( @SHIFTSTATES ) {
 			my $classes = '';
 			my $style = '';
 			
-			if ( $button->type() eq 'disabled' ) {
+			if (not defined $button) {
+				$label = ' ';
+			} elsif ( $button->type() eq 'disabled' ) {
 				$label = ' ';
 			} elsif ( $button->label() ne '' ) {
 				$label = $button->label();
-				$label = 'AltGr' if $hasAltGr && lc $label eq 'ralt';
-			} elsif ( $button->mode($state) ) {
-				$label = $button->mode($state)->label();
-			} else {
+				$label = 'AltGr' if $hasAltGr && lc $label eq 'ralt';			} elsif ( $button->mode($state) ) {
+				$label = $button->mode($state)->label();			} else {
 				$label = '';
 			}
 			
-			if ( $button->type() eq 'modifier' ) {
+			if (not defined $button) {
+				$classes = '';
+			} elsif ( $button->type() eq 'modifier' ) {
 				$classes .= ' modifier';
 			} elsif ( $button->label() ne '' or $button->mode($state) && $button->mode($state)->type() eq 'special' ) {
 				$classes .= ' special';
 			}
-			if ( $state < 100 and ( $button->label() =~ /Shift/i && $state&1 or $button->label() =~ /RAlt/i && $state>=6 ) ) {
+			if (not defined $button) {
+				$classes = '';
+			} elsif ( $state < 100 and ( $button->label() =~ /Shift/i && $state&1 or $button->label() =~ /RAlt/i && $state>=6 ) ) {
 				$classes .= ' pressed';
 			} elsif ( $state >= 200 and $button->label() =~ /Shift/i) {
 				$classes .= ' pressed';
@@ -276,8 +281,8 @@ foreach ( @SHIFTSTATES ) {
 				my $w = buttonWidth( $r, $c );
 				$style .= 'width: '. $w . 'em;' if ( $w != 1 );
 			}
-			
-			$html .= '<td class="button '.$classes.'" style="'.$style.'" title="'.$label.'"><div>'.shortLabel($label).'</div></td>';
+			$html .= '<td class="button '.$classes.'" style="'.$style.'" title="'.$label.'"><div>'.shortLabel($label).'</div></td>'
+				unless (not defined $button);
 		}
 		$html .= "\n".'</tr></table>'."\n";
 	}

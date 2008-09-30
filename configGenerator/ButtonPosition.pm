@@ -81,7 +81,7 @@
 		application => [[4,6]],
 		sc11d => [[4,7]],
 		rctrl => [[4,7]],
-		sc053 => [[4,6]],
+		sc053 => [[42,42]], # DIE PERIOD, DIE DIE DIE
 	);
 	sub buttonPosition($)
 	{
