@@ -17,11 +17,11 @@ VERSION=1.0rc2
 ./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}C.klc"
 perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}B.klc
 perl ini2html.pl results/layout.ini
-#mv results/layout.ini results/layoutB.ini
-#perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}A.klc
-#mv results/layout.ini results/layoutA.ini
-#perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}C.klc
-#mv results/layout.ini results/layoutC.ini
+mv results/layout.ini results/layoutB.ini
+perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}A.klc
+mv results/layout.ini results/layoutA.ini
+perl klc2ini.pl results/fr-dvorak-bepo-${VERSION}C.klc
+mv results/layout.ini results/layoutC.ini
 
 ./map.py         "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.txt"
 ./svg.py         "results/layout-${VERSION}.xkb" "results/fr-dvorak-bepo-${VERSION}"
