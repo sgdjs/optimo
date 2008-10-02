@@ -19,6 +19,7 @@ my $TEMPLATE = '';
 		'lshift' => '<span class="special">'.chr(0x21e7).'</span>',
 		'capslock' => '<span class="special">'.chr(0x21ea).'</span>',
 		'enter' => '<span class="special">'.chr(0x21b5).'</span>',
+		'menu' => '<span class="special">'.chr(0x0020).'</span>',
 		'lctrl' => 'Ctrl',
 		'lwin' => ' ',
 		'lalt' => 'Alt',
@@ -28,7 +29,7 @@ my $TEMPLATE = '';
 		'ralt' => 'RAlt',
 		'space' => 'Espace',
 		' ' => 'Espace insécable',
-		' ' => 'Espace insécable fine',
+		' ' => 'Espace insécable fine',
 		'menu' => '<span class="special">'.chr(0x0020).'</span>',
 		'rshift' => '<span class="special">'.chr(0x21e7).'</span>',
 		'tab' => '<span class="special">'.chr(0x21b9).'</span>',
@@ -204,8 +205,8 @@ if ( $layout->{global}->{extend_key} ) { # Extend mode
 			$new =~ s/\t; [^\t]+$//;
 			$BUTTONS->[4]->[3]->newMode( 100+$deadkey, myChr($new) );
 			$BUTTONS->[4]->[3]->mode( 100+$deadkey )->type('deadkey');
-			$BUTTONS->[4]->[6]->newMode( 100+$deadkey, $deadkey );
-			$BUTTONS->[4]->[6]->mode( 100+$deadkey )->type('special');
+			#$BUTTONS->[4]->[6]->newMode( 100+$deadkey, $deadkey );
+			#$BUTTONS->[4]->[6]->mode( 100+$deadkey )->type('special');
 		}
 		
 		push @SHIFTSTATES, 200+$deadkey;
@@ -220,8 +221,8 @@ if ( $layout->{global}->{extend_key} ) { # Extend mode
 			$new =~ s/\t; [^\t]+$//;
 			$BUTTONS->[4]->[3]->newMode( 200+$deadkey, myChr($new) );
 			$BUTTONS->[4]->[3]->mode( 200+$deadkey )->type('deadkey');
-			$BUTTONS->[4]->[6]->newMode( 200+$deadkey, $deadkey );
-			$BUTTONS->[4]->[6]->mode( 200+$deadkey )->type('special');
+			#$BUTTONS->[4]->[6]->newMode( 200+$deadkey, $deadkey );
+			#$BUTTONS->[4]->[6]->mode( 200+$deadkey )->type('special');
 		}
 		++$deadkey;
 	}
