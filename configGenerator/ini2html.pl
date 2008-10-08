@@ -29,7 +29,7 @@ my $TEMPLATE = '';
 		'ralt' => 'RAlt',
 		'space' => 'Espace',
 		' ' => 'Espace insécable',
-		' ' => 'Espace insécable fine',
+		' ' => 'Espace fine inséc.',
 		'menu' => '<span class="special">'.chr(0x0020).'</span>',
 		'rshift' => '<span class="special">'.chr(0x21e7).'</span>',
 		'tab' => '<span class="special">'.chr(0x21b9).'</span>',
