@@ -1,7 +1,14 @@
-diff -Naur xkeyboard-config-0.9orig/debian/changelog xkeyboard-config-0.9bepo1_0rc2/debian/changelog
+diff -Naur xkeyboard-config-0.9orig/debian/changelog xkeyboard-config-0.9bepo1_0rc2.2/debian/changelog
 --- xkeyboard-config-0.9orig/debian/changelog	2008-09-17 21:28:56.000000000 +0200
-+++ xkeyboard-config-0.9bepo1_0rc2/debian/changelog	2008-09-17 21:45:53.000000000 +0200
-@@ -1,3 +1,70 @@
++++ xkeyboard-config-0.9bepo1_0rc2.2/debian/changelog	2008-10-16 07:25:01.000000000 +0200
+@@ -1,3 +1,77 @@
++xkeyboard-config (0.9-4.1bepo+1.0rc2.2) unstable; urgency=low
++
++  * Corrige des « oublis » depuis la disposition 1.0rc1 : place de ≤, ≥,
++    le caron mort et ¡.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Thu, 16 Oct 2008 07:25:00 +0200
++
 +xkeyboard-config (0.9-4.1bepo+1.0rc2) unstable; urgency=low
 +
 +  * ajoute la disposition Dvorak française « Bépo » jusqu'à la version
@@ -72,9 +79,9 @@ diff -Naur xkeyboard-config-0.9orig/debian/changelog xkeyboard-config-0.9bepo1_0
  xkeyboard-config (0.9-4) unstable; urgency=low
  
    [ Denis Barbier ]
-diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1_0rc2/debian/symbols.dir
+diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1_0rc2.2/debian/symbols.dir
 --- xkeyboard-config-0.9orig/debian/symbols.dir	2008-09-17 21:28:56.000000000 +0200
-+++ xkeyboard-config-0.9bepo1_0rc2/debian/symbols.dir	2008-09-17 21:42:10.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2.2/debian/symbols.dir	2008-09-17 21:42:10.000000000 +0200
 @@ -157,6 +157,36 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
@@ -112,9 +119,9 @@ diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1
  --p----- a------- fr(dvorak)
  --p----- a------- fr(latin9)
  --p----- a------- fr(latin9_Sundeadkeys)
-diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1_0rc2/rules/base.lst
+diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1_0rc2.2/rules/base.lst
 --- xkeyboard-config-0.9orig/rules/base.lst	2006-10-07 23:22:17.000000000 +0200
-+++ xkeyboard-config-0.9bepo1_0rc2/rules/base.lst	2008-09-17 21:43:09.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2.2/rules/base.lst	2008-09-17 21:43:09.000000000 +0200
 @@ -301,7 +301,37 @@
    latin9          fr: (Legacy) Alternative
    latin9_nodeadkeys fr: (Legacy) Alternative, eliminate dead keys
@@ -154,9 +161,9 @@ diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1_0rc
    mac             fr: Macintosh
    generic         gh: Multilingual
    akan            gh: Akan
-diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1_0rc2/rules/base.xml.in
+diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1_0rc2.2/rules/base.xml.in
 --- xkeyboard-config-0.9orig/rules/base.xml.in	2006-10-02 20:42:40.000000000 +0200
-+++ xkeyboard-config-0.9bepo1_0rc2/rules/base.xml.in	2008-09-17 21:43:43.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2.2/rules/base.xml.in	2008-09-17 21:43:43.000000000 +0200
 @@ -1576,8 +1576,188 @@
          </variant>
          <variant>
@@ -347,16 +354,16 @@ diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1_
            </configItem>
          </variant>
          <variant>
-diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/symbols/fr
+diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2.2/symbols/fr
 --- xkeyboard-config-0.9orig/symbols/fr	2006-10-04 21:29:26.000000000 +0200
-+++ xkeyboard-config-0.9bepo1_0rc2/symbols/fr	2008-09-18 21:54:53.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2.2/symbols/fr	2008-10-16 16:54:50.000000000 +0200
 @@ -1,4 +1,4 @@
 -// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $
 +// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $ -*- c -*-
  
  // based on a keyboard map from an 'xkb/symbols/fr' file
  //
-@@ -429,13 +429,1097 @@
+@@ -429,13 +429,1102 @@
      key <AD11>	{ [	asciicircum,  	   diaeresis,          asciitilde,           quoteright ] };
  };
  
@@ -373,11 +380,11 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +// └────┘
 +//
 +// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
-+// │ # ¶ │ 1 „ │ 2 “ │ 3 ” │ 4   │ 5   │ 6   │ 7 ¬ │ 8 ¼ │ 9 ½ │ 0 ¾ │ ° ′ │ ` ″ ┃ ⌫ Retour┃
++// │ # ¶ │ 1 „ │ 2 “ │ 3 ” │ 4 ≤ │ 5 ≥ │ 6   │ 7 ¬ │ 8 ¼ │ 9 ½ │ 0 ¾ │ ° ′ │ ` ″ ┃ ⌫ Retour┃
 +// │ $ – │ " — │ « < │ » > │ ( [ │ ) ] │ @ ^ │ + ± │ - − │ / ÷ │ * × │ = ≠ │ % ‰ ┃  arrière┃
 +// ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
-+// ┃       ┃ B ¦ │ É ˝ │ P § │ O Œ │ È ` │ ! ¡ │ V   │ D Ð │ L   │ J Ĳ │ Z Ə │ W   ┃Entrée ┃
-+// ┃Tab ↹  ┃ b | │ é ˊ │ p & │ o œ │ è ` │ ˆ ˇ │ v   │ d ð │ l / │ j ĳ │ z ə │ w ̆ ┃   ⏎   ┃
++// ┃       ┃ B ¦ │ É ˝ │ P § │ O Œ │ È ` │ !   │ V   │ D Ð │ L   │ J Ĳ │ Z Ə │ W   ┃Entrée ┃
++// ┃Tab ↹  ┃ b | │ é ˊ │ p & │ o œ │ è ` │ ˆ ¡ │ v ˇ │ d ð │ l / │ j ĳ │ z ə │ w ̆ ┃   ⏎   ┃
 +// ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
 +// ┃        ┃ A Æ │ U Ù │ I ˙ │ E ¤ │ ; ̛ │ C ſ │ T Þ │ S ẞ │ R ™ │ N   │ M º │ Ç , ┃      ┃
 +// ┃Maj ⇬   ┃ a æ │ u ù │ i ̈ │ e € │ , ’ │ c © │ t þ │ s ß │ r ® │ n ˜ │ m ¯ │ ç ¸ ┃      ┃
@@ -436,7 +443,7 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +    key <AC04> { [               e,            E,       EuroSign                 ] }; // e E €
 +    key <AC05> { [           comma,     question,   questiondown                 ] }; // , ? ¿
 +    key <AC06> { [               c,            C,      copyright,           cent ] }; // c C © ¢
-+    key <AC07> { [               t,            T,          thorn,          Thorn ] }; // t T þ Þ
++    key <AC07> { [               t,            T,          thorn,          THORN ] }; // t T þ Þ
 +    key <AC08> { [               s,            S,         ssharp                 ] }; // s S ß
 +    key <AC09> { [               n,            N                                 ] }; // n N
 +    key <AC10> { [               r,            R,     registered                 ] }; // r R ®
@@ -1163,10 +1170,13 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +    //      o déplacement de « § » en AltGr+Maj.+{$} ;
 +    //      o déplacement du demi-cadratin en AltGr+{$} ;
 +    //      o ajout du guillemet-virgule double inférieur « „ » U+201E  en AltGr+Maj.+{1} ;
-+    //      o suppression de « ≤≥ » ;
 +    //      o déplacement des guillemets anglais « “” » en AltGr+Maj.+{23} ;
 +    // * ajout des guillemets de second niveau anglais « ‘’ » sur AltGr+Maj.+[XC] ;
 +    // * suppression de « ‘ » en AltGr+{'}.
++    //
++    // * déplacement de « ≤≥ » en AltGr+Maj.+4 5
++    // * retour du caron mort « ˇ » en AltGr+v
++    // * déplacement de « ¡ » en AltGr+^
 +    //
 +    // Changements du 0.6.7 non réalisés ici :
 +    // * ajout de caractères sur le tilde mort :
@@ -1178,12 +1188,14 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash, doublelowquotemark ] }; // " 1 — „
 +    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,  leftdoublequotemark ] }; // « 2 < “
 +    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater, rightdoublequotemark ] }; // » 3 > ”
-+    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft ] }; // ( 4 [
-+    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright ] }; // ) 5 ]
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft,      lessthanequal ] }; // ( 4 [ ≤
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright,   greaterthanequal ] }; // ) 5 ] ≥
 +    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6,   notsign                      ] }; // @ 6 ¬
 +    key <AE11> { [           equal,  asciicircum,       notequal                 ] }; // = ^ ≠
 +
 +    key <AD03> { [               p,            P,      ampersand,      paragraph ] }; // p P & ¶
++    key <AD06> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
++    key <AD07> { [               v,            V,     dead_caron                 ] }; // v V ˇ
 +
 +    key <AC05> { [           comma,    semicolon, rightsinglequotemark           ] }; // , ; ’
 +    key <AC06> { [               c,            C,      copyright,          U017f ] }; // c C © ſ
@@ -1220,7 +1232,7 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +
 +    key <AD01> { [               b,            B,            bar                 ] }; // b B |
 +    key <AD02> { [          eacute,       Eacute,     dead_acute                 ] }; // é É ˊ
-+    key <AD06> { [ dead_circumflex,       exclam, dead_circumflex,    exclamdown ] }; // ^ ! ^ ¡
++    key <AD07> { [               v,            V                                 ] }; // v V
 +    key <AD10> { [               j,            J                                 ] }; // j J
 +    key <AD11> { [               z,            Z                                 ] }; // z Z
 +    key <AD12> { [               w,            W                                 ] }; // w W
@@ -1343,8 +1355,8 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash, doublelowquotemark ] }; // " 1 — „
 +    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,  leftdoublequotemark ] }; // « 2 < “
 +    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater, rightdoublequotemark ] }; // » 3 > ”
-+    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft ] }; // ( 4 [
-+    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright ] }; // ) 5 ]
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft,      lessthanequal ] }; // ( 4 [ ≤
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright,   greaterthanequal ] }; // ) 5 ] ≥
 +    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6,    asciicircum                 ] }; // @ 6 ^
 +    key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [            plus,            7,      plusminus,        notsign ] }; // + 7 ± ¬
 +    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          U2212,     onequarter ] }; // - 8 − ¼
@@ -1359,8 +1371,8 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +    key <AD03> { [               p,            P,      ampersand,        section ] }; // p P & §
 +    key <AD04> { [               o,            O,             oe,             OE ] }; // o O œ Œ
 +    key <AD05> { [          egrave,       Egrave,     dead_grave,          grave ] }; // è È ` `
-+    key <AD06> { [ dead_circumflex,       exclam,     dead_caron,     exclamdown ] }; // ^ ! ˇ ¡
-+    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD06> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
++    key <AD07> { [               v,            V,     dead_caron                 ] }; // v V ˇ
 +    key <AD08> { [               d,            D,            eth,            ETH ] }; // d D ð Ð
 +    key <AD09> { [               l,            L,          UFDD0                 ] }; // l L /
 +    key <AD10> { [               j,            J,          U0133,          U0132 ] }; // j J ĳ Ĳ
@@ -1374,7 +1386,7 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +    key <AC04> { [               e,            E,       EuroSign,          UFDD1 ] }; // e E € ¤
 +    key <AC05> { [           comma,    semicolon, rightsinglequotemark, dead_horn ] }; // , ; ’ ̛
 +    key <AC06> { [               c,            C,      copyright,          U017f ] }; // c C © ſ
-+    key <AC07> { [               t,            T,          thorn,          Thorn ] }; // t T þ Þ
++    key <AC07> { [               t,            T,          thorn,          THORN ] }; // t T þ Þ
 +    key <AC08> { [               s,            S,         ssharp,          U1E9E ] }; // s S ß ẞ
 +    key <AC09> { [               r,            R,     registered,      trademark ] }; // r R ® ™
 +    key <AC10> { [               n,            N,     dead_tilde                 ] }; // n N ~
@@ -1420,7 +1432,7 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
 +
 +    key <AD01> { [               b,            B,            bar                 ] }; // b B |
 +    key <AD02> { [          eacute,       Eacute,     dead_acute                 ] }; // é É ˊ
-+    key <AD06> { [ dead_circumflex,       exclam, dead_circumflex,    exclamdown ] }; // ^ ! ^ ¡
++    key <AD07> { [               v,            V                                 ] }; // v V
 +    key <AD10> { [               j,            J                                 ] }; // j J
 +    key <AD11> { [               z,            Z                                 ] }; // z Z
 +    key <AD12> { [               w,            W                                 ] }; // w W
@@ -1455,9 +1467,9 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1_0rc2/sy
  
      key <TLDE>  { [         oe,       OE,              ae,             AE ] };
  
-diff -Naur xkeyboard-config-0.9orig/symbols/symbols.dir xkeyboard-config-0.9bepo1_0rc2/symbols/symbols.dir
+diff -Naur xkeyboard-config-0.9orig/symbols/symbols.dir xkeyboard-config-0.9bepo1_0rc2.2/symbols/symbols.dir
 --- xkeyboard-config-0.9orig/symbols/symbols.dir	2008-09-17 21:28:56.000000000 +0200
-+++ xkeyboard-config-0.9bepo1_0rc2/symbols/symbols.dir	2008-09-17 21:42:36.000000000 +0200
++++ xkeyboard-config-0.9bepo1_0rc2.2/symbols/symbols.dir	2008-09-17 21:42:36.000000000 +0200
 @@ -157,6 +157,36 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
