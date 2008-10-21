@@ -226,12 +226,10 @@ include "%L"
 <dead_hook> <P> : U01A4
 <dead_hook> <p> : U01A5
 <dead_hook> <q> : U02A0
-<dead_hook> <U025C> : U025D
 <dead_hook> <s> : U0282
 <dead_hook> <schwa> : U025A
 <dead_hook> <T> : U01AC
 <dead_hook> <t> : U01AD
-<dead_hook> <U0279> : U027B
 <dead_hook> <V> : U01B2
 <dead_hook> <v> : U028B
 <dead_hook> <W> : U2C72
@@ -336,7 +334,7 @@ include "%L"
 <dead_tilde> <omacron> : U022D
 <dead_tilde> <Uacute> : U1E78
 <dead_tilde> <uacute> : U1E79
-<dead_tilde> <equal> : similarequal
+<dead_tilde> <minus> : similarequal
 <dead_tilde> <less> : U2272
 <dead_tilde> <greater> : U2273
 <dead_tilde> <nobreakspace> : combining_tilde

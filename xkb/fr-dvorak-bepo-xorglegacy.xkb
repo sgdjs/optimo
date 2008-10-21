@@ -47,9 +47,9 @@ xkb_symbols "dvorak" {
 	key <AC05> { type[group1] = "FOUR_LEVEL", [ comma, semicolon, rightsinglequotemark, dead_horn ] }; // , ; ’ ̛
 	key <AC06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ c, C, copyright, U017F ] }; // c C © ſ
 	key <AC07> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ t, T, thorn, THORN ] }; // t T þ Þ
-	key <AC08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ s, S, ssharp, U1E9E ] }; // s S ß ẞ
+	key <AC08> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ s, S, ssharp, U1E9E ] }; // s S ß ẞ
 	key <AC09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ r, R, registered, trademark ] }; // r R ® ™
-	key <AC10> { type[group1] = "FOUR_LEVEL_ALPHABETIC", [ n, N, dead_tilde ] }; // n N ~
+	key <AC10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ n, N, dead_tilde ] }; // n N ~
 	key <AC11> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ m, M, dead_macron, masculine ] }; // m M ¯ º
 	key <BKSL> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ ccedilla, Ccedilla, dead_cedilla, UFDD3 ] }; // ç Ç ¸ ,
 
