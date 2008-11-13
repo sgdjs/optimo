@@ -12,6 +12,10 @@
 
 set -ev
 
+# ajoute des chemin dans le PATH pour être sûr de trouver xkbcomp.
+# pour opensolaris
+export PATH=$PATH:/usr/X11/lib/X11/xkb/
+
 # quel répertoire temporaire utiliser ?
 if [ -n "$TMP" ]; then
   tmp="$TMP"
