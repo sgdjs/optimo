@@ -11,6 +11,7 @@
 #
 
 set -ev
+ulimit -c 0
 
 # ajoute des chemin dans le PATH pour être sûr de trouver xkbcomp.
 # pour opensolaris
