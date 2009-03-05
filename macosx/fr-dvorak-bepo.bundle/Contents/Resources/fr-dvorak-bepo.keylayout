@@ -642,7 +642,7 @@
       <key code="40" action="ß" />
       <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
-      <key code="43" action="greek" />
+      <key code="43" action="µ" />
       <key code="44" action="ogonek" />
       <key code="45" action="¿" />
       <key code="46" action="ringabove" />
@@ -725,7 +725,7 @@
       <key code="8" action="’" />
       <key code="9" action="·" />
       <key code="10" action="¶" />
-      <key code="11" action="" />
+      <key code="11" action="⌨" />
       <key code="12" action="¦" />
       <key code="13" action="doubleacute" />
       <key code="14" action="§" />
@@ -840,7 +840,7 @@
       <key code="8" action="’" />
       <key code="9" action="·" />
       <key code="10" action="¶" />
-      <key code="11" action="" />
+      <key code="11" action="⌨" />
       <key code="12" action="¦" />
       <key code="13" action="doubleacute" />
       <key code="14" action="§" />
@@ -987,7 +987,7 @@
       <key code="40" action="ß" />
       <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
-      <key code="43" action="greek" />
+      <key code="43" action="Μ" />
       <key code="44" action="ogonek" />
       <key code="45" action="¿" />
       <key code="46" action="ringabove" />
@@ -5573,6 +5573,10 @@
       <when state="Multi_key_parenright" output="Ἠ"/>
     </action>
 
+    <action id="Μ">
+      <when state="none" output="Μ"/>
+    </action>
+
     <action id="Ο">
       <when state="none" output="Ο"/>
       <when state="Multi_key_acute" output="Ό"/>
@@ -8254,6 +8258,10 @@
     <action id="⊵">
       <when state="none" output="⊵"/>
       <when state="Multi_key" next="Multi_key_U22B5"/>
+    </action>
+
+    <action id="⌨">
+      <when state="none" output="⌨"/>
     </action>
 
     <action id="⫝">
