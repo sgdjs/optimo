@@ -16,6 +16,7 @@ VERSION=1.0rc3
 ./ktouch.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keyboard"
 ./typefaster.py  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.xml"
 ./keymaps.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.map"
+./keymaps.py -u  "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.utf8.map"
 ./kbdmap.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbdmap"
 ./wscons.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.wscons"
 ./macosx.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keylayout"

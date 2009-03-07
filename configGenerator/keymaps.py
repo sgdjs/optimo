@@ -12,7 +12,16 @@
 #
 
 import defaults, sys
-defaults.xkbFile = sys.argv[1]
+
+
+from optparse import OptionParser
+
+parser = OptionParser()
+parser.add_option("-u", "--utf8", action="store_true", dest="utf8", help="Generate an utf8 keymap instead of the usual latin9")
+opts, args = parser.parse_args()
+
+
+defaults.xkbFile = args[0]
 
 import xkb, dead_keys, codecs
 from terminators import terminators
@@ -655,6 +664,15 @@ controls = ["Control_a",
 "Meta_Delete",
 ]
 
+def utf8name(c):
+  try:
+    cl = codecs.encode(c, "iso-8859-15")
+    name = names[cl]
+  except:
+    name = hex(ord(c)).replace("0x", "U+")
+  return name
+
+
 for i in range(256):
   if not namesData.has_key(i):
     namesData[i] = hex(i)
@@ -665,7 +683,7 @@ for c, n in namesData.iteritems():
   names[chr(c)] = n
 #print names
 
-out = file(sys.argv[2], "w")
+out = file(args[1], "w")
 
 print >> out, header
 
@@ -681,34 +699,55 @@ for l in f:
     for M1, M2 in [(None, ""), ("Control_", "  Control "), ("Meta_", "  Alt "), ("Meta_Control_", "  Control Alt "), ]:
       v = xkb.tmplValues[k+m1]
     #  v = terminators.get( v, v )
-      try:
-       cl = codecs.encode(v, "iso-8859-15")
-       name = names[cl]
-       term = "VoidSymbol"
-      except:
-    #    if terminators.has_key(v):
-        if v in defaultDeads:
-          name = "dead_" + v
-          try:
-            term = terminators[v]
-            cl = codecs.encode(term, "iso-8859-15")
-            term = names[cl]
-          except:
-            term = "VoidSymbol"
-        else:
-          # print k, v
-          name = "VoidSymbol"
+    
+      if opts.utf8:
+        try:
+          name = utf8name(v)
           term = "VoidSymbol"
-          
+        except:
+      #    if terminators.has_key(v):
+          if v in defaultDeads:
+            name = "dead_" + v
+            try:
+              term = utf8name(terminators[v])
+            except:
+              term = "VoidSymbol"
+          else:
+            # print k, v
+            name = "VoidSymbol"
+            term = "VoidSymbol"
+      else:
+        try:
+         cl = codecs.encode(v, "iso-8859-15")
+         name = names[cl]
+         term = "VoidSymbol"
+        except:
+      #    if terminators.has_key(v):
+          if v in defaultDeads:
+            name = "dead_" + v
+            try:
+              term = terminators[v]
+              cl = codecs.encode(term, "iso-8859-15")
+              term = names[cl]
+            except:
+              term = "VoidSymbol"
+          else:
+            # print k, v
+            name = "VoidSymbol"
+            term = "VoidSymbol"
+            
       if M1:
-        if M1+name in controls:
-          name = M1+name
-        elif M1+term in controls:
-          name = M1+term
+        if M1+name.lower() in controls:
+          name = M1+name.lower()
+        elif M1+term.lower() in controls:
+          name = M1+term.lower()
         else:
           name = "VoidSymbol"
         
       if ("FOUR_LEVEL_SEMIALPHABETIC" in xkb.options[k] or "FOUR_LEVEL_ALPHABETIC" in xkb.options[k]) and M1 == None and m1 in ("", "_shift"):
+        name = "+"+name
+    
+      if ("FOUR_LEVEL_ALPHABETIC" in xkb.options[k]) and M1 == None and m1 in ("_option", "_option_shift"):
         name = "+"+name
     
       print >> out, "%s%skeycode %s = %s" % ( m2, M2, str(int(scanCode, 16)), name)
