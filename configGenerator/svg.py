@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # Produit une carte de touches à partir d'un fichier xkb
@@ -106,7 +106,7 @@ header = u"""<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="926.60248" y="431.76309">Ctrl</text>
     <text font-size="19" font-family="DejaVu Sans" style="fill:#ff0000" x="891.62524" y="364.66342">Maj</text>
     <text font-size="19" font-family="DejaVu Sans" style="fill:#000000" x="925"       y="230.91899">Entrée</text>
-    <text font-size="13" font-family="DejaVu Sans" style="fill:#000000" x="900.2666"  y="149.31816">Retour Arrière</text>
+    <text font-size="13" font-family="DejaVu Sans" style="fill:#000000" x="900.2666"  y="149.31816">Retour arrière</text>
 
 """
 
