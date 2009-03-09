@@ -114,14 +114,14 @@ for l in f:
       if deadNames.has_key(v):
         cl = deadNames[v]
         try:
-          term = names[codecs.encode(terminators[v], "iso-8859-15")]
+          term = codecs.encode(terminators[v], "iso-8859-15")
         except:
           term = "nop"
       elif terminators.has_key(v):
         print "unsupported", "dead_"+v
         term = "nop"
         try:
-          cl = names[codecs.encode(terminators[v], "iso-8859-15")]
+          cl = codecs.encode(terminators[v], "iso-8859-15")
         except:
           cl = "nop"
       s += prefix+" "+escape(cl)+" "
@@ -131,6 +131,7 @@ for l in f:
       cc = "nop"
       for cm in ["_shift_option", "_option", "_shift", ""]:
         cv = xkb.tmplValues[k+cm]
+        cv = terminators.get(cv, cv)
         if charToCtrl.has_key(cv):
           if cc != "nop":
             print "ctrl already found for", k, cc, "- using", charToCtrl[cv], "instead."
