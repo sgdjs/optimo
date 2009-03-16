@@ -20,5 +20,6 @@ VERSION=1.0rc3
 ./kbdmap.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbdmap"
 ./wscons.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.wscons"
 ./macosx.py      "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keylayout"
+./keytables.py   "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keytables"
 
 perl -p -e 's#\tinclude "pc\(pc105\)"#\tinclude "pc/pc(pc105)"#g' "results/layout-${VERSION}-user.xkb" > "results/layout-${VERSION}-user-legacy.xkb"

@@ -19,3 +19,4 @@ cp "results/layout-${VERSION}.utf8.map" ../keymaps/fr-dvorak-bepo-utf8.map
 cp "results/layout-${VERSION}.kbdmap" ../kbdmap/fr-dvorak-bepo.kbd
 cp "results/layout-${VERSION}.wscons" ../wscons/fr-dvorak-bepo.map
 cp "results/layout-${VERSION}.keylayout" ../macosx/fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout
+cp "results/layout-${VERSION}.keytables" ../keytables/fr-dvorak-bepo

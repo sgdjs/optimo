@@ -1,0 +1,33 @@
+Disposition de clavier Dvorak français BÉPO, version 1.0rc2
+http://www.clavier-dvorak.org/
+
+
+Description
+-----------
+
+Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+Les fichiers de ce paquetage sont destinés à être utilisés avec loadkeys pour modifier la configuration de clavier en mode console sous open solaris.
+
+
+Utilisation
+-----------
+
+La commande
+  
+  loadkeys fr-dvorak-bepo
+  
+bascule le clavier en clavier Dvorak français BÉPO. Vous pouvez copier le fichier fr-dvorak-bepo.kmap dans le répertoire /usr/share/lib/keytables/type_6/ pour le rendre accessible de n'importe quel répertoire avec la commande
+
+  loadkeys fr-dvorak-bepo
+  
+La commande
+
+  loadkeys france
+  
+permet de revenir à un clavier AZERTY.
+
+
+Licence
+-------
+
+La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
