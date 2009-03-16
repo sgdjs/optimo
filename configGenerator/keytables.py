@@ -18,8 +18,7 @@ import xkb, dead_keys, codecs, compose
 from terminators import terminators
 
 
-header = u"""# fr-dvorak-bepo
-"""
+header = r"""# fr-dvorak-bepo"""
 
 charToCtrl = {
   "a": "^A",
@@ -97,7 +96,7 @@ for l in f:
 #                                                         alt
 # scan                       cntrl          alt    alt   cntrl lock
 # code  base   shift  cntrl  shift  alt    shift  cntrl  shift state
-  s = "key "+str(int(scanCode, 16)).ljust(5)
+  s = "key "+str(int(scanCode))+"\t "
   for m, prefix in [("", "base"), ("_shift", "shift"), ("_capslock", "caps"), (None, "ctrl"), ("_option", "altg")]:
     if m is not None:
       v = xkb.tmplValues[k+m]
