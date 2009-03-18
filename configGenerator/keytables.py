@@ -132,7 +132,7 @@ for l in f:
         cv = xkb.tmplValues[k+cm]
         cv = terminators.get(cv, cv)
         if charToCtrl.has_key(cv):
-          if cc != "nop":
+          if cc != "nop" and cc != charToCtrl[cv]:
             print "ctrl already found for", k, cc, "- using", charToCtrl[cv], "instead."
           cc = charToCtrl[cv]
       s += prefix+" "+escape(cc)+" "
