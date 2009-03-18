@@ -28,8 +28,11 @@ from terminators import terminators
 
 
 header = u"""# fr-dvorak-bepo  http://www.clavier-dvorak.org
-charset "iso-8859-15"
-keymaps 0-15
+"""
+if not opts.utf8:
+  header += """charset "iso-8859-15"
+"""
+header += """keymaps 0-15
 
 # includes are disabled to work also on debian
 # include "linux-with-alt-and-altgr"
@@ -737,7 +740,11 @@ for l in f:
             term = "VoidSymbol"
             
       if M1:
-        if M1+name.lower() in controls:
+        if M1+name in controls:
+          name = M1+name
+        elif M1+term in controls:
+          name = M1+term
+        elif M1+name.lower() in controls:
           name = M1+name.lower()
         elif M1+term.lower() in controls:
           name = M1+term.lower()
