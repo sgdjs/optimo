@@ -41,6 +41,7 @@
 
 use strict;
 use warnings;
+use locale;
 use Data::Dumper;
 
 die("Usage: $0 <version> <output format>\n")
@@ -56,6 +57,8 @@ my $VIRTUAL_KEYS       = "virtualKeys-$VERSION.conf";
 my $KEYS_FILE         = "keys.conf";
 my $SPECIAL_KEYS_FILE = "specialKeys.conf";
 my $SYMBOLS_FILE      = "symbols.conf";
+
+my $UNICODE_FILE = "UnicodeData-5.0.0.fr.txt";
 
 my $SHORT_VERSION = $VERSION;
 $SHORT_VERSION =~ tr/\.//d;
@@ -84,6 +87,8 @@ my %layoutSyms = ();
 
 my @deadKeysA = ();
 my %deadKeysH = ();
+
+my %unicodesDescription = ();
 
 my @levels = ('ONE', 'TWO', 'THREE', 'FOUR');
 
@@ -280,6 +285,29 @@ sub loadDeadKeys()
 
 #print Dumper(\@deadKeysA);
 #print Dumper(\%deadKeysH);
+}
+
+sub loadUnicode()
+{
+    open(FILE, "< $UNICODE_FILE") or die("open: $!");
+
+    LINE: while (<FILE>)
+    {
+        next LINE
+            if (/^#/ || /^\s*$/);
+
+        chomp;
+        s/#.*$//g;
+        my @array = split(/;/);
+        my $code = shift(@array);
+        my $desc = shift(@array);
+
+        $unicodesDescription{$code} = $desc;
+    }
+
+    close(FILE);
+
+#print Dumper(\%unicodesDescription);
 }
 
 sub unicode2utf8($)
@@ -1029,6 +1057,144 @@ sub gen_win_msklc_dvoraj()
     gen_win_msklc($vk_dvoraj_column, "fr-FR", "0000040c");
 }
 
+sub gen_description_header()
+{
+    return "<table>\n"
+        ."<tr><th>Accès direct</th><th>Shift</th><th>AltGr</th><th>AltGr + Shift</th></th>\n";
+}
+
+sub gen_description_body()
+{
+    my $body = "";
+
+    for my $key (@layoutKeys)
+    {
+        if ($key eq "")
+        {
+            $body .= "\n";
+            next;
+        }
+
+        if (!defined($keys{$key}))
+        {
+            print STDERR "Unknown key: ".$key."\n";
+            next;
+        }
+
+        my %keySymbols = %{$layoutSyms{$key}};
+
+        next
+            if (defined($keySymbols{'windowsOnly'}) && $keySymbols{'windowsOnly'} == 1);
+
+        my $line = "<tr>";
+
+        # Direct
+        if (!defined($keySymbols{'direct'}) || $keySymbols{'direct'} eq "")
+        {
+            print STDERR "Unknown symbol: ".$key."{'direct'}\n";
+            $line .= "<td />";
+        }
+        elsif (!defined($symbols{$keySymbols{'direct'}}))
+        {
+            print STDERR "Unknown symbol: ".$key."{'direct'}: ".$keySymbols{'direct'}."\n";
+            $line .= "<td />";
+        }
+        elsif (!defined($unicodesDescription{$unicodes{$keySymbols{'direct'}}}))
+        {
+            print STDERR "No unicode description for: ".$key."{'direct'}: ".$keySymbols{'direct'}."\n";
+            $line .= "<td>UNKNOWN</td>";
+        }
+        else
+        {
+            $line .= "<td>".$unicodesDescription{$unicodes{$keySymbols{'direct'}}}."</td>";
+        }
+
+        # Shift
+        if (!defined($keySymbols{'shift'}) || $keySymbols{'shift'} eq "")
+        {
+            $line .= "<td />";
+        }
+        elsif (!defined($symbols{$keySymbols{'shift'}}))
+        {
+            print STDERR "Unknown symbol: ".$key."{'shift'}: ".$keySymbols{'shift'}."\n";
+            $line .= "<td />";
+        }
+        elsif (!defined($unicodesDescription{$unicodes{$keySymbols{'shift'}}}))
+        {
+            print STDERR "No unicode description for: ".$key."{'shift'}: ".$keySymbols{'shift'}."\n";
+            $line .= "<td>UNKNOWN</td>";
+        }
+        else
+        {
+            $line .= "<td>".$unicodesDescription{$unicodes{$keySymbols{'shift'}}}."</td>";
+        }
+
+        # AltGr
+        if (!defined($keySymbols{'altgr'}) || $keySymbols{'altgr'} eq "")
+        {
+            $line .= "<td />";
+        }
+        elsif (!defined($symbols{$keySymbols{'altgr'}}))
+        {
+            print STDERR "Unknown symbol: ".$key."{'altgr'}: ".$keySymbols{'altgr'}."\n";
+            $line .= "<td />";
+        }
+        elsif (!defined($unicodesDescription{$unicodes{$keySymbols{'altgr'}}}))
+        {
+            print STDERR "No unicode description for: ".$key."{'altgr'}: ".$keySymbols{'altgr'}."\n";
+            $line .= "<td>UNKNOWN</td>";
+        }
+        else
+        {
+            $line .= "<td>".$unicodesDescription{$unicodes{$keySymbols{'altgr'}}}."</td>";
+        }
+
+        # AltGr + Shift
+        if (!defined($keySymbols{'altgr+shift'}) || $keySymbols{'altgr+shift'} eq "")
+        {
+            $line .= "<td />";
+        }
+        elsif (!defined($symbols{$keySymbols{'altgr+shift'}}))
+        {
+            print STDERR "Unknown symbol: ".$key."{'altgr+shift'}: ".$keySymbols{'altgr+shift'}."\n";
+            $line .= "<td />";
+        }
+        elsif (!defined($unicodesDescription{$unicodes{$keySymbols{'altgr+shift'}}}))
+        {
+            print STDERR "No unicode description for: ".$key."{'altgr+shift'}: ".$keySymbols{'altgr+shift'}."\n";
+            $line .= "<td>UNKNOWN</td>";
+        }
+        else
+        {
+            $line .= "<td>".$unicodesDescription{$unicodes{$keySymbols{'altgr+shift'}}}."</td>";
+        }
+
+        $body .= $line."</tr>\n";
+    }
+
+    return lc($body);
+}
+
+sub gen_description_footer()
+{
+    return "</table>";
+}
+
+sub gen_description()
+{
+    &loadKeys   ($x_xkb_column);
+    &loadSymbols($x_xkb_column);
+    &loadLayout();
+    &loadUnicode();
+
+    my $header = &gen_description_header();
+    my $body   = &gen_description_body();
+    my $footer = &gen_description_footer();
+
+    print $header.$body.$footer;
+}
+
+
 SWITCH: for ($OUTPUT_FORMAT)
 {
     /x_xkb_root/i       && do { &gen_x_xkb_root();       last; };
@@ -1039,6 +1205,7 @@ SWITCH: for ($OUTPUT_FORMAT)
     /win_msklc_bepo/i   && do { &gen_win_msklc_bepo();   last; };
     /win_msklc_qwertz/i && do { &gen_win_msklc_qwertz(); last; };
     /win_msklc_dvoraj/i && do { &gen_win_msklc_dvoraj(); last; };
+    /description/i      && do { &gen_description();      last; };
 
     die("output format must be one of the following: x_xkb_root, x_xkb_user, x_xmodmap, x_compose, win_msklc_azerty, win_msklc_bepo, win_msklc_qwertz, win_msklc_dvoraj\n");
 }

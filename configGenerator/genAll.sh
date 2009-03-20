@@ -10,6 +10,9 @@ VERSION=1.0rc3
 ./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}A.klc"
 ./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}B.klc"
 ./configGenerator.pl $VERSION win_msklc_qwertz | iconv -f utf-8 -t utf-16 > "results/fr-dvorak-bepo-${VERSION}C.klc"
+
+./configGenerator.pl $VERSION description > "results/layout-${VERSION}-desc.html"
+
 ./map.py         "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.txt"
 ./svg.py         "results/layout-${VERSION}.xkb" "results/fr-dvorak-bepo-${VERSION}"
 ./klavaro.py     "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.kbd"
