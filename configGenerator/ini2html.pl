@@ -250,8 +250,10 @@ foreach ( @SHIFTSTATES ) {
 				$label = ' ';
 			} elsif ( $button->label() ne '' ) {
 				$label = $button->label();
-				$label = 'AltGr' if $hasAltGr && lc $label eq 'ralt';			} elsif ( $button->mode($state) ) {
-				$label = $button->mode($state)->label();			} else {
+				$label = 'AltGr' if $hasAltGr && lc $label eq 'ralt';
+			} elsif ( $button->mode($state) ) {
+				$label = $button->mode($state)->label();
+			} else {
 				$label = '';
 			}
 			
