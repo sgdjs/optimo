@@ -35,6 +35,25 @@ dans le fichier « /etc/rc.conf » en
   keymap="fr-dvorak-bepo"
 
 
+Encodage
+--------
+
+Votre système et en particulier votre console doit être configuré pour utiliser l'encodage de caractère iso-8859-15.
+
+En particulier, « /etc/rc.conf » doit contenir :
+
+  font8x16=iso15-8x16.fnt
+  font8x14=iso15-8x14.fnt
+  font8x8=iso15-8x8.fnt
+
+et le charset de l'utilisateur et le langage utilisé doivent spécifier l'encodage iso-8859-15, dans « /etc/login.conf » ou dans « ~/.login_conf » :
+
+ :charset=ISO-8859-15:
+ :lang=fr_FR.ISO8859-15:
+
+Plus d'information sur la page http://www.freebsd.org/doc/fr_FR.ISO8859-1/books/handbook/using-localization.html
+
+
 Licence
 -------
 
