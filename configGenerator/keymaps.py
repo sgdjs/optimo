@@ -734,6 +734,15 @@ for l in f:
               term = names[cl]
             except:
               term = "VoidSymbol"
+          elif terminators.has_key(v):
+            # the key is not supported, but maybe its terminator is in the supported chars            
+            try:
+              cl = codecs.encode(terminators[v], "iso-8859-15")
+              name = names[cl]
+              term = "VoidSymbol"
+            except:
+              name = "VoidSymbol"
+              term = "VoidSymbol"
           else:
             # print k, v
             name = "VoidSymbol"
