@@ -350,7 +350,7 @@ for name, C in unicode_dict.iteritems():
     key = (letter, case)
     modSet = d.get( key , set([]) )
     if modifiers in modSet:
-      print >> sys.stderr, name, "est déjà défini." #, dc[ (key, modifiers) ], C, max( dc[ (key, modifiers) ], C )
+      # print >> sys.stderr, name, "est déjà défini." #, dc[ (key, modifiers) ], C, max( dc[ (key, modifiers) ], C )
       if C in u"ỷƴỶƳ":
         dc[ (key, modifiers) ] = max( dc[ (key, modifiers) ], C )
       else:
