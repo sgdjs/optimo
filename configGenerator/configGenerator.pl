@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env perl
+#!/usr/bin/env perl
 
 ###########################################################################
 #   Copyright (C) 2008 by Nicolas Chartier                                #
