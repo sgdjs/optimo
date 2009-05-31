@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 VERSION=1.0rc3
 ./configGenerator.pl $VERSION x_xkb_root > "results/layout-${VERSION}.xkb"
 ./configGenerator.pl $VERSION x_xkb_user > "results/layout-${VERSION}-user.xkb"
