@@ -642,7 +642,7 @@
       <key code="40" action="ß" />
       <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
-      <key code="43" action="µ" />
+      <key code="43" action="greek" />
       <key code="44" action="ogonek" />
       <key code="45" action="¿" />
       <key code="46" action="ringabove" />
@@ -987,7 +987,7 @@
       <key code="40" action="ß" />
       <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
-      <key code="43" action="Μ" />
+      <key code="43" action="greek" />
       <key code="44" action="ogonek" />
       <key code="45" action="¿" />
       <key code="46" action="ringabove" />
@@ -5571,10 +5571,6 @@
       <when state="Multi_key_grave_parenright" output="Ἢ"/>
       <when state="Multi_key_parenleft" output="Ἡ"/>
       <when state="Multi_key_parenright" output="Ἠ"/>
-    </action>
-
-    <action id="Μ">
-      <when state="none" output="Μ"/>
     </action>
 
     <action id="Ο">

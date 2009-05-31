@@ -116,7 +116,7 @@
   048   'k'    'K'    vt     vt     '~'    nop    nop    nop     C
   049   '''    '?'    nop    nop    191    nop    nop    nop     O
   050   'q'    'Q'    dc1    dc1    drin   nop    nop    nop     C
-  051   'g'    'G'    bel    bel    181    nop    nop    nop     C
+  051   'g'    'G'    bel    bel    nop    nop    nop    nop     C
   052   'h'    'H'    bs     bs     nop    nop    nop    nop     C
   053   'f'    'F'    ack    ack    dogo   170    nop    nop     C
   057   ' '    160    nop    nop    '_'    nop    us     nop     O
