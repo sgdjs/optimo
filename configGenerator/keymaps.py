@@ -672,7 +672,7 @@ def utf8name(c):
     cl = codecs.encode(c, "iso-8859-15")
     name = names[cl]
   except:
-    name = hex(ord(c)).replace("0x", "U+")
+    name = "U+"+hex(ord(c)).replace("0x", "").zfill(4)
   return name
 
 
