@@ -19,6 +19,7 @@ chrRegExp = re.compile(r'LATIN (CAPITAL|SMALL) LETTER (.+)')
 
 finalModNamesExceptions = {
 'DOT ABOVE': 'abovedot',
+'DOT BELOW': 'belowdot',
 }
 
 def finalModName(n):
@@ -331,7 +332,7 @@ for name, C in unicode_dict.iteritems():
     modifiers.remove('')
   # translate the modifier names to there final name, sort the modifiers, and
   # and convert the list to a tuple
-  modifiers = [finalModName(m).lower() for m in modifiers]
+  modifiers = [finalModName(m) for m in modifiers]
   modifiers = sorted(modifiers)
   modifiers = tuple(modifiers)
 
@@ -520,7 +521,7 @@ print >> deadXMLBuf
 for m in sorted(modStates.keys()):
   l = modStates[m]
   print >> deadXMLBuf, '    <action id="%s">' % m
-  print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % (m, xmlChar(terminators.get(n, "?")))
+  print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % (m, xmlChar(terminators.get(m, "?")))
   for s, n in sorted(l, mod_order2):
     print >> deadXMLBuf, '      <when state="%s" next="%s"/>' % (s, n)
     
@@ -544,6 +545,13 @@ print >> deadXMLBuf, '      <when state="none" output=""/>'
 print >> deadXMLBuf, '    </action>'
 
 print >> deadXMLBuf, "  </actions>"
+
+
+def termChar(s):
+  if len(compose.char(s)) > 1:
+    print s
+    return xmlChar(compose.terminators.get(compose.char(s), "?"))
+  return xmlChar(compose.terminators.get(compose.char(s), compose.char(s)))
   
 print >> deadXMLBuf
 print >> deadXMLBuf
@@ -552,7 +560,7 @@ for m in sorted(dmm, mod_order):
   if m != tuple():
     print >> deadXMLBuf, '    <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([xmlChar(terminators.get(n, "?")) for n in m]))
 for ss in sorted(compose.states):
-  C = ''.join([xmlChar(compose.terminators.get(compose.char(s), compose.char(s))) for s in ss])
+  C = ''.join([termChar(s) for s in ss])
   s = '_'.join(list(ss))
   print >> deadXMLBuf, '    <when state="%s" output="%s"/>' % (s, C)
 print >> deadXMLBuf, '  </terminators>'
