@@ -549,7 +549,6 @@ print >> deadXMLBuf, "  </actions>"
 
 def termChar(s):
   if len(compose.char(s)) > 1:
-    print s
     return xmlChar(compose.terminators.get(compose.char(s), "?"))
   return xmlChar(compose.terminators.get(compose.char(s), compose.char(s)))
   
