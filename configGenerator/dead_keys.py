@@ -17,54 +17,12 @@ import unicodedata, re, sys, compose, xkb
 # the reg exp used to parse the unicode name
 chrRegExp = re.compile(r'LATIN (CAPITAL|SMALL) LETTER (.+)')
 
-finalModNames = {
-'ACUTE': 'acute',
-'BAR': 'bar',
+finalModNamesExceptions = {
 'DOT ABOVE': 'abovedot',
-'TOPBAR': 'topbar', 
-'HORN': 'horn', 
-'CIRCUMFLEX': 'circumflex', 
-'HOOK': 'hook', 
-'LONG RIGHT LEG': 'longrightleg', 
-'INVERTED BREVE': 'invertedbreve', 
-'CURL': 'curl', 
-'PALATAL HOOK': 'palatalhook', 
-'LEFT HOOK': 'lefthook', 
-'BELT': 'belt', 
-'CROSSED-TAIL': 'crossedtail', 
-'HOOK ABOVE': 'hookabove', 
-'RIGHT HALF RING': 'righthalfring', 
-'MACRON': 'macron', 
-'BREVE BELOW': 'brevebelow', 
-'TILDE': 'tilde', 
-'FISHHOOK': 'fishhook', 
-'CEDILLA': 'cedilla', 
-'GRAVE': 'grave', 
-'COMMA BELOW': 'commabelow', 
-'SWASH TAIL': 'swashtail', 
-'RING BELOW': 'ringbelow', 
-'RETROFLEX HOOK': 'retroflexhook', 
-'STROKE': 'stroke', 
-'DIAERESIS BELOW': 'diaresisbelow', 
-'LONG LEG': 'longleg', 
-'DOT BELOW': 'belowdot', 
-'CIRCUMFLEX BELOW': 'circumflexbelow', 
-'RING ABOVE': 'ringabove', 
-'DOUBLE GRAVE': 'doublegrave', 
-'OGONEK': 'ogonek', 
-'LINE BELOW': 'linebelow', 
-'DIAERESIS': 'diaeresis', 
-'TILDE BELOW': 'tildebelow', 
-'DIAGONAL STROKE': 'diagonalstroke', 
-'MIDDLE TILDE': 'middletilde', 
-'TAIL': 'tail', 
-'MIDDLE DOT': 'middledot', 
-'BREVE': 'breve', 
-'CARON': 'caron', 
-'DOUBLE ACUTE': 'doubleacute',
-'CURRENCY': 'currency',
-'GREEK': 'greek',
 }
+
+def finalModName(n):
+  return finalModNamesExceptions.get(n,n).replace(" ", "").replace("-", "").lower()
 
 currency = {
 'LATIN CAPITAL LETTER A WITH CURRENCY': u'₳',
@@ -373,7 +331,7 @@ for name, C in unicode_dict.iteritems():
     modifiers.remove('')
   # translate the modifier names to there final name, sort the modifiers, and
   # and convert the list to a tuple
-  modifiers = [finalModNames[m] for m in modifiers]
+  modifiers = [finalModName(m).lower() for m in modifiers]
   modifiers = sorted(modifiers)
   modifiers = tuple(modifiers)
 
@@ -516,7 +474,7 @@ print >> deadXMLBuf, u'    <action id=" ">'
 print >> deadXMLBuf, u'      <when state="none" output=" "/>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
-    print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([xmlChar(spaceTerminators[n]) for n in m]))
+    print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([xmlChar(spaceTerminators.get(n, "?")) for n in m]))
 if compose.charActions.has_key(u' '):
   a = compose.charActions[u' ']
   if compose.statesByAction.has_key(a):
@@ -534,7 +492,7 @@ print >> deadXMLBuf, u'    <action id=" "> <!-- nbsp -->'
 print >> deadXMLBuf, u'      <when state="none" output=" "/>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
-    print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([xmlChar(combiningTerminators[n]) for n in m]))
+    print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([xmlChar(combiningTerminators.get(n, "?")) for n in m]))
 if compose.charActions.has_key(u' '):
   a = compose.charActions[u' ']
   if compose.statesByAction.has_key(a):
@@ -562,7 +520,7 @@ print >> deadXMLBuf
 for m in sorted(modStates.keys()):
   l = modStates[m]
   print >> deadXMLBuf, '    <action id="%s">' % m
-  print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % (m, xmlChar(terminators[m]))
+  print >> deadXMLBuf, '      <when state="%s" output="%s"/>' % (m, xmlChar(terminators.get(n, "?")))
   for s, n in sorted(l, mod_order2):
     print >> deadXMLBuf, '      <when state="%s" next="%s"/>' % (s, n)
     
@@ -592,7 +550,7 @@ print >> deadXMLBuf
 print >> deadXMLBuf, '  <terminators>'
 for m in sorted(dmm, mod_order):
   if m != tuple():
-    print >> deadXMLBuf, '    <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([xmlChar(terminators[n]) for n in m]))
+    print >> deadXMLBuf, '    <when state="%s" output="%s"/>' % ('_'.join(m), ''.join([xmlChar(terminators.get(n, "?")) for n in m]))
 for ss in sorted(compose.states):
   C = ''.join([xmlChar(compose.terminators.get(compose.char(s), compose.char(s))) for s in ss])
   s = '_'.join(list(ss))
