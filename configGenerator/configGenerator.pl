@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+﻿#!/usr/bin/env perl
 
 ###########################################################################
 #   Copyright (C) 2008 by Nicolas Chartier                                #
@@ -369,11 +369,11 @@ sub gen_win_msklc_header($$)
 {
     my ($localeName, $localeId) = @_;
 
-    my $header = "KBD\tbepo".$SHORT_VERSION."\t\"fr-dvorak-bépo v".$VERSION."\"\r\n".
+    my $header = "KBD\tbepo".$SHORT_VERSION."\t\"Bépo v".$VERSION."\"\r\n".
                  "\r\n".
                  "COPYRIGHT\t\"CC-SA-BY\"\r\n".
                  "\r\n".
-                 "COMPANY\t\"Collectif pour la conception d un dvorak francais\"\r\n".
+                 "COMPANY\t\"Disposition bépo — http://bepo.fr\"\r\n".
                  "\r\n".
                  "LOCALENAME\t\"".$localeName."\"\r\n".
                  "\r\n".
@@ -958,11 +958,13 @@ sub gen_win_msklc_footer()
                  "\r\n".
                  "DESCRIPTIONS\r\n".
                  "\r\n".
-                 "0409\tFrançais (fr-dvorak-bépo v$VERSION)\r\n".
+                 "0409\tFrench (bépo v$VERSION)\r\n".
+                 "040C\tFrançais (bépo v$VERSION)\r\n".
                  "\r\n".
                  "LANGUAGENAMES\r\n".
                  "\r\n".
                  "0409\tFrench (France)\r\n".
+                 "040C\tFrançais (France)\r\n".
                  "\r\n".
                  "ENDKBD\r\n";
 
