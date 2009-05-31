@@ -22,22 +22,22 @@
 
 # TODO
 
-# xkb :
+# xkbÂ :
 # - gestion des level four alphabetic
-# compose :
+# composeÂ :
 # - gestion de la surcharge
-# msklc :
+# msklcÂ :
 # - gestion du capslock pour msklc
-# xmodmap :
-# - générer via layout.conf les touches qui sont mises en dur dans le footer
-# loadkeys :
+# xmodmapÂ :
+# - gÃ©nÃ©rer via layout.conf les touches qui sont mises en dur dans le footer
+# loadkeysÂ :
 # - tout
 
-# source C :
+# source CÂ :
 # - tout
 
 # Notes
-# le format Mac OS X est généré à partir des fichiers xkb par le script de gaetan
+# le format Mac OS X est gÃ©nÃ©rÃ© Ã  partir des fichiers xkb par le script de gaetan
 
 use strict;
 use warnings;
@@ -369,7 +369,7 @@ sub gen_win_msklc_header($$)
 {
     my ($localeName, $localeId) = @_;
 
-    my $header = "KBD\tbepo".$SHORT_VERSION."\t\"fr-dvorak-bépo v".$VERSION."\"\r\n".
+    my $header = "KBD\tbepo".$SHORT_VERSION."\t\"fr-dvorak-bÃ©po v".$VERSION."\"\r\n".
                  "\r\n".
                  "COPYRIGHT\t\"CC-SA-BY\"\r\n".
                  "\r\n".
@@ -958,7 +958,7 @@ sub gen_win_msklc_footer()
                  "\r\n".
                  "DESCRIPTIONS\r\n".
                  "\r\n".
-                 "0409\tFrançais (fr-dvorak-bépo v$VERSION)\r\n".
+                 "0409\tFranÃ§ais (fr-dvorak-bÃ©po v$VERSION)\r\n".
                  "\r\n".
                  "LANGUAGENAMES\r\n".
                  "\r\n".
@@ -1065,7 +1065,7 @@ sub gen_win_msklc_dvoraj()
 sub gen_description_header()
 {
     return "<table>\n"
-        ."<tr><th>Accès direct</th><th>Shift</th><th>AltGr</th><th>AltGr + Shift</th></th>\n";
+        ."<tr><th>AccÃ¨s direct</th><th>Shift</th><th>AltGr</th><th>AltGr + Shift</th></th>\n";
 }
 
 sub gen_description_body()
@@ -1106,8 +1106,15 @@ sub gen_description_body()
         }
         elsif (!defined($unicodesDescription{$unicodes{$keySymbols{'direct'}}}))
         {
-            print STDERR "No unicode description for: ".$key."{'direct'}: ".$keySymbols{'direct'}."\n";
-            $line .= "<td>UNKNOWN</td>";
+            if ($unicodes{$keySymbols{'altgr'}} ne "NA")
+            {
+                print STDERR "No unicode description for: ".$key."{'direct'}: ".$keySymbols{'direct'}."\n";
+                $line .= "<td>UNKNOWN</td>";
+            }
+            else
+            {
+                $line .= "<td />";
+            }
         }
         else
         {
@@ -1126,8 +1133,15 @@ sub gen_description_body()
         }
         elsif (!defined($unicodesDescription{$unicodes{$keySymbols{'shift'}}}))
         {
-            print STDERR "No unicode description for: ".$key."{'shift'}: ".$keySymbols{'shift'}."\n";
-            $line .= "<td>UNKNOWN</td>";
+            if ($unicodes{$keySymbols{'altgr'}} ne "NA")
+            {
+                print STDERR "No unicode description for: ".$key."{'shift'}: ".$keySymbols{'shift'}."\n";
+                $line .= "<td>UNKNOWN</td>";
+            }
+            else
+            {
+                $line .= "<td />";
+            }
         }
         else
         {
@@ -1146,8 +1160,15 @@ sub gen_description_body()
         }
         elsif (!defined($unicodesDescription{$unicodes{$keySymbols{'altgr'}}}))
         {
-            print STDERR "No unicode description for: ".$key."{'altgr'}: ".$keySymbols{'altgr'}."\n";
-            $line .= "<td>UNKNOWN</td>";
+            if ($unicodes{$keySymbols{'altgr'}} ne "NA")
+            {
+                print STDERR "No unicode description for: ".$key."{'altgr'}: ".$keySymbols{'altgr'}."\n";
+                $line .= "<td>UNKNOWN</td>";
+            }
+            else
+            {
+                $line .= "<td />";
+            }
         }
         else
         {
@@ -1166,8 +1187,15 @@ sub gen_description_body()
         }
         elsif (!defined($unicodesDescription{$unicodes{$keySymbols{'altgr+shift'}}}))
         {
-            print STDERR "No unicode description for: ".$key."{'altgr+shift'}: ".$keySymbols{'altgr+shift'}."\n";
-            $line .= "<td>UNKNOWN</td>";
+            if ($unicodes{$keySymbols{'altgr'}} ne "NA")
+            {
+                print STDERR "No unicode description for: ".$key."{'altgr+shift'}: ".$keySymbols{'altgr+shift'}."\n";
+                $line .= "<td>UNKNOWN</td>";
+            }
+            else
+            {
+                $line .= "<td />";
+            }
         }
         else
         {
