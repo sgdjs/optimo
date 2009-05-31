@@ -45,6 +45,7 @@ En particulier, « /etc/rc.conf » doit contenir :
   font8x16=iso15-8x16.fnt
   font8x14=iso15-8x14.fnt
   font8x8=iso15-8x8.fnt
+  mouse_start=3
 
 et le charset de l'utilisateur et le langage utilisé doivent spécifier l'encodage iso-8859-15, dans « /etc/login.conf » ou dans « ~/.login_conf » :
 
