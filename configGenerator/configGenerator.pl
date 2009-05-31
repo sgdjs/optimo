@@ -44,6 +44,8 @@ use warnings;
 use locale;
 use Data::Dumper;
 
+binmode STDOUT, ":utf8";
+
 die("Usage: $0 <version> <output format>\n")
     if (!defined($ARGV[1]));
 
@@ -313,6 +315,9 @@ sub loadUnicode()
 sub unicode2utf8($)
 {
     my $unicode = shift;
+
+    return ""
+        if ($unicode eq "NA");
 
     return chr(hex(lc($unicode)));
 }
@@ -1191,6 +1196,7 @@ sub gen_description()
     my $body   = &gen_description_body();
     my $footer = &gen_description_footer();
 
+    binmode STDOUT, ":bytes";
     print $header.$body.$footer;
 }
 
