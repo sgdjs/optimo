@@ -715,6 +715,14 @@ for l in f:
               term = utf8name(terminators[v])
             except:
               term = "VoidSymbol"
+          elif terminators.has_key(v):
+            # the key is not supported, but maybe its terminator is in the supported chars            
+            try:
+              name = utf8name(terminators[v])
+              term = "VoidSymbol"
+            except:
+              name = "VoidSymbol"
+              term = "VoidSymbol"
           else:
             # print k, v
             name = "VoidSymbol"
@@ -760,11 +768,12 @@ for l in f:
         else:
           name = "VoidSymbol"
         
-      if ("FOUR_LEVEL_SEMIALPHABETIC" in xkb.options[k] or "FOUR_LEVEL_ALPHABETIC" in xkb.options[k]) and M1 == None and m1 in ("", "_shift"):
-        name = "+"+name
-    
-      if ("FOUR_LEVEL_ALPHABETIC" in xkb.options[k]) and M1 == None and m1 in ("_option", "_option_shift"):
-        name = "+"+name
+      if "U+" not in name:
+        if ("FOUR_LEVEL_SEMIALPHABETIC" in xkb.options[k] or "FOUR_LEVEL_ALPHABETIC" in xkb.options[k]) and M1 == None and m1 in ("", "_shift"):
+          name = "+"+name
+      
+        if ("FOUR_LEVEL_ALPHABETIC" in xkb.options[k]) and M1 == None and m1 in ("_option", "_option_shift"):
+          name = "+"+name
     
       print >> out, "%s%skeycode %s = %s" % ( m2, M2, str(int(scanCode, 16)), name)
 
