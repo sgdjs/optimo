@@ -1,7 +1,13 @@
-diff -Naur libx11-1.1.5-2orig/debian/changelog libx11-1.1.5-2bepo1_0rc2/debian/changelog
---- libx11-1.1.5-2orig/debian/changelog	2008-09-26 08:02:22.000000000 +0200
-+++ libx11-1.1.5-2bepo1_0rc2/debian/changelog	2008-09-26 08:04:27.000000000 +0200
-@@ -1,3 +1,10 @@
+diff -Naur libx11-1.1.5orig/debian/changelog libx11-1.1.5bepo1.0/debian/changelog
+--- libx11-1.1.5orig/debian/changelog	2009-06-01 20:34:16.000000000 +0200
++++ libx11-1.1.5bepo1.0/debian/changelog	2009-06-06 15:01:12.000000000 +0200
+@@ -1,3 +1,16 @@
++libx11 (2:1.1.5-2.1bepo.1.0) unstable; urgency=low
++
++  * resynchronise les touches mortes avec les codes de Xorg.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Sat, 06 Jun 2009 15:01:12 +0200
++
 +libx11 (2:1.1.5-2.1bepo+1.0rc2) unstable; urgency=low
 +
 +  * ajoute les codes de composition Dvorak français « Bépo » de la
@@ -12,9 +18,9 @@ diff -Naur libx11-1.1.5-2orig/debian/changelog libx11-1.1.5-2bepo1_0rc2/debian/c
  libx11 (2:1.1.5-2) unstable; urgency=medium
  
    * Cherry-picked from upstream git: Fix an XCB leak when the client has a
-diff -Naur libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff libx11-1.1.5-2bepo1_0rc2/debian/patches/099_Compositions_Bepo.diff
---- libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff	1970-01-01 01:00:00.000000000 +0100
-+++ libx11-1.1.5-2bepo1_0rc2/debian/patches/099_Compositions_Bepo.diff	2008-09-26 08:03:49.000000000 +0200
+diff -Naur libx11-1.1.5orig/debian/patches/099_Compositions_Bepo.diff libx11-1.1.5bepo1.0/debian/patches/099_Compositions_Bepo.diff
+--- libx11-1.1.5orig/debian/patches/099_Compositions_Bepo.diff	1970-01-01 01:00:00.000000000 +0100
++++ libx11-1.1.5bepo1.0/debian/patches/099_Compositions_Bepo.diff	2009-06-06 15:02:24.000000000 +0200
 @@ -0,0 +1,486 @@
 +--- libx11-1.1.5origbuild/nls/en_US.UTF-8/Compose.pre	2008-09-04 23:38:38.000000000 +0200
 ++++ libx11-1.1.5bepo1_0rc2build/nls/en_US.UTF-8/Compose.pre	2008-09-23 23:10:56.000000000 +0200
@@ -106,62 +112,62 @@ diff -Naur libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff libx11-1
 ++<dead_circumflex> <ohook> : ocircumflexhook
 ++<dead_circumflex> <otilde> : ocircumflextilde
 ++<dead_circumflex> <nobreakspace> : U0302
-++<UFDD3> <S> : U0218
-++<UFDD3> <s> : U0219
-++<UFDD3> <T> : U021A
-++<UFDD3> <t> : U021B
-++<UFDD3> <UFDD3> : comma
-++<UFDD3> <nobreakspace> : U0326
-++<UFDD3> <space> : comma
-++<UFDD1> <A> : U20B3
-++<UFDD1> <a> : U060B
-++<UFDD1> <B> : U20B1
-++<UFDD1> <b> : Thai_baht
-++<UFDD1> <Ccedilla> : U20B5
-++<UFDD1> <C> : ColonSign
-++<UFDD1> <ccedilla> : U20B5
-++<UFDD1> <c> : cent
-++<UFDD1> <D> : U20AF
-++<UFDD1> <d> : DongSign
-++<UFDD1> <E> : EcuSign
-++<UFDD1> <e> : EuroSign
-++<UFDD1> <F> : FFrancSign
-++<UFDD1> <f> : function
-++<UFDD1> <G> : U20B2
-++<UFDD1> <g> : U20B2
-++<UFDD1> <H> : U20B4
-++<UFDD1> <h> : U20B4
-++<UFDD1> <I> : U17DB
-++<UFDD1> <i> : UFDFC
-++<UFDD1> <K> : U20AD
-++<UFDD1> <k> : U20AD
-++<UFDD1> <L> : LiraSign
-++<UFDD1> <l> : sterling
-++<UFDD1> <M> : U2133
-++<UFDD1> <m> : MillSign
-++<UFDD1> <N> : NairaSign
-++<UFDD1> <n> : NairaSign
-++<UFDD1> <O> : U0AF1
-++<UFDD1> <o> : U0BF9
-++<UFDD1> <P> : PesetaSign
-++<UFDD1> <p> : U20B0
-++<UFDD1> <r> : CruzeiroSign
-++<UFDD1> <R> : RupeeSign
-++<UFDD1> <S> : dollar
-++<UFDD1> <s> : NewSheqelSign
-++<UFDD1> <T> : U20AE
-++<UFDD1> <t> : U09F3
-++<UFDD1> <THORN> : U09F2
-++<UFDD1> <thorn> : U09F2
-++<UFDD1> <U> : U5713
-++<UFDD1> <u> : U5143
-++<UFDD1> <W> : WonSign
-++<UFDD1> <w> : WonSign
-++<UFDD1> <Y> : U5186
-++<UFDD1> <y> : yen
-++<UFDD1> <UFDD1> : currency
-++<UFDD1> <nobreakspace> : currency
-++<UFDD1> <space> : currency
+++<Ufe6e> <S> : U0218
+++<Ufe6e> <s> : U0219
+++<Ufe6e> <T> : U021A
+++<Ufe6e> <t> : U021B
+++<Ufe6e> <Ufe6e> : comma
+++<Ufe6e> <nobreakspace> : U0326
+++<Ufe6e> <space> : comma
+++<Ufe6f> <A> : U20B3
+++<Ufe6f> <a> : U060B
+++<Ufe6f> <B> : U20B1
+++<Ufe6f> <b> : Thai_baht
+++<Ufe6f> <Ccedilla> : U20B5
+++<Ufe6f> <C> : ColonSign
+++<Ufe6f> <ccedilla> : U20B5
+++<Ufe6f> <c> : cent
+++<Ufe6f> <D> : U20AF
+++<Ufe6f> <d> : DongSign
+++<Ufe6f> <E> : EcuSign
+++<Ufe6f> <e> : EuroSign
+++<Ufe6f> <F> : FFrancSign
+++<Ufe6f> <f> : function
+++<Ufe6f> <G> : U20B2
+++<Ufe6f> <g> : U20B2
+++<Ufe6f> <H> : U20B4
+++<Ufe6f> <h> : U20B4
+++<Ufe6f> <I> : U17DB
+++<Ufe6f> <i> : UFDFC
+++<Ufe6f> <K> : U20AD
+++<Ufe6f> <k> : U20AD
+++<Ufe6f> <L> : LiraSign
+++<Ufe6f> <l> : sterling
+++<Ufe6f> <M> : U2133
+++<Ufe6f> <m> : MillSign
+++<Ufe6f> <N> : NairaSign
+++<Ufe6f> <n> : NairaSign
+++<Ufe6f> <O> : U0AF1
+++<Ufe6f> <o> : U0BF9
+++<Ufe6f> <P> : PesetaSign
+++<Ufe6f> <p> : U20B0
+++<Ufe6f> <r> : CruzeiroSign
+++<Ufe6f> <R> : RupeeSign
+++<Ufe6f> <S> : dollar
+++<Ufe6f> <s> : NewSheqelSign
+++<Ufe6f> <T> : U20AE
+++<Ufe6f> <t> : U09F3
+++<Ufe6f> <THORN> : U09F2
+++<Ufe6f> <thorn> : U09F2
+++<Ufe6f> <U> : U5713
+++<Ufe6f> <u> : U5143
+++<Ufe6f> <W> : WonSign
+++<Ufe6f> <w> : WonSign
+++<Ufe6f> <Y> : U5186
+++<Ufe6f> <y> : yen
+++<Ufe6f> <Ufe6f> : currency
+++<Ufe6f> <nobreakspace> : currency
+++<Ufe6f> <space> : currency
 ++<dead_diaeresis> <Amacron> : U01DE
 ++<dead_diaeresis> <amacron> : U01DF
 ++<dead_diaeresis> <Iacute> : U1E2E
@@ -307,53 +313,53 @@ diff -Naur libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff libx11-1
 ++<dead_abovering> <Aacute> : U01FA
 ++<dead_abovering> <aacute> : U01FB
 ++<dead_abovering> <nobreakspace> : U030A
-++<UFDD0> <2> : U01BB
-++<UFDD0> <equal> : notequal
-++<UFDD0> <A> : U023A
-++<UFDD0> <a> : U2C65
-++<UFDD0> <B> : U0243
-++<UFDD0> <b> : U0180
-++<UFDD0> <C> : U023B
-++<UFDD0> <c> : U023C
-++<UFDD0> <D> : Dstroke
-++<UFDD0> <d> : dstroke
-++<UFDD0> <E> : U0246
-++<UFDD0> <e> : U0247
-++<UFDD0> <G> : U01E4
-++<UFDD0> <g> : U01E5
-++<UFDD0> <greater> : U226F
-++<UFDD0> <greaterthanequal> : U2271
-++<UFDD0> <H> : Hstroke
-++<UFDD0> <h> : hstroke
-++<UFDD0> <I> : U0197
-++<UFDD0> <i> : U0268
-++<UFDD0> <J> : U0248
-++<UFDD0> <j> : U0249
-++<UFDD0> <U0269> : U1D7C
-++<UFDD0> <U0237> : U025F
-++<UFDD0> <L> : Lstroke
-++<UFDD0> <l> : lstroke
-++<UFDD0> <less> : U226E
-++<UFDD0> <lessthanequal> : U2270
-++<UFDD0> <Oacute> : U01FE
-++<UFDD0> <O> : Oslash
-++<UFDD0> <oacute> : U01FF
-++<UFDD0> <o> : oslash
-++<UFDD0> <P> : U2C63
-++<UFDD0> <p> : U1D7D
-++<UFDD0> <R> : U024C
-++<UFDD0> <r> : U024D
-++<UFDD0> <T> : Tslash
-++<UFDD0> <t> : tslash
-++<UFDD0> <U> : U0244
-++<UFDD0> <u> : U0289
-++<UFDD0> <Y> : U024E
-++<UFDD0> <y> : U024F
-++<UFDD0> <Z> : Zstroke
-++<UFDD0> <z> : zstroke
-++<UFDD0> <UFDD0> : slash
-++<UFDD0> <nobreakspace> : U0338
-++<UFDD0> <space> : slash
+++<Ufe63> <2> : U01BB
+++<Ufe63> <equal> : notequal
+++<Ufe63> <A> : U023A
+++<Ufe63> <a> : U2C65
+++<Ufe63> <B> : U0243
+++<Ufe63> <b> : U0180
+++<Ufe63> <C> : U023B
+++<Ufe63> <c> : U023C
+++<Ufe63> <D> : Dstroke
+++<Ufe63> <d> : dstroke
+++<Ufe63> <E> : U0246
+++<Ufe63> <e> : U0247
+++<Ufe63> <G> : U01E4
+++<Ufe63> <g> : U01E5
+++<Ufe63> <greater> : U226F
+++<Ufe63> <greaterthanequal> : U2271
+++<Ufe63> <H> : Hstroke
+++<Ufe63> <h> : hstroke
+++<Ufe63> <I> : U0197
+++<Ufe63> <i> : U0268
+++<Ufe63> <J> : U0248
+++<Ufe63> <j> : U0249
+++<Ufe63> <U0269> : U1D7C
+++<Ufe63> <U0237> : U025F
+++<Ufe63> <L> : Lstroke
+++<Ufe63> <l> : lstroke
+++<Ufe63> <less> : U226E
+++<Ufe63> <lessthanequal> : U2270
+++<Ufe63> <Oacute> : U01FE
+++<Ufe63> <O> : Oslash
+++<Ufe63> <oacute> : U01FF
+++<Ufe63> <o> : oslash
+++<Ufe63> <P> : U2C63
+++<Ufe63> <p> : U1D7D
+++<Ufe63> <R> : U024C
+++<Ufe63> <r> : U024D
+++<Ufe63> <T> : Tslash
+++<Ufe63> <t> : tslash
+++<Ufe63> <U> : U0244
+++<Ufe63> <u> : U0289
+++<Ufe63> <Y> : U024E
+++<Ufe63> <y> : U024F
+++<Ufe63> <Z> : Zstroke
+++<Ufe63> <z> : zstroke
+++<Ufe63> <Ufe63> : slash
+++<Ufe63> <nobreakspace> : U0338
+++<Ufe63> <space> : slash
 ++<dead_tilde> <Oacute> : U1E4C
 ++<dead_tilde> <Odiaeresis> : U1E4E
 ++<dead_tilde> <Omacron> : U022C
@@ -376,8 +382,8 @@ diff -Naur libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff libx11-1
 ++<dead_abovedot> <dead_macron> <a> : U01E1
 ++<dead_abovedot> <dead_macron> <O> : U0230
 ++<dead_abovedot> <dead_macron> <o> : U0231
-++<dead_abovedot> <UFDD0> <j> : U025F
-++<UFDD0> <dead_abovedot> <j> : U025F
+++<dead_abovedot> <Ufe63> <j> : U025F
+++<Ufe63> <dead_abovedot> <j> : U025F
 ++<dead_breve> <dead_acute> <A> : Abreveacute
 ++<dead_breve> <dead_acute> <a> : abreveacute
 ++<dead_cedilla> <dead_acute> <C> : U1E08
@@ -402,10 +408,10 @@ diff -Naur libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff libx11-1
 ++<dead_macron> <dead_acute> <o> : U1E53
 ++<dead_abovering> <dead_acute> <A> : U01FA
 ++<dead_abovering> <dead_acute> <a> : U01FB
-++<dead_acute> <UFDD0> <O> : U01FE
-++<UFDD0> <dead_acute> <O> : U01FE
-++<dead_acute> <UFDD0> <o> : U01FF
-++<UFDD0> <dead_acute> <o> : U01FF
+++<dead_acute> <Ufe63> <O> : U01FE
+++<Ufe63> <dead_acute> <O> : U01FE
+++<dead_acute> <Ufe63> <o> : U01FF
+++<Ufe63> <dead_acute> <o> : U01FF
 ++<dead_tilde> <dead_acute> <O> : U1E4C
 ++<dead_tilde> <dead_acute> <o> : U1E4D
 ++<dead_tilde> <dead_acute> <U> : U1E78
@@ -436,10 +442,10 @@ diff -Naur libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff libx11-1
 ++<dead_breve> <dead_tilde> <a> : abrevetilde
 ++<dead_diaeresis> <dead_caron> <U> : U01D9
 ++<dead_diaeresis> <dead_caron> <u> : U01DA
-++<dead_cedilla> <UFDD1> <C> : U20B5
-++<UFDD1> <dead_cedilla> <C> : U20B5
-++<dead_cedilla> <UFDD1> <c> : U20B5
-++<UFDD1> <dead_cedilla> <c> : U20B5
+++<dead_cedilla> <Ufe6f> <C> : U20B5
+++<Ufe6f> <dead_cedilla> <C> : U20B5
+++<dead_cedilla> <Ufe6f> <c> : U20B5
+++<Ufe6f> <dead_cedilla> <c> : U20B5
 ++<dead_circumflex> <dead_grave> <A> : Acircumflexgrave
 ++<dead_circumflex> <dead_grave> <a> : acircumflexgrave
 ++<dead_circumflex> <dead_grave> <E> : Ecircumflexgrave
@@ -488,8 +494,8 @@ diff -Naur libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff libx11-1
 ++<dead_macron> <UFDD2> <U> : U1FE9
 ++<UFDD2> <dead_macron> <u> : U1FE1
 ++<dead_macron> <UFDD2> <u> : U1FE1
-++<UFDD2> <UFDD0> <r> : U03FC
-++<UFDD0> <UFDD2> <r> : U03FC
+++<UFDD2> <Ufe63> <r> : U03FC
+++<Ufe63> <UFDD2> <r> : U03FC
 ++<dead_horn> <dead_hook> <O> : Ohornhook
 ++<dead_horn> <dead_hook> <o> : ohornhook
 ++<dead_horn> <dead_hook> <U> : Uhornhook
@@ -502,9 +508,9 @@ diff -Naur libx11-1.1.5-2orig/debian/patches/099_Compositions_Bepo.diff libx11-1
 ++<dead_ogonek> <dead_macron> <o> : U01ED
 ++<dead_tilde> <dead_macron> <O> : U022C
 ++<dead_tilde> <dead_macron> <o> : U022D
-diff -Naur libx11-1.1.5-2orig/debian/patches/series libx11-1.1.5-2bepo1_0rc2/debian/patches/series
---- libx11-1.1.5-2orig/debian/patches/series	2008-09-26 08:02:22.000000000 +0200
-+++ libx11-1.1.5-2bepo1_0rc2/debian/patches/series	2008-09-26 08:03:49.000000000 +0200
+diff -Naur libx11-1.1.5orig/debian/patches/series libx11-1.1.5bepo1.0/debian/patches/series
+--- libx11-1.1.5orig/debian/patches/series	2009-06-01 20:34:16.000000000 +0200
++++ libx11-1.1.5bepo1.0/debian/patches/series	2009-06-06 14:58:39.000000000 +0200
 @@ -5,3 +5,4 @@
  008_remove_ko_Compose.diff
  012_ru_RU_UTF-8_XLC_LOCALE.diff

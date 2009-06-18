@@ -1,0 +1,108 @@
+diff -Naur libx11-1.2.1orig/debian/changelog libx11-1.2.1bepo1.0/debian/changelog
+--- libx11-1.2.1orig/debian/changelog	2009-06-01 20:31:12.000000000 +0200
++++ libx11-1.2.1bepo1.0/debian/changelog	2009-06-06 16:17:07.000000000 +0200
+@@ -1,3 +1,9 @@
++libx11 (2:1.2.1-1.1bepo.1.0) unstable; urgency=low
++
++  * Rajoute les compositions avec la touche morte grecque.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Sat, 06 Jun 2009 16:17:07 +0200
++
+ libx11 (2:1.2.1-1) unstable; urgency=low
+ 
+   * New upstream release.
+diff -Naur libx11-1.2.1orig/debian/patches/099_Compositions_Bepo.diff libx11-1.2.1bepo1.0/debian/patches/099_Compositions_Bepo.diff
+--- libx11-1.2.1orig/debian/patches/099_Compositions_Bepo.diff	1970-01-01 01:00:00.000000000 +0100
++++ libx11-1.2.1bepo1.0/debian/patches/099_Compositions_Bepo.diff	2009-06-06 16:25:46.000000000 +0200
+@@ -0,0 +1,83 @@
++--- libx11-1.2.1orig/nls/en_US.UTF-8/Compose.pre	2009-04-06 19:49:37.000000000 +0200
+++++ libx11-1.2.1bepo1.0/nls/en_US.UTF-8/Compose.pre	2009-06-06 16:25:21.000000000 +0200
++@@ -6462,6 +6462,57 @@
++ <dead_grave> <V>   		      : "Ǜ"   U01DB               # LATIN CAPITAL LETTER U WITH DIAERESIS AND GRAVE
++ <dead_grave> <v>   		      : "ǜ"   U01DC               # LATIN SMALL LETTER U WITH DIAERESIS AND GRAVE
++ <dead_grave> <nobreakspace> 	      : "̀"   combining_grave      # COMBINING GRAVE ACCENT
+++<UFDD2> <A> : Greek_ALPHA
+++<UFDD2> <a> : Greek_alpha
+++<UFDD2> <B> : Greek_BETA
+++<UFDD2> <b> : Greek_beta
+++<UFDD2> <D> : Greek_DELTA
+++<UFDD2> <d> : Greek_delta
+++<UFDD2> <E> : Greek_EPSILON
+++<UFDD2> <e> : Greek_epsilon
+++<UFDD2> <F> : Greek_PHI
+++<UFDD2> <f> : Greek_phi
+++<UFDD2> <G> : Greek_GAMMA
+++<UFDD2> <g> : Greek_gamma
+++<UFDD2> <H> : Greek_ETA
+++<UFDD2> <h> : Greek_eta
+++<UFDD2> <I> : Greek_IOTA
+++<UFDD2> <i> : Greek_iota
+++<UFDD2> <J> : Greek_THETA
+++<UFDD2> <j> : Greek_theta
+++<UFDD2> <K> : Greek_KAPPA
+++<UFDD2> <k> : Greek_kappa
+++<UFDD2> <L> : Greek_LAMBDA
+++<UFDD2> <l> : Greek_lamda
+++<UFDD2> <M> : Greek_MU
+++<UFDD2> <m> : Greek_mu
+++<UFDD2> <N> : Greek_NU
+++<UFDD2> <n> : Greek_nu
+++<UFDD2> <O> : Greek_OMICRON
+++<UFDD2> <o> : Greek_omicron
+++<UFDD2> <P> : Greek_PI
+++<UFDD2> <p> : Greek_pi
+++<UFDD2> <Q> : Greek_CHI
+++<UFDD2> <q> : Greek_chi
+++<UFDD2> <R> : Greek_RHO
+++<UFDD2> <r> : Greek_rho
+++<UFDD2> <S> : Greek_SIGMA
+++<UFDD2> <s> : Greek_sigma
+++<UFDD2> <T> : Greek_TAU
+++<UFDD2> <t> : Greek_tau
+++<UFDD2> <U> : Greek_UPSILON
+++<UFDD2> <u> : Greek_upsilon
+++<UFDD2> <W> : Greek_OMEGA
+++<UFDD2> <w> : Greek_omega
+++<UFDD2> <X> : Greek_XI
+++<UFDD2> <x> : Greek_xi
+++<UFDD2> <Y> : Greek_PSI
+++<UFDD2> <y> : Greek_psi
+++<UFDD2> <Z> : Greek_ZETA
+++<UFDD2> <z> : Greek_zeta
+++<UFDD2> <UFDD2> : mu
+++<UFDD2> <nobreakspace> : mu
+++<UFDD2> <space> : mu
++ <dead_hook> <B> 		      : "Ɓ"   U0181               # LATIN CAPITAL LETTER B WITH HOOK
++ <dead_hook> <b> 		      : "ɓ"   U0253               # LATIN SMALL LETTER B WITH HOOK
++ <dead_hook> <C> 		      : "Ƈ"   U0187               # LATIN CAPITAL LETTER C WITH HOOK
++@@ -6685,6 +6736,22 @@
++ <dead_macron> <dead_grave> <e> 	      : "ḕ"   U1E15               # LATIN SMALL LETTER E WITH MACRON AND GRAVE
++ <dead_macron> <dead_grave> <O> 	      : "Ṑ"   U1E50               # LATIN CAPITAL LETTER O WITH MACRON AND GRAVE
++ <dead_macron> <dead_grave> <o> 	      : "ṑ"   U1E51               # LATIN SMALL LETTER O WITH MACRON AND GRAVE
+++<UFDD2> <dead_hook> <U> : U03D2
+++<dead_hook> <UFDD2> <U> : U03D2
+++<UFDD2> <dead_macron> <A> : U1FB9
+++<dead_macron> <UFDD2> <A> : U1FB9
+++<UFDD2> <dead_macron> <a> : U1FB1
+++<dead_macron> <UFDD2> <a> : U1FB1
+++<UFDD2> <dead_macron> <I> : U1FD9
+++<dead_macron> <UFDD2> <I> : U1FD9
+++<UFDD2> <dead_macron> <i> : U1FD1
+++<dead_macron> <UFDD2> <i> : U1FD1
+++<UFDD2> <dead_macron> <U> : U1FE9
+++<dead_macron> <UFDD2> <U> : U1FE9
+++<UFDD2> <dead_macron> <u> : U1FE1
+++<dead_macron> <UFDD2> <u> : U1FE1
+++<UFDD2> <UFDD0> <r> : U03FC
+++<UFDD0> <UFDD2> <r> : U03FC
++ <dead_horn> <dead_hook> <O> 	      : "Ở"   Ohornhook           # LATIN CAPITAL LETTER O WITH HORN AND HOOK ABOVE
++ <dead_horn> <dead_hook> <o> 	      : "ở"   ohornhook           # LATIN SMALL LETTER O WITH HORN AND HOOK ABOVE
++ <dead_horn> <dead_hook> <U> 	      : "Ử"   Uhornhook           # LATIN CAPITAL LETTER U WITH HORN AND HOOK ABOVE
+diff -Naur libx11-1.2.1orig/debian/patches/series libx11-1.2.1bepo1.0/debian/patches/series
+--- libx11-1.2.1orig/debian/patches/series	2009-06-01 20:31:12.000000000 +0200
++++ libx11-1.2.1bepo1.0/debian/patches/series	2009-06-06 16:16:00.000000000 +0200
+@@ -5,3 +5,4 @@
+ 008_remove_ko_Compose.diff
+ 009_remove_th_Compose.diff
+ 015_russian_locale_alias.diff
++099_Compositions_Bepo.diff

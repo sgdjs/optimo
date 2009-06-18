@@ -112,9 +112,17 @@ xkb_symbols "bepo_651_latin9" {
   -> changera debian/changelog
 
   curver=$(dpkg-parsechangelog |egrep '^Version'|cut -d' ' -f2);echo $curver
-  dch -v ${curver}.1bepo+1.0rc1 "ajoute la disposition Dvorak française « Bépo » jusqu'à la version 1.0rc1."
+
+  dch -v ${refver}.1bepo.1.0 "installe la disposition Dvorak française « Bépo » en version 1.0, et nettoie les versions de développement."
+  dch -a "Ajoute la description du clavier TypeMatrix TM2030USB."
+
   ou :
-  dch -v ${curver}.1bepo+1.0rc1 "ajoute les codes de composition Dvorak français « Bépo » de la version 1.0rc2."
+  dch -v ${curver}.1bepo+1.0rc3 "Met à jour les codes de composition Dvorak français « Bépo » en version 1.0rc3."
+  ou pour console-data :
+  dch -v ${curver}.1bepo+1.0rc2 "ajoute les dispositions Dvorak françaises « Bépo » (en version 1.0rc2) codés en latin1 ou UTF-8."
+
+  refver=$(dpkg-parsechangelog |egrep '^Version'|cut -d' ' -f2|sed -e 's/\.1bepo.*//');echo $refver
+  dch -v ${refver}.1bepo.1.0 "resynchronise les touches mortes avec les codes de Xorg."
 
 * ATTENTION : dans le paquet Debian, le fichier symbols/symbols.dir
   (comme tous les fichiers .dir) est écrasé à la fabrication du paquet
@@ -254,6 +262,15 @@ Error:            Error interpreting include file "fr"
                   Abandoning symbols file "(null)"
 
 
+* pour compiler une description xkb pour l'écran local (si par
+malheur il s'est déconfiguré), faire par exemple :
+   setxkbmap -print | xkbcomp - :0
+
+* à l'inverse, on peut avoir la description complète de la config
+  actuelle par :
+  xkbcomp -xkb :0 - | less
+
+
 * génération des cartes pour la console :
   une fois le paquet installé / reboot ou relance de console-setup, faire :
 
@@ -264,3 +281,14 @@ Error:            Error interpreting include file "fr"
 * À lire également :
   http://wiki.mandriva.com/fr/Personnaliser_le_clavier#Les_fichiers_de_configuration_du_clavier_et_le_syst.C3.A8me_XKb
   http://wiki.mandriva.com/fr/Quelques_keysyms_repr%C3%A9sentant_des_caract%C3%A8res_affichables
+
+
+
+* note : pour vérifier le bon ordre entre numéros de version, on peut
+  utiliser :
+
+  dpkg --compare-versions <v1> op <v2> && echo "oui"
+
+  par exemple :
+
+  dpkg --compare-versions 0.9-4.1bepo+1.0 gt 0.9-4.1bepo+1.0rc2.2 && echo "oui"
