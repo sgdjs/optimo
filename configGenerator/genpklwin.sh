@@ -46,7 +46,7 @@ awk '{print} /\[fingers\]/ {print "methode = o0\nrow1 = 1112344556788\nrow2 = 11
 mv results/layout0.ini results/layout.ini
 perl ini2html.pl results/layout.ini
 firefox -savepng "results/layout.html"
-mv "$(cygpath -D)\Image de la page.png" "results/layout.png"
+mv "$(cygpath -D)/Image de la page.png" "results/layout.png"
 perl split_png.pl
 mkdir -p results/pkl/fr-dvorak-bepo-${VERSION}-o0/
 rm results/layout.png results/layout.html
@@ -58,7 +58,7 @@ awk '{print} /\[fingers\]/ {print "methode = t6\nrow1 = 1123444567888\nrow2 = 11
 mv results/layout0.ini results/layout.ini
 perl ini2html.pl results/layout.ini
 firefox -savepng "results/layout.html"
-mv "$(cygpath -D)\Image de la page.png" "results/layout.png"
+mv "$(cygpath -D)/Image de la page.png" "results/layout.png"
 perl split_png.pl
 mkdir -p results/pkl/fr-dvorak-bepo-${VERSION}-t6/
 rm results/layout.png results/layout.html

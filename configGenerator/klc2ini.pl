@@ -49,7 +49,7 @@ while (<KLC>) {
 foreach (keys %INFORMATIONS) { # remove quotes
 	$INFORMATIONS{$_} = substr($INFORMATIONS{$_}, 1,-1) if ( $INFORMATIONS{$_} =~ /^".*"$/ )
 }
-$INFORMATIONS{homepage} = 'http://www.clavier-dvorak.org/';
+$INFORMATIONS{homepage} = 'http://bepo.fr/';
 $INFORMATIONS{modified_after_generate} = 'no';
 $INFORMATIONS{generated_from} = $KLCFILE;
 $INFORMATIONS{generated_at} = gmtime;
