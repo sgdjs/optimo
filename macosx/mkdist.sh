@@ -32,7 +32,7 @@ pushd pilotes/macosx
 
 rm -f "$OUT/bepo-macosx-$VERSION.dmg"
 hdiutil create "$OUT/tmp/bepo-macosx-$VERSION.dmg" -size 13m -fs HFS+ -volname "bépo ($VERSION)"
-dev_handle=`hdiutil mount "$OUT/tmp/bepo-macosx-$VERSION.dmg" | fgrep "bépo" | cut -f 1`
+dev_handle=`hdiutil mount "$OUT/tmp/bepo-macosx-$VERSION.dmg" | egrep "/b.+po \(.+\)" | cut -f 1`
 
 # generate the alt confs
 python generate_alt.py
