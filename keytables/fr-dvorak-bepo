@@ -1,4 +1,4 @@
-# fr-dvorak-bepo
+# bepo
 key 53	 base $ shift # caps $ ctrl nop altg nop 
 key 30	 base '"' shift 1 caps 1 ctrl nop altg nop 
 key 31	 base « shift 2 caps 2 ctrl nop altg < 

@@ -29,16 +29,16 @@ pushd tmp
 
 # get the last version
 svn export svn://svn.tuxfamily.org/svnroot/dvorak/svn/pilotes/trunk pilotes
-mkdir fr-dvorak-bepo-keytables-$VERSION
+mkdir bepo-keytables-$VERSION
 
 # copy the licenses
-cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-keytables-$VERSION
+cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt bepo-keytables-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/keytables/fr-dvorak-bepo* pilotes/keytables/LISEZ_MOI.txt fr-dvorak-bepo-keytables-$VERSION
+cp pilotes/keytables/bepo* pilotes/keytables/LISEZ_MOI.txt bepo-keytables-$VERSION
 
 # build the archive
-tar cvzf ../fr-dvorak-bepo-keytables-$VERSION.tgz fr-dvorak-bepo-keytables-$VERSION
+tar cvzf ../bepo-keytables-$VERSION.tgz bepo-keytables-$VERSION
 
 popd
 
