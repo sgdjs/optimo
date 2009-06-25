@@ -1,25 +1,25 @@
-Disposition de clavier Dvorak français BÉPO, version 0.6.5.1
-http://www.clavier-dvorak.org/
+Disposition de bépo, version 1.0
+http://www.bepo.fr/
 
 
 Description
 -----------
 
-Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+Ce paquetage contient la disposition de clavier bépo, optimisée pour le français, créée par la communauté sur http://www.bepo.r/.
 Les fichiers de ce paquetage sont destinés à être utilisé avec ktouch (http://ktouch.sourceforge.net/).
 
 
 Utilisation
 -----------
 
-Ktouch ne contient pas la disposition de clavier Dvorak français BÉPO. Il faut donc la rajouter manuellement. Les commandes 
+Ktouch ne contient pas la disposition de clavier bépo. Il faut donc la rajouter manuellement. Les commandes 
 
   mkdir -p ~/.kde/share/apps/ktouch/
-  cp fr-dvorak-bepo.keyboard ~/.kde/share/apps/ktouch/
+  cp bepo.keyboard ~/.kde/share/apps/ktouch/
   
 peuvent-être utilisées pour installer la disposition pour un utilisateur, ou
 
-  cp fr-dvorak-bepo.keyboard /usr/share/apps/ktouch/
+  cp bepo.keyboard /usr/share/apps/ktouch/
   
 pour tous les utilisateurs (nécessite les droits d'administrateur).
 
@@ -27,4 +27,4 @@ pour tous les utilisateurs (nécessite les droits d'administrateur).
 Licence
 -------
 
-La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
+La configuration de clavier bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.

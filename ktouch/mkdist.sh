@@ -29,16 +29,16 @@ pushd tmp
 
 # get the last version
 svn export svn://svn.tuxfamily.org/svnroot/dvorak/svn/pilotes/trunk pilotes
-mkdir fr-dvorak-bepo-ktouch-$VERSION
+mkdir bepo-ktouch-$VERSION
 
 # copy the licenses
-cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-ktouch-$VERSION
+cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt bepo-ktouch-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/ktouch/fr-dvorak-bepo* pilotes/ktouch/LISEZ_MOI.txt fr-dvorak-bepo-ktouch-$VERSION
+cp pilotes/ktouch/bepo* pilotes/ktouch/LISEZ_MOI.txt bepo-ktouch-$VERSION
 
 # build the archive
-tar cvzf ../fr-dvorak-bepo-ktouch-$VERSION.tgz fr-dvorak-bepo-ktouch-$VERSION
+tar cvzf ../bepo-ktouch-$VERSION.tgz bepo-ktouch-$VERSION
 
 popd
 

@@ -23,7 +23,7 @@ fullMapTmpl = keyboardTemplate = u"""# -*- coding: utf-8; -*-
 #    KTouch
 #    Fichier de définition de clavier
 ####################################################
-# Disposition fr-dvorak-bépo
+# Disposition bépo
 ####################################################
 #
 #
