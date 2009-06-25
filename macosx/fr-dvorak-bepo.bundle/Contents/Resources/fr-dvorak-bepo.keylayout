@@ -4362,7 +4362,7 @@
       <when state="circumflexbelow" output="ṷ"/>
       <when state="currency" output="元"/>
       <when state="diaeresis" output="ü"/>
-      <when state="diaresisbelow" output="ṳ"/>
+      <when state="diaeresisbelow" output="ṳ"/>
       <when state="doubleacute" output="ű"/>
       <when state="doublegrave" output="ȕ"/>
       <when state="grave" output="ù"/>
@@ -4563,7 +4563,7 @@
       <when state="circumflexbelow" output="Ṷ"/>
       <when state="currency" output="圓"/>
       <when state="diaeresis" output="Ü"/>
-      <when state="diaresisbelow" output="Ṳ"/>
+      <when state="diaeresisbelow" output="Ṳ"/>
       <when state="doubleacute" output="Ű"/>
       <when state="doublegrave" output="Ȕ"/>
       <when state="grave" output="Ù"/>
@@ -5103,6 +5103,44 @@
       <when state="Multi_key_U1FFE" output="῝"/>
       <when state="Multi_key_diaeresis" output="῭"/>
       <when state="Multi_key_space" output="`"/>
+    </action>
+
+    <action id="dasia">
+      <when state="none" output="dasia"/>
+      <when state="Multi_key_Greek_iota" next="Multi_key_Greek_iota_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_U0342" next="Multi_key_Greek_iota_U0342_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_acute" next="Multi_key_Greek_iota_acute_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_apostrophe" next="Multi_key_Greek_iota_apostrophe_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_asciitilde" next="Multi_key_Greek_iota_asciitilde_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_combining_acute" next="Multi_key_Greek_iota_combining_acute_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_combining_grave" next="Multi_key_Greek_iota_combining_grave_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_dead_acute" next="Multi_key_Greek_iota_dead_acute_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_dead_grave" next="Multi_key_Greek_iota_dead_grave_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_dead_tilde" next="Multi_key_Greek_iota_dead_tilde_dead_dasia"/>
+      <when state="Multi_key_Greek_iota_grave" next="Multi_key_Greek_iota_grave_dead_dasia"/>
+      <when state="Multi_key_acute" next="Multi_key_acute_dead_dasia"/>
+      <when state="Multi_key_apostrophe" next="Multi_key_apostrophe_dead_dasia"/>
+      <when state="Multi_key_asciitilde" next="Multi_key_asciitilde_dead_dasia"/>
+      <when state="Multi_key_grave" next="Multi_key_grave_dead_dasia"/>
+    </action>
+
+    <action id="psili">
+      <when state="none" output="psili"/>
+      <when state="Multi_key_Greek_iota" next="Multi_key_Greek_iota_dead_psili"/>
+      <when state="Multi_key_Greek_iota_U0342" next="Multi_key_Greek_iota_U0342_dead_psili"/>
+      <when state="Multi_key_Greek_iota_acute" next="Multi_key_Greek_iota_acute_dead_psili"/>
+      <when state="Multi_key_Greek_iota_apostrophe" next="Multi_key_Greek_iota_apostrophe_dead_psili"/>
+      <when state="Multi_key_Greek_iota_asciitilde" next="Multi_key_Greek_iota_asciitilde_dead_psili"/>
+      <when state="Multi_key_Greek_iota_combining_acute" next="Multi_key_Greek_iota_combining_acute_dead_psili"/>
+      <when state="Multi_key_Greek_iota_combining_grave" next="Multi_key_Greek_iota_combining_grave_dead_psili"/>
+      <when state="Multi_key_Greek_iota_dead_acute" next="Multi_key_Greek_iota_dead_acute_dead_psili"/>
+      <when state="Multi_key_Greek_iota_dead_grave" next="Multi_key_Greek_iota_dead_grave_dead_psili"/>
+      <when state="Multi_key_Greek_iota_dead_tilde" next="Multi_key_Greek_iota_dead_tilde_dead_psili"/>
+      <when state="Multi_key_Greek_iota_grave" next="Multi_key_Greek_iota_grave_dead_psili"/>
+      <when state="Multi_key_acute" next="Multi_key_acute_dead_psili"/>
+      <when state="Multi_key_apostrophe" next="Multi_key_apostrophe_dead_psili"/>
+      <when state="Multi_key_asciitilde" next="Multi_key_asciitilde_dead_psili"/>
+      <when state="Multi_key_grave" next="Multi_key_grave_dead_psili"/>
     </action>
 
     <action id="{">
@@ -8811,8 +8849,8 @@
       <when state="curl" output="?"/>
       <when state="currency" output="¤"/>
       <when state="diaeresis" output="&#x0022;"/>
+      <when state="diaeresisbelow" output="̤"/>
       <when state="diagonalstroke" output="?"/>
-      <when state="diaresisbelow" output="̤"/>
       <when state="doubleacute" output="˝"/>
       <when state="doublegrave" output="?"/>
       <when state="fishhook" output="?"/>
@@ -8910,8 +8948,8 @@
       <when state="curl" output="?"/>
       <when state="currency" output="¤"/>
       <when state="diaeresis" output="̈"/>
+      <when state="diaeresisbelow" output="̤"/>
       <when state="diagonalstroke" output="?"/>
-      <when state="diaresisbelow" output="̤"/>
       <when state="doubleacute" output="̋"/>
       <when state="doublegrave" output="̏"/>
       <when state="fishhook" output="?"/>
@@ -9125,13 +9163,13 @@
       <when state="Multi_key_macron" next="Multi_key_macron_dead_diaeresis"/>
       <when state="Multi_key_underscore" next="Multi_key_underscore_dead_diaeresis"/>
     </action>
+    <action id="diaeresisbelow">
+      <when state="diaeresisbelow" output="̤"/>
+      <when state="none" next="diaeresisbelow"/>
+    </action>
     <action id="diagonalstroke">
       <when state="diagonalstroke" output="?"/>
       <when state="none" next="diagonalstroke"/>
-    </action>
-    <action id="diaresisbelow">
-      <when state="diaresisbelow" output="̤"/>
-      <when state="none" next="diaresisbelow"/>
     </action>
     <action id="doubleacute">
       <when state="doubleacute" output="˝"/>
@@ -9329,8 +9367,8 @@
     <when state="curl" output="?"/>
     <when state="currency" output="¤"/>
     <when state="diaeresis" output="¨"/>
+    <when state="diaeresisbelow" output="̤"/>
     <when state="diagonalstroke" output="?"/>
-    <when state="diaresisbelow" output="̤"/>
     <when state="doubleacute" output="˝"/>
     <when state="doublegrave" output="?"/>
     <when state="fishhook" output="?"/>
