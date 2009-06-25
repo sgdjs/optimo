@@ -5,9 +5,9 @@ http://www.clavier-dvorak.org/
 Description
 -----------
 
-Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+Ce paquetage contient la disposition de clavier bépo, optimisée pour le français, créée par la communauté sur http://www.bepo.fr/.
 Les fichiers de ce paquetage sont destinés à être utilisés avec loadkeys pour modifier la configuration de clavier en mode console sous linux.
-Deux versions sont disponibles, une iso-8859-15 (où tous les caractères Unicode du clavier Dvorak français BÉPO ont été supprimés), l'autre en UTF-8 (complète à part des touches mortes spéciales qui n'existent pas en mode console.
+Deux versions sont disponibles, une iso-8859-15 (où tous les caractères Unicode du clavier bépo ont été supprimés), l'autre en UTF-8 (complète à part des touches mortes spéciales qui n'existent pas en mode console.
 
 
 Utilisation
@@ -15,11 +15,11 @@ Utilisation
 
 La commande
   
-  loadkeys fr-dvorak-bepo.map           [ ou fr-dvorak-bepo-utf8.map ]
+  loadkeys bepo.map           [ ou bepo-utf8.map ]
   
-bascule le clavier en clavier Dvorak français BÉPO. Vous pouvez copier le fichier fr-dvorak-bepo.kmap dans le répertoire /usr/lib/kbd/keymaps/i386/dvorak/ pour le rendre accessible de n'importe quel répertoire avec la commande
+bascule le clavier en clavier bépo. Vous pouvez copier le fichier bepo.map dans le répertoire /usr/lib/kbd/keymaps/i386/dvorak/ pour le rendre accessible de n'importe quel répertoire avec la commande
 
-  loadkeys fr-dvorak-bepo
+  loadkeys bepo
   
 La commande
 
@@ -31,4 +31,4 @@ permet de revenir à un clavier AZERTY.
 Licence
 -------
 
-La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
+La configuration de clavier bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.

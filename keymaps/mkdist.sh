@@ -29,16 +29,16 @@ pushd tmp
 
 # get the last version
 svn export svn://svn.tuxfamily.org/svnroot/dvorak/svn/pilotes/trunk pilotes
-mkdir fr-dvorak-bepo-keymaps-$VERSION
+mkdir bepo-keymaps-$VERSION
 
 # copy the licenses
-cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-keymaps-$VERSION
+cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt bepo-keymaps-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/keymaps/fr-dvorak-bepo* pilotes/keymaps/LISEZ_MOI.txt fr-dvorak-bepo-keymaps-$VERSION
+cp pilotes/keymaps/bepo* pilotes/keymaps/LISEZ_MOI.txt bepo-keymaps-$VERSION
 
 # build the archive
-tar cvzf ../fr-dvorak-bepo-keymaps-$VERSION.tgz fr-dvorak-bepo-keymaps-$VERSION
+tar cvzf ../bepo-keymaps-$VERSION.tgz bepo-keymaps-$VERSION
 
 popd
 
