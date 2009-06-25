@@ -1,21 +1,21 @@
-Disposition de clavier Dvorak français BÉPO, version 0.6.5.1
-http://www.clavier-dvorak.org/
+Disposition de clavier bépo, version 1.0
+http://www.bepo.fr/
 
 
 Description
 -----------
 
-Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+Ce paquetage contient la disposition de clavier bépo, optimisée pour le français, créée par la communauté sur http://www.bepo.fr/.
 Les fichiers de ce paquetage sont destinés à être utilisé avec TypeFaster (http://www.typefastertypingtutor.com/).
 
 
 Utilisation
 -----------
 
-TypeFaster ne contient pas la disposition de clavier Dvorak français BÉPO. Il faut donc la rajouter manuellement dans le sous-répertoire /layouts du répertoire d'installation du logiciel. Ouvrez ensuite le logiciel, modifiez les préférences et ajoutez votre nouvelle disposition dans la liste des dispositions activées. 
+TypeFaster ne contient pas la disposition de clavier bépo. Il faut donc la rajouter manuellement dans le sous-répertoire /layouts du répertoire d'installation du logiciel. Ouvrez ensuite le logiciel, modifiez les préférences et ajoutez votre nouvelle disposition dans la liste des dispositions activées. 
 
 
 Licence
 -------
 
-La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
+La configuration de clavier bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.

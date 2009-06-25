@@ -29,16 +29,16 @@ pushd tmp
 
 # get the last version
 svn export svn://svn.tuxfamily.org/svnroot/dvorak/svn/pilotes/trunk pilotes
-mkdir fr-dvorak-bepo-typefaster-$VERSION
+mkdir bepo-typefaster-$VERSION
 
 # copy the licenses
-cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-typefaster-$VERSION
+cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt bepo-typefaster-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/typefaster/fr-dvorak-bepo* pilotes/typefaster/LISEZ_MOI.txt fr-dvorak-bepo-typefaster-$VERSION
+cp pilotes/typefaster/bepo* pilotes/typefaster/LISEZ_MOI.txt bepo-typefaster-$VERSION
 
 # build the archive
-zip -r ../fr-dvorak-bepo-typefaster-$VERSION.zip fr-dvorak-bepo-typefaster-$VERSION
+zip -r ../bepo-typefaster-$VERSION.zip bepo-typefaster-$VERSION
 
 popd
 
