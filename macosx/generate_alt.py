@@ -771,18 +771,18 @@ additionalBaseIndex = """
     </keyMap>
 """
 
-rscDir = 'fr-dvorak-bepo.bundle/Contents/Resources/'
-input = file(rscDir + 'fr-dvorak-bepo.keylayout')
+rscDir = 'bepo.bundle/Contents/Resources/'
+input = file(rscDir + 'bepo.keylayout')
 
 toGenerate = [
 #  (name, group, id, additionalKeymap, nameExt)
-  (rscDir + 'fr-dvorak-bepo-roman.keylayout', 0, 6538, None, ' (Roman)'),
-  (rscDir + 'fr-dvorak-bepo-azerty.keylayout', 126, -6539, azertyAdditionalKeyMaps, ' - Azerty Cmd'),
-  (rscDir + 'fr-dvorak-bepo-azerty-roman.keylayout', 0, 6539, azertyAdditionalKeyMaps, ' - Azerty Cmd (Roman)'),
-  (rscDir + 'fr-dvorak-bepo-qwerty.keylayout', 126, -6540, qwertyAdditionalKeyMaps, ' - Qwerty Cmd'),
-  (rscDir + 'fr-dvorak-bepo-qwerty-roman.keylayout', 0, 6540, qwertyAdditionalKeyMaps, ' - Qwerty Cmd (Roman)'),  
-  (rscDir + 'fr-dvorak-bepo-qwertz.keylayout', 126, -6541, qwertyAdditionalKeyMaps, ' - Qwertz Cmd'),
-  (rscDir + 'fr-dvorak-bepo-qwertz-roman.keylayout', 0, 6541, qwertyAdditionalKeyMaps, ' - Qwertz Cmd (Roman)'),  
+  (rscDir + 'bepo-roman.keylayout', 0, 6538, None, ' (Roman)'),
+  (rscDir + 'bepo-azerty.keylayout', 126, -6539, azertyAdditionalKeyMaps, ' - Azerty Cmd'),
+  (rscDir + 'bepo-azerty-roman.keylayout', 0, 6539, azertyAdditionalKeyMaps, ' - Azerty Cmd (Roman)'),
+  (rscDir + 'bepo-qwerty.keylayout', 126, -6540, qwertyAdditionalKeyMaps, ' - Qwerty Cmd'),
+  (rscDir + 'bepo-qwerty-roman.keylayout', 0, 6540, qwertyAdditionalKeyMaps, ' - Qwerty Cmd (Roman)'),  
+  (rscDir + 'bepo-qwertz.keylayout', 126, -6541, qwertyAdditionalKeyMaps, ' - Qwertz Cmd'),
+  (rscDir + 'bepo-qwertz-roman.keylayout', 0, 6541, qwertyAdditionalKeyMaps, ' - Qwertz Cmd (Roman)'),  
 ]
 
 for (name, group, id, additionalKeymap, nameExt) in toGenerate:

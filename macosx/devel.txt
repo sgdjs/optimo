@@ -1,8 +1,8 @@
-Ce document s'adresse aux développeurs du pilote BÉPO pour Mac OS X.
+Ce document s'adresse aux développeurs du pilote bépo pour Mac OS X.
 
 Ce répertoire contient plusieurs choses:
 
- *  fr-dvorak-bepo.bundle
+ *  bepo.bundle
     Ce répertoire contient les fichiers qui seront effectivement installés chez l'utilisateur. Certains fichiers doivent être générés avec le script generate_alt.py.
     
  *  LISEZ_MOI.txt et READ_ME.txt
@@ -10,37 +10,34 @@ Ce répertoire contient plusieurs choses:
  
  *  generate_alt.py
     C'est un script chargé de générer les configurations alternatives à partir de la configuration principale. Il doit être executé depuis son répertoire pour pouvoir trouver les fichiers et ne prend pas de paramètre. En tant que développeur, ce script devrait être executé à chaque modification dans le fichier de configuration principal. Ce script lance la commande "touch ~/Library/Keyboard\ Layouts/" de façon à ce que la configuration de clavier soit rechargée sur votre ordinateur. Il est utile d'avoir créé un lien symbolique vers le bundle dans le répertoire "~/Library/Keyboard\ Layouts/".
-    Ex : ln -s $PWD/fr-dvorak-bepo.bundle ~/Library/Keyboard\ Layouts/
+    Ex : ln -s $PWD/bepo.bundle ~/Library/Keyboard\ Layouts/
     Ex : ./generate_alt.py
     
- *  mkdmg.sh
+ *  mkdist.sh
     Génère un fichier dmg à partir de la dernière version dans le dépôt subversion. Ce script prend en paramètre le numéro de version (il est utilisé dans le nom de fichier et le nom de volume).
     SetCustomIcon doit être dans le PATH. Il est téléchargeable gratuitement sur http://www.vcn.bc.ca/~philip/ .
     Ex : ./mkdmg.sh 0.6.4
     
- *  dead_keys.py
-    Un script pour générer les touches mortes du clavier en se basant sur les définitions d'unicode.
-
 Vous puvez vous assurer que le fichier compile avec la commande
 
-  klcompiler fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout > /dev/null
+  klcompiler bepo.bundle/Contents/Resources/bepo.keylayout > /dev/null
   
 Avant de créer la nouvelle version il faut s'assurer que le nouveau numéro de version aparaît dans les fichiers suivants :
 
  *  LISEZ_MOI.txt
  *  READ_ME.txt
- *  fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout
- *  fr-dvorak-bepo.bundle/Contents/Resources/fr.lproj/InfoPlist.strings
- *  fr-dvorak-bepo.bundle/Contents/Resources/en.lproj/InfoPlist.strings
- *  fr-dvorak-bepo.bundle/Contents/Info.plist
+ *  bepo.bundle/Contents/Resources/bepo.keylayout
+ *  bepo.bundle/Contents/Resources/fr.lproj/InfoPlist.strings
+ *  bepo.bundle/Contents/Resources/en.lproj/InfoPlist.strings
+ *  bepo.bundle/Contents/Info.plist
  
 Ça peut être fait avec la commande :
 
-  perl -e's/OLD/NEW/g' -pi LISEZ_MOI.txt READ_ME.txt fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout fr-dvorak-bepo.bundle/Contents/Resources/fr.lproj/InfoPlist.strings fr-dvorak-bepo.bundle/Contents/Resources/en.lproj/InfoPlist.strings
+  perl -e's/OLD/NEW/g' -pi LISEZ_MOI.txt READ_ME.txt bepo.bundle/Contents/Resources/bepo.keylayout bepo.bundle/Contents/Resources/fr.lproj/InfoPlist.strings bepo.bundle/Contents/Resources/en.lproj/InfoPlist.strings
   
 Ex :
 
-  perl -e's/0\.6\.3/0.6.4/g' -pi LISEZ_MOI.txt READ_ME.txt fr-dvorak-bepo.bundle/Contents/Resources/fr-dvorak-bepo.keylayout fr-dvorak-bepo.bundle/Contents/Resources/fr.lproj/InfoPlist.strings fr-dvorak-bepo.bundle/Contents/Resources/en.lproj/InfoPlist.strings fr-dvorak-bepo.bundle/Contents/Info.plist
+  perl -e's/0\.6\.3/0.6.4/g' -pi LISEZ_MOI.txt READ_ME.txt bepo.bundle/Contents/Resources/bepo.keylayout bepo.bundle/Contents/Resources/fr.lproj/InfoPlist.strings bepo.bundle/Contents/Resources/en.lproj/InfoPlist.strings bepo.bundle/Contents/Info.plist
 
 N'oubliez pas de vérifier qu'il n'y a pas eu de problème, par exemple en examinant les sorties de 
 
