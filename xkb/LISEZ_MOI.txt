@@ -1,11 +1,11 @@
-Disposition de clavier Dvorak français BÉPO, version 0.6.5.1
-http://www.clavier-dvorak.org/
+Disposition de clavier bépo, version 1.0
+http://www.bepo.fr/
 
 
 Description
 -----------
 
-Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+Ce paquetage contient la disposition de clavier bépo, optimisée pour le français, créée par la communauté sur http://www.bepo.fr/.
 Les fichiers de ce paquetage sont destinés à une utilisation en mode utilisateur (sans les droit d'administrateur) sur un système possédant xkbcomp.
 
 
@@ -14,10 +14,10 @@ Utilisation
 
 La commande
   
-  xkbcomp -w0 fr-dvorak-bepo.xkb $DISPLAY
+  xkbcomp -w0 bepo.xkb $DISPLAY
   
-bascule le clavier en clavier Dvorak français BÉPO. Sur les systèmes utilisant une version de xorg antérieure à la 7.0, le fichier à utiliser est « fr-dvorak-bepo-xorglegacy.xkb ».
-Pour disposer des nouvelles touches mortes introduites par le clavier Dvorak français BÉPO, le contenu du fichier XCompose doit être ajouté au fichier ~/.XCompose de l'utilisateur, par exemple avec la commande :
+bascule le clavier en clavier bépo. Sur les systèmes utilisant une version de xorg antérieure à la 7.0, le fichier à utiliser est « bepo-xorglegacy.xkb ».
+Pour disposer des nouvelles touches mortes introduites par le clavier bépo, le contenu du fichier XCompose doit être ajouté au fichier ~/.XCompose de l'utilisateur, par exemple avec la commande :
 
   cat XCompose >> ~/.XCompose
   
@@ -29,4 +29,4 @@ Il est possible de revenir au clavier français par défaut (AZERTY) avec la com
 Licence
 -------
 
-La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
+La configuration de clavier bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.

@@ -29,16 +29,16 @@ pushd tmp
 
 # get the last version
 svn export svn://svn.tuxfamily.org/svnroot/dvorak/svn/pilotes/trunk pilotes
-mkdir fr-dvorak-bepo-xkb-$VERSION
+mkdir bepo-xkb-$VERSION
 
 # copy the licenses
-cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-xkb-$VERSION
+cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt bepo-xkb-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/xkb/fr-dvorak-bepo* pilotes/xkb/LISEZ_MOI.txt pilotes/xkb/XCompose pilotes/xkb/clavier_* fr-dvorak-bepo-xkb-$VERSION
+cp pilotes/xkb/bepo* pilotes/xkb/LISEZ_MOI.txt pilotes/xkb/XCompose pilotes/xkb/clavier_* bepo-xkb-$VERSION
 
 # build the archive
-tar cvzf ../fr-dvorak-bepo-xkb-$VERSION.tgz fr-dvorak-bepo-xkb-$VERSION
+tar cvzf ../bepo-xkb-$VERSION.tgz bepo-xkb-$VERSION
 
 popd
 

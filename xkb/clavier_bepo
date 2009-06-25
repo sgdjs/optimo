@@ -41,7 +41,7 @@ if [ ! -e "$dump" ]; then
   xkbcomp $DISPLAY -xkb "$dump"
 fi
 # et utilise la notre à la place
-xkbcomp -w0 "$dir/fr-dvorak-bepo.xkb" $DISPLAY || xkbcomp -w0 "$dir/fr-dvorak-bepo-xorglegacy.xkb" $DISPLAY
+xkbcomp -w0 "$dir/bepo.xkb" $DISPLAY || xkbcomp -w0 "$dir/bepo-xorglegacy.xkb" $DISPLAY
 
 
 if `$dialog "Vous utilisez maintenant la disposition de clavier fr-dvorak-bépo."` ; then
