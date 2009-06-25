@@ -1,4 +1,4 @@
-# fr-dvorak-bepo  http://www.clavier-dvorak.org
+# bepo  http://www.bepo.fr
 keymaps 0-15
 
 # includes are disabled to work also on debian

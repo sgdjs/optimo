@@ -18,7 +18,7 @@ import xkb, dead_keys, codecs, compose
 from terminators import terminators
 
 
-header = r"""# fr-dvorak-bepo"""
+header = r"""# bepo"""
 
 charToCtrl = {
   "a": "^A",

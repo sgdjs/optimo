@@ -99,5 +99,5 @@ if '' in chars:
   chars.remove('')
 actions = set( [compose.name(c) for c in chars if c] )
 
-tmpl = codecs.open("fr-dvorak-bepo.keylayout.tmpl", encoding='utf8').read()
+tmpl = codecs.open("bepo.tmpl", encoding='utf8').read()
 

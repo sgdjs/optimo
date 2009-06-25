@@ -27,7 +27,7 @@ import xkb, dead_keys, codecs
 from terminators import terminators
 
 
-header = u"""# fr-dvorak-bepo  http://www.clavier-dvorak.org
+header = u"""# bepo  http://www.bepo.fr
 """
 if not opts.utf8:
   header += """charset "iso-8859-15"

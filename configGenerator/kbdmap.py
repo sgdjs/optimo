@@ -18,7 +18,7 @@ import xkb, dead_keys, codecs, compose
 from terminators import terminators
 
 
-header = u"""# fr-dvorak-bepo
+header = u"""# bepo
 #
 # common keys first
 #                                                         alt
@@ -86,7 +86,7 @@ header = u"""# fr-dvorak-bepo
   107   fkey64 fkey64 fkey64 fkey64 fkey64 fkey64 fkey64 fkey64  O
   108   nop    nop    nop    nop    nop    nop    nop    nop     O
 #
-# then fr-dvorak-bepo specific keys
+# then bepo specific keys
 #                                                         alt
 # scan                       cntrl          alt    alt   cntrl lock
 # code  base   shift  cntrl  shift  alt    shift  cntrl  shift state
