@@ -1,13 +1,13 @@
-Disposition de clavier Dvorak français BÉPO, version 0.6.5.1
-http://www.clavier-dvorak.org/
+Disposition de clavier bépo, version 1.0
+http://www.bepo.fr/
 
 
 Description
 -----------
 
-Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+Ce paquetage contient la disposition de clavier bépo, optimisée pour le français, créée par la communauté sur http://www.bepo.fr/.
 Les fichiers de ce paquetage sont destinés à être utilisés avec kbdcontrol pour modifier la configuration de clavier en mode console sous FreeBSD.
-Seule la version iso-8859-15 est disponible. Tous les caractères unicode du clavier Dvorak français BÉPO ont été supprimés.
+Seule la version iso-8859-15 est disponible. Tous les caractères unicode du clavier bépo ont été supprimés.
 
 
 Utilisation
@@ -15,24 +15,24 @@ Utilisation
 
 La commande
   
-  kbdcontrol -l fr-dvorak-bepo.kbd
+  kbdcontrol -l bepo.kbd
   
-bascule le clavier en clavier Dvorak français BÉPO. Vous pouvez copier le fichier fr-dvorak-bepo.kbd dans le répertoire /usr/share/syscons/keymaps/ pour le rendre accessible de n'importe quel répertoire avec la commande
+bascule le clavier en clavier bépo. Vous pouvez copier le fichier bepo.kbd dans le répertoire /usr/share/syscons/keymaps/ pour le rendre accessible de n'importe quel répertoire avec la commande
 
-  kbdcontrol -l fr-dvorak-bepo
+  kbdcontrol -l bepo
   
 La commande
 
   kbdcontrol -l fr.iso.acc
   
 permet de revenir à un clavier AZERTY.
-Pour avoir le clavier Dvorak français BÉPO dés le démarrage du système, il faut modifier la ligne
+Pour avoir le clavier bépo dés le démarrage du système, il faut modifier la ligne
 
   keymap="fr"
 
 dans le fichier « /etc/rc.conf » en
 
-  keymap="fr-dvorak-bepo"
+  keymap="bepo"
 
 
 Encodage
@@ -58,4 +58,4 @@ Plus d'information sur la page http://www.freebsd.org/doc/fr_FR.ISO8859-1/books/
 Licence
 -------
 
-La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
+La configuration de clavier bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
