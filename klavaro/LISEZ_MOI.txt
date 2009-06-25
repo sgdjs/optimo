@@ -1,20 +1,20 @@
-Disposition de clavier Dvorak français BÉPO, version 0.6.5.1
-http://www.clavier-dvorak.org/
+Disposition de clavier bépo, version 1.0
+http://www.bepo.fr/
 
 
 Description
 -----------
 
-Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+Ce paquetage contient la disposition de clavier bépo, optimisée pour le français, créée par la communauté sur http://www.bepo.fr/.
 Les fichiers de ce paquetage sont destinés à être utilisé avec klavaro (http://klavaro.sourceforge.net/).
 
 
 Utilisation
 -----------
 
-Klavaro ne contient pas la disposition de clavier Dvorak français BÉPO. Il faut donc la rajouter manuellement. La commande 
+Klavaro ne contient pas la disposition de clavier bépo. Il faut donc la rajouter manuellement. La commande 
 
-  cp fr-dvorak-bepo.kbd ~/.klavaro
+  cp bepo.kbd ~/.klavaro
   
 peut-être utilisée sous linux pour installer la disposition pour un utilisateur.
 
@@ -22,4 +22,4 @@ peut-être utilisée sous linux pour installer la disposition pour un utilisateu
 Licence
 -------
 
-La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
+La configuration de clavier bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.

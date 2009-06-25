@@ -29,16 +29,16 @@ pushd tmp
 
 # get the last version
 svn export svn://svn.tuxfamily.org/svnroot/dvorak/svn/pilotes/trunk pilotes
-mkdir fr-dvorak-bepo-klavaro-$VERSION
+mkdir bepo-klavaro-$VERSION
 
 # copy the licenses
-cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-klavaro-$VERSION
+cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt bepo-klavaro-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/klavaro/fr-dvorak-bepo* pilotes/klavaro/LISEZ_MOI.txt fr-dvorak-bepo-klavaro-$VERSION
+cp pilotes/klavaro/bepo* pilotes/klavaro/LISEZ_MOI.txt bepo-klavaro-$VERSION
 
 # build the archive
-zip -r ../fr-dvorak-bepo-klavaro-$VERSION.zip fr-dvorak-bepo-klavaro-$VERSION
+zip -r ../bepo-klavaro-$VERSION.zip bepo-klavaro-$VERSION
 
 popd
 
