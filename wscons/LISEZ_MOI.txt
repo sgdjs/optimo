@@ -1,13 +1,13 @@
-Disposition de clavier Dvorak français BÉPO, version 0.6.5.1
-http://www.clavier-dvorak.org/
+Disposition de clavier bépo, version 1.0
+http://www.bepo.fr/
 
 
 Description
 -----------
 
-Ce paquetage contient la disposition de clavier Dvorak français BÉPO, optimisée pour le français, créée par la communauté sur http://www.clavier-dvorak.org/.
+Ce paquetage contient la disposition de clavier bépo, optimisée pour le français, créée par la communauté sur http://www.bepo.fr/.
 Les fichiers de ce paquetage sont destinés à être utilisés avec wsconsctl pour modifier la configuration de clavier en mode console sous OpenBSD.
-Seule la version iso-8859-15 est disponible. Tous les caractères unicode du clavier Dvorak français BÉPO ont été supprimés.
+Seule la version iso-8859-15 est disponible. Tous les caractères unicode du clavier bépo ont été supprimés.
 
 
 Utilisation
@@ -15,9 +15,9 @@ Utilisation
 
 La commande
 
-wsconsctl keyboard.map+="`cat fr-dvorak-bepo.map`"
+wsconsctl keyboard.map+="`cat bepo.map`"
 
-bascule le clavier en disposition fr-dvorak-bépo. La commande
+bascule le clavier en disposition bépo. La commande
 
 wsconsctl -w keyboard.encoding=fr
 
@@ -27,4 +27,4 @@ permet de revenir à un clavier AZERTY.
 Licence
 -------
 
-La configuration de clavier fr-dvorak-bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.
+La configuration de clavier bépo est distribuée sous la double licence CC-SA-BY/GFDL. Le texte exact de ces licences peut être consulté dans les fichiers CC-SA-BY.txt et GFDL.txt.

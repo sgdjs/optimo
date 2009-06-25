@@ -29,16 +29,16 @@ pushd tmp
 
 # get the last version
 svn export svn://svn.tuxfamily.org/svnroot/dvorak/svn/pilotes/trunk pilotes
-mkdir fr-dvorak-bepo-wscons-$VERSION
+mkdir bepo-wscons-$VERSION
 
 # copy the licenses
-cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt fr-dvorak-bepo-wscons-$VERSION
+cp pilotes/CC-SA-BY.txt pilotes/GFDL.txt bepo-wscons-$VERSION
 
 # copy the drivers and the readmes
-cp pilotes/wscons/fr-dvorak-bepo* pilotes/wscons/LISEZ_MOI.txt fr-dvorak-bepo-wscons-$VERSION
+cp pilotes/wscons/bepo* pilotes/wscons/LISEZ_MOI.txt bepo-wscons-$VERSION
 
 # build the archive
-tar cvzf ../fr-dvorak-bepo-wscons-$VERSION.tgz fr-dvorak-bepo-wscons-$VERSION
+tar cvzf ../bepo-wscons-$VERSION.tgz bepo-wscons-$VERSION
 
 popd
 
