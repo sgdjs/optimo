@@ -1,5 +1,5 @@
-Disposition de clavier Dvorak français BÉPO, version 1.0rc2
-http://www.clavier-dvorak.org/
+Disposition de clavier bépo, version 1.0
+http://www.bepo.fr/
 
 
 Description
