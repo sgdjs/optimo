@@ -1,0 +1,1196 @@
+diff -Naur xkeyboard-config-0.9orig/debian/changelog xkeyboard-config-0.9bepo1.0tm3/debian/changelog
+--- xkeyboard-config-0.9orig/debian/changelog	2009-06-09 06:52:07.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/debian/changelog	2009-07-27 13:26:42.000000000 +0200
+@@ -1,3 +1,25 @@
++xkeyboard-config (0.9-4ubuntu3.1bepo.1.0+tm3) gutsy; urgency=low
++
++  * complète la description géométrique des claviers TypeMatrix (merci
++    à Gildas Cotomale pour son aide).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Mon, 27 Jul 2009 07:55:26 +0200
++
++xkeyboard-config (0.9-4ubuntu3.1bepo.1.0+tm2) gutsy; urgency=low
++
++  * met à jour la description géométrique du clavier Typematrix
++    TM2030USB
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 17 Jun 2009 07:59:22 +0200
++
++xkeyboard-config (0.9-4ubuntu3.1bepo.1.0) gutsy; urgency=low
++
++  * installe la disposition Dvorak française « Bépo » en version 1.0, et
++    nettoie les versions de développement.
++  * Ajoute la description du clavier TypeMatrix TM2030USB.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 09 Jun 2009 06:58:05 +0200
++
+ xkeyboard-config (0.9-4ubuntu3) gutsy; urgency=low
+ 
+   * debian/patches/romanian_comma.diff : Patch from upstream exposing
+diff -Naur xkeyboard-config-0.9orig/debian/geometry.dir xkeyboard-config-0.9bepo1.0tm3/debian/geometry.dir
+--- xkeyboard-config-0.9orig/debian/geometry.dir	2009-06-09 06:52:07.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/debian/geometry.dir	2009-07-27 08:01:24.000000000 +0200
+@@ -84,6 +84,11 @@
+ -------- -------- sun(type6unix)
+ -------- -------- sun(x86)
+ -------- -------- sun(x86tuv)
++-------- -------- typematrix(tm2020)
++-------- -------- typematrix(tm2030PS2)
++-------- -------- typematrix(tm2030USB)
++-------- -------- typematrix(tm2030USB-102)
++-------- -------- typematrix(tm2030USB-106)
+ -------- -------- thinkpad(common)
+ -------- -------- thinkpad(intl)
+ -------- -------- thinkpad(us)
+diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1.0tm3/debian/symbols.dir
+--- xkeyboard-config-0.9orig/debian/symbols.dir	2009-06-09 06:52:07.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/debian/symbols.dir	2009-06-09 06:55:41.000000000 +0200
+@@ -157,6 +157,10 @@
+ --p----- a------- fo(nodeadkeys)
+ --p----- a------- fr(Sundeadkeys)
+ -dp----- a------- fr(basic)
++--p----- a------- fr(bepo_1_0)
++--p----- a------- fr(bepo_1_0_latin9)
++--p----- a------- fr(bepo)
++--p----- a------- fr(bepo_latin9)
+ --p----- a------- fr(dvorak)
+ --p----- a------- fr(latin9)
+ --p----- a------- fr(latin9_Sundeadkeys)
+diff -Naur xkeyboard-config-0.9orig/geometry/geometry.dir xkeyboard-config-0.9bepo1.0tm3/geometry/geometry.dir
+--- xkeyboard-config-0.9orig/geometry/geometry.dir	2009-06-09 06:52:08.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/geometry/geometry.dir	2009-07-27 07:59:29.000000000 +0200
+@@ -84,6 +84,11 @@
+ -------- -------- sun(type6unix)
+ -------- -------- sun(x86)
+ -------- -------- sun(x86tuv)
++-------- -------- typematrix(tm2020)
++-------- -------- typematrix(tm2030PS2)
++-------- -------- typematrix(tm2030USB)
++-------- -------- typematrix(tm2030USB-102)
++-------- -------- typematrix(tm2030USB-106)
+ -------- -------- thinkpad(common)
+ -------- -------- thinkpad(intl)
+ -------- -------- thinkpad(us)
+diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.am xkeyboard-config-0.9bepo1.0tm3/geometry/Makefile.am
+--- xkeyboard-config-0.9orig/geometry/Makefile.am	2009-06-09 06:52:08.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/geometry/Makefile.am	2009-06-09 06:55:42.000000000 +0200
+@@ -8,6 +8,6 @@
+ hp keytronic kinesis \
+ macintosh microsoft nec \
+ northgate pc sony thinkpad \
+-sun winbook README
++sun winbook typematrix README
+ 
+ include $(top_srcdir)/xkbrules.am
+diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.in xkeyboard-config-0.9bepo1.0tm3/geometry/Makefile.in
+--- xkeyboard-config-0.9orig/geometry/Makefile.in	2009-06-09 06:52:08.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/geometry/Makefile.in	2009-06-09 06:55:42.000000000 +0200
+@@ -177,7 +177,7 @@
+ hp keytronic kinesis \
+ macintosh microsoft nec \
+ northgate pc sony thinkpad \
+-sun winbook README
++sun winbook typematrix README
+ 
+ dist_dir_DATA = $(subdir).dir
+ dirdir = $(xkb_base)
+diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo1.0tm3/geometry/typematrix
+--- xkeyboard-config-0.9orig/geometry/typematrix	1970-01-01 01:00:00.000000000 +0100
++++ xkeyboard-config-0.9bepo1.0tm3/geometry/typematrix	2009-07-27 07:57:30.000000000 +0200
+@@ -0,0 +1,745 @@
++// -*- indent-tabs-mode: nil -*-
++
++// Created by Frédéric Boiteux <fboiteux (at) free (dot) fr>
++// and Gildas Cotomale <gildas (dot) cotomale (at) gmail (dot) com>
++
++// Note : the special/multimedia keys (Calc, WWW, Desktop…) have a keycode
++// <I[XX]>, found in definition file /usr/share/X11/xkb/keycodes/evdev.
++// Fn           = <I120>;
++// Calc         = <I148>;
++// WWW          = <I158>;
++// CycleWindows = <I162>;
++// Mail         = <I163>;
++// PlayPause    = <I172>;
++// Desktop      = <I243>;
++
++
++xkb_geometry "tm2020" {
++    description = "TypeMatrix EZ-Reach 2020";
++
++    // Keyboard total size :
++    width  = 308;
++    height = 152;
++    // background / foreground colours :
++    baseColor  = "white";
++    labelColor = "black";
++
++    // Key shapes : base key = 16 mm each side
++    shape "NORM" { cornerRadius=1, { [16,    16]   }, { [1,   1], [15,   15] }};
++    shape "ALPL" { cornerRadius=1, { [24.25, 16]   }, { [1,   1], [23,   15] }};
++    shape "DHAL" { cornerRadius=1, { [24.25, 32.5] }, { [1,   1], [23, 31.5] }};
++    shape "FUNC" { cornerRadius=1, { [16,    12]   }, { [2.5, 0], [13.5, 10] }};
++    shape "FUNL" { cornerRadius=1, { [24.25, 12]   }, { [2.5, 0], [21.5, 10] }};
++    shape "SPCE" { cornerRadius=1, { [57,    26]   }, { [2.5, 1], [54.5, 24] }};
++    shape "DBLA" { cornerRadius=1, { [32.5,  16]   }, { [1,   1], [31,   15] }};
++    shape "LED"  { cornerRadius=2, { [4,      4]   }};
++    shape "DECO" { cornerRadius=1, { [3,     18]   }};
++
++    // Function keys row
++    section "Function" {
++        left = 4;
++        top  = 24;
++        key.gap = 0.5;
++        key.color = "grey10";
++        key.shape = "FUNC";
++        row {
++            keys { { <ESC>,  "FUNL" },
++                   <FK01>, <FK02>, <FK03>, <FK04>, <FK05> };
++            key.color = "grey20";
++            keys { { <NMLK>, "FUNL" } };
++        };
++        row {
++            left = 150;
++            key.color = "red";
++            keys { { <DELE>, "FUNL" } };
++            key.color = "grey10";
++            keys { <FK06>, <FK07>, <FK08>, <FK09>, <FK10>, <FK11>,
++                   { <FK12>, "FUNL" } };
++        };
++    };
++
++    // Alpha-numeric keys rows
++    section "Alpha" {
++        left = 4;
++        top  = 36.5;
++        key.gap = 0.5;
++        key.color = "grey10";
++        key.shape = "NORM";
++        row {
++            top  = 0;
++            keys { { <TLDE>, "ALPL" },
++                   <AE01>, <AE02>, <AE03>, <AE04>, <AE05>,
++                   { <BKSP>, "DHAL" } };
++        };
++        row {
++            top  = 16.5;
++            keys { { <TAB>, "ALPL" },
++                   <AD01>, <AD02>, <AD03>, <AD04>, <AD05> };
++        };
++        row {
++            top  = 33;
++            keys { { <LFSH>, "DHAL" },
++                   <AC01>, <AC02>, <AC03>, <AC04>, <AC05>,
++                   { <TAB>,  "DHAL" } };
++        };
++        row {
++            top  = 49.5;
++            left = 24.5;
++            keys { <AB01>, <AB02>, <AB03>, <AB04>, <AB05> };
++        };
++        row {
++            top  = 0;
++            left = 150;
++            keys { { <BKSP>, "DHAL" },
++                   <AE06>, <AE07>, <AE08> };
++            key.color = "grey20";
++            keys { <AE09>, <AE10>, <AE11>, { <AE12>, "ALPL" } };
++        };
++        row {
++            top  = 16.5;
++            left = 174.5;
++            keys { <AD06>, <AD07>, <AD08> };
++            key.color = "grey20";
++            keys { <AD09>, <AD10>, <AD11>, { <AD12>, "ALPL" } };
++        };
++        row {
++            top  = 33;
++            left = 150;
++            keys { { <RTRN>, "DHAL" },
++                   <AC06>, <AC07>, <AC08> };
++            key.color = "grey20";
++            keys { <AC09>, <AC10>, <AC11>, { <RTSH>, "DHAL" } };
++        };
++        row {
++            top  = 49.5;
++            left = 174.5;
++            keys { <AB06>, <AB07>, <AB08> };
++            key.color = "grey20";
++            keys { <AB09>, <AB10>, <BKSL> };
++        };
++    };
++
++    // Control keys rows
++    section "Control" {
++        left = 4;
++        top  = 102.5;
++        key.gap = 0.5;
++        key.color = "grey10";
++        key.shape = "ALPL";
++        row {
++            top  = 0;
++            keys { <LCTL>, <LALT>, <CAPS> };
++            keys { { <SPCE>, "SPCE"} };
++        };
++        row {
++            top  = 16.5;
++            keys { <I120>, <LWIN>, <MENU> };
++        };
++        row {
++            top  = 0;
++            left = 150;
++            key.shape = "NORM";
++            keys { { <SPCE>, "SPCE"}, <RALT> };
++            key.color = "grey20";
++            keys { <RCTL>, <UP>, <I162>, { <KPEN>, "DHAL" } };
++        };
++        row {
++            top  = 16.5;
++            left = 207.5;
++            key.shape = "NORM";
++            key.color = "grey20";
++            keys { { <LEFT>, "DBLA" }, <DOWN>, <RGHT> };
++        };
++    };
++
++    // Diods
++    indicator.top      = 12;
++    indicator.onColor  = "green";
++    indicator.offColor = "grey10";
++    indicator.shape    = "LED";
++    indicator "Num Lock"   { left = 252; };
++    indicator "Caps Lock"  { left = 266; };
++    indicator "Misc"       { left = 280; };
++    text.top= 5;
++    text.color= "black";
++    text "NumLockLabel"		{ left= 252; text="1"; };
++    text "CapsLockLabel"	{ left= 266; text="A"; };
++    text "MiscLabel"    	{ left= 280; text="D"; };
++
++    text "Logo" { left = 29; top = 10; text="TypeMatrix™"; };
++
++    // other decorations : drawings
++    solid "rainure1"  { shape = "DECO"; top = 1; left = 110; color = "grey10";};
++    solid "rainure2"  { shape = "DECO"; top = 1; left = 115; color = "grey10";};
++    solid "rainure3"  { shape = "DECO"; top = 1; left = 120; color = "grey10";};
++    solid "rainure4"  { shape = "DECO"; top = 1; left = 125; color = "grey10";};
++    solid "rainure5"  { shape = "DECO"; top = 1; left = 130; color = "grey10";};
++    solid "rainure6"  { shape = "DECO"; top = 1; left = 135; color = "grey10";};
++    solid "rainure7"  { shape = "DECO"; top = 1; left = 140; color = "grey10";};
++    solid "rainure8"  { shape = "DECO"; top = 1; left = 145; color = "grey10";};
++    solid "rainure9"  { shape = "DECO"; top = 1; left = 150; color = "grey10";};
++    solid "rainure10" { shape = "DECO"; top = 1; left = 155; color = "grey10";};
++    solid "rainure11" { shape = "DECO"; top = 1; left = 160; color = "grey10";};
++    solid "rainure12" { shape = "DECO"; top = 1; left = 165; color = "grey10";};
++    solid "rainure13" { shape = "DECO"; top = 1; left = 170; color = "grey10";};
++}; // geometry tm2020
++
++
++xkb_geometry "tm2030_shape" {
++    // Keyboard total size
++    width  = 320;
++    height = 130;
++    // background / foreground colours :
++    baseColor  = "white";
++    labelColor = "black";
++
++    // Key shapes : base key = 20 mm each side
++    shape "NORM" { cornerRadius=1, { [18,   18] }, { [1.5, 1.5], [16.5, 14] } };
++    shape "FUNC" { cornerRadius=1, { [18,   12] }, { [2.5,   0], [15.5, 10] } };
++    shape "LFSH" { cornerRadius=1, { [18, 36.5] }, { [2.5,   0], [15.5, 30] } };
++    shape "ALT1" { cornerRadius=1, { [27.5, 18] }, { [2.5,   0], [23.5, 14] } };
++    shape "BKSP" { cornerRadius=1, { [18, 30.5] }, { [1.5, 1.5], [16.5, 29] } };
++    shape "SPCE" { cornerRadius=1, { [92,   25] }, { [1.5, 1.5], [90.5, 22] } };
++    shape "LED"  { cornerRadius=2, { [4,     4] } };
++    shape "PAN1" { cornerRadius=1, { [27, 126.5] } };
++    shape "PAN2" { cornerRadius=1, { [92,   13] } };
++
++    // other decorations : panels
++    solid "panneau1" {
++        shape = "PAN1";
++        left  = 0;
++        top   = 0;
++        color = "grey40";
++    };
++    solid "panneau2" {
++        shape = "PAN2";
++        left = 101.5;
++        top = 113.5;
++        color = "grey40";
++    };
++
++    // Diods (Indicators) : they have to be put after panels, either the panels
++    // overwrites them.
++    indicator.left     = 6;
++    indicator.onColor  = "green";
++    indicator.offColor = "grey10";
++    indicator.shape    = "LED";
++
++    indicator "Num Lock"     { top = 11  ; };
++    indicator "Caps Lock"    { top = 27.5; };
++    indicator "Scroll Lock"  { top = 44  ; };
++
++    text.left          = 12;
++    text.color         = "black";
++    text "NumLockLabel"		{ top = 11;   text="num";           };
++    text "CapsLockLabel"	{ top = 27.5; text="caps";          };
++    text "SrollLockLabel"	{ top = 44;   text="scroll";        };
++}; // geometry tm2030_shape
++
++xkb_geometry "tm2030_MiscDiod_dvk" {
++    text "ModeLabel" { left = 12; top = 58; color = "black";  text="Dvorak"; };
++}; // geometry tm2030_MiscDiod_dvk
++
++xkb_geometry "tm2030_MiscDiod_102" {
++    text "ModeLabel" { left = 12; top = 58; color = "black";  text="102"; };
++}; // geometry tm2030_MiscDiod_102
++
++xkb_geometry "tm2030_MiscDiod_106" {
++    text "ModeLabel" { left = 12; top = 58; color = "black";  text="106"; };
++}; // geometry tm2030_MiscDiod_106
++
++xkb_geometry "tm2030_MiscDiod_off" {
++    indicator "Misc" { left = 6; top = 60.5; shape = "LED";
++                       offColor = "grey10"; onColor = "grey10"; };
++}; // geometry tm2030_MiscDiod_off
++
++xkb_geometry "tm2030_MiscDiod_on" {
++    indicator "Misc" { left = 6; top = 60.5; shape = "LED";
++                       offColor = "green"; onColor = "green"; };
++}; // geometry tm2030_MiscDiod_on
++
++
++xkb_geometry "tm2030USB_func" {
++    // Function keys rows
++    section "Function" {
++        left      = 27;
++        top       = 1.5;
++        key.gap   = 0.5;
++        key.color = "grey30";
++        key.shape = "FUNC";
++        row {
++            keys { <ESC>,  <FK01>, <FK02>, <FK03>, <FK04>, <FK05> };
++        };
++        row {
++            left = 129.5;
++            keys { <FK06>, <FK07>, <FK08>, <FK09>, <FK10>, <FK11>,
++                   <FK12>, <NMLK> };
++        };
++    };
++}; // geometry tm2030USB_func
++
++
++xkb_geometry "tm2030USB_alpha" {
++    // Alpha-numeric keys rows
++    section "Alpha" {
++        left = 27;
++        top  = 14;
++        key.gap = 0.5;
++        key.color = "grey10";
++        key.shape = "NORM";
++        row {
++            top  = 0;
++            keys { <TLDE>,             <AE01>, <AE02>, <AE03>, <AE04>, <AE05> };
++        };
++        row {
++            top  = 18.5;
++            keys { <TAB>,              <AD01>, <AD02>, <AD03>, <AD04>, <AD05> };
++        };
++        row {
++            top  = 37;
++            keys { { <LFSH>, "LFSH" }, <AC01>, <AC02>, <AC03>, <AC04>, <AC05> };
++        };
++        row {
++            top  = 55.5;
++            left = 18.5;
++            keys {                     <AB01>, <AB02>, <AB03>, <AB04>, <AB05> };
++        };
++
++        row {
++            top  = 0;
++            left = 129.5;
++            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I148> };
++        };
++        row {
++            top  = 18.5;
++            left = 129.5;
++            keys { <AD06>, <AD07>, <AD08>, <AD09>, <AD10>, <AD11>, <AD12>, <I163> };
++        };
++        row {
++            top  = 37;
++            left = 129.5;
++            keys { <AC06>, <AC07>, <AC08>, <AC09>, <AC10>, <AC11>, { <RTSH>, "LFSH" }, <CAPS> };
++        };
++        row {
++            top  = 55.5;
++            left = 129.5;
++            keys { <AB06>, <AB07>, <AB08>, <AB09>, <AB10>, <BKSL> };
++        };
++        row {
++            top  = 55.5;
++            left = 259;
++            keys { <I158> };
++        };
++        row {
++            top  = 74;
++            left = 74;
++            keys { { <SPCE>, "SPCE" } };
++        };
++    };
++}; // geometry tm2030USB_alpha
++
++
++xkb_geometry "tm2030USB_ctrl" {
++    // Control keys rows
++    section "Control" {
++        left = 27;
++        top  = 0;
++        key.gap = 0.5;
++        key.color = "grey30";
++        key.shape = "NORM";
++        row {
++            top  = 88;
++            keys { <LCTL>, <I172>, <MENU>, <I162> };
++        };
++        row {
++            top = 106.5;
++            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++        };
++        row {
++            top  = 88;
++            left = 166.5;
++            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++        };
++        row {
++            top = 106.5;
++            left = 166.5;
++            keys { <RALT>, <LEFT>, <DOWN>, <RGHT> };
++        };
++        row {
++            top = 106.5;
++            left = 259;
++            keys { <PGDN> };
++        };
++        row {
++            top  = 1;
++            left = 111.5;
++            vertical = true;
++            keys { <DELE>, { <BKSP>, "BKSP" }, { <RTRN>, "LFSH" } };
++        };
++    };
++}; // geometry tm2030USB_ctrl
++
++
++xkb_geometry "tm2030PS2" {
++    include "typematrix(tm2030_shape)"
++    include "typematrix(tm2030_MiscDiod_dvk)"
++    include "typematrix(tm2030_MiscDiod_off)"
++
++    description = "TypeMatrix EZ-Reach 2030 PS2";
++
++    // Function keys row
++    section "Function" {
++        left = 27;
++        top  = 1.5;
++        key.gap = 0.5;
++        key.color = "grey10";
++        key.shape = "FUNC";
++        row {
++            key.color = "grey30";
++            keys { <ESC> };
++        };
++        row {
++            left = 18.5;
++            keys { <FK01>, <FK02>, <FK03>, <FK04> };
++        };
++        row {
++            left = 92.5;
++            key.color = "grey30";
++            keys { <FK05> };
++        };
++        row {
++            left = 129.5;
++            key.color = "grey30";
++            keys { <FK06>, <FK07>, <FK08> };
++        };
++        row {
++            left = 185;
++            keys { <FK09>, <FK10>, <FK11>, <FK12> };
++        };
++        row {
++            left = 259;
++            key.color = "grey30";
++            keys { <NMLK> };
++        };
++    };
++
++    // Alpha-numeric keys rows
++    section "Alpha" {
++        left = 27;
++        top  = 14;
++        key.gap = 0.5;
++        key.color = "grey10";
++        key.shape = "NORM";
++        row {
++            top  = 0;
++            keys { <TLDE>,             <AE01>, <AE02>, <AE03>, <AE04>, <AE05> };
++        };
++        row {
++            top  = 18.5;
++            keys { <TAB>,              <AD01>, <AD02>, <AD03>, <AD04>, <AD05> };
++        };
++        row {
++            top  = 37;
++            keys { { <LFSH>, "LFSH" }, <AC01>, <AC02>, <AC03>, <AC04>, <AC05> };
++        };
++        row {
++            top  = 55.5;
++            left = 18.5;
++            keys {                     <AB01>, <AB02>, <AB03>, <AB04>, <AB05> };
++        };
++
++        row {
++            top  = 0;
++            left = 129.5;
++            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I120> };
++        };
++        row {
++            top  = 18.5;
++            left = 129.5;
++            keys { <AD06>, <AD07>, <AD08> };
++        };
++        row {
++            top  = 18.5;
++            left = 185;
++            key.color = "grey30";
++            keys { <AD09>, <AD10>, <AD11>, <AD12>};
++        };
++        row {
++            top  = 18.5;
++            left = 259;
++            keys { <BKSP> };
++        };
++        row {
++            top  = 37;
++            left = 129.5;
++            keys { <AC06>, <AC07>, <AC08> };
++        };
++        row {
++            top  = 37;
++            left = 185;
++            key.color = "grey30";
++            keys { <AC09>, <AC10>, <AC11>, { <RTSH>, "LFSH" },
++                   {<DELE>, key.color="red"} };
++        };
++        row {
++            top  = 55.5;
++            left = 129.5;
++            keys { <AB06>, <AB07>, <AB08> };
++        };
++        row {
++            top  = 55.5;
++            left = 185;
++            key.color = "grey30";
++            keys { <AB09>, <AB10>, <BKSL> };
++        };
++        row {
++            top  = 55.5;
++            left = 259;
++            keys { <INS> };
++        };
++        row {
++            top  = 74;
++            left = 74;
++            keys { { <SPCE>, "SPCE" } };
++        };
++    }; // end section "Alpha"
++
++    // Control keys rows
++    section "Control" {
++        left = 27;
++        top  = 0;
++        key.gap = 0.5;
++        key.color = "grey10";
++        key.shape = "NORM";
++        row {
++            top  = 88;
++            keys { <I120>, <LWIN>, <MENU>, <I162> };
++        };
++        row {
++            top = 106.5;
++            keys { <LCTL>, { <LALT>, "ALT1" }, { <LTSH>, "ALT1" } };
++        };
++        row {
++            top  = 88;
++            left = 166.5;
++            keys { <PGUP> };
++        };
++        row {
++            top  = 88;
++            left = 185;
++            key.color = "grey30";
++            keys { <HOME>, <UP>, <END>, { <KPEN>, "LFSH"} };
++        };
++        row {
++            top  = 88;
++            left = 259;
++            keys { <RCTL> };
++        };
++        row {
++            top = 106.5;
++            left = 166.5;
++            keys { <PGDN> };
++        };
++        row {
++            top = 106.5;
++            left = 185;
++            key.color = "grey30";
++            keys { <LEFT>, <DOWN>, <RGHT> };
++        };
++        row {
++            top = 106.5;
++            left = 259;
++            keys { <RALT> };
++        };
++        row {
++            top  = 1;
++            left = 111.5;
++            key.color = "grey10";
++            vertical = true;
++            keys { <CAPS>, { <BKSP>, "BKSP" }, { <RTRN>, "LFSH" } };
++        };
++    }; // end section "Control"
++}; // geometry tm2030PS2
++
++
++xkb_geometry "tm2030USB" {
++    include "typematrix(tm2030_shape)"
++    include "typematrix(tm2030_MiscDiod_102)"
++    include "typematrix(tm2030_MiscDiod_off)"
++
++    description = "TypeMatrix EZ-Reach 2030 USB";
++
++    include "typematrix(tm2030USB_func)"
++    include "typematrix(tm2030USB_alpha)"
++    include "typematrix(tm2030USB_ctrl)"
++}; // geometry tm2030USB
++
++
++// European 102/105 keys mode :
++// Same as the standard keyboard, except for one key, Play becomes LSGT
++xkb_geometry "tm2030USB-102" {
++    include "typematrix(tm2030_shape)"
++    include "typematrix(tm2030_MiscDiod_102)"
++    include "typematrix(tm2030_MiscDiod_on)"
++
++    description = "TypeMatrix EZ-Reach 2030 USB (102/105:EU mode)";
++
++    include "typematrix(tm2030USB_func)"
++    include "typematrix(tm2030USB_alpha)"
++
++    // Control keys rows
++    section "Control" {
++        left = 27;
++        top  = 0;
++        key.gap = 0.5;
++        key.color = "grey30";
++        key.shape = "NORM";
++        row {
++            top  = 88;
++            keys { <LCTL>, <LSGT>, <MENU>, <I162> };
++        };
++        row {
++            top = 106.5;
++            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++        };
++        row {
++            top  = 88;
++            left = 166.5;
++            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++        };
++        row {
++            top = 106.5;
++            left = 166.5;
++            keys { <RALT>, <LEFT>, <DOWN>, <RGHT> };
++        };
++        row {
++            top = 106.5;
++            left = 259;
++            keys { <PGDN> };
++        };
++        row {
++            top  = 1;
++            left = 111.5;
++            vertical = true;
++            keys { <DELE>, { <BKSP>, "BKSP" }, { <RTRN>, "LFSH" } };
++        };
++    };
++}; // geometry tm2030USB-102
++
++
++// Japan / Korean 106 keys mode :
++// Same as the standard keyboard, except for following keys :
++// – <TLDE> is replaced by <HZTG>
++// – WWW key becomes <HKTG>
++// — Calc key becomes <AE13>
++// — Mail key becomes <BKSL>, and <BKSL> key becomes <AB11>
++
++// about Controls:
++// NFER/MEHU and XFER/KANJ : TMx keeps LWIN (and RWIN if it happend to exist)
++// HKTG/HIRA : TMx keeps MENU/COMP, but locates this key in alpha section
++// (see upper).
++
++xkb_geometry "tm2030USB-106" {
++    include "typematrix(tm2030_shape)"
++    include "typematrix(tm2030_MiscDiod_106)"
++    include "typematrix(tm2030_MiscDiod_on)"
++
++    description = "TypeMatrix EZ-Reach 2030 USB (106:JP mode)";
++
++    include "typematrix(tm2030USB_func)"
++
++    // Alpha-numeric keys rows
++    section "Alpha" {
++        left = 27;
++        top  = 14;
++        key.gap = 0.5;
++        key.color = "grey10";
++        key.shape = "NORM";
++        row {
++            top  = 0;
++            keys { <HZTG>,             <AE01>, <AE02>, <AE03>, <AE04>, <AE05> };
++        };
++        row {
++            top  = 18.5;
++            keys { <TAB>,              <AD01>, <AD02>, <AD03>, <AD04>, <AD05> };
++        };
++        row {
++            top  = 37;
++            keys { { <LFSH>, "LFSH" }, <AC01>, <AC02>, <AC03>, <AC04>, <AC05> };
++        };
++        row {
++            top  = 55.5;
++            left = 18.5;
++            keys {                     <AB01>, <AB02>, <AB03>, <AB04>, <AB05> };
++        };
++
++        row {
++            top  = 0;
++            left = 129.5;
++            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <AE13> };
++        };
++        row {
++            top  = 18.5;
++            left = 129.5;
++            keys { <AD06>, <AD07>, <AD08>, <AD09>, <AD10>, <AD11>, <AD12>, <BKSL> };
++        };
++        row {
++            top  = 37;
++            left = 129.5;
++            keys { <AC06>, <AC07>, <AC08>, <AC09>, <AC10>, <AC11>, { <RTSH>, "LFSH" }, <CAPS> };
++        };
++        row {
++            top  = 55.5;
++            left = 129.5;
++            keys { <AB06>, <AB07>, <AB08>, <AB09>, <AB10>, <AB11> };
++        };
++        row {
++            top  = 55.5;
++            left = 259;
++            keys { <HKTG> };
++        };
++        row {
++            top  = 74;
++            left = 74;
++            keys { { <SPCE>, "SPCE" } };
++        };
++    };
++
++    // Control keys rows
++    section "Control" {
++        left = 27;
++        top  = 0;
++        key.gap = 0.5;
++        key.color = "grey30";
++        key.shape = "NORM";
++        row {
++            top  = 88;
++            keys { <LCTL>, <I172>, <MENU>, <I162> };
++        };
++        row {
++            top = 106.5;
++            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++        };
++        row {
++            top  = 88;
++            left = 166.5;
++            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++        };
++        row {
++            top = 106.5;
++            left = 166.5;
++            keys { <RALT>, <LEFT>, <DOWN>, <RGHT> };
++        };
++        row {
++            top = 106.5;
++            left = 259;
++            keys { <PGDN> };
++        };
++        row {
++            top  = 1;
++            left = 111.5;
++            vertical = true;
++            keys { <DELE>, { <BKSP>, "BKSP" }, { <RTRN>, "LFSH" } };
++        };
++    };
++}; // geometry tm2030USB-106
+diff -Naur xkeyboard-config-0.9orig/rules/base xkeyboard-config-0.9bepo1.0tm3/rules/base
+--- xkeyboard-config-0.9orig/rules/base	2009-06-09 06:52:06.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/rules/base	2009-07-27 08:02:33.000000000 +0200
+@@ -128,6 +128,11 @@
+   omnikey101	=	northgate(omnikey101)
+   thinkpad	=	thinkpad(us)
+   thinkpadintl	=	thinkpad(intl)
++  tm2020	=	typematrix(tm2020)
++  tm2030PS2	=	typematrix(tm2030PS2)
++  tm2030USB	=	typematrix(tm2030USB)
++  tm2030USB-102	=	typematrix(tm2030USB-102)
++  tm2030USB-106	=	typematrix(tm2030USB-106)
+  $pcmodels	=	pc(%m)
+  $pcgeometries	=	pc(%m)
+   everex	=	everex(STEPnote)
+diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1.0tm3/rules/base.lst
+--- xkeyboard-config-0.9orig/rules/base.lst	2009-06-09 06:52:06.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/rules/base.lst	2009-07-27 08:02:50.000000000 +0200
+@@ -70,6 +70,11 @@
+   rapidaccess2a   IBM Rapid Access II (alternate option)
+   thinkpad        IBM ThinkPad 560Z/600/600E/A22E
+   thinkpadintl    IBM ThinkPad 560Z/600/600E/A22E, Intl
++  tm2020          EZ-Reach 2020
++  tm2030PS2       EZ-Reach 2030 PS2
++  tm2030USB       EZ-Reach 2030 USB
++  tm2030USB-102   EZ-Reach 2030 USB (102/105:EU mode)
++  tm2030USB-106   EZ-Reach 2030 USB (106:JP mode)
+   logiaccess      Logitech Access Keyboard
+   ltcd            Logitech Cordless Desktop
+   logicdit        Logitech Cordless Desktop iTouch
+@@ -301,7 +306,11 @@
+   latin9          fr: (Legacy) Alternative
+   latin9_nodeadkeys fr: (Legacy) Alternative, eliminate dead keys
+   latin9_sundeadkeys fr: (Legacy) Alternative, Sun dead keys
+-  dvorak          fr: Dvorak
++  bepo_1_0        fr: Bepo, ergonomic, Dvorak way, v1.0
++  bepo_1_0_latin9 fr: Bepo, ergonomic, Dvorak way, v1.0, latin-9 only
++  bepo            fr: Bepo, ergonomic, Dvorak way
++  bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
++  dvorak          fr: (Legacy) Dvorak
+   mac             fr: Macintosh
+   generic         gh: Multilingual
+   akan            gh: Akan
+diff -Naur xkeyboard-config-0.9orig/rules/base.m_g.part xkeyboard-config-0.9bepo1.0tm3/rules/base.m_g.part
+--- xkeyboard-config-0.9orig/rules/base.m_g.part	2009-06-09 06:52:06.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/rules/base.m_g.part	2009-07-27 07:58:47.000000000 +0200
+@@ -3,6 +3,11 @@
+   flexpro	=	keytronic(FlexPro)
+   hp6000	=	hp(omnibook)
+   omnikey101	=	northgate(omnikey101)
++  tm2020	=	typematrix(tm2020)
++  tm2030PS2	=	typematrix(tm2030PS2)
++  tm2030USB	=	typematrix(tm2030USB)
++  tm2030USB-102	=	typematrix(tm2030USB-102)
++  tm2030USB-106	=	typematrix(tm2030USB-106)
+   thinkpad	=	thinkpad(us)
+   thinkpadintl	=	thinkpad(intl)
+  $pcmodels	=	pc(%m)
+diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1.0tm3/rules/base.xml.in
+--- xkeyboard-config-0.9orig/rules/base.xml.in	2009-06-09 06:52:06.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/rules/base.xml.in	2009-07-27 07:57:30.000000000 +0200
+@@ -430,6 +430,41 @@
+     </model>
+     <model>
+       <configItem>
++        <name>tm2020</name>
++        <description>Typematrix EZ-Reach 2020</description>
++        <vendor>Typematrix</vendor>
++      </configItem>
++    </model>
++    <model>
++      <configItem>
++        <name>tm2030PS2</name>
++        <description>Typematrix EZ-Reach 2030 PS2</description>
++        <vendor>Typematrix</vendor>
++      </configItem>
++    </model>
++    <model>
++      <configItem>
++        <name>tm2030USB</name>
++        <description>Typematrix EZ-Reach 2030 USB</description>
++        <vendor>Typematrix</vendor>
++      </configItem>
++    </model>
++    <model>
++      <configItem>
++        <name>tm2030USB-102</name>
++        <description>Typematrix EZ-Reach 2030 USB (102/105:EU mode)</description>
++        <vendor>Typematrix</vendor>
++      </configItem>
++    </model>
++    <model>
++      <configItem>
++        <name>tm2030USB-106</name>
++        <description>Typematrix EZ-Reach 2030 USB (106:JP mode)</description>
++        <vendor>Typematrix</vendor>
++      </configItem>
++    </model>
++    <model>
++      <configItem>
+         <name>logiaccess</name>
+         <_description>Logitech Access Keyboard</_description>
+       </configItem>
+@@ -1576,8 +1611,32 @@
+         </variant>
+         <variant>
+           <configItem>
++            <name>bepo_1_0</name>
++            <_description>Bepo, ergonomic, Dvorak way, v1.0</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_1_0_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, v1.0, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo</name>
++            <_description>Bepo, ergonomic, Dvorak way</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
+             <name>dvorak</name>
+-            <_description>Dvorak</_description>
++            <_description>(Legacy) Dvorak</_description>
+           </configItem>
+         </variant>
+         <variant>
+diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1.0tm3/symbols/fr
+--- xkeyboard-config-0.9orig/symbols/fr	2009-06-09 06:52:08.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/symbols/fr	2009-06-09 06:55:42.000000000 +0200
+@@ -1,4 +1,4 @@
+-// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $
++// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $ -*- c -*-
+ 
+ // based on a keyboard map from an 'xkb/symbols/fr' file
+ //
+@@ -429,13 +429,189 @@
+     key <AD11>	{ [	asciicircum,  	   diaeresis,          asciitilde,           quoteright ] };
+ };
+ 
++// Bépo : Improved ergonomic french keymap using Dvorak method.
++// Built by community, see : http://www.bepo.fr
++// XOrg integration (1.0rc2 version) in 2008 by Frédéric Boiteux
++// <fboiteux at free dot fr>
++//
++// Bépo layout (1.0 version) for a pc105 keyboard (french) :
++// ┌────┐
++// │ S A│   S = Shift,  A = AltGr + Shift
++// │ s a│   s = normal, a = AltGr
++// └────┘
++//
++// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
++// │ # ¶ │ 1 „ │ 2 “ │ 3 ” │ 4 ≤ │ 5 ≥ │ 6   │ 7 ¬ │ 8 ¼ │ 9 ½ │ 0 ¾ │ ° ′ │ ` ″ ┃ ⌫ Retour┃
++// │ $ – │ " — │ « < │ » > │ ( [ │ ) ] │ @ ^ │ + ± │ - − │ / ÷ │ * × │ = ≠ │ % ‰ ┃  arrière┃
++// ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
++// ┃       ┃ B ¦ │ É ˝ │ P § │ O Œ │ È ` │ !   │ V   │ D Ð │ L   │ J Ĳ │ Z Ə │ W   ┃Entrée ┃
++// ┃Tab ↹  ┃ b | │ é ˊ │ p & │ o œ │ è ` │ ˆ ¡ │ v ˇ │ d ð │ l / │ j ĳ │ z ə │ w ̆ ┃   ⏎   ┃
++// ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
++// ┃        ┃ A Æ │ U Ù │ I ˙ │ E ¤ │ ; ̛ │ C ſ │ T Þ │ S ẞ │ R ™ │ N   │ M º │ Ç , ┃      ┃
++// ┃Maj ⇬   ┃ a æ │ u ù │ i ̈ │ e € │ , ’ │ c © │ t þ │ s ß │ r ® │ n ˜ │ m ¯ │ ç ¸ ┃      ┃
++// ┣━━━━━━━┳┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
++// ┃       ┃ Ê   │ À   │ Y ‘ │ X ’ │ : · │ K ⌨ │ ? ̉ │ Q ̣ │ G   │ H ‡ │ F ª ┃             ┃
++// ┃Shift ⇧┃ ê / │ à \ │ y { │ x } │ . … │ k ~ │ ' ¿ │ q ˚ │ g µ │ h † │ f ˛ ┃Shift ⇧      ┃
++// ┣━━━━━━━╋━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
++// ┃       ┃       ┃       ┃ Espace inséc.   Espace inséc. fin ┃       ┃       ┃       ┃
++// ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣ (Espace)      _               ␣ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
++// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
++
++
++// Version 1.0 :
++partial alphanumeric_keys
++xkb_symbols "bepo_1_0" {
++    include "level3(ralt_switch)"
++    include "keypad(oss)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v1.0";
++
++    // Modifications depuis la version précédente :
++    // * Ajout de U2328 (⌨) en AltGr+Maj+K
++    // * remplace les codes UFDDx des touches mortes spécifiques par leurs
++    //   valeur « officielles » dans Xorg depuis leur intégration :
++    //   UFDD0 = dead_stroke     -> Ufe63
++    //   UFDD1 = dead_currency   -> Ufe6f
++    //   UFDD3 = dead_belowcomma -> Ufe6e
++    //   (UFDD2 = dead_greek reste en place en attendant son
++    //    intégration dans Xorg :-)
++
++    // First row
++    key <TLDE> { [          dollar,   numbersign,        endash,       paragraph ] }; // $ # – ¶
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash, doublelowquotemark ] }; // " 1 — „
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,  leftdoublequotemark ] }; // « 2 < “
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater, rightdoublequotemark ] }; // » 3 > ”
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft,      lessthanequal ] }; // ( 4 [ ≤
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright,   greaterthanequal ] }; // ) 5 ] ≥
++    key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [              at,            6,    asciicircum                 ] }; // @ 6 ^
++    key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [            plus,            7,      plusminus,        notsign ] }; // + 7 ± ¬
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          U2212,     onequarter ] }; // - 8 − ¼
++    key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           slash,            9,       division,        onehalf ] }; // / 9 ÷ ½
++    key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        asterisk,            0,       multiply,  threequarters ] }; // * 0 × ¾
++    key <AE11> { [           equal,       degree,       notequal,        minutes ] }; // = ° ≠ ′
++    key <AE12> { [         percent,        grave,          U2030,        seconds ] }; // % ` ‰ ″
++
++    // Second row
++    key <AD01> { [               b,            B,            bar,      brokenbar ] }; // b B | ¦
++    key <AD02> { [          eacute,       Eacute,     dead_acute, dead_doubleacute ] }; // é É ˊ ˝
++    key <AD03> { [               p,            P,      ampersand,        section ] }; // p P & §
++    key <AD04> { [               o,            O,             oe,             OE ] }; // o O œ Œ
++    key <AD05> { [          egrave,       Egrave,     dead_grave,          grave ] }; // è È ` `
++    key <AD06> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
++    key <AD07> { [               v,            V,     dead_caron                 ] }; // v V ˇ
++    key <AD08> { [               d,            D,            eth,            ETH ] }; // d D ð Ð
++    key <AD09> { [               l,            L,          Ufe63                 ] }; // l L /
++    key <AD10> { [               j,            J,          U0133,          U0132 ] }; // j J ĳ Ĳ
++    key <AD11> { [               z,            Z,          schwa,          SCHWA ] }; // z Z ə Ə
++    key <AD12> { [               w,            W,     dead_breve                 ] }; // w W ̆
++
++    // Third row
++    key <AC01> { [               a,            A,             ae,             AE ] }; // a A æ Æ
++    key <AC02> { [               u,            U,         ugrave,         Ugrave ] }; // u U ù Ù
++    key <AC03> { [               i,            I, dead_diaeresis,  dead_abovedot ] }; // i I ̈ ˙
++    key <AC04> { [               e,            E,       EuroSign,          Ufe6f ] }; // e E € ¤
++    key <AC05> { [           comma,    semicolon, rightsinglequotemark, dead_horn ] }; // , ; ’ ̛
++    key <AC06> { [               c,            C,      copyright,          U017F ] }; // c C © ſ
++    key <AC07> { [               t,            T,          thorn,          THORN ] }; // t T þ Þ
++    key <AC08> { [               s,            S,         ssharp,          U1E9E ] }; // s S ß ẞ
++    key <AC09> { [               r,            R,     registered,      trademark ] }; // r R ® ™
++    key <AC10> { [               n,            N,     dead_tilde                 ] }; // n N ~
++    key <AC11> { [               m,            M,    dead_macron,      masculine ] }; // m M ̄ º
++    key <BKSL> { [        ccedilla,     Ccedilla,   dead_cedilla,          Ufe6e ] }; // ç Ç ¸ ,
++
++    // Fourth row
++    key <LSGT> { [     ecircumflex,  Ecircumflex,          slash                 ] }; // ê Ê /
++    key <AB01> { [          agrave,       Agrave,      backslash                 ] }; // à À \
++    key <AB02> { [               y,            Y,      braceleft, leftsinglequotemark  ] }; // y Y { ‘
++    key <AB03> { [               x,            X,     braceright, rightsinglequotemark ] }; // x X } ’
++    key <AB04> { [          period,        colon,       ellipsis, periodcentered ] }; // . : … ·
++    key <AB05> { [               k,            K,     asciitilde,          U2328 ] }; // k K ~ ⌨
++    key <AB06> { [      apostrophe,     question,   questiondown,      dead_hook ] }; // ' ? ¿ ̉
++    key <AB07> { [               q,            Q, dead_abovering,  dead_belowdot ] }; // q Q ˚ ̣
++    key <AB08> { [               g,            G,          UFDD2                 ] }; // g G µ
++    key <AB09> { [               h,            H,         dagger,   doubledagger ] }; // h H † ‡
++    key <AB10> { [               f,            F,    dead_ogonek,    ordfeminine ] }; // f F ̨ ª
++
++    key <SPCE> { [           space, nobreakspace,     underscore,          U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_1_0_latin9" {
++
++    // Restricts the fr(bepo_1_0) layout to latin9 symbols
++
++    include "fr(bepo_1_0)"
++    include "keypad(oss_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, v1.0, latin-9 only";
++
++    key <TLDE> { [          dollar,   numbersign,        dollar,       paragraph ] }; // $ # $ ¶
++
++    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1                                 ] }; // " 1
++    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less                 ] }; // « 2 <
++    key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [  guillemotright,            3,        greater                 ] }; // » 3 >
++    key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [       parenleft,            4,    bracketleft                 ] }; // ( 4 [
++    key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [      parenright,            5,   bracketright                 ] }; // ) 5 ]
++    key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [           minus,            8,          minus,     onequarter ] }; // - 8 - ¼
++    key <AE11> { [           equal,       degree                                 ] }; // = °
++    key <AE12> { [         percent,        grave                                 ] }; // % `
++
++    key <AD01> { [               b,            B,            bar                 ] }; // b B |
++    key <AD02> { [          eacute,       Eacute,     dead_acute                 ] }; // é É ˊ
++    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD10> { [               j,            J                                 ] }; // j J
++    key <AD11> { [               z,            Z                                 ] }; // z Z
++    key <AD12> { [               w,            W                                 ] }; // w W
++
++    key <AC03> { [               i,            I, dead_diaeresis                 ] }; // i I ̈
++    key <AC05> { [           comma,    semicolon,          comma,      dead_horn ] }; // , ; , ̛
++    key <AC06> { [               c,            C,      copyright                 ] }; // c C ©
++    key <AC08> { [               s,            S,         ssharp                 ] }; // s S ß
++    key <AC09> { [               r,            R,     registered                 ] }; // r R ®
++    key <AC11> { [               m,            M,         macron,      masculine ] }; // m M ̄ º
++
++    key <AB02> { [               y,            Y,      braceleft                 ] }; // y Y {
++    key <AB03> { [               x,            X,     braceright                 ] }; // x X }
++    key <AB04> { [          period,        colon                                 ] }; // . :
++    key <AB05> { [               k,            K,     asciitilde                 ] }; // k, K, ~
++    key <AB09> { [               h,            H                                 ] }; // h H
++    key <AB10> { [               f,            F,              f,    ordfeminine ] }; // f F   ª
++
++    // Note : on a besoin de redéfinir les niveaux 3 et 4,
++    // donc nbsp(level2) ne suffit pas !
++    key <SPCE> { [           space,  nobreakspace,    underscore,   nobreakspace ] }; // ␣ (espace insécable) _ (espace insécable)
++};
++
++
++// Dernière version :
++
++partial alphanumeric_keys
++xkb_symbols "bepo" {
++
++    // reprend la version 1.0 :
++    include "fr(bepo_1_0)"
++
++    name[Group1]= "France - Bepo, ergonomic, Dvorak way";
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_latin9" {
++
++    // Restricts the fr(bepo) layout to latin9 symbols
++
++    include "fr(bepo_1_0_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, latin-9 only";
++};
++
++
+ // Keymap Dvorak pour le Français
+ // par Josselin Mouette <josselin.mouette@ens-lyon.org>.
+ 
+ partial alphanumeric_keys
+ xkb_symbols "dvorak" {
+ 
+-    name[Group1]= "France - Dvorak";
++    name[Group1]= "France - (Legacy) Dvorak";
+ 
+     key <TLDE>  { [         oe,       OE,              ae,             AE ] };
+ 
+diff -Naur xkeyboard-config-0.9orig/symbols/symbols.dir xkeyboard-config-0.9bepo1.0tm3/symbols/symbols.dir
+--- xkeyboard-config-0.9orig/symbols/symbols.dir	2009-06-09 06:52:09.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3/symbols/symbols.dir	2009-06-09 06:55:42.000000000 +0200
+@@ -157,6 +157,10 @@
+ --p----- a------- fo(nodeadkeys)
+ --p----- a------- fr(Sundeadkeys)
+ -dp----- a------- fr(basic)
++--p----- a------- fr(bepo_1_0)
++--p----- a------- fr(bepo_1_0_latin9)
++--p----- a------- fr(bepo)
++--p----- a------- fr(bepo_latin9)
+ --p----- a------- fr(dvorak)
+ --p----- a------- fr(latin9)
+ --p----- a------- fr(latin9_Sundeadkeys)
