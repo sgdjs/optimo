@@ -1,43 +1,42 @@
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/debian/changelog xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/debian/changelog
---- xkeyboard-config-1.3-2ubuntu4.4orig/debian/changelog	2009-06-09 06:52:15.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/debian/changelog	2009-07-27 13:26:55.000000000 +0200
-@@ -1,3 +1,32 @@
-+xkeyboard-config (1.3-2ubuntu4.4.1bepo.1.0+tm3) intrepid-proposed; urgency=low
+diff -Naur xkeyboard-config-0.9orig/debian/changelog xkeyboard-config-0.9bepo1.0tm3kbd/debian/changelog
+--- xkeyboard-config-0.9orig/debian/changelog	2009-06-09 06:52:07.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/debian/changelog	2009-07-29 18:36:33.000000000 +0200
+@@ -1,3 +1,31 @@
++xkeyboard-config (0.9-4ubuntu3.1bepo.1.0+tm3kbd) gutsy; urgency=low
++
++  * Utilise l'ancien driver kbd.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 29 Jul 2009 18:36:33 +0200
++
++xkeyboard-config (0.9-4ubuntu3.1bepo.1.0+tm3) gutsy; urgency=low
 +
 +  * complète la description géométrique des claviers TypeMatrix (merci
 +    à Gildas Cotomale pour son aide).
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Mon, 27 Jul 2009 07:56:30 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Mon, 27 Jul 2009 07:55:26 +0200
 +
-+xkeyboard-config (1.3-2ubuntu4.4.1bepo.1.0+tm2) intrepid-proposed; urgency=low
++xkeyboard-config (0.9-4ubuntu3.1bepo.1.0+tm2) gutsy; urgency=low
 +
 +  * met à jour la description géométrique du clavier Typematrix
 +    TM2030USB
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 17 Jun 2009 17:01:01 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 17 Jun 2009 07:59:22 +0200
 +
-+xkeyboard-config (1.3-2ubuntu4.4.1bepo.1.0) intrepid-proposed; urgency=low
++xkeyboard-config (0.9-4ubuntu3.1bepo.1.0) gutsy; urgency=low
 +
 +  * installe la disposition Dvorak française « Bépo » en version 1.0, et
 +    nettoie les versions de développement.
 +  * Ajoute la description du clavier TypeMatrix TM2030USB.
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 17 Jun 2009 16:59:51 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 09 Jun 2009 06:58:05 +0200
 +
-+xkeyboard-config (1.3-2ubuntu4.4.1bepo+1.0rc2) intrepid-proposed; urgency=low
-+
-+  * ajoute la disposition Dvorak française « Bépo » jusqu'à la version
-+    1.0rc2.
-+
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Mon, 29 Dec 2008 18:31:44 +0100
-+
- xkeyboard-config (1.3-2ubuntu4.4) intrepid-proposed; urgency=low
+ xkeyboard-config (0.9-4ubuntu3) gutsy; urgency=low
  
-   * 003_missing_inet_keys.diff: Add missing KeySyms to enable
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/debian/geometry.dir xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/debian/geometry.dir
---- xkeyboard-config-1.3-2ubuntu4.4orig/debian/geometry.dir	2009-06-09 06:52:15.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/debian/geometry.dir	2009-07-27 18:08:48.000000000 +0200
-@@ -93,6 +93,11 @@
+   * debian/patches/romanian_comma.diff : Patch from upstream exposing
+diff -Naur xkeyboard-config-0.9orig/debian/geometry.dir xkeyboard-config-0.9bepo1.0tm3kbd/debian/geometry.dir
+--- xkeyboard-config-0.9orig/debian/geometry.dir	2009-06-09 06:52:07.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/debian/geometry.dir	2009-07-27 08:01:24.000000000 +0200
+@@ -84,6 +84,11 @@
  -------- -------- sun(type6unix)
  -------- -------- sun(x86)
  -------- -------- sun(x86tuv)
@@ -49,47 +48,51 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/debian/geometry.dir xkeyboard-con
  -------- -------- thinkpad(common)
  -------- -------- thinkpad(intl)
  -------- -------- thinkpad(us)
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/debian/symbols.dir xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/debian/symbols.dir
---- xkeyboard-config-1.3-2ubuntu4.4orig/debian/symbols.dir	2009-06-09 06:52:15.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/debian/symbols.dir	2009-06-17 17:02:13.000000000 +0200
-@@ -165,6 +165,8 @@
+diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1.0tm3kbd/debian/symbols.dir
+--- xkeyboard-config-0.9orig/debian/symbols.dir	2009-06-09 06:52:07.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/debian/symbols.dir	2009-06-09 06:55:41.000000000 +0200
+@@ -157,6 +157,10 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
  -dp----- a------- fr(basic)
 +--p----- a------- fr(bepo_1_0)
 +--p----- a------- fr(bepo_1_0_latin9)
- --p----- a------- fr(bepo)
- --p----- a------- fr(bepo_latin9)
++--p----- a------- fr(bepo)
++--p----- a------- fr(bepo_latin9)
  --p----- a------- fr(dvorak)
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/geometry.dir xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/geometry/geometry.dir
---- xkeyboard-config-1.3-2ubuntu4.4orig/geometry/geometry.dir	2009-06-09 06:52:16.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/geometry/geometry.dir	2009-07-27 18:07:35.000000000 +0200
-@@ -83,3 +83,8 @@
- -d------ -------- keytronic(FlexPro)
- -d------ -------- kinesis(model100)
- -d------ -------- macintosh(macintosh)
+ --p----- a------- fr(latin9)
+ --p----- a------- fr(latin9_Sundeadkeys)
+diff -Naur xkeyboard-config-0.9orig/geometry/geometry.dir xkeyboard-config-0.9bepo1.0tm3kbd/geometry/geometry.dir
+--- xkeyboard-config-0.9orig/geometry/geometry.dir	2009-06-09 06:52:08.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/geometry/geometry.dir	2009-07-27 07:59:29.000000000 +0200
+@@ -84,6 +84,11 @@
+ -------- -------- sun(type6unix)
+ -------- -------- sun(x86)
+ -------- -------- sun(x86tuv)
 +-------- -------- typematrix(tm2020)
 +-------- -------- typematrix(tm2030PS2)
 +-------- -------- typematrix(tm2030USB)
 +-------- -------- typematrix(tm2030USB-102)
 +-------- -------- typematrix(tm2030USB-106)
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/Makefile.am xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/geometry/Makefile.am
---- xkeyboard-config-1.3-2ubuntu4.4orig/geometry/Makefile.am	2009-06-09 06:52:16.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/geometry/Makefile.am	2009-06-17 17:09:16.000000000 +0200
-@@ -8,7 +8,7 @@
- hhk hp keytronic kinesis \
+ -------- -------- thinkpad(common)
+ -------- -------- thinkpad(intl)
+ -------- -------- thinkpad(us)
+diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.am xkeyboard-config-0.9bepo1.0tm3kbd/geometry/Makefile.am
+--- xkeyboard-config-0.9orig/geometry/Makefile.am	2009-06-09 06:52:08.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/geometry/Makefile.am	2009-06-09 06:55:42.000000000 +0200
+@@ -8,6 +8,6 @@
+ hp keytronic kinesis \
  macintosh microsoft nec \
  northgate pc sony thinkpad \
 -sun winbook README
 +sun winbook typematrix README
  
- dir_data = $(dist_geom_DATA)
- 
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/Makefile.in xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/geometry/Makefile.in
---- xkeyboard-config-1.3-2ubuntu4.4orig/geometry/Makefile.in	2009-06-09 06:52:16.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/geometry/Makefile.in	2009-06-17 17:09:28.000000000 +0200
-@@ -210,7 +210,7 @@
- hhk hp keytronic kinesis \
+ include $(top_srcdir)/xkbrules.am
+diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.in xkeyboard-config-0.9bepo1.0tm3kbd/geometry/Makefile.in
+--- xkeyboard-config-0.9orig/geometry/Makefile.in	2009-06-09 06:52:08.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/geometry/Makefile.in	2009-06-09 06:55:42.000000000 +0200
+@@ -177,7 +177,7 @@
+ hp keytronic kinesis \
  macintosh microsoft nec \
  northgate pc sony thinkpad \
 -sun winbook README
@@ -97,24 +100,26 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/Makefile.in xkeyboard-co
  
  dist_dir_DATA = $(subdir).dir
  dirdir = $(xkb_base)
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/geometry/typematrix
---- xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix	1970-01-01 01:00:00.000000000 +0100
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/geometry/typematrix	2009-07-27 18:06:54.000000000 +0200
-@@ -0,0 +1,745 @@
+diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo1.0tm3kbd/geometry/typematrix
+--- xkeyboard-config-0.9orig/geometry/typematrix	1970-01-01 01:00:00.000000000 +0100
++++ xkeyboard-config-0.9bepo1.0tm3kbd/geometry/typematrix	2009-07-29 18:37:10.000000000 +0200
+@@ -0,0 +1,747 @@
 +// -*- indent-tabs-mode: nil -*-
 +
 +// Created by Frédéric Boiteux <fboiteux (at) free (dot) fr>
 +// and Gildas Cotomale <gildas (dot) cotomale (at) gmail (dot) com>
 +
 +// Note : the special/multimedia keys (Calc, WWW, Desktop…) have a keycode
-+// <I[XX]>, found in definition file /usr/share/X11/xkb/keycodes/evdev.
-+// Fn           = <I120>;
-+// Calc         = <I148>;
-+// WWW          = <I158>;
-+// CycleWindows = <I162>;
-+// Mail         = <I163>;
-+// PlayPause    = <I172>;
-+// Desktop      = <I243>;
++// <I[XX]> to be correctly drawn. The codes aren't the good ones,
++// as some don't send scancode (Fn, Multimedia keys) or multiple ones
++// (Desktop, Shuffle) :
++// Fn           = <I06>;
++// Calc         = <I07>;
++// WWW          = <I08>;
++// CycleWindows = <I09>;
++// Mail         = <I0A>;
++// PlayPause    = <I0B>;
++// Desktop      = <I0C>;
 +
 +
 +xkb_geometry "tm2020" {
@@ -236,7 +241,7 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        };
 +        row {
 +            top  = 16.5;
-+            keys { <I120>, <LWIN>, <MENU> };
++            keys { <I06>, <LWIN>, <MENU> };
 +        };
 +        row {
 +            top  = 0;
@@ -244,7 +249,7 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +            key.shape = "NORM";
 +            keys { { <SPCE>, "SPCE"}, <RALT> };
 +            key.color = "grey20";
-+            keys { <RCTL>, <UP>, <I162>, { <KPEN>, "DHAL" } };
++            keys { <RCTL>, <UP>, <I09>, { <KPEN>, "DHAL" } };
 +        };
 +        row {
 +            top  = 16.5;
@@ -411,12 +416,12 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        row {
 +            top  = 0;
 +            left = 129.5;
-+            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I148> };
++            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I07> };
 +        };
 +        row {
 +            top  = 18.5;
 +            left = 129.5;
-+            keys { <AD06>, <AD07>, <AD08>, <AD09>, <AD10>, <AD11>, <AD12>, <I163> };
++            keys { <AD06>, <AD07>, <AD08>, <AD09>, <AD10>, <AD11>, <AD12>, <I0A> };
 +        };
 +        row {
 +            top  = 37;
@@ -431,7 +436,7 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        row {
 +            top  = 55.5;
 +            left = 259;
-+            keys { <I158> };
++            keys { <I08> };
 +        };
 +        row {
 +            top  = 74;
@@ -452,16 +457,16 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        key.shape = "NORM";
 +        row {
 +            top  = 88;
-+            keys { <LCTL>, <I172>, <MENU>, <I162> };
++            keys { <LCTL>, <I0B>, <MENU>, <I09> };
 +        };
 +        row {
 +            top = 106.5;
-+            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++            keys { <I06>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
 +        };
 +        row {
 +            top  = 88;
 +            left = 166.5;
-+            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++            keys { <I0C>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
 +        };
 +        row {
 +            top = 106.5;
@@ -554,7 +559,7 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        row {
 +            top  = 0;
 +            left = 129.5;
-+            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I120> };
++            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I06> };
 +        };
 +        row {
 +            top  = 18.5;
@@ -616,7 +621,7 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        key.shape = "NORM";
 +        row {
 +            top  = 88;
-+            keys { <I120>, <LWIN>, <MENU>, <I162> };
++            keys { <I06>, <LWIN>, <MENU>, <I09> };
 +        };
 +        row {
 +            top = 106.5;
@@ -699,16 +704,16 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        key.shape = "NORM";
 +        row {
 +            top  = 88;
-+            keys { <LCTL>, <LSGT>, <MENU>, <I162> };
++            keys { <LCTL>, <LSGT>, <MENU>, <I09> };
 +        };
 +        row {
 +            top = 106.5;
-+            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++            keys { <I06>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
 +        };
 +        row {
 +            top  = 88;
 +            left = 166.5;
-+            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++            keys { <I0C>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
 +        };
 +        row {
 +            top = 106.5;
@@ -817,16 +822,16 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        key.shape = "NORM";
 +        row {
 +            top  = 88;
-+            keys { <LCTL>, <I172>, <MENU>, <I162> };
++            keys { <LCTL>, <I0B>, <MENU>, <I09> };
 +        };
 +        row {
 +            top = 106.5;
-+            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++            keys { <I06>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
 +        };
 +        row {
 +            top  = 88;
 +            left = 166.5;
-+            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++            keys { <I0C>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
 +        };
 +        row {
 +            top = 106.5;
@@ -846,13 +851,13 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/geometry/typematrix xkeyboard-con
 +        };
 +    };
 +}; // geometry tm2030USB-106
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/rules/base xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/rules/base
---- xkeyboard-config-1.3-2ubuntu4.4orig/rules/base	2009-06-09 06:52:15.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/rules/base	2009-07-27 18:09:42.000000000 +0200
-@@ -142,6 +142,11 @@
-   flexpro	=	keytronic(FlexPro)
-   hp6000	=	hp(omnibook)
+diff -Naur xkeyboard-config-0.9orig/rules/base xkeyboard-config-0.9bepo1.0tm3kbd/rules/base
+--- xkeyboard-config-0.9orig/rules/base	2009-06-09 06:52:06.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/rules/base	2009-07-27 08:02:33.000000000 +0200
+@@ -128,6 +128,11 @@
    omnikey101	=	northgate(omnikey101)
+   thinkpad	=	thinkpad(us)
+   thinkpadintl	=	thinkpad(intl)
 +  tm2020	=	typematrix(tm2020)
 +  tm2030PS2	=	typematrix(tm2030PS2)
 +  tm2030USB	=	typematrix(tm2030USB)
@@ -861,34 +866,38 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/rules/base xkeyboard-config-1.3-2
   $pcmodels	=	pc(%m)
   $pcgeometries	=	pc(%m)
    everex	=	everex(STEPnote)
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.lst xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/rules/base.lst
---- xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.lst	2009-06-09 06:52:14.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/rules/base.lst	2009-07-27 18:10:01.000000000 +0200
-@@ -85,6 +85,11 @@
-   thinkpad60      IBM ThinkPad R60/T60/R61/T61
-   thinkpadz60     IBM ThinkPad Z60m/Z60t/Z61m/Z61t
-   ibm_spacesaver  IBM Space Saver
+diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.lst
+--- xkeyboard-config-0.9orig/rules/base.lst	2009-06-09 06:52:06.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.lst	2009-07-27 08:02:50.000000000 +0200
+@@ -70,6 +70,11 @@
+   rapidaccess2a   IBM Rapid Access II (alternate option)
+   thinkpad        IBM ThinkPad 560Z/600/600E/A22E
+   thinkpadintl    IBM ThinkPad 560Z/600/600E/A22E, Intl
 +  tm2020          EZ-Reach 2020
 +  tm2030PS2       EZ-Reach 2030 PS2
 +  tm2030USB       EZ-Reach 2030 USB
 +  tm2030USB-102   EZ-Reach 2030 USB (102/105:EU mode)
 +  tm2030USB-106   EZ-Reach 2030 USB (106:JP mode)
    logiaccess      Logitech Access Keyboard
-   logiclx300      Logitech Cordless Desktop LX-300
-   logii350        Logitech Internet 350 Keyboard
-@@ -370,6 +375,8 @@
+   ltcd            Logitech Cordless Desktop
+   logicdit        Logitech Cordless Desktop iTouch
+@@ -301,7 +306,11 @@
    latin9          fr: (Legacy) Alternative
    latin9_nodeadkeys fr: (Legacy) Alternative, eliminate dead keys
    latin9_sundeadkeys fr: (Legacy) Alternative, Sun dead keys
+-  dvorak          fr: Dvorak
 +  bepo_1_0        fr: Bepo, ergonomic, Dvorak way, v1.0
 +  bepo_1_0_latin9 fr: Bepo, ergonomic, Dvorak way, v1.0, latin-9 only
-   bepo            fr: Bepo, ergonomic, Dvorak way
-   bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
-   dvorak          fr: Dvorak
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.m_g.part xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/rules/base.m_g.part
---- xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.m_g.part	2009-06-09 06:52:14.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/rules/base.m_g.part	2009-07-27 18:06:54.000000000 +0200
-@@ -5,6 +5,11 @@
++  bepo            fr: Bepo, ergonomic, Dvorak way
++  bepo_latin9     fr: Bepo, ergonomic, Dvorak way, latin-9 only
++  dvorak          fr: (Legacy) Dvorak
+   mac             fr: Macintosh
+   generic         gh: Multilingual
+   akan            gh: Akan
+diff -Naur xkeyboard-config-0.9orig/rules/base.m_g.part xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.m_g.part
+--- xkeyboard-config-0.9orig/rules/base.m_g.part	2009-06-09 06:52:06.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.m_g.part	2009-07-27 07:58:47.000000000 +0200
+@@ -3,6 +3,11 @@
    flexpro	=	keytronic(FlexPro)
    hp6000	=	hp(omnibook)
    omnikey101	=	northgate(omnikey101)
@@ -897,13 +906,13 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.m_g.part xkeyboard-con
 +  tm2030USB	=	typematrix(tm2030USB)
 +  tm2030USB-102	=	typematrix(tm2030USB-102)
 +  tm2030USB-106	=	typematrix(tm2030USB-106)
+   thinkpad	=	thinkpad(us)
+   thinkpadintl	=	thinkpad(intl)
   $pcmodels	=	pc(%m)
-  $pcgeometries	=	pc(%m)
-   everex	=	everex(STEPnote)
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.xml.in xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/rules/base.xml.in
---- xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.xml.in	2009-06-09 06:52:14.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/rules/base.xml.in	2009-07-27 18:06:54.000000000 +0200
-@@ -604,6 +604,41 @@
+diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.xml.in
+--- xkeyboard-config-0.9orig/rules/base.xml.in	2009-06-09 06:52:06.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.xml.in	2009-07-27 07:57:30.000000000 +0200
+@@ -430,6 +430,41 @@
      </model>
      <model>
        <configItem>
@@ -944,8 +953,8 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.xml.in xkeyboard-confi
 +      <configItem>
          <name>logiaccess</name>
          <_description>Logitech Access Keyboard</_description>
-         <vendor>Logitech</vendor>
-@@ -2225,6 +2260,18 @@
+       </configItem>
+@@ -1576,8 +1611,32 @@
          </variant>
          <variant>
            <configItem>
@@ -961,67 +970,72 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/rules/base.xml.in xkeyboard-confi
 +        </variant>
 +        <variant>
 +          <configItem>
-             <name>bepo</name>
-             <_description>Bepo, ergonomic, Dvorak way</_description>
++            <name>bepo</name>
++            <_description>Bepo, ergonomic, Dvorak way</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>bepo_latin9</name>
++            <_description>Bepo, ergonomic, Dvorak way, latin-9 only</_description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
+             <name>dvorak</name>
+-            <_description>Dvorak</_description>
++            <_description>(Legacy) Dvorak</_description>
            </configItem>
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/symbols/fr xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/symbols/fr
---- xkeyboard-config-1.3-2ubuntu4.4orig/symbols/fr	2009-06-09 06:52:16.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/symbols/fr	2009-06-17 17:04:05.000000000 +0200
-@@ -430,98 +430,168 @@
+         </variant>
+         <variant>
+diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1.0tm3kbd/symbols/fr
+--- xkeyboard-config-0.9orig/symbols/fr	2009-06-09 06:52:08.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/symbols/fr	2009-06-09 06:55:42.000000000 +0200
+@@ -1,4 +1,4 @@
+-// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $
++// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $ -*- c -*-
+ 
+ // based on a keyboard map from an 'xkb/symbols/fr' file
+ //
+@@ -429,13 +429,189 @@
+     key <AD11>	{ [	asciicircum,  	   diaeresis,          asciitilde,           quoteright ] };
  };
  
- // Bépo : Improved ergonomic french keymap using Dvorak method.
--// Built by community on 'Dvorak Fr' mailing list :
--// dvorak-fr@gpl.insa-lyon.fr and on its wiki : http://gpl.insa-lyon.fr/Dvorak-Fr/ .
--// XOrg integration in 2006 by Frédéric Boiteux <fboiteux @ free.fr>
++// Bépo : Improved ergonomic french keymap using Dvorak method.
 +// Built by community, see : http://www.bepo.fr
 +// XOrg integration (1.0rc2 version) in 2008 by Frédéric Boiteux
 +// <fboiteux at free dot fr>
- //
--// Bépo layout (6.2.1.1 version) for a pc105 keyboard (french) :
++//
 +// Bépo layout (1.0 version) for a pc105 keyboard (french) :
- // ┌────┐
- // │ S A│   S = Shift,  A = AltGr + Shift
- // │ s a│   s = normal, a = AltGr
- // └────┘
- //
- // ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
--// │ $   │ 1 ¹ │ 2 ² │ 3 ³ │ 4 ° │ 5 ˚ │ 6   │ 7   │ 8   │ 9   │ 0   │ ^   │ µ   ┃ ⌫ Retour┃
--// │ @ # │ _ { │ " } │ « < │ » > │ ( [ │ ) ] │ + ± │ - ¬ │ * × │ / ÷ │ = ¯ │ %   ┃  arrière┃
++// ┌────┐
++// │ S A│   S = Shift,  A = AltGr + Shift
++// │ s a│   s = normal, a = AltGr
++// └────┘
++//
++// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
 +// │ # ¶ │ 1 „ │ 2 “ │ 3 ” │ 4 ≤ │ 5 ≥ │ 6   │ 7 ¬ │ 8 ¼ │ 9 ½ │ 0 ¾ │ ° ′ │ ` ″ ┃ ⌫ Retour┃
 +// │ $ – │ " — │ « < │ » > │ ( [ │ ) ] │ @ ^ │ + ± │ - − │ / ÷ │ * × │ = ≠ │ % ‰ ┃  arrière┃
- // ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
--// ┃       ┃ B   │ É ˊ │ P ¶ │ O Œ │ È ` │ Ç   │ V   │ D Ð │ L   │ F   │ J   │ Z   ┃Entrée ┃
--// ┃Tab ↹  ┃ b | │ é & │ p § │ o œ │ è ` │ ç   │ v   │ d ð │ l £ │ f ª │ j   │ z   ┃   ⏎   ┃
++// ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
 +// ┃       ┃ B ¦ │ É ˝ │ P § │ O Œ │ È ` │ !   │ V   │ D Ð │ L   │ J Ĳ │ Z Ə │ W   ┃Entrée ┃
 +// ┃Tab ↹  ┃ b | │ é ˊ │ p & │ o œ │ è ` │ ˆ ¡ │ v ˇ │ d ð │ l / │ j ĳ │ z ə │ w ̆ ┃   ⏎   ┃
- // ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
--// ┃        ┃ A Æ │ U Ù │ I ˇ │ E   │ ?   │ C ¢ │ T Þ │ S   │ N   │ R   │ M   │ !   ┃      ┃
--// ┃Maj ⇬   ┃ a æ │ u ù │ i ̈ │ e € │ , ¿ │ c © │ t þ │ s ß │ n   │ r ® │ m º │ ˆ ¡ ┃      ┃
++// ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
 +// ┃        ┃ A Æ │ U Ù │ I ˙ │ E ¤ │ ; ̛ │ C ſ │ T Þ │ S ẞ │ R ™ │ N   │ M º │ Ç , ┃      ┃
 +// ┃Maj ⇬   ┃ a æ │ u ù │ i ̈ │ e € │ , ’ │ c © │ t þ │ s ß │ r ® │ n ˜ │ m ¯ │ ç ¸ ┃      ┃
- // ┣━━━━━━━┳┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
--// ┃       ┃ ù   │ À ˜ │ H   │ Y   │ : · │ K   │ ;   │ Q   │ G   │ X   │ W   ┃             ┃
--// ┃Shift ⇧┃ ê / │ à ~ │ h ! │ y ¥ │ . \ │ k   │ '   │ q   │ g   │ x   │ w   ┃Shift ⇧      ┃
++// ┣━━━━━━━┳┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
 +// ┃       ┃ Ê   │ À   │ Y ‘ │ X ’ │ : · │ K ⌨ │ ? ̉ │ Q ̣ │ G   │ H ‡ │ F ª ┃             ┃
 +// ┃Shift ⇧┃ ê / │ à \ │ y { │ x } │ . … │ k ~ │ ' ¿ │ q ˚ │ g µ │ h † │ f ˛ ┃Shift ⇧      ┃
- // ┣━━━━━━━╋━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
--// ┃       ┃       ┃       ┃ ⍽ Espace insécable              ␣ ┃       ┃       ┃       ┃
--// ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣ Espace                        ␣ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
++// ┣━━━━━━━╋━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
 +// ┃       ┃       ┃       ┃ Espace inséc.   Espace inséc. fin ┃       ┃       ┃       ┃
 +// ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣ (Espace)      _               ␣ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
- // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
--partial alphanumeric_keys
--xkb_symbols "bepo" {
- 
++// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
++
 +
 +// Version 1.0 :
 +partial alphanumeric_keys
 +xkb_symbols "bepo_1_0" {
 +    include "level3(ralt_switch)"
-     include "keypad(oss)"
- 
--    name[Group1]= "France - Bepo, ergonomic, Dvorak way";
++    include "keypad(oss)"
++
 +    name[Group1]= "France - Bepo, ergonomic, Dvorak way, v1.0";
 +
 +    // Modifications depuis la version précédente :
@@ -1033,21 +1047,8 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/symbols/fr xkeyboard-config-1.3-2
 +    //   UFDD3 = dead_belowcomma -> Ufe6e
 +    //   (UFDD2 = dead_greek reste en place en attendant son
 +    //    intégration dans Xorg :-)
- 
-     // First row
--    key <TLDE> { [              at,       dollar,     numbersign                 ] }; // @ $ #
--    key <AE01> { [      underscore,            1,      braceleft,    onesuperior ] }; // _ 1 { ¹
--    key <AE02> { [        quotedbl,            2,     braceright,    twosuperior ] }; // " 2 } ²
--    key <AE03> { [   guillemotleft,            3,           less,  threesuperior ] }; // « 3 < ³
--    key <AE04> { [  guillemotright,            4,        greater,         degree ] }; // » 4 > °
--    key <AE05> { [       parenleft,            5,    bracketleft, dead_abovering ] }; // ( 5 [ ˚
--    key <AE06> { [      parenright,            6,   bracketright                 ] }; // ) 6 ]
--    key <AE07> { [            plus,            7,      plusminus                 ] }; // + 7 ±
--    key <AE08> { [           minus,            8,        notsign                 ] }; // - 8 ¬
--    key <AE09> { [        asterisk,            9,       multiply                 ] }; // * 9 ×
--    key <AE10> { [           slash,            0,       division                 ] }; // / 0 ÷
--    key <AE11> { [           equal,  asciicircum,         macron                 ] }; // = ^ ¯
--    key <AE12> { [         percent,           mu                                 ] }; // % µ
++
++    // First row
 +    key <TLDE> { [          dollar,   numbersign,        endash,       paragraph ] }; // $ # – ¶
 +    key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        quotedbl,            1,         emdash, doublelowquotemark ] }; // " 1 — „
 +    key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [   guillemotleft,            2,           less,  leftdoublequotemark ] }; // « 2 < “
@@ -1061,44 +1062,24 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/symbols/fr xkeyboard-config-1.3-2
 +    key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [        asterisk,            0,       multiply,  threequarters ] }; // * 0 × ¾
 +    key <AE11> { [           equal,       degree,       notequal,        minutes ] }; // = ° ≠ ′
 +    key <AE12> { [         percent,        grave,          U2030,        seconds ] }; // % ` ‰ ″
- 
-     // Second row
--    key <AD01> { [               b,            B,            bar                 ] }; // b B |
--    key <AD02> { [          eacute,       Eacute,      ampersand,     dead_acute ] }; // é É & ˊ
--    key <AD03> { [               p,            P,        section,      paragraph ] }; // p P § ¶
++
++    // Second row
 +    key <AD01> { [               b,            B,            bar,      brokenbar ] }; // b B | ¦
 +    key <AD02> { [          eacute,       Eacute,     dead_acute, dead_doubleacute ] }; // é É ˊ ˝
 +    key <AD03> { [               p,            P,      ampersand,        section ] }; // p P & §
-     key <AD04> { [               o,            O,             oe,             OE ] }; // o O œ Œ
--    key <AD05> { [          egrave,       Egrave,          grave,     dead_grave ] }; // è È ` `
--    key <AD06> { [        ccedilla,     Ccedilla                                 ] }; // ç Ç
--    key <AD07> { [               v,            V                                 ] }; // v V
++    key <AD04> { [               o,            O,             oe,             OE ] }; // o O œ Œ
 +    key <AD05> { [          egrave,       Egrave,     dead_grave,          grave ] }; // è È ` `
 +    key <AD06> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
 +    key <AD07> { [               v,            V,     dead_caron                 ] }; // v V ˇ
-     key <AD08> { [               d,            D,            eth,            ETH ] }; // d D ð Ð
--    key <AD09> { [               l,            L,       sterling                 ] }; // l L £
--    key <AD10> { [               f,            F,    ordfeminine                 ] }; // f F ª
--    key <AD11> { [               j,            J                                 ] }; // j J
--    key <AD12> { [               z,            Z                                 ] }; // z Z
++    key <AD08> { [               d,            D,            eth,            ETH ] }; // d D ð Ð
 +    key <AD09> { [               l,            L,          Ufe63                 ] }; // l L /
 +    key <AD10> { [               j,            J,          U0133,          U0132 ] }; // j J ĳ Ĳ
 +    key <AD11> { [               z,            Z,          schwa,          SCHWA ] }; // z Z ə Ə
 +    key <AD12> { [               w,            W,     dead_breve                 ] }; // w W ̆
- 
-     // Third row
-     key <AC01> { [               a,            A,             ae,             AE ] }; // a A æ Æ
-     key <AC02> { [               u,            U,         ugrave,         Ugrave ] }; // u U ù Ù
--    key <AC03> { [               i,            I, dead_diaeresis,     dead_caron ] }; // i I ̈ ˇ
--    key <AC04> { [               e,            E,       EuroSign                 ] }; // e E €
--    key <AC05> { [           comma,     question,   questiondown                 ] }; // , ? ¿
--    key <AC06> { [               c,            C,      copyright,           cent ] }; // c C © ¢
--    key <AC07> { [               t,            T,          thorn,          Thorn ] }; // t T þ Þ
--    key <AC08> { [               s,            S,         ssharp                 ] }; // s S ß
--    key <AC09> { [               n,            N                                 ] }; // n N
--    key <AC10> { [               r,            R,     registered                 ] }; // r R ®
--    key <AC11> { [               m,            M,      masculine                 ] }; // m M º
--    key <BKSL> { [ dead_circumflex,       exclam,     exclamdown                 ] }; // ^ ! ¡
++
++    // Third row
++    key <AC01> { [               a,            A,             ae,             AE ] }; // a A æ Æ
++    key <AC02> { [               u,            U,         ugrave,         Ugrave ] }; // u U ù Ù
 +    key <AC03> { [               i,            I, dead_diaeresis,  dead_abovedot ] }; // i I ̈ ˙
 +    key <AC04> { [               e,            E,       EuroSign,          Ufe6f ] }; // e E € ¤
 +    key <AC05> { [           comma,    semicolon, rightsinglequotemark, dead_horn ] }; // , ; ’ ̛
@@ -1109,19 +1090,8 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/symbols/fr xkeyboard-config-1.3-2
 +    key <AC10> { [               n,            N,     dead_tilde                 ] }; // n N ~
 +    key <AC11> { [               m,            M,    dead_macron,      masculine ] }; // m M ̄ º
 +    key <BKSL> { [        ccedilla,     Ccedilla,   dead_cedilla,          Ufe6e ] }; // ç Ç ¸ ,
- 
-     // Fourth row
--    key <LSGT> { [     ecircumflex,       ugrave,          slash                 ] }; // ê ù /
--    key <AB01> { [          agrave,       Agrave,     asciitilde,     dead_tilde ] }; // à À ~ ~
--    key <AB02> { [               h,            H,         exclam                 ] }; // h H !
--    key <AB03> { [               y,            Y,            yen                 ] }; // y Y ¥
--    key <AB04> { [          period,        colon,      backslash, periodcentered ] }; // . : \ ·
--    key <AB05> { [               k,            K                                 ] }; // k K
--    key <AB06> { [      apostrophe,    semicolon                                 ] }; // ' ;
--    key <AB07> { [               q,            Q,         oslash,       Ooblique ] }; // q Q ø Ø
--    key <AB08> { [               g,            G                                 ] }; // g G
--    key <AB09> { [               x,            X                                 ] }; // x X
--    key <AB10> { [               w,            W                                 ] }; // w W
++
++    // Fourth row
 +    key <LSGT> { [     ecircumflex,  Ecircumflex,          slash                 ] }; // ê Ê /
 +    key <AB01> { [          agrave,       Agrave,      backslash                 ] }; // à À \
 +    key <AB02> { [               y,            Y,      braceleft, leftsinglequotemark  ] }; // y Y { ‘
@@ -1133,12 +1103,10 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/symbols/fr xkeyboard-config-1.3-2
 +    key <AB08> { [               g,            G,          UFDD2                 ] }; // g G µ
 +    key <AB09> { [               h,            H,         dagger,   doubledagger ] }; // h H † ‡
 +    key <AB10> { [               f,            F,    dead_ogonek,    ordfeminine ] }; // f F ̨ ª
- 
--    key <SPCE> { [           space, nobreakspace,          space,          space ] }; // ␣ ⍽ (espace insécable) ␣ ␣
++
 +    key <SPCE> { [           space, nobreakspace,     underscore,          U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
 +};
- 
--    include "level3(ralt_switch)"
++
 +partial alphanumeric_keys
 +xkb_symbols "bepo_1_0_latin9" {
 +
@@ -1196,44 +1164,41 @@ diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/symbols/fr xkeyboard-config-1.3-2
 +    include "fr(bepo_1_0)"
 +
 +    name[Group1]= "France - Bepo, ergonomic, Dvorak way";
- };
- 
- partial alphanumeric_keys
-@@ -529,12 +599,9 @@
- 
-     // Restricts the fr(bepo) layout to latin9 symbols
- 
--    include "keypad(oss_latin9)"
--    include "fr(bepo)"
++};
++
++partial alphanumeric_keys
++xkb_symbols "bepo_latin9" {
++
++    // Restricts the fr(bepo) layout to latin9 symbols
++
 +    include "fr(bepo_1_0_latin9)"
++
++    name[Group1]="France - Bepo, ergonomic, Dvorak way, latin-9 only";
++};
++
++
+ // Keymap Dvorak pour le Français
+ // par Josselin Mouette <josselin.mouette@ens-lyon.org>.
  
-     name[Group1]="France - Bepo, ergonomic, Dvorak way, latin-9 only";
--
--    // at now, no difference (oss keypad excepted), but will change !
- };
- 
- // Author   : Francis Leboutte, http://www.algo.be/ergo/dvorak-fr.html
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/symbols/inet xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/symbols/inet
---- xkeyboard-config-1.3-2ubuntu4.4orig/symbols/inet	2009-06-09 06:52:17.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/symbols/inet	2009-06-17 18:00:31.000000000 +0200
-@@ -911,7 +911,7 @@
  partial alphanumeric_keys
- xkb_symbols "fscaa1667g" {
-    include "inet(media_common)"
--   key <I32>   {       [ XF86WWW               ]       };
-+   key <I32>   {       [ XF86MyComputer        ]       };
-    key <I6C>   {       [ XF86Mail              ]       };
- };
+ xkb_symbols "dvorak" {
  
-diff -Naur xkeyboard-config-1.3-2ubuntu4.4orig/symbols/symbols.dir xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/symbols/symbols.dir
---- xkeyboard-config-1.3-2ubuntu4.4orig/symbols/symbols.dir	2009-06-09 06:52:17.000000000 +0200
-+++ xkeyboard-config-1.3-2ubuntu4.4bepo1.0tm3/symbols/symbols.dir	2009-06-17 17:02:33.000000000 +0200
-@@ -17,6 +17,8 @@
- --p----- a------- fr(latin9_Sundeadkeys)
- --p----- a------- fr(latin9_sundeadkeys)
- --p----- a------- fr(latin9_nodeadkeys)
+-    name[Group1]= "France - Dvorak";
++    name[Group1]= "France - (Legacy) Dvorak";
+ 
+     key <TLDE>  { [         oe,       OE,              ae,             AE ] };
+ 
+diff -Naur xkeyboard-config-0.9orig/symbols/symbols.dir xkeyboard-config-0.9bepo1.0tm3kbd/symbols/symbols.dir
+--- xkeyboard-config-0.9orig/symbols/symbols.dir	2009-06-09 06:52:09.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/symbols/symbols.dir	2009-06-09 06:55:42.000000000 +0200
+@@ -157,6 +157,10 @@
+ --p----- a------- fo(nodeadkeys)
+ --p----- a------- fr(Sundeadkeys)
+ -dp----- a------- fr(basic)
 +--p----- a------- fr(bepo_1_0)
 +--p----- a------- fr(bepo_1_0_latin9)
- --p----- a------- fr(bepo)
- --p----- a------- fr(bepo_latin9)
++--p----- a------- fr(bepo)
++--p----- a------- fr(bepo_latin9)
  --p----- a------- fr(dvorak)
+ --p----- a------- fr(latin9)
+ --p----- a------- fr(latin9_Sundeadkeys)

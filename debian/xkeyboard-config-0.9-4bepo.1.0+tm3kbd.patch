@@ -1,35 +1,115 @@
-diff -Naur xkeyboard-config-0.9orig/debian/changelog xkeyboard-config-0.9bepo1.0tm3/debian/changelog
---- xkeyboard-config-0.9orig/debian/changelog	2009-06-09 06:52:07.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/debian/changelog	2009-07-27 13:26:42.000000000 +0200
-@@ -1,3 +1,25 @@
-+xkeyboard-config (0.9-4ubuntu3.1bepo.1.0+tm3) gutsy; urgency=low
+diff -Naur xkeyboard-config-0.9orig/debian/changelog xkeyboard-config-0.9bepo1.0tm3kbd/debian/changelog
+--- xkeyboard-config-0.9orig/debian/changelog	2008-09-17 21:28:56.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/debian/changelog	2009-07-29 18:34:40.000000000 +0200
+@@ -1,3 +1,105 @@
++xkeyboard-config (0.9-4.1bepo.1.0+tm3kbd) unstable; urgency=low
++
++  * Utilise l'ancien driver kbd.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 29 Jul 2009 18:34:40 +0200
++
++xkeyboard-config (0.9-4.1bepo.1.0+tm3) unstable; urgency=low
 +
 +  * complète la description géométrique des claviers TypeMatrix (merci
 +    à Gildas Cotomale pour son aide).
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Mon, 27 Jul 2009 07:55:26 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Mon, 27 Jul 2009 07:09:56 +0200
 +
-+xkeyboard-config (0.9-4ubuntu3.1bepo.1.0+tm2) gutsy; urgency=low
++xkeyboard-config (0.9-4.1bepo.1.0+tm2) unstable; urgency=low
 +
 +  * met à jour la description géométrique du clavier Typematrix
 +    TM2030USB
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 17 Jun 2009 07:59:22 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 17 Jun 2009 07:33:31 +0200
 +
-+xkeyboard-config (0.9-4ubuntu3.1bepo.1.0) gutsy; urgency=low
++xkeyboard-config (0.9-4.1bepo.1.0) unstable; urgency=low
 +
 +  * installe la disposition Dvorak française « Bépo » en version 1.0, et
 +    nettoie les versions de développement.
 +  * Ajoute la description du clavier TypeMatrix TM2030USB.
 +
-+ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 09 Jun 2009 06:58:05 +0200
++ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 03 Jun 2009 17:52:13 +0200
 +
- xkeyboard-config (0.9-4ubuntu3) gutsy; urgency=low
++xkeyboard-config (0.9-4.1bepo+1.0rc2.2) unstable; urgency=low
++
++  * Corrige des « oublis » depuis la disposition 1.0rc1 : place de ≤, ≥,
++    le caron mort et ¡.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Thu, 16 Oct 2008 07:25:00 +0200
++
++xkeyboard-config (0.9-4.1bepo+1.0rc2) unstable; urgency=low
++
++  * ajoute la disposition Dvorak française « Bépo » jusqu'à la version
++    1.0rc2.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Wed, 17 Sep 2008 21:45:53 +0200
++
++xkeyboard-config (0.9-4.1bepo+1.0rc1) unstable; urgency=low
++
++  * renomme la version 0.6.7 en 1.0rc1 (sans changement dans la disposition).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Mon,  4 Aug 2008 20:52:38 +0200
++
++xkeyboard-config (0.9-4.1bepo6700) unstable; urgency=low
++
++  * Non-maintainer upload (Ĳsselmeer release :-).
++  * add new « Bépo » french Dvorak layout up to 0.6.7 version.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 22 Jul 2008 17:37:25 +0200
++
++xkeyboard-config (0.9-4.1bepo6600) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * add new « Bépo » french Dvorak layout up to 0.6.6 version.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue, 17 Jun 2008 18:59:30 +0200
++
++xkeyboard-config (0.9-4.1bepo6510) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * add new « Bépo » french Dvorak layout up to 0.6.5.1 version.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Sat, 22 Mar 2008 08:35:21 +0100
++
++xkeyboard-config (0.9-4.1bepo6400) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * Add new « Bépo » french Dvorak layout (until 0.6.4 version).
++  * revert ¶ and § inversion from 6.2.2.4.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Sun, 11 Nov 2007 10:28:52 +0100
++
++xkeyboard-config (0.9-4.1bepo6300f2) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * Add a « bepo » variant which point to latest version
++    (i.e. 0.6.3) ; it's mainly designed for people having selected
++    bepo from Xorg's CVS snapshot...
++  * use « nbsp » include file when possible to factorize definitions.
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Fri, 28 Sep 2007 21:22:01 +0200
++
++xkeyboard-config (0.9-4.1bepo6300f) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * Add new « Bépo » french Dvorak layout (until 0.6.3 version,
++    with my variant).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue,  1 Aug 2007 21:02:27 +0200
++
++xkeyboard-config (0.9-4.1bepo6224) unstable; urgency=low
++
++  * Non-maintainer upload.
++  * Add new « Bépo » french Dvorak layout (until 6224 version).
++
++ -- Frédéric Boiteux <fboiteux@free.fr>  Tue,  1 May 2007 20:34:12 +0200
++
+ xkeyboard-config (0.9-4) unstable; urgency=low
  
-   * debian/patches/romanian_comma.diff : Patch from upstream exposing
-diff -Naur xkeyboard-config-0.9orig/debian/geometry.dir xkeyboard-config-0.9bepo1.0tm3/debian/geometry.dir
---- xkeyboard-config-0.9orig/debian/geometry.dir	2009-06-09 06:52:07.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/debian/geometry.dir	2009-07-27 08:01:24.000000000 +0200
+   [ Denis Barbier ]
+diff -Naur xkeyboard-config-0.9orig/debian/geometry.dir xkeyboard-config-0.9bepo1.0tm3kbd/debian/geometry.dir
+--- xkeyboard-config-0.9orig/debian/geometry.dir	2008-09-17 21:28:56.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/debian/geometry.dir	2009-07-27 07:22:51.000000000 +0200
 @@ -84,6 +84,11 @@
  -------- -------- sun(type6unix)
  -------- -------- sun(x86)
@@ -42,9 +122,9 @@ diff -Naur xkeyboard-config-0.9orig/debian/geometry.dir xkeyboard-config-0.9bepo
  -------- -------- thinkpad(common)
  -------- -------- thinkpad(intl)
  -------- -------- thinkpad(us)
-diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1.0tm3/debian/symbols.dir
---- xkeyboard-config-0.9orig/debian/symbols.dir	2009-06-09 06:52:07.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/debian/symbols.dir	2009-06-09 06:55:41.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1.0tm3kbd/debian/symbols.dir
+--- xkeyboard-config-0.9orig/debian/symbols.dir	2008-09-17 21:28:56.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/debian/symbols.dir	2009-06-03 17:47:34.000000000 +0200
 @@ -157,6 +157,10 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
@@ -56,9 +136,9 @@ diff -Naur xkeyboard-config-0.9orig/debian/symbols.dir xkeyboard-config-0.9bepo1
  --p----- a------- fr(dvorak)
  --p----- a------- fr(latin9)
  --p----- a------- fr(latin9_Sundeadkeys)
-diff -Naur xkeyboard-config-0.9orig/geometry/geometry.dir xkeyboard-config-0.9bepo1.0tm3/geometry/geometry.dir
---- xkeyboard-config-0.9orig/geometry/geometry.dir	2009-06-09 06:52:08.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/geometry/geometry.dir	2009-07-27 07:59:29.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/geometry/geometry.dir xkeyboard-config-0.9bepo1.0tm3kbd/geometry/geometry.dir
+--- xkeyboard-config-0.9orig/geometry/geometry.dir	2008-09-17 21:28:56.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/geometry/geometry.dir	2009-07-27 07:21:17.000000000 +0200
 @@ -84,6 +84,11 @@
  -------- -------- sun(type6unix)
  -------- -------- sun(x86)
@@ -71,9 +151,9 @@ diff -Naur xkeyboard-config-0.9orig/geometry/geometry.dir xkeyboard-config-0.9be
  -------- -------- thinkpad(common)
  -------- -------- thinkpad(intl)
  -------- -------- thinkpad(us)
-diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.am xkeyboard-config-0.9bepo1.0tm3/geometry/Makefile.am
---- xkeyboard-config-0.9orig/geometry/Makefile.am	2009-06-09 06:52:08.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/geometry/Makefile.am	2009-06-09 06:55:42.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.am xkeyboard-config-0.9bepo1.0tm3kbd/geometry/Makefile.am
+--- xkeyboard-config-0.9orig/geometry/Makefile.am	2006-09-16 22:55:56.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/geometry/Makefile.am	2009-06-06 14:34:14.000000000 +0200
 @@ -8,6 +8,6 @@
  hp keytronic kinesis \
  macintosh microsoft nec \
@@ -82,9 +162,9 @@ diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.am xkeyboard-config-0.9bep
 +sun winbook typematrix README
  
  include $(top_srcdir)/xkbrules.am
-diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.in xkeyboard-config-0.9bepo1.0tm3/geometry/Makefile.in
---- xkeyboard-config-0.9orig/geometry/Makefile.in	2009-06-09 06:52:08.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/geometry/Makefile.in	2009-06-09 06:55:42.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.in xkeyboard-config-0.9bepo1.0tm3kbd/geometry/Makefile.in
+--- xkeyboard-config-0.9orig/geometry/Makefile.in	2006-10-09 00:36:03.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/geometry/Makefile.in	2009-06-06 14:34:24.000000000 +0200
 @@ -177,7 +177,7 @@
  hp keytronic kinesis \
  macintosh microsoft nec \
@@ -94,24 +174,26 @@ diff -Naur xkeyboard-config-0.9orig/geometry/Makefile.in xkeyboard-config-0.9bep
  
  dist_dir_DATA = $(subdir).dir
  dirdir = $(xkb_base)
-diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo1.0tm3/geometry/typematrix
+diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo1.0tm3kbd/geometry/typematrix
 --- xkeyboard-config-0.9orig/geometry/typematrix	1970-01-01 01:00:00.000000000 +0100
-+++ xkeyboard-config-0.9bepo1.0tm3/geometry/typematrix	2009-07-27 07:57:30.000000000 +0200
-@@ -0,0 +1,745 @@
++++ xkeyboard-config-0.9bepo1.0tm3kbd/geometry/typematrix	2009-07-29 18:33:00.000000000 +0200
+@@ -0,0 +1,747 @@
 +// -*- indent-tabs-mode: nil -*-
 +
 +// Created by Frédéric Boiteux <fboiteux (at) free (dot) fr>
 +// and Gildas Cotomale <gildas (dot) cotomale (at) gmail (dot) com>
 +
 +// Note : the special/multimedia keys (Calc, WWW, Desktop…) have a keycode
-+// <I[XX]>, found in definition file /usr/share/X11/xkb/keycodes/evdev.
-+// Fn           = <I120>;
-+// Calc         = <I148>;
-+// WWW          = <I158>;
-+// CycleWindows = <I162>;
-+// Mail         = <I163>;
-+// PlayPause    = <I172>;
-+// Desktop      = <I243>;
++// <I[XX]> to be correctly drawn. The codes aren't the good ones,
++// as some don't send scancode (Fn, Multimedia keys) or multiple ones
++// (Desktop, Shuffle) :
++// Fn           = <I06>;
++// Calc         = <I07>;
++// WWW          = <I08>;
++// CycleWindows = <I09>;
++// Mail         = <I0A>;
++// PlayPause    = <I0B>;
++// Desktop      = <I0C>;
 +
 +
 +xkb_geometry "tm2020" {
@@ -233,7 +315,7 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        };
 +        row {
 +            top  = 16.5;
-+            keys { <I120>, <LWIN>, <MENU> };
++            keys { <I06>, <LWIN>, <MENU> };
 +        };
 +        row {
 +            top  = 0;
@@ -241,7 +323,7 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +            key.shape = "NORM";
 +            keys { { <SPCE>, "SPCE"}, <RALT> };
 +            key.color = "grey20";
-+            keys { <RCTL>, <UP>, <I162>, { <KPEN>, "DHAL" } };
++            keys { <RCTL>, <UP>, <I09>, { <KPEN>, "DHAL" } };
 +        };
 +        row {
 +            top  = 16.5;
@@ -408,12 +490,12 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        row {
 +            top  = 0;
 +            left = 129.5;
-+            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I148> };
++            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I07> };
 +        };
 +        row {
 +            top  = 18.5;
 +            left = 129.5;
-+            keys { <AD06>, <AD07>, <AD08>, <AD09>, <AD10>, <AD11>, <AD12>, <I163> };
++            keys { <AD06>, <AD07>, <AD08>, <AD09>, <AD10>, <AD11>, <AD12>, <I0A> };
 +        };
 +        row {
 +            top  = 37;
@@ -428,7 +510,7 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        row {
 +            top  = 55.5;
 +            left = 259;
-+            keys { <I158> };
++            keys { <I08> };
 +        };
 +        row {
 +            top  = 74;
@@ -449,16 +531,16 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        key.shape = "NORM";
 +        row {
 +            top  = 88;
-+            keys { <LCTL>, <I172>, <MENU>, <I162> };
++            keys { <LCTL>, <I0B>, <MENU>, <I09> };
 +        };
 +        row {
 +            top = 106.5;
-+            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++            keys { <I06>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
 +        };
 +        row {
 +            top  = 88;
 +            left = 166.5;
-+            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++            keys { <I0C>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
 +        };
 +        row {
 +            top = 106.5;
@@ -551,7 +633,7 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        row {
 +            top  = 0;
 +            left = 129.5;
-+            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I120> };
++            keys { <AE06>, <AE07>, <AE08>, <AE09>, <AE10>, <AE11>, <AE12>, <I06> };
 +        };
 +        row {
 +            top  = 18.5;
@@ -613,7 +695,7 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        key.shape = "NORM";
 +        row {
 +            top  = 88;
-+            keys { <I120>, <LWIN>, <MENU>, <I162> };
++            keys { <I06>, <LWIN>, <MENU>, <I09> };
 +        };
 +        row {
 +            top = 106.5;
@@ -696,16 +778,16 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        key.shape = "NORM";
 +        row {
 +            top  = 88;
-+            keys { <LCTL>, <LSGT>, <MENU>, <I162> };
++            keys { <LCTL>, <LSGT>, <MENU>, <I09> };
 +        };
 +        row {
 +            top = 106.5;
-+            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++            keys { <I06>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
 +        };
 +        row {
 +            top  = 88;
 +            left = 166.5;
-+            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++            keys { <I0C>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
 +        };
 +        row {
 +            top = 106.5;
@@ -814,16 +896,16 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        key.shape = "NORM";
 +        row {
 +            top  = 88;
-+            keys { <LCTL>, <I172>, <MENU>, <I162> };
++            keys { <LCTL>, <I0B>, <MENU>, <I09> };
 +        };
 +        row {
 +            top = 106.5;
-+            keys { <I120>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
++            keys { <I06>, { <LWIN>, "ALT1" }, { <LALT>, "ALT1" } };
 +        };
 +        row {
 +            top  = 88;
 +            left = 166.5;
-+            keys { <I243>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
++            keys { <I0C>, <HOME>, <UP>, <END>, { <RCTL>, "LFSH"}, <PGUP> };
 +        };
 +        row {
 +            top = 106.5;
@@ -843,9 +925,9 @@ diff -Naur xkeyboard-config-0.9orig/geometry/typematrix xkeyboard-config-0.9bepo
 +        };
 +    };
 +}; // geometry tm2030USB-106
-diff -Naur xkeyboard-config-0.9orig/rules/base xkeyboard-config-0.9bepo1.0tm3/rules/base
---- xkeyboard-config-0.9orig/rules/base	2009-06-09 06:52:06.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/rules/base	2009-07-27 08:02:33.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/rules/base xkeyboard-config-0.9bepo1.0tm3kbd/rules/base
+--- xkeyboard-config-0.9orig/rules/base	2006-10-07 21:00:53.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/rules/base	2009-07-27 07:23:54.000000000 +0200
 @@ -128,6 +128,11 @@
    omnikey101	=	northgate(omnikey101)
    thinkpad	=	thinkpad(us)
@@ -858,9 +940,9 @@ diff -Naur xkeyboard-config-0.9orig/rules/base xkeyboard-config-0.9bepo1.0tm3/ru
   $pcmodels	=	pc(%m)
   $pcgeometries	=	pc(%m)
    everex	=	everex(STEPnote)
-diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1.0tm3/rules/base.lst
---- xkeyboard-config-0.9orig/rules/base.lst	2009-06-09 06:52:06.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/rules/base.lst	2009-07-27 08:02:50.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.lst
+--- xkeyboard-config-0.9orig/rules/base.lst	2006-10-07 23:22:17.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.lst	2009-07-27 07:27:32.000000000 +0200
 @@ -70,6 +70,11 @@
    rapidaccess2a   IBM Rapid Access II (alternate option)
    thinkpad        IBM ThinkPad 560Z/600/600E/A22E
@@ -886,9 +968,9 @@ diff -Naur xkeyboard-config-0.9orig/rules/base.lst xkeyboard-config-0.9bepo1.0tm
    mac             fr: Macintosh
    generic         gh: Multilingual
    akan            gh: Akan
-diff -Naur xkeyboard-config-0.9orig/rules/base.m_g.part xkeyboard-config-0.9bepo1.0tm3/rules/base.m_g.part
---- xkeyboard-config-0.9orig/rules/base.m_g.part	2009-06-09 06:52:06.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/rules/base.m_g.part	2009-07-27 07:58:47.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/rules/base.m_g.part xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.m_g.part
+--- xkeyboard-config-0.9orig/rules/base.m_g.part	2006-09-16 22:55:57.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.m_g.part	2009-07-27 07:19:57.000000000 +0200
 @@ -3,6 +3,11 @@
    flexpro	=	keytronic(FlexPro)
    hp6000	=	hp(omnibook)
@@ -901,9 +983,9 @@ diff -Naur xkeyboard-config-0.9orig/rules/base.m_g.part xkeyboard-config-0.9bepo
    thinkpad	=	thinkpad(us)
    thinkpadintl	=	thinkpad(intl)
   $pcmodels	=	pc(%m)
-diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1.0tm3/rules/base.xml.in
---- xkeyboard-config-0.9orig/rules/base.xml.in	2009-06-09 06:52:06.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/rules/base.xml.in	2009-07-27 07:57:30.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.xml.in
+--- xkeyboard-config-0.9orig/rules/base.xml.in	2006-10-02 20:42:40.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/rules/base.xml.in	2009-07-27 07:16:08.000000000 +0200
 @@ -430,6 +430,41 @@
      </model>
      <model>
@@ -980,9 +1062,9 @@ diff -Naur xkeyboard-config-0.9orig/rules/base.xml.in xkeyboard-config-0.9bepo1.
            </configItem>
          </variant>
          <variant>
-diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1.0tm3/symbols/fr
---- xkeyboard-config-0.9orig/symbols/fr	2009-06-09 06:52:08.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/symbols/fr	2009-06-09 06:55:42.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1.0tm3kbd/symbols/fr
+--- xkeyboard-config-0.9orig/symbols/fr	2006-10-04 21:29:26.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/symbols/fr	2009-06-06 16:09:18.000000000 +0200
 @@ -1,4 +1,4 @@
 -// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $
 +// $XKeyboardConfig: xkbdesc/symbols/fr,v 1.13 2006/10/03 22:33:37 svu Exp $ -*- c -*-
@@ -1180,9 +1262,9 @@ diff -Naur xkeyboard-config-0.9orig/symbols/fr xkeyboard-config-0.9bepo1.0tm3/sy
  
      key <TLDE>  { [         oe,       OE,              ae,             AE ] };
  
-diff -Naur xkeyboard-config-0.9orig/symbols/symbols.dir xkeyboard-config-0.9bepo1.0tm3/symbols/symbols.dir
---- xkeyboard-config-0.9orig/symbols/symbols.dir	2009-06-09 06:52:09.000000000 +0200
-+++ xkeyboard-config-0.9bepo1.0tm3/symbols/symbols.dir	2009-06-09 06:55:42.000000000 +0200
+diff -Naur xkeyboard-config-0.9orig/symbols/symbols.dir xkeyboard-config-0.9bepo1.0tm3kbd/symbols/symbols.dir
+--- xkeyboard-config-0.9orig/symbols/symbols.dir	2008-09-17 21:28:56.000000000 +0200
++++ xkeyboard-config-0.9bepo1.0tm3kbd/symbols/symbols.dir	2009-06-03 17:44:46.000000000 +0200
 @@ -157,6 +157,10 @@
  --p----- a------- fo(nodeadkeys)
  --p----- a------- fr(Sundeadkeys)
