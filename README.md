@@ -6,5 +6,4 @@ named Bépo, maintained by Ergodis, find on http://bepo.fr
 * The layout folder contains the branches for development of different
   variations of the desired keyboard
 
-* Instructions pour utiliser l'outil (in French only that I know of):
-  http://bepo.fr/wiki/ConfigGenerator
+Instructions pour utiliser l'outil (in French only that I know of): http://bepo.fr/wiki/ConfigGenerator
