@@ -1,5 +1,5 @@
 #!/bin/sh -x
-VERSION=1.0rc3
+VERSION=Optima
 ./configGenerator.pl $VERSION x_xkb_root > "results/layout-${VERSION}.xkb"
 ./configGenerator.pl $VERSION x_xkb_user > "results/layout-${VERSION}-user.xkb"
 ./configGenerator.pl $VERSION x_xmodmap  > "results/layout-${VERSION}.xmodmap"
