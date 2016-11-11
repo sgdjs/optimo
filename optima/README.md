@@ -1,5 +1,5 @@
 # Optima Layout
 
-![Image](bepo-Optima.png)
+* Available for Mac
 
-* For Mac
+![Image](bepo-Optima.png)
