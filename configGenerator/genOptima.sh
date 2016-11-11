@@ -26,3 +26,6 @@ VERSION=Optima
 ./keytables.py   "results/layout-${VERSION}.xkb" "results/layout-${VERSION}.keytables"
 
 perl -p -e 's#\tinclude "pc\(pc105\)"#\tinclude "pc/pc(pc105)"#g' "results/layout-${VERSION}-user.xkb" > "results/layout-${VERSION}-user-legacy.xkb"
+
+cp "results/layout-${VERSION}.keylayout" ../optima
+cp "results/bepo-${VERSION}.svg" ../optima
