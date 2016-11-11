@@ -992,7 +992,7 @@
        x="251.123469"
        y="352.20755"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >Y</text>
+       >X</text>
 
     <text
        x="333.622052"
@@ -1016,7 +1016,7 @@
        x="185.217956"
        y="352.20755"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >Z</text>
+       >Y</text>
 
     <text
        x="491.356528"
@@ -1256,7 +1256,7 @@
        x="317.028982"
        y="352.20755"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >X</text>
+       >:</text>
 
     <text
        x="161.828963"
@@ -1525,8 +1525,8 @@
     <text
        x="119.312443"
        y="377.20755"
-       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
-       >´</text>
+       style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
+       >z</text>
 
     <text
        x="769.960643"
@@ -1651,8 +1651,8 @@
     <text
        x="382.934495"
        y="352.20755"
-       style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >:</text>
+       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
+       >`</text>
 
     <text
        x="795.884093"
@@ -1765,8 +1765,8 @@
     <text
        x="382.934495"
        y="377.20755"
-       style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >.</text>
+       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
+       >´</text>
 
     <text
        x="580.651034"
@@ -1784,25 +1784,25 @@
        x="185.217956"
        y="377.20755"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >z</text>
+       >y</text>
 
     <text
        x="317.028982"
        y="377.20755"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >x</text>
+       >.</text>
 
     <text
        x="251.123469"
        y="377.20755"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >y</text>
+       >x</text>
 
     <text
        x="119.312443"
        y="352.20755"
-       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
-       >`</text>
+       style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
+       >Z</text>
 
 
   </g>

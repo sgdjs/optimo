@@ -144,10 +144,10 @@
       <key code="3" action="e" />
       <key code="4" action="c" />
       <key code="5" action="," />
-      <key code="6" action="z" />
-      <key code="7" action="y" />
-      <key code="8" action="x" />
-      <key code="9" action="." />
+      <key code="6" action="y" />
+      <key code="7" action="x" />
+      <key code="8" action="." />
+      <key code="9" action="acute" />
       <key code="10" action="$" />
       <key code="11" action="k" />
       <key code="12" action="b" />
@@ -188,7 +188,7 @@
       <key code="47" action="h" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="acute" />
+      <key code="50" action="z" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -260,10 +260,10 @@
       <key code="3" action="E" />
       <key code="4" action="C" />
       <key code="5" action=";" />
-      <key code="6" action="Z" />
-      <key code="7" action="Y" />
-      <key code="8" action="X" />
-      <key code="9" action=":" />
+      <key code="6" action="Y" />
+      <key code="7" action="X" />
+      <key code="8" action=":" />
+      <key code="9" action="grave" />
       <key code="10" action="#" />
       <key code="11" action="K" />
       <key code="12" action="B" />
@@ -304,7 +304,7 @@
       <key code="47" action="H" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="grave" />
+      <key code="50" action="Z" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -375,10 +375,10 @@
       <key code="3" action="E" />
       <key code="4" action="C" />
       <key code="5" action="," />
-      <key code="6" action="Z" />
-      <key code="7" action="Y" />
-      <key code="8" action="X" />
-      <key code="9" action="." />
+      <key code="6" action="Y" />
+      <key code="7" action="X" />
+      <key code="8" action=":" />
+      <key code="9" action="acute" />
       <key code="10" action="$" />
       <key code="11" action="K" />
       <key code="12" action="B" />
@@ -419,7 +419,7 @@
       <key code="47" action="H" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="grave" />
+      <key code="50" action="Z" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -490,10 +490,10 @@
       <key code="3" action="e" />
       <key code="4" action="c" />
       <key code="5" action=";" />
-      <key code="6" action="z" />
-      <key code="7" action="y" />
-      <key code="8" action="x" />
-      <key code="9" action=":" />
+      <key code="6" action="y" />
+      <key code="7" action="x" />
+      <key code="8" action="." />
+      <key code="9" action="grave" />
       <key code="10" action="#" />
       <key code="11" action="k" />
       <key code="12" action="b" />
@@ -534,7 +534,7 @@
       <key code="47" action="h" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="acute" />
+      <key code="50" action="z" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
