@@ -29,3 +29,4 @@ perl -p -e 's#\tinclude "pc\(pc105\)"#\tinclude "pc/pc(pc105)"#g' "results/layou
 
 cp "results/layout-${VERSION}.keylayout" ../optima
 cp "results/bepo-${VERSION}.svg" ../optima
+cp "results/bepo-${VERSION}B.klc" ../optima
