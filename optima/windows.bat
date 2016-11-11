@@ -5,67 +5,24 @@ REM Le nom de la dll est en dos 8.3 donc le nom de version est abrégé en rc2x
 REM Il faut ensuite faire les fichiers d'installation avec msklc
 REM (Attention a bien garder le même nom de dll.)
 @echo off
-set ver=BÉPO
-md bepo%ver%a
+set ver=Optima
 md bepo%ver%b
-md bepo%ver%c
-cd bepo%ver%a
-md amd64
-md i386
-md ia64
-md sources
-md wow64
-cd..
 cd bepo%ver%b
 md amd64
 md i386
 md ia64
 md sources
 md wow64
-cd..
-cd bepo%ver%c
-md amd64
-md i386
-md ia64
-md sources
-md wow64
-cd..
 
-copy fr-dvorak-bepo-%ver%A.klc bepo%ver%a.klc
-kbdutool.exe -u -s fr-dvorak-bepo-%ver%A-kbd.klc
-move /y bepo%ver%a.klc bepo%ver%a/sources/
-move /y bepo*.* bepo%ver%a/sources/
-kbdutool.exe -u -x fr-dvorak-bepo-%ver%A-kbd.klc
-move /y bepo*.dll bepo%ver%a/i386/
-kbdutool.exe -u -i fr-dvorak-bepo-%ver%A-kbd.klc
-move /y bepo*.dll bepo%ver%a/ia64/
-kbdutool.exe -u -m fr-dvorak-bepo-%ver%A-kbd.klc
-move /y bepo*.dll bepo%ver%a/amd64/
-kbdutool.exe -u -o fr-dvorak-bepo-%ver%A-kbd.klc
-move /y bepo*.dll bepo%ver%a/wow64/
-
-copy fr-dvorak-bepo-%ver%B.klc bepo%ver%b.klc
-kbdutool.exe -u -s fr-dvorak-bepo-%ver%B-kbd.klc
+copy bepo-%ver%B.klc bepo%ver%b.klc
+kbdutool.exe -u -s bepo-%ver%B-kbd.klc
 move /y bepo%ver%b.klc bepo%ver%b/sources/
 move /y bepo*.* bepo%ver%b/sources/
-kbdutool.exe -u -x fr-dvorak-bepo-%ver%B-kbd.klc
+kbdutool.exe -u -x bepo-%ver%B-kbd.klc
 move /y bepo*.dll bepo%ver%b/i386/
-kbdutool.exe -u -i fr-dvorak-bepo-%ver%B-kbd.klc
+kbdutool.exe -u -i bepo-%ver%B-kbd.klc
 move /y bepo*.dll bepo%ver%b/ia64/
-kbdutool.exe -u -m fr-dvorak-bepo-%ver%B-kbd.klc
+kbdutool.exe -u -m bepo-%ver%B-kbd.klc
 move /y bepo*.dll bepo%ver%b/amd64/
-kbdutool.exe -u -o fr-dvorak-bepo-%ver%B-kbd.klc
+kbdutool.exe -u -o bepo-%ver%B-kbd.klc
 move /y bepo*.dll bepo%ver%b/wow64/
-
-copy fr-dvorak-bepo-%ver%C.klc bepo%ver%c.klc
-kbdutool.exe -u -s fr-dvorak-bepo-%ver%C-kbd.klc
-move /y bepo%ver%c.klc bepo%ver%c/sources/
-move /y bepo*.* bepo%ver%c/sources/
-kbdutool.exe -u -x fr-dvorak-bepo-%ver%C-kbd.klc
-move /y bepo*.dll bepo%ver%c/i386/
-kbdutool.exe -u -i fr-dvorak-bepo-%ver%C-kbd.klc
-move /y bepo*.dll bepo%ver%c/ia64/
-kbdutool.exe -u -m fr-dvorak-bepo-%ver%C-kbd.klc
-move /y bepo*.dll bepo%ver%c/amd64/
-kbdutool.exe -u -o fr-dvorak-bepo-%ver%C-kbd.klc
-move /y bepo*.dll bepo%ver%c/wow64/
