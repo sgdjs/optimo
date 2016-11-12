@@ -1,6 +1,6 @@
 # Optimo & Optima Keyboard Layouts
 
-* Optimo: optimized layout for Orthogonal keyboards
+* [Optimo](optimo): optimized layout for Orthogonal keyboards
 * [Optima](optima): optimized layout with A fingers position, for staggered ISO keyboards
 
 This repository is a fork from the French Dvorak keyboard,
