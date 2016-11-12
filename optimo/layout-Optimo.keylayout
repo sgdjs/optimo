@@ -3,7 +3,7 @@
 <!-- bépo Layout -->
 <!-- http://www.bepo.fr/ -->
 <!-- version 1.0 -->
-<keyboard group="126" id="-6540" name="Optimo" maxout="5">
+<keyboard group="126" id="-6539" name="Optimo" maxout="5">
   <!--
     This layout is designed for ISO and ANSI keyboards. The extra
     key on an ISO keyboard (next to the left Shift) is optional,
@@ -168,7 +168,7 @@
       <key code="27" action="=" />
       <key code="28" action="-" />
       <key code="29" action="*" />
-      <key code="30" action=" " />
+      <key code="30" action="_" />
       <key code="31" action="l" />
       <key code="32" action="v" />
       <key code="33" action="!" />
@@ -303,7 +303,7 @@
       <key code="46" action="Q" />
       <key code="47" action="H" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
-      <key code="49" action="_" />
+      <key code="49" action=" " />
       <key code="50" action="Ê" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
@@ -514,7 +514,7 @@
       <key code="27" action="°" />
       <key code="28" action="-" />
       <key code="29" action="*" />
-      <key code="30" action=" " />
+      <key code="30" action="_" />
       <key code="31" action="l" />
       <key code="32" action="v" />
       <key code="33" action="?" />
@@ -533,7 +533,7 @@
       <key code="46" action="q" />
       <key code="47" action="h" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
-      <key code="49" action="_" />
+      <key code="49" action=" " />
       <key code="50" action="ê" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
@@ -648,7 +648,7 @@
       <key code="46" action="ringabove" />
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
-      <key code="49" action=" " />
+      <key code="49" action=" " />
       <key code="50" action="/" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
@@ -993,7 +993,7 @@
       <key code="46" action="ringabove" />
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
-      <key code="49" action=" " />
+      <key code="49" action=" " />
       <key code="50" action="/" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
@@ -1108,7 +1108,7 @@
       <key code="46" action="°" />
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
-      <key code="49" action=" " />
+      <key code="49" action=" " />
       <key code="50" action="/" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
@@ -8183,10 +8183,6 @@
 
     <action id="…">
       <when state="none" output="…"/>
-    </action>
-
-    <action id=" ">
-      <when state="none" output=" "/>
     </action>
 
     <action id="‰">
