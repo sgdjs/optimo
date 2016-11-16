@@ -1,6 +1,8 @@
-# Optimo Layout
+# Optimo-c Layout
 
-Optimized layout for orthogonal keyboards
+Optimized layout for compact orthogonal keyboards
+
+This version of Optimo was thought for a keyboard such as OLKB's Planck.
 
 (Mac and Windows)
 
