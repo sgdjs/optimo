@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #VERSION=0.1.1
-VERSION=1.0rc3
+VERSION=1.1
 
 
 cp "results/layout-${VERSION}-user.xkb" ../xkb/bepo.xkb
