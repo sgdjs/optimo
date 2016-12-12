@@ -284,10 +284,10 @@
       <key code="27" action="°" />
       <key code="28" action="8" />
       <key code="29" action="0" />
-      <key code="30" action=" " />
+      <key code="30" action=" " />
       <key code="31" action="L" />
       <key code="32" action="V" />
-      <key code="33" action="?" />
+      <key code="33" action="\" />
       <key code="34" action="D" />
       <key code="35" action="J" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
@@ -399,7 +399,7 @@
       <key code="27" action="=" />
       <key code="28" action="8" />
       <key code="29" action="0" />
-      <key code="30" action=" " />
+      <key code="30" action="_" />
       <key code="31" action="L" />
       <key code="32" action="V" />
       <key code="33" action="-" />
@@ -514,10 +514,10 @@
       <key code="27" action="°" />
       <key code="28" action="-" />
       <key code="29" action="*" />
-      <key code="30" action="_" />
+      <key code="30" action=" " />
       <key code="31" action="l" />
       <key code="32" action="v" />
-      <key code="33" action="?" />
+      <key code="33" action="\" />
       <key code="34" action="d" />
       <key code="35" action="j" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
@@ -8183,6 +8183,10 @@
 
     <action id="…">
       <when state="none" output="…"/>
+    </action>
+
+    <action id=" ">
+      <when state="none" output=" "/>
     </action>
 
     <action id="‰">
