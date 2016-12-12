@@ -2,18 +2,20 @@
 
 Optimized layout for orthogonal keyboards
 
-This version of Optimo was thought for 104 keys orthogonal keyboards.
-
-(Mac and Windows)
+This version of Optimo is designed for 104 keys orthogonal keyboards.
 
 ![Image](bepo-Optimo.png)
 
-## MacOS
+## Installation (Mac and Windows)
+
+### MacOS
 
 Copy the keylayout file in the root or user library, like the ./mac-copy.sh
 script does.
 
-## Windows
+### Windows
+
+(Not ready yet)
 
 Unzip the file attached to the tag and launch setup.exe, or do the
 manual method:
