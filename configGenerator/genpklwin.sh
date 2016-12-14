@@ -1,4 +1,4 @@
-VERSION=1.0rc3
+VERSION=1.1
 rm -f -r results/*
 ./configGenerator.pl $VERSION win_msklc_azerty | iconv -f utf-8 -t utf-16 > "results/bepo-${VERSION}A.klc"
 ./configGenerator.pl $VERSION win_msklc_bepo   | iconv -f utf-8 -t utf-16 > "results/bepo-${VERSION}B.klc"
