@@ -1,4 +1,4 @@
-# Sgdjs Keyboard: Optimo
+# Sgdjs’ Optimo Keyboards
 
 The Optimo layout is a fork of the [bepo](bepo.fr) keyboard layout with:
 
