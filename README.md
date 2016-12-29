@@ -8,6 +8,13 @@ The Optimo layout is a fork of the [bepo](bepo.fr) keyboard layout with:
   * < and > in direct access, reversed with « and »
   * \_ and [EFI] (Narrow No-Break SPace) on liberated W key, space only space
 
+## Optimo 40%
+
+Optimized layout for the 40% Planck keyboard. This keyboard has not been
+built yet, more details [here](optimo-40/README.md).
+
+![Otimo-40](optimo-40/bepo-Optimo-40.png)
+
 ## Optimo
 
 Optimized layout for orthogonal keyboards of 104 keys
