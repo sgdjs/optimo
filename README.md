@@ -1,11 +1,12 @@
-# Sgdjs’ Optimo Keyboards
+# Sgdjs’ Optimo Keyboard Layouts
 
 The Optimo layout is a fork of the [bepo](bepo.fr) keyboard layout with:
 
 * Better availability of W and Z
 * Direct access to ´ (dead acute), better access to \` (dead grave)
-* Direct or improved access to developer’s characters: <, >, \_, \\,
-  no shift insecable space
+* Developer oriented changes:
+  * < and > in direct access, reversed with « and »
+  * \_ and [EFI] (Narrow No-Break SPace) on liberated W key, space only space
 
 ## Optimo
 
@@ -18,6 +19,19 @@ Optimized layout for orthogonal keyboards of 104 keys
 Optimized layout with A fingers position, for staggered ISO keyboards
 
 ![Image](optima/bepo-Optima.png)
+
+## Development
+
+Optimo is still a work in progress. Ideas:
+
+* The liberated Z key could be better used
+* = could be easier access, and also %
+* ´ (dead acute/grave key) could be changed with K
+* Improved access to [ and ] (Ç deserves a dead key)
+* Improved access to ( and ), and re-thinking the numbers row for symetry
+* Numbers optimized for strong fingers (Optimo only)
+* Symetry, improved access to ,
+* An improved Planck keyboard would require to move M (to ' ?)
 
 ## Installation (Mac and Windows)
 
