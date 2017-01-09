@@ -161,10 +161,10 @@
       <key code="20" action=">" />
       <key code="21" action="(" />
       <key code="22" action="@" />
-      <key code="23" action=")" />
+      <key code="23" action="+" />
       <key code="24" action="%" />
       <key code="25" action="/" />
-      <key code="26" action="+" />
+      <key code="26" action=")" />
       <key code="27" action="=" />
       <key code="28" action="-" />
       <key code="29" action="*" />
@@ -507,10 +507,10 @@
       <key code="20" action=">" />
       <key code="21" action="(" />
       <key code="22" action="@" />
-      <key code="23" action=")" />
+      <key code="23" action="+" />
       <key code="24" action="`" />
       <key code="25" action="/" />
-      <key code="26" action="+" />
+      <key code="26" action=")" />
       <key code="27" action="°" />
       <key code="28" action="-" />
       <key code="29" action="*" />
@@ -622,10 +622,10 @@
       <key code="20" action="»" />
       <key code="21" action="[" />
       <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="23" action="±" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="26" action="]" />
       <key code="27" action="≠" />
       <key code="28" action="−" />
       <key code="29" action="×" />
@@ -737,10 +737,10 @@
       <key code="20" action="”" />
       <key code="21" action="≤" />
       <key code="22" action="" />
-      <key code="23" action="≥" />
+      <key code="23" action="¬" />
       <key code="24" action="″" />
       <key code="25" action="½" />
-      <key code="26" action="¬" />
+      <key code="26" action="≥" />
       <key code="27" action="′" />
       <key code="28" action="¼" />
       <key code="29" action="¾" />
@@ -852,10 +852,10 @@
       <key code="20" action="”" />
       <key code="21" action="≤" />
       <key code="22" action="" />
-      <key code="23" action="≥" />
+      <key code="23" action="¬" />
       <key code="24" action="″" />
       <key code="25" action="½" />
-      <key code="26" action="¬" />
+      <key code="26" action="≥" />
       <key code="27" action="′" />
       <key code="28" action="¼" />
       <key code="29" action="¾" />
@@ -967,10 +967,10 @@
       <key code="20" action="»" />
       <key code="21" action="[" />
       <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="23" action="±" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="26" action="]" />
       <key code="27" action="≠" />
       <key code="28" action="−" />
       <key code="29" action="×" />
@@ -1082,10 +1082,10 @@
       <key code="20" action="»" />
       <key code="21" action="[" />
       <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="23" action="±" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="26" action="]" />
       <key code="27" action="≠" />
       <key code="28" action="−" />
       <key code="29" action="×" />
