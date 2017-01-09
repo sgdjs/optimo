@@ -6,7 +6,7 @@ The Optimo layout is a fork of the [bepo](bepo.fr) keyboard layout with:
 * Direct access to ´ (dead acute), better access to \` (dead grave)
 * Developer oriented changes:
   * < and > in direct access, reversed with « and »
-  * \_ and [EFI] (Narrow No-Break SPace) on liberated W key, space only space
+  * \_ and \[EFI\] (Narrow No-Break SPace) on liberated W key, space only space
 
 ## Optimo 40%
 
