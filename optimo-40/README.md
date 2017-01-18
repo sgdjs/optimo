@@ -1,12 +1,13 @@
 # Optimo 40%
 
-This layout is made for the [Planck](https://olkb.com/planck/) keyboard. It requires changes to the firmware of the keyboard (see more details [below](#optimo-40-default)). It is still a work in progress
-
-- 2 Shift Keys require to move the M to the middle. So far, it is instead of ’ apostrophe, which moves to ^ which itself becomes available with the raise-down buttons.
-- Setting paralel Ctrl/Alt keys moves the arrows to the both raise and down at the same time (lock?), to test.
-- These changes have to be tested; the free keys in the thumb row could add one or two more layers, and the RD layer has a free key too. Caps lock pressing both shift.
+This layout is for the [Planck](https://olkb.com/planck/) keyboard. 
+It requires changes to the firmware of the keyboard (see more details [below](#optimo-40-default)). 
+It is still a work in progress
 
 ![Optimo 40](bepo-Optimo-40.png)
+![Optimo 40 Blue](bepo-Optimo-40-Blue.png)
+![Optimo 40 Red](bepo-Optimo-40-Red.png)
+This layer is obtained by pressing the two blues together:
 ![Optimo 40 Raise-Down](bepo-Optimo-40-RD.png)
 
 ## Optimo 40% Default
