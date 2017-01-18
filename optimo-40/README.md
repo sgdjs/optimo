@@ -1,13 +1,17 @@
 # Optimo 40%
 
 This layout is for the [Planck](https://olkb.com/planck/) keyboard. 
-It requires changes to the firmware of the keyboard (see more details [below](#optimo-40-default)). 
-It is still a work in progress
+    
+The development of the following firmware has not started yet.
 
 ![Optimo 40](bepo-Optimo-40.png)
+
 ![Optimo 40 Blue](bepo-Optimo-40-Blue.png)
+
 ![Optimo 40 Red](bepo-Optimo-40-Red.png)
+
 This layer is obtained by pressing the two blues together:
+
 ![Optimo 40 Raise-Down](bepo-Optimo-40-RD.png)
 
 ## Optimo 40% Default
@@ -25,7 +29,4 @@ So it might be possible to get over it with habit, but it might not and requires
 The Raise-Down layer (what is the official name of this layer)
 
 ![Optimo 40 Default Raise-Down](bepo-Optimo-40-Default-RD.png)
-
-
-
 
