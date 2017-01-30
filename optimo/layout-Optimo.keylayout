@@ -632,13 +632,13 @@
       <key code="30" action=" " />
       <key code="31" action="stroke" />
       <key code="32" action="caron" />
-      <key code="33" action="¿" />
+      <key code="33" action="¡" />
       <key code="34" action="ð" />
       <key code="35" action="ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="®" />
       <key code="38" action="þ" />
-      <key code="39" action="macron" />
+      <key code="39" action="¿" />
       <key code="40" action="ß" />
       <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
@@ -755,7 +755,7 @@
       <key code="38" action="Þ" />
       <key code="39" action="º" />
       <key code="40" action="ẞ" />
-      <key code="41" action="" />
+      <key code="41" action="macron" />
       <key code="42" action="commabelow" />
       <key code="43" action="" />
       <key code="44" action="ª" />
@@ -870,7 +870,7 @@
       <key code="38" action="þ" />
       <key code="39" action="º" />
       <key code="40" action="ß" />
-      <key code="41" action="" />
+      <key code="41" action="macron" />
       <key code="42" action="commabelow" />
       <key code="43" action="" />
       <key code="44" action="ª" />
@@ -977,13 +977,13 @@
       <key code="30" action=" " />
       <key code="31" action="stroke" />
       <key code="32" action="caron" />
-      <key code="33" action="¿" />
+      <key code="33" action="¡" />
       <key code="34" action="Ð" />
       <key code="35" action="Ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="®" />
       <key code="38" action="Þ" />
-      <key code="39" action="macron" />
+      <key code="39" action="¿" />
       <key code="40" action="ß" />
       <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
@@ -1092,13 +1092,13 @@
       <key code="30" action=" " />
       <key code="31" action="/" />
       <key code="32" action="ˇ" />
-      <key code="33" action="¿" />
+      <key code="33" action="¡" />
       <key code="34" action="ð" />
       <key code="35" action="ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="®" />
       <key code="38" action="þ" />
-      <key code="39" action="¯" />
+      <key code="39" action="¿" />
       <key code="40" action="ß" />
       <key code="41" action="~" />
       <key code="42" action="¸" />
@@ -5265,6 +5265,10 @@
       <when state="Multi_key_U1FFE" output="῟"/>
       <when state="Multi_key_diaeresis" output="῁"/>
       <when state="Multi_key_space" output="~"/>
+    </action>
+
+    <action id="¡">
+      <when state="none" output="¡"/>
     </action>
 
     <action id="¦">
