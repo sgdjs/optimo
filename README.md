@@ -1,8 +1,9 @@
 # Sgdjs’ Optimo Keyboard Layouts
 
-The Optimo layout is a fork of the [bepo](bepo.fr) keyboard layout with:
+The Optimo layout is a fork of the [bepo](bepo.fr) layout adapted to the
+reduced format (40%) of the Planck Keyboard
 
-* Better availability of W and Z
+* Better availability of M, W and Z
 * Direct access to ´ (dead acute), better access to \` (dead grave)
 * Reverse ) and +
 * Developer oriented changes:
@@ -21,25 +22,20 @@ Optimized layout with A fingers position, for staggered ISO keyboards
 
 ![Image](optima/bepo-Optima.png)
 
-## Optimo 40%
+## Optimo on planck
 
-Optimized layout for the 40% Planck keyboard. This keyboard has not been
-built yet, more details [here](optimo-40/README.md).
+Optimized layout for the Optimo Planck keyboard. 
 
-![Otimo-40](optimo-40/bepo-Optimo-40.png)
+![Otimo-40](optimo-40/bepo-Optimo.png)
 
 ## Development
 
 Optimo is still a work in progress. Ideas:
 
-* The liberated Z key could be better used
-* = could be easier access, and also %
-* ´ (dead acute/grave key) could be changed with K
 * Improved access to [ and ] (Ç deserves a dead key)
-* Improved access to ( and ), and re-thinking the numbers row for symetry
+* Reverse back ) and + for optima
 * Numbers optimized for strong fingers (Optimo only)
 * Symetry, improved access to ,
-* An improved Planck keyboard would require to move M (to ' ?)
 
 ## Installation (Mac and Windows)
 
