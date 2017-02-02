@@ -1,6 +1,6 @@
 # Sgdjs’ Optimo Keyboard Layouts
 
-The Optimo layout is a fork of the [bepo](bepo.fr) layout adapted to the
+The Optimo layout is a fork of the [bepo](http://bepo.fr) layout adapted to the
 reduced format (40%) of the Planck Keyboard
 
 * Better availability of M, W and Z
