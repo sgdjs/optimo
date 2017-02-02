@@ -1,13 +1,22 @@
 # Optimo Keyboard Layout
 
-The Optimo layout is a fork of the [bepo](bepo.fr) keyboard layout with:
+The Optimo layout is a fork of the [bepo](http://bepo.fr) layout adapted
+to the reduced format (40%) of the Planck Keyboard:
 
-* Better availability of W and Z
+* New position of M, W and Z
 * Direct access to ´ (dead acute), better access to \` (dead grave)
-* Direct or improved access to developer’s characters: <, >, \_, \\,
-  no shift insecable space
+* Reverse ) and +
+* Developer oriented changes:
+  * < and > in direct access, reversed with « and »
+  * \_ and \[EFI\] (Narrow No-Break SPace) on liberated W key, space only space
 
-## Optimo
+## Planck
+
+Optimized layout for the Optimo Planck keyboard. 
+
+![Otimo-40](optimo-40/bepo-Optimo.png)
+
+## Ortholinear
 
 Optimized layout for orthogonal keyboards of 104 keys
 
@@ -18,6 +27,15 @@ Optimized layout for orthogonal keyboards of 104 keys
 Optimized layout with A fingers position, for staggered ISO keyboards
 
 ![Image](optima/bepo-Optima.png)
+
+## Development
+
+Optimo is open to new ideas:
+
+* Improved access to [ and ] (Ç deserves a dead key)
+* Reverse back ) and + for optima
+* Numbers optimized for strong fingers (Optimo only)
+* Symetry, improved access to ,
 
 ## Installation (Mac and Windows)
 

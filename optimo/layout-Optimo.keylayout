@@ -154,36 +154,36 @@
       <key code="13" action="w" />
       <key code="14" action="p" />
       <key code="15" action="o" />
-      <key code="16" action="circumflex" />
+      <key code="16" action="’" />
       <key code="17" action="acute" />
       <key code="18" action="&#x0022;" />
       <key code="19" action="&#x003c;" />
       <key code="20" action=">" />
       <key code="21" action="(" />
       <key code="22" action="@" />
-      <key code="23" action=")" />
+      <key code="23" action="+" />
       <key code="24" action="%" />
       <key code="25" action="/" />
-      <key code="26" action="+" />
+      <key code="26" action=")" />
       <key code="27" action="=" />
       <key code="28" action="-" />
       <key code="29" action="*" />
       <key code="30" action="_" />
       <key code="31" action="l" />
       <key code="32" action="v" />
-      <key code="33" action="-" />
+      <key code="33" action="!" />
       <key code="34" action="d" />
       <key code="35" action="j" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="r" />
       <key code="38" action="t" />
-      <key code="39" action="m" />
+      <key code="39" action="?" />
       <key code="40" action="s" />
       <key code="41" action="n" />
       <key code="42" action="ç" />
       <key code="43" action="g" />
       <key code="44" action="f" />
-      <key code="45" action="'" />
+      <key code="45" action="m" />
       <key code="46" action="q" />
       <key code="47" action="h" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -270,7 +270,7 @@
       <key code="13" action="W" />
       <key code="14" action="P" />
       <key code="15" action="O" />
-      <key code="16" action="!" />
+      <key code="16" action="circumflex" />
       <key code="17" action="grave" />
       <key code="18" action="1" />
       <key code="19" action="2" />
@@ -293,13 +293,13 @@
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="R" />
       <key code="38" action="T" />
-      <key code="39" action="M" />
+      <key code="39" action="-" />
       <key code="40" action="S" />
       <key code="41" action="N" />
       <key code="42" action="Ç" />
       <key code="43" action="G" />
       <key code="44" action="F" />
-      <key code="45" action="?" />
+      <key code="45" action="M" />
       <key code="46" action="Q" />
       <key code="47" action="H" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -385,7 +385,7 @@
       <key code="13" action="W" />
       <key code="14" action="P" />
       <key code="15" action="O" />
-      <key code="16" action="circumflex" />
+      <key code="16" action="’" />
       <key code="17" action="acute" />
       <key code="18" action="1" />
       <key code="19" action="2" />
@@ -402,19 +402,19 @@
       <key code="30" action="_" />
       <key code="31" action="L" />
       <key code="32" action="V" />
-      <key code="33" action="-" />
+      <key code="33" action="!" />
       <key code="34" action="D" />
       <key code="35" action="J" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="R" />
       <key code="38" action="T" />
-      <key code="39" action="M" />
+      <key code="39" action="?" />
       <key code="40" action="S" />
       <key code="41" action="N" />
       <key code="42" action="Ç" />
       <key code="43" action="G" />
       <key code="44" action="F" />
-      <key code="45" action="'" />
+      <key code="45" action="M" />
       <key code="46" action="Q" />
       <key code="47" action="H" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -500,17 +500,17 @@
       <key code="13" action="w" />
       <key code="14" action="p" />
       <key code="15" action="o" />
-      <key code="16" action="!" />
+      <key code="16" action="circumflex" />
       <key code="17" action="grave" />
       <key code="18" action="&#x0022;" />
       <key code="19" action="&#x003c;" />
       <key code="20" action=">" />
       <key code="21" action="(" />
       <key code="22" action="@" />
-      <key code="23" action=")" />
+      <key code="23" action="+" />
       <key code="24" action="`" />
       <key code="25" action="/" />
-      <key code="26" action="+" />
+      <key code="26" action=")" />
       <key code="27" action="°" />
       <key code="28" action="-" />
       <key code="29" action="*" />
@@ -523,13 +523,13 @@
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="r" />
       <key code="38" action="t" />
-      <key code="39" action="m" />
+      <key code="39" action="-" />
       <key code="40" action="s" />
       <key code="41" action="n" />
       <key code="42" action="ç" />
       <key code="43" action="g" />
       <key code="44" action="f" />
-      <key code="45" action="?" />
+      <key code="45" action="m" />
       <key code="46" action="q" />
       <key code="47" action="h" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -604,7 +604,7 @@
       <key code="2" action="diaeresis" />
       <key code="3" action="€" />
       <key code="4" action="©" />
-      <key code="5" action="’" />
+      <key code="5" action="'" />
       <key code="6" action="\" />
       <key code="7" action="{" />
       <key code="8" action="}" />
@@ -615,36 +615,36 @@
       <key code="13" action="acute" />
       <key code="14" action="&#x0026;" />
       <key code="15" action="œ" />
-      <key code="16" action="¡" />
+      <key code="16" action="^" />
       <key code="17" action="`" />
       <key code="18" action="—" />
       <key code="19" action="«" />
       <key code="20" action="»" />
       <key code="21" action="[" />
       <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="23" action="±" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="26" action="]" />
       <key code="27" action="≠" />
       <key code="28" action="−" />
       <key code="29" action="×" />
-      <key code="30" action="breve" />
+      <key code="30" action=" " />
       <key code="31" action="stroke" />
       <key code="32" action="caron" />
-      <key code="33" action="ə" />
+      <key code="33" action="¡" />
       <key code="34" action="ð" />
       <key code="35" action="ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="®" />
       <key code="38" action="þ" />
-      <key code="39" action="macron" />
+      <key code="39" action="¿" />
       <key code="40" action="ß" />
       <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
       <key code="43" action="greek" />
       <key code="44" action="ogonek" />
-      <key code="45" action="¿" />
+      <key code="45" action="ə" />
       <key code="46" action="ringabove" />
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -737,17 +737,17 @@
       <key code="20" action="”" />
       <key code="21" action="≤" />
       <key code="22" action="" />
-      <key code="23" action="≥" />
+      <key code="23" action="¬" />
       <key code="24" action="″" />
       <key code="25" action="½" />
-      <key code="26" action="¬" />
+      <key code="26" action="≥" />
       <key code="27" action="′" />
       <key code="28" action="¼" />
       <key code="29" action="¾" />
-      <key code="30" action="" />
+      <key code="30" action="breve" />
       <key code="31" action="" />
       <key code="32" action="" />
-      <key code="33" action="Ə" />
+      <key code="33" action="hook" />
       <key code="34" action="Ð" />
       <key code="35" action="Ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
@@ -755,11 +755,11 @@
       <key code="38" action="Þ" />
       <key code="39" action="º" />
       <key code="40" action="ẞ" />
-      <key code="41" action="" />
+      <key code="41" action="macron" />
       <key code="42" action="commabelow" />
       <key code="43" action="" />
       <key code="44" action="ª" />
-      <key code="45" action="hook" />
+      <key code="45" action="Ə" />
       <key code="46" action="belowdot" />
       <key code="47" action="‡" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -852,17 +852,17 @@
       <key code="20" action="”" />
       <key code="21" action="≤" />
       <key code="22" action="" />
-      <key code="23" action="≥" />
+      <key code="23" action="¬" />
       <key code="24" action="″" />
       <key code="25" action="½" />
-      <key code="26" action="¬" />
+      <key code="26" action="≥" />
       <key code="27" action="′" />
       <key code="28" action="¼" />
       <key code="29" action="¾" />
-      <key code="30" action="" />
+      <key code="30" action="breve" />
       <key code="31" action="" />
       <key code="32" action="" />
-      <key code="33" action="ə" />
+      <key code="33" action="hook" />
       <key code="34" action="ð" />
       <key code="35" action="ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
@@ -870,11 +870,11 @@
       <key code="38" action="þ" />
       <key code="39" action="º" />
       <key code="40" action="ß" />
-      <key code="41" action="" />
+      <key code="41" action="macron" />
       <key code="42" action="commabelow" />
       <key code="43" action="" />
       <key code="44" action="ª" />
-      <key code="45" action="hook" />
+      <key code="45" action="ə" />
       <key code="46" action="belowdot" />
       <key code="47" action="‡" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -949,7 +949,7 @@
       <key code="2" action="diaeresis" />
       <key code="3" action="€" />
       <key code="4" action="©" />
-      <key code="5" action="’" />
+      <key code="5" action="'" />
       <key code="6" action="\" />
       <key code="7" action="{" />
       <key code="8" action="}" />
@@ -960,36 +960,36 @@
       <key code="13" action="acute" />
       <key code="14" action="&#x0026;" />
       <key code="15" action="Œ" />
-      <key code="16" action="¡" />
+      <key code="16" action="^" />
       <key code="17" action="`" />
       <key code="18" action="—" />
       <key code="19" action="«" />
       <key code="20" action="»" />
       <key code="21" action="[" />
       <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="23" action="±" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="26" action="]" />
       <key code="27" action="≠" />
       <key code="28" action="−" />
       <key code="29" action="×" />
-      <key code="30" action="breve" />
+      <key code="30" action=" " />
       <key code="31" action="stroke" />
       <key code="32" action="caron" />
-      <key code="33" action="Ə" />
+      <key code="33" action="¡" />
       <key code="34" action="Ð" />
       <key code="35" action="Ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="®" />
       <key code="38" action="Þ" />
-      <key code="39" action="macron" />
+      <key code="39" action="¿" />
       <key code="40" action="ß" />
       <key code="41" action="tilde" />
       <key code="42" action="cedilla" />
       <key code="43" action="greek" />
       <key code="44" action="ogonek" />
-      <key code="45" action="¿" />
+      <key code="45" action="Ə" />
       <key code="46" action="ringabove" />
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -1064,7 +1064,7 @@
       <key code="2" action="¨" />
       <key code="3" action="€" />
       <key code="4" action="©" />
-      <key code="5" action="’" />
+      <key code="5" action="'" />
       <key code="6" action="\" />
       <key code="7" action="{" />
       <key code="8" action="}" />
@@ -1075,36 +1075,36 @@
       <key code="13" action="´" />
       <key code="14" action="&#x0026;" />
       <key code="15" action="œ" />
-      <key code="16" action="¡" />
+      <key code="16" action="^" />
       <key code="17" action="`" />
       <key code="18" action="—" />
       <key code="19" action="«" />
       <key code="20" action="»" />
       <key code="21" action="[" />
       <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="23" action="±" />
       <key code="24" action="‰" />
       <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="26" action="]" />
       <key code="27" action="≠" />
       <key code="28" action="−" />
       <key code="29" action="×" />
-      <key code="30" action="˘" />
+      <key code="30" action=" " />
       <key code="31" action="/" />
       <key code="32" action="ˇ" />
-      <key code="33" action="ə" />
+      <key code="33" action="¡" />
       <key code="34" action="ð" />
       <key code="35" action="ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="®" />
       <key code="38" action="þ" />
-      <key code="39" action="¯" />
+      <key code="39" action="¿" />
       <key code="40" action="ß" />
       <key code="41" action="~" />
       <key code="42" action="¸" />
       <key code="43" action="µ" />
       <key code="44" action="˛" />
-      <key code="45" action="¿" />
+      <key code="45" action="ə" />
       <key code="46" action="°" />
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
@@ -5444,10 +5444,6 @@
 
     <action id="ˇ">
       <when state="none" output="ˇ"/>
-    </action>
-
-    <action id="˘">
-      <when state="none" output="˘"/>
     </action>
 
     <action id="˛">
