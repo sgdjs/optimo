@@ -14,7 +14,7 @@ to the reduced format (40%) of the Planck Keyboard:
 
 Optimized layout for the Optimo Planck keyboard. 
 
-![Otimo-40](optimo-40/bepo-Optimo.png)
+![Otimp](optimp/bepo-Optimp.png)
 
 ## Ortholinear
 
