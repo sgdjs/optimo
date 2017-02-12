@@ -638,7 +638,7 @@
        x="333.622052"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >—</text>
+       >„</text>
 
     <text
        x="514.745521"
@@ -686,7 +686,7 @@
        x="440.433078"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >-</text>
+       >)</text>
 
     <text
        x="664.073067"
@@ -746,7 +746,7 @@
        x="374.527565"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >/</text>
+       >(</text>
 
     <text
        x="178.558733"
@@ -794,13 +794,13 @@
        x="267.716539"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >[</text>
+       >≤</text>
 
     <text
        x="903.519376"
        y="284.80505"
-       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
-       >,</text>
+       style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
+       > </text>
 
     <text
        x="729.97858"
@@ -866,7 +866,7 @@
        x="663.149617"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >»</text>
+       >”</text>
 
     <text
        x="680.802837"
@@ -896,7 +896,7 @@
        x="572.244104"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >)</text>
+       >-</text>
 
     <text
        x="359.545502"
@@ -998,13 +998,13 @@
        x="333.622052"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >„</text>
+       ></text>
 
     <text
        x="399.527565"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >÷</text>
+       >¬</text>
 
     <text
        x="161.828963"
@@ -1033,8 +1033,8 @@
     <text
        x="878.519376"
        y="309.80505"
-       style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >ç</text>
+       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
+       >¸</text>
 
     <text
        x="483.086298"
@@ -1070,7 +1070,7 @@
        x="242.716539"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >(</text>
+       >/</text>
 
     <text
        x="176.811026"
@@ -1136,7 +1136,7 @@
        x="201.811026"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >«</text>
+       >“</text>
 
     <text
        x="573.991811"
@@ -1178,13 +1178,13 @@
        x="878.519376"
        y="284.80505"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >Ç</text>
+       > </text>
 
     <text
        x="399.527565"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >¬</text>
+       >[</text>
 
     <text
        x="803.367573"
@@ -1238,7 +1238,7 @@
        x="663.149617"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >”</text>
+       >»</text>
 
     <text
        x="442.180785"
@@ -1280,7 +1280,7 @@
        x="531.338591"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >×</text>
+       >¼</text>
 
     <text
        x="812.613863"
@@ -1322,7 +1322,7 @@
        x="135.905513"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       ></text>
+       >±</text>
 
     <text
        x="803.367573"
@@ -1364,7 +1364,7 @@
        x="201.811026"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >“</text>
+       >«</text>
 
     <text
        x="769.960643"
@@ -1411,8 +1411,8 @@
     <text
        x="903.519376"
        y="309.80505"
-       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
-       >¸</text>
+       style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
+       > </text>
 
     <text
        x="623.167554"
@@ -1472,7 +1472,7 @@
        x="135.905513"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >±</text>
+       >—</text>
 
     <text
        x="453.147083"
@@ -1520,7 +1520,7 @@
        x="597.244104"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >]</text>
+       >≥</text>
 
     <text
        x="119.312443"
@@ -1561,8 +1561,8 @@
     <text
        x="886.789606"
        y="242.40254"
-       style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       > </text>
+       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
+       >,</text>
 
     <text
        x="144.312443"
@@ -1580,7 +1580,7 @@
        x="597.244104"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >≥</text>
+       >−</text>
 
     <text
        x="210.217956"
@@ -1628,13 +1628,13 @@
        x="465.433078"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >−</text>
+       >½</text>
 
     <text
        x="267.716539"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >≤</text>
+       >÷</text>
 
     <text
        x="453.147083"
@@ -1682,7 +1682,7 @@
        x="465.433078"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >½</text>
+       >]</text>
 
     <text
        x="539.745521"
@@ -1718,7 +1718,7 @@
        x="531.338591"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >¼</text>
+       >×</text>
 
     <text
        x="473.840008"
