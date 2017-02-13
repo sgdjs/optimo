@@ -293,7 +293,7 @@
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="R" />
       <key code="38" action="T" />
-      <key code="39" action="-" />
+      <key code="39" action="\" />
       <key code="40" action="S" />
       <key code="41" action="N" />
       <key code="42" action=" " />
@@ -523,7 +523,7 @@
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="r" />
       <key code="38" action="t" />
-      <key code="39" action="-" />
+      <key code="39" action="\" />
       <key code="40" action="s" />
       <key code="41" action="n" />
       <key code="42" action=" " />
