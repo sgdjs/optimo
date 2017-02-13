@@ -656,7 +656,7 @@
        x="342.028982"
        y="352.20755"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >’</text>
+       ></text>
 
     <text
        x="835.866156"
@@ -799,8 +799,8 @@
     <text
        x="903.519376"
        y="284.80505"
-       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
-       >,</text>
+       style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
+       > </text>
 
     <text
        x="729.97858"
@@ -818,7 +818,7 @@
        x="861.789606"
        y="217.40254"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       > </text>
+       >}</text>
 
     <text
        x="778.367573"
@@ -1004,7 +1004,7 @@
        x="399.527565"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >±</text>
+       >]</text>
 
     <text
        x="161.828963"
@@ -1033,8 +1033,8 @@
     <text
        x="878.519376"
        y="309.80505"
-       style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >ç</text>
+       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
+       >¸</text>
 
     <text
        x="483.086298"
@@ -1100,7 +1100,7 @@
        x="506.338591"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >)</text>
+       >+</text>
 
     <text
        x="308.622052"
@@ -1112,7 +1112,7 @@
        x="374.527565"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >+</text>
+       >)</text>
 
     <text
        x="308.622052"
@@ -1178,13 +1178,13 @@
        x="878.519376"
        y="284.80505"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >Ç</text>
+       > </text>
 
     <text
        x="399.527565"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >¬</text>
+       >≥</text>
 
     <text
        x="803.367573"
@@ -1280,7 +1280,7 @@
        x="531.338591"
        y="175.0"
        style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >]</text>
+       >±</text>
 
     <text
        x="812.613863"
@@ -1315,8 +1315,8 @@
     <text
        x="276.123469"
        y="377.20755"
-       style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >{</text>
+       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
+       >̉</text>
 
     <text
        x="135.905513"
@@ -1388,13 +1388,13 @@
        x="276.123469"
        y="352.20755"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >‘</text>
+       ></text>
 
     <text
        x="820.884093"
        y="217.40254"
-       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
-       >̉</text>
+       style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
+       >‘</text>
 
     <text
        x="704.05513"
@@ -1411,8 +1411,8 @@
     <text
        x="903.519376"
        y="309.80505"
-       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
-       >¸</text>
+       style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
+       > </text>
 
     <text
        x="623.167554"
@@ -1483,8 +1483,8 @@
     <text
        x="886.789606"
        y="217.40254"
-       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
-       >˘</text>
+       style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
+       >’</text>
 
     <text
        x="425.451015"
@@ -1496,7 +1496,7 @@
        x="812.613863"
        y="284.80505"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >-</text>
+       >\</text>
 
     <text
        x="639.897324"
@@ -1561,8 +1561,8 @@
     <text
        x="886.789606"
        y="242.40254"
-       style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       > </text>
+       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
+       >,</text>
 
     <text
        x="144.312443"
@@ -1658,13 +1658,13 @@
        x="795.884093"
        y="217.40254"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >\</text>
+       >{</text>
 
     <text
        x="342.028982"
        y="377.20755"
-       style="font-size:20px;fill:#003eff;font-family:DejaVu Sans Mono"
-       >}</text>
+       style="font-size:20px;fill:#008000;font-family:DejaVu Sans Mono"
+       >˘</text>
 
     <text
        x="508.086298"
@@ -1718,7 +1718,7 @@
        x="531.338591"
        y="150.0"
        style="font-size:20px;fill:#ca00ff;font-family:DejaVu Sans Mono"
-       >≥</text>
+       >¬</text>
 
     <text
        x="473.840008"

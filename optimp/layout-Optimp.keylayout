@@ -3,7 +3,7 @@
 <!-- bépo Layout -->
 <!-- http://www.bepo.fr/ -->
 <!-- version 1.0 -->
-<keyboard group="126" id="-6531" name="Optima" maxout="5">
+<keyboard group="126" id="-6530" name="Optimo+" maxout="5">
   <!--
     This layout is designed for ISO and ANSI keyboards. The extra
     key on an ISO keyboard (next to the left Shift) is optional,
@@ -144,30 +144,30 @@
       <key code="3" action="e" />
       <key code="4" action="c" />
       <key code="5" action="," />
-      <key code="6" action="y" />
-      <key code="7" action="x" />
-      <key code="8" action="." />
-      <key code="9" action="k" />
+      <key code="6" action="z" />
+      <key code="7" action="y" />
+      <key code="8" action="x" />
+      <key code="9" action="." />
       <key code="10" action="$" />
-      <key code="11" action="ê" />
+      <key code="11" action="k" />
       <key code="12" action="b" />
       <key code="13" action="w" />
       <key code="14" action="p" />
       <key code="15" action="o" />
       <key code="16" action="’" />
       <key code="17" action="acute" />
-      <key code="18" action="&#x0022;" />
-      <key code="19" action="&#x003c;" />
-      <key code="20" action=">" />
-      <key code="21" action="(" />
-      <key code="22" action="@" />
-      <key code="23" action=")" />
+      <key code="18" action="7" />
+      <key code="19" action="5" />
+      <key code="20" action="3" />
+      <key code="21" action="1" />
+      <key code="22" action="8" />
+      <key code="23" action="9" />
       <key code="24" action="%" />
-      <key code="25" action="/" />
-      <key code="26" action="+" />
+      <key code="25" action="4" />
+      <key code="26" action="0" />
       <key code="27" action="=" />
-      <key code="28" action="-" />
-      <key code="29" action="*" />
+      <key code="28" action="2" />
+      <key code="29" action="6" />
       <key code="30" action="_" />
       <key code="31" action="l" />
       <key code="32" action="v" />
@@ -188,7 +188,7 @@
       <key code="47" action="h" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="z" />
+      <key code="50" action="ê" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -260,30 +260,30 @@
       <key code="3" action="E" />
       <key code="4" action="C" />
       <key code="5" action=";" />
-      <key code="6" action="Y" />
-      <key code="7" action="X" />
-      <key code="8" action=":" />
-      <key code="9" action="K" />
+      <key code="6" action="Z" />
+      <key code="7" action="Y" />
+      <key code="8" action="X" />
+      <key code="9" action=":" />
       <key code="10" action="#" />
-      <key code="11" action="Ê" />
+      <key code="11" action="K" />
       <key code="12" action="B" />
       <key code="13" action="W" />
       <key code="14" action="P" />
       <key code="15" action="O" />
       <key code="16" action="circumflex" />
       <key code="17" action="grave" />
-      <key code="18" action="1" />
-      <key code="19" action="2" />
-      <key code="20" action="3" />
-      <key code="21" action="4" />
-      <key code="22" action="6" />
-      <key code="23" action="5" />
+      <key code="18" action="+" />
+      <key code="19" action="&#x003c;" />
+      <key code="20" action="/" />
+      <key code="21" action="&#x0022;" />
+      <key code="22" action=")" />
+      <key code="23" action="(" />
       <key code="24" action="`" />
-      <key code="25" action="9" />
-      <key code="26" action="7" />
+      <key code="25" action=">" />
+      <key code="26" action="*" />
       <key code="27" action="°" />
-      <key code="28" action="8" />
-      <key code="29" action="0" />
+      <key code="28" action="-" />
+      <key code="29" action="@" />
       <key code="30" action="}" />
       <key code="31" action="L" />
       <key code="32" action="V" />
@@ -304,7 +304,7 @@
       <key code="47" action="H" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="Z" />
+      <key code="50" action="Ê" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -375,30 +375,30 @@
       <key code="3" action="E" />
       <key code="4" action="C" />
       <key code="5" action="," />
-      <key code="6" action="Y" />
-      <key code="7" action="X" />
-      <key code="8" action="." />
-      <key code="9" action="K" />
+      <key code="6" action="Z" />
+      <key code="7" action="Y" />
+      <key code="8" action="X" />
+      <key code="9" action="." />
       <key code="10" action="$" />
-      <key code="11" action="Ê" />
+      <key code="11" action="K" />
       <key code="12" action="B" />
       <key code="13" action="W" />
       <key code="14" action="P" />
       <key code="15" action="O" />
       <key code="16" action="’" />
       <key code="17" action="acute" />
-      <key code="18" action="1" />
-      <key code="19" action="2" />
-      <key code="20" action="3" />
-      <key code="21" action="4" />
-      <key code="22" action="6" />
-      <key code="23" action="5" />
+      <key code="18" action="+" />
+      <key code="19" action="&#x003c;" />
+      <key code="20" action="/" />
+      <key code="21" action="&#x0022;" />
+      <key code="22" action=")" />
+      <key code="23" action="(" />
       <key code="24" action="%" />
-      <key code="25" action="9" />
-      <key code="26" action="7" />
+      <key code="25" action=">" />
+      <key code="26" action="*" />
       <key code="27" action="=" />
-      <key code="28" action="8" />
-      <key code="29" action="0" />
+      <key code="28" action="-" />
+      <key code="29" action="@" />
       <key code="30" action="_" />
       <key code="31" action="L" />
       <key code="32" action="V" />
@@ -419,7 +419,7 @@
       <key code="47" action="H" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="Z" />
+      <key code="50" action="Ê" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -490,30 +490,30 @@
       <key code="3" action="e" />
       <key code="4" action="c" />
       <key code="5" action=";" />
-      <key code="6" action="y" />
-      <key code="7" action="x" />
-      <key code="8" action=":" />
-      <key code="9" action="k" />
+      <key code="6" action="z" />
+      <key code="7" action="y" />
+      <key code="8" action="x" />
+      <key code="9" action=":" />
       <key code="10" action="#" />
-      <key code="11" action="ê" />
+      <key code="11" action="k" />
       <key code="12" action="b" />
       <key code="13" action="w" />
       <key code="14" action="p" />
       <key code="15" action="o" />
       <key code="16" action="circumflex" />
       <key code="17" action="grave" />
-      <key code="18" action="&#x0022;" />
-      <key code="19" action="&#x003c;" />
-      <key code="20" action=">" />
-      <key code="21" action="(" />
-      <key code="22" action="@" />
-      <key code="23" action=")" />
+      <key code="18" action="7" />
+      <key code="19" action="5" />
+      <key code="20" action="3" />
+      <key code="21" action="1" />
+      <key code="22" action="8" />
+      <key code="23" action="9" />
       <key code="24" action="`" />
-      <key code="25" action="/" />
-      <key code="26" action="+" />
+      <key code="25" action="4" />
+      <key code="26" action="0" />
       <key code="27" action="°" />
-      <key code="28" action="-" />
-      <key code="29" action="*" />
+      <key code="28" action="2" />
+      <key code="29" action="6" />
       <key code="30" action="}" />
       <key code="31" action="l" />
       <key code="32" action="v" />
@@ -534,7 +534,7 @@
       <key code="47" action="h" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="z" />
+      <key code="50" action="ê" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -605,12 +605,12 @@
       <key code="3" action="€" />
       <key code="4" action="©" />
       <key code="5" action="'" />
-      <key code="6" action="hook" />
-      <key code="7" action="breve" />
-      <key code="8" action="…" />
-      <key code="9" action="~" />
+      <key code="6" action="\" />
+      <key code="7" action="°" />
+      <key code="8" action="`" />
+      <key code="9" action="…" />
       <key code="10" action="–" />
-      <key code="11" action="/" />
+      <key code="11" action="~" />
       <key code="12" action="|" />
       <key code="13" action="acute" />
       <key code="14" action="&#x0026;" />
@@ -618,17 +618,17 @@
       <key code="16" action="^" />
       <key code="17" action="`" />
       <key code="18" action="—" />
-      <key code="19" action="«" />
-      <key code="20" action="»" />
-      <key code="21" action="[" />
-      <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="19" action="“" />
+      <key code="20" action="≤" />
+      <key code="21" action="„" />
+      <key code="22" action="½" />
+      <key code="23" action="¬" />
       <key code="24" action="‰" />
-      <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="25" action="”" />
+      <key code="26" action="¼" />
       <key code="27" action="≠" />
-      <key code="28" action="−" />
-      <key code="29" action="×" />
+      <key code="28" action="≥" />
+      <key code="29" action="^" />
       <key code="30" action="commabelow" />
       <key code="31" action="stroke" />
       <key code="32" action="caron" />
@@ -649,7 +649,7 @@
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="\" />
+      <key code="50" action="/" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -721,33 +721,33 @@
       <key code="4" action="ſ" />
       <key code="5" action="horn" />
       <key code="6" action="" />
-      <key code="7" action="" />
-      <key code="8" action="·" />
-      <key code="9" action="⌨" />
+      <key code="7" action="‘" />
+      <key code="8" action="’" />
+      <key code="9" action="·" />
       <key code="10" action="¶" />
-      <key code="11" action="" />
+      <key code="11" action="⌨" />
       <key code="12" action="¦" />
       <key code="13" action="doubleacute" />
       <key code="14" action="§" />
       <key code="15" action="Œ" />
       <key code="16" action="" />
       <key code="17" action="" />
-      <key code="18" action="„" />
-      <key code="19" action="“" />
-      <key code="20" action="”" />
-      <key code="21" action="≤" />
-      <key code="22" action="" />
-      <key code="23" action="≥" />
+      <key code="18" action="±" />
+      <key code="19" action="«" />
+      <key code="20" action="÷" />
+      <key code="21" action="" />
+      <key code="22" action="]" />
+      <key code="23" action="[" />
       <key code="24" action="″" />
-      <key code="25" action="½" />
-      <key code="26" action="¬" />
+      <key code="25" action="»" />
+      <key code="26" action="×" />
       <key code="27" action="′" />
-      <key code="28" action="¼" />
+      <key code="28" action="−" />
       <key code="29" action="¾" />
-      <key code="30" action="’" />
+      <key code="30" action="breve" />
       <key code="31" action="" />
       <key code="32" action="" />
-      <key code="33" action="‘" />
+      <key code="33" action="hook" />
       <key code="34" action="Ð" />
       <key code="35" action="Ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
@@ -836,33 +836,33 @@
       <key code="4" action="ſ" />
       <key code="5" action="horn" />
       <key code="6" action="" />
-      <key code="7" action="" />
-      <key code="8" action="·" />
-      <key code="9" action="⌨" />
+      <key code="7" action="‘" />
+      <key code="8" action="’" />
+      <key code="9" action="·" />
       <key code="10" action="¶" />
-      <key code="11" action="" />
+      <key code="11" action="⌨" />
       <key code="12" action="¦" />
       <key code="13" action="doubleacute" />
       <key code="14" action="§" />
       <key code="15" action="œ" />
       <key code="16" action="" />
       <key code="17" action="" />
-      <key code="18" action="„" />
-      <key code="19" action="“" />
-      <key code="20" action="”" />
-      <key code="21" action="≤" />
-      <key code="22" action="" />
-      <key code="23" action="≥" />
+      <key code="18" action="±" />
+      <key code="19" action="«" />
+      <key code="20" action="÷" />
+      <key code="21" action="" />
+      <key code="22" action="]" />
+      <key code="23" action="[" />
       <key code="24" action="″" />
-      <key code="25" action="½" />
-      <key code="26" action="¬" />
+      <key code="25" action="»" />
+      <key code="26" action="×" />
       <key code="27" action="′" />
-      <key code="28" action="¼" />
+      <key code="28" action="−" />
       <key code="29" action="¾" />
-      <key code="30" action="’" />
+      <key code="30" action="breve" />
       <key code="31" action="" />
       <key code="32" action="" />
-      <key code="33" action="‘" />
+      <key code="33" action="hook" />
       <key code="34" action="ð" />
       <key code="35" action="ĳ" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
@@ -950,12 +950,12 @@
       <key code="3" action="€" />
       <key code="4" action="©" />
       <key code="5" action="'" />
-      <key code="6" action="hook" />
-      <key code="7" action="breve" />
-      <key code="8" action="…" />
-      <key code="9" action="~" />
+      <key code="6" action="\" />
+      <key code="7" action="°" />
+      <key code="8" action="`" />
+      <key code="9" action="…" />
       <key code="10" action="–" />
-      <key code="11" action="/" />
+      <key code="11" action="~" />
       <key code="12" action="|" />
       <key code="13" action="acute" />
       <key code="14" action="&#x0026;" />
@@ -963,17 +963,17 @@
       <key code="16" action="^" />
       <key code="17" action="`" />
       <key code="18" action="—" />
-      <key code="19" action="«" />
-      <key code="20" action="»" />
-      <key code="21" action="[" />
-      <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="19" action="“" />
+      <key code="20" action="≤" />
+      <key code="21" action="„" />
+      <key code="22" action="½" />
+      <key code="23" action="¬" />
       <key code="24" action="‰" />
-      <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="25" action="”" />
+      <key code="26" action="¼" />
       <key code="27" action="≠" />
-      <key code="28" action="−" />
-      <key code="29" action="×" />
+      <key code="28" action="≥" />
+      <key code="29" action="^" />
       <key code="30" action="commabelow" />
       <key code="31" action="stroke" />
       <key code="32" action="caron" />
@@ -994,7 +994,7 @@
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="\" />
+      <key code="50" action="/" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -1065,12 +1065,12 @@
       <key code="3" action="€" />
       <key code="4" action="©" />
       <key code="5" action="'" />
-      <key code="6" action="̉" />
-      <key code="7" action="˘" />
-      <key code="8" action="…" />
-      <key code="9" action="~" />
+      <key code="6" action="\" />
+      <key code="7" action="°" />
+      <key code="8" action="`" />
+      <key code="9" action="…" />
       <key code="10" action="–" />
-      <key code="11" action="/" />
+      <key code="11" action="~" />
       <key code="12" action="|" />
       <key code="13" action="´" />
       <key code="14" action="&#x0026;" />
@@ -1078,17 +1078,17 @@
       <key code="16" action="^" />
       <key code="17" action="`" />
       <key code="18" action="—" />
-      <key code="19" action="«" />
-      <key code="20" action="»" />
-      <key code="21" action="[" />
-      <key code="22" action="^" />
-      <key code="23" action="]" />
+      <key code="19" action="“" />
+      <key code="20" action="≤" />
+      <key code="21" action="„" />
+      <key code="22" action="½" />
+      <key code="23" action="¬" />
       <key code="24" action="‰" />
-      <key code="25" action="÷" />
-      <key code="26" action="±" />
+      <key code="25" action="”" />
+      <key code="26" action="¼" />
       <key code="27" action="≠" />
-      <key code="28" action="−" />
-      <key code="29" action="×" />
+      <key code="28" action="≥" />
+      <key code="29" action="^" />
       <key code="30" action="," />
       <key code="31" action="/" />
       <key code="32" action="ˇ" />
@@ -1109,7 +1109,7 @@
       <key code="47" action="†" />
       <key code="48" output="&#x0009;" /> <!-- Tab -->
       <key code="49" action=" " />
-      <key code="50" action="\" />
+      <key code="50" action="/" />
       <key code="51" output="&#x0008;" /> <!-- Backspace -->
       <key code="52" output="&#x0003;" /> <!-- Enter (Fn-Return) -->
       <key code="53" output="&#x001b;" /> <!-- Escape -->
@@ -5442,10 +5442,6 @@
       <when state="none" output="ˇ"/>
     </action>
 
-    <action id="˘">
-      <when state="none" output="˘"/>
-    </action>
-
     <action id="˛">
       <when state="none" output="˛"/>
     </action>
@@ -5475,10 +5471,6 @@
       <when state="Multi_key_macron" next="Multi_key_macron_combining_tilde"/>
       <when state="Multi_key_quotedbl" next="Multi_key_quotedbl_combining_tilde"/>
       <when state="Multi_key_underscore" next="Multi_key_underscore_combining_tilde"/>
-    </action>
-
-    <action id="̉">
-      <when state="none" output="̉"/>
     </action>
 
     <action id="̓">
