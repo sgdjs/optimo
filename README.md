@@ -8,31 +8,28 @@ to the reduced format (40%) of the Planck Keyboard:
 
 * Developer oriented changes:
   * < and > in direct access, reversed with « and »
-  * \ { } \_ and \[EFI\] (Narrow No-Break SPace) on liberated positions.
+  * \ { } \_ and no-break space on new positions
 
-## Planck
+## Optimo+
 
-Optimized layout for the Optimo Planck keyboard. 
+Layout for the Optimo Planck keyboard (firmware
+[here](https://github.com/sgdjs/qmk_firmware/tree/optimo/keyboards/planck/keymaps/optimo))
 
 * Optimized line of numbers and symbols
 
 ![Otimp](optimp/bepo-Optimp.png)
 
-## Ortholinear
+## Optimo
 
-Optimized layout for orthogonal keyboards of 104 keys
+Layout for orthogonal keyboards of 104 keys
 
 ![Image](optimo/bepo-Optimo.png)
 
-## Optima
+## Optima 
 
-Optimized layout with A fingers position, for staggered ISO keyboards
+Layout making use of the 105th key of the ISO keyboards
 
 ![Image](optima/bepo-Optima.png)
-
-# Development
-
-* First row on Lower layer has space to optimize.
 
 # Installation (Mac and Windows)
 
