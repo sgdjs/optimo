@@ -12,8 +12,7 @@ to the reduced format (40%) of the Planck Keyboard:
 
 ## Optimo+
 
-Layout for the Optimo Planck keyboard (firmware
-[here](https://github.com/sgdjs/qmk_firmware/tree/optimo/keyboards/planck/keymaps/optimo))
+Layout for the Optimo Planck keyboard (firmware [here](https://github.com/sgdjs/qmk_firmware/tree/optimo/keyboards/planck/keymaps/optimo))
 
 * Optimized line of numbers and symbols
 
@@ -21,13 +20,13 @@ Layout for the Optimo Planck keyboard (firmware
 
 ## Optimo
 
-Layout for orthogonal keyboards of 104 keys
+Layout for orthogonal or staggered keyboards of 104 keys
 
 ![Image](optimo/bepo-Optimo.png)
 
 ## Optima 
 
-Layout making use of the 105th key of the ISO keyboards
+Layout for ISO keyboards of 105 keys 
 
 ![Image](optima/bepo-Optima.png)
 
