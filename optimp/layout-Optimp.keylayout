@@ -171,13 +171,13 @@
       <key code="30" action="_" />
       <key code="31" action="l" />
       <key code="32" action="v" />
-      <key code="33" action="!" />
+      <key code="33" action=":" />
       <key code="34" action="d" />
       <key code="35" action="j" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="r" />
       <key code="38" action="t" />
-      <key code="39" action="?" />
+      <key code="39" action=";" />
       <key code="40" action="s" />
       <key code="41" action="n" />
       <key code="42" action="cedilla" />
@@ -259,11 +259,11 @@
       <key code="2" action="I" />
       <key code="3" action="E" />
       <key code="4" action="C" />
-      <key code="5" action=";" />
+      <key code="5" action="?" />
       <key code="6" action="Z" />
       <key code="7" action="Y" />
       <key code="8" action="X" />
-      <key code="9" action=":" />
+      <key code="9" action="!" />
       <key code="10" action="#" />
       <key code="11" action="K" />
       <key code="12" action="B" />
@@ -402,13 +402,13 @@
       <key code="30" action="_" />
       <key code="31" action="L" />
       <key code="32" action="V" />
-      <key code="33" action="!" />
+      <key code="33" action=":" />
       <key code="34" action="D" />
       <key code="35" action="J" />
       <key code="36" output="&#x000d;" /> <!-- Return -->
       <key code="37" action="R" />
       <key code="38" action="T" />
-      <key code="39" action="?" />
+      <key code="39" action=";" />
       <key code="40" action="S" />
       <key code="41" action="N" />
       <key code="42" action="cedilla" />
@@ -489,11 +489,11 @@
       <key code="2" action="i" />
       <key code="3" action="e" />
       <key code="4" action="c" />
-      <key code="5" action=";" />
+      <key code="5" action="?" />
       <key code="6" action="z" />
       <key code="7" action="y" />
       <key code="8" action="x" />
-      <key code="9" action=":" />
+      <key code="9" action="!" />
       <key code="10" action="#" />
       <key code="11" action="k" />
       <key code="12" action="b" />
