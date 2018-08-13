@@ -686,7 +686,7 @@
        x="440.433078"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >6</text>
+       >@</text>
 
     <text
        x="664.073067"
@@ -746,7 +746,7 @@
        x="374.527565"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >5</text>
+       >)</text>
 
     <text
        x="178.558733"
@@ -782,7 +782,7 @@
        x="506.338591"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >7</text>
+       >+</text>
 
     <text
        x="508.086298"
@@ -896,7 +896,7 @@
        x="572.244104"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >8</text>
+       >-</text>
 
     <text
        x="359.545502"
@@ -1046,7 +1046,7 @@
        x="176.811026"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >2</text>
+       >&#x003c;</text>
 
     <text
        x="837.613863"
@@ -1070,67 +1070,67 @@
        x="242.716539"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >3</text>
+       >></text>
 
     <text
        x="176.811026"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >&#x003c;</text>
+       >2</text>
 
     <text
        x="242.716539"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >></text>
+       >3</text>
 
     <text
        x="110.905513"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >&#x0022;</text>
+       >1</text>
 
     <text
        x="440.433078"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >@</text>
+       >6</text>
 
     <text
        x="506.338591"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >+</text>
+       >7</text>
 
     <text
        x="308.622052"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >(</text>
+       >4</text>
 
     <text
        x="374.527565"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >)</text>
+       >5</text>
 
     <text
        x="308.622052"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >4</text>
+       >(</text>
 
     <text
        x="572.244104"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >-</text>
+       >8</text>
 
     <text
        x="638.149617"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >/</text>
+       >9</text>
 
     <text
        x="201.811026"
@@ -1274,7 +1274,7 @@
        x="110.905513"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >1</text>
+       >&#x0022;</text>
 
     <text
        x="531.338591"
@@ -1376,7 +1376,7 @@
        x="704.05513"
        y="175.0"
        style="font-size:20px;fill:#000000;font-family:DejaVu Sans Mono"
-       >*</text>
+       >0</text>
 
     <text
        x="737.46206"
@@ -1400,7 +1400,7 @@
        x="704.05513"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >0</text>
+       >*</text>
 
     <text
        x="646.556547"
@@ -1604,7 +1604,7 @@
        x="638.149617"
        y="150.0"
        style="font-size:20px;fill:#ff0000;font-family:DejaVu Sans Mono"
-       >9</text>
+       >/</text>
 
     <text
        x="794.960643"
