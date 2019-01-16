@@ -5,8 +5,11 @@ to the reduced format (40%) of the Planck Keyboard:
 
 * New position of M, W and Z
 * Direct access to ´ (dead acute), better access to \` (dead grave)
+* New positions for ; : { } ? !
 
 * Developer oriented changes:
+  * Direct access to numbers (since version
+    [1.7](https://github.com/sgdjs/optimo/releases/tag/untagged-0b836ca9deaf096bc08d))
   * < and > in direct access, reversed with « and »
   * \ { } \_ and no-break space on new positions
 
