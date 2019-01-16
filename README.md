@@ -1,7 +1,13 @@
 # Optimo Keyboard Layout
 
-The Optimo layout is a fork of the [bepo](http://bepo.fr) layout. It has
-been adapted to the reduced format (40%) of the Planck Keyboard:
+The Optimo layout is a fork of the [bepo](http://bepo.fr) layout. 
+It comes in three variants:
+
+* [Optimo](#optimo): for ANSI keyboards (104 keys) 
+* [Optima](#optima): for ISO keyboard (105 keys)
+* [OptimoP](#optimop): for Planck Keyboard (40%)
+
+## Features
 
 * New position of M, W and Z
 * Direct access to ´ (dead acute), shift access to \` (dead grave)
@@ -28,7 +34,7 @@ Layout for ISO keyboards of 105 keys
 
 Optimo layout for the Planck keyboard (firmware [here](https://github.com/sgdjs/qmk_firmware/tree/optimo/keyboards/planck/keymaps/optimo))
 
-* Optimized line of numbers and symbols
+**Special Feature**: optimized line of numbers and symbols
 
 ![Otimp](optimp/bepo-Optimp.png)
 
