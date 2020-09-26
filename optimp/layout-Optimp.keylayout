@@ -3,7 +3,7 @@
 <!-- bépo Layout -->
 <!-- http://www.bepo.fr/ -->
 <!-- version 1.0 -->
-<keyboard group="126" id="-6530" name="Optimo+" maxout="5">
+<keyboard group="126" id="-6530" name="Optimo" maxout="5">
   <!--
     This layout is designed for ISO and ANSI keyboards. The extra
     key on an ISO keyboard (next to the left Shift) is optional,
@@ -156,18 +156,18 @@
       <key code="15" action="o" />
       <key code="16" action="’" />
       <key code="17" action="acute" />
-      <key code="18" action="+" />
-      <key code="19" action="&#x003c;" />
-      <key code="20" action="/" />
-      <key code="21" action="&#x0022;" />
-      <key code="22" action=")" />
-      <key code="23" action="(" />
+      <key code="18" action="7" />
+      <key code="19" action="5" />
+      <key code="20" action="3" />
+      <key code="21" action="1" />
+      <key code="22" action="8" />
+      <key code="23" action="9" />
       <key code="24" action="%" />
-      <key code="25" action=">" />
-      <key code="26" action="*" />
+      <key code="25" action="4" />
+      <key code="26" action="0" />
       <key code="27" action="=" />
-      <key code="28" action="-" />
-      <key code="29" action="@" />
+      <key code="28" action="2" />
+      <key code="29" action="6" />
       <key code="30" action="_" />
       <key code="31" action="l" />
       <key code="32" action="v" />
@@ -272,18 +272,18 @@
       <key code="15" action="O" />
       <key code="16" action="circumflex" />
       <key code="17" action="grave" />
-      <key code="18" action="7" />
-      <key code="19" action="5" />
-      <key code="20" action="3" />
-      <key code="21" action="1" />
-      <key code="22" action="8" />
-      <key code="23" action="9" />
+      <key code="18" action="+" />
+      <key code="19" action="&#x003c;" />
+      <key code="20" action="/" />
+      <key code="21" action="&#x0022;" />
+      <key code="22" action=")" />
+      <key code="23" action="(" />
       <key code="24" action="`" />
-      <key code="25" action="4" />
-      <key code="26" action="0" />
+      <key code="25" action=">" />
+      <key code="26" action="*" />
       <key code="27" action="°" />
-      <key code="28" action="2" />
-      <key code="29" action="6" />
+      <key code="28" action="-" />
+      <key code="29" action="@" />
       <key code="30" action="}" />
       <key code="31" action="L" />
       <key code="32" action="V" />
@@ -387,18 +387,18 @@
       <key code="15" action="O" />
       <key code="16" action="’" />
       <key code="17" action="acute" />
-      <key code="18" action="7" />
-      <key code="19" action="5" />
-      <key code="20" action="3" />
-      <key code="21" action="1" />
-      <key code="22" action="8" />
-      <key code="23" action="9" />
+      <key code="18" action="+" />
+      <key code="19" action="&#x003c;" />
+      <key code="20" action="/" />
+      <key code="21" action="&#x0022;" />
+      <key code="22" action=")" />
+      <key code="23" action="(" />
       <key code="24" action="%" />
-      <key code="25" action="4" />
-      <key code="26" action="0" />
+      <key code="25" action=">" />
+      <key code="26" action="*" />
       <key code="27" action="=" />
-      <key code="28" action="2" />
-      <key code="29" action="6" />
+      <key code="28" action="-" />
+      <key code="29" action="@" />
       <key code="30" action="_" />
       <key code="31" action="L" />
       <key code="32" action="V" />
@@ -502,18 +502,18 @@
       <key code="15" action="o" />
       <key code="16" action="circumflex" />
       <key code="17" action="grave" />
-      <key code="18" action="+" />
-      <key code="19" action="&#x003c;" />
-      <key code="20" action="/" />
-      <key code="21" action="&#x0022;" />
-      <key code="22" action=")" />
-      <key code="23" action="(" />
+      <key code="18" action="7" />
+      <key code="19" action="5" />
+      <key code="20" action="3" />
+      <key code="21" action="1" />
+      <key code="22" action="8" />
+      <key code="23" action="9" />
       <key code="24" action="`" />
-      <key code="25" action=">" />
-      <key code="26" action="*" />
+      <key code="25" action="4" />
+      <key code="26" action="0" />
       <key code="27" action="°" />
-      <key code="28" action="-" />
-      <key code="29" action="@" />
+      <key code="28" action="2" />
+      <key code="29" action="6" />
       <key code="30" action="}" />
       <key code="31" action="l" />
       <key code="32" action="v" />
